@@ -1,0 +1,36 @@
+{
+  "kit_version": "1.0",
+  "model": {
+    "vocab_size": 8192,
+    "context_length": 512,
+    "d_model": 320,
+    "n_layer": 6,
+    "n_head": 5,
+    "mlp_ratio": 4,
+    "dropout": 0.0,
+    "tie_embeddings": true
+  },
+  "train": {
+    "budget_tokens": 100000000,
+    "batch_size": 64,
+    "seq_len": 512,
+    "lr": 0.002,
+    "min_lr": 0.0002,
+    "warmup_steps": 150,
+    "weight_decay": 0.1,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "grad_clip": 1.0,
+    "seed": 1337,
+    "shuffle_window_steps": 50,
+    "eval_every_steps": 500
+  },
+  "tokenizer": {
+    "vocab_size": 8192,
+    "eot_token": "<|endoftext|>"
+  },
+  "eval": {
+    "context_length": 512,
+    "stride": 256
+  }
+}

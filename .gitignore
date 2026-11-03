@@ -1,9 +1,18 @@
-# Données et artefacts lourds : jamais dans git (dataset final publié sur Hugging Face)
-data/
+# Données lourdes : jamais dans git (dataset final publié sur Hugging Face)
+data/*
+!data/validation.jsonl
+!data/VALIDATION_SOURCES.md
 experiments/runs/
+runs/
+prepared/
+example_data/
+corpus/cache/
 *.bin
 *.pt
 *.ckpt
+
+# Les soumissions officielles (checkpoint compris) doivent être poussées
+!submissions/**
 
 # Environnement
 .venv/

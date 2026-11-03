@@ -1,0 +1,10 @@
+# Kit Feed the Beast : dépendances (Python >= 3.10)
+torch>=2.3
+tokenizers>=0.19
+numpy>=1.26
+tzdata              # Windows : zoneinfo ne trouve pas "Europe/Paris" sans lui (ftb.submit)
+# Optionnel
+pyarrow>=15         # lire des .parquet dans ftb.prepare / ftb.tokenizer
+datasets>=2.19      # examples/make_example_dataset.py (FineWeb-2, Wikipédia en streaming)
+regex               # tests (implémentation de référence minbpe)
+pytest              # tests
