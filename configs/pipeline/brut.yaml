@@ -1,0 +1,21 @@
+# Référence « brut » : le texte tel que la collecte l'a produit (champ html retiré).
+# Seules étapes : celles qui protègent la val (règle 3 de docs/ARCHITECTURE.md).
+# Sert de point de comparaison pour mesurer ce que le nettoyage apporte (ablation) :
+# sans décontamination, ce run apprendrait des copies de la val et son BPB serait faux.
+name: brut
+input: data/raw
+sources: all
+# Ordre des sources (affichage, et priorité en cas de doublon dans les configs qui dédupliquent).
+source_order: [wikipedia_fr, wikinews_fr, wikisource_fr, gutenberg_fr, assemblee_nationale, fineweb2_fra, commoncrawl]
+stages:
+  - name: exclude_heldout
+    params:
+      glob: data/val/*/heldout_ids.txt
+
+  # Mêmes réglages que nettoye.yaml (docs/comprendre/decontamination.md).
+  - name: decontaminate
+    params:
+      against: data/validation.jsonl
+      doc_min_coverage: 0.20
+      formula_min_docs: 20
+      mask_lines: true

@@ -2,7 +2,10 @@
 data/*
 !data/validation.jsonl
 !data/VALIDATION_SOURCES.md
+# Annotations manuelles de Ben (preuve du seuil de langue)
+!data/annotations/
 experiments/runs/
+runs
 runs/
 prepared/
 example_data/
@@ -16,8 +19,14 @@ corpus/cache/
 
 # Environnement
 .venv/
+.venv
+*.nosync/
 __pycache__/
 *.pyc
 .pytest_cache/
 .ipynb_checkpoints/
 .DS_Store
+
+# Mémoire de session (stratégie) : locale, jamais poussée sur le repo public
+AGENTS.md
+CLAUDE.md

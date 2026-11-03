@@ -1,0 +1,74 @@
+# Nettoyage v1 : encodage, boilerplate, langue, mise en forme des livres, décontamination (val du kit), doublons exacts.
+#   uv run python -m pipeline.run --config configs/pipeline/nettoye.yaml [--limit 200]
+# Fiches explicatives : docs/comprendre/{pipeline,encodage,boilerplate,langue,reflow,decontamination,dedup_exacte}.md
+name: nettoye
+input: data/raw
+sources: all
+# En cas de doublon exact, la source listée en premier garde le document
+# (sources soignées d'abord, web en dernier). Les sources non listées passent après.
+source_order: [wikipedia_fr, wikinews_fr, wikisource_fr, gutenberg_fr, assemblee_nationale, fineweb2_fra, commoncrawl]
+stages:
+  # 1. La val ne sert jamais à l'entraînement : toujours en premier.
+  - name: exclude_heldout
+    params:
+      glob: data/val/*/heldout_ids.txt
+
+  # 2. Mojibake (« Ã©tÃ© » -> « été ») et normalisation NFC.
+  - name: encoding
+    params:
+      uncurl_quotes: false  # garde ’ « » – — … : ils sont dans la val du kit
+      normalization: NFC
+      normalize_spaces: true  # U+00A0, U+202F, U+2009… -> espace : la val n'en contient aucune
+
+  # 3. Ce qui n'est pas le contenu : menus web, licence Gutenberg, sections finales Wikipédia.
+  - name: boilerplate
+    params:
+      methods:
+        commoncrawl: trafilatura
+        gutenberg_fr: gutenberg
+        wikipedia_fr: wikipedia
+      trafilatura:
+        include_comments: false
+        include_tables: false
+        favor_precision: true
+        fast: true  # le mode « secours » ajoute ~5 % de texte, surtout du rebut (menus, pages vides)
+        deduplicate: false  # true = cache global, résultat dépendant de l'ordre des workers
+        max_html_bytes: 3000000
+        fix_encoding: true  # le texte extrait passe par la même réparation que l'étape 2
+      wikipedia:
+        prose_min_chars: 300
+      min_chars: 1
+
+  # 4. Note de langue de chaque document (GlotLID, sinon fastText lid.176). Calcul cher, gardé
+  #    en cache ; ne retire rien. Écrit langid_fr (français) et langid_family (français + parlers proches).
+  - name: langid_score
+    params:
+      model: glotlid
+      fallback: lid176
+
+  # 5. Français seulement : seuil appliqué aux notes de l'étape 4 (instantané : changer le seuil
+  #    ou la règle ne relance pas GlotLID).
+  - name: langid
+    params:
+      rule: fr  # fr = p(français) ; family = p(français + normand, franco-provençal, picard, wallon)
+      threshold: 0.65  # FineWeb ; règle et seuil à choisir sur l'annotation (tools.langid_report)
+
+  # 6. Livres remis en paragraphes, comme dans la val (une ligne par paragraphe, sans _italiques_).
+  - name: reflow
+    params:
+      methods:
+        gutenberg_fr: gutenberg
+
+  # 7. Aucun recouvrement avec la val du kit (13-grammes de mots, définition de ftb/contamination.py).
+  - name: decontaminate
+    params:
+      against: data/validation.jsonl
+      # Mesures et justification : docs/comprendre/decontamination.md
+      doc_min_coverage: 0.20  # couvre >= 20 % d'un doc de val = copie -> retiré (bruit max mesuré : 8 %)
+      formula_min_docs: 20  # 13-gramme dans >= 20 docs d'entraînement = formule de séance, gardée
+      mask_lines: true  # autres recouvrements : seules les lignes concernées sont retirées
+
+  # 8. Doublons exacts sur toutes les sources (texte en minuscules, espaces compactés).
+  - name: exact_dedup
+    params:
+      top_k: 20

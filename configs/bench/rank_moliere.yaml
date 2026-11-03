@@ -1,0 +1,13 @@
+# Test de classement du proxy (2/2) : Molière seul (corpus du kit, 1,5 Mo, relu des dizaines de fois).
+#   uv run python -m bench.run --config configs/bench/rank_moliere.yaml
+run: rank_moliere
+notes: "classement : Molière seul (corpus/moliere_train.txt)"
+mix:
+  sources:
+    - name: moliere
+      path: corpus/moliere_train.txt   # un fichier .txt = un document (comme ftb.prepare)
+  order: as_is
+train:
+  mode: proxy
+  debug_budget: 25000000             # budget proxy conseillé (bench.throughput : ~12 min)
+  micro_batch: 16                    # le plus rapide sur MPS (même résultat que 64)

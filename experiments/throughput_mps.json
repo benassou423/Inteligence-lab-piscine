@@ -1,0 +1,52 @@
+{
+  "measured": "2026-11-03T20:35:54",
+  "chip": "Apple M5 Pro",
+  "device": "mps",
+  "torch": "2.15.0",
+  "train": [
+    {
+      "micro_batch": 16,
+      "tokens_per_s": 37758.23264782069,
+      "s_per_step": 0.8678372291848063,
+      "precision": "torch.float32"
+    },
+    {
+      "micro_batch": 32,
+      "tokens_per_s": 36302.33531490516,
+      "s_per_step": 0.902641654200852,
+      "precision": "torch.float32"
+    }
+  ],
+  "best_micro_batch": 16,
+  "tokens_per_s": 37758,
+  "fixed_costs_s": {
+    "full_eval_s": 3.1,
+    "samples_s": 4.3
+  },
+  "overhead_per_run_s": 43,
+  "total_minutes_for_budget": {
+    "10M": 5.1,
+    "20M": 9.5,
+    "30M": 14.0,
+    "100M": 44.9
+  },
+  "recommended_debug_budget": 25559040,
+  "target_minutes": 12.0,
+  "note": "budget = (cible − coûts fixes) × débit, arrondi à 10 pas de 32 768 tokens ; real_runs : runs proxy complets (bench.run), durée totale mix et évaluations comprises",
+  "real_runs": [
+    {
+      "run": "rank_wiki",
+      "tokens_seen": 25001984,
+      "train_s": 583.9,
+      "tokens_per_s": 42819,
+      "total_s": 626.1
+    },
+    {
+      "run": "rank_moliere",
+      "tokens_seen": 25001984,
+      "train_s": 619.2,
+      "tokens_per_s": 40378,
+      "total_s": 643.0
+    }
+  ]
+}
