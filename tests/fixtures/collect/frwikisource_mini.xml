@@ -1,0 +1,59 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" version="0.11" xml:lang="fr">
+  <siteinfo><sitename>Wikisource</sitename><dbname>frwikisource</dbname></siteinfo>
+  <page>
+    <title>Livre:Auteur - Pièce.djvu</title><ns>112</ns><id>10</id>
+    <revision><id>1</id><timestamp>2024-01-02T00:00:00Z</timestamp><model>proofread-index</model><format>text/x-wiki</format>
+      <text xml:space="preserve">{{:MediaWiki:Proofreadpage_index_template
+|Type=book
+|Titre=[[La Pièce]]
+|Auteur=[[Auteur:Jean Auteur|Jean Auteur]]
+|Annee=1666
+}}</text></revision>
+  </page>
+  <page>
+    <title>Page:Auteur - Pièce.djvu/2</title><ns>104</ns><id>12</id>
+    <revision><id>2</id><timestamp>2025-03-04T00:00:00Z</timestamp><model>proofread-page</model><format>text/x-wiki</format>
+      <text xml:space="preserve">&lt;noinclude&gt;&lt;pagequality level="4" user="X" /&gt;{{nr||12|}}&lt;/noinclude&gt;{{Personnage|Alceste|c}}
+&lt;poem&gt;Mais je veux qu'on soit sincère, et qu'en homme d'{{tiret|hon|neur}}&lt;/poem&gt;&lt;noinclude&gt;&lt;references/&gt;&lt;/noinclude&gt;</text></revision>
+  </page>
+  <page>
+    <title>Page:Auteur - Pièce.djvu/1</title><ns>104</ns><id>11</id>
+    <revision><id>3</id><timestamp>2025-01-01T00:00:00Z</timestamp><model>proofread-page</model><format>text/x-wiki</format>
+      <text xml:space="preserve">&lt;noinclude&gt;&lt;pagequality level="3" user="X" /&gt;&lt;/noinclude&gt;{{c|ACTE PREMIER}}
+{{c|SCÈNE PREMIÈRE}}
+{{Personnage|Philinte|c}}
+&lt;poem&gt;Qu'est-ce donc ? qu'avez-vous ?&lt;/poem&gt;&lt;ref&gt;Note de l'éditeur.&lt;/ref&gt;
+[[Catégorie:Théâtre]]</text></revision>
+  </page>
+  <page>
+    <title>Page:Auteur - Pièce.djvu/3</title><ns>104</ns><id>13</id>
+    <revision><id>4</id><timestamp>2025-05-05T00:00:00Z</timestamp><model>proofread-page</model><format>text/x-wiki</format>
+      <text xml:space="preserve">&lt;noinclude&gt;&lt;pagequality level="1" user="X" /&gt;&lt;/noinclude&gt;texte OCR non relu</text></revision>
+  </page>
+  <page>
+    <title>Page:Auteur - Pièce.djvu/4</title><ns>104</ns><id>14</id>
+    <revision><id>5</id><timestamp>2025-02-02T00:00:00Z</timestamp><model>proofread-page</model><format>text/x-wiki</format>
+      <text xml:space="preserve">&lt;noinclude&gt;&lt;pagequality level="4" user="X" /&gt;&lt;/noinclude&gt;{{tiret2|hon|neur}}, on ne lâche aucun mot
+qui ne parte du cœur.</text></revision>
+  </page>
+  <page>
+    <title>Un conte</title><ns>0</ns><id>20</id>
+    <revision><id>6</id><timestamp>2023-06-07T00:00:00Z</timestamp><model>wikitext</model><format>text/x-wiki</format>
+      <text xml:space="preserve">{{Titre|Un conte|[[Auteur:Jean Auteur|Jean Auteur]]|1700}}
+== Premier chapitre ==
+Il était une fois un {{sc|roi}} qui
+vivait dans un château.
+
+Le roi avait une fille.[[en:A tale]]</text></revision>
+  </page>
+  <page>
+    <title>La Pièce</title><ns>0</ns><id>21</id>
+    <revision><id>7</id><timestamp>2023-06-07T00:00:00Z</timestamp><model>wikitext</model><format>text/x-wiki</format>
+      <text xml:space="preserve">&lt;pages index="Auteur - Pièce.djvu" from=1 to=4 /&gt;</text></revision>
+  </page>
+  <page>
+    <title>Ancien titre</title><ns>0</ns><id>22</id>
+    <revision><id>8</id><timestamp>2023-06-07T00:00:00Z</timestamp><model>wikitext</model><format>text/x-wiki</format>
+      <text xml:space="preserve">#REDIRECTION [[Un conte]]</text></revision>
+  </page>
+</mediawiki>

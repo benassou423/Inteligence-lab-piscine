@@ -1,0 +1,15 @@
+# Run « smoke » : vérifie toute la chaîne (mix → tokenizer → kit) en ~2 min. Pas une mesure.
+#   uv run python -m bench.run --config configs/bench/smoke.yaml
+run: smoke
+notes: "smoke : chaîne complète, pas une mesure"
+mix:
+  sources:
+    - name: nettoye
+      pipeline: nettoye              # dernière étape terminée de data/stages/nettoye/
+  max_bytes: 5000000                 # 5 Mo tirés au hasard (proportions naturelles)
+  order: shuffle
+  tokenizer_sample_bytes: 5000000
+train:
+  mode: proxy
+  debug_budget: 655360               # 20 pas de 32 768 tokens
+  micro_batch: 16

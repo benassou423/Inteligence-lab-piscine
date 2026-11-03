@@ -1,0 +1,25 @@
+# Run « proxy » : ablation locale sur le GPU du Mac (MPS), ~12 min au total.
+#   uv run python -m bench.run --config configs/bench/proxy.yaml
+# Plus de 5 min : le lancer détaché, par exemple
+#   nohup uv run python -m bench.run --config configs/bench/proxy.yaml > runs/proxy.out 2>&1 &
+# Une ablation = une copie de ce fichier : changer `run:` et la section `mix:` (ou `tokenizer:`), rien d'autre.
+run: proxy
+notes: "proxy : sortie finale de nettoye, proportions naturelles"
+mix:
+  sources:
+    - name: nettoye
+      pipeline: nettoye              # dernière étape terminée de data/stages/nettoye/ (ou `stage: 05_exact_dedup`)
+      # sources: [wikipedia_fr]      # filtre sur le champ `source`
+      # repeat: 1.0                  # facteur de répétition (0,5 = moitié tirée au hasard, 2 = deux fois)
+      # weight: 1                    # ou part du mix en octets (toutes les sources, avec mix.total_bytes)
+      # max_bytes: 50000000          # plafond d'octets pris dans cette source
+      # block: 0                     # avec order: blocks, les blocs se suivent (le meilleur à la fin)
+  max_bytes: 100000000               # ~28 M tokens à ~3,6 octets/token (mesuré) : le budget voit ~90 % du mix, une fois
+  order: shuffle                     # shuffle | blocks | as_is
+  tokenizer_sample_bytes: 50000000
+tokenizer:
+  pretokenizer: gpt4                 # gpt4 (motif du kit) | fr ; ou path: un tokenizer.json existant
+train:
+  mode: proxy
+  debug_budget: 25000000             # ~37 800 tok/s en float32 sur MPS (bench.throughput) → ~12 min au total
+  micro_batch: 16                    # le plus rapide sur MPS ; même résultat que 64

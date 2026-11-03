@@ -1,7 +1,7 @@
 # Une commande pour tout regénérer : make all
 PY := uv run python
 
-.PHONY: setup test collect clean-v1 val proxy all
+.PHONY: setup test collect clean-v1 proxy all
 
 setup:
 	uv sync
@@ -17,12 +17,8 @@ collect:
 clean-v1:
 	$(PY) -m pipeline.run --config configs/pipeline/nettoye.yaml
 
-# Val provisoire (en attendant le kit) → data/val/provisional/
-val:
-	$(PY) -m bench.val
-
-# Run proxy local : tokenizer, entraînement, BPB par domaine → experiments/results.csv
+# Run proxy local (kit officiel, budget réduit) : mix, tokenizer, entraînement, BPB par genre → experiments/results.csv
 proxy:
 	$(PY) -m bench.run --config configs/bench/proxy.yaml --stage all
 
-all: collect clean-v1 val proxy
+all: collect clean-v1 proxy

@@ -1,0 +1,81 @@
+# Collecte des sources brutes → data/raw/<source>/ (voir docs/ARCHITECTURE.md et docs/sources/)
+# Lancement : uv run python -m pipeline.collect <source|all|stats> [--limit N]
+
+freeze_date: "2026-10-16"          # gel des données : tout document daté d'après est écarté
+max_part_text_bytes: 100000000     # ~100 Mo de texte au plus par fichier part-NNNNN.jsonl.zst
+raw_budget_gb: 30                  # budget disque total de data/raw/
+
+# Ordre de `all` (fineweb2_fra seulement si enabled: true)
+# moliere : remplacé par le corpus du kit officiel (corpus/moliere_*.txt) ; lancer à la main si besoin
+order: [assemblee_nationale, wikipedia_fr, wikisource_fr, gutenberg_fr, wikinews_fr, commoncrawl, fineweb2_fra]
+
+sources:
+  wikipedia_fr:
+    repo: wikimedia/wikipedia
+    config: "20231101.fr"          # seule config française du dépôt (vérifié le 2026-11-03)
+    revision: b04c8d1ceb2f5cd4588862100d08de323dccfbaa   # commit figé du dépôt HF
+    dump_date: "2023-11-01"
+    batch_size: 1000
+    workers: 3
+
+  wikisource_fr:
+    # Le dataset HF wikimedia/wikisource (20231201.fr) ne contient que l'espace principal :
+    # les textes transclus depuis l'espace Page: y sont vides → on lit le dump officiel.
+    dump: "20261001"
+    base_url: https://dumps.wikimedia.org/frwikisource
+    min_page_quality: 3            # pages Page: corrigées (3) ou validées (4) ; 0-2 = OCR brut ou problème
+    min_chars: 500                 # longueur minimale d'un document
+    buckets: 64                    # regroupement des pages par livre (tri externe)
+    workers: 4
+    parallel_downloads: 2          # dumps.wikimedia.org limite les connexions simultanées
+
+  gutenberg_fr:
+    # Miroir officiel (liste MIRRORS.ALL, Old Dominion University, « high speed ») : pas d'aspiration
+    # de www.gutenberg.org. gutenberg.pglaf.org marche aussi mais ~60 Ko/s depuis Paris.
+    mirror_epub: https://mirror.cs.odu.edu/gutenberg-epub   # fichiers générés <n>/pg<n>.txt (UTF-8)
+    mirror_main: https://mirror.cs.odu.edu/gutenberg        # collection principale (repli)
+    catalog: https://mirror.cs.odu.edu/gutenberg-epub/feeds/pg_catalog.csv.gz
+    languages: [fr]
+    batch_size: 100                # livres par unité de travail
+    threads: 3                     # téléchargements simultanés par worker (2 × 3 = 6 au plus)
+    workers: 2
+
+  wikinews_fr:
+    # Wikinews FR est fermé depuis mai 2026 : le dump du 2026-10-01 contient tout (25 Mo bz2)
+    dump: "20261001"
+    base_url: https://dumps.wikimedia.org/frwikinews
+    min_chars: 200
+    workers: 1
+
+  commoncrawl:
+    crawl: CC-MAIN-2026-39         # dernier crawl terminé avant le gel (collinfo.json), revérifié au lancement
+    n_warc_files: 10               # premiers fichiers WARC (ordre trié de warc.paths.gz, premier segment)
+    keep_tld: .fr                  # on garde aussi les pages des domaines en .fr
+    workers: 3                     # 2 à 4 téléchargements en parallèle au plus
+
+  assemblee_nationale:
+    # 14e législature : pas de XML en open data (404) ; seulement du HTML (robots.txt : Crawl-delay 30 s)
+    legislatures: [17, 16, 15]
+    url_template: https://data.assemblee-nationale.fr/static/openData/repository/{leg}/vp/syceronbrut/syseron.xml.zip
+    workers: 1
+
+  moliere:
+    # Corpus provisoire du bloc 1 : théâtre de Molière, édition Louandre (Charpentier, 1910) sur Wikisource
+    api: https://fr.wikisource.org/w/api.php
+    tables: # pages « Table des matières » des 3 tomes (ordre des pièces)
+      - "Page:Molière - Édition Louandre, 1910, tome 1.djvu/713"
+      - "Page:Molière - Édition Louandre, 1910, tome 2.djvu/613"
+      - "Page:Molière - Édition Louandre, 1910, tome 3.djvu/722"
+    exclude: ["Avis sur cette édition", "Précis de l’Histoire du Théâtre en France", "Vie de J.-B. Poquelin de Molière",
+              "Relation de la Fête de Versailles", "Appendice", "Poésies diverses"]
+    sleep_s: 1.0
+    out_dir: data/moliere
+
+  fineweb2_fra:
+    enabled: true                  # optionnel (ajouté une fois les autres sources en place)
+    repo: HuggingFaceFW/fineweb-2
+    revision: af9c13333eb981300149d5ca60a8e9d659b276b9   # commit figé du dépôt HF
+    config: fra_Latn
+    target_text_gb: 2.0
+    n_files: 8                     # fichiers parquet pris à pas régulier sur les 135
+    workers: 2

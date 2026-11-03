@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<compteRendu xmlns="http://schemas.assemblee-nationale.fr/referentiel">
+  <uid>CRSANR5L17S2026O1N999</uid>
+  <metadonnees>
+    <dateSeance>20261015150000000</dateSeance>
+    <dateSeanceJour>jeudi 15 octobre 2026</dateSeanceJour>
+    <numSeance>999</numSeance>
+    <legislature>17</legislature>
+    <session>Session ordinaire 2026-2027</session>
+    <etat>complet</etat>
+    <version>avant_JO</version>
+    <sommaire>
+      <presidentSeance id_syceron="1">Présidence de Mme la présidente</presidentSeance>
+      <sommaire1><titreStruct><intitule>Questions au Gouvernement</intitule></titreStruct><para>ne pas lire</para></sommaire1>
+    </sommaire>
+  </metadonnees>
+  <contenu>
+    <quantiemes><journee>Séance du jeudi 15 octobre 2026</journee></quantiemes>
+    <ouvertureSeance code_style="Présidence">
+      <orateurs/>
+      <texte>Présidence de Mme la présidente</texte>
+      <paragraphe code_style="NORMAL">
+        <orateurs><orateur><nom>Mme la présidente</nom><id>1</id><qualite/></orateur></orateurs>
+        <texte stime="1.0">La séance est ouverte.</texte>
+      </paragraphe>
+      <paragraphe code_style="Info Italiques">
+        <orateurs/>
+        <texte><italique>(La séance est ouverte à quinze heures.)</italique></texte>
+      </paragraphe>
+    </ouvertureSeance>
+    <point code_style="Titre">
+      <orateurs/>
+      <texte>Questions au Gouvernement</texte>
+      <paragraphe code_style="NORMAL">
+        <orateurs><orateur><nom>Mme la présidente</nom><id>1</id><qualite/></orateur></orateurs>
+        <texte>La parole est à M. Jean Exemple.</texte>
+      </paragraphe>
+      <interExtraction nom_orateur="M. Jean Exemple">
+        <paragraphe code_style="NORMAL">
+          <orateurs><orateur><nom>M. Jean Exemple</nom><id>2</id><qualite>rapporteur</qualite></orateur></orateurs>
+          <texte>Madame la ministre, voici le 1<exposant>er</exposant> point.<br/>Et voici le second. <italique>(Applaudissements sur quelques bancs.)</italique></texte>
+        </paragraphe>
+      </interExtraction>
+    </point>
+    <finSeance>
+      <paragraphe code_style="NORMAL">
+        <orateurs><orateur><nom>Mme la présidente</nom><id>1</id><qualite/></orateur></orateurs>
+        <texte>La séance est levée.</texte>
+      </paragraphe>
+    </finSeance>
+  </contenu>
+</compteRendu>

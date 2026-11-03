@@ -24,6 +24,7 @@ dependencies = [
     "torch",
     "matplotlib",
     "fasttext-numpy2>=0.10.4",
+    "mwparserfromhell>=0.7.2",
 ]
 
 [dependency-groups]

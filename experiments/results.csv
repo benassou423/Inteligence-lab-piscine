@@ -1,0 +1,3 @@
+run,date,mode,dataset_sha256,dataset_tokens,tokens_seen,val_bytes_per_token,bpb_global,bpb_encyclopedique,bpb_litteraire,bpb_presse,bpb_dialogue,train_s,total_s,device,notes
+rank_wiki,2026-11-03T20:47:03,proxy,52272853b9675b5c431988a90823f2174c6a07049145c1e85c7f3d82fe578f1f,25278893,25001984,3.6600,1.7467,1.6776,2.0121,1.5551,1.7368,583.9,626.1,mps,"classement : Wikipédia seule (data/raw, dump 2023) [proxy 25M, tok gpt4, mix c947e4e30f, shuffle]"
+rank_moliere,2026-11-03T20:57:47,proxy,836907b256e27db7be2128923de3fa2e69a74740df49672e242f0860d2c7cf23,373907,25001984,2.9751,6.3848,6.7705,5.8962,6.3196,6.5590,619.2,643.0,mps,"classement : Molière seul (corpus/moliere_train.txt) [proxy 25M, tok gpt4, mix 99e9d6ec9e, as_is]"

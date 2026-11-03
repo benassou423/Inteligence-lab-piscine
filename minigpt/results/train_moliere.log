@@ -1,0 +1,77 @@
+Entraînement : 25 pièces : LE MÉDECIN VOLANT, LA JALOUSIE DU BARBOUILLÉ, L'ÉTOURDI, LE DÉPIT AMOUREUX, LES PRÉCIEUSES RIDICULES, SGANARELLE OU LE COCU IMAGINAIRE, DON GARCIE DE NAVARRE, L'ÉCOLE DES MARIS, LES FACHEUX, L'ÉCOLE DES FEMMES, LA CRITIQUE DE L'ÉCOLE DES FEMMES, L'IMPROMPTU DE VERSAILLES, LE MARIAGE FORCÉ, LE BALLET DU MARIAGE FORCÉ, LA PRINCESSE D'ÉLIDE, LE FESTIN DE PIERRE, L'AMOUR MÉDECIN, LE MEDECIN MALGRE LUI, MÉLICERTE, LA PASTORALE COMIQUE, LE TARTUFFE, AMPHITRYON, GEORGE DANDIN, MONSIEUR DE POURCEAUGNAC, LES AMANS MAGNIFIQUES
+Validation : 3 pièces : LE MISANTHROPE, LE SICILIEN, L'AVARE
+BPE 2048 tokens : 475419 tokens de train, soit 232 occurrences par token en moyenne ; 3.10 octets par token en validation
+BPB validation : bigramme d'octets 3.354, bigramme de tokens 2.494
+Mini-GPT : 1071872 paramètres
+pas     0 | loss train 7.651 | loss val 7.651 |     1 s
+pas    50 | loss train 6.901 | loss val 6.895 |    13 s
+pas   100 | loss train 6.220 | loss val 6.230 |    24 s
+pas   150 | loss train 5.443 | loss val 5.447 |    38 s
+pas   200 | loss train 5.027 | loss val 5.049 |    50 s
+pas   250 | loss train 4.788 | loss val 4.845 |    62 s
+pas   300 | loss train 4.616 | loss val 4.696 |    75 s
+pas   350 | loss train 4.476 | loss val 4.572 |    88 s
+pas   400 | loss train 4.367 | loss val 4.494 |   100 s
+pas   450 | loss train 4.280 | loss val 4.432 |   112 s
+pas   500 | loss train 4.206 | loss val 4.378 |   126 s
+pas   550 | loss train 4.141 | loss val 4.343 |   143 s
+pas   600 | loss train 4.075 | loss val 4.303 |   159 s
+pas   650 | loss train 4.022 | loss val 4.251 |   171 s
+pas   700 | loss train 3.978 | loss val 4.213 |   182 s
+pas   750 | loss train 3.922 | loss val 4.195 |   195 s
+pas   800 | loss train 3.882 | loss val 4.172 |   205 s
+pas   850 | loss train 3.843 | loss val 4.134 |   214 s
+pas   900 | loss train 3.794 | loss val 4.098 |   228 s
+pas   950 | loss train 3.765 | loss val 4.091 |   244 s
+pas  1000 | loss train 3.732 | loss val 4.063 |   261 s
+pas  1050 | loss train 3.689 | loss val 4.060 |   280 s
+pas  1100 | loss train 3.656 | loss val 4.040 |   300 s
+pas  1150 | loss train 3.625 | loss val 4.021 |   317 s
+pas  1200 | loss train 3.599 | loss val 3.985 |   334 s
+pas  1250 | loss train 3.574 | loss val 3.968 |   347 s
+pas  1300 | loss train 3.554 | loss val 3.971 |   357 s
+pas  1350 | loss train 3.528 | loss val 3.949 |   364 s
+pas  1400 | loss train 3.510 | loss val 3.930 |   376 s
+pas  1450 | loss train 3.476 | loss val 3.909 |   391 s
+pas  1500 | loss train 3.456 | loss val 3.913 |   408 s
+pas  1550 | loss train 3.429 | loss val 3.892 |   424 s
+pas  1600 | loss train 3.413 | loss val 3.885 |   436 s
+pas  1650 | loss train 3.396 | loss val 3.894 |   448 s
+pas  1700 | loss train 3.372 | loss val 3.872 |   459 s
+pas  1750 | loss train 3.350 | loss val 3.846 |   470 s
+pas  1800 | loss train 3.338 | loss val 3.834 |   479 s
+pas  1850 | loss train 3.313 | loss val 3.814 |   486 s
+pas  1900 | loss train 3.294 | loss val 3.814 |   493 s
+pas  1950 | loss train 3.291 | loss val 3.818 |   499 s
+pas  2000 | loss train 3.279 | loss val 3.806 |   506 s
+pas  2050 | loss train 3.263 | loss val 3.803 |   512 s
+pas  2100 | loss train 3.242 | loss val 3.790 |   519 s
+pas  2150 | loss train 3.225 | loss val 3.796 |   528 s
+pas  2200 | loss train 3.212 | loss val 3.795 |   537 s
+pas  2250 | loss train 3.197 | loss val 3.787 |   545 s
+pas  2300 | loss train 3.187 | loss val 3.786 |   552 s
+pas  2350 | loss train 3.174 | loss val 3.771 |   560 s
+pas  2400 | loss train 3.167 | loss val 3.763 |   567 s
+pas  2450 | loss train 3.158 | loss val 3.757 |   574 s
+pas  2500 | loss train 3.140 | loss val 3.745 |   580 s
+pas  2550 | loss train 3.134 | loss val 3.754 |   586 s
+pas  2600 | loss train 3.123 | loss val 3.749 |   594 s
+pas  2650 | loss train 3.117 | loss val 3.740 |   601 s
+pas  2700 | loss train 3.109 | loss val 3.742 |   608 s
+pas  2750 | loss train 3.101 | loss val 3.730 |   615 s
+pas  2800 | loss train 3.091 | loss val 3.729 |   622 s
+pas  2850 | loss train 3.084 | loss val 3.725 |   630 s
+pas  2900 | loss train 3.081 | loss val 3.721 |   638 s
+pas  2950 | loss train 3.073 | loss val 3.721 |   645 s
+pas  3000 | loss train 3.068 | loss val 3.726 |   651 s
+pas  3050 | loss train 3.065 | loss val 3.718 |   657 s
+pas  3100 | loss train 3.059 | loss val 3.711 |   662 s
+pas  3150 | loss train 3.054 | loss val 3.713 |   668 s
+pas  3200 | loss train 3.055 | loss val 3.714 |   673 s
+pas  3250 | loss train 3.050 | loss val 3.714 |   679 s
+pas  3300 | loss train 3.047 | loss val 3.714 |   685 s
+pas  3350 | loss train 3.043 | loss val 3.710 |   690 s
+pas  3400 | loss train 3.040 | loss val 3.717 |   696 s
+pas  3401 | loss train 3.040 | loss val 3.716 |   696 s
+BPB validation du mini-GPT : 1.738
+Résultats dans minigpt/results/ (708 s)

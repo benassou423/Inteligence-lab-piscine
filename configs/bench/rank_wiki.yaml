@@ -1,0 +1,16 @@
+# Test de classement du proxy (1/2) : Wikipédia seule.
+#   uv run python -m bench.run --config configs/bench/rank_wiki.yaml
+# Attendu : BPB nettement meilleur (plus bas) que rank_moliere, au même budget.
+run: rank_wiki
+notes: "classement : Wikipédia seule (data/raw, dump 2023)"
+mix:
+  sources:
+    - name: wikipedia
+      path: data/raw/wikipedia_fr      # texte brut de la collecte (pas de sortie complète du pipeline)
+  max_bytes: 90000000                  # 90 Mo tirés au hasard : ~ le budget proxy, vu une fois
+  order: shuffle
+  tokenizer_sample_bytes: 50000000
+train:
+  mode: proxy
+  debug_budget: 25000000             # budget proxy conseillé (bench.throughput : ~12 min)
+  micro_batch: 16                    # le plus rapide sur MPS (même résultat que 64)

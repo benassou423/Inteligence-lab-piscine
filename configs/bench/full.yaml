@@ -1,0 +1,21 @@
+# Run complet (100 M tokens officiels, soumissible), sur Kaggle (GPU T4, float16 imposé par le kit, < 1 h).
+# Marche à suivre complète, avec reprise si la session coupe : docstring de bench/kaggle.py. En bref :
+#   1. Mac    : uv run python -m bench.run --config configs/bench/full.yaml --until prepare
+#   2. Mac    : uv run python -m bench.kaggle push --config configs/bench/full.yaml --dataset <hf>/ftb-dataset --runs <hf>/ftb-runs
+#   3. Kaggle : python kaggle.py run --dataset <hf>/ftb-dataset --runs <hf>/ftb-runs --kit kit --run full
+#   4. Mac    : uv run python -m bench.kaggle pull --runs <hf>/ftb-runs --run full, puis ftb.submit
+run: full
+notes: "complet : sortie finale de nettoye, proportions naturelles"
+mix:
+  sources:
+    - name: nettoye
+      pipeline: nettoye
+  # 420 Mo : ≥ 100 M tokens jusqu'à 4,2 octets/token. En dessous du budget, le kit relirait le DÉBUT
+  # du flux à la fin de l'entraînement ; au-dessus, avec `shuffle`, la fin non vue est un tirage au hasard.
+  max_bytes: 420000000
+  order: shuffle
+  tokenizer_sample_bytes: 100000000
+train:
+  mode: full                         # 100 007 936 tokens, aucun --debug-budget
+  device: auto                       # cuda sur Kaggle ; sur le Mac (mps, float32) le banc avertit
+  compile: true                      # plus rapide sur T4 (pas sur P100)
