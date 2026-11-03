@@ -1,0 +1,14 @@
+# Données et artefacts lourds : jamais dans git (dataset final publié sur Hugging Face)
+data/
+experiments/runs/
+*.bin
+*.pt
+*.ckpt
+
+# Environnement
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
