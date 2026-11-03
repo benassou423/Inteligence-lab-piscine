@@ -1,0 +1,185 @@
+{
+  "source": "Projet Gutenberg, Œuvres complètes de Molière (éd. Chasles, 1888), tomes 1 à 4",
+  "ebooks": [
+    "https://www.gutenberg.org/ebooks/40086",
+    "https://www.gutenberg.org/ebooks/43535",
+    "https://www.gutenberg.org/ebooks/50173",
+    "https://www.gutenberg.org/ebooks/57270"
+  ],
+  "licence": "Domaine public",
+  "traitement": "notices, notes et corrections du transcripteur retirées ; une pièce par bloc",
+  "pieces": [
+    {
+      "titre": "LE MÉDECIN VOLANT",
+      "ebook_gutenberg": 40086,
+      "split": "train",
+      "caracteres": 23658
+    },
+    {
+      "titre": "LA JALOUSIE DU BARBOUILLÉ",
+      "ebook_gutenberg": 40086,
+      "split": "train",
+      "caracteres": 21736
+    },
+    {
+      "titre": "L'ÉTOURDI",
+      "ebook_gutenberg": 40086,
+      "split": "train",
+      "caracteres": 110226
+    },
+    {
+      "titre": "LE DÉPIT AMOUREUX",
+      "ebook_gutenberg": 40086,
+      "split": "train",
+      "caracteres": 94858
+    },
+    {
+      "titre": "LES PRÉCIEUSES RIDICULES",
+      "ebook_gutenberg": 40086,
+      "split": "train",
+      "caracteres": 40701
+    },
+    {
+      "titre": "SGANARELLE OU LE COCU IMAGINAIRE",
+      "ebook_gutenberg": 40086,
+      "split": "train",
+      "caracteres": 37429
+    },
+    {
+      "titre": "DON GARCIE DE NAVARRE",
+      "ebook_gutenberg": 40086,
+      "split": "train",
+      "caracteres": 94580
+    },
+    {
+      "titre": "L'ÉCOLE DES MARIS",
+      "ebook_gutenberg": 43535,
+      "split": "train",
+      "caracteres": 62368
+    },
+    {
+      "titre": "LES FACHEUX",
+      "ebook_gutenberg": 43535,
+      "split": "train",
+      "caracteres": 47484
+    },
+    {
+      "titre": "L'ÉCOLE DES FEMMES",
+      "ebook_gutenberg": 43535,
+      "split": "train",
+      "caracteres": 95324
+    },
+    {
+      "titre": "LA CRITIQUE DE L'ÉCOLE DES FEMMES",
+      "ebook_gutenberg": 43535,
+      "split": "train",
+      "caracteres": 49393
+    },
+    {
+      "titre": "L'IMPROMPTU DE VERSAILLES",
+      "ebook_gutenberg": 43535,
+      "split": "train",
+      "caracteres": 44983
+    },
+    {
+      "titre": "LE MARIAGE FORCÉ",
+      "ebook_gutenberg": 43535,
+      "split": "train",
+      "caracteres": 39935
+    },
+    {
+      "titre": "LE BALLET DU MARIAGE FORCÉ",
+      "ebook_gutenberg": 43535,
+      "split": "train",
+      "caracteres": 6236
+    },
+    {
+      "titre": "LA PRINCESSE D'ÉLIDE",
+      "ebook_gutenberg": 43535,
+      "split": "train",
+      "caracteres": 67678
+    },
+    {
+      "titre": "LE FESTIN DE PIERRE",
+      "ebook_gutenberg": 50173,
+      "split": "train",
+      "caracteres": 103849
+    },
+    {
+      "titre": "L'AMOUR MÉDECIN",
+      "ebook_gutenberg": 50173,
+      "split": "train",
+      "caracteres": 40295
+    },
+    {
+      "titre": "LE MISANTHROPE",
+      "ebook_gutenberg": 50173,
+      "split": "val",
+      "caracteres": 95855
+    },
+    {
+      "titre": "LE MEDECIN MALGRE LUI",
+      "ebook_gutenberg": 50173,
+      "split": "train",
+      "caracteres": 59837
+    },
+    {
+      "titre": "MÉLICERTE",
+      "ebook_gutenberg": 50173,
+      "split": "train",
+      "caracteres": 32517
+    },
+    {
+      "titre": "LA PASTORALE COMIQUE",
+      "ebook_gutenberg": 50173,
+      "split": "train",
+      "caracteres": 7461
+    },
+    {
+      "titre": "LE SICILIEN",
+      "ebook_gutenberg": 50173,
+      "split": "val",
+      "caracteres": 33913
+    },
+    {
+      "titre": "LE TARTUFFE",
+      "ebook_gutenberg": 50173,
+      "split": "train",
+      "caracteres": 105163
+    },
+    {
+      "titre": "AMPHITRYON",
+      "ebook_gutenberg": 57270,
+      "split": "train",
+      "caracteres": 87668
+    },
+    {
+      "titre": "GEORGE DANDIN",
+      "ebook_gutenberg": 57270,
+      "split": "train",
+      "caracteres": 71021
+    },
+    {
+      "titre": "L'AVARE",
+      "ebook_gutenberg": 57270,
+      "split": "val",
+      "caracteres": 124964
+    },
+    {
+      "titre": "MONSIEUR DE POURCEAUGNAC",
+      "ebook_gutenberg": 57270,
+      "split": "train",
+      "caracteres": 80798
+    },
+    {
+      "titre": "LES AMANS MAGNIFIQUES",
+      "ebook_gutenberg": 57270,
+      "split": "train",
+      "caracteres": 77741
+    }
+  ],
+  "sha256": {
+    "moliere_train.txt": "a140c09cd253ba891e081ef246afeae6bbc99870fdaff3763d62ddd95973862e",
+    "moliere_val.txt": "e5dde8f5782f15943443cddb056bf9fd19efd67822b9e36a875e2c2970ede12c"
+  }
+}
