@@ -7,7 +7,7 @@ Tout le reste (nettoyage, déduplication, entraînement) part de là : si la col
 ## Comment ça marche
 - **Une commande par source** : `uv run python -m pipeline.collect <source> [--limit N]` (`all` = toutes, `stats` = tableau des volumes `docs/sources/volumes.md`). `--limit 200` fait un **échantillon** rapide.
 - **Un document = une ligne JSON** (`id` stable, `source`, `domain`, `text`, `url`, `date`, `license`, `meta`) dans `data/raw/<source>/part-NNNNN.jsonl.zst` (**≤ 100 Mo de texte** par fichier, compressé **zstd**).
-- **Gel au 16/10/2026** : tout document daté d'après est **écarté** et compté (22 séances, 2 livres). Le crawl Common Crawl est le dernier **fini avant** le gel. Rien d'autre n'est filtré (la décontamination contre la validation est une étape du nettoyage).
+- **Gel au 16/10/2026** : tout document daté d'après est **écarté** et compté (22 séances, 2 livres). Le crawl Common Crawl est le dernier **fini avant** le gel. Wikipédia exclut aussi les redirections, homonymies et textes vides ; la décontamination contre la validation reste une étape du nettoyage.
 - **Texte brut** : on garde menus, pieds de page, en-têtes Gutenberg. Les retirer = étapes de **nettoyage**, dont on mesure l'effet (**ablation**).
 - **Reprise et politesse** : travail découpé en **unités** (fichier, lot de livres) notées dans `_work/done.jsonl` ; **miroir officiel** Gutenberg, **1 requête/s** sur l'API Wikisource, **backoff** sur les erreurs 503, **opt-out TDM** respecté.
 
@@ -15,12 +15,14 @@ Tout le reste (nettoyage, déduplication, entraînement) part de là : si la col
 | Source | Domaine | Documents | Texte | D'où vient le chiffre |
 |---|---|---:|---:|---|
 | Assemblée nationale | dialogue | 1 550 séances | 318 Mo | open data XML, 15e (partielle) à 17e législature |
-| Wikipédia | encyclopédique | 2,56 M articles | 7,8 Go | dump 2023-11-01 (HF `wikimedia/wikipedia`) |
+| Wikipédia | encyclopédique | 2 641 265 articles | 8,91 Go | dump officiel `frwiki-20261001`, rendu local |
 | Gutenberg | littéraire | 4 228 livres | 1,8 Go | catalogue du 2026-11-01, langue `fr` |
-| Wikisource | littéraire | 20 554 livres + 1 046 pages | 5,3 Go | dump 2026-10-01, pages **relues** (niveau ≥ 3) |
-| Wikinews | presse | 20 428 articles | 32 Mo | dump 2026-10-01 (site fermé en mai 2026) |
+| Wikisource | littéraire | 21 597 textes | 5,3 Go | dump 2026-10-01, pages **relues** (niveau ≥ 3) |
+| Wikinews | presse | 20 419 articles | 32 Mo | dump 2026-10-01 (site fermé en mai 2026) |
 | Common Crawl | web | 11 865 pages | 86 Mo | 10 WARC de CC-MAIN-2026-39 ; **5,5 %** des pages HTML sont françaises |
 | FineWeb-2 | web | 522 923 pages | 1,8 Go | 8 fichiers sur 135, à pas régulier |
+
+- Archive d’ablation : `wikipedia_fr_hf2023` conserve 2 564 645 articles / 7,81 Go de texte. Elle est exclue du corpus actif. Voir [le rendu des modèles](wikipedia_modeles.md).
 
 - La **validation du kit** vient de nos sources (Assemblée, Wikipédia, Gutenberg, Wikinews) : l'Assemblée est écrite **au même format** (« M. Nom : propos », ligne vide entre interventions) et chaque document garde sa **date** pour la **décontamination** (faite au nettoyage).
 - **cld2** : détecteur de langue de Google, déjà lancé par Common Crawl (champ `languages-cld2` du WARC).

@@ -7,6 +7,7 @@ from pipeline.collect.common import load_config, run_source
 
 MODULES = {
     "wikipedia_fr": "pipeline.collect.wikipedia",
+    "wikipedia_fr_hf2023": "pipeline.collect.wikipedia_hf2023",
     "wikisource_fr": "pipeline.collect.wikisource",
     "gutenberg_fr": "pipeline.collect.gutenberg",
     "wikinews_fr": "pipeline.collect.wikinews",

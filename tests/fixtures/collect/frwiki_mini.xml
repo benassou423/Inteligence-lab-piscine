@@ -1,0 +1,9 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/">
+<page><title>Algorithme</title><ns>0</ns><id>1</id><revision><timestamp>2026-09-30T12:30:00Z</timestamp><text>L'algorithme compte {{nombre|4200}} éléments le {{date|1|2|2000}}.</text></revision></page>
+<page><title>Renvoi</title><ns>0</ns><id>2</id><redirect title="Algorithme"/><revision><timestamp>2026-09-30T00:00:00Z</timestamp><text>#REDIRECTION [[Algorithme]]</text></revision></page>
+<page><title>Homonyme</title><ns>0</ns><id>3</id><revision><timestamp>2026-09-30T00:00:00Z</timestamp><text>{{Homonymie}} Divers sens.</text></revision></page>
+<page><title>Tardif</title><ns>0</ns><id>4</id><revision><timestamp>2026-10-02T00:00:00Z</timestamp><text>Texte après le dump.</text></revision></page>
+<page><title>Modèle:Date</title><ns>10</ns><id>5</id><revision><timestamp>2026-09-30T00:00:00Z</timestamp><text>Modèle à ignorer.</text></revision></page>
+<page><title>Sans date</title><ns>0</ns><id>6</id><revision><text>Texte sans date.</text></revision></page>
+<page><title>Au seuil</title><ns>0</ns><id>7</id><revision><timestamp>2026-10-01T23:59:59Z</timestamp><text>Encore le premier octobre.</text></revision></page>
+</mediawiki>

@@ -1,0 +1,242 @@
+[
+  {
+    "wikitext": "L'''algorithmique''' est utile.",
+    "expected": "L'algorithmique est utile."
+  },
+  {
+    "wikitext": "L''''algorithmique''' est utile.",
+    "expected": "L'algorithmique est utile."
+  },
+  {
+    "wikitext": "D'''autres''' choses.",
+    "expected": "D'autres choses."
+  },
+  {
+    "wikitext": "Le '''logiciel''' reste.",
+    "expected": "Le logiciel reste."
+  },
+  {
+    "wikitext": "'''L'algèbre''' reste.",
+    "expected": "L'algèbre reste."
+  },
+  {
+    "wikitext": "{{date|1|2|2000}}",
+    "expected": "1er février 2000"
+  },
+  {
+    "wikitext": "{{date|02|février|2000|en science}}",
+    "expected": "2 février 2000"
+  },
+  {
+    "wikitext": "{{date|2000-02-01}}",
+    "expected": "1er février 2000"
+  },
+  {
+    "wikitext": "{{date|1 janvier 2000|en sport}}",
+    "expected": "1er janvier 2000"
+  },
+  {
+    "wikitext": "{{date-|2|2000}}",
+    "expected": "février 2000"
+  },
+  {
+    "wikitext": "{{date|2000}}",
+    "expected": "2000"
+  },
+  {
+    "wikitext": "{{date de naissance|4|juillet|1982}}",
+    "expected": "4 juillet 1982"
+  },
+  {
+    "wikitext": "{{date de décès|1 février 2000|âge=oui}}",
+    "expected": "1er février 2000"
+  },
+  {
+    "wikitext": "{{nombre|1234567}}",
+    "expected": "1 234 567"
+  },
+  {
+    "wikitext": "{{nombre|1=12345}}",
+    "expected": "12 345"
+  },
+  {
+    "wikitext": "{{formatnum:1234567.89}}",
+    "expected": "1 234 567,89"
+  },
+  {
+    "wikitext": "{{unité|12.5|km|2}}",
+    "expected": "12,5 km²"
+  },
+  {
+    "wikitext": "{{unité|10000|km||h|-1}}",
+    "expected": "10 000 km h⁻¹"
+  },
+  {
+    "wikitext": "{{unité|1.23e9|J}}",
+    "expected": "1,23 × 10⁹ J"
+  },
+  {
+    "wikitext": "{{unité|12|×=6|××=2,3|cm}}",
+    "expected": "12 × 6 × 2,3 cm"
+  },
+  {
+    "wikitext": "{{nobr|1=12000 habitants}}",
+    "expected": "12000 habitants"
+  },
+  {
+    "wikitext": "{{lang|la|rosa}}",
+    "expected": "rosa"
+  },
+  {
+    "wikitext": "{{lang|fr|texte=bonjour}}",
+    "expected": "bonjour"
+  },
+  {
+    "wikitext": "{{japonais|Tokyo|東京|Tōkyō}}",
+    "expected": "Tokyo (東京, Tōkyō)"
+  },
+  {
+    "wikitext": "{{japonais|Ichirō|一郎}} est footballeur.",
+    "expected": "Ichirō (一郎) est footballeur."
+  },
+  {
+    "wikitext": "{{s|I}} et {{s-|IV}}",
+    "expected": "Ier siècle et IVe siècle"
+  },
+  {
+    "wikitext": "{{s2|XIX|XX}}",
+    "expected": "XIXe et XXe siècles"
+  },
+  {
+    "wikitext": "1{{er}} et 2{{e}} et {{1er}}",
+    "expected": "1er et 2e et 1er"
+  },
+  {
+    "wikitext": "{{heure|12|30|15}}",
+    "expected": "12 h 30 min 15 s"
+  },
+  {
+    "wikitext": "{{citation|Oui {{nombre|42}} fois.}}",
+    "expected": "« Oui 42 fois. »"
+  },
+  {
+    "wikitext": "{{population|12345}}",
+    "expected": "12 345"
+  },
+  {
+    "wikitext": "{{Infobox Ville|population=4200}}La population était de {{Population}}.",
+    "expected": "La population était de 4 200."
+  },
+  {
+    "wikitext": "Texte<ref>{{date|1|1|2000}}</ref>[[Fichier:X.jpg]][[Catégorie:Y]]",
+    "expected": "Texte"
+  },
+  {
+    "wikitext": "Avant\n{| class=\"wikitable\"\n| 42\n|}\nAprès",
+    "expected": "Avant\n\nAprès"
+  },
+  {
+    "wikitext": "{{Infobox Personnalité|nom=SECRET}}{{Palette|SECRET}}{{Portail|SECRET}}Un texte.",
+    "expected": "Un texte."
+  },
+  {
+    "wikitext": "{{Mystère|123}}",
+    "expected": "123"
+  },
+  {
+    "wikitext": "{{Mystère sans argument}}",
+    "expected": ""
+  },
+  {
+    "wikitext": "{{small|{{Mystère|42}}}}",
+    "expected": "42"
+  },
+  {
+    "wikitext": "L{{'}}'''algorithmique'''",
+    "expected": "L'algorithmique"
+  },
+  {
+    "wikitext": "{{s-|XIX}}",
+    "expected": "XIXe siècle"
+  },
+  {
+    "wikitext": "{{-s-|IV}}",
+    "expected": "IVe siècle av. J.-C."
+  },
+  {
+    "wikitext": "{{s2|I|er|II|e}}",
+    "expected": "Ier et IIe siècles"
+  },
+  {
+    "wikitext": "{{sp|XIX|-|XX|s}}",
+    "expected": "XIXe - XXe siècles"
+  },
+  {
+    "wikitext": "{{XIXe siècle}}",
+    "expected": "XIXe siècle"
+  },
+  {
+    "wikitext": "{{XVIe|s}}",
+    "expected": "XVIe siècle"
+  },
+  {
+    "wikitext": "{{2e|division}}",
+    "expected": "2e division"
+  },
+  {
+    "wikitext": "{{date+|1|2|2000}}",
+    "expected": "1er février 2000"
+  },
+  {
+    "wikitext": "{{Lien|langue=en|trad=Akira Nakashima}}",
+    "expected": "Akira Nakashima"
+  },
+  {
+    "wikitext": "<math>x+2</math>",
+    "expected": "x+2"
+  },
+  {
+    "wikitext": "{{noble|Albert II (prince de Monaco)}}",
+    "expected": "Albert II"
+  },
+  {
+    "wikitext": "{{date|21 juin 1940-}}",
+    "expected": "21 juin"
+  },
+  {
+    "wikitext": "{{date|25|mars-|1990-}}",
+    "expected": "25"
+  },
+  {
+    "wikitext": "{{date|14|mars|-44}}",
+    "expected": "14 mars 44 av. J.-C."
+  },
+  {
+    "wikitext": "unité{{etc.}}",
+    "expected": "unité, etc."
+  },
+  {
+    "wikitext": "[https://example.org]",
+    "expected": "https://example.org"
+  },
+  {
+    "wikitext": "{{Brésil}} ; {{Pérou}}",
+    "expected": "Brésil ; Pérou"
+  },
+  {
+    "wikitext": "{{code aéroport|RCQ|SATR}}",
+    "expected": "(AITA : RCQ, OACI : SATR)"
+  },
+  {
+    "wikitext": "diversité, {{page h'|série chimique}}, etc.",
+    "expected": "diversité, série chimique, etc."
+  },
+  {
+    "wikitext": "réactance{{etc}}",
+    "expected": "réactance, etc."
+  },
+  {
+    "wikitext": "nombre, {{etc.}}",
+    "expected": "nombre, etc."
+  }
+]

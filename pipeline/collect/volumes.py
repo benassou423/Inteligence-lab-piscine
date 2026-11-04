@@ -35,7 +35,11 @@ def write_volumes(cfg) -> str:
     from pipeline.collect.__main__ import MODULES
 
     rows, tot = [], {"docs": 0, "bytes": 0, "disk": 0}
-    for name in cfg.get("order", MODULES):
+    active = dict(tot)
+    archives = []
+    # Une source désactivée peut être une archive déjà présente : elle occupe du disque.
+    names = dict.fromkeys([*cfg.get("order", MODULES), *cfg.get("sources", {})])
+    for name in names:
         if name == "moliere" or name not in MODULES:
             continue
         v = source_volume(name)
@@ -43,12 +47,21 @@ def write_volumes(cfg) -> str:
             continue
         domain = importlib.import_module(MODULES[name]).DOMAIN
         period = f"{v['date_min']} → {v['date_max']}" if v["date_min"] else "—"
-        rows.append(f"| `{name}` | {domain} | {v['mode']} | {v['docs']:,} | {v['bytes'] / 1e6:,.1f} | {period} | "
+        enabled = cfg.get("sources", {}).get(name, {}).get("enabled", True)
+        mode = v["mode"] if enabled else v["mode"] + " · archive"
+        if not enabled:
+            archives.append(name)
+        rows.append(f"| `{name}` | {domain} | {mode} | {v['docs']:,} | {v['bytes'] / 1e6:,.1f} | {period} | "
                     f"{v['files']} | {v['disk'] / 1e6:,.0f} |".replace(",", " "))
         for k in tot:
             tot[k] += v[k]
+            if enabled:
+                active[k] += v[k]
     budget = float(cfg.get("raw_budget_gb", 30))
+    raw_disk = sum(p.stat().st_size for p in source_dir("").rglob("*") if p.is_file())
     lines = [
+        "Prochaine action : comparer les volumes actifs et les archives — 1 min.",
+        "",
         "# Volumes collectés (`data/raw/`)",
         "",
         f"Généré par `uv run python -m pipeline.collect stats` le {now_iso()[:16].replace('T', ' ')}. "
@@ -59,11 +72,18 @@ def write_volumes(cfg) -> str:
         "| Source | Domaine | État | Documents | Mo de texte | Période couverte | Fichiers | Disque (Mo, zstd) |",
         "|---|---|---|---:|---:|---|---:|---:|",
         *rows,
-        f"| **Total** | | | **{tot['docs']:,}** | **{tot['bytes'] / 1e6:,.1f}** | | | **{tot['disk'] / 1e6:,.0f}** |"
+        f"| **Total stocké (archives comprises)** | | | **{tot['docs']:,}** | **{tot['bytes'] / 1e6:,.1f}** | | | **{tot['disk'] / 1e6:,.0f}** |"
         .replace(",", " "),
         "",
-        f"Budget disque de `data/raw/` : {tot['disk'] / 1e9:.1f} Go utilisés sur {budget:.0f} Go.",
+        f"Corpus actif : **{active['docs']:,} documents** ; **{active['bytes'] / 1e6:,.1f} Mo de texte**."
+        .replace(",", " "),
+        "",
+        f"Budget disque de `data/raw/` : **{raw_disk / 1e9:.2f} Go utilisés sur {budget:.0f} Go**, "
+        "fichiers de travail et journaux compris.",
     ]
+    if archives:
+        lines += ["", "Archives exclues de la collecte `all` et du corpus actif : "
+                  + ", ".join(f"`{name}`" for name in archives) + "."]
     mol = read_json(ROOT / "data" / "moliere" / "_stats.json")
     if mol:
         n = lambda x: f"{x:,}".replace(",", " ")  # noqa: E731

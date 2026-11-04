@@ -8,7 +8,7 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 from lxml import etree
 
-from pipeline.collect import assemblee, gutenberg, moliere, wikipedia
+from pipeline.collect import assemblee, gutenberg, moliere, wikipedia_hf2023
 from pipeline.collect.common import Tally
 
 FIX = Path(__file__).parent / "fixtures" / "collect"
@@ -91,9 +91,9 @@ def test_wikipedia_docs_from_parquet(tmp_path):
     ctx = {"dump_date": "2023-11-01", "batch": 10, "repo": "wikimedia/wikipedia", "config": "20231101.fr",
            "revision": "abc"}
     tally = Tally()
-    docs = list(wikipedia._docs_from_table(pq.ParquetFile(tmp_path / "x.parquet"), ctx, tally))
+    docs = list(wikipedia_hf2023._docs_from_table(pq.ParquetFile(tmp_path / "x.parquet"), ctx, tally))
     assert len(docs) == 1 and tally.removed == {"texte_vide": 1}
-    assert docs[0]["id"] == "wikipedia_fr:3" and docs[0]["meta"]["title"] == "A"
+    assert docs[0]["id"] == "wikipedia_fr_hf2023:3" and docs[0]["meta"]["title"] == "A"
     assert docs[0]["license"] == "CC BY-SA 4.0" and docs[0]["date"] == "2023-11-01"
 
 

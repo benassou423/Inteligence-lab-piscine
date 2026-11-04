@@ -10,7 +10,8 @@ en minuscules (regex \\w+), hachés par `ftb.contamination.ngram_hashes`.
      document de val -> retiré en entier (séance, livre ou article source de la val) ;
    - **formules** : un 13-gramme présent dans >= `formula_min_docs` (20) documents
      d'entraînement est une formule (« le scrutin est annoncé dans l'enceinte de
-     l'Assemblée nationale ») et non une fuite : il reste ;
+     l'Assemblée nationale ») : il reste seulement si l'ensemble de ces exemptions
+     ne dépasse pas le seuil officiel de recouvrement d'un document de val ;
    - **recouvrement résiduel** : les lignes qui portent les autres 13-grammes partagés
      sont retirées, le reste du document est gardé.
 
@@ -129,6 +130,8 @@ class DecontaminateStage(Stage):
         self.decisions = {}
         self.formulas = set()
         self.df = Counter()
+        self.guarded_val_docs = set()
+        self.unexempted_formulas = 0
 
     def setup(self):
         if self.index is None:
@@ -155,6 +158,16 @@ class DecontaminateStage(Stage):
         self.setup()
         self.df = Counter(h for _, _, data in scanned for _, hs in data["records"] for h in hs)
         self.formulas = {h for h, c in self.df.items() if c >= self.formula_min_docs}
+        # Des phrases répétées dans beaucoup d'articles peuvent, ensemble, recouvrir
+        # trop de validation. La fréquence ne doit pas contourner le contrôle du kit.
+        from ftb.contamination import FLAG
+
+        covered = Counter(i for h in self.formulas for i in self.index.owner[h.to_bytes(8, "big")])
+        self.guarded_val_docs = {i for i, k in covered.items() if k / max(1, self.index.sizes[i]) > FLAG}
+        unsafe = {h for h in self.formulas
+                  if any(i in self.guarded_val_docs for i in self.index.owner[h.to_bytes(8, "big")])}
+        self.unexempted_formulas = len(unsafe)
+        self.formulas -= unsafe
         self.decisions = {}
         for unit_key, source, data in scanned:
             for line, hs in data["records"]:
@@ -212,12 +225,17 @@ class DecontaminateStage(Stage):
         report = {"docs_with_overlap": len(self.decisions), "actions": dict(actions),
                   "n_formulas": len(self.formulas), "formula_min_docs": self.formula_min_docs,
                   "doc_min_coverage": self.doc_min_coverage,
+                  "formula_guard_val_ids": [self.index.docs[i].get("id") for i in sorted(self.guarded_val_docs)],
+                  "unexempted_formulas": self.unexempted_formulas,
                   "top_formulas": [{"docs": c, "text": self.index.text_of.get(h.to_bytes(8, "big"), "")}
                                    for c, h in top] if self.index else []}
         lines = [f"Documents qui partagent au moins un 13-gramme avec la val : **{len(self.decisions)}** "
                  f"(copies retirées {actions.get('copy', 0)}, lignes retirées dans {actions.get('mask', 0)}, "
                  f"formules seules {actions.get('formula_only', 0)}). "
                  f"Formules (13-grammes dans >= {self.formula_min_docs} documents) : {len(self.formulas)}.", ""]
+        if self.unexempted_formulas:
+            lines += [f"Exemptions retirées pour respecter le seuil officiel : {self.unexempted_formulas} "
+                      f"13-grammes, sur {len(self.guarded_val_docs)} document(s) de validation.", ""]
         if report["top_formulas"]:
             lines += ["| Documents | Formule la plus fréquente |", "|--:|---|"]
             lines += [f"| {t['docs']} | {t['text']} |" for t in report["top_formulas"]]

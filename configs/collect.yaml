@@ -11,6 +11,13 @@ order: [assemblee_nationale, wikipedia_fr, wikisource_fr, gutenberg_fr, wikinews
 
 sources:
   wikipedia_fr:
+    dump: "20261001"
+    base_url: https://dumps.wikimedia.org/frwiki
+    min_chars: 1                  # pas de filtre qualité caché dans la collecte
+    workers: 4                   # 2 téléchargements simultanés au plus
+
+  wikipedia_fr_hf2023:
+    enabled: false  # archive pour ablation, lancement explicite seulement
     repo: wikimedia/wikipedia
     config: "20231101.fr"          # seule config française du dépôt (vérifié le 2026-11-03)
     revision: b04c8d1ceb2f5cd4588862100d08de323dccfbaa   # commit figé du dépôt HF

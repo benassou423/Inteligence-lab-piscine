@@ -3,7 +3,8 @@
 # Fiches explicatives : docs/comprendre/{pipeline,encodage,boilerplate,langue,reflow,decontamination,dedup_exacte}.md
 name: nettoye
 input: data/raw
-sources: all
+# Archive HF 2023 : voir nettoye_hf2023.yaml (sortie distincte).
+sources: [wikipedia_fr, wikinews_fr, wikisource_fr, gutenberg_fr, assemblee_nationale, fineweb2_fra, commoncrawl]
 # En cas de doublon exact, la source listée en premier garde le document
 # (sources soignées d'abord, web en dernier). Les sources non listées passent après.
 source_order: [wikipedia_fr, wikinews_fr, wikisource_fr, gutenberg_fr, assemblee_nationale, fineweb2_fra, commoncrawl]

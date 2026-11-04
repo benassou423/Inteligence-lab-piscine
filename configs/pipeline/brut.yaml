@@ -4,7 +4,8 @@
 # sans décontamination, ce run apprendrait des copies de la val et son BPB serait faux.
 name: brut
 input: data/raw
-sources: all
+# HF 2023 reste disponible avec --sources wikipedia_fr_hf2023, hors corpus principal.
+sources: [wikipedia_fr, wikinews_fr, wikisource_fr, gutenberg_fr, assemblee_nationale, fineweb2_fra, commoncrawl]
 # Ordre des sources (affichage, et priorité en cas de doublon dans les configs qui dédupliquent).
 source_order: [wikipedia_fr, wikinews_fr, wikisource_fr, gutenberg_fr, assemblee_nationale, fineweb2_fra, commoncrawl]
 stages:

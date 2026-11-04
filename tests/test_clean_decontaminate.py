@@ -13,7 +13,9 @@ from pipeline.run import Context  # noqa: E402
 FORMULE = "Le scrutin est annoncé dans l'enceinte de l'Assemblée nationale et la parole est au rapporteur"
 VAL = [
     {"id": "v1", "genre": "dialogue", "text": FORMULE + ". Mme Durand : Le budget des écoles rurales baisse "
-     "encore cette année alors que les classes sont pleines et que les maires ne savent plus comment faire."},
+     "encore cette année alors que les classes sont pleines et que les maires ne savent plus comment faire. "
+     "La commission demande ensuite aux responsables locaux un état détaillé des bâtiments disponibles, "
+     "des travaux nécessaires et des effectifs prévus pour chaque commune durant les prochaines années."},
     {"id": "v2", "genre": "presse", "text": "Un violent orage a frappé la ville de Tours dans la nuit de mardi à "
      "mercredi, privant d'électricité plus de dix mille foyers selon le gestionnaire du réseau électrique."},
 ]
@@ -70,9 +72,31 @@ def test_copie_formule_et_masquage(tmp_path):
     # le recouvrement résiduel avec v1 se limite aux formules (< 10 % du document de val)
     kept = [o.doc["text"] for o in out if o.keep]
     union = set().union(*(st.index.shared(t) for t in kept))
-    assert len(union & set(st.index.owner)) / st.index.sizes[0] < 0.5
+    assert len(union & set(st.index.owner)) / st.index.sizes[0] <= ftb_contamination.FLAG
     report, md = st.finalize([], {})
     assert report["actions"] == {"copy": 1, "formula_only": 3, "mask": 1} and "Formule" in md
+
+
+def test_frequent_fragments_cannot_collectively_contaminate_validation(tmp_path):
+    """Deux blocs fréquents restent chacun sous 20 %, mais leur union dépasse les 10 % du kit."""
+    words = [f"mot{i}" for i in range(100)]
+    ref = tmp_path / "reference.jsonl"
+    ref.write_text(json.dumps({"id": "v", "genre": "encyclopedique", "text": " ".join(words)}) + "\n")
+    stage = DecontaminateStage({"against": str(ref), "formula_min_docs": 3},
+                              Context(root=tmp_path, config_name="t", sources=["s"]))
+    stage.setup()
+    train = [{"id": f"s:{i}", "text": "Introduction à garder.\n" + " ".join(words[start:start+20])}
+             for i, start in enumerate([0, 0, 0, 30, 30, 30])]
+    records = [[i, stage.scan_doc(d)] for i, d in enumerate(train)]
+    assert all(len(hits) / stage.index.sizes[0] < stage.doc_min_coverage for _, hits in records)
+    before = set().union(*(set(hits) for _, hits in records))
+    assert len(before) / stage.index.sizes[0] > ftb_contamination.FLAG
+    stage.plan([("s/part", "s", {"n": len(train), "records": records})])
+    result = [stage.apply_at(dict(d), "s/part", i) for i, d in enumerate(train)]
+    assert all(o.keep and o.doc["text"] == "Introduction à garder." for o in result)
+    assert not set().union(*(stage.index.shared(o.doc["text"]) for o in result))
+    report, _ = stage.finalize([], {})
+    assert report["formula_guard_val_ids"] == ["v"] and report["unexempted_formulas"] == 16
 
 
 def test_couverture_part_la_plus_grande_et_ordre_indifferent():
