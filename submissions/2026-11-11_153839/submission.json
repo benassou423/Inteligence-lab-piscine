@@ -1,0 +1,18 @@
+{
+  "participant": "Benjamin Assouline",
+  "submitted": "2026-11-11T15:38:39+01:00",
+  "kit_version": "1.0",
+  "val_bpb": 1.2882923104766877,
+  "val_bpb_par_genre": {
+    "dialogue": 1.088305894458118,
+    "encyclopedique": 1.3689058988933267,
+    "litteraire": 1.4501690588992178,
+    "presse": 1.248182062835742
+  },
+  "dataset_sha256": "b88033ad2fbad01d1e1da101da4de4ce07a39c9a2060170ba0712705ab4ba8ee",
+  "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+  "dataset_url": "https://github.com/benassou423/Inteligence-lab-piscine/releases/download/ftb-final-20261110/train.jsonl.gz",
+  "note": "Référence nettoyée, frwiki20261001, masquage structuré ; budget officiel 100M ; MPS float32, comparaison T4 non effectuée",
+  "device": "mps",
+  "train_time_s": 2039.9
+}

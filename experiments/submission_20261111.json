@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-11",
+  "submission": "submissions/2026-11-11_153839",
+  "participant": "Benjamin Assouline",
+  "tokens_seen": 100007936,
+  "n_params": 10166400,
+  "validation_bpb": 1.2882923104766877,
+  "device": "mps",
+  "precision": "torch.float32",
+  "dataset_url": "https://github.com/benassou423/Inteligence-lab-piscine/releases/download/ftb-final-20261110/train.jsonl.gz",
+  "dataset_sha256": "b88033ad2fbad01d1e1da101da4de4ce07a39c9a2060170ba0712705ab4ba8ee",
+  "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+  "public_dataset_assets_verified": 10,
+  "public_dataset_token_stream_reproduced": true,
+  "model_weights_verified": true,
+  "files_sha256": {
+    "data_meta.json": "d8d1f9d6ccd2255e480bdcb745a911dd89b305a83768f6d3fb9b3d5978d1398c",
+    "tokenizer.json": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+    "train_log.jsonl": "5c80709ef54d4d1c088c10978f82e6943a1a4dfee440c4448a820afbfc989793",
+    "submission.json": "9c1f2d0a9dcaee00ebfe1f0a5fbb6f22a03280c1448908faf0358c43410739e5",
+    "ckpt.pt": "1d8d8b5fdb3578dd6b245088fb6c9216885dd588625bfa9e9c18c20243b1553f",
+    "samples.txt": "2d5ea2b70acdff85a88f006dd534dfa475e4ffcaf917770c8a78a7ae9c8bae95"
+  },
+  "tests_passed": 360,
+  "validation_contamination_flagged": 0,
+  "kit_files_unchanged": 18,
+  "organizer_hidden_score": null,
+  "organizer_t4_retraining_verified": false
+}

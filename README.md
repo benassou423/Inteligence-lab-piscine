@@ -10,6 +10,19 @@ Piscine I Lab (ECE Paris), 16/10 → 16/11/2026. Le modèle et le budget sont le
 | 2. Pipeline de données | `pipeline/` | collecte → nettoyage → déduplication → filtrage qualité |
 | 3. Compétition | `bench/` | tokenizer 8 192, entraînement, BPB par domaine |
 
+## Première soumission officielle — 11/11/2026
+
+Le paquet est dans [submissions/2026-11-11_153839](submissions/2026-11-11_153839) : modèle, tokenizer,
+journaux, métadonnées et cinq générations. Il a été créé par `ftb.submit` sans
+modifier le kit. Entraînement Mac MPS float32 : **100 007 936 tokens vus**, score
+public de validation **1,288292 BPB**. Le score du test caché et le contrôle T4
+relèvent de l'organisateur et ne sont pas encore attestés.
+
+Le [dataset final](https://github.com/benassou423/Inteligence-lab-piscine/releases/tag/ftb-final-20261110)
+contient 72 612 documents et 114 701 016 tokens disponibles. Ses dix fichiers ont
+été téléchargés sans authentification et vérifiés ; la préparation des fichiers
+retéléchargés reproduit la même empreinte `b88033ad2fba…`.
+
 ## Démarrage
 
 Depuis le dossier `Inteligence-lab-piscine`, sur macOS/Linux :

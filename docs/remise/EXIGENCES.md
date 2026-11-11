@@ -1,4 +1,4 @@
-Prochaine action : publier le dataset et déposer le modèle Mac ; accord de Ben reçu le 11/11.
+Prochaine action : préparer la soutenance ; première soumission Mac publiée le 11/11, contrôle T4 et classement caché à venir.
 
 # Audit de remise - 11/11/2026
 
@@ -40,10 +40,10 @@ Les consignes sont conservées dans CONSIGNES_TRANSMISES.md. Un export local ne 
 | Logs, versions et cinq générations | Conservés | Run final, CSV d'expériences, metadata et samples.txt |
 | Vérification CUDA préalable | Facultative, non exécutée | Modèle Mac retenu par Ben le 11/11 ; ftb.submit n’impose pas CUDA. Le paquet PC reste disponible en option |
 | Réentraînement T4 à ±0,02 BPB | Non attesté | Le résultat MPS et la conversion des poids ne prouvent pas l'équivalence d'un entraînement CUDA |
-| Paquet produit par le kit | Brouillon local créé | submission_mac_masked/2026-11-10_202610 ; poids convertis réévalués |
-| URL du dataset | Prévue, non publiée | GitHub Release ftb-final-20261110, aucune accessibilité distante revendiquée |
-| Dépôt officiel | Pas encore effectué | Zéro soumission distante ; ne pas confondre exports locaux et limite de deux dépôts/jour |
-| Commit et push | Autorisés le 11/11 | Suppression personnelle déjà poussée ; lot de sources et soumission à envoyer après contrôles |
+| Paquet produit par le kit | Créé et publié | submissions/2026-11-11_153839 ; tous les poids exportés concordent avec les poids entraînés convertis en float16 |
+| URL du dataset | Publiée et vérifiée | GitHub Release ftb-final-20261110, dix fichiers retéléchargés sans authentification ; empreintes et flux de tokens identiques |
+| Dépôt officiel | Première soumission du 11/11 | Dossier submissions/2026-11-11_153839 publié sur le dépôt pour collecte par le mentor ; évaluation cachée non encore attestée |
+| Commit et push | Réalisés avec accord du 11/11 | Sources, documents et paquet officiel présents sur main ; contrôles de branche distante et des fichiers publiés |
 
 ## Livrables et soutenance
 
@@ -55,7 +55,7 @@ Les consignes sont conservées dans CONSIGNES_TRANSMISES.md. Un export local ne 
 | Datasheet et carte | Préparées | output/pdf/datasheet.pdf, DATASET_CARD.md ; licences déclarées distinctes d'une validation juridique indépendante |
 | Support oral | Sauvegardé, modifiable | 14 diapositives, graphiques/tableaux natifs et notes actualisées |
 | Appropriation orale | À vérifier avec Ben | Les supports ne démontrent pas la compréhension de chaque ligne à sa place |
-| Dépôt effectif avant le 16/11 | À effectuer | Mise à disposition des données, contrôle GPU et autorisations de commit/push |
+| Dépôt effectif avant le 16/11 | Première remise le 11/11 | Dataset public et soumission Mac ; contrôle préalable CUDA facultatif, réentraînement T4 de l’orga non attesté |
 
 Les mélanges, répétitions, ordre des données et comparaison HF2023/dump2026 à
 recette identique restent des pistes supplémentaires, non présentées comme réalisées.

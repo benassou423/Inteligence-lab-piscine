@@ -1,0 +1,19 @@
+{
+  "kit_version": "1.0",
+  "tokenizers_version": "0.23.3",
+  "dataset_sha256": "b88033ad2fbad01d1e1da101da4de4ce07a39c9a2060170ba0712705ab4ba8ee",
+  "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+  "n_documents": 72612,
+  "n_tokens": 114701016,
+  "n_bytes": 419295632,
+  "bytes_per_token": 3.6556,
+  "budget_tokens": 100000000,
+  "passes_over_data": 0.872,
+  "inputs": [
+    {
+      "path": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/mixes/full_reference_masked_20261110/train.jsonl.gz",
+      "size": 155287288
+    }
+  ],
+  "created": "2026-11-10T19:36:07+0100"
+}
