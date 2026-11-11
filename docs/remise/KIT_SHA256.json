@@ -1,0 +1,23 @@
+{
+  "official_commit": "3709c85",
+  "files": {
+    "ftb/submit.py": "88308641e3235cca9fb8ffcb806f06bcfb94d5dea305a9169b9e8e2d394f81ad",
+    "ftb/contamination.py": "c1c0af12578053590bda8f24eb4a9221313d233ffea55c114dad6c4268e94978",
+    "ftb/__init__.py": "d060a4ab8b88fbf935ce0c95b81574fa902146b4cda44aa321db6a5594d67a41",
+    "ftb/model.py": "a44b4d1b6bc02837dadd6a5bc9ba12dd193634b9b65d959f379e73608ce20245",
+    "ftb/tokenizer.py": "32ed29a234fa663887a791a0650422bf49fdf00c1f69491ec1418c33841795b5",
+    "ftb/train.py": "664e33e9f91f0e0f114e43b2b101d15fa73c4081f100d193da9698409a429a04",
+    "ftb/evaluate.py": "08fb56f141895558afff196dae404393d94c385327f374751597082be488131f",
+    "ftb/prepare.py": "3c0448fa304c653eedeacf4367392c6346a06ed96cb3cb697cfa8775771834c0",
+    "ftb/data.py": "3b95ce23274776f4fc8becbf7990561752eb714a3c9082f456ef0000a86c247c",
+    "config/official.json": "8bc01a8923f17bccdfd17309e70c287c10f5fac6093d147bc342490303b65f17",
+    "corpus/moliere_manifest.json": "963c91322d131bf32ffd248f74f02cb495cda91329a44786641a17177d491bdc",
+    "corpus/build_moliere.py": "e62e68eab487d82fe24fc27995453be0547be41410cb23ca273e349b9ce592e7",
+    "corpus/moliere_val.txt": "e5dde8f5782f15943443cddb056bf9fd19efd67822b9e36a875e2c2970ede12c",
+    "corpus/moliere_train.txt": "a140c09cd253ba891e081ef246afeae6bbc99870fdaff3763d62ddd95973862e",
+    "examples/make_example_dataset.py": "6861f48eca102605e8fe95ee2f16131146119681fd2ebd7ddd17c79b015906f6",
+    "notebooks/quickstart_colab.ipynb": "4c607e97051db3a8463b25ba2e075b906284f27dd9ab8b888ffad0d3a1285322",
+    "data/validation.jsonl": "f4cb2afb456625c1edea23a83b896d378772d6bd98d31d20f6ceee6cf43607ce",
+    "tests/test_kit.py": "e0d0884070fdd228e03a03caf39e1af4582436dee855fd5c6c09e378d289c955"
+  }
+}

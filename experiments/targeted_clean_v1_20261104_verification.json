@@ -1,0 +1,41 @@
+{
+  "created": "2026-11-04T22:37:43.123178+01:00",
+  "tests": {
+    "passed": 306,
+    "warnings": 44,
+    "pytest_seconds": 195.8
+  },
+  "tested_files_sha256": {
+    "pipeline/clean/targeted.py": "c2e22bed992eddf0b04785399001f1d8b8e4cb4499c6090c7d414e8df7f1a250",
+    "pipeline/run.py": "c2b85399d36d79ad55d7c9e43480776c8fbb1c2307dcca3815e7d00482c15e07",
+    "tests/test_clean_targeted.py": "a28360e2aae26a1772efd0fb540ae66369ab26b9c5b710f57cbee404359f1e7d",
+    "tools/targeted_clean_pilot.py": "c82a37d07b225d7eadf1ff7c6876e7fef04a7f9d93dece42661b72d9395f3b43",
+    "tools/compare_targeted_results.py": "328c2357ac373d9833529d84edb0dd33e2bb27df60587e83c11532b869b84f22",
+    "bench/kaggle.py": "5686833636fbd6efd87b68a4ceec99a42ff4924726d543a45c72fd173b4f30b3",
+    "tests/test_bench_kaggle.py": "e4482d027ca7b95e29b92545377a039842ad3ef17467f8afd7cf185a33c740ef"
+  },
+  "kit_reference_files_identical": 18,
+  "ftb_diff_empty": true,
+  "symlinks_unchanged": {
+    "data/raw": "raw.nosync",
+    "data/stages": "stages.nosync",
+    "data/mixes": "mixes.nosync",
+    "data/models": "models.nosync",
+    "data/moliere": "moliere.nosync",
+    "runs": "runs.nosync",
+    ".venv": ".venv.nosync"
+  },
+  "reference_corpus_unchanged": true,
+  "candidate_unchanged_since_contamination_check": true,
+  "contamination": {
+    "flagged": 0,
+    "evaluated": 230,
+    "max_overlap": 0.084,
+    "source_sha256": "a0874cbdfe64b3b74333b265cec327a8652a1015c141f09f12d4def894565ccd"
+  },
+  "comparison_sha256": "16605b94741bbb421a3e68607ffd11e4233040522f969e681e4416917d71dead",
+  "recommendation": "keep_current_reference",
+  "git_head": "6e5f9adf94d4afe6108d809e38b678fbd12bc8bc",
+  "commit_created": false,
+  "push_performed": false
+}

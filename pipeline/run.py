@@ -52,13 +52,18 @@ STAGE_CLASSES = {
     "langid_score": "pipeline.clean.langid_score:LangIdScoreStage",
     "langid": "pipeline.clean.langid:LangIdStage",
     "reflow": "pipeline.clean.reflow:ReflowStage",
+    "targeted_clean": "pipeline.clean.targeted:TargetedCleanStage",
+    "privacy": "pipeline.clean.privacy:PrivacyStage",
+    "quality": "pipeline.clean.quality:QualityStage",
+    "minhash_dedup": "pipeline.dedup.minhash:MinHashDedupStage",
     "decontaminate": "pipeline.dedup.decontaminate:DecontaminateStage",
     "exact_dedup": "pipeline.dedup.exact:ExactDedupStage",
 }
 CODE_DEPS = {"boilerplate": ["pipeline.clean.encoding"], "decontaminate": ["ftb.contamination"]}
 # Bibliothèques dont la version change la sortie d'une étape : dans l'empreinte du code.
 LIB_DEPS = {"encoding": ["ftfy"], "boilerplate": ["ftfy", "trafilatura", "lxml"],
-            "langid_score": ["fasttext-numpy2"]}
+            "langid_score": ["fasttext-numpy2"], "targeted_clean": ["mwparserfromhell"],
+            "minhash_dedup": ["datasketch", "numpy", "xxhash"]}
 
 log = logging.getLogger("pipeline")
 
@@ -279,6 +284,16 @@ def _process_unit(unit):
               "stats": st, "wall_seconds": time.time() - wall0,
               "captures": captures, "samples": samples}
     _save_record(stage_dir, unit, result)
+    prune_root = _W.get("prune_input_root")
+    if prune_root is not None:
+        # Le fichier de sortie ET son reçu existent : la précédente copie
+        # intermédiaire peut être régénérée. Valider tous les chemins d'abord.
+        root = prune_root.resolve()
+        if any(p.is_symlink() or p.parent.is_symlink() or not p.resolve().is_relative_to(root)
+               for p in unit.inputs):
+            raise ValueError("Refus de purger une entrée hors du run")
+        for p in unit.inputs:
+            p.unlink(missing_ok=True)
     return result
 
 
@@ -290,7 +305,7 @@ def _scan_path(stage_dir, unit, stage):
 
 def _load_scan(stage_dir, unit, stage):
     p = _scan_path(stage_dir, unit, stage)
-    return S.read_json(p) if p.name.endswith(".json") else np.load(p)
+    return S.read_json(p) if p.name.endswith(".json") else np.load(p, mmap_mode="r")
 
 
 def _scan_unit(unit):
@@ -314,7 +329,9 @@ def _scan_unit(unit):
         for doc in iter_input(unit.inputs[0]):
             buf += stage.key(doc)
             n += 1
-        arr = np.frombuffer(bytes(buf), dtype=np.uint64).reshape(-1, 2) if n else np.zeros((0, 2), np.uint64)
+        dtype = getattr(stage, "key_dtype", np.uint64)
+        columns = getattr(stage, "key_columns", 2)
+        arr = np.frombuffer(buf, dtype=dtype).reshape(-1, columns) if n else np.zeros((0, columns), dtype)
         with open(tmp, "wb") as f:
             np.save(f, arr)
     tmp.replace(out)
@@ -462,6 +479,10 @@ class Runner:
             base = {"stage": spec["name"], "index": i, "params": spec["params"], "keep_html": keep_html,
                     "code": codes[i], "format": FORMAT_VERSION}
             t_stage = time.time()
+            stage.prune_input_root = None
+            if self.cfg.get("prune_intermediate_files", False) and i > 0:
+                self._validate_prune_dir(prev_dir)
+                stage.prune_input_root = prev_dir
             if stage.kind == "global":
                 st, upstream_fp = self._run_global(stage, stage_dir, prev_dir, base, upstream_fp, keep_html, i)
             else:
@@ -474,6 +495,8 @@ class Runner:
                      S.fmt_int(st["total"]["docs_in"]), S.fmt_int(st["total"]["docs_out"]),
                      S.fmt_mb(st["total"]["bytes_in"]), S.fmt_mb(st["total"]["bytes_out"]),
                      S.fmt_seconds(st["timing"]["wall_seconds"]))
+            if self.cfg.get("prune_intermediate_files", False) and i > 0:
+                self._prune_intermediate(prev_dir)
             prev_dir = stage_dir
         self._remove_stale_stage_dirs(stages)
         self._remove_orphan_sources(stages)
@@ -491,6 +514,29 @@ class Runner:
         })
         log.info("terminé en %s · entonnoir : %s", S.fmt_seconds(wall), self._rel(self.out_root / "funnel.md"))
         return 0
+
+    def _prune_intermediate(self, directory):
+        """Option explicite : seuls les parts générés dans CE run sont régénérables.
+
+        Les statistiques, reçus et échantillons restent présents. Une reprise
+        reconstruira au besoin les parts manquants ; le corpus d'entrée est exclu.
+        Valider tous les chemins avant de retirer le premier fichier.
+        """
+        self._validate_prune_dir(directory)
+        files = list(directory.glob("*/part-*.jsonl.zst"))
+        root = directory.resolve()
+        if any(p.is_symlink() or p.parent.is_symlink() or not p.resolve().is_relative_to(root) for p in files):
+            raise ValueError("Refus de purger des parts via des liens symboliques")
+        size = sum(p.stat().st_size for p in files)
+        for p in files:
+            p.unlink()
+        S.write_json(directory / "parts_pruned.json", {"files": len(files), "bytes": size})
+        log.info("[%s] cache intermédiaire libéré : %d fichiers, %.2f Go", directory.name, len(files), size / 1e9)
+
+    def _validate_prune_dir(self, directory):
+        if (directory.is_symlink() or directory.resolve() == self.input_dir.resolve()
+                or directory.parent.resolve() != self.out_root.resolve()):
+            raise ValueError(f"Refus de purger un dossier hors du run : {directory}")
 
     def _remove_stale_stage_dirs(self, stages):
         """Supprime les dossiers « NN_etape » d'une ancienne version de la config (sorties périmées)."""
@@ -561,7 +607,8 @@ class Runner:
             stage.setup()
         _W.clear()
         _W.update(stage=stage, stage_dir=stage_dir, keep_html=keep_html,
-                  rejected_k=self.rejected_k, sample_chars=self.sample_chars)
+                  rejected_k=self.rejected_k, sample_chars=self.sample_chars,
+                  prune_input_root=getattr(stage, "prune_input_root", None))
         n_done, t0 = 0, time.time()
         docs = 0
         total = len(todo)
@@ -604,6 +651,7 @@ class Runner:
 
     def _run_global(self, stage, stage_dir, prev_dir, base, upstream_fp, keep_html, i):
         # Passe 1 : empreintes par fichier (en cache, indépendantes des autres sources)
+        stage.input_dir, stage.work_dir = prev_dir, stage_dir
         base = {**base, "extra": stage.fingerprint_extra()}
         scan_fp = {s: digest({**base, "pass": "scan", "upstream": upstream_fp[s]}) for s in self.sources}
         units = [u for s in self.sources for u in self._units(prev_dir, s, i, scan_fp[s])]

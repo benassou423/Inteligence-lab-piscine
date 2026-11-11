@@ -1,0 +1,20 @@
+run: ablation_brut_s2027
+seed: 2027
+notes: Ablation brute avec protections validation, tokenizer figé, budget 25M ; aucun
+  filtre qualité/langue/doublon.
+mix:
+  sources:
+  - name: ablation_brut_s2027
+    pipeline: ablation_brut_s2027
+    stage: 02_decontaminate
+  max_bytes: 100000000
+  order: shuffle
+  tokenizer_sample_bytes: 1000000
+tokenizer:
+  path: data/mixes/proxy_wiki20261001_fr065/tokenizer.json
+train:
+  mode: proxy
+  debug_budget: 25000000
+  micro_batch: 16
+  device: mps
+  compile: false

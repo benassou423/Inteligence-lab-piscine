@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "kit_version": "1.0",
+    "official": true,
+    "steps": 3052,
+    "tokens_seen": 100007936,
+    "train_config": {
+      "budget_tokens": 100000000,
+      "batch_size": 64,
+      "seq_len": 512,
+      "lr": 0.002,
+      "min_lr": 0.0002,
+      "warmup_steps": 150,
+      "weight_decay": 0.1,
+      "beta1": 0.9,
+      "beta2": 0.95,
+      "grad_clip": 1.0,
+      "seed": 1337,
+      "shuffle_window_steps": 50,
+      "eval_every_steps": 500,
+      "tokens_per_step": 32768,
+      "max_steps": 3052
+    },
+    "dataset_sha256": "b88033ad2fbad01d1e1da101da4de4ce07a39c9a2060170ba0712705ab4ba8ee",
+    "dataset_n_tokens": 114701016,
+    "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+    "val_bpb": 1.2882923104766877,
+    "val_bpb_par_genre": {
+      "dialogue": 1.088305894458118,
+      "encyclopedique": 1.3689058988933267,
+      "litteraire": 1.4501690588992178,
+      "presse": 1.248182062835742
+    },
+    "n_params": 10166400,
+    "train_time_s": 2039.9,
+    "device": "mps",
+    "precision": "torch.float32",
+    "torch": "2.15.0",
+    "tokenizers": "0.23.3",
+    "python": "3.12.14",
+    "resumed_from_steps": [],
+    "created": "2026-11-10T20:10:13+0100"
+  },
+  "evaluation": {
+    "bpb": 1.2882923104766877,
+    "bpb_par_genre": {
+      "dialogue": 1.088305894458118,
+      "encyclopedique": 1.3689058988933267,
+      "litteraire": 1.4501690588992178,
+      "presse": 1.248182062835742
+    },
+    "loss_par_token": 3.4012225929372804,
+    "n_documents": 230,
+    "n_tokens": 213463,
+    "n_octets": 813051,
+    "octets_par_token": 3.808861488876292,
+    "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/full_reference_masked_20261110/ckpt.pt",
+    "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+    "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
+  },
+  "preparation": {
+    "counts": {
+      "documents_in": 72612,
+      "original_text_bytes": 419304065,
+      "documents_out": 72612,
+      "documents_masked": 548,
+      "text_bytes": 419295632,
+      "masks_EMAIL": 423,
+      "masks_TELEPHONE": 486,
+      "masks_IP": 4
+    },
+    "by_source": {
+      "wikipedia_fr": {
+        "documents": 59289,
+        "bytes": 193895076,
+        "masked_documents": 10
+      },
+      "fineweb2_fra": {
+        "documents": 12111,
+        "bytes": 40343047,
+        "masked_documents": 527
+      },
+      "wikisource_fr": {
+        "documents": 527,
+        "bytes": 134328388,
+        "masked_documents": 0
+      },
+      "commoncrawl": {
+        "documents": 155,
+        "bytes": 474034,
+        "masked_documents": 10
+      },
+      "wikinews_fr": {
+        "documents": 397,
+        "bytes": 590203,
+        "masked_documents": 0
+      },
+      "gutenberg_fr": {
+        "documents": 101,
+        "bytes": 43639574,
+        "masked_documents": 1
+      },
+      "assemblee_nationale": {
+        "documents": 32,
+        "bytes": 6025310,
+        "masked_documents": 0
+      }
+    },
+    "dropped_new_exact_duplicates": [],
+    "order": "original order, minus new exact duplicates",
+    "input_file_sha256": "c8ce712f36c83c18b8ba57427b96f9d6509fbb10e4ad656c8739a159baed8613",
+    "provenance_sha256": "e129e72468ef6ae205838460afbcecfceb7c34b3f8245ee9b70f9290ceb3de4e",
+    "parent_train_sha256": "16716f6be8a197c554541d1da57e5c059f6844b8904075704b99dde3631b849f",
+    "privacy_code_sha256": "85313fdf4f7ed13bc5bd5007008fe91116bba5242a1e098770af38b695ed64f7",
+    "original_data_modified": false,
+    "prepared": true,
+    "contamination_flagged": 0,
+    "run": "full_reference_masked_20261110",
+    "dataset_sha256": "b88033ad2fbad01d1e1da101da4de4ce07a39c9a2060170ba0712705ab4ba8ee",
+    "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+    "dataset_tokens": 114701016,
+    "provenance_rows": 72612
+  }
+}

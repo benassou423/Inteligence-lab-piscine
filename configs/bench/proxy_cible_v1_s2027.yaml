@@ -1,0 +1,18 @@
+run: proxy_cible_v1_s2027
+seed: 2027
+notes: nettoyage cible v1, comparaison appariée, tokenizer de reference fixe, graine
+  de mélange 2027
+mix:
+  sources:
+  - name: nettoye
+    pipeline: nettoye_cible_v1
+    stage: 03_exact_dedup
+  max_bytes: 100000000
+  order: shuffle
+  tokenizer_sample_bytes: 50000000
+tokenizer:
+  path: data/mixes/proxy_wiki20261001_fr065/tokenizer.json
+train:
+  mode: proxy
+  debug_budget: 25000000
+  micro_batch: 16

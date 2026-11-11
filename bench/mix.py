@@ -203,7 +203,7 @@ def _index_task(task):
     limit = int(rate * 2.0**64) if rate is not None and rate < 1.0 else None
     lines, nbytes, h_sel, h_ord, codes = [], [], [], [], []
     names: dict[str, int] = {}
-    seen = empty = skipped = 0
+    seen = empty = skipped = excluded = 0
     for ln, line in iter_lines(path):
         if limit is not None:
             m = _ID_RE.match(line)
@@ -215,11 +215,14 @@ def _index_task(task):
         if wanted and src not in wanted:
             continue
         seen += 1
+        did = _doc_id(doc, path, ln)
+        if did in _G.get("excluded_ids", ()):
+            excluded += 1
+            continue
         text = doc.get("text") or ""
         if not text.strip():
             empty += 1
             continue
-        did = _doc_id(doc, path, ln)
         lines.append(ln)
         nbytes.append(len(text.encode("utf-8")))
         h_sel.append(h64(seed, "sel", did))
@@ -229,7 +232,7 @@ def _index_task(task):
         "tid": tid, "lines": np.array(lines, np.int64), "nbytes": np.array(nbytes, np.int64),
         "h_sel": np.array(h_sel, np.uint64), "h_ord": np.array(h_ord, np.uint64),
         "codes": np.array(codes, np.int32), "names": list(names), "seen": seen, "empty": empty,
-        "skipped": skipped,
+        "skipped": skipped, "excluded_heldout": excluded,
     }
 
 
@@ -248,7 +251,8 @@ def _extract_task(task):
         for ln, line in iter_lines(path):
             if ln not in want:
                 continue
-            text = json.loads(line)["text"]
+            doc = json.loads(line)
+            text = doc["text"]
             if dec:
                 m = shared_ngrams(text, dec["vocab"], dec["hashes"], dec["n"])
                 if len(m):
@@ -257,7 +261,10 @@ def _extract_task(task):
                         cand_lines.append(ln)
                         cand_len.append(len(m))
                         cand_hash.append(m)
-            rec = (json.dumps({"text": text}, ensure_ascii=False) + "\n").encode("utf-8")
+            record = {"text": text}
+            if _G.get("keep_metadata"):
+                record.update({k: v for k, v in doc.items() if k != "html"})
+            rec = (json.dumps(record, ensure_ascii=False) + "\n").encode("utf-8")
             f.write(rec)
             kept.append(ln)
             nbyt.append(len(rec))
@@ -440,7 +447,8 @@ def _fingerprint(mix_cfg, seed, entries, val_path) -> str:
     return sha256_json({"mix": cfg, "seed": seed, "files": files, "val": val, "version": 2})
 
 
-def build_mix(mix_cfg: dict, out_dir, seed: int = 1337, data_root=None, force: bool = False, log=None) -> dict:
+def build_mix(mix_cfg: dict, out_dir, seed: int = 1337, data_root=None, force: bool = False, log=None,
+              *, excluded_ids=None, keep_metadata=False) -> dict:
     """Construit le mix ; renvoie le manifeste (déjà fait et inchangé : relu tel quel)."""
     mix_cfg = {**MIX_DEFAULTS, **mix_cfg,
                "decontaminate": {**MIX_DEFAULTS["decontaminate"], **(mix_cfg.get("decontaminate") or {})}}
@@ -454,6 +462,9 @@ def build_mix(mix_cfg: dict, out_dir, seed: int = 1337, data_root=None, force: b
     dec_cfg = mix_cfg["decontaminate"]
     val_path = resolve_path(dec_cfg["against"])
     fp = _fingerprint(mix_cfg, seed, entries, val_path)
+    excluded_ids = frozenset(excluded_ids or ())
+    if excluded_ids or keep_metadata:
+        fp = sha256_json({"base": fp, "heldout_ids": sorted(excluded_ids), "keep_metadata": keep_metadata})
     man_path, train_path = out / "manifest.json", out / "train.jsonl.gz"
     if not force and man_path.exists() and train_path.exists():
         man = read_json(man_path)
@@ -470,7 +481,8 @@ def build_mix(mix_cfg: dict, out_dir, seed: int = 1337, data_root=None, force: b
     rate = _prefilter_rate(mix_cfg, entries)
     while True:
         index = {}
-        for res in _pool_map(_index_task, tasks, workers, {"seed": seed, "prefilter_rate": rate}, log, "index"):
+        for res in _pool_map(_index_task, tasks, workers, {"seed": seed, "prefilter_rate": rate,
+                             "excluded_ids": excluded_ids}, log, "index"):
             res["entry"] = task_entry[res["tid"]]
             index[res["tid"]] = res
         skipped = sum(t["skipped"] for t in index.values())
@@ -508,7 +520,8 @@ def build_mix(mix_cfg: dict, out_dir, seed: int = 1337, data_root=None, force: b
               for tid in sorted(index) if (copies[tid] > 0).any()]
     if not etasks:
         raise SystemExit("mix : la sélection est vide")
-    done = {r["tid"]: r for r in _pool_map(_extract_task, etasks, workers, {"decontam": decontam}, log, "extraction")}
+    done = {r["tid"]: r for r in _pool_map(_extract_task, etasks, workers,
+            {"decontam": decontam, "keep_metadata": keep_metadata}, log, "extraction")}
     drop, n_frequent = set(), 0
     if decontam:
         drop, n_frequent = contaminated_docs(list(done.values()), decontam["min_matches"], int(dec_cfg["max_df"]))
@@ -528,6 +541,11 @@ def build_mix(mix_cfg: dict, out_dir, seed: int = 1337, data_root=None, force: b
         "config": mix_cfg,
         "seconds": round(time.time() - t0, 1),
     })
+    if excluded_ids or keep_metadata:
+        man["heldout_exclusion"] = {"listed_ids": len(excluded_ids),
+                                    "ids_sha256": sha256_json(sorted(excluded_ids)),
+                                    "excluded_in_index": sum(t["excluded_heldout"] for t in index.values())}
+        man["metadata_preserved"] = bool(keep_metadata)
     write_json(man_path, man)
     log.info(f"mix : {man['documents']:,} documents, {human_bytes(man['bytes'])} → {train_path} "
              f"(sha256 {man['train_sha256'][:12]}…, {man['seconds']} s)")

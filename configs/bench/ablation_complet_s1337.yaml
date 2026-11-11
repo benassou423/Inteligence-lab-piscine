@@ -1,0 +1,20 @@
+run: ablation_complet_s1337
+seed: 1337
+notes: Ablation corpus complet, tokenizer de référence figé, même budget 25M et même
+  initialisation du kit.
+mix:
+  sources:
+  - name: complet_20261110
+    pipeline: complet_20261110
+    stage: 06_exact_dedup
+  max_bytes: 100000000
+  order: shuffle
+  tokenizer_sample_bytes: 1000000
+tokenizer:
+  path: data/mixes/proxy_wiki20261001_fr065/tokenizer.json
+train:
+  mode: proxy
+  debug_budget: 25000000
+  micro_batch: 16
+  device: mps
+  compile: false

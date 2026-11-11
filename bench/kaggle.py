@@ -195,6 +195,7 @@ def cmd_run(a) -> None:
         args += ["--resume"] if (out / "state.pt").exists() else []
         args += ["--compile"] if a.compile else []
         args += ["--device", a.device] if a.device else []
+        args += ["--micro-batch", a.micro_batch] if a.micro_batch else []
         args += ["--debug-budget", a.debug_budget] if a.debug_budget else []  # tests seulement : non soumissible
         args += ["--validation", a.validation] if a.validation else []
         train_with_sync(kit, args, out, runs, prefix, a.poll)
@@ -276,6 +277,7 @@ def main(argv=None):
     r.add_argument("--run", default="full")
     r.add_argument("--no-compile", dest="compile", action="store_false")
     r.add_argument("--device", default=None)
+    r.add_argument("--micro-batch", type=int, default=None, help="accumulation du kit : même batch effectif, moins de mémoire")
     r.add_argument("--poll", type=float, default=30.0)
     r.add_argument("--debug-budget", type=int, default=None, help="tests seulement (run non soumissible)")
     r.add_argument("--validation", default=None, help="tests seulement")

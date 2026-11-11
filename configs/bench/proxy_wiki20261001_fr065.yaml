@@ -1,0 +1,42 @@
+run: proxy_wiki20261001_fr065
+seed: 1337
+notes: 'proxy : sortie finale de nettoye, proportions naturelles'
+paths:
+  data: data
+  runs: runs
+  experiments: experiments
+mix:
+  sources:
+  - name: nettoye
+    path: null
+    pipeline: nettoye
+    stage: null
+    sources: null
+    repeat: 1.0
+    weight: null
+    max_bytes: null
+    block: 0
+  order: shuffle
+  max_bytes: 100000000
+  total_bytes: null
+  prefilter: true
+  tokenizer_sample_bytes: 50000000
+  decontaminate:
+    enabled: false
+    against: data/validation.jsonl
+    ngram: 13
+    min_matches: 50
+    max_df: 10
+  workers: 8
+tokenizer:
+  path: null
+  pretokenizer: gpt4
+train:
+  mode: proxy
+  debug_budget: 25000000
+  device: auto
+  micro_batch: 16
+  compile: false
+eval:
+  validation: null
+  device: null

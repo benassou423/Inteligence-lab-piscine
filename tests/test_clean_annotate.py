@@ -118,3 +118,26 @@ def test_session_clavier_annuler_et_reprendre(tmp_path):
     assert len(A.load_annotations(ann)) == 6 and "annotés" in out.getvalue()
     # À l'aveugle : ni l'étiquette ni la note du modèle à l'écran
     assert "fra_Latn" not in out.getvalue() and "eng_Latn" not in out.getvalue()
+
+
+def test_report_discloses_ai_origin_and_unrepresented_sources(tmp_path):
+    items, meta = A.draw_sample(_fake_stage(tmp_path), n=20)
+    meta.update(annotation_kind="ai", uncertain_ids=[items[0]["id"]], n_truncated=2, sample_max_chars=1500)
+    meta["population"]["absente|kept_0.99-1.00"] = 20
+    report, summary = R.build_report({it["id"]: it for it in items}, meta,
+                                    {it["id"]: "f" for it in items}, n_boot=10)
+    assert "annotations IA" in report and "pas une validation humaine" in report
+    assert "2 extraits tronqués" in report and "Cas à examiner : 1" in report
+    assert "10 tirages avec remise" in report
+    assert "Sources sans annotation" in report and "`absente`" in report
+    assert summary["annotation_kind"] == "ai" and summary["coverage"] < 1
+    assert summary["missing_sources"] == ["absente"]
+
+
+def test_load_detects_ai_labels_even_without_origin_in_metadata(tmp_path):
+    items, meta = A.draw_sample(_fake_stage(tmp_path), n=2)
+    (tmp_path / "langid_sample.jsonl").write_text("".join(json.dumps(it) + "\n" for it in items))
+    (tmp_path / "langid_sample.meta.json").write_text(json.dumps(meta))
+    (tmp_path / "langid.jsonl").write_text("".join(json.dumps({"id": it["id"], "label": "f", "annotation_kind": "ai"}) + "\n" for it in items))
+    _, loaded_meta, _ = R.load(tmp_path)
+    assert loaded_meta["annotation_kind"] == "ai"

@@ -1,0 +1,1562 @@
+{
+  "created": "2026-11-10T19:22:42.747654+01:00",
+  "results": [
+    {
+      "seed": 1337,
+      "recipe": "brut",
+      "run": "ablation_brut_s1337",
+      "bpb": 1.6440033712920912,
+      "bpb_par_genre": {
+        "dialogue": 1.4269036119859684,
+        "encyclopedique": 1.783556524204767,
+        "litteraire": 1.7621926398959746,
+        "presse": 1.6072516249773894
+      },
+      "dataset_sha256": "e1a7a9a63fe30ec79de3b3d0c2f96a45b98120e3beb2cbb489fc82cdfd9e0987",
+      "mix_documents": 17946,
+      "mix_bytes": 99851864
+    },
+    {
+      "seed": 1337,
+      "recipe": "nettoye",
+      "run": "proxy_wiki20261001_fr065",
+      "bpb": 1.6154900354430564,
+      "bpb_par_genre": {
+        "dialogue": 1.3526381914512158,
+        "encyclopedique": 1.7790355156986961,
+        "litteraire": 1.7345504251238535,
+        "presse": 1.6009089897236728
+      },
+      "dataset_sha256": "add672225159a17a78ff5cda7f5e375d4cf34ce9be35b2c855b450f51030606d",
+      "mix_documents": 18218,
+      "mix_bytes": 99979803
+    },
+    {
+      "seed": 1337,
+      "recipe": "complet",
+      "run": "ablation_complet_s1337",
+      "bpb": 1.6226681499040827,
+      "bpb_par_genre": {
+        "dialogue": 1.355264975959424,
+        "encyclopedique": 1.7869246444543732,
+        "litteraire": 1.7414027155088454,
+        "presse": 1.612384176613287
+      },
+      "dataset_sha256": "63b2b1748b67c203b529bff707d461ee1849b7cfba70a46c80cde4dfaf3acf27",
+      "mix_documents": 18215,
+      "mix_bytes": 99790461
+    },
+    {
+      "seed": 2027,
+      "recipe": "brut",
+      "run": "ablation_brut_s2027",
+      "bpb": 1.6714897386315137,
+      "bpb_par_genre": {
+        "dialogue": 1.4824377777384883,
+        "encyclopedique": 1.8096643959844214,
+        "litteraire": 1.7678506602619621,
+        "presse": 1.62957238926846
+      },
+      "dataset_sha256": "78a87aed40a1e85ba785da00ad53ef675ae50a131fed624b0c74fed4d58b0d0f",
+      "mix_documents": 17288,
+      "mix_bytes": 98214063
+    },
+    {
+      "seed": 2027,
+      "recipe": "nettoye",
+      "run": "proxy_cible_base_s2027",
+      "bpb": 1.6290415473031563,
+      "bpb_par_genre": {
+        "dialogue": 1.4103948069812113,
+        "encyclopedique": 1.7747374284779234,
+        "litteraire": 1.718320070609849,
+        "presse": 1.6172384668347901
+      },
+      "dataset_sha256": "d0f5bdefece391bdf1985584e0d68e091a8a0ca6e4b87a97ade5b88f6356a8ed",
+      "mix_documents": 17605,
+      "mix_bytes": 99996596
+    },
+    {
+      "seed": 2027,
+      "recipe": "complet",
+      "run": "ablation_complet_s2027",
+      "bpb": 1.6424716255706562,
+      "bpb_par_genre": {
+        "dialogue": 1.4194757554247375,
+        "encyclopedique": 1.7879376196600778,
+        "litteraire": 1.7330797317584803,
+        "presse": 1.6340078844081956
+      },
+      "dataset_sha256": "938f5bf14a6c8f9ba86b96c6197611711f83914303eda4d9e532213e27d6e1cc",
+      "mix_documents": 18015,
+      "mix_bytes": 99997387
+    }
+  ],
+  "average": {
+    "brut": {
+      "bpb": 1.6577465549618025,
+      "bpb_par_genre": {
+        "dialogue": 1.4546706948622283,
+        "encyclopedique": 1.7966104600945942,
+        "litteraire": 1.7650216500789684,
+        "presse": 1.6184120071229247
+      }
+    },
+    "nettoye": {
+      "bpb": 1.6222657913731062,
+      "bpb_par_genre": {
+        "dialogue": 1.3815164992162137,
+        "encyclopedique": 1.7768864720883097,
+        "litteraire": 1.7264352478668512,
+        "presse": 1.6090737282792316
+      }
+    },
+    "complet": {
+      "bpb": 1.6325698877373696,
+      "bpb_par_genre": {
+        "dialogue": 1.3873703656920808,
+        "encyclopedique": 1.7874311320572254,
+        "litteraire": 1.7372412236336627,
+        "presse": 1.6231960305107411
+      }
+    }
+  },
+  "pairs": [
+    {
+      "seed": 1337,
+      "nettoye_minus_brut": -0.028513335849034815,
+      "complet_minus_nettoye": 0.007178114461026341
+    },
+    {
+      "seed": 2027,
+      "nettoye_minus_brut": -0.04244819132835742,
+      "complet_minus_nettoye": 0.013430078267499868
+    }
+  ],
+  "complete_genre_deltas": {
+    "dialogue": 0.005853866475867164,
+    "encyclopedique": 0.010544659968915626,
+    "litteraire": 0.010805975766811526,
+    "presse": 0.014122302231509565
+  },
+  "contract": {
+    "train_config": {
+      "budget_tokens": 100000000,
+      "batch_size": 64,
+      "seq_len": 512,
+      "lr": 0.002,
+      "min_lr": 0.0002,
+      "warmup_steps": 76,
+      "weight_decay": 0.1,
+      "beta1": 0.9,
+      "beta2": 0.95,
+      "grad_clip": 1.0,
+      "seed": 1337,
+      "shuffle_window_steps": 50,
+      "eval_every_steps": 190,
+      "tokens_per_step": 32768,
+      "max_steps": 763
+    },
+    "n_params": 10166400,
+    "tokens_seen": 25001984,
+    "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+    "device": "mps",
+    "precision": "torch.float32",
+    "torch": "2.15.0",
+    "tokenizers": "0.23.3",
+    "python": "3.12.14"
+  },
+  "runs": {
+    "ablation_brut_s1337": {
+      "name": "ablation_brut_s1337",
+      "meta": {
+        "kit_version": "1.0",
+        "official": false,
+        "steps": 763,
+        "tokens_seen": 25001984,
+        "train_config": {
+          "budget_tokens": 100000000,
+          "batch_size": 64,
+          "seq_len": 512,
+          "lr": 0.002,
+          "min_lr": 0.0002,
+          "warmup_steps": 76,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "seed": 1337,
+          "shuffle_window_steps": 50,
+          "eval_every_steps": 190,
+          "tokens_per_step": 32768,
+          "max_steps": 763
+        },
+        "dataset_sha256": "e1a7a9a63fe30ec79de3b3d0c2f96a45b98120e3beb2cbb489fc82cdfd9e0987",
+        "dataset_n_tokens": 27978797,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "val_bpb": 1.6440033712920912,
+        "val_bpb_par_genre": {
+          "dialogue": 1.4269036119859684,
+          "encyclopedique": 1.783556524204767,
+          "litteraire": 1.7621926398959746,
+          "presse": 1.6072516249773894
+        },
+        "n_params": 10166400,
+        "train_time_s": 668.0,
+        "device": "mps",
+        "precision": "torch.float32",
+        "torch": "2.15.0",
+        "tokenizers": "0.23.3",
+        "python": "3.12.14",
+        "resumed_from_steps": [],
+        "created": "2026-11-10T17:36:02+0100"
+      },
+      "evaluation": {
+        "bpb": 1.6440033712920912,
+        "bpb_par_genre": {
+          "dialogue": 1.4269036119859684,
+          "encyclopedique": 1.783556524204767,
+          "litteraire": 1.7621926398959746,
+          "presse": 1.6072516249773894
+        },
+        "loss_par_token": 4.340335934501334,
+        "n_documents": 230,
+        "n_tokens": 213463,
+        "n_octets": 813051,
+        "octets_par_token": 3.808861488876292,
+        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/ablation_brut_s1337/ckpt.pt",
+        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
+      },
+      "mix": {
+        "documents": 17946,
+        "unique_documents": 17946,
+        "bytes": 99851864,
+        "order": "shuffle",
+        "by_source": {
+          "assemblee_nationale": {
+            "documents": 10,
+            "unique_documents": 10,
+            "bytes": 1799393,
+            "share_bytes": 0.018
+          },
+          "commoncrawl": {
+            "documents": 59,
+            "unique_documents": 59,
+            "bytes": 338149,
+            "share_bytes": 0.0034
+          },
+          "fineweb2_fra": {
+            "documents": 2891,
+            "unique_documents": 2891,
+            "bytes": 9930108,
+            "share_bytes": 0.0994
+          },
+          "gutenberg_fr": {
+            "documents": 19,
+            "unique_documents": 19,
+            "bytes": 7074763,
+            "share_bytes": 0.0709
+          },
+          "wikinews_fr": {
+            "documents": 122,
+            "unique_documents": 122,
+            "bytes": 178227,
+            "share_bytes": 0.0018
+          },
+          "wikipedia_fr": {
+            "documents": 14726,
+            "unique_documents": 14726,
+            "bytes": 50401288,
+            "share_bytes": 0.5048
+          },
+          "wikisource_fr": {
+            "documents": 119,
+            "unique_documents": 119,
+            "bytes": 30129936,
+            "share_bytes": 0.3017
+          }
+        },
+        "by_entry": {
+          "ablation_brut_s1337": {
+            "documents": 17946,
+            "bytes": 99851864,
+            "block": 0
+          }
+        },
+        "segments": [],
+        "contaminated_by_source": {},
+        "train_file": "train.jsonl.gz",
+        "train_sha256": "530ab4b08ee4d1b3a13fb7e68c9f68a45b3ce0269adeb148a6a62767c235bb27",
+        "tokenizer_sample": {
+          "file": "tokenizer_sample.jsonl.gz",
+          "documents": 172,
+          "bytes": 543954,
+          "sha256": "6316da685d1624e3fbbb1b042a85f95e12530bd308ce85ffeb73e7bd39f43a63"
+        },
+        "fingerprint": "a8af865a925213f8d76e033a26ca394999ab7e19cb9736d92ad0bd551de86375",
+        "created": "2026-11-10T17:06:51",
+        "seed": 1337,
+        "inputs": [
+          {
+            "name": "ablation_brut_s1337",
+            "origin": "stages/ablation_brut_s1337/02_decontaminate",
+            "files": 7,
+            "warning": null
+          }
+        ],
+        "decontamination": {
+          "enabled": false,
+          "against": "data/validation.jsonl",
+          "template_ngrams_ignored": 0
+        },
+        "prefilter": {
+          "rate": null,
+          "skipped_docs": 0
+        },
+        "config": {
+          "sources": [
+            {
+              "name": "ablation_brut_s1337",
+              "path": null,
+              "pipeline": "ablation_brut_s1337",
+              "stage": "02_decontaminate",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 1000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "seconds": 6.8
+      },
+      "config": {
+        "run": "ablation_brut_s1337",
+        "seed": 1337,
+        "notes": "Ablation brute avec protections validation, tokenizer figé, budget 25M ; aucun filtre qualité/langue/doublon.",
+        "paths": {
+          "data": "data",
+          "runs": "runs",
+          "experiments": "experiments"
+        },
+        "mix": {
+          "sources": [
+            {
+              "name": "ablation_brut_s1337",
+              "path": null,
+              "pipeline": "ablation_brut_s1337",
+              "stage": "02_decontaminate",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 1000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "tokenizer": {
+          "path": "data/mixes/proxy_wiki20261001_fr065/tokenizer.json",
+          "pretokenizer": "gpt4"
+        },
+        "train": {
+          "mode": "proxy",
+          "debug_budget": 25000000,
+          "device": "mps",
+          "micro_batch": 16,
+          "compile": false
+        },
+        "eval": {
+          "validation": null,
+          "device": null
+        }
+      }
+    },
+    "proxy_wiki20261001_fr065": {
+      "name": "proxy_wiki20261001_fr065",
+      "meta": {
+        "kit_version": "1.0",
+        "official": false,
+        "steps": 763,
+        "tokens_seen": 25001984,
+        "train_config": {
+          "budget_tokens": 100000000,
+          "batch_size": 64,
+          "seq_len": 512,
+          "lr": 0.002,
+          "min_lr": 0.0002,
+          "warmup_steps": 76,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "seed": 1337,
+          "shuffle_window_steps": 50,
+          "eval_every_steps": 190,
+          "tokens_per_step": 32768,
+          "max_steps": 763
+        },
+        "dataset_sha256": "add672225159a17a78ff5cda7f5e375d4cf34ce9be35b2c855b450f51030606d",
+        "dataset_n_tokens": 27230868,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "val_bpb": 1.6154900354430564,
+        "val_bpb_par_genre": {
+          "dialogue": 1.3526381914512158,
+          "encyclopedique": 1.7790355156986961,
+          "litteraire": 1.7345504251238535,
+          "presse": 1.6009089897236728
+        },
+        "n_params": 10166400,
+        "train_time_s": 552.1,
+        "device": "mps",
+        "precision": "torch.float32",
+        "torch": "2.15.0",
+        "tokenizers": "0.23.3",
+        "python": "3.12.14",
+        "resumed_from_steps": [],
+        "created": "2026-11-04T18:58:19+0100"
+      },
+      "evaluation": {
+        "bpb": 1.6154900354430564,
+        "bpb_par_genre": {
+          "dialogue": 1.3526381914512158,
+          "encyclopedique": 1.7790355156986961,
+          "litteraire": 1.7345504251238535,
+          "presse": 1.6009089897236728
+        },
+        "loss_par_token": 4.265057830843428,
+        "n_documents": 230,
+        "n_tokens": 213463,
+        "n_octets": 813051,
+        "octets_par_token": 3.808861488876292,
+        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/proxy_wiki20261001_fr065/ckpt.pt",
+        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
+      },
+      "mix": {
+        "documents": 18218,
+        "unique_documents": 18218,
+        "bytes": 99979803,
+        "order": "shuffle",
+        "by_source": {
+          "assemblee_nationale": {
+            "documents": 10,
+            "unique_documents": 10,
+            "bytes": 1928927,
+            "share_bytes": 0.0193
+          },
+          "commoncrawl": {
+            "documents": 39,
+            "unique_documents": 39,
+            "bytes": 119522,
+            "share_bytes": 0.0012
+          },
+          "fineweb2_fra": {
+            "documents": 3033,
+            "unique_documents": 3033,
+            "bytes": 10401561,
+            "share_bytes": 0.104
+          },
+          "gutenberg_fr": {
+            "documents": 21,
+            "unique_documents": 21,
+            "bytes": 8131142,
+            "share_bytes": 0.0813
+          },
+          "wikinews_fr": {
+            "documents": 104,
+            "unique_documents": 104,
+            "bytes": 146889,
+            "share_bytes": 0.0015
+          },
+          "wikipedia_fr": {
+            "documents": 14887,
+            "unique_documents": 14887,
+            "bytes": 48584915,
+            "share_bytes": 0.4859
+          },
+          "wikisource_fr": {
+            "documents": 124,
+            "unique_documents": 124,
+            "bytes": 30666847,
+            "share_bytes": 0.3067
+          }
+        },
+        "by_entry": {
+          "nettoye": {
+            "documents": 18218,
+            "bytes": 99979803,
+            "block": 0
+          }
+        },
+        "segments": [],
+        "contaminated_by_source": {},
+        "train_file": "train.jsonl.gz",
+        "train_sha256": "ccd64ea1b267b134b95300d6c151256d594f4c20fcb1b04395f43234886124e1",
+        "tokenizer_sample": {
+          "file": "tokenizer_sample.jsonl.gz",
+          "documents": 9062,
+          "bytes": 49522339,
+          "sha256": "791c2e6595ff6dbd0624a454780c2b6a2670f6a4f5f5f02b310421c4a856df9e"
+        },
+        "fingerprint": "d70b2dc51a2f22ca262695df4f7cc7d74a354f556d7847365e3a33b6a301c845",
+        "created": "2026-11-04T18:48:54",
+        "seed": 1337,
+        "inputs": [
+          {
+            "name": "nettoye",
+            "origin": "stages/nettoye/08_exact_dedup",
+            "files": 251,
+            "warning": null
+          }
+        ],
+        "decontamination": {
+          "enabled": false,
+          "against": "data/validation.jsonl",
+          "template_ngrams_ignored": 0
+        },
+        "prefilter": {
+          "rate": 0.01586149013379863,
+          "skipped_docs": 3069793
+        },
+        "config": {
+          "sources": [
+            {
+              "name": "nettoye",
+              "path": null,
+              "pipeline": "nettoye",
+              "stage": null,
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 50000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "seconds": 16.6
+      },
+      "config": {
+        "run": "proxy_wiki20261001_fr065",
+        "seed": 1337,
+        "notes": "proxy : sortie finale de nettoye, proportions naturelles",
+        "paths": {
+          "data": "data",
+          "runs": "runs",
+          "experiments": "experiments"
+        },
+        "mix": {
+          "sources": [
+            {
+              "name": "nettoye",
+              "path": null,
+              "pipeline": "nettoye",
+              "stage": null,
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 50000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "tokenizer": {
+          "path": null,
+          "pretokenizer": "gpt4"
+        },
+        "train": {
+          "mode": "proxy",
+          "debug_budget": 25000000,
+          "device": "auto",
+          "micro_batch": 16,
+          "compile": false
+        },
+        "eval": {
+          "validation": null,
+          "device": null
+        }
+      }
+    },
+    "ablation_complet_s1337": {
+      "name": "ablation_complet_s1337",
+      "meta": {
+        "kit_version": "1.0",
+        "official": false,
+        "steps": 763,
+        "tokens_seen": 25001984,
+        "train_config": {
+          "budget_tokens": 100000000,
+          "batch_size": 64,
+          "seq_len": 512,
+          "lr": 0.002,
+          "min_lr": 0.0002,
+          "warmup_steps": 76,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "seed": 1337,
+          "shuffle_window_steps": 50,
+          "eval_every_steps": 190,
+          "tokens_per_step": 32768,
+          "max_steps": 763
+        },
+        "dataset_sha256": "63b2b1748b67c203b529bff707d461ee1849b7cfba70a46c80cde4dfaf3acf27",
+        "dataset_n_tokens": 27175997,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "val_bpb": 1.6226681499040827,
+        "val_bpb_par_genre": {
+          "dialogue": 1.355264975959424,
+          "encyclopedique": 1.7869246444543732,
+          "litteraire": 1.7414027155088454,
+          "presse": 1.612384176613287
+        },
+        "n_params": 10166400,
+        "train_time_s": 579.9,
+        "device": "mps",
+        "precision": "torch.float32",
+        "torch": "2.15.0",
+        "tokenizers": "0.23.3",
+        "python": "3.12.14",
+        "resumed_from_steps": [],
+        "created": "2026-11-10T19:13:09+0100"
+      },
+      "evaluation": {
+        "bpb": 1.6226681499040827,
+        "bpb_par_genre": {
+          "dialogue": 1.355264975959424,
+          "encyclopedique": 1.7869246444543732,
+          "litteraire": 1.7414027155088454,
+          "presse": 1.612384176613287
+        },
+        "loss_par_token": 4.2840087823324575,
+        "n_documents": 230,
+        "n_tokens": 213463,
+        "n_octets": 813051,
+        "octets_par_token": 3.808861488876292,
+        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/ablation_complet_s1337/ckpt.pt",
+        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
+      },
+      "mix": {
+        "documents": 18215,
+        "unique_documents": 18215,
+        "bytes": 99790461,
+        "order": "shuffle",
+        "by_source": {
+          "assemblee_nationale": {
+            "documents": 10,
+            "unique_documents": 10,
+            "bytes": 1927644,
+            "share_bytes": 0.0193
+          },
+          "commoncrawl": {
+            "documents": 36,
+            "unique_documents": 36,
+            "bytes": 112823,
+            "share_bytes": 0.0011
+          },
+          "fineweb2_fra": {
+            "documents": 3037,
+            "unique_documents": 3037,
+            "bytes": 10478071,
+            "share_bytes": 0.105
+          },
+          "gutenberg_fr": {
+            "documents": 18,
+            "unique_documents": 18,
+            "bytes": 7700788,
+            "share_bytes": 0.0772
+          },
+          "wikinews_fr": {
+            "documents": 104,
+            "unique_documents": 104,
+            "bytes": 146889,
+            "share_bytes": 0.0015
+          },
+          "wikipedia_fr": {
+            "documents": 14885,
+            "unique_documents": 14885,
+            "bytes": 48672508,
+            "share_bytes": 0.4877
+          },
+          "wikisource_fr": {
+            "documents": 125,
+            "unique_documents": 125,
+            "bytes": 30751738,
+            "share_bytes": 0.3082
+          }
+        },
+        "by_entry": {
+          "complet_20261110": {
+            "documents": 18215,
+            "bytes": 99790461,
+            "block": 0
+          }
+        },
+        "segments": [],
+        "contaminated_by_source": {},
+        "train_file": "train.jsonl.gz",
+        "train_sha256": "e5998877b7a31f6493e2152afef45c2158fb9e458b407a28ccd783103721bea6",
+        "tokenizer_sample": {
+          "file": "tokenizer_sample.jsonl.gz",
+          "documents": 177,
+          "bytes": 703634,
+          "sha256": "866e76181aa407d2f6ec44a85782b0a9c5e276be9d32a3e38d804916414288e9"
+        },
+        "fingerprint": "dfd82605420b3ea6100560e2e42ad9ba5b0d081a473c7d60469adb66e08788b1",
+        "created": "2026-11-10T19:03:19",
+        "seed": 1337,
+        "inputs": [
+          {
+            "name": "complet_20261110",
+            "origin": "stages/complet_20261110/06_exact_dedup",
+            "files": 251,
+            "warning": null
+          }
+        ],
+        "decontamination": {
+          "enabled": false,
+          "against": "data/validation.jsonl",
+          "template_ngrams_ignored": 0
+        },
+        "prefilter": {
+          "rate": 0.016134264331950397,
+          "skipped_docs": 3059979
+        },
+        "config": {
+          "sources": [
+            {
+              "name": "complet_20261110",
+              "path": null,
+              "pipeline": "complet_20261110",
+              "stage": "06_exact_dedup",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 1000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "seconds": 17.1
+      },
+      "config": {
+        "run": "ablation_complet_s1337",
+        "seed": 1337,
+        "notes": "Ablation corpus complet, tokenizer de référence figé, même budget 25M et même initialisation du kit.",
+        "paths": {
+          "data": "data",
+          "runs": "runs",
+          "experiments": "experiments"
+        },
+        "mix": {
+          "sources": [
+            {
+              "name": "complet_20261110",
+              "path": null,
+              "pipeline": "complet_20261110",
+              "stage": "06_exact_dedup",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 1000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "tokenizer": {
+          "path": "data/mixes/proxy_wiki20261001_fr065/tokenizer.json",
+          "pretokenizer": "gpt4"
+        },
+        "train": {
+          "mode": "proxy",
+          "debug_budget": 25000000,
+          "device": "mps",
+          "micro_batch": 16,
+          "compile": false
+        },
+        "eval": {
+          "validation": null,
+          "device": null
+        }
+      }
+    },
+    "ablation_brut_s2027": {
+      "name": "ablation_brut_s2027",
+      "meta": {
+        "kit_version": "1.0",
+        "official": false,
+        "steps": 763,
+        "tokens_seen": 25001984,
+        "train_config": {
+          "budget_tokens": 100000000,
+          "batch_size": 64,
+          "seq_len": 512,
+          "lr": 0.002,
+          "min_lr": 0.0002,
+          "warmup_steps": 76,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "seed": 1337,
+          "shuffle_window_steps": 50,
+          "eval_every_steps": 190,
+          "tokens_per_step": 32768,
+          "max_steps": 763
+        },
+        "dataset_sha256": "78a87aed40a1e85ba785da00ad53ef675ae50a131fed624b0c74fed4d58b0d0f",
+        "dataset_n_tokens": 27593731,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "val_bpb": 1.6714897386315137,
+        "val_bpb_par_genre": {
+          "dialogue": 1.4824377777384883,
+          "encyclopedique": 1.8096643959844214,
+          "litteraire": 1.7678506602619621,
+          "presse": 1.62957238926846
+        },
+        "n_params": 10166400,
+        "train_time_s": 670.9,
+        "device": "mps",
+        "precision": "torch.float32",
+        "torch": "2.15.0",
+        "tokenizers": "0.23.3",
+        "python": "3.12.14",
+        "resumed_from_steps": [],
+        "created": "2026-11-10T17:47:44+0100"
+      },
+      "evaluation": {
+        "bpb": 1.6714897386315137,
+        "bpb_par_genre": {
+          "dialogue": 1.4824377777384883,
+          "encyclopedique": 1.8096643959844214,
+          "litteraire": 1.7678506602619621,
+          "presse": 1.62957238926846
+        },
+        "loss_par_token": 4.412902736951645,
+        "n_documents": 230,
+        "n_tokens": 213463,
+        "n_octets": 813051,
+        "octets_par_token": 3.808861488876292,
+        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/ablation_brut_s2027/ckpt.pt",
+        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
+      },
+      "mix": {
+        "documents": 17288,
+        "unique_documents": 17288,
+        "bytes": 98214063,
+        "order": "shuffle",
+        "by_source": {
+          "assemblee_nationale": {
+            "documents": 9,
+            "unique_documents": 9,
+            "bytes": 1374576,
+            "share_bytes": 0.014
+          },
+          "commoncrawl": {
+            "documents": 77,
+            "unique_documents": 77,
+            "bytes": 533211,
+            "share_bytes": 0.0054
+          },
+          "fineweb2_fra": {
+            "documents": 2884,
+            "unique_documents": 2884,
+            "bytes": 9460703,
+            "share_bytes": 0.0963
+          },
+          "gutenberg_fr": {
+            "documents": 26,
+            "unique_documents": 26,
+            "bytes": 10737716,
+            "share_bytes": 0.1093
+          },
+          "wikinews_fr": {
+            "documents": 115,
+            "unique_documents": 115,
+            "bytes": 204516,
+            "share_bytes": 0.0021
+          },
+          "wikipedia_fr": {
+            "documents": 14069,
+            "unique_documents": 14069,
+            "bytes": 47851731,
+            "share_bytes": 0.4872
+          },
+          "wikisource_fr": {
+            "documents": 108,
+            "unique_documents": 108,
+            "bytes": 28051610,
+            "share_bytes": 0.2856
+          }
+        },
+        "by_entry": {
+          "ablation_brut_s2027": {
+            "documents": 17288,
+            "bytes": 98214063,
+            "block": 0
+          }
+        },
+        "segments": [],
+        "contaminated_by_source": {},
+        "train_file": "train.jsonl.gz",
+        "train_sha256": "df144587cc74417d4c28062b3757340424e5313d2d2ef0bf642e91026e490adb",
+        "tokenizer_sample": {
+          "file": "tokenizer_sample.jsonl.gz",
+          "documents": 174,
+          "bytes": 1403578,
+          "sha256": "e019af8721ee775c7ceb1c5e47ce9f49eb71b1ca33671057beef09a4b7372e07"
+        },
+        "fingerprint": "fa4fe429b9621770a6449eaee2f76de29f570d3ccb048da0e7ad29dfaca08a28",
+        "created": "2026-11-10T17:08:13",
+        "seed": 2027,
+        "inputs": [
+          {
+            "name": "ablation_brut_s2027",
+            "origin": "stages/ablation_brut_s2027/02_decontaminate",
+            "files": 7,
+            "warning": null
+          }
+        ],
+        "decontamination": {
+          "enabled": false,
+          "against": "data/validation.jsonl",
+          "template_ngrams_ignored": 0
+        },
+        "prefilter": {
+          "rate": null,
+          "skipped_docs": 0
+        },
+        "config": {
+          "sources": [
+            {
+              "name": "ablation_brut_s2027",
+              "path": null,
+              "pipeline": "ablation_brut_s2027",
+              "stage": "02_decontaminate",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 1000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "seconds": 7.3
+      },
+      "config": {
+        "run": "ablation_brut_s2027",
+        "seed": 2027,
+        "notes": "Ablation brute avec protections validation, tokenizer figé, budget 25M ; aucun filtre qualité/langue/doublon.",
+        "paths": {
+          "data": "data",
+          "runs": "runs",
+          "experiments": "experiments"
+        },
+        "mix": {
+          "sources": [
+            {
+              "name": "ablation_brut_s2027",
+              "path": null,
+              "pipeline": "ablation_brut_s2027",
+              "stage": "02_decontaminate",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 1000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "tokenizer": {
+          "path": "data/mixes/proxy_wiki20261001_fr065/tokenizer.json",
+          "pretokenizer": "gpt4"
+        },
+        "train": {
+          "mode": "proxy",
+          "debug_budget": 25000000,
+          "device": "mps",
+          "micro_batch": 16,
+          "compile": false
+        },
+        "eval": {
+          "validation": null,
+          "device": null
+        }
+      }
+    },
+    "proxy_cible_base_s2027": {
+      "name": "proxy_cible_base_s2027",
+      "meta": {
+        "kit_version": "1.0",
+        "official": false,
+        "steps": 763,
+        "tokens_seen": 25001984,
+        "train_config": {
+          "budget_tokens": 100000000,
+          "batch_size": 64,
+          "seq_len": 512,
+          "lr": 0.002,
+          "min_lr": 0.0002,
+          "warmup_steps": 76,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "seed": 1337,
+          "shuffle_window_steps": 50,
+          "eval_every_steps": 190,
+          "tokens_per_step": 32768,
+          "max_steps": 763
+        },
+        "dataset_sha256": "d0f5bdefece391bdf1985584e0d68e091a8a0ca6e4b87a97ade5b88f6356a8ed",
+        "dataset_n_tokens": 27229240,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "val_bpb": 1.6290415473031563,
+        "val_bpb_par_genre": {
+          "dialogue": 1.4103948069812113,
+          "encyclopedique": 1.7747374284779234,
+          "litteraire": 1.718320070609849,
+          "presse": 1.6172384668347901
+        },
+        "n_params": 10166400,
+        "train_time_s": 612.0,
+        "device": "mps",
+        "precision": "torch.float32",
+        "torch": "2.15.0",
+        "tokenizers": "0.23.3",
+        "python": "3.12.14",
+        "resumed_from_steps": [],
+        "created": "2026-11-04T22:03:52+0100"
+      },
+      "evaluation": {
+        "bpb": 1.6290415473031563,
+        "bpb_par_genre": {
+          "dialogue": 1.4103948069812113,
+          "encyclopedique": 1.7747374284779234,
+          "litteraire": 1.718320070609849,
+          "presse": 1.6172384668347901
+        },
+        "loss_par_token": 4.300835199016941,
+        "n_documents": 230,
+        "n_tokens": 213463,
+        "n_octets": 813051,
+        "octets_par_token": 3.808861488876292,
+        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/proxy_cible_base_s2027/ckpt.pt",
+        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
+      },
+      "mix": {
+        "documents": 17605,
+        "unique_documents": 17605,
+        "bytes": 99996596,
+        "order": "shuffle",
+        "by_source": {
+          "assemblee_nationale": {
+            "documents": 9,
+            "unique_documents": 9,
+            "bytes": 1487693,
+            "share_bytes": 0.0149
+          },
+          "commoncrawl": {
+            "documents": 40,
+            "unique_documents": 40,
+            "bytes": 90092,
+            "share_bytes": 0.0009
+          },
+          "fineweb2_fra": {
+            "documents": 3059,
+            "unique_documents": 3059,
+            "bytes": 10106166,
+            "share_bytes": 0.1011
+          },
+          "gutenberg_fr": {
+            "documents": 26,
+            "unique_documents": 26,
+            "bytes": 10211481,
+            "share_bytes": 0.1021
+          },
+          "wikinews_fr": {
+            "documents": 97,
+            "unique_documents": 97,
+            "bytes": 152171,
+            "share_bytes": 0.0015
+          },
+          "wikipedia_fr": {
+            "documents": 14260,
+            "unique_documents": 14260,
+            "bytes": 46440477,
+            "share_bytes": 0.4644
+          },
+          "wikisource_fr": {
+            "documents": 114,
+            "unique_documents": 114,
+            "bytes": 31508516,
+            "share_bytes": 0.3151
+          }
+        },
+        "by_entry": {
+          "nettoye": {
+            "documents": 17605,
+            "bytes": 99996596,
+            "block": 0
+          }
+        },
+        "segments": [],
+        "contaminated_by_source": {},
+        "train_file": "train.jsonl.gz",
+        "train_sha256": "d20d6489b584f3c8409142decd767a4584899f9b219c9170914281fe16da14a1",
+        "tokenizer_sample": {
+          "file": "tokenizer_sample.jsonl.gz",
+          "documents": 8791,
+          "bytes": 46512991,
+          "sha256": "a21e6e76ec3cb69ac9e707c340a80965364cf320d33a30915cb0224e8f820cea"
+        },
+        "fingerprint": "84065796d16019bb683d0e1299ce9d5bbe1e5602284ab24d3adce1c521139a55",
+        "created": "2026-11-04T21:53:09",
+        "seed": 2027,
+        "inputs": [
+          {
+            "name": "nettoye",
+            "origin": "stages/nettoye/08_exact_dedup",
+            "files": 251,
+            "warning": null
+          }
+        ],
+        "decontamination": {
+          "enabled": false,
+          "against": "data/validation.jsonl",
+          "template_ngrams_ignored": 0
+        },
+        "prefilter": {
+          "rate": 0.01586149013379863,
+          "skipped_docs": 3069858
+        },
+        "config": {
+          "sources": [
+            {
+              "name": "nettoye",
+              "path": null,
+              "pipeline": "nettoye",
+              "stage": "08_exact_dedup",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 50000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "seconds": 34.7
+      },
+      "config": {
+        "run": "proxy_cible_base_s2027",
+        "seed": 2027,
+        "notes": "nettoyage cible base, comparaison appariée, tokenizer de reference fixe, graine de mélange 2027",
+        "paths": {
+          "data": "data",
+          "runs": "runs",
+          "experiments": "experiments"
+        },
+        "mix": {
+          "sources": [
+            {
+              "name": "nettoye",
+              "path": null,
+              "pipeline": "nettoye",
+              "stage": "08_exact_dedup",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 50000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "tokenizer": {
+          "path": "data/mixes/proxy_wiki20261001_fr065/tokenizer.json",
+          "pretokenizer": "gpt4"
+        },
+        "train": {
+          "mode": "proxy",
+          "debug_budget": 25000000,
+          "device": "auto",
+          "micro_batch": 16,
+          "compile": false
+        },
+        "eval": {
+          "validation": null,
+          "device": null
+        }
+      }
+    },
+    "ablation_complet_s2027": {
+      "name": "ablation_complet_s2027",
+      "meta": {
+        "kit_version": "1.0",
+        "official": false,
+        "steps": 763,
+        "tokens_seen": 25001984,
+        "train_config": {
+          "budget_tokens": 100000000,
+          "batch_size": 64,
+          "seq_len": 512,
+          "lr": 0.002,
+          "min_lr": 0.0002,
+          "warmup_steps": 76,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "seed": 1337,
+          "shuffle_window_steps": 50,
+          "eval_every_steps": 190,
+          "tokens_per_step": 32768,
+          "max_steps": 763
+        },
+        "dataset_sha256": "938f5bf14a6c8f9ba86b96c6197611711f83914303eda4d9e532213e27d6e1cc",
+        "dataset_n_tokens": 27233396,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "val_bpb": 1.6424716255706562,
+        "val_bpb_par_genre": {
+          "dialogue": 1.4194757554247375,
+          "encyclopedique": 1.7879376196600778,
+          "litteraire": 1.7330797317584803,
+          "presse": 1.6340078844081956
+        },
+        "n_params": 10166400,
+        "train_time_s": 535.1,
+        "device": "mps",
+        "precision": "torch.float32",
+        "torch": "2.15.0",
+        "tokenizers": "0.23.3",
+        "python": "3.12.14",
+        "resumed_from_steps": [],
+        "created": "2026-11-10T19:22:36+0100"
+      },
+      "evaluation": {
+        "bpb": 1.6424716255706562,
+        "bpb_par_genre": {
+          "dialogue": 1.4194757554247375,
+          "encyclopedique": 1.7879376196600778,
+          "litteraire": 1.7330797317584803,
+          "presse": 1.6340078844081956
+        },
+        "loss_par_token": 4.336291970168074,
+        "n_documents": 230,
+        "n_tokens": 213463,
+        "n_octets": 813051,
+        "octets_par_token": 3.808861488876292,
+        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/ablation_complet_s2027/ckpt.pt",
+        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
+      },
+      "mix": {
+        "documents": 18015,
+        "unique_documents": 18015,
+        "bytes": 99997387,
+        "order": "shuffle",
+        "by_source": {
+          "assemblee_nationale": {
+            "documents": 9,
+            "unique_documents": 9,
+            "bytes": 1487285,
+            "share_bytes": 0.0149
+          },
+          "commoncrawl": {
+            "documents": 38,
+            "unique_documents": 38,
+            "bytes": 92098,
+            "share_bytes": 0.0009
+          },
+          "fineweb2_fra": {
+            "documents": 3132,
+            "unique_documents": 3132,
+            "bytes": 10336610,
+            "share_bytes": 0.1034
+          },
+          "gutenberg_fr": {
+            "documents": 20,
+            "unique_documents": 20,
+            "bytes": 7875020,
+            "share_bytes": 0.0788
+          },
+          "wikinews_fr": {
+            "documents": 101,
+            "unique_documents": 101,
+            "bytes": 157263,
+            "share_bytes": 0.0016
+          },
+          "wikipedia_fr": {
+            "documents": 14600,
+            "unique_documents": 14600,
+            "bytes": 47562441,
+            "share_bytes": 0.4756
+          },
+          "wikisource_fr": {
+            "documents": 115,
+            "unique_documents": 115,
+            "bytes": 32486670,
+            "share_bytes": 0.3249
+          }
+        },
+        "by_entry": {
+          "complet_20261110": {
+            "documents": 18015,
+            "bytes": 99997387,
+            "block": 0
+          }
+        },
+        "segments": [],
+        "contaminated_by_source": {},
+        "train_file": "train.jsonl.gz",
+        "train_sha256": "db7bf988e5532011360145e4827c7a1f637c824a131b730d6bef6b4d716a67b6",
+        "tokenizer_sample": {
+          "file": "tokenizer_sample.jsonl.gz",
+          "documents": 181,
+          "bytes": 1373431,
+          "sha256": "7ac2ed22bab5f63aa7f739c79862d9b1aa3e7f6de4fa883aaf4010f26c2337ef"
+        },
+        "fingerprint": "a4460231950e6656a110c4be273218ea503bb0559b6d8b02d2904da2e62e8c3a",
+        "created": "2026-11-10T19:13:31",
+        "seed": 2027,
+        "inputs": [
+          {
+            "name": "complet_20261110",
+            "origin": "stages/complet_20261110/06_exact_dedup",
+            "files": 251,
+            "warning": null
+          }
+        ],
+        "decontamination": {
+          "enabled": false,
+          "against": "data/validation.jsonl",
+          "template_ngrams_ignored": 0
+        },
+        "prefilter": {
+          "rate": 0.016134264331950397,
+          "skipped_docs": 3060046
+        },
+        "config": {
+          "sources": [
+            {
+              "name": "complet_20261110",
+              "path": null,
+              "pipeline": "complet_20261110",
+              "stage": "06_exact_dedup",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 1000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "seconds": 16.0
+      },
+      "config": {
+        "run": "ablation_complet_s2027",
+        "seed": 2027,
+        "notes": "Ablation corpus complet, tokenizer de référence figé, même budget 25M et même initialisation du kit.",
+        "paths": {
+          "data": "data",
+          "runs": "runs",
+          "experiments": "experiments"
+        },
+        "mix": {
+          "sources": [
+            {
+              "name": "complet_20261110",
+              "path": null,
+              "pipeline": "complet_20261110",
+              "stage": "06_exact_dedup",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 1000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "tokenizer": {
+          "path": "data/mixes/proxy_wiki20261001_fr065/tokenizer.json",
+          "pretokenizer": "gpt4"
+        },
+        "train": {
+          "mode": "proxy",
+          "debug_budget": 25000000,
+          "device": "mps",
+          "micro_batch": 16,
+          "compile": false
+        },
+        "eval": {
+          "validation": null,
+          "device": null
+        }
+      }
+    }
+  },
+  "proxy_adoption_gate_passed": false,
+  "full_budget_confirmation_required": true,
+  "active_corpus_changed": false,
+  "statistical_significance_claimed": false,
+  "scope": "Deux tirages du mélange ; initialisation du modèle commune et tokenizer figé."
+}

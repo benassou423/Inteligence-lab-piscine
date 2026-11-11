@@ -1,0 +1,39 @@
+# Variante obligatoire du pipeline complet ; la référence nettoye est conservée.
+name: complet_20261110
+input: data/stages/nettoye/08_exact_dedup
+sources: [wikipedia_fr, wikinews_fr, wikisource_fr, gutenberg_fr, assemblee_nationale, fineweb2_fra, commoncrawl]
+source_order: [wikipedia_fr, wikinews_fr, wikisource_fr, gutenberg_fr, assemblee_nationale, fineweb2_fra, commoncrawl]
+# Espace borné : supprimer uniquement les parts intermédiaires de CE run,
+# fichier par fichier, après succès de l'écriture suivante et de son reçu.
+# Les statistiques/reçus restent ; une reprise les régénère si nécessaire.
+prune_intermediate_files: true
+stages:
+  - name: exclude_heldout
+    params:
+      glob: data/val/*/heldout_ids.txt
+  - name: privacy
+  - name: quality
+    params:
+      sources: [commoncrawl, fineweb2_fra]
+      min_words: 10
+      min_alpha_fraction: 0.55
+      max_duplicate_line_char_fraction: 0.50
+      max_top_trigram_word_fraction: 0.30
+  - name: minhash_dedup
+    params:
+      num_perm: 128
+      bands: 16
+      rows: 8
+      shingle_size: 5
+      min_words: 50
+      threshold: 0.80
+      seed: 1337
+  - name: decontaminate
+    params:
+      against: data/validation.jsonl
+      doc_min_coverage: 0.20
+      formula_min_docs: 20
+      mask_lines: true
+  - name: exact_dedup
+    params:
+      top_k: 20

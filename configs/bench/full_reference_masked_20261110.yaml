@@ -1,0 +1,17 @@
+run: full_reference_masked_20261110
+seed: 1337
+notes: Référence retenue, coordonnées structurées masquées et nouveaux doublons exacts
+  retirés ; ordre conservé.
+mix:
+  sources:
+  - name: reference_masked
+    path: data/stages/finalisation_20261110/masked_reference/input.jsonl.gz
+  order: as_is
+  tokenizer_sample_bytes: 1000000
+tokenizer:
+  path: data/mixes/full_reference_20261110/tokenizer.json
+train:
+  mode: full
+  device: mps
+  micro_batch: 16
+  compile: false

@@ -1,0 +1,42 @@
+{
+  "kit_version": "1.0",
+  "official": true,
+  "steps": 3052,
+  "tokens_seen": 100007936,
+  "train_config": {
+    "budget_tokens": 100000000,
+    "batch_size": 64,
+    "seq_len": 512,
+    "lr": 0.002,
+    "min_lr": 0.0002,
+    "warmup_steps": 150,
+    "weight_decay": 0.1,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "grad_clip": 1.0,
+    "seed": 1337,
+    "shuffle_window_steps": 50,
+    "eval_every_steps": 500,
+    "tokens_per_step": 32768,
+    "max_steps": 3052
+  },
+  "dataset_sha256": "e117b978a787c8410ed9e56d916fd02b65080825805cd38559cb41f46aa06498",
+  "dataset_n_tokens": 114705877,
+  "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+  "val_bpb": 1.2873910457219313,
+  "val_bpb_par_genre": {
+    "dialogue": 1.087865089782691,
+    "encyclopedique": 1.3677740268516003,
+    "litteraire": 1.4499474685177856,
+    "presse": 1.2463447196209978
+  },
+  "n_params": 10166400,
+  "train_time_s": 4423.5,
+  "device": "mps",
+  "precision": "torch.float32",
+  "torch": "2.15.0",
+  "tokenizers": "0.23.3",
+  "python": "3.12.14",
+  "resumed_from_steps": [],
+  "created": "2026-11-10T15:52:36+0100"
+}

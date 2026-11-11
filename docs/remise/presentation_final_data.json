@@ -1,0 +1,156 @@
+{
+  "results": [
+    {
+      "seed": 1337,
+      "recipe": "brut",
+      "run": "ablation_brut_s1337",
+      "bpb": 1.6440033712920912,
+      "bpb_par_genre": {
+        "dialogue": 1.4269036119859684,
+        "encyclopedique": 1.783556524204767,
+        "litteraire": 1.7621926398959746,
+        "presse": 1.6072516249773894
+      },
+      "dataset_sha256": "e1a7a9a63fe30ec79de3b3d0c2f96a45b98120e3beb2cbb489fc82cdfd9e0987",
+      "mix_documents": 17946,
+      "mix_bytes": 99851864
+    },
+    {
+      "seed": 1337,
+      "recipe": "nettoye",
+      "run": "proxy_wiki20261001_fr065",
+      "bpb": 1.6154900354430564,
+      "bpb_par_genre": {
+        "dialogue": 1.3526381914512158,
+        "encyclopedique": 1.7790355156986961,
+        "litteraire": 1.7345504251238535,
+        "presse": 1.6009089897236728
+      },
+      "dataset_sha256": "add672225159a17a78ff5cda7f5e375d4cf34ce9be35b2c855b450f51030606d",
+      "mix_documents": 18218,
+      "mix_bytes": 99979803
+    },
+    {
+      "seed": 1337,
+      "recipe": "complet",
+      "run": "ablation_complet_s1337",
+      "bpb": 1.6226681499040827,
+      "bpb_par_genre": {
+        "dialogue": 1.355264975959424,
+        "encyclopedique": 1.7869246444543732,
+        "litteraire": 1.7414027155088454,
+        "presse": 1.612384176613287
+      },
+      "dataset_sha256": "63b2b1748b67c203b529bff707d461ee1849b7cfba70a46c80cde4dfaf3acf27",
+      "mix_documents": 18215,
+      "mix_bytes": 99790461
+    },
+    {
+      "seed": 2027,
+      "recipe": "brut",
+      "run": "ablation_brut_s2027",
+      "bpb": 1.6714897386315137,
+      "bpb_par_genre": {
+        "dialogue": 1.4824377777384883,
+        "encyclopedique": 1.8096643959844214,
+        "litteraire": 1.7678506602619621,
+        "presse": 1.62957238926846
+      },
+      "dataset_sha256": "78a87aed40a1e85ba785da00ad53ef675ae50a131fed624b0c74fed4d58b0d0f",
+      "mix_documents": 17288,
+      "mix_bytes": 98214063
+    },
+    {
+      "seed": 2027,
+      "recipe": "nettoye",
+      "run": "proxy_cible_base_s2027",
+      "bpb": 1.6290415473031563,
+      "bpb_par_genre": {
+        "dialogue": 1.4103948069812113,
+        "encyclopedique": 1.7747374284779234,
+        "litteraire": 1.718320070609849,
+        "presse": 1.6172384668347901
+      },
+      "dataset_sha256": "d0f5bdefece391bdf1985584e0d68e091a8a0ca6e4b87a97ade5b88f6356a8ed",
+      "mix_documents": 17605,
+      "mix_bytes": 99996596
+    },
+    {
+      "seed": 2027,
+      "recipe": "complet",
+      "run": "ablation_complet_s2027",
+      "bpb": 1.6424716255706562,
+      "bpb_par_genre": {
+        "dialogue": 1.4194757554247375,
+        "encyclopedique": 1.7879376196600778,
+        "litteraire": 1.7330797317584803,
+        "presse": 1.6340078844081956
+      },
+      "dataset_sha256": "938f5bf14a6c8f9ba86b96c6197611711f83914303eda4d9e532213e27d6e1cc",
+      "mix_documents": 18015,
+      "mix_bytes": 99997387
+    }
+  ],
+  "average": {
+    "brut": {
+      "bpb": 1.6577465549618025,
+      "bpb_par_genre": {
+        "dialogue": 1.4546706948622283,
+        "encyclopedique": 1.7966104600945942,
+        "litteraire": 1.7650216500789684,
+        "presse": 1.6184120071229247
+      }
+    },
+    "nettoye": {
+      "bpb": 1.6222657913731062,
+      "bpb_par_genre": {
+        "dialogue": 1.3815164992162137,
+        "encyclopedique": 1.7768864720883097,
+        "litteraire": 1.7264352478668512,
+        "presse": 1.6090737282792316
+      }
+    },
+    "complet": {
+      "bpb": 1.6325698877373696,
+      "bpb_par_genre": {
+        "dialogue": 1.3873703656920808,
+        "encyclopedique": 1.7874311320572254,
+        "litteraire": 1.7372412236336627,
+        "presse": 1.6231960305107411
+      }
+    }
+  },
+  "deltas": {
+    "dialogue": 0.005853866475867164,
+    "encyclopedique": 0.010544659968915626,
+    "litteraire": 0.010805975766811526,
+    "presse": 0.014122302231509565
+  },
+  "final": {
+    "bpb": 1.2882923104766877,
+    "tokens_seen": 100007936,
+    "dataset_sha256": "b88033ad2fbad01d1e1da101da4de4ce07a39c9a2060170ba0712705ab4ba8ee",
+    "device": "mps",
+    "precision": "torch.float32",
+    "counts": {
+      "documents_in": 72612,
+      "original_text_bytes": 419304065,
+      "documents_out": 72612,
+      "documents_masked": 548,
+      "text_bytes": 419295632,
+      "masks_EMAIL": 423,
+      "masks_TELEPHONE": 486,
+      "masks_IP": 4
+    },
+    "run": "full_reference_masked_20261110"
+  },
+  "sourceFractions": [
+    0.46243046958333206,
+    0.3203667716719739,
+    0.10407829385639772,
+    0.09621623484978255,
+    0.014370075765540053,
+    0.0014076058870081433,
+    0.0011305483859655376
+  ]
+}

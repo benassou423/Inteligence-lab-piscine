@@ -1,0 +1,16 @@
+{
+ "strict": {
+  "precision_min": 0.9955929544959973,
+  "precision_max": 0.9980419718924657,
+  "recall_min": 0.969367599416597,
+  "recall_max": 0.9697550374146107
+ },
+ "lenient": {
+  "precision_min": 0.9991672892167278,
+  "precision_max": 1.0,
+  "recall_min": 0.9689875040123466,
+  "recall_max": 0.9693262035142308
+ },
+ "uncertain_cases": 17,
+ "interpretation": "Bornes de sensibilité, pas intervalle de confiance"
+}

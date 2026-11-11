@@ -53,6 +53,27 @@ def test_deterministic_and_cached(corpus):
     assert c["created"] == a["created"]
 
 
+def test_raw_ablation_excludes_ids_and_preserves_provenance(corpus):
+    cfg = fx.run_config(corpus['root'], run='raw_provenance')
+    target = corpus['all'][0]
+    out = mix_dir(cfg)
+    man = build_mix(cfg['mix'], out, cfg['seed'], corpus['root'] / 'data',
+                    excluded_ids={target['id']}, keep_metadata=True)
+    with gzip.open(out / 'train.jsonl.gz', 'rt') as f:
+        records = [json.loads(line) for line in f]
+    assert target['id'] not in {d['id'] for d in records}
+    assert all('source' in d and 'html' not in d for d in records)
+    assert man['heldout_exclusion']['listed_ids'] == 1
+    # Changer les exclusions doit invalider le cache, même si les entrées sont inchangées.
+    second = build_mix(cfg['mix'], out, cfg['seed'], corpus['root'] / 'data',
+                       excluded_ids=set(), keep_metadata=True)
+    assert second['documents'] == man['documents'] + 1
+    assert second['fingerprint'] != man['fingerprint']
+    # Le format par défaut reste le texte seul ; le flux de texte n'est pas modifié.
+    plain, plain_dir = _mix(corpus, 'raw_plain')
+    assert Counter(_texts(plain_dir / 'train.jsonl.gz')) == Counter(_texts(out / 'train.jsonl.gz'))
+
+
 def test_repeat_caps_filter_and_weights(corpus):
     one, _ = _mix(corpus, "r1")
     two, _ = _mix(corpus, "r2", mix={"sources": [{"pipeline": "nettoye", "repeat": 2}]})

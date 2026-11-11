@@ -57,7 +57,7 @@ def test_push_run_cut_resume_pull(tmp_path):
     device = "mps" if torch.backends.mps.is_available() else "cpu"
     cmd = [sys.executable, str(kag / "kaggle.py"), "--local-hub", str(hub), "run", "--dataset", "ben/ds",
            "--runs", "ben/runs", "--kit", str(REPO), "--work", str(work), "--no-compile", "--device", device,
-           "--debug-budget", str(8 * 32768), "--validation", str(val), "--poll", "0.1"]
+           "--debug-budget", str(8 * 32768), "--validation", str(val), "--poll", "0.1", "--micro-batch", "16"]
     state = hub / "model/ben/runs/full/state.pt"
     p = subprocess.Popen(cmd, cwd=kag, start_new_session=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     deadline = time.time() + 600

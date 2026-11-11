@@ -1,0 +1,19 @@
+# Référence retenue : mêmes données et tokenizer que les comparaisons locales.
+run: full_reference_20261110
+seed: 1337
+notes: "100M : référence nettoye, dump Wikipédia 20261001, fr 0.65, proportions naturelles"
+mix:
+  sources:
+    - name: nettoye
+      pipeline: nettoye
+      stage: 08_exact_dedup
+  max_bytes: 420000000
+  order: shuffle
+  tokenizer_sample_bytes: 50000000
+tokenizer:
+  path: data/mixes/proxy_wiki20261001_fr065/tokenizer.json
+train:
+  mode: full
+  device: mps
+  micro_batch: 16
+  compile: false

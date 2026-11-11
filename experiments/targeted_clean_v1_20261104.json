@@ -1,0 +1,1006 @@
+{
+  "created": "2026-11-04T22:36:16.333828+01:00",
+  "pairs": [
+    {
+      "seed": 1337,
+      "baseline_run": "proxy_wiki20261001_fr065",
+      "candidate_run": "proxy_cible_v1_s1337",
+      "baseline_bpb": 1.6154900354430564,
+      "candidate_bpb": 1.6300037371614244,
+      "delta_bpb": 0.014513701718368077,
+      "genre_deltas": {
+        "dialogue": 0.007575082640032926,
+        "encyclopedique": 0.013169013129545215,
+        "litteraire": 0.011350753316155648,
+        "presse": 0.026205588309660355
+      }
+    },
+    {
+      "seed": 2027,
+      "baseline_run": "proxy_cible_base_s2027",
+      "candidate_run": "proxy_cible_v1_s2027",
+      "baseline_bpb": 1.6290415473031563,
+      "candidate_bpb": 1.649257287152778,
+      "delta_bpb": 0.02021573984962166,
+      "genre_deltas": {
+        "dialogue": 0.018371046076319786,
+        "encyclopedique": 0.02035493672430233,
+        "litteraire": 0.009663582407039684,
+        "presse": 0.03273308378133266
+      }
+    }
+  ],
+  "average": {
+    "baseline_bpb": 1.6222657913731062,
+    "candidate_bpb": 1.639630512157101,
+    "delta_bpb": 0.01736472078399487,
+    "genre_deltas": {
+      "dialogue": 0.012973064358176356,
+      "encyclopedique": 0.016761974926923773,
+      "litteraire": 0.010507167861597666,
+      "presse": 0.029469336045496508
+    }
+  },
+  "contract": {
+    "train_config": {
+      "budget_tokens": 100000000,
+      "batch_size": 64,
+      "seq_len": 512,
+      "lr": 0.002,
+      "min_lr": 0.0002,
+      "warmup_steps": 76,
+      "weight_decay": 0.1,
+      "beta1": 0.9,
+      "beta2": 0.95,
+      "grad_clip": 1.0,
+      "seed": 1337,
+      "shuffle_window_steps": 50,
+      "eval_every_steps": 190,
+      "tokens_per_step": 32768,
+      "max_steps": 763
+    },
+    "n_params": 10166400,
+    "tokens_seen": 25001984,
+    "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+    "device": "mps",
+    "precision": "torch.float32",
+    "torch": "2.15.0",
+    "tokenizers": "0.23.3",
+    "python": "3.12.14"
+  },
+  "criteria": {
+    "both_seed_global_bpb_lower": true,
+    "minimum_mean_bpb_improvement": 0.01,
+    "maximum_mean_genre_regression": 0.02
+  },
+  "proxy_adoption_gate_passed": false,
+  "recommendation": "keep_current_reference",
+  "scope": "Two input sampling seeds; model initialization and tokenizer fixed. No statistical significance claim.",
+  "runs": {
+    "proxy_wiki20261001_fr065": {
+      "name": "proxy_wiki20261001_fr065",
+      "meta": {
+        "kit_version": "1.0",
+        "official": false,
+        "steps": 763,
+        "tokens_seen": 25001984,
+        "train_config": {
+          "budget_tokens": 100000000,
+          "batch_size": 64,
+          "seq_len": 512,
+          "lr": 0.002,
+          "min_lr": 0.0002,
+          "warmup_steps": 76,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "seed": 1337,
+          "shuffle_window_steps": 50,
+          "eval_every_steps": 190,
+          "tokens_per_step": 32768,
+          "max_steps": 763
+        },
+        "dataset_sha256": "add672225159a17a78ff5cda7f5e375d4cf34ce9be35b2c855b450f51030606d",
+        "dataset_n_tokens": 27230868,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "val_bpb": 1.6154900354430564,
+        "val_bpb_par_genre": {
+          "dialogue": 1.3526381914512158,
+          "encyclopedique": 1.7790355156986961,
+          "litteraire": 1.7345504251238535,
+          "presse": 1.6009089897236728
+        },
+        "n_params": 10166400,
+        "train_time_s": 552.1,
+        "device": "mps",
+        "precision": "torch.float32",
+        "torch": "2.15.0",
+        "tokenizers": "0.23.3",
+        "python": "3.12.14",
+        "resumed_from_steps": [],
+        "created": "2026-11-04T18:58:19+0100"
+      },
+      "evaluation": {
+        "bpb": 1.6154900354430564,
+        "bpb_par_genre": {
+          "dialogue": 1.3526381914512158,
+          "encyclopedique": 1.7790355156986961,
+          "litteraire": 1.7345504251238535,
+          "presse": 1.6009089897236728
+        },
+        "loss_par_token": 4.265057830843428,
+        "n_documents": 230,
+        "n_tokens": 213463,
+        "n_octets": 813051,
+        "octets_par_token": 3.808861488876292,
+        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/proxy_wiki20261001_fr065/ckpt.pt",
+        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
+      },
+      "mix": {
+        "documents": 18218,
+        "unique_documents": 18218,
+        "bytes": 99979803,
+        "order": "shuffle",
+        "by_source": {
+          "assemblee_nationale": {
+            "documents": 10,
+            "unique_documents": 10,
+            "bytes": 1928927,
+            "share_bytes": 0.0193
+          },
+          "commoncrawl": {
+            "documents": 39,
+            "unique_documents": 39,
+            "bytes": 119522,
+            "share_bytes": 0.0012
+          },
+          "fineweb2_fra": {
+            "documents": 3033,
+            "unique_documents": 3033,
+            "bytes": 10401561,
+            "share_bytes": 0.104
+          },
+          "gutenberg_fr": {
+            "documents": 21,
+            "unique_documents": 21,
+            "bytes": 8131142,
+            "share_bytes": 0.0813
+          },
+          "wikinews_fr": {
+            "documents": 104,
+            "unique_documents": 104,
+            "bytes": 146889,
+            "share_bytes": 0.0015
+          },
+          "wikipedia_fr": {
+            "documents": 14887,
+            "unique_documents": 14887,
+            "bytes": 48584915,
+            "share_bytes": 0.4859
+          },
+          "wikisource_fr": {
+            "documents": 124,
+            "unique_documents": 124,
+            "bytes": 30666847,
+            "share_bytes": 0.3067
+          }
+        },
+        "by_entry": {
+          "nettoye": {
+            "documents": 18218,
+            "bytes": 99979803,
+            "block": 0
+          }
+        },
+        "segments": [],
+        "contaminated_by_source": {},
+        "train_file": "train.jsonl.gz",
+        "train_sha256": "ccd64ea1b267b134b95300d6c151256d594f4c20fcb1b04395f43234886124e1",
+        "tokenizer_sample": {
+          "file": "tokenizer_sample.jsonl.gz",
+          "documents": 9062,
+          "bytes": 49522339,
+          "sha256": "791c2e6595ff6dbd0624a454780c2b6a2670f6a4f5f5f02b310421c4a856df9e"
+        },
+        "fingerprint": "d70b2dc51a2f22ca262695df4f7cc7d74a354f556d7847365e3a33b6a301c845",
+        "created": "2026-11-04T18:48:54",
+        "seed": 1337,
+        "inputs": [
+          {
+            "name": "nettoye",
+            "origin": "stages/nettoye/08_exact_dedup",
+            "files": 251,
+            "warning": null
+          }
+        ],
+        "decontamination": {
+          "enabled": false,
+          "against": "data/validation.jsonl",
+          "template_ngrams_ignored": 0
+        },
+        "prefilter": {
+          "rate": 0.01586149013379863,
+          "skipped_docs": 3069793
+        },
+        "config": {
+          "sources": [
+            {
+              "name": "nettoye",
+              "path": null,
+              "pipeline": "nettoye",
+              "stage": null,
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 50000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "seconds": 16.6
+      },
+      "config": {
+        "run": "proxy_wiki20261001_fr065",
+        "seed": 1337,
+        "notes": "proxy : sortie finale de nettoye, proportions naturelles",
+        "paths": {
+          "data": "data",
+          "runs": "runs",
+          "experiments": "experiments"
+        },
+        "mix": {
+          "sources": [
+            {
+              "name": "nettoye",
+              "path": null,
+              "pipeline": "nettoye",
+              "stage": null,
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 50000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "tokenizer": {
+          "path": null,
+          "pretokenizer": "gpt4"
+        },
+        "train": {
+          "mode": "proxy",
+          "debug_budget": 25000000,
+          "device": "auto",
+          "micro_batch": 16,
+          "compile": false
+        },
+        "eval": {
+          "validation": null,
+          "device": null
+        }
+      }
+    },
+    "proxy_cible_v1_s1337": {
+      "name": "proxy_cible_v1_s1337",
+      "meta": {
+        "kit_version": "1.0",
+        "official": false,
+        "steps": 763,
+        "tokens_seen": 25001984,
+        "train_config": {
+          "budget_tokens": 100000000,
+          "batch_size": 64,
+          "seq_len": 512,
+          "lr": 0.002,
+          "min_lr": 0.0002,
+          "warmup_steps": 76,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "seed": 1337,
+          "shuffle_window_steps": 50,
+          "eval_every_steps": 190,
+          "tokens_per_step": 32768,
+          "max_steps": 763
+        },
+        "dataset_sha256": "46a423f57b98aaf9650c9fe64eccefc84c8066beadb922b580ad2b22d3dcb3ed",
+        "dataset_n_tokens": 27204839,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "val_bpb": 1.6300037371614244,
+        "val_bpb_par_genre": {
+          "dialogue": 1.3602132740912487,
+          "encyclopedique": 1.7922045288282413,
+          "litteraire": 1.7459011784400091,
+          "presse": 1.6271145780333331
+        },
+        "n_params": 10166400,
+        "train_time_s": 539.8,
+        "device": "mps",
+        "precision": "torch.float32",
+        "torch": "2.15.0",
+        "tokenizers": "0.23.3",
+        "python": "3.12.14",
+        "resumed_from_steps": [],
+        "created": "2026-11-04T22:24:46+0100"
+      },
+      "evaluation": {
+        "bpb": 1.6300037371614244,
+        "bpb_par_genre": {
+          "dialogue": 1.3602132740912487,
+          "encyclopedique": 1.7922045288282413,
+          "litteraire": 1.7459011784400091,
+          "presse": 1.6271145780333331
+        },
+        "loss_par_token": 4.3033754780033355,
+        "n_documents": 230,
+        "n_tokens": 213463,
+        "n_octets": 813051,
+        "octets_par_token": 3.808861488876292,
+        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/proxy_cible_v1_s1337/ckpt.pt",
+        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
+      },
+      "mix": {
+        "documents": 18218,
+        "unique_documents": 18218,
+        "bytes": 99920412,
+        "order": "shuffle",
+        "by_source": {
+          "assemblee_nationale": {
+            "documents": 10,
+            "unique_documents": 10,
+            "bytes": 1928927,
+            "share_bytes": 0.0193
+          },
+          "commoncrawl": {
+            "documents": 39,
+            "unique_documents": 39,
+            "bytes": 119522,
+            "share_bytes": 0.0012
+          },
+          "fineweb2_fra": {
+            "documents": 3033,
+            "unique_documents": 3033,
+            "bytes": 10401561,
+            "share_bytes": 0.1041
+          },
+          "gutenberg_fr": {
+            "documents": 21,
+            "unique_documents": 21,
+            "bytes": 8131142,
+            "share_bytes": 0.0814
+          },
+          "wikinews_fr": {
+            "documents": 104,
+            "unique_documents": 104,
+            "bytes": 146889,
+            "share_bytes": 0.0015
+          },
+          "wikipedia_fr": {
+            "documents": 14887,
+            "unique_documents": 14887,
+            "bytes": 48525524,
+            "share_bytes": 0.4856
+          },
+          "wikisource_fr": {
+            "documents": 124,
+            "unique_documents": 124,
+            "bytes": 30666847,
+            "share_bytes": 0.3069
+          }
+        },
+        "by_entry": {
+          "nettoye": {
+            "documents": 18218,
+            "bytes": 99920412,
+            "block": 0
+          }
+        },
+        "segments": [],
+        "contaminated_by_source": {},
+        "train_file": "train.jsonl.gz",
+        "train_sha256": "1a193e2cb4079e5394f7f530f2e5a7013290b7eaa11ebee1b393363a7017e537",
+        "tokenizer_sample": {
+          "file": "tokenizer_sample.jsonl.gz",
+          "documents": 9071,
+          "bytes": 49533849,
+          "sha256": "cab99a99b5f0444cf929d6e827dc4f15a0e3dc4b711d6eb77c9a8c7210f1edaa"
+        },
+        "fingerprint": "96e8eac1c448142cb6f34c84fe858f42d4e0ab5428dfb751bc492656910f507b",
+        "created": "2026-11-04T22:15:35",
+        "seed": 1337,
+        "inputs": [
+          {
+            "name": "nettoye",
+            "origin": "stages/nettoye_cible_v1/03_exact_dedup",
+            "files": 251,
+            "warning": null
+          }
+        ],
+        "decontamination": {
+          "enabled": false,
+          "against": "data/validation.jsonl",
+          "template_ngrams_ignored": 0
+        },
+        "prefilter": {
+          "rate": 0.015869984474229142,
+          "skipped_docs": 3069764
+        },
+        "config": {
+          "sources": [
+            {
+              "name": "nettoye",
+              "path": null,
+              "pipeline": "nettoye_cible_v1",
+              "stage": "03_exact_dedup",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 50000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "seconds": 18.6
+      },
+      "config": {
+        "run": "proxy_cible_v1_s1337",
+        "seed": 1337,
+        "notes": "nettoyage cible v1, comparaison appariée, tokenizer de reference fixe, graine de mélange 1337",
+        "paths": {
+          "data": "data",
+          "runs": "runs",
+          "experiments": "experiments"
+        },
+        "mix": {
+          "sources": [
+            {
+              "name": "nettoye",
+              "path": null,
+              "pipeline": "nettoye_cible_v1",
+              "stage": "03_exact_dedup",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 50000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "tokenizer": {
+          "path": "data/mixes/proxy_wiki20261001_fr065/tokenizer.json",
+          "pretokenizer": "gpt4"
+        },
+        "train": {
+          "mode": "proxy",
+          "debug_budget": 25000000,
+          "device": "auto",
+          "micro_batch": 16,
+          "compile": false
+        },
+        "eval": {
+          "validation": null,
+          "device": null
+        }
+      }
+    },
+    "proxy_cible_base_s2027": {
+      "name": "proxy_cible_base_s2027",
+      "meta": {
+        "kit_version": "1.0",
+        "official": false,
+        "steps": 763,
+        "tokens_seen": 25001984,
+        "train_config": {
+          "budget_tokens": 100000000,
+          "batch_size": 64,
+          "seq_len": 512,
+          "lr": 0.002,
+          "min_lr": 0.0002,
+          "warmup_steps": 76,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "seed": 1337,
+          "shuffle_window_steps": 50,
+          "eval_every_steps": 190,
+          "tokens_per_step": 32768,
+          "max_steps": 763
+        },
+        "dataset_sha256": "d0f5bdefece391bdf1985584e0d68e091a8a0ca6e4b87a97ade5b88f6356a8ed",
+        "dataset_n_tokens": 27229240,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "val_bpb": 1.6290415473031563,
+        "val_bpb_par_genre": {
+          "dialogue": 1.4103948069812113,
+          "encyclopedique": 1.7747374284779234,
+          "litteraire": 1.718320070609849,
+          "presse": 1.6172384668347901
+        },
+        "n_params": 10166400,
+        "train_time_s": 612.0,
+        "device": "mps",
+        "precision": "torch.float32",
+        "torch": "2.15.0",
+        "tokenizers": "0.23.3",
+        "python": "3.12.14",
+        "resumed_from_steps": [],
+        "created": "2026-11-04T22:03:52+0100"
+      },
+      "evaluation": {
+        "bpb": 1.6290415473031563,
+        "bpb_par_genre": {
+          "dialogue": 1.4103948069812113,
+          "encyclopedique": 1.7747374284779234,
+          "litteraire": 1.718320070609849,
+          "presse": 1.6172384668347901
+        },
+        "loss_par_token": 4.300835199016941,
+        "n_documents": 230,
+        "n_tokens": 213463,
+        "n_octets": 813051,
+        "octets_par_token": 3.808861488876292,
+        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/proxy_cible_base_s2027/ckpt.pt",
+        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
+      },
+      "mix": {
+        "documents": 17605,
+        "unique_documents": 17605,
+        "bytes": 99996596,
+        "order": "shuffle",
+        "by_source": {
+          "assemblee_nationale": {
+            "documents": 9,
+            "unique_documents": 9,
+            "bytes": 1487693,
+            "share_bytes": 0.0149
+          },
+          "commoncrawl": {
+            "documents": 40,
+            "unique_documents": 40,
+            "bytes": 90092,
+            "share_bytes": 0.0009
+          },
+          "fineweb2_fra": {
+            "documents": 3059,
+            "unique_documents": 3059,
+            "bytes": 10106166,
+            "share_bytes": 0.1011
+          },
+          "gutenberg_fr": {
+            "documents": 26,
+            "unique_documents": 26,
+            "bytes": 10211481,
+            "share_bytes": 0.1021
+          },
+          "wikinews_fr": {
+            "documents": 97,
+            "unique_documents": 97,
+            "bytes": 152171,
+            "share_bytes": 0.0015
+          },
+          "wikipedia_fr": {
+            "documents": 14260,
+            "unique_documents": 14260,
+            "bytes": 46440477,
+            "share_bytes": 0.4644
+          },
+          "wikisource_fr": {
+            "documents": 114,
+            "unique_documents": 114,
+            "bytes": 31508516,
+            "share_bytes": 0.3151
+          }
+        },
+        "by_entry": {
+          "nettoye": {
+            "documents": 17605,
+            "bytes": 99996596,
+            "block": 0
+          }
+        },
+        "segments": [],
+        "contaminated_by_source": {},
+        "train_file": "train.jsonl.gz",
+        "train_sha256": "d20d6489b584f3c8409142decd767a4584899f9b219c9170914281fe16da14a1",
+        "tokenizer_sample": {
+          "file": "tokenizer_sample.jsonl.gz",
+          "documents": 8791,
+          "bytes": 46512991,
+          "sha256": "a21e6e76ec3cb69ac9e707c340a80965364cf320d33a30915cb0224e8f820cea"
+        },
+        "fingerprint": "84065796d16019bb683d0e1299ce9d5bbe1e5602284ab24d3adce1c521139a55",
+        "created": "2026-11-04T21:53:09",
+        "seed": 2027,
+        "inputs": [
+          {
+            "name": "nettoye",
+            "origin": "stages/nettoye/08_exact_dedup",
+            "files": 251,
+            "warning": null
+          }
+        ],
+        "decontamination": {
+          "enabled": false,
+          "against": "data/validation.jsonl",
+          "template_ngrams_ignored": 0
+        },
+        "prefilter": {
+          "rate": 0.01586149013379863,
+          "skipped_docs": 3069858
+        },
+        "config": {
+          "sources": [
+            {
+              "name": "nettoye",
+              "path": null,
+              "pipeline": "nettoye",
+              "stage": "08_exact_dedup",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 50000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "seconds": 34.7
+      },
+      "config": {
+        "run": "proxy_cible_base_s2027",
+        "seed": 2027,
+        "notes": "nettoyage cible base, comparaison appariée, tokenizer de reference fixe, graine de mélange 2027",
+        "paths": {
+          "data": "data",
+          "runs": "runs",
+          "experiments": "experiments"
+        },
+        "mix": {
+          "sources": [
+            {
+              "name": "nettoye",
+              "path": null,
+              "pipeline": "nettoye",
+              "stage": "08_exact_dedup",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 50000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "tokenizer": {
+          "path": "data/mixes/proxy_wiki20261001_fr065/tokenizer.json",
+          "pretokenizer": "gpt4"
+        },
+        "train": {
+          "mode": "proxy",
+          "debug_budget": 25000000,
+          "device": "auto",
+          "micro_batch": 16,
+          "compile": false
+        },
+        "eval": {
+          "validation": null,
+          "device": null
+        }
+      }
+    },
+    "proxy_cible_v1_s2027": {
+      "name": "proxy_cible_v1_s2027",
+      "meta": {
+        "kit_version": "1.0",
+        "official": false,
+        "steps": 763,
+        "tokens_seen": 25001984,
+        "train_config": {
+          "budget_tokens": 100000000,
+          "batch_size": 64,
+          "seq_len": 512,
+          "lr": 0.002,
+          "min_lr": 0.0002,
+          "warmup_steps": 76,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "seed": 1337,
+          "shuffle_window_steps": 50,
+          "eval_every_steps": 190,
+          "tokens_per_step": 32768,
+          "max_steps": 763
+        },
+        "dataset_sha256": "437c0469ba8f2448692b329ba61dc136610ee9adfff7236b1464147df4c6aa67",
+        "dataset_n_tokens": 27206710,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "val_bpb": 1.649257287152778,
+        "val_bpb_par_genre": {
+          "dialogue": 1.4287658530575311,
+          "encyclopedique": 1.7950923652022257,
+          "litteraire": 1.7279836530168886,
+          "presse": 1.6499715506161228
+        },
+        "n_params": 10166400,
+        "train_time_s": 540.2,
+        "device": "mps",
+        "precision": "torch.float32",
+        "torch": "2.15.0",
+        "tokenizers": "0.23.3",
+        "python": "3.12.14",
+        "resumed_from_steps": [],
+        "created": "2026-11-04T22:34:24+0100"
+      },
+      "evaluation": {
+        "bpb": 1.649257287152778,
+        "bpb_par_genre": {
+          "dialogue": 1.4287658530575311,
+          "encyclopedique": 1.7950923652022257,
+          "litteraire": 1.7279836530168886,
+          "presse": 1.6499715506161228
+        },
+        "loss_par_token": 4.354206806182736,
+        "n_documents": 230,
+        "n_tokens": 213463,
+        "n_octets": 813051,
+        "octets_par_token": 3.808861488876292,
+        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/proxy_cible_v1_s2027/ckpt.pt",
+        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
+      },
+      "mix": {
+        "documents": 17605,
+        "unique_documents": 17605,
+        "bytes": 99945544,
+        "order": "shuffle",
+        "by_source": {
+          "assemblee_nationale": {
+            "documents": 9,
+            "unique_documents": 9,
+            "bytes": 1487693,
+            "share_bytes": 0.0149
+          },
+          "commoncrawl": {
+            "documents": 40,
+            "unique_documents": 40,
+            "bytes": 90092,
+            "share_bytes": 0.0009
+          },
+          "fineweb2_fra": {
+            "documents": 3059,
+            "unique_documents": 3059,
+            "bytes": 10106166,
+            "share_bytes": 0.1011
+          },
+          "gutenberg_fr": {
+            "documents": 26,
+            "unique_documents": 26,
+            "bytes": 10211481,
+            "share_bytes": 0.1022
+          },
+          "wikinews_fr": {
+            "documents": 97,
+            "unique_documents": 97,
+            "bytes": 152171,
+            "share_bytes": 0.0015
+          },
+          "wikipedia_fr": {
+            "documents": 14260,
+            "unique_documents": 14260,
+            "bytes": 46389432,
+            "share_bytes": 0.4641
+          },
+          "wikisource_fr": {
+            "documents": 114,
+            "unique_documents": 114,
+            "bytes": 31508509,
+            "share_bytes": 0.3153
+          }
+        },
+        "by_entry": {
+          "nettoye": {
+            "documents": 17605,
+            "bytes": 99945544,
+            "block": 0
+          }
+        },
+        "segments": [],
+        "contaminated_by_source": {},
+        "train_file": "train.jsonl.gz",
+        "train_sha256": "945c5013b2a17c56a13bb0f95dc71e390de904a0af45416972a6dbea6fb2e7f9",
+        "tokenizer_sample": {
+          "file": "tokenizer_sample.jsonl.gz",
+          "documents": 8798,
+          "bytes": 46506869,
+          "sha256": "9fecea909c7a754f66874c8080dd73f2d3e8df1a6e9b0357ec9fa4741d3de4f3"
+        },
+        "fingerprint": "a17cf75af2b36945fc8b28a435c42b691232c31cf54e95bbb00be1ab7998a27c",
+        "created": "2026-11-04T22:25:13",
+        "seed": 2027,
+        "inputs": [
+          {
+            "name": "nettoye",
+            "origin": "stages/nettoye_cible_v1/03_exact_dedup",
+            "files": 251,
+            "warning": null
+          }
+        ],
+        "decontamination": {
+          "enabled": false,
+          "against": "data/validation.jsonl",
+          "template_ngrams_ignored": 0
+        },
+        "prefilter": {
+          "rate": 0.015869984474229142,
+          "skipped_docs": 3069826
+        },
+        "config": {
+          "sources": [
+            {
+              "name": "nettoye",
+              "path": null,
+              "pipeline": "nettoye_cible_v1",
+              "stage": "03_exact_dedup",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 50000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "seconds": 19.6
+      },
+      "config": {
+        "run": "proxy_cible_v1_s2027",
+        "seed": 2027,
+        "notes": "nettoyage cible v1, comparaison appariée, tokenizer de reference fixe, graine de mélange 2027",
+        "paths": {
+          "data": "data",
+          "runs": "runs",
+          "experiments": "experiments"
+        },
+        "mix": {
+          "sources": [
+            {
+              "name": "nettoye",
+              "path": null,
+              "pipeline": "nettoye_cible_v1",
+              "stage": "03_exact_dedup",
+              "sources": null,
+              "repeat": 1.0,
+              "weight": null,
+              "max_bytes": null,
+              "block": 0
+            }
+          ],
+          "order": "shuffle",
+          "max_bytes": 100000000,
+          "total_bytes": null,
+          "prefilter": true,
+          "tokenizer_sample_bytes": 50000000,
+          "decontaminate": {
+            "enabled": false,
+            "against": "data/validation.jsonl",
+            "ngram": 13,
+            "min_matches": 50,
+            "max_df": 10
+          },
+          "workers": 8
+        },
+        "tokenizer": {
+          "path": "data/mixes/proxy_wiki20261001_fr065/tokenizer.json",
+          "pretokenizer": "gpt4"
+        },
+        "train": {
+          "mode": "proxy",
+          "debug_budget": 25000000,
+          "device": "auto",
+          "micro_batch": 16,
+          "compile": false
+        },
+        "eval": {
+          "validation": null,
+          "device": null
+        }
+      }
+    }
+  },
+  "active_corpus_changed": false
+}

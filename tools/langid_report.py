@@ -1,4 +1,4 @@
-"""Précision et rappel du filtre de langue, estimés à partir des annotations de Ben.
+"""Précision et rappel du filtre de langue, estimés à partir d'annotations dont l'origine est indiquée.
 
     uv run python -m tools.langid_report
 
@@ -39,11 +39,15 @@ def load(out_dir):
             items[it["id"]] = it
     meta = json.loads(meta_path.read_text(encoding="utf-8"))
     ann = {}
+    origins = set()
     if ann_path.exists():
         for line in ann_path.read_text(encoding="utf-8").splitlines():
             if line.strip():
                 rec = json.loads(line)
                 ann[rec["id"]] = rec["label"]
+                origins.add(rec.get("annotation_kind", meta.get("annotation_kind", "human")))
+    if origins:
+        meta["annotation_kind"] = next(iter(origins)) if len(origins) == 1 else "mixed"
     return items, meta, ann
 
 
@@ -140,7 +144,18 @@ def build_report(items, meta, ann, n_boot=1000):
     rows, coverage = annotated_rows(items, meta, ann)
     labels = Counter(ann.get(i) for i in items if i in ann)
     threshold, rule = float(meta["threshold"]), meta.get("rule", "fr")
-    lines = ["# Filtre de langue : précision et rappel mesurés à la main", ""]
+    kind = meta.get("annotation_kind", "human")
+    origin = {"ai": "IA", "human": "humaines", "mixed": "humaines et IA"}.get(kind, "d'origine non précisée")
+    lines = [f"# Filtre de langue : estimations sur annotations {origin}", ""]
+    if kind != "human":
+        lines += ["> **Annotations IA présentes : ce rapport n'est pas une validation humaine indépendante.** "
+                  "Les intervalles supposent les étiquettes correctes ; ils ne mesurent pas les erreurs de l'IA.", ""]
+    if meta.get("uncertain_ids"):
+        lines += [f"**Cas à examiner : {len(meta['uncertain_ids'])}**. Ils sont identifiés séparément ; "
+                  "leur influence doit être examinée avant de choisir un réglage.", ""]
+    if meta.get("n_truncated"):
+        lines += [f"**{meta['n_truncated']} extraits tronqués** (au plus {meta.get('sample_max_chars', '?')} caractères). "
+                  "Une annotation d'extrait ne prouve pas la langue de tout le document.", ""]
     lines.append(
         f"Config `{meta.get('config', '?')}` · règle actuelle **{RULE_NAMES[rule]}** · seuil **{dec(threshold)}** · "
         f"{len(items)} documents tirés · annotés : **{len(rows)}** (f {labels['f']} · n {labels['n']} · "
@@ -150,6 +165,13 @@ def build_report(items, meta, ann, n_boot=1000):
     if not rows:
         lines.append("_Pas encore d'annotation : lancer `uv run python -m tools.annotate_langid`._")
         return "\n".join(lines) + "\n", {}
+    population_sources = {k.split("|", 1)[0] for k, n in meta["population"].items() if n > 0}
+    missing_sources = sorted(population_sources - {r["source"] for r in rows})
+    if coverage < 1:
+        lines += ["**Portée : les estimations portent sur les cellules représentées** "
+                  "(une source et une catégorie de score), pas sur les cellules sans annotation.", ""]
+    if missing_sources:
+        lines += ["**Sources sans annotation :** " + ", ".join(f"`{s}`" for s in missing_sources) + ".", ""]
     if len(rows) < 0.8 * len(items) or coverage < 0.9:
         lines += [f"> ⚠️ **Résultats provisoires** : {len(rows)} annotations sur {len(items)}, strates annotées "
                   f"= {pct(coverage)} du corpus. Finir l'annotation avant de conclure.", ""]
@@ -171,7 +193,7 @@ def build_report(items, meta, ann, n_boot=1000):
         f"| **Rappel** : part des documents français qui sont gardés | {pct(s['recall'])} "
         f"[{pct(s['r_ci'][0])} – {pct(s['r_ci'][1])}] | {pct(l_['recall'])} "
         f"[{pct(l_['r_ci'][0])} – {pct(l_['r_ci'][1])}] |",
-        f"| Documents français perdus (estimation, corpus entier) | {num(s['lost'])} | {num(l_['lost'])} |",
+        f"| Documents français perdus (estimation, cellules représentées) | {num(s['lost'])} | {num(l_['lost'])} |",
         "",
         f"En clair (strict) : sur 100 documents gardés, environ **{dec(100 * (1 - s['precision']), 1)}** ne sont "
         f"pas en français ; sur 100 documents français, environ **{dec(100 * (1 - s['recall']), 1)}** sont jetés "
@@ -187,7 +209,7 @@ def build_report(items, meta, ann, n_boot=1000):
         conf_w[key] += r["w"]
         conf_n[key] += 1
     lines += ["## Matrice de confusion", "",
-              "Nombre estimé de documents dans tout le corpus (entre parenthèses : documents annotés).", "",
+              "Nombre estimé de documents dans les cellules représentées (entre parenthèses : documents annotés).", "",
               "| Décision du filtre \\ Annotation | français (f) | mélangé (m) | pas français (n) |",
               "|---|--:|--:|--:|"]
     for decision in ("Gardé", "Rejeté"):
@@ -264,11 +286,14 @@ def build_report(items, meta, ann, n_boot=1000):
               "- **Pondération** : chaque document annoté représente sa cellule (source × strate) : "
               "poids = taille de la cellule / documents annotés dans la cellule. Sans ce poids, les strates rares "
               "(sur-représentées exprès) fausseraient le résultat. Les strates découpent tout le corpus : "
-              "l'estimation vaut pour n'importe quelle règle, pas seulement celle du tirage.",
-              "- **Intervalles** : bootstrap (1 000 tirages avec remise dans chaque cellule), percentiles 2,5 et 97,5.",
+              "l'estimation compare les règles sur les cellules représentées, sans extrapoler aux cellules absentes.",
+              f"- **Intervalles** : bootstrap ({num(n_boot)} tirages avec remise dans chaque cellule), percentiles 2,5 et 97,5.",
+              "  Une cellule avec très peu d'exemples peut donner un intervalle trop optimiste. "
+              "Ce calcul ne couvre ni les erreurs d'annotation ni les cellules jamais observées.",
               "- **À l'aveugle** : l'écran d'annotation ne montre pas la note du modèle.",
               ""]
-    summary = {"n_annotated": len(rows), "strict": {k: v for k, v in s.items()},
+    summary = {"n_annotated": len(rows), "annotation_kind": kind, "coverage": coverage,
+               "missing_sources": missing_sources, "strict": {k: v for k, v in s.items()},
                "lenient": {k: v for k, v in l_.items()},
                "sweep": {f"{rl}@{t:.2f}": v for (rl, t), v in sweep.items()}}
     return "\n".join(lines) + "\n", summary

@@ -1,0 +1,14 @@
+# Expérience sur le corpus final actuel : même filtre de langue, aucun nouvel ajout.
+# Le contrôle complet de contamination est obligatoire après ce pipeline.
+name: nettoye_cible_v1
+input: data/stages/nettoye/08_exact_dedup
+sources: [wikipedia_fr, wikinews_fr, wikisource_fr, gutenberg_fr, assemblee_nationale, fineweb2_fra, commoncrawl]
+source_order: [wikipedia_fr, wikinews_fr, wikisource_fr, gutenberg_fr, assemblee_nationale, fineweb2_fra, commoncrawl]
+stages:
+  - name: exclude_heldout
+    params:
+      glob: data/val/*/heldout_ids.txt
+  - name: targeted_clean
+  - name: exact_dedup
+    params:
+      top_k: 20

@@ -1,0 +1,27 @@
+{
+  "documents": 80,
+  "labels": {
+    "f": 63,
+    "m": 7,
+    "n": 10
+  },
+  "annotation_kind": "ai",
+  "human_labels": 0,
+  "uncertain_cases": 17,
+  "excerpts_truncated": 46,
+  "duplicate_ids": 0,
+  "missing_ids": 0,
+  "blind_decisions_sha256": "d94e6e0edb3d25ccc6578a17f41abf5978980973311bcd9318cb64d8e7eb314e",
+  "sources": {
+    "commoncrawl": 12,
+    "fineweb2_fra": 12,
+    "assemblee_nationale": 10,
+    "wikisource_fr": 12,
+    "wikinews_fr": 10,
+    "gutenberg_fr": 12,
+    "wikipedia_fr": 12
+  },
+  "formal_human_requirement_met": false,
+  "excerpt_text_mismatches": 0,
+  "source_file_sha256": "2417667112e3da5e35d3da3ad7cbe0e1ed3d75a6855c04f832d591978daed176"
+}
