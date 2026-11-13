@@ -1,0 +1,3 @@
+# Aucune conversion de fin de ligne, sur aucune machine : le tokenizer, le kit et les
+# manifestes sont vérifiés par empreinte sha256 ; une conversion en CRLF sous Windows les casserait.
+* -text

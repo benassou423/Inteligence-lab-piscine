@@ -1,0 +1,178 @@
+{
+  "version": {"valeur": "recettes-rtx-v1", "pourquoi": "change cette étiquette si tu changes une valeur : elle est recopiée dans l'état du lanceur et dans les rapports"},
+  "note": "Chaque valeur a la forme {\"valeur\": ..., \"pourquoi\": ...}. Lu par chatbot/pipeline_rtx.py. Les chemins sont relatifs au dossier du paquet (mêmes chemins sur le Mac et sur le PC).",
+
+  "commun": {
+    "tokenizer": {"valeur": "submissions/2026-11-11_153839/tokenizer.json", "pourquoi": "le tokenizer de 8 192 tokens de notre soumission : les .bin de pré-entraînement ont été préparés avec lui"},
+    "contexte": {"valeur": 512, "pourquoi": "fenêtre du kit ; un échange de chat fait ~35 tokens, donc ~11 échanges tiennent dans 512"},
+    "vocabulaire": {"valeur": 8192, "pourquoi": "taille du tokenizer, imposée par le kit"},
+    "graine": {"valeur": 1337, "pourquoi": "même graine que tous nos runs : le tirage des fenêtres est rejouable"},
+    "precision": {"valeur": "auto", "pourquoi": "auto = bf16 sur la RTX 5090 (2 octets par nombre, cœurs Tensor), fp32 sur Mac et processeur (voir chatbot/accel.py)"},
+    "compile": {"valeur": "cuda", "pourquoi": "torch.compile seulement sur carte NVIDIA (gain de vitesse) ; s'il échoue (fréquent sous Windows sans Triton), repli automatique sans compilation, même calcul"},
+    "micro_lots_essayes": {"valeur": [128, 64, 32], "pourquoi": "mesurer essaie d'abord le lot entier en une fois, puis le coupe en 2 ou 4 si la mémoire (32 Go) déborde ; le pas d'optimisation reste le même"},
+    "pas_benchmark": {"valeur": 30, "pourquoi": "30 pas chronométrés (après 3 pas d'échauffement) suffisent pour un débit stable, en moins d'une minute par taille"},
+    "marge_estimation": {"valeur": 1.15, "pourquoi": "+15 % sur la durée calculée pour les évaluations de validation (tous les 1 000 pas) et les sauvegardes, non comprises dans le benchmark"},
+    "forfait_evaluation_heures": {"valeur": 0.25, "pourquoi": "forfait PRUDENT et NON MESURÉ pour l'évaluation d'un chatbot (panel de 40 messages × 3 graines × 16 candidates, 6 discussions) ; la durée réelle est écrite dans l'état du lanceur"},
+    "budget_heures_defaut": {"valeur": 4, "pourquoi": "lancer --taille auto choisit la plus grande taille dont la durée estimée tient dans 4 h, sauf --budget-heures"},
+    "espace_disque_min_go": {"valeur": 15, "pourquoi": "états de reprise (state.pt : poids + 2 moments d'AdamW, < 1 Go), caches de tokens des affinages (~1 Go), points de contrôle : 15 Go laissent de la marge"},
+    "versions_attendues": {"valeur": {"python": "3.12", "torch": "2.15.0", "cuda": "13.2", "numpy": "2.5.4", "tokenizers": "0.23.3", "regex": "2026.9.29", "zstandard": "0.25.0", "xxhash": "4.0.2"}, "pourquoi": "versions du Mac (.venv) et de docs/remise/PASSAGE_PC_RTX5090.md ; une autre version n'est qu'un avertissement, un module absent est une erreur"}
+  },
+
+  "tailles": {
+    "S": {
+      "modele": {"valeur": {"d_model": 512, "n_layer": 8, "n_head": 8}, "pourquoi": "le modèle de la démo actuelle (≈ 29,6 M de paramètres) : on sait qu'il apprend bien le théâtre ; la RTX permet de lui donner bien plus de données"},
+      "budget_tokens": {"valeur": 1500000000, "pourquoi": "1,5 milliard de tokens vus : ~50 tokens par paramètre, au-delà du « 20 tokens par paramètre » de Chinchilla, utile pour un petit modèle qu'on interroge beaucoup"},
+      "lr": {"valeur": 0.001, "pourquoi": "taux du pré-entraînement de nuit du 13/11 (même modèle), qui a convergé sans instabilité"},
+      "min_lr": {"valeur": 0.0001, "pourquoi": "le taux descend en cosinus jusqu'au dixième du maximum : fin d'entraînement plus fine"}
+    },
+    "M": {
+      "modele": {"valeur": {"d_model": 640, "n_layer": 10, "n_head": 10}, "pourquoi": "≈ 55 M de paramètres : plus large et plus profond, têtes de 64 dimensions comme S ; tient largement dans 32 Go"},
+      "budget_tokens": {"valeur": 2000000000, "pourquoi": "2 milliards de tokens : ~36 tokens par paramètre, toujours au-delà de Chinchilla"},
+      "lr": {"valeur": 0.0008, "pourquoi": "un modèle plus grand supporte un taux un peu plus bas sans diverger"},
+      "min_lr": {"valeur": 0.00008, "pourquoi": "un dixième du maximum, comme S"}
+    }
+  },
+
+  "base": {
+    "donnees": {"valeur": "data/stages/chatbot_20261113/pretrain", "pourquoi": "tokens déjà préparés sur le Mac (uint16 + meta.json) : le PC ne refait aucune tokenisation"},
+    "parts": {"valeur": {"wikipedia": 0.22, "fineweb": 0.20, "gutenberg": 0.27, "wikisource": 0.18, "melange": 0.12, "wikinews": 0.01}, "pourquoi": "part du budget de chaque source (et non poids × taille) : beaucoup de littérature (Gutenberg + Wikisource = 45 %) pour le style et les dialogues, du français moderne (Wikipédia, FineWeb) pour le vocabulaire actuel, un peu de presse"},
+    "lot": {"valeur": 128, "pourquoi": "128 séquences × 512 tokens = 65 536 tokens par pas : gros lot stable, possible avec 32 Go"},
+    "seq_len": {"valeur": 512, "pourquoi": "toute la fenêtre du modèle"},
+    "echauffement": {"valeur": 1000, "pourquoi": "1 000 pas de montée linéaire du taux : évite les gros sauts au début, quand les poids sont aléatoires"},
+    "eval_tous_les": {"valeur": 1000, "pourquoi": "BPB sur Molière jamais vu tous les 1 000 pas (~65 M de tokens) : une courbe lisible, et un point de reprise (state.pt) à chaque mesure"},
+    "validation": {"valeur": "data/stages/chatbot_20261112/theatre/moliere_val.jsonl.zst", "pourquoi": "les 3 pièces de Molière tenues à l'écart (Le Misanthrope, Le Sicilien, L'Avare) : même mesure que la démo actuelle (BPB 1,2155 après la nuit du 13/11)"},
+    "weight_decay": {"valeur": 0.1, "pourquoi": "valeur du kit (ftb.train) : freine les poids qui grossissent sans raison"},
+    "grad_clip": {"valeur": 1.0, "pourquoi": "valeur du kit : un gradient trop grand est ramené à la norme 1, contre les pas explosifs"}
+  },
+
+  "chatbots": {
+    "moliere": {
+      "format": {"valeur": "repliques", "pourquoi": "format du théâtre : « NOM. / réplique / ligne vide » ; l'utilisateur joue un personnage"},
+      "dossier_modele": {"valeur": "chatbot_moliere", "pourquoi": "même nom que le dossier de la démo sur le Mac (data/models/chatbot_moliere)"},
+      "validation": {"valeur": "data/stages/chatbot_20261112/theatre/moliere_val.jsonl.zst", "pourquoi": "les 3 pièces de Molière jamais vues : comparable au chiffre actuel (BPB 1,1044)"},
+      "etape1": {
+        "donnees": {"valeur": ["data/stages/chatbot_20261112/theatre/theatre_train.jsonl.zst", "data/stages/chatbot_20261112/theatre/moliere_train.jsonl.zst"], "pourquoi": "tout le théâtre nettoyé, puis Molière seul (hors validation)"},
+        "poids": {"valeur": [1, 3], "pourquoi": "Molière vu 3 fois plus souvent par token que le reste du théâtre : c'est son style qu'on veut"},
+        "persona_augment": {"valeur": 0.5, "pourquoi": "une scène de Molière sur deux est copiée avec son personnage principal renommé MOLIÈRE : le persona par défaut devient la voix moyenne de ses personnages"},
+        "tokens": {"valeur": 90000000, "pourquoi": "90 M de tokens (60 M pour la démo actuelle) : plusieurs passages sur Molière sans trop oublier la base"},
+        "lr": {"valeur": 0.0002, "pourquoi": "petit taux : on ajuste un modèle qui sait déjà le français, on ne le réécrit pas"},
+        "min_lr": {"valeur": 0.00002, "pourquoi": "un dixième du maximum en fin d'affinage"},
+        "lot": {"valeur": 64, "pourquoi": "64 × 512 = 32 768 tokens par pas : plus de pas (et de mesures) pour un affinage court"},
+        "echauffement": {"valeur": 100, "pourquoi": "montée courte : les poids sont déjà bons"},
+        "eval_tous_les": {"valeur": 250, "pourquoi": "BPB de validation tous les 250 pas ; best.pt garde le meilleur point"}
+      },
+      "synthetique": {
+        "fichier": {"valeur": "data/stages/chatbot_20261113/synthetique/moliere.jsonl.zst", "pourquoi": "FACULTATIF : conversations écrites par qwen3:8b (poids ouverts, prompts publiés) ; l'étape n'existe que si ce fichier est dans le paquet"},
+        "avec": {"valeur": ["data/stages/chatbot_20261112/theatre/moliere_train.jsonl.zst"], "pourquoi": "on mélange le synthétique à du vrai Molière : le modèle apprend « message d'aujourd'hui → réponse à la Molière » sans perdre le style réel"},
+        "poids": {"valeur": [1, 1], "pourquoi": "même rythme par token pour les deux fichiers ; la part réelle du synthétique est mesurée et écrite dans le rapport"},
+        "tokens": {"valeur": 10000000, "pourquoi": "étape courte (10 M de tokens) : une touche finale, pas un nouvel entraînement"},
+        "lr": {"valeur": 0.00005, "pourquoi": "taux bas : on ne doit pas effacer l'étape 1"},
+        "min_lr": {"valeur": 0.000005, "pourquoi": "un dixième du maximum"},
+        "lot": {"valeur": 64, "pourquoi": "comme l'étape 1"},
+        "echauffement": {"valeur": 20, "pourquoi": "montée très courte pour une étape courte"},
+        "eval_tous_les": {"valeur": 50, "pourquoi": "étape de ~300 pas : 6 mesures ; le pas 0 (= fin de l'étape 1) reste candidat, donc best.pt ne peut pas être pire que l'étape 1 sur la validation"}
+      },
+      "evaluation": {"valeur": [], "pourquoi": "panel complet de chatbot.evaluate (40 messages × 3 graines, 16 candidates, 6 discussions de 6 tours), sans réglage changé"}
+    },
+    "francais": {
+      "format": {"valeur": "tirets", "pourquoi": "format des dialogues de roman : « — réplique », sans nom de personnage"},
+      "dossier_modele": {"valeur": "chatbot_francais", "pourquoi": "même nom que le dossier de la démo sur le Mac (data/models/chatbot_francais)"},
+      "validation": {"valeur": "data/stages/chatbot_20261113/dialogues/romans_val.jsonl.zst", "pourquoi": "dialogues de romans tenus à l'écart, au même format"},
+      "etape1": {
+        "donnees": {"valeur": ["data/stages/chatbot_20261113/dialogues/romans_train.jsonl.zst", "data/stages/chatbot_20261113/dialogues/theatre_moderne_train.jsonl.zst"], "pourquoi": "vrais dialogues de romans et théâtre en prose, orthographe moderne"},
+        "poids": {"valeur": [1, 1], "pourquoi": "les deux sources au même rythme par token : leur part suit leur taille"},
+        "persona_augment": {"valeur": 0.0, "pourquoi": "pas de personnage en format tirets : sans objet"},
+        "tokens": {"valeur": 150000000, "pourquoi": "150 M de tokens : plus de données disponibles que pour Molière, et un registre plus éloigné de la base"},
+        "lr": {"valeur": 0.0002, "pourquoi": "mêmes taux que Molière"},
+        "min_lr": {"valeur": 0.00002, "pourquoi": "un dixième du maximum"},
+        "lot": {"valeur": 64, "pourquoi": "comme Molière"},
+        "echauffement": {"valeur": 100, "pourquoi": "comme Molière"},
+        "eval_tous_les": {"valeur": 250, "pourquoi": "comme Molière"}
+      },
+      "synthetique": {
+        "fichier": {"valeur": "data/stages/chatbot_20261113/synthetique/moderne.jsonl.zst", "pourquoi": "FACULTATIF : conversations courantes écrites par qwen3:8b ; l'étape n'existe que si ce fichier est dans le paquet"},
+        "avec": {"valeur": ["data/stages/chatbot_20261113/dialogues/romans_train.jsonl.zst"], "pourquoi": "mélangé à de vrais dialogues pour garder une langue réelle"},
+        "poids": {"valeur": [1, 1], "pourquoi": "même rythme par token ; part réelle écrite dans le rapport"},
+        "tokens": {"valeur": 10000000, "pourquoi": "étape courte"},
+        "lr": {"valeur": 0.00005, "pourquoi": "taux bas"},
+        "min_lr": {"valeur": 0.000005, "pourquoi": "un dixième du maximum"},
+        "lot": {"valeur": 64, "pourquoi": "comme l'étape 1"},
+        "echauffement": {"valeur": 20, "pourquoi": "montée très courte"},
+        "eval_tous_les": {"valeur": 50, "pourquoi": "comme Molière"}
+      },
+      "evaluation": {"valeur": [], "pourquoi": "panel complet, comme Molière"}
+    }
+  },
+
+  "essai": {
+    "note": "Recette minuscule de l'autotest : quelques minutes au plus, même chaîne que la vraie (pré-entraînement, deux affinages, étapes synthétiques, exports, évaluations), sur des extraits de données (donnees_essai/). Ses modèles ne servent à rien d'autre qu'à prouver que tout s'enchaîne.",
+    "modele": {"valeur": {"d_model": 64, "n_layer": 2, "n_head": 2}, "pourquoi": "≈ 0,66 M de paramètres (< 1 M) : quelques secondes sur processeur"},
+    "budget_tokens": {"valeur": 122880, "pourquoi": "60 pas de 16 × 128 tokens"},
+    "lr": {"valeur": 0.003, "pourquoi": "taux fort pour un modèle minuscule : la loss doit baisser visiblement en 60 pas"},
+    "min_lr": {"valeur": 0.0003, "pourquoi": "un dixième du maximum"},
+    "interruption_au_pas": {"valeur": 30, "pourquoi": "l'autotest arrête la base au pas 30 (comme une coupure), puis la reprend avec --resume"},
+    "base": {
+      "donnees": {"valeur": "donnees_essai/pretrain", "pourquoi": "60 000 premiers tokens de chaque source réelle"},
+      "parts": {"valeur": {"wikipedia": 0.22, "fineweb": 0.20, "gutenberg": 0.27, "wikisource": 0.18, "melange": 0.12, "wikinews": 0.01}, "pourquoi": "mêmes parts que la vraie base"},
+      "lot": {"valeur": 16, "pourquoi": "petit lot, rapide"},
+      "seq_len": {"valeur": 128, "pourquoi": "fenêtre courte, rapide"},
+      "echauffement": {"valeur": 5, "pourquoi": "doit rester < au nombre de pas"},
+      "eval_tous_les": {"valeur": 15, "pourquoi": "4 mesures et des points de reprise"},
+      "validation": {"valeur": "donnees_essai/theatre/moliere_val.jsonl.zst", "pourquoi": "extrait de la validation Molière"},
+      "weight_decay": {"valeur": 0.1, "pourquoi": "comme la vraie base"},
+      "grad_clip": {"valeur": 1.0, "pourquoi": "comme la vraie base"}
+    },
+    "chatbots": {
+      "moliere": {
+        "format": {"valeur": "repliques", "pourquoi": "comme le vrai"},
+        "dossier_modele": {"valeur": "chatbot_moliere", "pourquoi": "comme le vrai"},
+        "validation": {"valeur": "donnees_essai/theatre/moliere_val.jsonl.zst", "pourquoi": "extrait"},
+        "etape1": {
+          "donnees": {"valeur": ["donnees_essai/theatre/theatre_train.jsonl.zst", "donnees_essai/theatre/moliere_train.jsonl.zst"], "pourquoi": "extraits"},
+          "poids": {"valeur": [1, 3], "pourquoi": "comme le vrai"},
+          "persona_augment": {"valeur": 0.5, "pourquoi": "comme le vrai : teste les copies MOLIÈRE"},
+          "tokens": {"valeur": 61440, "pourquoi": "30 pas de 16 × 128"},
+          "lr": {"valeur": 0.001, "pourquoi": "rapide"}, "min_lr": {"valeur": 0.0001, "pourquoi": "un dixième"},
+          "lot": {"valeur": 16, "pourquoi": "petit"}, "seq_len": {"valeur": 128, "pourquoi": "court"},
+          "echauffement": {"valeur": 3, "pourquoi": "< nombre de pas"}, "eval_tous_les": {"valeur": 10, "pourquoi": "3 mesures"}
+        },
+        "synthetique": {
+          "fichier": {"valeur": "donnees_essai/synthetique/moliere.jsonl.zst", "pourquoi": "extrait de l'échantillon synthétique s'il existait à la construction du paquet : teste l'étape facultative"},
+          "avec": {"valeur": ["donnees_essai/theatre/moliere_train.jsonl.zst"], "pourquoi": "comme le vrai"},
+          "poids": {"valeur": [1, 1], "pourquoi": "comme le vrai"},
+          "tokens": {"valeur": 20480, "pourquoi": "10 pas"},
+          "lr": {"valeur": 0.0003, "pourquoi": "plus bas que l'étape 1"}, "min_lr": {"valeur": 0.00003, "pourquoi": "un dixième"},
+          "lot": {"valeur": 16, "pourquoi": "petit"}, "seq_len": {"valeur": 128, "pourquoi": "court"},
+          "echauffement": {"valeur": 2, "pourquoi": "< nombre de pas"}, "eval_tous_les": {"valeur": 5, "pourquoi": "2 mesures"}
+        },
+        "export": {"valeur": ["--candidates", "2", "--max-new-tokens", "24"], "pourquoi": "génération courte pour l'essai"},
+        "evaluation": {"valeur": ["--no-discussion", "--val-batches", "1", "--seq-len", "128"], "pourquoi": "évaluation réduite : panel sans les discussions, un seul lot de validation, fenêtres de la longueur entraînée"}
+      },
+      "francais": {
+        "format": {"valeur": "tirets", "pourquoi": "comme le vrai"},
+        "dossier_modele": {"valeur": "chatbot_francais", "pourquoi": "comme le vrai"},
+        "validation": {"valeur": "donnees_essai/dialogues/romans_val.jsonl.zst", "pourquoi": "extrait"},
+        "etape1": {
+          "donnees": {"valeur": ["donnees_essai/dialogues/romans_train.jsonl.zst", "donnees_essai/dialogues/theatre_moderne_train.jsonl.zst"], "pourquoi": "extraits"},
+          "poids": {"valeur": [1, 1], "pourquoi": "comme le vrai"},
+          "persona_augment": {"valeur": 0.0, "pourquoi": "sans objet en tirets"},
+          "tokens": {"valeur": 61440, "pourquoi": "30 pas de 16 × 128"},
+          "lr": {"valeur": 0.001, "pourquoi": "rapide"}, "min_lr": {"valeur": 0.0001, "pourquoi": "un dixième"},
+          "lot": {"valeur": 16, "pourquoi": "petit"}, "seq_len": {"valeur": 128, "pourquoi": "court"},
+          "echauffement": {"valeur": 3, "pourquoi": "< nombre de pas"}, "eval_tous_les": {"valeur": 10, "pourquoi": "3 mesures"}
+        },
+        "synthetique": {
+          "fichier": {"valeur": "donnees_essai/synthetique/moderne.jsonl.zst", "pourquoi": "extrait de l'échantillon synthétique s'il existait à la construction du paquet"},
+          "avec": {"valeur": ["donnees_essai/dialogues/romans_train.jsonl.zst"], "pourquoi": "comme le vrai"},
+          "poids": {"valeur": [1, 1], "pourquoi": "comme le vrai"},
+          "tokens": {"valeur": 20480, "pourquoi": "10 pas"},
+          "lr": {"valeur": 0.0003, "pourquoi": "plus bas"}, "min_lr": {"valeur": 0.00003, "pourquoi": "un dixième"},
+          "lot": {"valeur": 16, "pourquoi": "petit"}, "seq_len": {"valeur": 128, "pourquoi": "court"},
+          "echauffement": {"valeur": 2, "pourquoi": "< nombre de pas"}, "eval_tous_les": {"valeur": 5, "pourquoi": "2 mesures"}
+        },
+        "export": {"valeur": ["--candidates", "2", "--max-new-tokens", "24"], "pourquoi": "génération courte pour l'essai"},
+        "evaluation": {"valeur": ["--no-discussion", "--val-batches", "1", "--seq-len", "128"], "pourquoi": "évaluation réduite"}
+      }
+    }
+  }
+}

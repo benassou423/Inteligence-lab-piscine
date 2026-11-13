@@ -1,0 +1,1480 @@
+{
+ "version": 2,
+ "description": [
+  "Prompts publiés tels quels du générateur de données synthétiques (chatbot/synthetic.py).",
+  "Générateur : qwen3:8b (Qwen3, poids ouverts, licence Apache-2.0) servi en local par Ollama.",
+  "Règles suivies (celles du concours pour le synthétique) : modèle à poids ouverts, prompts publiés, part bornée et déclarée.",
+  "Chaque prompt est tiré au hasard mais de façon reproductible : graine + numéro d'appel -> même prompt.",
+  "Version 2 (13/11) : corrections après relecture de l'échantillon v1 (registre par appel, genre de A, exemples de réponses complètes, juge qwen3, personnages des pièces de validation exclus).",
+  "Version 3 du gabarit moliere (13/11) : l'essai v2 commençait presque chaque réponse par « Monsieur, » et chaque message de A par « je suis perdu », deux formules venues du prompt lui-même ; consigne réécrite."
+ ],
+ "generateur": {
+  "model": "qwen3:8b",
+  "url": "http://127.0.0.1:11434/api/generate",
+  "temperature": 0.8,
+  "think": false
+ },
+ "par_appel": {
+  "moderne": 3,
+  "moliere": 3
+ },
+ "num_predict": {
+  "moderne": 900,
+  "moliere": 800
+ },
+ "nb_exemples_par_prompt": 6,
+ "registres": [
+  {
+   "id": "tu_court",
+   "moderne": "A et B se tutoient du début à la fin (« tu », « toi », « dis »), comme entre amis ou en famille ; répliques courtes, de 3 à 12 mots",
+   "moliere": "A tutoie B et écrit des messages courts, de 3 à 12 mots"
+  },
+  {
+   "id": "tu_long",
+   "moderne": "A et B se tutoient du début à la fin (« tu », « toi », « dis »), comme entre amis ou en famille ; répliques un peu plus longues, de 10 à 30 mots",
+   "moliere": "A tutoie B et écrit des messages un peu plus longs, de 10 à 30 mots"
+  },
+  {
+   "id": "vous_court",
+   "moderne": "A et B se vouvoient du début à la fin, comme entre voisins, collègues ou inconnus (« vous », « votre », « dites », « attendez » ; jamais « tu », « te », « toi », « ton », « t' », ni « dis », « attends ») ; répliques courtes, de 3 à 12 mots",
+   "moliere": "A vouvoie B et écrit des messages courts, de 3 à 12 mots"
+  },
+  {
+   "id": "vous_long",
+   "moderne": "A et B se vouvoient du début à la fin, comme entre voisins, collègues ou inconnus (« vous », « votre », « dites », « attendez » ; jamais « tu », « te », « toi », « ton », « t' », ni « dis », « attends ») ; répliques un peu plus longues, de 10 à 30 mots",
+   "moliere": "A vouvoie B et écrit des messages un peu plus longs, de 10 à 30 mots"
+  }
+ ],
+ "gabarits": {
+  "moderne": {
+   "id": "moderne-v2",
+   "lignes": [
+    "Écris {k} conversations entre deux personnes, A et B, en français courant d'aujourd'hui, comme on parle vraiment entre amis, en famille, entre collègues ou entre voisins.",
+    "Ton de TOUTES les conversations : {registre}.",
+    "",
+    "Règles :",
+    "- Chaque conversation compte de 4 à 8 répliques. A parle en premier, puis A et B parlent chacun leur tour.",
+    "- Une réplique = une seule ligne qui commence par « A: » ou « B: », sans retour à la ligne.",
+    "- Phrases simples et naturelles. Chaque réplique répond vraiment à la précédente et la conversation reste logique, sans rien d'absurde.",
+    "- Français correct : orthographe, accords et conjugaisons justes, phrases complètes. Sans anglais, sans gros mots, sans noms de marques.",
+    "- Pas de titre, pas de numéro, pas de commentaire, pas d'indication entre parenthèses, pas d'astérisque, pas de guillemets.",
+    "- Sépare les conversations par une ligne qui contient seulement ###.",
+    "",
+    "Sujets des conversations, dans l'ordre :",
+    "{sujets}",
+    "",
+    "Rappel : {registre}.",
+    "Commence directement par « A: »."
+   ],
+   "ligne_sujet": "{i}. {sujet}."
+  },
+  "moliere": {
+   "id": "moliere-v3",
+   "lignes": [
+    "Écris de petits échanges entre une personne d'aujourd'hui (A) et un personnage d'une comédie de Molière (B).",
+    "B est {persona} : {about}",
+    "A est {genre} d'aujourd'hui, qui parle de soi au {accord}. B peut appeler A « {titre} », mais rarement, jamais en premier mot, et jamais par un autre titre.",
+    "A écrit comme dans une messagerie, en français courant d'aujourd'hui : {registre}. Les sujets décrivent la situation de A à la troisième personne : A la raconte à la première personne (« je », « mon »), avec ses propres mots, et ne reprend jamais les mots de B.",
+    "B parle comme dans une comédie de Molière au XVIIe siècle : tournures classiques, inversions, phrases vives, vocabulaire du temps, orthographe moderne, français correct. B vouvoie toujours A : jamais « tu », « te », « toi », « ton », ni un impératif comme « dis » ou « attends » (il dit « dites », « attendez »). B ne connaît pas le monde d'aujourd'hui : s'il est question d'une chose moderne, il s'en étonne ou la compare à une chose de son temps, mais il répond toujours vraiment à ce que A vient de dire.",
+    "",
+    "Vraies répliques de Molière, pour le ton seulement (ne jamais les recopier, ni en tout ni en partie) :",
+    "{exemples}",
+    "",
+    "Exemples du résultat attendu, sur d'autres sujets (ne pas les recopier) :",
+    "{demonstrations}",
+    "",
+    "Règles :",
+    "- Écris {k} échanges, séparés par une ligne qui contient seulement ###.",
+    "- Chaque échange compte 2 ou 3 allers-retours : A, B, A, B (puis A, B). A commence et B termine.",
+    "- Une réplique = une seule ligne qui commence par « A: » ou « B: », sans retour à la ligne.",
+    "- Chaque réplique de B compte de 8 à 30 mots, ne commence ni par « Ah » ni par « C'est », et n'emploie jamais de mot familier d'aujourd'hui (ok, super, génial, cool, sympa).",
+    "- Toutes les répliques de B sont différentes : aucune phrase répétée d'un échange à l'autre.",
+    "- Pas de titre, pas de numéro, pas de commentaire, pas d'indication entre parenthèses, pas d'astérisque, pas de guillemets.",
+    "",
+    "Sujets des échanges, dans l'ordre :",
+    "{sujets}",
+    "",
+    "Commence directement par « A: »."
+   ],
+   "ligne_sujet": "{i}. {sujet}.",
+   "ligne_exemple": "- {texte}",
+   "ligne_demonstration": "A: {a}\nB: {b}\n###"
+  },
+  "juge": {
+   "id": "juge-v3",
+   "lignes": [
+    "Relecture d'une conversation écrite pour entraîner un petit modèle de langue français.",
+    "{contexte}",
+    "",
+    "{conversation}",
+    "",
+    "Réponds à chaque question par OUI ou par NON :",
+    "1. Le français est-il correct partout (orthographe, accords, conjugaisons, mots qui existent, phrases complètes) ?",
+    "2. Chaque réplique répond-elle vraiment à celle d'avant, sans rien d'absurde ni d'incohérent ?",
+    "3. {question}",
+    "Écris exactement trois lignes, sans rien d'autre :",
+    "1: OUI ou NON",
+    "2: OUI ou NON",
+    "3: OUI ou NON"
+   ],
+   "contexte_moderne": "Deux personnes d'aujourd'hui, A et B, discutent.",
+   "contexte_moliere": "A est une personne d'aujourd'hui ; B est {persona}, un personnage d'une comédie de Molière.",
+   "question_moliere": "B parle-t-il toujours comme un personnage de Molière au XVIIe siècle (tournures classiques, il vouvoie A, aucune chose qu'il ne peut pas connaître si A n'en a pas parlé) ?",
+   "question_moderne": "Est-ce que A et B parlent naturellement, comme dans une vraie conversation d'aujourd'hui, sans tic répété ni phrase bizarre ?"
+  }
+ },
+ "filtres": {
+  "max_mots_par_tour": 60,
+  "echo_max": 0.6,
+  "max_conversations_par_5gramme": 3,
+  "tours_moderne": [
+   4,
+   8
+  ],
+  "tours_moliere": [
+   4,
+   6
+  ],
+  "mots_anglais": [
+   "the",
+   "and",
+   "you",
+   "is",
+   "are",
+   "with",
+   "this",
+   "that",
+   "what",
+   "have",
+   "it's",
+   "i'm",
+   "don't",
+   "your",
+   "my",
+   "of",
+   "to",
+   "for",
+   "not",
+   "be",
+   "was",
+   "we",
+   "they",
+   "sure",
+   "here",
+   "yes",
+   "okay"
+  ],
+  "mots_anglais_justification": "Mots-outils anglais qui ne sont pas des mots français ; un tour qui en contient 2 ou plus est de l'anglais (ou un mélange).",
+  "mots_modernes_reponse_moliere": [
+   "ok",
+   "okay",
+   "super",
+   "génial",
+   "géniale",
+   "cool",
+   "sympa",
+   "top",
+   "bosser",
+   "boulot",
+   "mec",
+   "nana",
+   "truc",
+   "trucs",
+   "ouais",
+   "bof",
+   "kiffer",
+   "kiffe",
+   "stress",
+   "stressé",
+   "stressée",
+   "flipper",
+   "relax",
+   "bisous",
+   "coucou",
+   "du coup",
+   "en fait",
+   "pas de souci",
+   "pas de soucis",
+   "carrément",
+   "hyper",
+   "c'est clair"
+  ],
+  "mots_modernes_justification": "Mots familiers ou tics de langage d'aujourd'hui : ils signent le registre moderne et n'existent pas (ou pas dans ce sens) chez Molière. Les noms d'objets (téléphone, Internet...) restent permis : le personnage doit pouvoir répondre à ce dont on lui parle.",
+  "tutoiement_justification": "Le personnage vouvoie toujours la personne d'aujourd'hui (un inconnu, au XVIIe siècle, se vouvoie) : tout « tu, te, toi, ton, ta, tes, t' » dans sa réponse, ou un impératif singulier en début de proposition (« dis », « attends », « ne me dis pas »), est le tutoiement moderne qui déteint du message.",
+  "vocabulaire_cru_justification": "Liste CRUDE de chatbot/pretrain.py (vocabulaire sexuel cru) + jurons d'aujourd'hui ; le chatbot est montré à un jury.",
+  "echo_max_utilisateur": 0.4,
+  "echo_utilisateur_justification": "L'utilisateur simulé (A) qui reprend 40 % des mots de la réplique précédente de B, ou ses 3 premiers mots, la paraphrase au lieu de répondre : un vrai utilisateur n'écrit pas ainsi.",
+  "copie_exemple_ngramme": 6,
+  "formules_pour_mille": 3,
+  "formules_justification": "Une même suite de 5 mots peut apparaître dans au plus max(3, 3 pour 1 000 conversations gardées) conversations : le seuil fixe de 3 rejetterait presque tout à 20 000 conversations.",
+  "ouverture_max": {
+   "moderne": null,
+   "moliere": 0.15
+  },
+  "ouverture_echauffement": 20,
+  "ouverture_justification": "Dans l'échantillon v1, 37 % des réponses du personnage commençaient par « Ah » et 18 % par « C'est » ; un essai v2 montrait un nouveau tic, la courte question en écho (« Fatigué ? C'est... »). Aucune ouverture (premier mot, ou « question courte » quand la réponse commence par une question de 4 mots au plus) ne peut dépasser 15 % des réponses du personnage gardées (3 réponses permises dans les 20 premières).",
+  "tour_repete_min_mots": 6,
+  "tics_plafonnes": {
+   "moderne": [],
+   "moliere": [
+    "c'est comme",
+    "comme un",
+    "c'est la",
+    "c'est une chose",
+    "c'est un"
+   ]
+  },
+  "tics_justification": "Formules qui reviennent dans les réponses du personnage (v1 : « c'est une chose » 23 fois sur 302 ; essai v2 : « C'est la peur, monsieur, qui vous fait... », « c'est comme un... » dans presque chaque réponse). Chacune est permise dans au plus 15 % des réponses du personnage gardées, avec le même échauffement que les ouvertures.",
+  "recopie_sujet_justification": "A reprend la description du sujet à la 3e personne (« un plat qu'il n'aime pas ») : rejet si un message de A partage avec le sujet une suite de 5 mots qui contient un mot de 3e personne (il, elle, lui, son, sa, ses, leur). « J'hésite à acheter une voiture d'occasion » reste permis."
+ },
+ "sujets": [
+  {
+   "id": "s001",
+   "theme": "salutations",
+   "texte": "A croise B dans la rue et lui demande comment il va"
+  },
+  {
+   "id": "s002",
+   "theme": "salutations",
+   "texte": "A retrouve B après les vacances et lui demande comment elles se sont passées"
+  },
+  {
+   "id": "s003",
+   "theme": "salutations",
+   "texte": "A dit bonjour à B le matin et lui demande s'il a bien dormi"
+  },
+  {
+   "id": "s004",
+   "theme": "salutations",
+   "texte": "A revoit B qu'il n'avait pas vu depuis des années"
+  },
+  {
+   "id": "s005",
+   "theme": "salutations",
+   "texte": "A souhaite un bon anniversaire à B"
+  },
+  {
+   "id": "s006",
+   "theme": "salutations",
+   "texte": "A dit au revoir à B qui part pour longtemps"
+  },
+  {
+   "id": "s007",
+   "theme": "salutations",
+   "texte": "A présente un ami à B"
+  },
+  {
+   "id": "s008",
+   "theme": "salutations",
+   "texte": "A s'excuse auprès de B d'être en retard"
+  },
+  {
+   "id": "s009",
+   "theme": "santé",
+   "texte": "A prend des nouvelles de B, qui a eu la grippe"
+  },
+  {
+   "id": "s010",
+   "theme": "santé",
+   "texte": "A a mal au dos et demande conseil à B"
+  },
+  {
+   "id": "s011",
+   "theme": "santé",
+   "texte": "A n'arrive plus à dormir la nuit"
+  },
+  {
+   "id": "s012",
+   "theme": "santé",
+   "texte": "A hésite à aller chez le médecin pour une toux qui dure"
+  },
+  {
+   "id": "s013",
+   "theme": "santé",
+   "texte": "A veut arrêter de fumer"
+  },
+  {
+   "id": "s014",
+   "theme": "santé",
+   "texte": "A a mal aux dents et a peur du dentiste"
+  },
+  {
+   "id": "s015",
+   "theme": "santé",
+   "texte": "A s'est tordu la cheville en courant"
+  },
+  {
+   "id": "s016",
+   "theme": "santé",
+   "texte": "A se sent fatigué tout le temps"
+  },
+  {
+   "id": "s017",
+   "theme": "santé",
+   "texte": "A veut manger plus sainement"
+  },
+  {
+   "id": "s018",
+   "theme": "santé",
+   "texte": "A raconte à B qu'il s'est fait vacciner"
+  },
+  {
+   "id": "s019",
+   "theme": "argent",
+   "texte": "A n'a plus d'argent à la fin du mois"
+  },
+  {
+   "id": "s020",
+   "theme": "argent",
+   "texte": "A veut emprunter de l'argent à B"
+  },
+  {
+   "id": "s021",
+   "theme": "argent",
+   "texte": "A trouve que tout coûte de plus en plus cher"
+  },
+  {
+   "id": "s022",
+   "theme": "argent",
+   "texte": "A hésite à acheter une voiture d'occasion"
+  },
+  {
+   "id": "s023",
+   "theme": "argent",
+   "texte": "A a trouvé un billet de vingt euros par terre"
+  },
+  {
+   "id": "s024",
+   "theme": "argent",
+   "texte": "A veut économiser pour partir en voyage"
+  },
+  {
+   "id": "s025",
+   "theme": "argent",
+   "texte": "A a oublié de payer son loyer"
+  },
+  {
+   "id": "s026",
+   "theme": "argent",
+   "texte": "A se demande s'il doit prêter de l'argent à son frère"
+  },
+  {
+   "id": "s027",
+   "theme": "argent",
+   "texte": "A a gagné un peu d'argent au loto"
+  },
+  {
+   "id": "s028",
+   "theme": "argent",
+   "texte": "A trouve son abonnement de téléphone trop cher"
+  },
+  {
+   "id": "s029",
+   "theme": "famille",
+   "texte": "A annonce à B que sa sœur va se marier"
+  },
+  {
+   "id": "s030",
+   "theme": "famille",
+   "texte": "A se dispute souvent avec ses parents"
+  },
+  {
+   "id": "s031",
+   "theme": "famille",
+   "texte": "A annonce à B qu'il va avoir un bébé"
+  },
+  {
+   "id": "s032",
+   "theme": "famille",
+   "texte": "A ne sait pas quoi offrir à sa mère pour son anniversaire"
+  },
+  {
+   "id": "s033",
+   "theme": "famille",
+   "texte": "A s'inquiète pour son grand-père qui vit seul"
+  },
+  {
+   "id": "s034",
+   "theme": "famille",
+   "texte": "A trouve que son petit frère joue trop aux jeux vidéo"
+  },
+  {
+   "id": "s035",
+   "theme": "famille",
+   "texte": "A organise un repas de famille"
+  },
+  {
+   "id": "s036",
+   "theme": "famille",
+   "texte": "A veut quitter la maison de ses parents"
+  },
+  {
+   "id": "s037",
+   "theme": "famille",
+   "texte": "A se plaint que ses enfants ne rangent jamais leur chambre"
+  },
+  {
+   "id": "s038",
+   "theme": "famille",
+   "texte": "A n'a pas appelé sa tante depuis longtemps"
+  },
+  {
+   "id": "s039",
+   "theme": "amour",
+   "texte": "A est amoureux d'une collègue et n'ose pas lui parler"
+  },
+  {
+   "id": "s040",
+   "theme": "amour",
+   "texte": "A a un rendez-vous ce soir et ne sait pas quoi mettre"
+  },
+  {
+   "id": "s041",
+   "theme": "amour",
+   "texte": "A vient de se séparer de sa copine"
+  },
+  {
+   "id": "s042",
+   "theme": "amour",
+   "texte": "A soupçonne sa compagne de lui cacher quelque chose"
+  },
+  {
+   "id": "s043",
+   "theme": "amour",
+   "texte": "A veut demander sa compagne en mariage"
+  },
+  {
+   "id": "s044",
+   "theme": "amour",
+   "texte": "A a rencontré quelqu'un sur une application de rencontre"
+  },
+  {
+   "id": "s045",
+   "theme": "amour",
+   "texte": "A est jaloux d'un ami de sa compagne"
+  },
+  {
+   "id": "s046",
+   "theme": "amour",
+   "texte": "A a oublié l'anniversaire de sa compagne"
+  },
+  {
+   "id": "s047",
+   "theme": "amour",
+   "texte": "A demande à B comment il a rencontré sa femme"
+  },
+  {
+   "id": "s048",
+   "theme": "amour",
+   "texte": "A hésite à écrire à son ancien amour"
+  },
+  {
+   "id": "s049",
+   "theme": "travail",
+   "texte": "A hésite à demander une augmentation à son patron"
+  },
+  {
+   "id": "s050",
+   "theme": "travail",
+   "texte": "A cherche un nouveau travail"
+  },
+  {
+   "id": "s051",
+   "theme": "travail",
+   "texte": "A trouve son chef trop exigeant"
+  },
+  {
+   "id": "s052",
+   "theme": "travail",
+   "texte": "A a raté une réunion importante"
+  },
+  {
+   "id": "s053",
+   "theme": "travail",
+   "texte": "A commence un nouveau travail lundi"
+  },
+  {
+   "id": "s054",
+   "theme": "travail",
+   "texte": "A fait trop d'heures supplémentaires"
+  },
+  {
+   "id": "s055",
+   "theme": "travail",
+   "texte": "A a un entretien d'embauche demain"
+  },
+  {
+   "id": "s056",
+   "theme": "travail",
+   "texte": "A veut quitter son travail pour ouvrir un restaurant"
+  },
+  {
+   "id": "s057",
+   "theme": "travail",
+   "texte": "A se plaint d'un collègue qui ne fait rien"
+  },
+  {
+   "id": "s058",
+   "theme": "travail",
+   "texte": "A travaille de chez lui et ne voit plus personne"
+  },
+  {
+   "id": "s059",
+   "theme": "travail",
+   "texte": "A vient d'être licencié"
+  },
+  {
+   "id": "s060",
+   "theme": "travail",
+   "texte": "A vient d'obtenir une promotion"
+  },
+  {
+   "id": "s061",
+   "theme": "école",
+   "texte": "A a raté son examen de mathématiques"
+  },
+  {
+   "id": "s062",
+   "theme": "école",
+   "texte": "A doit choisir ses études après le bac"
+  },
+  {
+   "id": "s063",
+   "theme": "école",
+   "texte": "A ne comprend rien à son cours de physique"
+  },
+  {
+   "id": "s064",
+   "theme": "école",
+   "texte": "A doit faire un exposé devant toute la classe"
+  },
+  {
+   "id": "s065",
+   "theme": "école",
+   "texte": "A a oublié de faire ses devoirs"
+  },
+  {
+   "id": "s066",
+   "theme": "école",
+   "texte": "A trouve son professeur injuste"
+  },
+  {
+   "id": "s067",
+   "theme": "école",
+   "texte": "A veut apprendre une langue étrangère"
+  },
+  {
+   "id": "s068",
+   "theme": "école",
+   "texte": "A a eu une très bonne note"
+  },
+  {
+   "id": "s069",
+   "theme": "école",
+   "texte": "A révise pour le permis de conduire"
+  },
+  {
+   "id": "s070",
+   "theme": "école",
+   "texte": "A se demande si les études servent vraiment à quelque chose"
+  },
+  {
+   "id": "s071",
+   "theme": "cuisine",
+   "texte": "A ne sait pas quoi préparer pour le dîner"
+  },
+  {
+   "id": "s072",
+   "theme": "cuisine",
+   "texte": "A a raté son gâteau"
+  },
+  {
+   "id": "s073",
+   "theme": "cuisine",
+   "texte": "A demande à B la recette de sa soupe"
+  },
+  {
+   "id": "s074",
+   "theme": "cuisine",
+   "texte": "A invite B à manger ce soir"
+  },
+  {
+   "id": "s075",
+   "theme": "cuisine",
+   "texte": "A veut arrêter de manger de la viande"
+  },
+  {
+   "id": "s076",
+   "theme": "cuisine",
+   "texte": "A trouve que le restaurant d'hier était trop cher"
+  },
+  {
+   "id": "s077",
+   "theme": "cuisine",
+   "texte": "A a faim et le réfrigérateur est vide"
+  },
+  {
+   "id": "s078",
+   "theme": "cuisine",
+   "texte": "A apprend à faire son pain"
+  },
+  {
+   "id": "s079",
+   "theme": "cuisine",
+   "texte": "A boit trop de café"
+  },
+  {
+   "id": "s080",
+   "theme": "cuisine",
+   "texte": "A a dû manger chez des amis un plat qu'il n'aime pas"
+  },
+  {
+   "id": "s081",
+   "theme": "météo",
+   "texte": "A se plaint de la pluie qui ne s'arrête pas"
+  },
+  {
+   "id": "s082",
+   "theme": "météo",
+   "texte": "A trouve qu'il fait beaucoup trop chaud"
+  },
+  {
+   "id": "s083",
+   "theme": "météo",
+   "texte": "A a oublié son parapluie"
+  },
+  {
+   "id": "s084",
+   "theme": "météo",
+   "texte": "A se réjouit qu'il ait neigé"
+  },
+  {
+   "id": "s085",
+   "theme": "météo",
+   "texte": "A demande à B quel temps il fera demain"
+  },
+  {
+   "id": "s086",
+   "theme": "météo",
+   "texte": "A a froid parce que le chauffage est en panne"
+  },
+  {
+   "id": "s087",
+   "theme": "météo",
+   "texte": "A veut profiter du soleil pour aller au parc"
+  },
+  {
+   "id": "s088",
+   "theme": "météo",
+   "texte": "A a entendu un orage terrible cette nuit"
+  },
+  {
+   "id": "s089",
+   "theme": "voyages",
+   "texte": "A prépare un voyage en Italie"
+  },
+  {
+   "id": "s090",
+   "theme": "voyages",
+   "texte": "A a raté son train"
+  },
+  {
+   "id": "s091",
+   "theme": "voyages",
+   "texte": "A a peur de prendre l'avion"
+  },
+  {
+   "id": "s092",
+   "theme": "voyages",
+   "texte": "A a perdu sa valise à l'aéroport"
+  },
+  {
+   "id": "s093",
+   "theme": "voyages",
+   "texte": "A raconte son séjour au bord de la mer"
+  },
+  {
+   "id": "s094",
+   "theme": "voyages",
+   "texte": "A hésite entre la montagne et la mer pour les vacances"
+  },
+  {
+   "id": "s095",
+   "theme": "voyages",
+   "texte": "A part camper pour la première fois"
+  },
+  {
+   "id": "s096",
+   "theme": "voyages",
+   "texte": "A ne trouve pas d'hôtel pour le week-end"
+  },
+  {
+   "id": "s097",
+   "theme": "voyages",
+   "texte": "A rêve de faire le tour du monde"
+  },
+  {
+   "id": "s098",
+   "theme": "voyages",
+   "texte": "A est perdu dans une ville qu'il ne connaît pas"
+  },
+  {
+   "id": "s099",
+   "theme": "voisins",
+   "texte": "A se plaint du voisin qui fait du bruit la nuit"
+  },
+  {
+   "id": "s100",
+   "theme": "voisins",
+   "texte": "A rencontre un nouveau voisin dans l'escalier"
+  },
+  {
+   "id": "s101",
+   "theme": "voisins",
+   "texte": "A demande à B de garder ses clés pendant les vacances"
+  },
+  {
+   "id": "s102",
+   "theme": "voisins",
+   "texte": "A a reçu par erreur le colis du voisin"
+  },
+  {
+   "id": "s103",
+   "theme": "voisins",
+   "texte": "A trouve que le chien du voisin aboie trop"
+  },
+  {
+   "id": "s104",
+   "theme": "voisins",
+   "texte": "A organise une fête et veut prévenir les voisins"
+  },
+  {
+   "id": "s105",
+   "theme": "voisins",
+   "texte": "A propose son aide à sa voisine âgée"
+  },
+  {
+   "id": "s106",
+   "theme": "voisins",
+   "texte": "A se dispute avec le voisin pour une place de parking"
+  },
+  {
+   "id": "s107",
+   "theme": "objets d'aujourd'hui",
+   "texte": "A a cassé l'écran de son téléphone"
+  },
+  {
+   "id": "s108",
+   "theme": "objets d'aujourd'hui",
+   "texte": "A passe trop de temps sur son téléphone"
+  },
+  {
+   "id": "s109",
+   "theme": "objets d'aujourd'hui",
+   "texte": "A n'a pas Internet chez lui depuis trois jours"
+  },
+  {
+   "id": "s110",
+   "theme": "objets d'aujourd'hui",
+   "texte": "A veut acheter un nouvel ordinateur"
+  },
+  {
+   "id": "s111",
+   "theme": "objets d'aujourd'hui",
+   "texte": "A a reçu un message bizarre sur son téléphone"
+  },
+  {
+   "id": "s112",
+   "theme": "objets d'aujourd'hui",
+   "texte": "A ne sait pas se servir de sa nouvelle télévision"
+  },
+  {
+   "id": "s113",
+   "theme": "objets d'aujourd'hui",
+   "texte": "A a oublié son mot de passe"
+  },
+  {
+   "id": "s114",
+   "theme": "objets d'aujourd'hui",
+   "texte": "A demande à B s'il a vu la dernière série dont tout le monde parle"
+  },
+  {
+   "id": "s115",
+   "theme": "objets d'aujourd'hui",
+   "texte": "A attend un colis commandé sur Internet qui n'arrive pas"
+  },
+  {
+   "id": "s116",
+   "theme": "objets d'aujourd'hui",
+   "texte": "A trouve que les réseaux sociaux rendent les gens tristes"
+  },
+  {
+   "id": "s117",
+   "theme": "objets d'aujourd'hui",
+   "texte": "A veut acheter une trottinette électrique"
+  },
+  {
+   "id": "s118",
+   "theme": "objets d'aujourd'hui",
+   "texte": "A a perdu ses écouteurs"
+  },
+  {
+   "id": "s119",
+   "theme": "objets d'aujourd'hui",
+   "texte": "A explique à sa grand-mère comment faire un appel vidéo"
+  },
+  {
+   "id": "s120",
+   "theme": "objets d'aujourd'hui",
+   "texte": "A a pris une très belle photo avec son téléphone"
+  },
+  {
+   "id": "s121",
+   "theme": "émotions",
+   "texte": "A est stressé avant un rendez-vous important"
+  },
+  {
+   "id": "s122",
+   "theme": "émotions",
+   "texte": "A se sent seul depuis qu'il a déménagé"
+  },
+  {
+   "id": "s123",
+   "theme": "émotions",
+   "texte": "A est très content parce qu'il a réussi quelque chose de difficile"
+  },
+  {
+   "id": "s124",
+   "theme": "émotions",
+   "texte": "A est en colère contre un ami qui lui a menti"
+  },
+  {
+   "id": "s125",
+   "theme": "émotions",
+   "texte": "A est triste parce que son chat est mort"
+  },
+  {
+   "id": "s126",
+   "theme": "émotions",
+   "texte": "A a peur de l'avenir"
+  },
+  {
+   "id": "s127",
+   "theme": "émotions",
+   "texte": "A s'ennuie le dimanche"
+  },
+  {
+   "id": "s128",
+   "theme": "émotions",
+   "texte": "A est fier de son fils"
+  },
+  {
+   "id": "s129",
+   "theme": "émotions",
+   "texte": "A est jaloux du succès de son meilleur ami"
+  },
+  {
+   "id": "s130",
+   "theme": "émotions",
+   "texte": "A a honte de ce qu'il a dit hier"
+  },
+  {
+   "id": "s131",
+   "theme": "conseils",
+   "texte": "A demande à B s'il doit déménager dans une grande ville"
+  },
+  {
+   "id": "s132",
+   "theme": "conseils",
+   "texte": "A demande conseil à B pour se faire des amis"
+  },
+  {
+   "id": "s133",
+   "theme": "conseils",
+   "texte": "A ne sait pas dire non à ses amis"
+  },
+  {
+   "id": "s134",
+   "theme": "conseils",
+   "texte": "A veut se mettre au sport et demande par quoi commencer"
+  },
+  {
+   "id": "s135",
+   "theme": "conseils",
+   "texte": "A demande à B comment être plus patient"
+  },
+  {
+   "id": "s136",
+   "theme": "conseils",
+   "texte": "A demande à B quel livre lire pendant les vacances"
+  },
+  {
+   "id": "s137",
+   "theme": "conseils",
+   "texte": "A hésite à adopter un chien"
+  },
+  {
+   "id": "s138",
+   "theme": "conseils",
+   "texte": "A demande à B comment se réconcilier avec un ami"
+  },
+  {
+   "id": "s139",
+   "theme": "conseils",
+   "texte": "A demande à B s'il faut toujours dire la vérité"
+  },
+  {
+   "id": "s140",
+   "theme": "conseils",
+   "texte": "A demande à B comment ne plus être en retard"
+  },
+  {
+   "id": "s141",
+   "theme": "petites disputes",
+   "texte": "A reproche à B de ne jamais faire la vaisselle"
+  },
+  {
+   "id": "s142",
+   "theme": "petites disputes",
+   "texte": "A et B ne sont pas d'accord sur le film à regarder ce soir"
+  },
+  {
+   "id": "s143",
+   "theme": "petites disputes",
+   "texte": "A reproche à B d'avoir oublié leur rendez-vous"
+  },
+  {
+   "id": "s144",
+   "theme": "petites disputes",
+   "texte": "A accuse B d'avoir mangé le dernier morceau de gâteau"
+  },
+  {
+   "id": "s145",
+   "theme": "petites disputes",
+   "texte": "A reproche à B d'être toujours sur son téléphone"
+  },
+  {
+   "id": "s146",
+   "theme": "petites disputes",
+   "texte": "A et B se disputent pour savoir qui va conduire"
+  },
+  {
+   "id": "s147",
+   "theme": "petites disputes",
+   "texte": "A trouve que B parle trop fort"
+  },
+  {
+   "id": "s148",
+   "theme": "petites disputes",
+   "texte": "A reproche à B d'avoir répété son secret"
+  },
+  {
+   "id": "s149",
+   "theme": "petites disputes",
+   "texte": "A et B ne sont pas d'accord sur le lieu des vacances"
+  },
+  {
+   "id": "s150",
+   "theme": "petites disputes",
+   "texte": "A reproche à B de ne pas l'avoir rappelé"
+  },
+  {
+   "id": "s151",
+   "theme": "questions simples",
+   "texte": "A demande l'heure à B"
+  },
+  {
+   "id": "s152",
+   "theme": "questions simples",
+   "texte": "A demande à B son chemin pour aller à la gare"
+  },
+  {
+   "id": "s153",
+   "theme": "questions simples",
+   "texte": "A demande à B ce qu'il fait ce week-end"
+  },
+  {
+   "id": "s154",
+   "theme": "questions simples",
+   "texte": "A demande à B quelle musique il aime"
+  },
+  {
+   "id": "s155",
+   "theme": "questions simples",
+   "texte": "A demande à B quel est son plat préféré"
+  },
+  {
+   "id": "s156",
+   "theme": "questions simples",
+   "texte": "A demande à B s'il croit aux fantômes"
+  },
+  {
+   "id": "s157",
+   "theme": "questions simples",
+   "texte": "A demande à B ce qu'il ferait s'il était riche"
+  },
+  {
+   "id": "s158",
+   "theme": "questions simples",
+   "texte": "A demande à B pourquoi il est de si bonne humeur"
+  },
+  {
+   "id": "s159",
+   "theme": "questions simples",
+   "texte": "A demande à B s'il préfère la ville ou la campagne"
+  },
+  {
+   "id": "s160",
+   "theme": "questions simples",
+   "texte": "A demande à B ce qu'il pense des médecins"
+  },
+  {
+   "id": "s161",
+   "theme": "loisirs",
+   "texte": "A veut s'inscrire dans un club de football"
+  },
+  {
+   "id": "s162",
+   "theme": "loisirs",
+   "texte": "A vient de courir son premier marathon"
+  },
+  {
+   "id": "s163",
+   "theme": "loisirs",
+   "texte": "A apprend à jouer de la guitare"
+  },
+  {
+   "id": "s164",
+   "theme": "loisirs",
+   "texte": "A a vu un très mauvais film au cinéma"
+  },
+  {
+   "id": "s165",
+   "theme": "loisirs",
+   "texte": "A va à un concert ce soir"
+  },
+  {
+   "id": "s166",
+   "theme": "loisirs",
+   "texte": "A cherche une idée de sortie pour samedi"
+  },
+  {
+   "id": "s167",
+   "theme": "loisirs",
+   "texte": "A a commencé un potager sur son balcon"
+  },
+  {
+   "id": "s168",
+   "theme": "loisirs",
+   "texte": "A veut écrire un livre"
+  },
+  {
+   "id": "s169",
+   "theme": "maison et transports",
+   "texte": "A est bloqué dans les embouteillages"
+  },
+  {
+   "id": "s170",
+   "theme": "maison et transports",
+   "texte": "A a raté le dernier bus"
+  },
+  {
+   "id": "s171",
+   "theme": "maison et transports",
+   "texte": "A cherche un appartement"
+  },
+  {
+   "id": "s172",
+   "theme": "maison et transports",
+   "texte": "A a une fuite d'eau dans sa salle de bains"
+  },
+  {
+   "id": "s173",
+   "theme": "maison et transports",
+   "texte": "A repeint sa chambre"
+  },
+  {
+   "id": "s174",
+   "theme": "maison et transports",
+   "texte": "A a perdu les clés de chez lui"
+  },
+  {
+   "id": "s175",
+   "theme": "maison et transports",
+   "texte": "A veut adopter un chat"
+  },
+  {
+   "id": "s176",
+   "theme": "maison et transports",
+   "texte": "A a trouvé une souris dans sa cuisine"
+  }
+ ],
+ "exemples_moliere": [
+  {
+   "texte": "Il y fait un peu crotté; mais nous avons la chaise.",
+   "piece": "LES PRÉCIEUSES RIDICULES"
+  },
+  {
+   "texte": "Quand votre passion ne fera rien paraître Dont se puisse indigner celle qui l'a fait naître.",
+   "piece": "DON GARCIE DE NAVARRE"
+  },
+  {
+   "texte": "Je ne lui donnerais pas seulement un âne.",
+   "piece": "Les Fourberies de Scapin"
+  },
+  {
+   "texte": "Je vous assure que c'est du meilleur de mon âme que je vous parle.",
+   "piece": "LE MEDECIN MALGRE LUI"
+  },
+  {
+   "texte": "Il est vrai. Je la trouve détestable, morbleu! détestable, du dernier détestable, ce qu'on appelle détestable!",
+   "piece": "LA CRITIQUE DE L'ÉCOLE DES FEMMES"
+  },
+  {
+   "texte": "Touchez donc là. Adieu. Une autre fois, montrez plus de prudence.",
+   "piece": "L'AMOUR MÉDECIN"
+  },
+  {
+   "texte": "De mille doux frissons vous vous sentez saisir.",
+   "piece": "Les Femmes savantes"
+  },
+  {
+   "texte": "Encor? Bon Dieu! que de discours! Rien n'est-il suffisant d'en arrêter le cours?",
+   "piece": "LE DÉPIT AMOUREUX"
+  },
+  {
+   "texte": "On voit partout chez vous l'ithos et le pathos.",
+   "piece": "Les Femmes savantes"
+  },
+  {
+   "texte": "Je veux être pendu, si j'ai bu que de l'eau! A mon serment on m'en peut croire.",
+   "piece": "AMPHITRYON"
+  },
+  {
+   "texte": "Bon. C'est assez, laissez-moi faire; Vous n'avez qu'à m'interroger.",
+   "piece": "AMPHITRYON"
+  },
+  {
+   "texte": "Comment! qu'il se porte mieux! cela est faux. Monsieur se porte toujours mal.",
+   "piece": "Le Malade imaginaire"
+  },
+  {
+   "texte": "Je vous dis, de quel idiome, de quel langage?",
+   "piece": "LE MARIAGE FORCÉ"
+  },
+  {
+   "texte": "Heureux, heureux qui peut lui consacrer sa vie!",
+   "piece": "Le Malade imaginaire"
+  },
+  {
+   "texte": "Prendre ce petit lavement-là: ce sera bientôt fait.",
+   "piece": "Le Malade imaginaire"
+  },
+  {
+   "texte": "Ils ne démentent nullement Tout ce que nous venons de dire.",
+   "piece": "Psyché"
+  },
+  {
+   "texte": "Je dis, monsieur, que vous nous donniez de l'argent, s'il vous plaît.",
+   "piece": "LES PRÉCIEUSES RIDICULES"
+  },
+  {
+   "texte": "C'est-à-dire que non. Et à l'enfer?",
+   "piece": "LE FESTIN DE PIERRE"
+  },
+  {
+   "texte": "Eh! laissez-les, mon frère, aller se divertir.",
+   "piece": "L'ÉCOLE DES MARIS"
+  },
+  {
+   "texte": "Sans doute. C'est faiblesse De faire voir aux gens que leur perte nous blesse.",
+   "piece": "LE DÉPIT AMOUREUX"
+  },
+  {
+   "texte": "Eh! de grâce, mon père, défaites-vous de ces noms étranges, et nous appelez autrement.",
+   "piece": "LES PRÉCIEUSES RIDICULES"
+  },
+  {
+   "texte": "Non, non, il faut que je lui parle.",
+   "piece": "LE FESTIN DE PIERRE"
+  },
+  {
+   "texte": "Laissez faire, dis-je, et n'appréhendez pas. Je la vais disposer aux choses de ce pas.",
+   "piece": "Les Femmes savantes"
+  },
+  {
+   "texte": "Que me vient donc conter ce coquin assuré?",
+   "piece": "LE DÉPIT AMOUREUX"
+  },
+  {
+   "texte": "J'en aurai donc. Cela sera-t-il beau?",
+   "piece": "Le Bourgeois gentilhomme"
+  },
+  {
+   "texte": "O ciel! par quel secours D'un trépas assuré vois-je sauver mes jours? A qui suis-je obligé d'un si rare service?",
+   "piece": "LES FACHEUX"
+  },
+  {
+   "texte": "Oui, ça est si biau, que je n'y entends goutte.",
+   "piece": "LE MEDECIN MALGRE LUI"
+  },
+  {
+   "texte": "Il dit que la pluie des prospérités arrose en tout temps le jardin de votre famille.",
+   "piece": "Le Bourgeois gentilhomme"
+  },
+  {
+   "texte": "Si vous êtes d'accord par un bonheur extrême, Je me dessuisse donc et redeviens moi-même.",
+   "piece": "L'ÉTOURDI"
+  },
+  {
+   "texte": "Non, vraiment; et sans moi vous en trouverez bien.",
+   "piece": "L'ÉCOLE DES FEMMES"
+  },
+  {
+   "texte": "Lisez-le, vous dis-je, et satisfaites-vous.",
+   "piece": "DON GARCIE DE NAVARRE"
+  },
+  {
+   "texte": "Chacun a ses soins dans le monde, et nous cherchons aussi ce que nous voudrions bien trouver.",
+   "piece": "LE MEDECIN MALGRE LUI"
+  },
+  {
+   "texte": "Madame, elle s'est écartée; et je lui ai présenté une main qu'elle a refusé d'accepter.",
+   "piece": "LES AMANS MAGNIFIQUES"
+  },
+  {
+   "texte": "Bon! Me voulez-vous toujours appeler de ce nom?",
+   "piece": "L'ÉCOLE DES FEMMES"
+  },
+  {
+   "texte": "Pouah! vous m'engloutissez le cœur. Parlez de loin, si vous voulez.",
+   "piece": "GEORGE DANDIN"
+  },
+  {
+   "texte": "Sans doute, et je serais bien fâché qu'il m'eût rien fait approchant de cela.",
+   "piece": "Les Fourberies de Scapin"
+  },
+  {
+   "texte": "Adieu, rocher, caillou, pierre de taille, et tout ce qu'il y a de plus dur au monde!",
+   "piece": "GEORGE DANDIN"
+  },
+  {
+   "texte": "Aussi peu. Ne croyez-vous point à l'autre vie?",
+   "piece": "LE FESTIN DE PIERRE"
+  },
+  {
+   "texte": "Qui diable pensez-vous qui soit chez vous à présent?",
+   "piece": "LE MÉDECIN VOLANT"
+  },
+  {
+   "texte": "Elle se défend bien de ce nom, pourtant.",
+   "piece": "LA CRITIQUE DE L'ÉCOLE DES FEMMES"
+  },
+  {
+   "texte": "C'est lui-même. Où court-il avec un tel effroi?",
+   "piece": "LA PRINCESSE D'ÉLIDE"
+  },
+  {
+   "texte": "C'est une perfidie digne des plus grands châtiments.",
+   "piece": "Le Bourgeois gentilhomme"
+  },
+  {
+   "texte": "C'est à vous, monsieur, d'aviser promptement aux moyens de sauver des fers un fils que vous aimez avec tant de tendresse.",
+   "piece": "Les Fourberies de Scapin"
+  },
+  {
+   "texte": "La peste m'étouffe, monsieur, si je le sais!",
+   "piece": "L'IMPROMPTU DE VERSAILLES"
+  },
+  {
+   "texte": "Signez donc; j'en fais de même aussi.",
+   "piece": "L'ÉCOLE DES MARIS"
+  },
+  {
+   "texte": "Moi? je ne sais ce que vous voulez dire.",
+   "piece": "GEORGE DANDIN"
+  },
+  {
+   "texte": "Vous me comblez de joie de me dire cela. Je vous remercie de votre conseil, et je vous invite ce soir à mes noces.",
+   "piece": "LE MARIAGE FORCÉ"
+  },
+  {
+   "texte": "Bon; allons avertir mon maître de ceci. Vive la fourberie, et les fourbes aussi!",
+   "piece": "L'ÉTOURDI"
+  },
+  {
+   "texte": "A la fin, par nos raisons gagnée, Elle se résolut à souffrir la saignée; Et le soulagement suivit tout aussitôt.",
+   "piece": "LE TARTUFFE"
+  },
+  {
+   "texte": "Non, non, c'est pour... pour lui contenter l'esprit. Touchez là.. Voilà qui est fait.",
+   "piece": "L'AMOUR MÉDECIN"
+  },
+  {
+   "texte": "Et lorsque je l'aurai mis où je veux... Il lui parle à l'oreille.",
+   "piece": "MONSIEUR DE POURCEAUGNAC"
+  },
+  {
+   "texte": "Oui; mais, pour aller plus vite, Est-ce qu'on s'en lasse moins?",
+   "piece": "AMPHITRYON"
+  },
+  {
+   "texte": "Il n'importe. Il me faut un malade, et je prendrai qui je pourrai.",
+   "piece": "MONSIEUR DE POURCEAUGNAC"
+  },
+  {
+   "texte": "Allons, ferme, mon cœur! point de foiblesse humaine!",
+   "piece": "LE TARTUFFE"
+  },
+  {
+   "texte": "Qu'en croirons-nous, ou le mal, ou le bien?",
+   "piece": "LA PRINCESSE D'ÉLIDE"
+  },
+  {
+   "texte": "De grâce, excusez-moi, j'ai quelque autre embarras.",
+   "piece": "L'ÉCOLE DES FEMMES"
+  },
+  {
+   "texte": "Voyez, me voulez-vous ordonner de mourir? Vous n'avez qu'à parler: je suis prêt d'obéir.",
+   "piece": "MÉLICERTE"
+  },
+  {
+   "texte": "Il m'apparoît que vous êtes là, et il me semble que je vous parle; mais il n'est pas assuré que cela soit.",
+   "piece": "LE MARIAGE FORCÉ"
+  },
+  {
+   "texte": "Que n'ai-je un peu de cœur!",
+   "piece": "SGANARELLE OU LE COCU IMAGINAIRE"
+  },
+  {
+   "texte": "Il souffre à me voir, ma présence le chasse; Et je ferai bien mieux de lui quitter la place.",
+   "piece": "LE TARTUFFE"
+  },
+  {
+   "texte": "Je m'en vais vous le dire, écoutez.",
+   "piece": "MÉLICERTE"
+  },
+  {
+   "texte": "Je suis son frère, monsieur: nous sommes jumeaux; et, comme nous nous ressemblons fort, on nous prend quelquefois l'un pour l'autre.",
+   "piece": "LE MÉDECIN VOLANT"
+  },
+  {
+   "texte": "J'en ai, madame, tout le ressentiment qu'il est possible.",
+   "piece": "LES AMANS MAGNIFIQUES"
+  },
+  {
+   "texte": "Est-ce jeu, dites-nous, ou bien si c'est folie, Qui traite de défunt une personne en vie?",
+   "piece": "L'ÉTOURDI"
+  },
+  {
+   "texte": "A ce que je vois, vous avez demeuré longtemps dans notre ville?",
+   "piece": "MONSIEUR DE POURCEAUGNAC"
+  },
+  {
+   "texte": "Non. Mais je prétends, moi, vous rendre un bon office, Et c'est ce qui chez vous prend droit de m'amener.",
+   "piece": "L'ÉCOLE DES MARIS"
+  },
+  {
+   "texte": "J'ai des raisons, madame, qui ne permettent pas que je reçoive l'honneur que vous me présentez.",
+   "piece": "LES AMANS MAGNIFIQUES"
+  },
+  {
+   "texte": "Point, point; je connais son humeur: il ne se soucie pas qu'on fronde ses pièces, pourvu qu'il y vienne du monde.",
+   "piece": "LA CRITIQUE DE L'ÉCOLE DES FEMMES"
+  },
+  {
+   "texte": "Comment donc! Qu'est ceci? Qui l'eût pu présumer? Et savez-vous, morveux! ce que c'est que d'aimer?",
+   "piece": "MÉLICERTE"
+  },
+  {
+   "texte": "Et qu'est-ce que c'est? voyons, dites-moi un peu la cause de leur différend.",
+   "piece": "LA JALOUSIE DU BARBOUILLÉ"
+  },
+  {
+   "texte": "Si c'est pour lui payer ce que vous lui devez, J'y consens, devant tout aux jours qu'il a sauvés.",
+   "piece": "LES FACHEUX"
+  },
+  {
+   "texte": "Mais savez-vous qu'enfin il fera mal la sienne, S'il faut qu'en cette humeur votre esprit l'entretienne?",
+   "piece": "DON GARCIE DE NAVARRE"
+  }
+ ],
+ "personas_exclus": [
+  "HARPAGON",
+  "ALCESTE"
+ ],
+ "personas_exclus_justification": "Harpagon (L'Avare) et Alceste (Le Misanthrope) viennent de deux des trois pièces gardées à l'écart pour mesurer le BPB : des échanges synthétiques sur leurs thèmes (cassette, voleurs, flatterie) pourraient avantager la mesure.",
+ "interlocuteurs": {
+  "LA GRANGE": "m",
+  "DON JUAN": "m",
+  "SGANARELLE": "m",
+  "CLÉANTE": "m",
+  "PHILINTE": "m",
+  "ARGANTE": "m",
+  "ARGAN": "m",
+  "ORGON": "m",
+  "MADAME JOURDAIN": "f",
+  "TOINETTE": "f",
+  "ELMIRE": "f"
+ },
+ "genres": {
+  "m": {
+   "texte": "un homme",
+   "accord": "masculin (les adjectifs qui le désignent sont au masculin)",
+   "titre": "monsieur"
+  },
+  "f": {
+   "texte": "une femme",
+   "accord": "féminin (les adjectifs qui la désignent sont au féminin)",
+   "titre": "madame"
+  }
+ },
+ "interlocuteurs_justification": "Dans les données, les messages de A portent le nom de l'interlocuteur du personnage (ELMIRE pour TARTUFFE...). Le prompt donne donc le genre de cet interlocuteur, pour que A s'accorde et que B ne dise pas « monsieur » à Elmire.",
+ "demonstrations_moliere": [
+  {
+   "a": "Je suis crevé, j'ai bossé toute la nuit.",
+   "b": "Allez donc dormir, je vous prie : un homme qui veille toute la nuit n'a plus le lendemain que la moitié de son esprit."
+  },
+  {
+   "a": "Mon téléphone n'a plus de batterie.",
+   "b": "Cette petite boîte qui parle a donc perdu le souffle ? Laissez-la reposer : les machines, comme les hommes, veulent qu'on les ménage."
+  },
+  {
+   "a": "Tu crois que je devrais demander une augmentation ?",
+   "b": "Demandez, morbleu ! Qui se tait sur son mérite le voit bientôt oublié de tout le monde."
+  },
+  {
+   "a": "Il pleut depuis trois jours, j'en ai marre.",
+   "b": "Le ciel est bien obstiné, je l'avoue ; mais prenez patience, il faudra bien qu'il se lasse avant vous."
+  },
+  {
+   "a": "Je viens de me faire larguer par message.",
+   "b": "Quitter les gens par un billet, sans les voir ! Croyez-moi, un cœur si pressé de partir ne mérite pas qu'on le pleure longtemps."
+  },
+  {
+   "a": "On mange quoi ce soir ?",
+   "b": "Ce que vous voudrez, pourvu qu'il y en ait assez ; je n'ai jamais vu personne se plaindre d'un bon rôti."
+  },
+  {
+   "a": "Le colis que j'ai commandé n'est jamais arrivé.",
+   "b": "Payer d'avance une chose qu'on ne vous a point remise ! Voilà une étrange confiance, et le marchand doit bien rire à vos dépens."
+  },
+  {
+   "a": "Vous pensez que je suis trop vieux pour reprendre mes études ?",
+   "b": "Parbleu, l'esprit n'a point d'âge ; et l'on voit tous les jours des barbons plus savants que leurs écoliers."
+  }
+ ],
+ "demonstrations_justification": "Échanges de démonstration écrits par Claude (Anthropic) le 13/11, publiés ici : ils montrent à qwen3 une réponse complète qui répond au message, vouvoie, ne commence pas par « Ah » et emploie le vocabulaire du temps. Deux sont tirés au hasard par appel ; le filtre copie_exemple rejette toute réponse qui en reprend 6 mots de suite.",
+ "nb_demonstrations_par_prompt": 2,
+ "juge": {
+  "actif": {
+   "moderne": false,
+   "moliere": true
+  },
+  "temperature": 0.0,
+  "num_predict": 20,
+  "seed": 0
+ },
+ "juge_justification": "Les filtres ne voient que la forme. Un second passage de qwen3 (même modèle local, prompt publié ci-dessus, température 0) répond OUI ou NON à trois questions sur le fond : français correct, réponse au message et cohérence, naturel (moderne) ou style de Molière. On garde seulement trois OUI. Les questions sont posées pour que OUI soit toujours la bonne réponse : la v1 « réponds NON s'il y a un défaut » était comprise à l'envers (« NON : aucun défaut », 43 conversations sur 43). La v2 demandait aussi si le registre tu/vous était tenu : elle rejetait des conversations au « vous » correctes (6 sur 6 relues) ; le registre est donc vérifié par le filtre « registre » (règle exacte), plus par le juge.",
+ "juge_mesure": "Essais du 13/11 sur des conversations déjà relues (défauts relevés par une relecture IA de l'échantillon v1). Style moliere : la question 3 (style) sépare bien, 0 échange v1 sur 11 accepté contre 7 démonstrations sur 8 ; mais le juge ne voit presque pas les fautes de français (4 démonstrations abîmées exprès sur 8 rejetées) ni les réponses hors sujet (4 sur 8). Style moderne : le juge v3 accepte tout, 0 défaut sur 10 détecté et 0 rejet sur 20 autres ; avec la réflexion de qwen3 activée, 1 sur 6, pour 20 s par conversation. Il est donc DÉSACTIVÉ pour le style moderne (il ne coûterait que du temps)."
+}

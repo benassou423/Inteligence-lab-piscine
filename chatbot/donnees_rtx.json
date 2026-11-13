@@ -1,0 +1,113 @@
+{
+  "note": "Gros fichiers de l'entraînement RTX (plus de 100 Mo : refusés par git), en pièces jointes d'une release GitHub. Régénéré par tools/publish_chatbot_release.py ; lu par `python -m chatbot.pipeline_rtx telecharger` et `verifier`.",
+  "depot": "benassou423/Inteligence-lab-piscine",
+  "tag": "chatbot-donnees-20261113",
+  "total_octets": 4344702490,
+  "fichiers": [
+    {
+      "piece_jointe": "pretrain_meta.json",
+      "destination": "data/stages/chatbot_20261113/pretrain/meta.json",
+      "role": "pre-entrainement",
+      "octets": 89623,
+      "sha256": "066e1be2f1b91e07866e7998220bdd92d1b31e3fe09adb569900067b30ac3daf"
+    },
+    {
+      "piece_jointe": "pretrain_melange.bin",
+      "destination": "data/stages/chatbot_20261113/pretrain/melange.bin",
+      "role": "pre-entrainement",
+      "octets": 225617212,
+      "sha256": "b0c26f2f9767a8f54d965a13e770d14a8780eb75e85bd4053b06510b7e984b67"
+    },
+    {
+      "piece_jointe": "pretrain_gutenberg.bin",
+      "destination": "data/stages/chatbot_20261113/pretrain/gutenberg.bin",
+      "role": "pre-entrainement",
+      "octets": 881592818,
+      "sha256": "2f4cdd65290b90f11916bb1b004f9173b5f105e5e66f41fffa37f4567f3b6a9f"
+    },
+    {
+      "piece_jointe": "pretrain_wikisource.bin",
+      "destination": "data/stages/chatbot_20261113/pretrain/wikisource.bin",
+      "role": "pre-entrainement",
+      "octets": 1000000000,
+      "sha256": "4c601706d4fd99865260c134416e7c4701c9d17588998392a0a294233a26ab54"
+    },
+    {
+      "piece_jointe": "pretrain_wikipedia.bin",
+      "destination": "data/stages/chatbot_20261113/pretrain/wikipedia.bin",
+      "role": "pre-entrainement",
+      "octets": 1200000000,
+      "sha256": "1cab5342d0d7229ffbdfff28581fed81b57348f48158f08f432be11f4f7b809c"
+    },
+    {
+      "piece_jointe": "pretrain_fineweb.bin",
+      "destination": "data/stages/chatbot_20261113/pretrain/fineweb.bin",
+      "role": "pre-entrainement",
+      "octets": 907378980,
+      "sha256": "19425df21548a64f30bb427fe0ac9b4b7245bb535980e02d9a3c6b417ead2642"
+    },
+    {
+      "piece_jointe": "pretrain_wikinews.bin",
+      "destination": "data/stages/chatbot_20261113/pretrain/wikinews.bin",
+      "role": "pre-entrainement",
+      "octets": 13522162,
+      "sha256": "7b60d9aaba1788e684ab897fa784ca79be78216e314b7f1f72cf344e7184152a"
+    },
+    {
+      "piece_jointe": "theatre_theatre_train.jsonl.zst",
+      "destination": "data/stages/chatbot_20261112/theatre/theatre_train.jsonl.zst",
+      "role": "affinage",
+      "octets": 35119905,
+      "sha256": "035dbfc740db2c93015e1b7333fb7d6981e05999146d5164228f9da722470ca8"
+    },
+    {
+      "piece_jointe": "theatre_moliere_train.jsonl.zst",
+      "destination": "data/stages/chatbot_20261112/theatre/moliere_train.jsonl.zst",
+      "role": "affinage",
+      "octets": 674611,
+      "sha256": "94eeac016e80a179a57e5e6c62c4037a178d69ad3e224be8c261e8b005ab044f"
+    },
+    {
+      "piece_jointe": "theatre_moliere_val.jsonl.zst",
+      "destination": "data/stages/chatbot_20261112/theatre/moliere_val.jsonl.zst",
+      "role": "affinage",
+      "octets": 90760,
+      "sha256": "6e7d26d14598666ea6c298104cd19c63fb566a13b9fb3a064ebc7ed06b2c5a6b"
+    },
+    {
+      "piece_jointe": "dialogues_romans_train.jsonl.zst",
+      "destination": "data/stages/chatbot_20261113/dialogues/romans_train.jsonl.zst",
+      "role": "affinage",
+      "octets": 67602429,
+      "sha256": "0c196957927d4c915a6195765e1bda73cfb8609ddd5c7a9e2e59e8e79051c598"
+    },
+    {
+      "piece_jointe": "dialogues_romans_val.jsonl.zst",
+      "destination": "data/stages/chatbot_20261113/dialogues/romans_val.jsonl.zst",
+      "role": "affinage",
+      "octets": 1773924,
+      "sha256": "39223cefc3f2a289e05724930dada97a2a2f7204001b72deefd4f0fa73234826"
+    },
+    {
+      "piece_jointe": "dialogues_theatre_moderne_train.jsonl.zst",
+      "destination": "data/stages/chatbot_20261113/dialogues/theatre_moderne_train.jsonl.zst",
+      "role": "affinage",
+      "octets": 11204918,
+      "sha256": "9e8d0633bcf60241cea4b7582416b14b90a8f4db63b38f3301aafc8a4709de33"
+    },
+    {
+      "piece_jointe": "essai_synthetique_moliere.jsonl.zst",
+      "destination": "data/stages/chatbot_20261113/synthetique_echantillon/moliere.jsonl.zst",
+      "role": "essai",
+      "octets": 24525,
+      "sha256": "10e247960df2fa0836a6dbb4bd344f03d94343b6754f8ee7bbc2499c8d1ec6fd"
+    },
+    {
+      "piece_jointe": "essai_synthetique_moderne.jsonl.zst",
+      "destination": "data/stages/chatbot_20261113/synthetique_echantillon/moderne.jsonl.zst",
+      "role": "essai",
+      "octets": 10623,
+      "sha256": "353de8cff7f9d5b7a41ff8daa45d1459805ec1b136b83834e06ba05a3f8c5bd0"
+    }
+  ]
+}
