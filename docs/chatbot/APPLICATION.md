@@ -124,6 +124,6 @@ Limites :
 ### Licences
 
 - Poids du modèle : CC BY-SA 4.0. Code du projet : Apache 2.0 (voir `LICENCES.md`).
-- **Réserve** : le dossier `ftb/` et le fichier `config/official.json` (kit officiel du concours) sont embarqués tels quels dans l'application parce que le modèle ne fonctionne pas sans eux. Ce kit est publié sans licence explicite : l'application ne doit pas être redistribuée largement sans l'accord de ses auteurs.
+- **Réserve** : le dossier `ftb/` et le fichier `config/official.json` (kit officiel du concours) sont embarqués tels quels dans l'application parce que le modèle ne fonctionne pas sans eux. Ce kit n'a pas de licence : comme l'écrit `LICENCES.md`, le réutiliser en dehors de ce dépôt demande l'accord de son auteur. Cela vaut pour l'application : elle est distribuée par la release de ce dépôt, et la redistribuer ailleurs demande cet accord.
 - Bibliothèques embarquées (PyTorch, tokenizers, pywebview, certifi, etc.) : leurs licences respectives s'appliquent.
 - L'icône a été générée par un outil d'IA : aucune licence n'est revendiquée dessus (voir `LICENCES.md`).
