@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-13T19:17:22",
+  "device": "cuda",
+  "precision": "bf16",
+  "secondes": 93.5,
+  "controles": [
+    {
+      "controle": "coupure simulée de la base",
+      "ok": true,
+      "detail": "(code 3, attendu 3)"
+    },
+    {
+      "controle": "reprise et fin de la chaîne",
+      "ok": true,
+      "detail": "(code 0)"
+    },
+    {
+      "controle": "reprise au bon pas",
+      "ok": true,
+      "detail": "(reprise aux pas [30])"
+    },
+    {
+      "controle": "base : loss finies et en baisse",
+      "ok": true,
+      "detail": "(val 9.027 -> 7.443, meilleure 7.443)"
+    },
+    {
+      "controle": "moliere_etape1 : loss finies et en baisse",
+      "ok": true,
+      "detail": "(val 7.443 -> 6.934, meilleure 6.934)"
+    },
+    {
+      "controle": "moliere_synthetique : loss finies et en baisse",
+      "ok": true,
+      "detail": "(val 6.934 -> 6.893, meilleure 6.893)"
+    },
+    {
+      "controle": "francais_etape1 : loss finies et en baisse",
+      "ok": true,
+      "detail": "(val 7.254 -> 6.722, meilleure 6.722)"
+    },
+    {
+      "controle": "francais_synthetique : loss finies et en baisse",
+      "ok": true,
+      "detail": "(val 6.722 -> 6.687, meilleure 6.687)"
+    },
+    {
+      "controle": "export moliere au bon format",
+      "ok": true,
+      "detail": "(repliques)"
+    },
+    {
+      "controle": "réponse du chatbot moliere",
+      "ok": true,
+      "detail": "« 'h g des effet que puis et vous plus le ce peu, »"
+    },
+    {
+      "controle": "évaluation réduite moliere",
+      "ok": true,
+      "detail": "(BPB 2.9169406431420484, 150 réponses)"
+    },
+    {
+      "controle": "export francais au bon format",
+      "ok": true,
+      "detail": "(tirets)"
+    },
+    {
+      "controle": "réponse du chatbot francais",
+      "ok": true,
+      "detail": "« 'h g des Il'est— et vous plus le ce peu.raiLes une;. »"
+    },
+    {
+      "controle": "évaluation réduite francais",
+      "ok": true,
+      "detail": "(BPB 2.664177081877264, 120 réponses)"
+    },
+    {
+      "controle": "durée < 5 min",
+      "ok": true,
+      "detail": "(93.5 s)"
+    }
+  ],
+  "ok": true
+}

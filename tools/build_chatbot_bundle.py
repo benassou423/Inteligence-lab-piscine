@@ -19,6 +19,10 @@ Contenu, aux MÊMES chemins relatifs que dans le dépôt (les commandes sont ide
 
 Solution de SECOURS : la route normale est le clone git + `telecharger` (voir PC_RTX.md).
 
+Ce script ne se lance que sur le Mac (copie de travail), qui a data/stages/ et le .venv à relire. Sur
+le PC Windows à carte NVIDIA, ne jamais utiliser « uv run » ni « uv sync » (voir PC_RTX.md) : les
+commandes « uv run » ci-dessus sont celles du Mac.
+
 Les .bin et .zst sont rangés dans l'archive SANS compression (ils ne se compressent pas) ; l'archive
 peut dépasser 4 Go (ZIP64). Les gros fichiers du dossier sont des liens physiques vers les données
 (aucune copie de 4 Go en plus sur le disque).
@@ -50,7 +54,8 @@ PRETRAIN, DONNEES, SYNTHETIQUES, ECHANTILLONS = L.PRETRAIN, L.DONNEES, L.SYNTHET
 ENTREES = ["chatbot.pipeline_rtx", "chatbot.pretrain", "chatbot.finetune", "chatbot.generate",
            "chatbot.evaluate"]
 PAQUETS = {"chatbot", "ftb", "pipeline"}
-# Versions figées : celles de docs/remise/PASSAGE_PC_RTX5090.md ; on relit celles du .venv du Mac.
+# Versions figées : celles de docs/remise/PASSAGE_PC_RTX5090.md (pièce historique d'une route jamais
+# exécutée) ; on relit celles du .venv du Mac.
 TORCH = "2.15.0"
 INDEX_CUDA = "https://download.pytorch.org/whl/cu132"
 AUTRES = ["numpy", "tokenizers", "regex", "zstandard", "xxhash"]
@@ -149,7 +154,7 @@ Tu es dans le PAQUET ZIP de secours (TRANSFER_MANIFEST.json est présent), pas d
 LISEZMOI = """# Paquet d'entraînement des chatbots — PC Windows RTX 5090 (solution de secours)
 
 Prochaine action : ouvrir ce dossier dans Claude Code sur le PC et lui coller le message de
-docs/remise/PASSAGE_PC_RTX5090_CHATBOT.md (sur le Mac, partie « secours ») — 2 min.
+docs/chatbot/PASSAGE_PC_RTX5090_CHATBOT.md (sur le Mac, partie « secours ») — 2 min.
 
 1. Ce dossier contient tout : code, données déjà tokenisées, recettes, autotest. Rien à télécharger
    sauf Python et PyTorch (environ 3 Go, durée selon la connexion).

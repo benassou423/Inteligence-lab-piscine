@@ -1,0 +1,308 @@
+{
+  "taille": "M",
+  "recettes": "recettes-rtx-publie-s03",
+  "lanceur": "pipeline-rtx-v2",
+  "base": {
+    "tokens_vus": 2000027648,
+    "pas": 30518,
+    "bpb_validation_pas0": 3.87695,
+    "meilleur_bpb_validation": 1.12985,
+    "meilleur_pas": 30518,
+    "secondes": 5988.8,
+    "reprises_aux_pas": [],
+    "precision": "bf16",
+    "micro_lot": 128,
+    "memoire_gpu_max_go": 23.67,
+    "n_params": 54749440
+  },
+  "chatbots": {
+    "moliere": {
+      "format": "repliques",
+      "taille": "M",
+      "modele": {
+        "d_model": 640,
+        "n_layer": 10,
+        "n_head": 10
+      },
+      "base": {
+        "tokens_vus": 2000027648,
+        "pas": 30518,
+        "bpb_validation_pas0": 3.87695,
+        "meilleur_bpb_validation": 1.12985,
+        "meilleur_pas": 30518,
+        "secondes": 5988.8,
+        "reprises_aux_pas": [],
+        "precision": "bf16",
+        "micro_lot": 128,
+        "memoire_gpu_max_go": 23.67,
+        "n_params": 54749440
+      },
+      "etape1": {
+        "tokens_vus": 90013696,
+        "pas": 2747,
+        "bpb_validation_pas0": 1.12985,
+        "meilleur_bpb_validation": 1.05585,
+        "meilleur_pas": 1000,
+        "secondes": 297.6,
+        "reprises_aux_pas": [],
+        "precision": "bf16",
+        "micro_lot": 64,
+        "memoire_gpu_max_go": 12.23,
+        "n_params": 54749440
+      },
+      "synthetique": null,
+      "part_synthetique": {
+        "fichiers": [
+          "data/stages/chatbot_20261114/synthetique_v4/entrainement/moliere.jsonl.zst"
+        ],
+        "tokens_synthetiques": 2720768,
+        "part_dans_l_etape": 0.0302,
+        "part_de_tout_l_affinage": 0.0302,
+        "melangee_a_l_etape1": true
+      },
+      "evaluation": {
+        "bpb_tour_suivant": 1.0557022296294654,
+        "panel_commun": {
+          "n": 120,
+          "empty_rate": 0.0,
+          "mean_chars": 85.6,
+          "clean_end_rate": 1.0,
+          "repetition_rate": 0.0007,
+          "distinct_2": 0.7875,
+          "role_name_rate": 0.0,
+          "overlap_rate": 0.2727,
+          "overlap_eligible": 99,
+          "overlap_non_echo_rate": 0.2727,
+          "echo_rate": 0.0,
+          "mean_words": 15.9,
+          "repetition_rate_15w": 0.0007,
+          "distinct_2_15w": 0.7931,
+          "natural_stop_rate": 1.0,
+          "role_leak_raw_rate": 0.0,
+          "chosen_vs_candidates_length": 1.2041,
+          "mean_mmi_score": 14.1002,
+          "seconds_per_reply": 0.505,
+          "seconds_median": 0.485,
+          "finish": {
+            "eot": 43,
+            "speaker": 77
+          },
+          "context_truncated": 0,
+          "history_gain_turns_2_3": 0.1307,
+          "history_gain_n": 30
+        },
+        "discussion_6_tours": {
+          "n_conversations": 18,
+          "n_replies": 108,
+          "self_copy_rate": 0.0,
+          "self_copy_eligible": 90,
+          "truncated_conversation_rate": 0.0,
+          "mean_context_tokens_last_turn": 266.9,
+          "history_gain_turns_2_3": 0.1685,
+          "history_gain_turns_2_6": 0.1802,
+          "summary": {
+            "n": 108,
+            "empty_rate": 0.0,
+            "mean_chars": 89.0,
+            "clean_end_rate": 1.0,
+            "repetition_rate": 0.0025,
+            "distinct_2": 0.7961,
+            "role_name_rate": 0.0,
+            "overlap_rate": 0.219,
+            "overlap_eligible": 105,
+            "overlap_non_echo_rate": 0.219,
+            "echo_rate": 0.0,
+            "mean_words": 16.2,
+            "repetition_rate_15w": 0.0023,
+            "distinct_2_15w": 0.7991,
+            "natural_stop_rate": 1.0,
+            "role_leak_raw_rate": 0.0,
+            "chosen_vs_candidates_length": 1.0878,
+            "mean_mmi_score": 11.1251,
+            "seconds_per_reply": 0.531,
+            "seconds_median": 0.531,
+            "finish": {
+              "eot": 81,
+              "speaker": 27
+            },
+            "context_truncated": 0,
+            "history_gain_turns_2_3": 0.1685,
+            "history_gain_n": 36
+          }
+        }
+      },
+      "environnement": {
+        "device": "cuda",
+        "precision": "bf16",
+        "autocast_dtype": "torch.bfloat16",
+        "grad_scaler": false,
+        "tf32": true,
+        "pin_memory": true,
+        "compile": {
+          "requested": true,
+          "status": "échec, repli sans compilation",
+          "error": "TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton"
+        },
+        "torch": "2.15.0+cu132",
+        "cuda": "13.2",
+        "python": "3.12.11",
+        "numpy": "2.5.4",
+        "os": "Windows 11",
+        "machine": "AMD64",
+        "gpu": {
+          "name": "NVIDIA GeForce RTX 5090",
+          "memory_gb": 34.2,
+          "capability": "12.0",
+          "count": 1,
+          "bf16_native": true,
+          "cudnn": 92600
+        }
+      },
+      "note": "modèle de démo hors concours, pré-entraîné de zéro sur nos données, aucun poids externe"
+    },
+    "francais": {
+      "format": "tirets",
+      "taille": "M",
+      "modele": {
+        "d_model": 640,
+        "n_layer": 10,
+        "n_head": 10
+      },
+      "base": {
+        "tokens_vus": 2000027648,
+        "pas": 30518,
+        "bpb_validation_pas0": 3.87695,
+        "meilleur_bpb_validation": 1.12985,
+        "meilleur_pas": 30518,
+        "secondes": 5988.8,
+        "reprises_aux_pas": [],
+        "precision": "bf16",
+        "micro_lot": 128,
+        "memoire_gpu_max_go": 23.67,
+        "n_params": 54749440
+      },
+      "etape1": {
+        "tokens_vus": 150011904,
+        "pas": 4578,
+        "bpb_validation_pas0": 1.15956,
+        "meilleur_bpb_validation": 1.04751,
+        "meilleur_pas": 4578,
+        "secondes": 508.6,
+        "reprises_aux_pas": [],
+        "precision": "bf16",
+        "micro_lot": 64,
+        "memoire_gpu_max_go": 12.23,
+        "n_params": 54749440
+      },
+      "synthetique": null,
+      "part_synthetique": null,
+      "evaluation": {
+        "bpb_tour_suivant": 1.047312686004727,
+        "panel_commun": {
+          "n": 120,
+          "empty_rate": 0.0,
+          "mean_chars": 63.5,
+          "clean_end_rate": 0.9917,
+          "repetition_rate": 0.0066,
+          "distinct_2": 0.7391,
+          "role_name_rate": 0.0,
+          "overlap_rate": 0.4646,
+          "overlap_eligible": 99,
+          "overlap_non_echo_rate": 0.4646,
+          "echo_rate": 0.0,
+          "mean_words": 13.0,
+          "repetition_rate_15w": 0.0079,
+          "distinct_2_15w": 0.7457,
+          "natural_stop_rate": 1.0,
+          "role_leak_raw_rate": 0.0,
+          "chosen_vs_candidates_length": 0.9946,
+          "mean_mmi_score": 12.0119,
+          "seconds_per_reply": 0.459,
+          "seconds_median": 0.438,
+          "finish": {
+            "speaker": 120
+          },
+          "context_truncated": 0,
+          "history_gain_turns_2_3": 0.3115,
+          "history_gain_n": 30
+        },
+        "discussion_6_tours": {
+          "n_conversations": 18,
+          "n_replies": 108,
+          "self_copy_rate": 0.0,
+          "self_copy_eligible": 90,
+          "truncated_conversation_rate": 0.0,
+          "mean_context_tokens_last_turn": 171.9,
+          "history_gain_turns_2_3": 0.479,
+          "history_gain_turns_2_6": 0.4313,
+          "summary": {
+            "n": 108,
+            "empty_rate": 0.0,
+            "mean_chars": 66.5,
+            "clean_end_rate": 1.0,
+            "repetition_rate": 0.0009,
+            "distinct_2": 0.7329,
+            "role_name_rate": 0.0,
+            "overlap_rate": 0.4095,
+            "overlap_eligible": 105,
+            "overlap_non_echo_rate": 0.4095,
+            "echo_rate": 0.0,
+            "mean_words": 13.7,
+            "repetition_rate_15w": 0.0007,
+            "distinct_2_15w": 0.735,
+            "natural_stop_rate": 1.0,
+            "role_leak_raw_rate": 0.0,
+            "chosen_vs_candidates_length": 1.2259,
+            "mean_mmi_score": 17.6204,
+            "seconds_per_reply": 0.399,
+            "seconds_median": 0.359,
+            "finish": {
+              "speaker": 108
+            },
+            "context_truncated": 0,
+            "history_gain_turns_2_3": 0.479,
+            "history_gain_n": 36
+          }
+        }
+      },
+      "environnement": {
+        "device": "cuda",
+        "precision": "bf16",
+        "autocast_dtype": "torch.bfloat16",
+        "grad_scaler": false,
+        "tf32": true,
+        "pin_memory": true,
+        "compile": {
+          "requested": true,
+          "status": "échec, repli sans compilation",
+          "error": "TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton"
+        },
+        "torch": "2.15.0+cu132",
+        "cuda": "13.2",
+        "python": "3.12.11",
+        "numpy": "2.5.4",
+        "os": "Windows 11",
+        "machine": "AMD64",
+        "gpu": {
+          "name": "NVIDIA GeForce RTX 5090",
+          "memory_gb": 34.2,
+          "capability": "12.0",
+          "count": 1,
+          "bf16_native": true,
+          "cudnn": 92600
+        }
+      },
+      "note": "modèle de démo hors concours, pré-entraîné de zéro sur nos données, aucun poids externe"
+    }
+  },
+  "durees_minutes": {
+    "base": 100.0,
+    "francais_etape1": 8.5,
+    "francais_export": 0.0,
+    "francais_evaluation": 1.8,
+    "moliere_etape1": 5.0,
+    "moliere_export": 0.0,
+    "moliere_evaluation": 2.4
+  },
+  "duree_totale_heures": 1.96
+}

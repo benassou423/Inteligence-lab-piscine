@@ -1,0 +1,106 @@
+{
+  "lanceur": "pipeline-rtx-v2",
+  "recettes": "recettes-rtx-v1",
+  "taille": "M",
+  "device": "cuda",
+  "precision": "auto",
+  "compile": true,
+  "micro_lot": null,
+  "cree": "2026-11-13T19:56:34",
+  "etapes": {
+    "base": {
+      "groupe": "base",
+      "statut": "fini",
+      "commande": "python -m chatbot.pretrain train --data data/stages/chatbot_20261113/pretrain --weights wikipedia=0.22 fineweb=0.2 gutenberg=0.27 wikisource=0.18 melange=0.12 wikinews=0.01 --model-config {\\\"d_model\\\":640,\\\"n_layer\\\":10,\\\"n_head\\\":10,\\\"context_length\\\":512,\\\"vocab_size\\\":8192} --tokenizer submissions/2026-11-11_153839/tokenizer.json --tokens 2000000000 --batch-size 128 --seq-len 512 --lr 0.0008 --min-lr 8e-05 --warmup-steps 1000 --weight-decay 0.1 --grad-clip 1.0 --eval-every 1000 --seed 1337 --val data/stages/chatbot_20261112/theatre/moliere_val.jsonl.zst --out runs/chatbot_rtx/runs/base --note \"lanceur RTX, taille M\" --device cuda --precision auto --compile --resume",
+      "journal": "runs/chatbot_rtx/journaux/base.log",
+      "debut": "2026-11-13T19:56:34",
+      "reprises": 0,
+      "code": 0,
+      "fin": "2026-11-13T21:36:36",
+      "secondes": 6001.1
+    },
+    "francais_etape1": {
+      "groupe": "francais",
+      "statut": "fini",
+      "commande": "python -m chatbot.finetune --init runs/chatbot_rtx/runs/base/best.pt --tokenizer submissions/2026-11-11_153839/tokenizer.json --data data/stages/chatbot_20261113/dialogues/romans_train.jsonl.zst data/stages/chatbot_20261113/dialogues/theatre_moderne_train.jsonl.zst --weights 1 1 --val data/stages/chatbot_20261113/dialogues/romans_val.jsonl.zst --out runs/chatbot_rtx/runs/francais_etape1 --tokens 150000000 --lr 0.0002 --min-lr 2e-05 --warmup-steps 100 --batch-size 64 --seq-len 512 --eval-every 250 --persona-augment 0.0 --format tirets --seed 1337 --note \"lanceur RTX, francais, étape 1\" --device cuda --precision auto --compile --resume",
+      "journal": "runs/chatbot_rtx/journaux/francais_etape1.log",
+      "debut": "2026-11-13T21:41:36",
+      "reprises": 0,
+      "code": 0,
+      "fin": "2026-11-13T21:50:07",
+      "secondes": 511.6
+    },
+    "francais_export": {
+      "groupe": "francais",
+      "statut": "fini",
+      "commande": "python -m chatbot.generate export --ckpt runs/chatbot_rtx/runs/francais_etape1/best.pt --tokenizer submissions/2026-11-11_153839/tokenizer.json --out runs/chatbot_rtx/modeles/chatbot_francais --format tirets",
+      "journal": "runs/chatbot_rtx/journaux/francais_export.log",
+      "debut": "2026-11-13T21:50:10",
+      "reprises": 0,
+      "code": 0,
+      "fin": "2026-11-13T21:50:13",
+      "secondes": 2.8
+    },
+    "francais_evaluation": {
+      "groupe": "francais",
+      "statut": "fini",
+      "commande": "python -m chatbot.evaluate --model runs/chatbot_rtx/modeles/chatbot_francais --out runs/chatbot_rtx/evaluations/francais --device cuda --val data/stages/chatbot_20261113/dialogues/romans_val.jsonl.zst",
+      "journal": "runs/chatbot_rtx/journaux/francais_evaluation.log",
+      "debut": "2026-11-13T21:52:20",
+      "reprises": 0,
+      "code": 0,
+      "fin": "2026-11-13T21:54:07",
+      "secondes": 106.8
+    },
+    "moliere_etape1": {
+      "groupe": "moliere",
+      "statut": "fini",
+      "commande": "python -m chatbot.finetune --init runs/chatbot_rtx/runs/base/best.pt --tokenizer submissions/2026-11-11_153839/tokenizer.json --data data/stages/chatbot_20261112/theatre/theatre_train.jsonl.zst data/stages/chatbot_20261112/theatre/moliere_train.jsonl.zst data/stages/chatbot_20261114/synthetique_v4/entrainement/moliere.jsonl.zst --weights 1 3 1.09 --val data/stages/chatbot_20261112/theatre/moliere_val.jsonl.zst --out runs/chatbot_rtx/runs/moliere_etape1 --tokens 90000000 --lr 0.0002 --min-lr 2e-05 --warmup-steps 100 --batch-size 64 --seq-len 512 --eval-every 250 --persona-augment 0.5 --format repliques --seed 1337 --note \"lanceur RTX, moliere, étape 1\" --device cuda --precision auto --compile --resume",
+      "journal": "runs/chatbot_rtx/journaux/moliere_etape1.log",
+      "debut": "2026-11-15T15:14:29",
+      "reprises": 0,
+      "code": 0,
+      "fin": "2026-11-15T15:19:29",
+      "secondes": 299.8
+    },
+    "moliere_export": {
+      "groupe": "moliere",
+      "statut": "fini",
+      "commande": "python -m chatbot.generate export --ckpt runs/chatbot_rtx/runs/moliere_etape1/best.pt --tokenizer submissions/2026-11-11_153839/tokenizer.json --out runs/chatbot_rtx/modeles/chatbot_moliere --format repliques --anchor-mu 1 --candidates 32",
+      "journal": "runs/chatbot_rtx/journaux/moliere_export.log",
+      "debut": "2026-11-16T02:17:45",
+      "reprises": 0,
+      "code": 0,
+      "fin": "2026-11-16T02:17:46",
+      "secondes": 1.5
+    },
+    "moliere_evaluation": {
+      "groupe": "moliere",
+      "statut": "fini",
+      "commande": "python -m chatbot.evaluate --model runs/chatbot_rtx/modeles/chatbot_moliere --out runs/chatbot_rtx/evaluations/moliere --device cuda --val data/stages/chatbot_20261112/theatre/moliere_val.jsonl.zst",
+      "journal": "runs/chatbot_rtx/journaux/moliere_evaluation.log",
+      "debut": "2026-11-16T02:17:46",
+      "reprises": 0,
+      "code": 0,
+      "fin": "2026-11-16T02:20:11",
+      "secondes": 144.5
+    }
+  },
+  "plan": [
+    "base",
+    "moliere_etape1",
+    "francais_etape1",
+    "moliere_export",
+    "francais_export",
+    "moliere_evaluation",
+    "francais_evaluation"
+  ],
+  "composition": {
+    "francais": [
+      "francais_etape1"
+    ],
+    "moliere": [
+      "moliere_etape1"
+    ]
+  }
+}

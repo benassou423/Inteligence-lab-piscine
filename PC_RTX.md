@@ -1,5 +1,13 @@
 # PC_RTX.md — instructions de la session Claude Code du PC (Windows, RTX 5090)
 
+> **Pour un lecteur humain.** Ce guide a été écrit pour l'assistant IA (Claude Code) qui a mené
+> l'entraînement du chatbot sur le PC le 13/11/2026. C'est pourquoi il tutoie son lecteur et mêle aux
+> commandes des règles de consentement (« seulement avec l'accord de l'étudiant »). Vous pouvez le suivre
+> tel quel : là où il est écrit « l'étudiant », lisez « vous ». La commande `telecharger` passe par `gh`
+> et demande un compte GitHub connecté (`gh auth login`), même pour une release publique. La version
+> courte est dans [docs/chatbot/FICHE_MODELE.md](docs/chatbot/FICHE_MODELE.md), § 8 ; le récit daté de
+> ce qui a été fait est dans [docs/chatbot/HISTORIQUE.md](docs/chatbot/HISTORIQUE.md).
+
 Ce fichier est suivi par git : il est dans chaque clone du dépôt. Il suffit à lui seul (les
 fichiers de mémoire du Mac, AGENTS.md et CLAUDE.md, ne sont pas dans le dépôt).
 
@@ -10,15 +18,46 @@ fichiers de mémoire du Mac, AGENTS.md et CLAUDE.md, ne sont pas dans le dépôt
 3. Chatbot B « francais » : répond en français courant (format « — réplique »).
 4. Les deux partent d'un modèle pré-entraîné DE ZÉRO sur ce PC (aucun poids externe), puis affiné.
 5. Le code vient de git ; les gros fichiers (tokens déjà préparés, dialogues : 4,34 Go, refusés par git) viennent des pièces jointes d'une release GitHub, liste et sha256 dans `chatbot/donnees_rtx.json`.
-6. Un seul lanceur fait tout : `python -m chatbot.pipeline_rtx` (valeurs dans `chatbot/recettes_rtx.json`).
-7. Tailles : S (≈ 29,6 M de paramètres) ou M (≈ 55 M) ; « auto » choisit la plus grande qui tient dans le budget d'heures.
-8. Aucun débit n'a jamais été mesuré sur cette carte : toute durée vient de la commande `mesurer`.
+6. Un seul lanceur fait tout : `python -m chatbot.pipeline_rtx` (valeurs dans `chatbot/recettes_rtx.json` par défaut ; une autre recette se choisit avec l'option `--recettes`, placée AVANT la sous-commande : voir « Autre recette » plus bas).
+7. Tailles : S (≈ 29,6 M de paramètres) ou M (54 749 440 paramètres) ; « auto » choisit la plus grande qui tient dans le budget d'heures.
+8. Repère mesuré le 13/11/2026 sur une RTX 5090 (taille M, recette par défaut) : base 2 000 027 648 tokens en 5 988,8 s, affinage Molière 297,0 s, affinage français 508,6 s (détail dans « Repère mesuré » plus bas). Sur une autre carte ou avec une autre recette, toute durée vient de la commande `mesurer`.
 9. Sorties dans `runs/chatbot_rtx/` (ignoré par git) ; archive finale `runs/chatbot_rtx/RESULTATS_CHATBOT_RTX.zip`.
 10. Retour vers le Mac : l'archive part en pièce jointe d'une release (`publier`), les petits rapports dans `experiments/chatbot_rtx/` (à commiter) — seulement avec l'accord de l'étudiant.
 
 L'étudiant te donne dans son message : le dépôt et l'étiquette (tag) de la release des données
 (DEPOT = COMPTE/DEPOT, TAG = ETIQUETTE). Si `chatbot/donnees_rtx.json` les contient déjà (pas
 « À RENSEIGNER »), `--depot` et `--tag` sont facultatifs.
+
+**Repère mesuré** (lancement du 13/11/2026, RTX 5090, taille M, recette `chatbot/recettes_rtx.json`,
+7 étapes finies sans reprise ; rapports dans `experiments/chatbot_rtx/20261113_1956_M/`) :
+
+| Étape | Tokens vus | Calcul | Étape entière | Micro-lot | Mémoire max de la carte |
+|-------|-----------:|-------:|--------------:|----------:|------------------------:|
+| base | 2 000 027 648 | 5 988,8 s | 6 001,1 s | 128 | 23,67 Go |
+| affinage Molière | 90 013 696 | 297,0 s | 300,1 s | 64 | 12,23 Go |
+| affinage français | 150 011 904 | 508,6 s | 511,6 s | 64 | 12,23 Go |
+
+- Calcul en bf16, sans compilation (`torch.compile` a échoué, repli automatique).
+- Débit de la base : 333 977 tokens/s à la dernière mesure du journal (entre 322 465 et 338 123 selon les mesures).
+- Exports : 2,8 s chacun. Évaluations : 127,3 s (Molière) et 106,8 s (français).
+- Lancement entier : 7 052,5 s, soit 1 h 57 min (de 19:56:34 à 21:54:07).
+- Avant ce lancement, `mesurer` avait donné pour M 340 354 tokens/s (30 pas, 23,68 Go) et une durée estimée de 2,6 heures ; pour S, 545 588 tokens/s (17,83 Go) et 1,52 heure. La taille S n'a pas été entraînée en entier sur cette carte : sa durée réelle reste « à mesurer ».
+
+**Autre recette** : l'option `--recettes` s'écrit avant la sous-commande, par exemple
+`& $py -m chatbot.pipeline_rtx --recettes chatbot\recettes_rtx_v5_s03.json lancer --taille M`.
+`chatbot/recettes_rtx_v5_s03.json` est la recette par défaut avec, en plus, des conversations de
+synthèse dans l'affinage Molière. Elle lit un fichier de plus,
+`data/stages/chatbot_20261114/synthetique_v4/entrainement/moliere.jsonl.zst`, qui n'est pas dans les
+15 fichiers de la release `chatbot-donnees-20261113`.
+Les conversations de synthèse sont dans la pièce jointe `synthese_moliere.zip` de la release
+`chatbot-moliere-20261116` : à décompresser à la racine du clone, les fichiers se rangent aux chemins que
+lisent les recettes. La recette du modèle publié (S03) est `chatbot/recettes_rtx_publie.json` : c'est
+`chatbot/recettes_rtx_v5_s03.json` avec en plus la déclaration du fichier de synthèse et du décodage écrit à
+l'export.
+Sans le fichier de synthèse (`moliere.jsonl.zst`), garder la recette par défaut.
+Attention : une étape finie n'est jamais refaite, même si la recette change. Dans un dossier de
+sortie qui contient déjà un lancement, la nouvelle recette ne sert donc qu'avec `--seulement moliere`
+(ce chatbot est refait, la base est gardée) ou avec une autre `--sortie`.
 
 ## 2. Règles
 
@@ -47,7 +86,7 @@ Dans l'outil Bash de Claude Code (Git Bash), les mêmes commandes s'écrivent av
 | 7 | `gh auth status` ; si gh manque : `winget install --id GitHub.cli`, nouveau terminal ; si non connecté : l'étudiant lance `gh auth login` | « Logged in to github.com » | à mesurer |
 | 8 | `& $py -m chatbot.pipeline_rtx telecharger --depot DEPOT --tag TAG` | « TÉLÉCHARGEMENT RÉUSSI » (15 fichiers, 4,34 Go, chaque sha256 vérifié) | à mesurer (connexion) |
 | 9 | `& $py -m chatbot.pipeline_rtx verifier` | « VÉRIFICATION RÉUSSIE » (commit, données, versions, carte, disque ≥ 15 Go) | à mesurer |
-| 10 | `& $py -m chatbot.pipeline_rtx autotest` | « AUTOTEST RÉUSSI » (chaîne entière en miniature, coupure simulée et reprise) | prévu < 5 min ; 22 à 30 s sur le processeur du Mac |
+| 10 | `& $py -m chatbot.pipeline_rtx autotest` | « AUTOTEST RÉUSSI » (chaîne entière en miniature, coupure simulée et reprise) | 93,5 s mesurées sur la RTX 5090 le 13/11/2026 (prévu < 5 min) ; 22 à 30 s sur le processeur du Mac |
 | 11 | `& $py -m chatbot.pipeline_rtx mesurer` | débit (tokens/s) et durée estimée de S et M, dans `runs\chatbot_rtx\mesures.json` | à mesurer |
 | 12 | Montrer à l'étudiant les chiffres de `mesurer` SANS les arrondir, et lui demander son budget d'heures (H). Lui demander aussi de désactiver lui-même la mise en veille du PC pendant le calcul. | — | — |
 | 13 | Lancer en arrière-plan (voir ci-dessous) : `lancer --taille auto --budget-heures H` | « Plan : base -> ... » puis les étapes | durée donnée par `mesurer` |
@@ -105,6 +144,21 @@ perd au plus le travail depuis le dernier point de sauvegarde, et la même comma
 
 **Commandes lancées à la main** (`python -m chatbot.generate chat ...`, `python -m chatbot.evaluate
 ...`) : elles passent déjà leur sortie en UTF-8 ; garder quand même `PYTHONUTF8=1`.
+
+**Parler au modèle Molière avec le décodage retenu** (choix ancré sur le dernier message,
+`chatbot/ancrage.py`) : il faut deux options, `--anchor-mu 1` et `--candidates 32`.
+
+```powershell
+& $py -m chatbot.generate chat --model runs\chatbot_rtx\modeles\chatbot_moliere --anchor-mu 1 --candidates 32 "Bonjour, comment allez-vous ?"
+```
+
+Sans ces deux options, la commande applique le `chat_config.json` du dossier du modèle. Celui que
+ce lanceur a exporté le 13/11/2026 demande 16 candidates et n'a pas la clé `anchor_mu` ; un export
+refait avec le code actuel et la recette par défaut écrit 16 candidates et `"anchor_mu": 0.0`. Dans
+les deux cas c'est l'ancien choix, sans ancrage. Le modèle publié (S03, pièce jointe `chatbot_moliere_s03.zip` de la release `chatbot-moliere-20261116`) fait exception : son `chat_config.json` porte déjà `"candidates": 32` et `"anchor_mu": 1.0`, et les deux options n'y changent rien. Les clés `"anchor_mu"` et `"candidates"` de ce fichier ont le même
+effet que les deux options ; ne modifie pas ce fichier sans le dire à l'étudiant avant (règle 2).
+`--anchor-mu 0` rend l'ancien choix. Sans message, le chat est interactif ; `--device cuda` fait
+répondre la carte (défaut : le processeur) et suit la règle 1 : jamais pendant un lancement.
 
 ## 5. Ce qu'il faut rapporter à la fin (à l'étudiant, chiffres réels)
 

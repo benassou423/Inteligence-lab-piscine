@@ -1,0 +1,136 @@
+{
+  "format": "repliques",
+  "taille": "M",
+  "modele": {
+    "d_model": 640,
+    "n_layer": 10,
+    "n_head": 10
+  },
+  "base": {
+    "tokens_vus": 2000027648,
+    "pas": 30518,
+    "bpb_validation_pas0": 3.87695,
+    "meilleur_bpb_validation": 1.12985,
+    "meilleur_pas": 30518,
+    "secondes": 5988.8,
+    "reprises_aux_pas": [],
+    "precision": "bf16",
+    "micro_lot": 128,
+    "memoire_gpu_max_go": 23.67,
+    "n_params": 54749440
+  },
+  "etape1": {
+    "tokens_vus": 90013696,
+    "pas": 2747,
+    "bpb_validation_pas0": 1.12985,
+    "meilleur_bpb_validation": 1.05608,
+    "meilleur_pas": 1000,
+    "secondes": 297.0,
+    "reprises_aux_pas": [],
+    "precision": "bf16",
+    "micro_lot": 64,
+    "memoire_gpu_max_go": 12.23,
+    "n_params": 54749440
+  },
+  "synthetique": null,
+  "part_synthetique": null,
+  "evaluation": {
+    "bpb_tour_suivant": 1.0560151094817898,
+    "panel_commun": {
+      "n": 120,
+      "empty_rate": 0.0,
+      "mean_chars": 64.2,
+      "clean_end_rate": 1.0,
+      "repetition_rate": 0.0046,
+      "distinct_2": 0.7281,
+      "role_name_rate": 0.0,
+      "overlap_rate": 0.3232,
+      "overlap_eligible": 99,
+      "overlap_non_echo_rate": 0.3232,
+      "echo_rate": 0.0,
+      "mean_words": 13.0,
+      "repetition_rate_15w": 0.0039,
+      "distinct_2_15w": 0.7336,
+      "natural_stop_rate": 1.0,
+      "role_leak_raw_rate": 0.0333,
+      "chosen_vs_candidates_length": 1.1325,
+      "mean_mmi_score": 11.9168,
+      "seconds_per_reply": 0.524,
+      "seconds_median": 0.477,
+      "finish": {
+        "speaker": 118,
+        "eot": 2
+      },
+      "context_truncated": 0,
+      "history_gain_turns_2_3": 0.3815,
+      "history_gain_n": 30
+    },
+    "discussion_6_tours": {
+      "n_conversations": 18,
+      "n_replies": 108,
+      "self_copy_rate": 0.0,
+      "self_copy_eligible": 90,
+      "truncated_conversation_rate": 0.0,
+      "mean_context_tokens_last_turn": 229.2,
+      "history_gain_turns_2_3": 0.3615,
+      "history_gain_turns_2_6": 0.3866,
+      "summary": {
+        "n": 108,
+        "empty_rate": 0.0,
+        "mean_chars": 60.4,
+        "clean_end_rate": 1.0,
+        "repetition_rate": 0.0065,
+        "distinct_2": 0.7369,
+        "role_name_rate": 0.0,
+        "overlap_rate": 0.3619,
+        "overlap_eligible": 105,
+        "overlap_non_echo_rate": 0.3619,
+        "echo_rate": 0.0,
+        "mean_words": 12.6,
+        "repetition_rate_15w": 0.0057,
+        "distinct_2_15w": 0.7375,
+        "natural_stop_rate": 1.0,
+        "role_leak_raw_rate": 0.0093,
+        "chosen_vs_candidates_length": 1.2111,
+        "mean_mmi_score": 18.8009,
+        "seconds_per_reply": 0.423,
+        "seconds_median": 0.359,
+        "finish": {
+          "speaker": 103,
+          "eot": 5
+        },
+        "context_truncated": 0,
+        "history_gain_turns_2_3": 0.3615,
+        "history_gain_n": 36
+      }
+    }
+  },
+  "environnement": {
+    "device": "cuda",
+    "precision": "bf16",
+    "autocast_dtype": "torch.bfloat16",
+    "grad_scaler": false,
+    "tf32": true,
+    "pin_memory": true,
+    "compile": {
+      "requested": true,
+      "status": "échec, repli sans compilation",
+      "error": "TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton"
+    },
+    "torch": "2.15.0+cu132",
+    "cuda": "13.2",
+    "python": "3.12.11",
+    "numpy": "2.5.4",
+    "os": "Windows 11",
+    "machine": "AMD64",
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 5090",
+      "memory_gb": 34.2,
+      "capability": "12.0",
+      "count": 1,
+      "bf16_native": true,
+      "cudnn": 92600
+    }
+  },
+  "note": "modèle de démo hors concours, pré-entraîné de zéro sur nos données, aucun poids externe"
+}

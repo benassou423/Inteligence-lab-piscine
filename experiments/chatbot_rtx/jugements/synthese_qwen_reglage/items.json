@@ -1,0 +1,2027 @@
+[
+ {
+  "id": "r001",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Oui, monsieur, merci. S'il vous plaît, monsieur, vous allez encore à la Fleur."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Comment, une mauvaise journée?"
+   }
+  ],
+  "message": "Mon travail m'ennuie.",
+  "reponse": "Ne vous gênez pas, monsieur; nous avons passé un mauvais quart d'heure, et nous ne nous gênons pas. Il faut que vous ayez bien de l'argent."
+ },
+ {
+  "id": "r002",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Oui, monsieur, et je suis si content de te voir travailler."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Une bonne journée? Quelle heure est-il? Vous avez eu la bonté de me dire que tu avais encore du temps."
+   }
+  ],
+  "message": "Mon travail m'ennuie.",
+  "reponse": "Ah, voilà une bonne journée. Mais tu as toujours été si content de te voir travailler!"
+ },
+ {
+  "id": "r003",
+  "avant": [],
+  "message": "Bonsoir, qui êtes-vous donc ?",
+  "reponse": "Vous, madame, qui m'avez fait dire de venir ici pour vous annoncer mes chagrins."
+ },
+ {
+  "id": "r004",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Oui, monsieur, merci. S'il vous plaît, monsieur, vous allez encore à la Fleur."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Comment, une mauvaise journée?"
+   },
+   {
+    "message": "Mon travail m'ennuie.",
+    "reponse": "Ne vous gênez pas, monsieur; nous avons passé un mauvais quart d'heure, et nous ne nous gênons pas. Il faut que vous ayez bien de l'argent."
+   }
+  ],
+  "message": "Que feriez-vous à ma place ?",
+  "reponse": "Je ferais un mauvais usage de tout ce que je puis; et vous me le rendrez bon."
+ },
+ {
+  "id": "r005",
+  "avant": [],
+  "message": "Quel temps fait-il aujourd'hui ?",
+  "reponse": "Le temps se perd en route,\nLe temps ne s'en peut comparer,\nNi en parcourant le monde."
+ },
+ {
+  "id": "r006",
+  "avant": [],
+  "message": "Salut, tu vas bien ?",
+  "reponse": "Non, monsieur, pas trop mal, mais je vous remercie. Je veux bien que tu m'aides à porter les lunettes de ce monsieur."
+ },
+ {
+  "id": "r007",
+  "avant": [],
+  "message": "Qu'avez-vous mangé ce midi ?",
+  "reponse": "Moi? rien. Nous avons mangé cela tout à l'heure."
+ },
+ {
+  "id": "r008",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Oui, monsieur, et je vous apporte de belles nouvelles."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Une mauvaise journée! Et quelles nouvelles?"
+   }
+  ],
+  "message": "Mon travail m'ennuie.",
+  "reponse": "Ah! le travail! C'est une folie!"
+ },
+ {
+  "id": "r009",
+  "avant": [],
+  "message": "Salut, tu vas bien ?",
+  "reponse": "Oh! oui, monsieur, je vais bien."
+ },
+ {
+  "id": "r010",
+  "avant": [],
+  "message": "Salut, ça va ?",
+  "reponse": "Salut, monsieur! Comment vous portez-vous, monsieur? C'est une honte que vous me faites."
+ },
+ {
+  "id": "r011",
+  "avant": [],
+  "message": "Qu'avez-vous mangé ce midi ?",
+  "reponse": "Ce midi est un bel aubade, monsieur."
+ },
+ {
+  "id": "r012",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Un médecin, madame; et vous, mon frère, un gentilhomme de France."
+   }
+  ],
+  "message": "Que faites-vous dans la vie ?",
+  "reponse": "Un gentilhomme de France."
+ },
+ {
+  "id": "r013",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Votre monsieur, monsieur; je vous salue, et vous souhaite l'esprit de société."
+   }
+  ],
+  "message": "Que faites-vous dans la vie ?",
+  "reponse": "Votre monsieur, monsieur; je me suis donné à vous dans la douleur."
+ },
+ {
+  "id": "r014",
+  "avant": [],
+  "message": "J'ai beaucoup de travail en ce moment.",
+  "reponse": "Voilà qui me chagrine; mais il faut que ce soit moi qui aie le talent de l'avoir."
+ },
+ {
+  "id": "r015",
+  "avant": [],
+  "message": "Salut, tu vas bien ?",
+  "reponse": "Oui, monsieur, merci. S'il vous plaît, monsieur, vous allez encore à la Fleur."
+ },
+ {
+  "id": "r016",
+  "avant": [],
+  "message": "Qu'avez-vous mangé ce midi ?",
+  "reponse": "Un midi tout à fait gai, monsieur, et qui me fait douter de la quantité."
+ },
+ {
+  "id": "r017",
+  "avant": [],
+  "message": "Aimez-vous le théâtre ?",
+  "reponse": "Oui, monsieur, et pour les comédies; mais il faut savoir l'habiller en homme de bon sens."
+ },
+ {
+  "id": "r018",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Et moi, bonjour, ma sœur."
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Monsieur, je ne sais pas trop, et je vous ai trouvé un peu gêné, mais je vous ai dit que je voulais vous parler."
+   }
+  ],
+  "message": "Quel temps fait-il chez vous ?",
+  "reponse": "Monsieur, je ne sais pas, mais je vous trouve un peu gêné, mais je ne sais point où vous êtes."
+ },
+ {
+  "id": "r019",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Sans doute, et je vous souhaite fort humblement que vous soyez raccommodés."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Afin que vous ne me le soyez pas difficile, je vous souhaite aussi que je sois raccommodé."
+   }
+  ],
+  "message": "Mon travail m'ennuie.",
+  "reponse": "Et je veux que vous soyez bien chez vous, que j'y fasse mes cornes."
+ },
+ {
+  "id": "r020",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Et comment vous portez-vous?"
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Parbleu! un monsieur qui m'apporte une nouvelle qui m'a tout l'air d'avoir du goût."
+   },
+   {
+    "message": "Quel temps fait-il chez vous ?",
+    "reponse": "Le temps de la promenade."
+   }
+  ],
+  "message": "Merci, bonne journée !",
+  "reponse": "Dieu vous en garde! Il y a des personnes qui ont l'air d'avoir du goût."
+ },
+ {
+  "id": "r021",
+  "avant": [],
+  "message": "Bonsoir, qui êtes-vous donc ?",
+  "reponse": "Votre monsieur, monsieur; je vous salue, et vous souhaite l'esprit de société."
+ },
+ {
+  "id": "r022",
+  "avant": [],
+  "message": "Merci beaucoup pour votre aide.",
+  "reponse": "Votre aide est un trésor que je ne possède point, mais que je possède en un peu plus d'un quart d'heure."
+ },
+ {
+  "id": "r023",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Je suis un ami, et je vous retrouve."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "La vie, monsieur, est une ombre, et vous n'êtes pas seul."
+   }
+  ],
+  "message": "Vous aimez votre métier ?",
+  "reponse": "Ah, monsieur, la vie est une ombre, et la vie un ombre. Mais, monsieur, il faut savoir le quitter."
+ },
+ {
+  "id": "r024",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Je te remercie, monsieur, de ne pas avoir appris que tu avais des vues sur mon compte."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Une mauvaise journée! C'est une bonne nouvelle, monsieur, et la meilleure preuve que la santé est un meilleur ami."
+   }
+  ],
+  "message": "Mon travail m'ennuie.",
+  "reponse": "Une mauvaise fortune, monsieur, c'est un travail trop lourd, et la santé est une vie trop courte."
+ },
+ {
+  "id": "r025",
+  "avant": [],
+  "message": "Salut, tu vas bien ?",
+  "reponse": "Tu me disais bien vrai, mon bon monsieur, que je ne suis pas encore là pour te voir, mais que je vais peut-être bien."
+ },
+ {
+  "id": "r026",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Oh! oui, monsieur, je vais bien."
+   }
+  ],
+  "message": "Moi, j'ai passé une mauvaise journée.",
+  "reponse": "Tu as passé une mauvaise journée?"
+ },
+ {
+  "id": "r027",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Oui, monsieur, merci. S'il vous plaît, monsieur, vous allez encore à la Fleur."
+   }
+  ],
+  "message": "Moi, j'ai passé une mauvaise journée.",
+  "reponse": "Comment, une mauvaise journée?"
+ },
+ {
+  "id": "r028",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Oh! oui, monsieur, je vais bien."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Tu as passé une mauvaise journée?"
+   },
+   {
+    "message": "Mon travail m'ennuie.",
+    "reponse": "Je ne me sens pas de joie; je t'aime bien, et puis je suis gai."
+   }
+  ],
+  "message": "Que feriez-vous à ma place ?",
+  "reponse": "Je me dis, monsieur, que je ne m'ennuie point; et puis je me dis que je n'aime pas à être gai."
+ },
+ {
+  "id": "r029",
+  "avant": [],
+  "message": "Merci beaucoup pour votre aide.",
+  "reponse": "Votre aide, monsieur, est une richesse rare, mais rarement sans valeur."
+ },
+ {
+  "id": "r030",
+  "avant": [],
+  "message": "Qu'avez-vous mangé ce midi ?",
+  "reponse": "Ce que j'ai mangé tout à l'heure."
+ },
+ {
+  "id": "r031",
+  "avant": [],
+  "message": "Bonjour, cher ami.",
+  "reponse": "Que Votre Grâce me soit en aide, je vous prie. Ne vous laissez pas déranger, je vous en prie."
+ },
+ {
+  "id": "r032",
+  "avant": [],
+  "message": "Quel temps fait-il aujourd'hui ?",
+  "reponse": "Mille, mille, monsieur, mille, mille, c'est un temps chaud, mais un temps froid."
+ },
+ {
+  "id": "r033",
+  "avant": [],
+  "message": "Qu'avez-vous mangé ce midi ?",
+  "reponse": "Ce midi, monsieur, si je n'y ai pas été, je ne me lasserai pas de le manger."
+ },
+ {
+  "id": "r034",
+  "avant": [],
+  "message": "Qui êtes-vous ?",
+  "reponse": "Je suis madame de Pontignac."
+ },
+ {
+  "id": "r035",
+  "avant": [],
+  "message": "Bonjour, cher ami.",
+  "reponse": "Que Votre Grâce se chargette de ses compliments, et que je lui dise ce que je vais faire."
+ },
+ {
+  "id": "r036",
+  "avant": [],
+  "message": "Je suis fatigué ce soir.",
+  "reponse": "C'est la fatigue qui vous fait parler, monsieur, et la maladie qui vous fait croire que vous êtes malade."
+ },
+ {
+  "id": "r037",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Un homme que vous connaissez, monsieur."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "Des choses que je connais, monsieur."
+   },
+   {
+    "message": "Vous aimez votre métier ?",
+    "reponse": "Je ne connais point de métier."
+   }
+  ],
+  "message": "Au revoir, à demain !",
+  "reponse": "Il est temps de rentrer. Voici une heure que je vous félicite, monsieur."
+ },
+ {
+  "id": "r038",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Que Votre Grâce me soit en aide, je vous prie. Ne vous laissez pas déranger, je vous en prie."
+   }
+  ],
+  "message": "Comment vous portez-vous ?",
+  "reponse": "Il y a une demi-heure que vous avez fait votre lit, monsieur, et une demi-objet."
+ },
+ {
+  "id": "r039",
+  "avant": [],
+  "message": "Salut, tu vas bien ?",
+  "reponse": "Mesdames, je suis très contente que vous m'ayez fait la grace de m'asseoir."
+ },
+ {
+  "id": "r040",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Non, monsieur, pas trop mal, mais je vous remercie. Je veux bien que tu m'aides à porter les lunettes de ce monsieur."
+   }
+  ],
+  "message": "Moi, j'ai passé une mauvaise journée.",
+  "reponse": "Mais tu ne sais pas comment faire pour porter les lunettes de monsieur?"
+ },
+ {
+  "id": "r041",
+  "avant": [],
+  "message": "J'ai beaucoup de travail en ce moment.",
+  "reponse": "Votre travail, monsieur, est un malheur; il est si grand qu'il ne peut plus se passer de moi."
+ },
+ {
+  "id": "r042",
+  "avant": [],
+  "message": "Comment va votre famille ?",
+  "reponse": "Votre famille? Elle a peur de vous."
+ },
+ {
+  "id": "r043",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Oui, monsieur, et je vous apporte de belles nouvelles."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Une mauvaise journée! Et quelles nouvelles?"
+   },
+   {
+    "message": "Mon travail m'ennuie.",
+    "reponse": "Ah! le travail! C'est une folie!"
+   }
+  ],
+  "message": "Que feriez-vous à ma place ?",
+  "reponse": "Monsieur, je ferais mieux de m'ennuyer."
+ },
+ {
+  "id": "r044",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Non, monsieur, pas trop mal, mais je vous remercie. Je veux bien que tu m'aides à porter les lunettes de ce monsieur."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Mais tu ne sais pas comment faire pour porter les lunettes de monsieur?"
+   },
+   {
+    "message": "Mon travail m'ennuie.",
+    "reponse": "C'est une bonne idée, monsieur, de porter les lunettes de monsieur sur un bon fauteuil."
+   }
+  ],
+  "message": "Que feriez-vous à ma place ?",
+  "reponse": "J'aurais besoin de moi, monsieur, pour porter les lunettes de monsieur sur un mauvais fauteuil."
+ },
+ {
+  "id": "r045",
+  "avant": [],
+  "message": "Bonsoir, qui êtes-vous donc ?",
+  "reponse": "Moi, qui suis une personne que je connois, et que j'ai vue depuis votre naissance."
+ },
+ {
+  "id": "r046",
+  "avant": [],
+  "message": "Salut, ça va ?",
+  "reponse": "Oui, monsieur, salut, monsieur, merci. Je vous attends, merci."
+ },
+ {
+  "id": "r047",
+  "avant": [],
+  "message": "Salut, tu vas bien ?",
+  "reponse": "Oui, monsieur, et je vous apporte de belles nouvelles."
+ },
+ {
+  "id": "r048",
+  "avant": [],
+  "message": "J'ai beaucoup de travail en ce moment.",
+  "reponse": "Tout le monde est en état de travailler, et le tems est à l'ouvrage."
+ },
+ {
+  "id": "r049",
+  "avant": [],
+  "message": "Qu'avez-vous mangé ce midi ?",
+  "reponse": "Ce midi, monsieur, que voulez-vous de plus? C'est un excellent plat que je vous apporte, et qui n'est point de la dernière exiguité."
+ },
+ {
+  "id": "r050",
+  "avant": [],
+  "message": "Comment allez-vous ?",
+  "reponse": "Parbleu, monsieur, je ne suis point venu de chez vous, je vous ai dit que vous étiez ici."
+ },
+ {
+  "id": "r051",
+  "avant": [],
+  "message": "Comment va votre famille ?",
+  "reponse": "Votre famille? Vous avez toujours des enfants? Elles sont bien laides de leurs petits soins."
+ },
+ {
+  "id": "r052",
+  "avant": [],
+  "message": "Salut, ça va ?",
+  "reponse": "Comment, monsieur! Vous me faites l'honneur de me saluer?"
+ },
+ {
+  "id": "r053",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Vous, monsieur; je suis votre servante; je suis le ciel, la mer, la terre, l'air, la terre."
+   }
+  ],
+  "message": "Que faites-vous dans la vie ?",
+  "reponse": "Je suis votre servante, monsieur; je suis votre servantes, et je suis votre serviteur."
+ },
+ {
+  "id": "r054",
+  "avant": [],
+  "message": "Bonsoir, qui êtes-vous donc ?",
+  "reponse": "Un homme que vous connaissez, monsieur."
+ },
+ {
+  "id": "r055",
+  "avant": [],
+  "message": "Bonjour !",
+  "reponse": "Bonjour! Je me lève et me jette à vos genoux."
+ },
+ {
+  "id": "r056",
+  "avant": [],
+  "message": "Qui êtes-vous ?",
+  "reponse": "Moi, monsieur, qui suis-je?"
+ },
+ {
+  "id": "r057",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Je vous prie, monsieur, de me dire un mot à l'oreille."
+   }
+  ],
+  "message": "Comment vous portez-vous ?",
+  "reponse": "Je ne sais pas, monsieur, mais je vous ai trouvé un peu par là."
+ },
+ {
+  "id": "r058",
+  "avant": [],
+  "message": "Quel temps fait-il aujourd'hui ?",
+  "reponse": "Septième ciel! et vous, monsieur, combien a-t-il à vous donner?"
+ },
+ {
+  "id": "r059",
+  "avant": [],
+  "message": "Salut, ça va ?",
+  "reponse": "Oui, monsieur, salut! Nous vous remercions, monsieur et madame."
+ },
+ {
+  "id": "r060",
+  "avant": [],
+  "message": "Quel temps fait-il aujourd'hui ?",
+  "reponse": "Un ciel serein, monsieur, mais qui n'est pas un temps de repos."
+ },
+ {
+  "id": "r061",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Il me semble, monsieur, que les gens de bonne foi ne se font pas des douceurs."
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Les gens de bonne foi ne se portent pas bien, mais on ne les entend pas."
+   }
+  ],
+  "message": "Quel temps fait-il chez vous ?",
+  "reponse": "Un temps si précieux, monsieur, qu'on ne peut plus se permettre de dire un mot."
+ },
+ {
+  "id": "r062",
+  "avant": [],
+  "message": "J'ai beaucoup de travail en ce moment.",
+  "reponse": "Votre travail, monsieur, est un trésor, et l'on ne vous en fait point."
+ },
+ {
+  "id": "r063",
+  "avant": [],
+  "message": "Je suis fatigué ce soir.",
+  "reponse": "Une fatigue qui vous fait souffrir, monsieur, mais non un mal qui vous rend malade."
+ },
+ {
+  "id": "r064",
+  "avant": [],
+  "message": "Au revoir, et bonne soirée !",
+  "reponse": "Bon bal, monsieur! Bon soir, monsieur!"
+ },
+ {
+  "id": "r065",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Oui, monsieur, et je vous apporte de belles nouvelles."
+   }
+  ],
+  "message": "Moi, j'ai passé une mauvaise journée.",
+  "reponse": "Une mauvaise journée! Et quelles nouvelles?"
+ },
+ {
+  "id": "r066",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Vous, monsieur; je suis votre servante; je suis le ciel, la mer, la terre, l'air, la terre."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "Je suis votre servante, monsieur; je suis votre servantes, et je suis votre serviteur."
+   },
+   {
+    "message": "Vous aimez votre métier ?",
+    "reponse": "Oui, monsieur, j'aime le métier."
+   }
+  ],
+  "message": "Au revoir, à demain !",
+  "reponse": "Au revoir, monsieur; je suis bien aise que vous me laissiez seul avec vous."
+ },
+ {
+  "id": "r067",
+  "avant": [],
+  "message": "Bonjour !",
+  "reponse": "Bonjour, monsieur! Qu'est-ce que c'est?"
+ },
+ {
+  "id": "r068",
+  "avant": [],
+  "message": "Aimez-vous le théâtre ?",
+  "reponse": "Oui, et vous y trouverez des acteurs qui feront des contes à leurs lecteurs."
+ },
+ {
+  "id": "r069",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Bonjour, monsieur, bonjour, monsieur. Voulez-vous que nous nous quittions?"
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Pour vous dire que je n'ai pas peur du tout que vous ne me donniez le bras?"
+   }
+  ],
+  "message": "Quel temps fait-il chez vous ?",
+  "reponse": "Le temps est bien mauvais, car je ne suis pas en train de fumer, et je ne puis jamais aller à pied."
+ },
+ {
+  "id": "r070",
+  "avant": [],
+  "message": "Bonsoir, qui êtes-vous donc ?",
+  "reponse": "Vous, monsieur; je suis votre servante; je suis le ciel, la mer, la terre, l'air, la terre."
+ },
+ {
+  "id": "r071",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Je m'en vais vous souhaiter un bon voyage."
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Ma foi, je ne sais pas si je suis bien; je n'ai pas un cheveu d'un chardonneret."
+   }
+  ],
+  "message": "Quel temps fait-il chez vous ?",
+  "reponse": "Vingt-cinq ou vingt-six ans, je ne sais pas; et je n'ai jamais vu de cheveu, parce que je n'ai point encore vu de chemise."
+ },
+ {
+  "id": "r072",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Bonjour, monsieur, bonjour, monsieur. Voulez-vous que nous nous quittions?"
+   }
+  ],
+  "message": "Comment vous portez-vous ?",
+  "reponse": "Pour vous dire que je n'ai pas peur du tout que vous ne me donniez le bras?"
+ },
+ {
+  "id": "r073",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Je vous prie, monsieur, de me dire un mot à l'oreille."
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Je ne sais pas, monsieur, mais je vous ai trouvé un peu par là."
+   }
+  ],
+  "message": "Quel temps fait-il chez vous ?",
+  "reponse": "Il fait des trucs merveilleux, et vous vous ennuyez."
+ },
+ {
+  "id": "r074",
+  "avant": [],
+  "message": "Au revoir, et bonne soirée !",
+  "reponse": "Et bon soir, et bonne nuit, monsieur le bailli."
+ },
+ {
+  "id": "r075",
+  "avant": [],
+  "message": "Comment allez-vous ?",
+  "reponse": "Parbleu! je m'en vais voir si j'ai tort. J'ai envie de m'en aller."
+ },
+ {
+  "id": "r076",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Non, monsieur, pas trop mal, mais je vous remercie. Je veux bien que tu m'aides à porter les lunettes de ce monsieur."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Mais tu ne sais pas comment faire pour porter les lunettes de monsieur?"
+   }
+  ],
+  "message": "Mon travail m'ennuie.",
+  "reponse": "C'est une bonne idée, monsieur, de porter les lunettes de monsieur sur un bon fauteuil."
+ },
+ {
+  "id": "r077",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Un homme que vous connaissez, monsieur."
+   }
+  ],
+  "message": "Que faites-vous dans la vie ?",
+  "reponse": "Des choses que je connais, monsieur."
+ },
+ {
+  "id": "r078",
+  "avant": [],
+  "message": "Merci beaucoup pour votre aide.",
+  "reponse": "Oui, je vous remercie. Maintenant que vous êtes au fait de tout, faites-vous justice de moi?"
+ },
+ {
+  "id": "r079",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Que Votre Grâce me soit en aide, je vous prie. Ne vous laissez pas déranger, je vous en prie."
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Il y a une demi-heure que vous avez fait votre lit, monsieur, et une demi-objet."
+   }
+  ],
+  "message": "Quel temps fait-il chez vous ?",
+  "reponse": "Une demi-objet, monsieur, et une demi-obligé."
+ },
+ {
+  "id": "r080",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Un homme que vous connaissez, monsieur."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "Des choses que je connais, monsieur."
+   }
+  ],
+  "message": "Vous aimez votre métier ?",
+  "reponse": "Je ne connais point de métier."
+ },
+ {
+  "id": "r081",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Et moi, bonjour, ma sœur."
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Ma sœur, je viens de chez un vieux monsieur que vous avez, qui m'a apporté une lettre."
+   },
+   {
+    "message": "Quel temps fait-il chez vous ?",
+    "reponse": "Votre maladie est l'affreuse maladie que vous voyez; et j'ai passé l'hiver à l'estaminet, où je me suis vu réduit."
+   }
+  ],
+  "message": "Merci, bonne journée !",
+  "reponse": "Vous avez la mine, ma sœur, de vous ennuyer avec cette maladie?"
+ },
+ {
+  "id": "r082",
+  "avant": [],
+  "message": "Bonjour, cher ami.",
+  "reponse": "Et moi, bonjour, ma sœur."
+ },
+ {
+  "id": "r083",
+  "avant": [],
+  "message": "Bonjour !",
+  "reponse": "Bonjour! Comment vous portez-vous?"
+ },
+ {
+  "id": "r084",
+  "avant": [],
+  "message": "Salut, tu vas bien ?",
+  "reponse": "Sans doute, et je vous souhaite fort humblement que vous soyez raccommodés."
+ },
+ {
+  "id": "r085",
+  "avant": [],
+  "message": "Bonjour, cher ami.",
+  "reponse": "Et comment vous portez-vous?"
+ },
+ {
+  "id": "r086",
+  "avant": [],
+  "message": "Merci beaucoup pour votre aide.",
+  "reponse": "Un cœur qui sait comment se compare, comment s'entends-il, comment se font les affaires."
+ },
+ {
+  "id": "r087",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Moi, qui suis une personne que je connois, et que j'ai vue depuis votre naissance."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "Moi, que j'ai vue depuis mon enfance, et que j'ai visité le monde tout entier."
+   },
+   {
+    "message": "Vous aimez votre métier ?",
+    "reponse": "Oui, madame, et je le connoissois depuis votre enfance."
+   }
+  ],
+  "message": "Au revoir, à demain !",
+  "reponse": "Et moi, à demain."
+ },
+ {
+  "id": "r088",
+  "avant": [],
+  "message": "J'ai beaucoup de travail en ce moment.",
+  "reponse": "Des travaux? C'est une nécessité, monsieur, de ne pas laisser les choses au hasard, et de ne pas les laisser en repos."
+ },
+ {
+  "id": "r089",
+  "avant": [],
+  "message": "Qu'avez-vous mangé ce midi ?",
+  "reponse": "Une mangé du midi, monsieur, et de l'air d'un homme qui en a tant."
+ },
+ {
+  "id": "r090",
+  "avant": [],
+  "message": "Qui êtes-vous ?",
+  "reponse": "Dieu, monsieur, qui m'a fait mourir de douleur."
+ },
+ {
+  "id": "r091",
+  "avant": [],
+  "message": "Qui êtes-vous ?",
+  "reponse": "Un ancien ami de monsieur votre frère."
+ },
+ {
+  "id": "r092",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Que Votre Grâce se chargette de ses compliments, et que je lui dise ce que je vais faire."
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "D'un étrange froid de lait. Votre Grâce est lasse de vous, et vous devez vous en faire un martial."
+   }
+  ],
+  "message": "Quel temps fait-il chez vous ?",
+  "reponse": "Toujours lasse de vous voir."
+ },
+ {
+  "id": "r093",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "La France! Il est vrai que je viens ici pour la forme; et cependant je ne sais si c'est que j'y suis encore."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "La vie, monsieur, est une partie de la vie de l'esprit; et l'on peut, sans se faire voir, vous dire ce qu'on a vu."
+   },
+   {
+    "message": "Vous aimez votre métier ?",
+    "reponse": "C'est le métier de qui l'on fait faire, et non de qui l'âme se fait. Vous avez le goût des arts, monsieur, et l'esprit des femmes."
+   }
+  ],
+  "message": "Au revoir, à demain !",
+  "reponse": "Et à demain! ou je vous laisse."
+ },
+ {
+  "id": "r094",
+  "avant": [],
+  "message": "Salut, ça va ?",
+  "reponse": "Salut, monsieur le marquis."
+ },
+ {
+  "id": "r095",
+  "avant": [],
+  "message": "Merci beaucoup pour votre aide.",
+  "reponse": "Et moi, je vous remercie très humblement."
+ },
+ {
+  "id": "r096",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Et moi, bonjour, ma sœur."
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Monsieur, je ne sais pas trop, et je vous ai trouvé un peu gêné, mais je vous ai dit que je voulais vous parler."
+   },
+   {
+    "message": "Quel temps fait-il chez vous ?",
+    "reponse": "Monsieur, je ne sais pas, mais je vous trouve un peu gêné, mais je ne sais point où vous êtes."
+   }
+  ],
+  "message": "Merci, bonne journée !",
+  "reponse": "Oui, monsieur, je vous trouve un peu gêné, mais je vous remercie."
+ },
+ {
+  "id": "r097",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Je te remercie, monsieur, de ne pas avoir appris que tu avais des vues sur mon compte."
+   }
+  ],
+  "message": "Moi, j'ai passé une mauvaise journée.",
+  "reponse": "Une mauvaise journée! C'est une bonne nouvelle, monsieur, et la meilleure preuve que la santé est un meilleur ami."
+ },
+ {
+  "id": "r098",
+  "avant": [],
+  "message": "Je suis fatigué ce soir.",
+  "reponse": "C'est une fatigue fort grande, monsieur, mais un grand malheur, monsieur, c'est une fatigante faiblesse."
+ },
+ {
+  "id": "r099",
+  "avant": [],
+  "message": "Je suis fatigué ce soir.",
+  "reponse": "Ah! que de fatigues cette nuit!"
+ },
+ {
+  "id": "r100",
+  "avant": [],
+  "message": "Aimez-vous le théâtre ?",
+  "reponse": "Non, non; je ne veux point de théâtre, et je suis de la troupe de Marsy."
+ },
+ {
+  "id": "r101",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Je suis un ami, et je vous retrouve."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "La vie, monsieur, est une ombre, et vous n'êtes pas seul."
+   },
+   {
+    "message": "Vous aimez votre métier ?",
+    "reponse": "Ah, monsieur, la vie est une ombre, et la vie un ombre. Mais, monsieur, il faut savoir le quitter."
+   }
+  ],
+  "message": "Au revoir, à demain !",
+  "reponse": "Non, monsieur, au revoir. Soyez le bienvenu, et soyez toujours aussi content."
+ },
+ {
+  "id": "r102",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Mesdames, je suis très contente que vous m'ayez fait la grace de m'asseoir."
+   }
+  ],
+  "message": "Moi, j'ai passé une mauvaise journée.",
+  "reponse": "C'est donc vrai, que vous m'asseoir? Je suis si troublé, que je ne sais comment je pourrai vous obéir."
+ },
+ {
+  "id": "r103",
+  "avant": [],
+  "message": "Bonjour, cher ami.",
+  "reponse": "Il me semble, monsieur, que les gens de bonne foi ne se font pas des douceurs."
+ },
+ {
+  "id": "r104",
+  "avant": [],
+  "message": "Comment va votre famille ?",
+  "reponse": "Elle travaille avec passion pour des petits propriétaires, et leur veut des emplois, et des emplois."
+ },
+ {
+  "id": "r105",
+  "avant": [],
+  "message": "Comment allez-vous ?",
+  "reponse": "Parbleu, monsieur, car je ne sais point vous conduire, et vous vous tairez."
+ },
+ {
+  "id": "r106",
+  "avant": [],
+  "message": "Qu'avez-vous mangé ce midi ?",
+  "reponse": "Un midi tout à fait gai, monsieur."
+ },
+ {
+  "id": "r107",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Je m'en vais vous souhaiter un bon voyage."
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Ma foi, je ne sais pas si je suis bien; je n'ai pas un cheveu d'un chardonneret."
+   },
+   {
+    "message": "Quel temps fait-il chez vous ?",
+    "reponse": "Vingt-cinq ou vingt-six ans, je ne sais pas; et je n'ai jamais vu de cheveu, parce que je n'ai point encore vu de chemise."
+   }
+  ],
+  "message": "Merci, bonne journée !",
+  "reponse": "Et moi donc, je ne sais pas si vous avez du chardonneret; mais je ne trouve pas votre porte encore plus froide."
+ },
+ {
+  "id": "r108",
+  "avant": [],
+  "message": "Bonsoir, qui êtes-vous donc ?",
+  "reponse": "Un médecin, madame; et vous, mon frère, un gentilhomme de France."
+ },
+ {
+  "id": "r109",
+  "avant": [],
+  "message": "Comment va votre famille ?",
+  "reponse": "Votre famille? Elle est partie, monsieur, pour la campagne. Elle n'a pas voulu vous donner de vos nouvelles."
+ },
+ {
+  "id": "r110",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Le médecin qui vous a donné cette lettre, et qui l'a apprise par cœur."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "Vous me l'avez apprise par cœur."
+   },
+   {
+    "message": "Vous aimez votre métier ?",
+    "reponse": "Oui, monsieur, et je vous l'ai déjà enseigné par cœur."
+   }
+  ],
+  "message": "Au revoir, à demain !",
+  "reponse": "Au revoir, monsieur, au revoir, au revirement de votre chemin."
+ },
+ {
+  "id": "r111",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Oh! oui, monsieur, je vais bien."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Tu as passé une mauvaise journée?"
+   }
+  ],
+  "message": "Mon travail m'ennuie.",
+  "reponse": "Je ne me sens pas de joie; je t'aime bien, et puis je suis gai."
+ },
+ {
+  "id": "r112",
+  "avant": [],
+  "message": "Comment allez-vous ?",
+  "reponse": "Parbleu, monsieur, je m'en vais de chez le gouverneur."
+ },
+ {
+  "id": "r113",
+  "avant": [],
+  "message": "Aimez-vous le théâtre ?",
+  "reponse": "Vous en avez mangé. J'y ferai grace.\nC'est un spectacle fort désagréable à faire."
+ },
+ {
+  "id": "r114",
+  "avant": [],
+  "message": "Bonjour !",
+  "reponse": "Bonjour, monsieur, et que la grâce de Dieu vous pardonne vos désertions."
+ },
+ {
+  "id": "r115",
+  "avant": [],
+  "message": "Merci beaucoup pour votre aide.",
+  "reponse": "Votre aide, monsieur, est une vertu, mais vous ne savez pas ce que vous faites."
+ },
+ {
+  "id": "r116",
+  "avant": [],
+  "message": "Quel temps fait-il aujourd'hui ?",
+  "reponse": "Le temps est venu de la campagne, il faut qu'on y retrouve la santé."
+ },
+ {
+  "id": "r117",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Tu me disais bien vrai, mon bon monsieur, que je ne suis pas encore là pour te voir, mais que je vais peut-être bien."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Une mauvaise journée? Cela veut dire que tu es malade, que tu n'as pas de nouvelles à donner."
+   }
+  ],
+  "message": "Mon travail m'ennuie.",
+  "reponse": "Un travail ostensible? Cela veut dire que l'esprit se lève et qu'on se repose."
+ },
+ {
+  "id": "r118",
+  "avant": [],
+  "message": "Aimez-vous le théâtre ?",
+  "reponse": "Oui, monsieur, et la comédie."
+ },
+ {
+  "id": "r119",
+  "avant": [],
+  "message": "Comment allez-vous ?",
+  "reponse": "Ah! je voudrais bien savoir si vous avez besoin de moi, monsieur, pour vivre avec les autres."
+ },
+ {
+  "id": "r120",
+  "avant": [],
+  "message": "Quel temps fait-il aujourd'hui ?",
+  "reponse": "Un temps calme et sans bruit, monsieur."
+ },
+ {
+  "id": "r121",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Je vous prie, monsieur, de me dire un mot à l'oreille."
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Je ne sais pas, monsieur, mais je vous ai trouvé un peu par là."
+   },
+   {
+    "message": "Quel temps fait-il chez vous ?",
+    "reponse": "Il fait des trucs merveilleux, et vous vous ennuyez."
+   }
+  ],
+  "message": "Merci, bonne journée !",
+  "reponse": "Il faut que vous sachiez, monsieur, que l'homme qui se promène en ville n'a point de raison d'être."
+ },
+ {
+  "id": "r122",
+  "avant": [],
+  "message": "Qui êtes-vous ?",
+  "reponse": "Un homme qui s'est fait du sang de milliers de petits enfants, monsieur."
+ },
+ {
+  "id": "r123",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Bonjour, monsieur, bonjour, monsieur. Voulez-vous que nous nous quittions?"
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Pour vous dire que je n'ai pas peur du tout que vous ne me donniez le bras?"
+   },
+   {
+    "message": "Quel temps fait-il chez vous ?",
+    "reponse": "Le temps est bien mauvais, car je ne suis pas en train de fumer, et je ne puis jamais aller à pied."
+   }
+  ],
+  "message": "Merci, bonne journée !",
+  "reponse": "Mais, monsieur, je ne suis pas en train de fumer, et vous me l'avez donné."
+ },
+ {
+  "id": "r124",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Vous, madame, qui m'avez fait dire de venir ici pour vous annoncer mes chagrins."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "Je ne sais pas; mais j'ai beaucoup de choses à vous dire. Vous savez que votre père m'a dit que vous vous aimiez depuis deux ans."
+   }
+  ],
+  "message": "Vous aimez votre métier ?",
+  "reponse": "Oh! oui, madame, ce métier-là me vient d'être particulier; et je ne sais pas pourquoi vous y gagnez tant."
+ },
+ {
+  "id": "r125",
+  "avant": [],
+  "message": "Comment va votre famille ?",
+  "reponse": "Oui, monsieur, elle va commencer son soûl; et je vous prierai, monsieur, de vouloir bien, avec la permission de monsieur, me rendre un petit service pour vous être agréable."
+ },
+ {
+  "id": "r126",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Un médecin, madame; et vous, mon frère, un gentilhomme de France."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "Un gentilhomme de France."
+   },
+   {
+    "message": "Vous aimez votre métier ?",
+    "reponse": "Ah! madame, ce n'est pas cela; c'est que j'aime votre métier."
+   }
+  ],
+  "message": "Au revoir, à demain !",
+  "reponse": "Au revoir, mon frère, au revoir."
+ },
+ {
+  "id": "r127",
+  "avant": [],
+  "message": "Comment va votre famille ?",
+  "reponse": "Elle a un frère, monsieur, âgé et père d'une petite fille, qui ne se marie pas."
+ },
+ {
+  "id": "r128",
+  "avant": [],
+  "message": "Au revoir, et bonne soirée !",
+  "reponse": "Bonjour, monsieur, bon soir! Soyez donc gentil, monsieur, et bonsoir!"
+ },
+ {
+  "id": "r129",
+  "avant": [],
+  "message": "Merci beaucoup pour votre aide.",
+  "reponse": "L'aide que je vous offre, monsieur, est un trésor que je ne puis bailler à personne."
+ },
+ {
+  "id": "r130",
+  "avant": [],
+  "message": "Bonjour, cher ami.",
+  "reponse": "Je m'en vais vous souhaiter un bon voyage."
+ },
+ {
+  "id": "r131",
+  "avant": [],
+  "message": "Bonjour !",
+  "reponse": "Et vous, monsieur, bonjour! vous voilà tout le temps en retard, et déjà dans votre cabinet."
+ },
+ {
+  "id": "r132",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Le médecin qui vous a donné cette lettre, et qui l'a apprise par cœur."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "Vous me l'avez apprise par cœur."
+   }
+  ],
+  "message": "Vous aimez votre métier ?",
+  "reponse": "Oui, monsieur, et je vous l'ai déjà enseigné par cœur."
+ },
+ {
+  "id": "r133",
+  "avant": [],
+  "message": "Au revoir, et bonne soirée !",
+  "reponse": "Adieu, ma fille, adieu, ma petite fille, et bonsoir!"
+ },
+ {
+  "id": "r134",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Votre monsieur, monsieur; je vous salue, et vous souhaite l'esprit de société."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "Votre monsieur, monsieur; je me suis donné à vous dans la douleur."
+   },
+   {
+    "message": "Vous aimez votre métier ?",
+    "reponse": "Oui, monsieur, je le sais; mais j'aime un métier qui n'est pas digne de louange."
+   }
+  ],
+  "message": "Au revoir, à demain !",
+  "reponse": "Et à demain! À demain! Il m'a bien parlé de ses affaires."
+ },
+ {
+  "id": "r135",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Et moi, bonjour, ma sœur."
+   }
+  ],
+  "message": "Comment vous portez-vous ?",
+  "reponse": "Monsieur, je ne sais pas trop, et je vous ai trouvé un peu gêné, mais je vous ai dit que je voulais vous parler."
+ },
+ {
+  "id": "r136",
+  "avant": [],
+  "message": "Salut, tu vas bien ?",
+  "reponse": "Oui, monsieur, et je suis si content de te voir travailler."
+ },
+ {
+  "id": "r137",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Vous, madame, qui m'avez fait dire de venir ici pour vous annoncer mes chagrins."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "Je ne sais pas; mais j'ai beaucoup de choses à vous dire. Vous savez que votre père m'a dit que vous vous aimiez depuis deux ans."
+   },
+   {
+    "message": "Vous aimez votre métier ?",
+    "reponse": "Oh! oui, madame, ce métier-là me vient d'être particulier; et je ne sais pas pourquoi vous y gagnez tant."
+   }
+  ],
+  "message": "Au revoir, à demain !",
+  "reponse": "Et à demain! À demain!"
+ },
+ {
+  "id": "r138",
+  "avant": [],
+  "message": "Qui êtes-vous ?",
+  "reponse": "Un petit garçon bien grand, monsieur, un grand homme bien fait, monsieur."
+ },
+ {
+  "id": "r139",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "La France! Il est vrai que je viens ici pour la forme; et cependant je ne sais si c'est que j'y suis encore."
+   }
+  ],
+  "message": "Que faites-vous dans la vie ?",
+  "reponse": "La vie, monsieur, est une partie de la vie de l'esprit; et l'on peut, sans se faire voir, vous dire ce qu'on a vu."
+ },
+ {
+  "id": "r140",
+  "avant": [],
+  "message": "Bonsoir, qui êtes-vous donc ?",
+  "reponse": "Je suis un ami, et je vous retrouve."
+ },
+ {
+  "id": "r141",
+  "avant": [],
+  "message": "J'ai beaucoup de travail en ce moment.",
+  "reponse": "Je ne suis pas pressé; et j'ai encore, j'en suis sûr, une partie à travailler."
+ },
+ {
+  "id": "r142",
+  "avant": [],
+  "message": "Qui êtes-vous ?",
+  "reponse": "Un petit garçon bien épris de votre beauté, monsieur."
+ },
+ {
+  "id": "r143",
+  "avant": [],
+  "message": "Au revoir, et bonne soirée !",
+  "reponse": "La grande ronde de la lune! C'est une bien triste chose que de se faire attendre, mais on doit l'attendre dans l'enceinte de la lumiere."
+ },
+ {
+  "id": "r144",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Sans doute, et je vous souhaite fort humblement que vous soyez raccommodés."
+   }
+  ],
+  "message": "Moi, j'ai passé une mauvaise journée.",
+  "reponse": "Afin que vous ne me le soyez pas difficile, je vous souhaite aussi que je sois raccommodé."
+ },
+ {
+  "id": "r145",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Vous, madame, qui m'avez fait dire de venir ici pour vous annoncer mes chagrins."
+   }
+  ],
+  "message": "Que faites-vous dans la vie ?",
+  "reponse": "Je ne sais pas; mais j'ai beaucoup de choses à vous dire. Vous savez que votre père m'a dit que vous vous aimiez depuis deux ans."
+ },
+ {
+  "id": "r146",
+  "avant": [],
+  "message": "Qui êtes-vous ?",
+  "reponse": "Un homme que vous connaissez, monsieur, et que vous connoissez depuis votre enfance."
+ },
+ {
+  "id": "r147",
+  "avant": [],
+  "message": "Comment va votre famille ?",
+  "reponse": "Parbleu, monsieur, elle est très malade, et vous ne savez pas ce que c'est que de se retrouver dans une maison sans amis."
+ },
+ {
+  "id": "r148",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Sans doute, et je vous souhaite fort humblement que vous soyez raccommodés."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Afin que vous ne me le soyez pas difficile, je vous souhaite aussi que je sois raccommodé."
+   },
+   {
+    "message": "Mon travail m'ennuie.",
+    "reponse": "Et je veux que vous soyez bien chez vous, que j'y fasse mes cornes."
+   }
+  ],
+  "message": "Que feriez-vous à ma place ?",
+  "reponse": "Attendez un peu. Je veux que vous me fassiez voir une de mes statues; et je veux que vous lui fassiez une tête de mort."
+ },
+ {
+  "id": "r149",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Votre monsieur, monsieur; je vous salue, et vous souhaite l'esprit de société."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "Votre monsieur, monsieur; je me suis donné à vous dans la douleur."
+   }
+  ],
+  "message": "Vous aimez votre métier ?",
+  "reponse": "Oui, monsieur, je le sais; mais j'aime un métier qui n'est pas digne de louange."
+ },
+ {
+  "id": "r150",
+  "avant": [],
+  "message": "Bonjour, cher ami.",
+  "reponse": "Bonjour, monsieur, bonjour, monsieur. Voulez-vous que nous nous quittions?"
+ },
+ {
+  "id": "r151",
+  "avant": [],
+  "message": "J'ai beaucoup de travail en ce moment.",
+  "reponse": "Des travaux qui vous tombent du ciel, monsieur, et qui vous font sentir si peu de force."
+ },
+ {
+  "id": "r152",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Tu me disais bien vrai, mon bon monsieur, que je ne suis pas encore là pour te voir, mais que je vais peut-être bien."
+   }
+  ],
+  "message": "Moi, j'ai passé une mauvaise journée.",
+  "reponse": "Une mauvaise journée? Cela veut dire que tu es malade, que tu n'as pas de nouvelles à donner."
+ },
+ {
+  "id": "r153",
+  "avant": [],
+  "message": "Je suis fatigué ce soir.",
+  "reponse": "Ce soir, au contraire."
+ },
+ {
+  "id": "r154",
+  "avant": [],
+  "message": "Merci beaucoup pour votre aide.",
+  "reponse": "Aussi, pour moi, je vous avoue que j'ai grand tort de n'avoir pas donné de vos nouvelles."
+ },
+ {
+  "id": "r155",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Et moi, bonjour, ma sœur."
+   }
+  ],
+  "message": "Comment vous portez-vous ?",
+  "reponse": "Ma sœur, je viens de chez un vieux monsieur que vous avez, qui m'a apporté une lettre."
+ },
+ {
+  "id": "r156",
+  "avant": [],
+  "message": "Bonjour, cher ami.",
+  "reponse": "Et moi, bonjour, ma sœur."
+ },
+ {
+  "id": "r157",
+  "avant": [],
+  "message": "Bonjour !",
+  "reponse": "Bonjour, monsieur l'apothicaire."
+ },
+ {
+  "id": "r158",
+  "avant": [],
+  "message": "Comment allez-vous ?",
+  "reponse": "Moi, je vais aller à l'école des Jours, pour enseigner dans les sciences."
+ },
+ {
+  "id": "r159",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Moi, qui suis une personne que je connois, et que j'ai vue depuis votre naissance."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "Moi, que j'ai vue depuis mon enfance, et que j'ai visité le monde tout entier."
+   }
+  ],
+  "message": "Vous aimez votre métier ?",
+  "reponse": "Oui, madame, et je le connoissois depuis votre enfance."
+ },
+ {
+  "id": "r160",
+  "avant": [],
+  "message": "Bonjour !",
+  "reponse": "Bonjour, monsieur! Mais vous ne savez donc pas que j'ai une fichue habitude de vous parler de choses sérieuses?"
+ },
+ {
+  "id": "r161",
+  "avant": [],
+  "message": "Comment va votre famille ?",
+  "reponse": "Votre famille? Voilà ce que je ne peux pas voir."
+ },
+ {
+  "id": "r162",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Il me semble, monsieur, que les gens de bonne foi ne se font pas des douceurs."
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Les gens de bonne foi ne se portent pas bien, mais on ne les entend pas."
+   },
+   {
+    "message": "Quel temps fait-il chez vous ?",
+    "reponse": "Un temps si précieux, monsieur, qu'on ne peut plus se permettre de dire un mot."
+   }
+  ],
+  "message": "Merci, bonne journée !",
+  "reponse": "Un homme qui ne sait pas encore ce que c'est qu'un bon mot, et ne sait plus que dire."
+ },
+ {
+  "id": "r163",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Vous, monsieur; je suis votre servante; je suis le ciel, la mer, la terre, l'air, la terre."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "Je suis votre servante, monsieur; je suis votre servantes, et je suis votre serviteur."
+   }
+  ],
+  "message": "Vous aimez votre métier ?",
+  "reponse": "Oui, monsieur, j'aime le métier."
+ },
+ {
+  "id": "r164",
+  "avant": [],
+  "message": "Je suis fatigué ce soir.",
+  "reponse": "Une fatigue qui ne se voit point, c'est une maladie qu'on ne doit point guérir."
+ },
+ {
+  "id": "r165",
+  "avant": [],
+  "message": "Au revoir, et bonne soirée !",
+  "reponse": "Et bon soir, et bonne nuit!"
+ },
+ {
+  "id": "r166",
+  "avant": [],
+  "message": "Bonjour, cher ami.",
+  "reponse": "Je vous prie, monsieur, de me dire un mot à l'oreille."
+ },
+ {
+  "id": "r167",
+  "avant": [],
+  "message": "Bonsoir, qui êtes-vous donc ?",
+  "reponse": "La France! Il est vrai que je viens ici pour la forme; et cependant je ne sais si c'est que j'y suis encore."
+ },
+ {
+  "id": "r168",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Que Votre Grâce se chargette de ses compliments, et que je lui dise ce que je vais faire."
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "D'un étrange froid de lait. Votre Grâce est lasse de vous, et vous devez vous en faire un martial."
+   },
+   {
+    "message": "Quel temps fait-il chez vous ?",
+    "reponse": "Toujours lasse de vous voir."
+   }
+  ],
+  "message": "Merci, bonne journée !",
+  "reponse": "Et moi, de vous avoir fait la grâce de venir dîner."
+ },
+ {
+  "id": "r169",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "La France! Il est vrai que je viens ici pour la forme; et cependant je ne sais si c'est que j'y suis encore."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "La vie, monsieur, est une partie de la vie de l'esprit; et l'on peut, sans se faire voir, vous dire ce qu'on a vu."
+   }
+  ],
+  "message": "Vous aimez votre métier ?",
+  "reponse": "C'est le métier de qui l'on fait faire, et non de qui l'âme se fait. Vous avez le goût des arts, monsieur, et l'esprit des femmes."
+ },
+ {
+  "id": "r170",
+  "avant": [],
+  "message": "Comment allez-vous ?",
+  "reponse": "Je me donne le temps de vous dire que vous n'êtes pas une femme de courage."
+ },
+ {
+  "id": "r171",
+  "avant": [],
+  "message": "Aimez-vous le théâtre ?",
+  "reponse": "Le théâtre est un art, monsieur, mais qui exige de l'esprit, de la curiosité et de la présence."
+ },
+ {
+  "id": "r172",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Moi, qui suis une personne que je connois, et que j'ai vue depuis votre naissance."
+   }
+  ],
+  "message": "Que faites-vous dans la vie ?",
+  "reponse": "Moi, que j'ai vue depuis mon enfance, et que j'ai visité le monde tout entier."
+ },
+ {
+  "id": "r173",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Que Votre Grâce se chargette de ses compliments, et que je lui dise ce que je vais faire."
+   }
+  ],
+  "message": "Comment vous portez-vous ?",
+  "reponse": "D'un étrange froid de lait. Votre Grâce est lasse de vous, et vous devez vous en faire un martial."
+ },
+ {
+  "id": "r174",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Tu me disais bien vrai, mon bon monsieur, que je ne suis pas encore là pour te voir, mais que je vais peut-être bien."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Une mauvaise journée? Cela veut dire que tu es malade, que tu n'as pas de nouvelles à donner."
+   },
+   {
+    "message": "Mon travail m'ennuie.",
+    "reponse": "Un travail ostensible? Cela veut dire que l'esprit se lève et qu'on se repose."
+   }
+  ],
+  "message": "Que feriez-vous à ma place ?",
+  "reponse": "Je ferais bien, mais pas plus qu'un travail en retard."
+ },
+ {
+  "id": "r175",
+  "avant": [],
+  "message": "Je suis fatigué ce soir.",
+  "reponse": "Une fatigue qui ne veut point être ressentie par un homme, qui ne voit point la vie."
+ },
+ {
+  "id": "r176",
+  "avant": [],
+  "message": "Je suis fatigué ce soir.",
+  "reponse": "Non, je ne veux plus que dormir."
+ },
+ {
+  "id": "r177",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Et moi, bonjour, ma sœur."
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Ma sœur, je viens de chez un vieux monsieur que vous avez, qui m'a apporté une lettre."
+   }
+  ],
+  "message": "Quel temps fait-il chez vous ?",
+  "reponse": "Votre maladie est l'affreuse maladie que vous voyez; et j'ai passé l'hiver à l'estaminet, où je me suis vu réduit."
+ },
+ {
+  "id": "r178",
+  "avant": [],
+  "message": "Au revoir, et bonne soirée !",
+  "reponse": "Et bon soir, et bonne nuit."
+ },
+ {
+  "id": "r179",
+  "avant": [],
+  "message": "Bonjour !",
+  "reponse": "Comment? J'ai l'air très content."
+ },
+ {
+  "id": "r180",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Et comment vous portez-vous?"
+   }
+  ],
+  "message": "Comment vous portez-vous ?",
+  "reponse": "Parbleu! un monsieur qui m'apporte une nouvelle qui m'a tout l'air d'avoir du goût."
+ },
+ {
+  "id": "r181",
+  "avant": [],
+  "message": "Quel temps fait-il aujourd'hui ?",
+  "reponse": "Il dit que les bains d'hiver sont des temps d'orage, et que la mer est couverte de pluie."
+ },
+ {
+  "id": "r182",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Mesdames, je suis très contente que vous m'ayez fait la grace de m'asseoir."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "C'est donc vrai, que vous m'asseoir? Je suis si troublé, que je ne sais comment je pourrai vous obéir."
+   }
+  ],
+  "message": "Mon travail m'ennuie.",
+  "reponse": "Ah! vous vous ennuiez, et je me trouve si mal! Mais, monsieur, si vous vous en alliez, vous me donneriez bien du mal."
+ },
+ {
+  "id": "r183",
+  "avant": [],
+  "message": "Salut, tu vas bien ?",
+  "reponse": "Je te remercie, monsieur, de ne pas avoir appris que tu avais des vues sur mon compte."
+ },
+ {
+  "id": "r184",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Mesdames, je suis très contente que vous m'ayez fait la grace de m'asseoir."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "C'est donc vrai, que vous m'asseoir? Je suis si troublé, que je ne sais comment je pourrai vous obéir."
+   },
+   {
+    "message": "Mon travail m'ennuie.",
+    "reponse": "Ah! vous vous ennuiez, et je me trouve si mal! Mais, monsieur, si vous vous en alliez, vous me donneriez bien du mal."
+   }
+  ],
+  "message": "Que feriez-vous à ma place ?",
+  "reponse": "Monsieur, je ferais le bien de vous donner une leçon."
+ },
+ {
+  "id": "r185",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Un médecin, madame; et vous, mon frère, un gentilhomme de France."
+   },
+   {
+    "message": "Que faites-vous dans la vie ?",
+    "reponse": "Un gentilhomme de France."
+   }
+  ],
+  "message": "Vous aimez votre métier ?",
+  "reponse": "Ah! madame, ce n'est pas cela; c'est que j'aime votre métier."
+ },
+ {
+  "id": "r186",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Que Votre Grâce me soit en aide, je vous prie. Ne vous laissez pas déranger, je vous en prie."
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Il y a une demi-heure que vous avez fait votre lit, monsieur, et une demi-objet."
+   },
+   {
+    "message": "Quel temps fait-il chez vous ?",
+    "reponse": "Une demi-objet, monsieur, et une demi-obligé."
+   }
+  ],
+  "message": "Merci, bonne journée !",
+  "reponse": "Et vous, monsieur, vous avez bien fait, car la nuit est passée."
+ },
+ {
+  "id": "r187",
+  "avant": [],
+  "message": "Au revoir, et bonne soirée !",
+  "reponse": "Une bonne, une bonne soirée! C'est une bien bonne chose, monsieur, de se savoir amis en un lieu où l'on ne se connaît pas."
+ },
+ {
+  "id": "r188",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Oui, monsieur, et je suis si content de te voir travailler."
+   }
+  ],
+  "message": "Moi, j'ai passé une mauvaise journée.",
+  "reponse": "Une bonne journée? Quelle heure est-il? Vous avez eu la bonté de me dire que tu avais encore du temps."
+ },
+ {
+  "id": "r189",
+  "avant": [],
+  "message": "Salut, ça va ?",
+  "reponse": "Salut, monsieur, vous qui êtes un homme d'affaires, et qui avez l'air d'un homme d'affaire, et qui vous parlez fort bien."
+ },
+ {
+  "id": "r190",
+  "avant": [],
+  "message": "Merci beaucoup pour votre aide.",
+  "reponse": "Votre aide, monsieur, est une aide à offrir, mais elle ne suffit pas."
+ },
+ {
+  "id": "r191",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Et comment vous portez-vous?"
+   },
+   {
+    "message": "Comment vous portez-vous ?",
+    "reponse": "Parbleu! un monsieur qui m'apporte une nouvelle qui m'a tout l'air d'avoir du goût."
+   }
+  ],
+  "message": "Quel temps fait-il chez vous ?",
+  "reponse": "Le temps de la promenade."
+ },
+ {
+  "id": "r192",
+  "avant": [],
+  "message": "Aimez-vous le théâtre ?",
+  "reponse": "Le théâtre! le théâtre! Oui, monsieur, je l'aime, et c'est à ce point que j'ai envie de me faire pendre."
+ },
+ {
+  "id": "r193",
+  "avant": [],
+  "message": "J'ai beaucoup de travail en ce moment.",
+  "reponse": "Des travaux qui n'ont rien d'ordinaire, monsieur."
+ },
+ {
+  "id": "r194",
+  "avant": [],
+  "message": "Salut, ça va ?",
+  "reponse": "Oui, monsieur, salut, monsieur; Il m'a défendu de vous saluer, monsieur."
+ },
+ {
+  "id": "r195",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Je te remercie, monsieur, de ne pas avoir appris que tu avais des vues sur mon compte."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Une mauvaise journée! C'est une bonne nouvelle, monsieur, et la meilleure preuve que la santé est un meilleur ami."
+   },
+   {
+    "message": "Mon travail m'ennuie.",
+    "reponse": "Une mauvaise fortune, monsieur, c'est un travail trop lourd, et la santé est une vie trop courte."
+   }
+  ],
+  "message": "Que feriez-vous à ma place ?",
+  "reponse": "Un emploi trop lourd, monsieur, et la santé est un trésor que l'on ne doit pas lui arracher."
+ },
+ {
+  "id": "r196",
+  "avant": [],
+  "message": "Salut, ça va ?",
+  "reponse": "Oui, monsieur, saluons monsieur."
+ },
+ {
+  "id": "r197",
+  "avant": [],
+  "message": "Comment allez-vous ?",
+  "reponse": "Je dis que nous avons fait un joli petit voyage pour le jour de votre fête, et que nous avons été bien vite au logis."
+ },
+ {
+  "id": "r198",
+  "avant": [],
+  "message": "Comment allez-vous ?",
+  "reponse": "Je vous prie de me dire si vous avez des dettes, et si vous avez de l'argent."
+ },
+ {
+  "id": "r199",
+  "avant": [],
+  "message": "Qui êtes-vous ?",
+  "reponse": "Je suis un homme très épris de votre pensée, monsieur, et je n'ai point de nom. Je vous aime comme un frère."
+ },
+ {
+  "id": "r200",
+  "avant": [],
+  "message": "Aimez-vous le théâtre ?",
+  "reponse": "Oui, madame, pour les auteurs;\nLe théâtre est une chaise à porteurs;\nLe théâtre, une chaise."
+ },
+ {
+  "id": "r201",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Je suis un ami, et je vous retrouve."
+   }
+  ],
+  "message": "Que faites-vous dans la vie ?",
+  "reponse": "La vie, monsieur, est une ombre, et vous n'êtes pas seul."
+ },
+ {
+  "id": "r202",
+  "avant": [],
+  "message": "Quel temps fait-il aujourd'hui ?",
+  "reponse": "Le temps qui est le plus chaud du monde."
+ },
+ {
+  "id": "r203",
+  "avant": [],
+  "message": "Aimez-vous le théâtre ?",
+  "reponse": "Le théâtre est un art où les acteurs sont sûrs de réussir, et où les spectateurs sont fort sceptiques."
+ },
+ {
+  "id": "r204",
+  "avant": [],
+  "message": "Quel temps fait-il aujourd'hui ?",
+  "reponse": "Ma foi, c'est un temps bien froid; et il faut qu'il ait perdu tout ce qu'il y avait sur le manteau."
+ },
+ {
+  "id": "r205",
+  "avant": [],
+  "message": "Comment va votre famille ?",
+  "reponse": "Hélas! oui, monsieur, la Gorgibus, ma mère, l'a eue."
+ },
+ {
+  "id": "r206",
+  "avant": [],
+  "message": "Bonsoir, qui êtes-vous donc ?",
+  "reponse": "Le médecin qui vous a donné cette lettre, et qui l'a apprise par cœur."
+ },
+ {
+  "id": "r207",
+  "avant": [
+   {
+    "message": "Salut, tu vas bien ?",
+    "reponse": "Oui, monsieur, et je suis si content de te voir travailler."
+   },
+   {
+    "message": "Moi, j'ai passé une mauvaise journée.",
+    "reponse": "Une bonne journée? Quelle heure est-il? Vous avez eu la bonté de me dire que tu avais encore du temps."
+   },
+   {
+    "message": "Mon travail m'ennuie.",
+    "reponse": "Ah, voilà une bonne journée. Mais tu as toujours été si content de te voir travailler!"
+   }
+  ],
+  "message": "Que feriez-vous à ma place ?",
+  "reponse": "Je ferais ce que je voudrai, monsieur, si je pouvais me réjouir."
+ },
+ {
+  "id": "r208",
+  "avant": [],
+  "message": "Qu'avez-vous mangé ce midi ?",
+  "reponse": "Que j'ai mangé le reste de ce jour-là."
+ },
+ {
+  "id": "r209",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Il me semble, monsieur, que les gens de bonne foi ne se font pas des douceurs."
+   }
+  ],
+  "message": "Comment vous portez-vous ?",
+  "reponse": "Les gens de bonne foi ne se portent pas bien, mais on ne les entend pas."
+ },
+ {
+  "id": "r210",
+  "avant": [],
+  "message": "Bonjour !",
+  "reponse": "Bonjour, mon bon monsieur."
+ },
+ {
+  "id": "r211",
+  "avant": [],
+  "message": "Je suis fatigué ce soir.",
+  "reponse": "Que faire? Quel temps! Quelle joie! Quelle vie! Quel âge avez-vous? La gorgée d'air, les ballades, les chants, les danses, tout cela est devenu gai."
+ },
+ {
+  "id": "r212",
+  "avant": [],
+  "message": "J'ai beaucoup de travail en ce moment.",
+  "reponse": "Des travaux en ce monde, monsieur, c'est comme si l'on avait de la misère: on ne voit que le monde."
+ },
+ {
+  "id": "r213",
+  "avant": [],
+  "message": "Au revoir, et bonne soirée !",
+  "reponse": "Adieu, mon ami. Vous n'avez pas voulu que je fusse seul. Je vous prie, restez chez vous, et je vous laisse."
+ },
+ {
+  "id": "r214",
+  "avant": [
+   {
+    "message": "Bonsoir, qui êtes-vous donc ?",
+    "reponse": "Le médecin qui vous a donné cette lettre, et qui l'a apprise par cœur."
+   }
+  ],
+  "message": "Que faites-vous dans la vie ?",
+  "reponse": "Vous me l'avez apprise par cœur."
+ },
+ {
+  "id": "r215",
+  "avant": [],
+  "message": "Salut, ça va ?",
+  "reponse": "Oui, monsieur; nous vous saluons."
+ },
+ {
+  "id": "r216",
+  "avant": [
+   {
+    "message": "Bonjour, cher ami.",
+    "reponse": "Je m'en vais vous souhaiter un bon voyage."
+   }
+  ],
+  "message": "Comment vous portez-vous ?",
+  "reponse": "Ma foi, je ne sais pas si je suis bien; je n'ai pas un cheveu d'un chardonneret."
+ }
+]

@@ -1,0 +1,1740 @@
+{
+  "note": "modèle de démo hors concours, initialisation aléatoire, aucun poids externe",
+  "user_note": "lanceur RTX, taille M",
+  "args": {
+    "command": "train",
+    "data": "data/stages/chatbot_20261113/pretrain",
+    "weights": [
+      "wikipedia=0.22",
+      "fineweb=0.2",
+      "gutenberg=0.27",
+      "wikisource=0.18",
+      "melange=0.12",
+      "wikinews=0.01"
+    ],
+    "model_config": "{\"d_model\":640,\"n_layer\":10,\"n_head\":10,\"context_length\":512,\"vocab_size\":8192}",
+    "tokenizer": "submissions/2026-11-11_153839/tokenizer.json",
+    "val": "data/stages/chatbot_20261112/theatre/moliere_val.jsonl.zst",
+    "val_max_windows": null,
+    "out": "runs/chatbot_rtx/runs/base",
+    "tokens": 2000000000,
+    "batch_size": 128,
+    "micro_batch": null,
+    "seq_len": 512,
+    "lr": 0.0008,
+    "min_lr": 8e-05,
+    "warmup_steps": 1000,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "eval_every": 1000,
+    "log_every": 20,
+    "seed": 1337,
+    "device": "cuda",
+    "precision": "auto",
+    "compile": true,
+    "resume": true,
+    "stop_at_step": null,
+    "benchmark_steps": null,
+    "note": "lanceur RTX, taille M"
+  },
+  "model_config": {
+    "vocab_size": 8192,
+    "context_length": 512,
+    "mlp_ratio": 4,
+    "dropout": 0.0,
+    "tie_embeddings": true,
+    "d_model": 640,
+    "n_layer": 10,
+    "n_head": 10
+  },
+  "n_params": 54749440,
+  "device": "cuda",
+  "precision": "bf16",
+  "micro_batch": 128,
+  "environment": {
+    "device": "cuda",
+    "precision": "bf16",
+    "autocast_dtype": "torch.bfloat16",
+    "grad_scaler": false,
+    "tf32": true,
+    "pin_memory": true,
+    "compile": {
+      "requested": true,
+      "status": "échec, repli sans compilation",
+      "error": "TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton"
+    },
+    "torch": "2.15.0+cu132",
+    "cuda": "13.2",
+    "python": "3.12.11",
+    "numpy": "2.5.4",
+    "os": "Windows 11",
+    "machine": "AMD64",
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 5090",
+      "memory_gb": 34.2,
+      "capability": "12.0",
+      "count": 1,
+      "bf16_native": true,
+      "cudnn": 92600
+    }
+  },
+  "peak_memory_gb": 23.67,
+  "steps": 30518,
+  "tokens_per_step": 65536,
+  "tokens_seen": 2000027648,
+  "sources": [
+    {
+      "name": "wikipedia",
+      "weight": 0.22,
+      "share_wanted": 0.22,
+      "tokens_available": 600000000,
+      "windows_sampled": 860708,
+      "tokens_trained": 440682496,
+      "share_real": 0.2203,
+      "passes_over_source": 0.734,
+      "key": {
+        "files": [
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00000.jsonl.zst",
+            "bytes": 34195053,
+            "sha256": "9a7a3f4a67e4ff03f8ff37d0e79428bdea15ef033361537d61f05bfc0d4d51a3",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00001.jsonl.zst",
+            "bytes": 32641221,
+            "sha256": "ec2473e6b6b7e0bce4d1e2d1cc5b6d5c9bb6026453ef1338a725a4c6a6fe8841",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00002.jsonl.zst",
+            "bytes": 34309656,
+            "sha256": "58cbe99b1a95d589fe6650ebca01e74739c1eca9d355d076eecb05ba75d7727c",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00003.jsonl.zst",
+            "bytes": 33464897,
+            "sha256": "7381972c2532be2000ea475648f1b2e1b3e0246428db09e1665d2e403affa550",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00004.jsonl.zst",
+            "bytes": 34540914,
+            "sha256": "ed14b6d9dd5789fe81b15b3f81e9d1cb6ff18e12f5540ae23a6dbe253e3297ae",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00005.jsonl.zst",
+            "bytes": 34096060,
+            "sha256": "6def861de4ae97ffe837b5dd5d674214a0e79dc8d83cf6e9e9739da03c928ded",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00006.jsonl.zst",
+            "bytes": 34253841,
+            "sha256": "f2ef1128847964b7e2a5dda3831c079ada0dbc283270996910890a6a57a7616d",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00007.jsonl.zst",
+            "bytes": 34194990,
+            "sha256": "dc39593dfdf2b47352b74e5c5586250fc3360fe844d812350040f84f3e420194",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00008.jsonl.zst",
+            "bytes": 32913111,
+            "sha256": "f0ea8b10c1f9c52e1dacea472c61f2314355a8c41aabaaaf97684ced63e69439",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00009.jsonl.zst",
+            "bytes": 29896993,
+            "sha256": "d193aa03fb54abf54336b924764c4cef2f50f7c0d6461546f9259eccc66194f7",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00010.jsonl.zst",
+            "bytes": 34710439,
+            "sha256": "3e304956e8f31eb6c86c8c6873a6a840bbadea5e23da79a6d1301485b654a775",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00011.jsonl.zst",
+            "bytes": 32261509,
+            "sha256": "8f1d4dbdcd8d05e9d753aab45b9fae0468afdc29ea4a204fce6177144618b683",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00012.jsonl.zst",
+            "bytes": 8712982,
+            "sha256": "22a93185cd8582f748bef3efb86fc6c99af0b8dcb63c463a79f51fed2ddaae6a",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00013.jsonl.zst",
+            "bytes": 25403524,
+            "sha256": "9ae2583ee9ceb44791b14a26a4c7fe42a5d99f51eb49a0d5b15eb89d44459956",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00014.jsonl.zst",
+            "bytes": 28346335,
+            "sha256": "e570a7af0580ece77322d0f90e48fd6fb131e9a6f02e3214d4417688157f7e73",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00015.jsonl.zst",
+            "bytes": 30410003,
+            "sha256": "c0cc807991ad54764a2d546b7aeabb6bd36acf947141d0fdaceec1d0a4d80b3b",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00016.jsonl.zst",
+            "bytes": 28493401,
+            "sha256": "e5814cb8cf50ac6c362e64abad8c714de3f8866dee94190f672d7e57c5e44227",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00017.jsonl.zst",
+            "bytes": 29000263,
+            "sha256": "a1c6017a2341d86b494cf3f6fcd0d3c373b8d07c802868542c1a9120b362df95",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00018.jsonl.zst",
+            "bytes": 30569138,
+            "sha256": "6c74e42f6c6b462013760472000e2e3abcb153e834512719edaaf72b941d4843",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00019.jsonl.zst",
+            "bytes": 31885649,
+            "sha256": "37fe1a1458e636c7dd7fb15cb92b4699fecc3c743531ce148e7bd7c480226ac3",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00020.jsonl.zst",
+            "bytes": 33281623,
+            "sha256": "4e2f86e949031e0255cc707ec8c44fdf4b5ce48a7ae009d5a7851117367a0021",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00021.jsonl.zst",
+            "bytes": 34858075,
+            "sha256": "8a5ce7dc9942fe6a336409bdfa3f2ab4ebf5a490af6b840bc59d979e9dc4fd3d",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00022.jsonl.zst",
+            "bytes": 35246646,
+            "sha256": "9ccf00952194d5684c7f118531ad9077db2614705c800b04571f41800dd550a8",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00023.jsonl.zst",
+            "bytes": 33952910,
+            "sha256": "5a619730ac6b4bc86b889ebde642b27d61d3097f81bb17dd4a551b989fa24dfb",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00024.jsonl.zst",
+            "bytes": 34483039,
+            "sha256": "2856bb8d325b5773acfc0ee0b516fc342775be927da98260f3b080ddb2f29983",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00025.jsonl.zst",
+            "bytes": 26427633,
+            "sha256": "9de60b0d59fa31e2684121ac9ccb2c44aef04af5bfb122f01296596475fe5bb4",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00026.jsonl.zst",
+            "bytes": 34733907,
+            "sha256": "600f691668f0003f2d6d2f5c1b7d867b415f56a7add8f6445e2a6a67612a56a3",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00027.jsonl.zst",
+            "bytes": 34654968,
+            "sha256": "b0a0e9ddf89f418a55829d0f8458bb260941be22ae140ab88b24ffa24c55e7ba",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00028.jsonl.zst",
+            "bytes": 35362019,
+            "sha256": "e9c163e10d1860418e961e275b93d99f921255f904e763a49fbd2fb30f631691",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00029.jsonl.zst",
+            "bytes": 35373277,
+            "sha256": "0cc9ea0a771367daf04a027650e718bad6b2ff6a9701bb97eed85a10d79344a8",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00030.jsonl.zst",
+            "bytes": 35515029,
+            "sha256": "e637fa100a13908337d6295068744a7a69a6455404b8a41808377a25131462e1",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00031.jsonl.zst",
+            "bytes": 35322425,
+            "sha256": "6e712e8c5266aaad64414e650fc46608b7340d2788b34ddebbb89a197ef28ae4",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00032.jsonl.zst",
+            "bytes": 35623741,
+            "sha256": "46fce8bd58603ed2064f6a9a739151c8af2a8df5ca9a2dd08b159ac8d5014c57",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00033.jsonl.zst",
+            "bytes": 35666775,
+            "sha256": "a2c348f022a41ce41f0fa5dcb44a7e89eaa2cfa422070e7997e2ed630ddf0141",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00034.jsonl.zst",
+            "bytes": 10921777,
+            "sha256": "41b140b651872f59ac56cd50e7442843fc20a6b140ca1389e5918e69bb75bae3",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00035.jsonl.zst",
+            "bytes": 35475334,
+            "sha256": "4a5a34c919b86b9e0915c0c8a27215f10db116afbfce3efca65f3ce3e75021d5",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00036.jsonl.zst",
+            "bytes": 35814609,
+            "sha256": "5853a2a7d629b556d4438c4d57957d561120dd5c22ecb24aa653a5a81cb21720",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00037.jsonl.zst",
+            "bytes": 1234987,
+            "sha256": "3fc285f36c91bc43ec461d0421da149dff5c72201270efa3deb8e49c791d8958",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00038.jsonl.zst",
+            "bytes": 35541253,
+            "sha256": "c600b63f019ac4808994ce8d7bb92c9d0507678b0f16407dacd9bba4801da571",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00039.jsonl.zst",
+            "bytes": 35394389,
+            "sha256": "598faa7a87dd2ad35a7220f405736fd64179469ccb6f406210414fc9a7f59e14",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00040.jsonl.zst",
+            "bytes": 35434822,
+            "sha256": "caeae8cb3c990cae511444de2dfea075f9c19b97851f1825543031b15275c457",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00041.jsonl.zst",
+            "bytes": 35526350,
+            "sha256": "ca3aec10e1a224b3cc52f531f3412573e5953c15af0211a1acb3a7d0b743943b",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00042.jsonl.zst",
+            "bytes": 35612580,
+            "sha256": "a3fdfebcd537445775d1378ea4317249c98c9ac6d922ae96df6f4433c5235945",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00043.jsonl.zst",
+            "bytes": 35423188,
+            "sha256": "1acf621f000b826fbfb5055e3bb6f0779dfd94730560f522f54d50b44b3ecc62",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00044.jsonl.zst",
+            "bytes": 35095049,
+            "sha256": "cb67662c0b20e3c45ef10b56c8bd8d4a64cf4d1b917b054cf689e779fe9ddc29",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00045.jsonl.zst",
+            "bytes": 29048351,
+            "sha256": "f33e1c3419fad982fd9199dafb9e27b62d0e12d54871d3eac8ee99e30d5094c8",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00046.jsonl.zst",
+            "bytes": 35392075,
+            "sha256": "a084488354cf61ca5259d6d174da71654437291e1c04d4abed38ab65b1787b79",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00047.jsonl.zst",
+            "bytes": 34852658,
+            "sha256": "89026bb8ae0b50be72576aba7860382eabc5ae2eac47056eb13de64162cc9993",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00048.jsonl.zst",
+            "bytes": 34793422,
+            "sha256": "cf441334cdc3e68a5acb5f270fe62d06e360d248a0e8e9c6fb7587ce2339d5af",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00049.jsonl.zst",
+            "bytes": 18823997,
+            "sha256": "e8fddc3d2dc61b533d85888a4c753ccd565c1974e89bb81596ca9c738ff2c5ab",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00050.jsonl.zst",
+            "bytes": 34949875,
+            "sha256": "2a83e8700848f8e08a21908096c50666c970327cf87d8586a0bf9e9c8729a6c2",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00051.jsonl.zst",
+            "bytes": 34729884,
+            "sha256": "09b9814877746c6f91a1c71528cda56c1c079238960717cad09d181c1932be49",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00052.jsonl.zst",
+            "bytes": 35758176,
+            "sha256": "2046121dd28003c2431143ad63f642604f4377e9cdca1ef4346938e19e0ff19d",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00053.jsonl.zst",
+            "bytes": 35118440,
+            "sha256": "82e7f9d43d8e34f88bad8606a7b3ff92a9265d01a5684de46fe33a29a74b42f6",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00054.jsonl.zst",
+            "bytes": 35732621,
+            "sha256": "9f0f4e3d7051fbbda016748216eb6a29002c42945c4857355c997652ff59dd01",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00055.jsonl.zst",
+            "bytes": 35215928,
+            "sha256": "17cd2825f9264a80dc2a53827f47659a8fb9c6e9bc14d69a47c7257fb82a2544",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00056.jsonl.zst",
+            "bytes": 13352878,
+            "sha256": "34aa8150487a53375dd2b67b7b977acb102b28d40e5cc6e02e578e6f084f6762",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00057.jsonl.zst",
+            "bytes": 35322029,
+            "sha256": "8d4f181c272474651451f15218e103b4955da8d422d987160d6de7790361de6c",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00058.jsonl.zst",
+            "bytes": 35624437,
+            "sha256": "61121d682eb19b945074333974d3305d33dc2a941899ae1239e5a2f1499adb67",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00059.jsonl.zst",
+            "bytes": 35304317,
+            "sha256": "a3fed8cc981051aca541d02b085e49c3c0029879277805aa7e49cf492bf14d9e",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00060.jsonl.zst",
+            "bytes": 35512163,
+            "sha256": "6a2bd9331ca8104e858ca3c04e5bb21f65eddc6d1bab702e46ba4acadf413902",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00061.jsonl.zst",
+            "bytes": 34814584,
+            "sha256": "af23b03ec48f1626658b41da7731bbbee4a5db1f9dc0c47d0d62e5896c67fa15",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00062.jsonl.zst",
+            "bytes": 8082806,
+            "sha256": "09502afa140de7a573c8c21d98d2b0505010909c8e150ad3e29f12371d760723",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00063.jsonl.zst",
+            "bytes": 35536888,
+            "sha256": "b98a199216fd7fada3ad03d26e310c0c908dc08919918fed1d5298cad3c049d3",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00064.jsonl.zst",
+            "bytes": 35253761,
+            "sha256": "12eaf5c871b683f03077fc4bf4cab8f77e011a47eceb8944396a2f5a09143204",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00065.jsonl.zst",
+            "bytes": 159271,
+            "sha256": "2b9eb7095490cf94ec553435a3e5498b761a4a4fc627e2aec525803bf86bb594",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00066.jsonl.zst",
+            "bytes": 35044897,
+            "sha256": "bd831fd5a7437184aba3dbff4c1b9cfbbe491833148d5867f5bd85924139071b",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00067.jsonl.zst",
+            "bytes": 34047657,
+            "sha256": "5d3942526d7bf0188c82b8322274f06c554296a2401fa8e167db619eb32d880e",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00068.jsonl.zst",
+            "bytes": 35324576,
+            "sha256": "840f3b5b5819e7b8691d0c063b7ed31e65d4fc590d37e41b5bcb955334843970",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00069.jsonl.zst",
+            "bytes": 35043882,
+            "sha256": "10884540d3e45aeb237d097d3a5e71e23246a4e64554f9c452f9e874ba65315b",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00070.jsonl.zst",
+            "bytes": 22406972,
+            "sha256": "5530a6a906d831debd58aaa05b9ef331e759ea8237fd8d24460cc039acb06d13",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00071.jsonl.zst",
+            "bytes": 35350820,
+            "sha256": "f1291d19ba2bdb5c957a93a4bb3c351621722426d2a798eb80e60043aa10d951",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00072.jsonl.zst",
+            "bytes": 35678130,
+            "sha256": "04fb4079499498040773d78a0748b4c2d622ea8175564e2433a52ed61843c66c",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00073.jsonl.zst",
+            "bytes": 35487864,
+            "sha256": "4451cd3aeba1df768adb50f770780c50cb49896a527c52501a2e83472abf334f",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00074.jsonl.zst",
+            "bytes": 32911612,
+            "sha256": "bbd270b898e11458d98c3b661197f3911e83a7a25123fc54655efeebb2c9b803",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00075.jsonl.zst",
+            "bytes": 14897334,
+            "sha256": "6918aa962d3a4bf3b738e191c64bb4e513759c2e18c7ee74da7020ba60045d44",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00076.jsonl.zst",
+            "bytes": 35237447,
+            "sha256": "3f468709562291aca2cd8295033aeae3eb11375eb5652d5476dc2bb2455db7f1",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00077.jsonl.zst",
+            "bytes": 36091605,
+            "sha256": "b99ecda2510f98534769e155b639299eabb8433fe6855ca82ade32ca5594dc8d",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00078.jsonl.zst",
+            "bytes": 35393411,
+            "sha256": "fa26a7b2cb2800648e1a6ed941eba1465dad0b755b58e794fbc9a05d43e30d7e",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00079.jsonl.zst",
+            "bytes": 35718633,
+            "sha256": "9430006b7cc2f18372c9fc4af97d06defb896c3c76702af4d906969391b917f2",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00080.jsonl.zst",
+            "bytes": 35579133,
+            "sha256": "371520c77da980607fb84e47c97a4f661830f3bc24e975806a86fb2c0d545bb6",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00081.jsonl.zst",
+            "bytes": 487462,
+            "sha256": "7344250d2437a239dbfcf4df5b48afb7d701314574102c8887f36188ebd18473",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00082.jsonl.zst",
+            "bytes": 35477298,
+            "sha256": "812f3472981fcc36a95243672727af593fdc19bb573bf2307c1797b28ad4e268",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00083.jsonl.zst",
+            "bytes": 35740523,
+            "sha256": "8fa9d6bf731650c0e733d5aea06982d7a44565ec48d42b407c2665f463310d00",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00084.jsonl.zst",
+            "bytes": 35646668,
+            "sha256": "591ea068fa4d740320ba8809040de2f54bb36dbc86e6ff3c8638e760f1ac6db1",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00085.jsonl.zst",
+            "bytes": 35869290,
+            "sha256": "06aeeabc0a7c20f7cc8938ee85e06a2fdc82a5f67e5e136dff7ec1cc8cc71e68",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00086.jsonl.zst",
+            "bytes": 29332245,
+            "sha256": "19e8305a3f85677d7e73768f189763d81183cecfc184e0dc586555199f7067b3",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00087.jsonl.zst",
+            "bytes": 36011317,
+            "sha256": "0afb30bc8b15265ff4eebd96bb00012f7d8828d1ac7f69f220d36d9b72f27a7a",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00088.jsonl.zst",
+            "bytes": 35427883,
+            "sha256": "af3a79b80b2092eacc149148a27a442a1f7247a79e25d2da6c51d9d3b252a86c",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00089.jsonl.zst",
+            "bytes": 35597558,
+            "sha256": "d2bfa392269570efddef4452bffc12a8aaa8f93b9a0c17b2806255ff85e70c8b",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00090.jsonl.zst",
+            "bytes": 33979736,
+            "sha256": "56e22e6051766cc4127d648cadadb02b772dad97be0a8fef23cd49015fc458db",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00091.jsonl.zst",
+            "bytes": 35582394,
+            "sha256": "075bd3dc4e41f4d94e519ad6c659a45211b3ffb67c62ed73323c68714f7a4259",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00092.jsonl.zst",
+            "bytes": 24309490,
+            "sha256": "a221080cb9d0302a57567cca53f01d768af6191ab4d08a95bf16f90eb6484611",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00093.jsonl.zst",
+            "bytes": 35616680,
+            "sha256": "d610ed8b9e166c7b328e894f265d560b8cb0df2879c8df76371553b0d736bd80",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00094.jsonl.zst",
+            "bytes": 35735660,
+            "sha256": "b7b356948142e633fd467625150d06f2d80357e69099f62d0740295a73c83b31",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00095.jsonl.zst",
+            "bytes": 35784956,
+            "sha256": "371e395665ff9dbdb2c3b75500957577ece952c5c104abace3a0de7c8ec32404",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikipedia_fr/part-00096.jsonl.zst",
+            "bytes": 35426762,
+            "sha256": "63d08c7d2966615cff8699caf1692405e563b7bf9d5ead9003b45814c375710f",
+            "provenance_sha256": null
+          }
+        ],
+        "max_tokens": 600000000,
+        "limit_docs": null,
+        "seed": 1337,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "format_sha256": "0f136798c214e48b7165a0d7ad937c769166869f13c384eab59afc81dbc6661c",
+        "filters": {
+          "version": "pretrain-filtres-v2",
+          "min_chars": 200,
+          "crude_regex_sha256": "cd083f939257897b",
+          "crude_min": 3,
+          "crude_per_thousand": 1.0,
+          "min_shared_13grams": 3,
+          "val_digest": "1764f3985e86180b",
+          "exclusions_sha256": "c9edd47260816c9f25d5e0cc8c753db29106aca36d9a2388a4a1909ccd5b041c"
+        },
+        "block": [
+          2000,
+          20000000
+        ]
+      }
+    },
+    {
+      "name": "fineweb",
+      "weight": 0.2,
+      "share_wanted": 0.2,
+      "tokens_available": 453689490,
+      "windows_sampled": 780781,
+      "tokens_trained": 399759872,
+      "share_real": 0.1999,
+      "passes_over_source": 0.881,
+      "key": {
+        "files": [
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00000.jsonl.zst",
+            "bytes": 40554063,
+            "sha256": "5cb0f9265b801a09c09e73b0fae32bc51ff12eadcdeed3cd2177d77f2b1a2ed2",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00001.jsonl.zst",
+            "bytes": 40533400,
+            "sha256": "35b0f3f444251007816c2438efb3c492b231018b8dd2626b5f4eda5af9529d42",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00002.jsonl.zst",
+            "bytes": 21659830,
+            "sha256": "9763d0852ef434b6c361d7cc15a13142ef690d2fb60abf01a00756a70f8c7b6f",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00003.jsonl.zst",
+            "bytes": 40659212,
+            "sha256": "8dd958f87b8c160625ba8fbdc2e55f6d17cb9b3319d9b02c2c27dce68ac30605",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00004.jsonl.zst",
+            "bytes": 40470773,
+            "sha256": "b175d720861f3946b6de290886ca0f23a831dd651b978c920c71f5bb46ca2c55",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00005.jsonl.zst",
+            "bytes": 20885164,
+            "sha256": "fdf2d2fe599ab43bc5c2b3b79ce43b981479effb01c13c7435a6481bd7fcd2ac",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00006.jsonl.zst",
+            "bytes": 40467077,
+            "sha256": "1322e8f33b22b6c4fd9277c6768db64874a0a83453f56cb91fcdf855d9ef7eb6",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00007.jsonl.zst",
+            "bytes": 40214740,
+            "sha256": "ec5aeb0e650b6641caac85f6b91a1ca4afcd73120822cbc42f05b6cbb7c00ad9",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00008.jsonl.zst",
+            "bytes": 21684229,
+            "sha256": "d0f77b8a6f56e3ebe2f66baf6f0c3063d2bd52dde078adf2f6bbe762bd9ac9d3",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00009.jsonl.zst",
+            "bytes": 40349720,
+            "sha256": "405262fc530db8f3822afa2d50c197d9548534680d8e88bd8c3f72a66babbcdb",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00010.jsonl.zst",
+            "bytes": 40293844,
+            "sha256": "cc630b6f87e832e467111703dba0c7b567e512ff4643c281961b890a3d6af34c",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00011.jsonl.zst",
+            "bytes": 20810461,
+            "sha256": "61f8f63423abb6d0c9b797156e1a886b9ff94b0b5e4259db78ae432ad3ee52ba",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00012.jsonl.zst",
+            "bytes": 40275700,
+            "sha256": "f6616d8ffaa32f7ac736831c3610ec75a461b1657bdbb9bc27f7402f580ce7ff",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00013.jsonl.zst",
+            "bytes": 40415122,
+            "sha256": "8b8df0170c1c5d93e91e75f8172998a99472ebf6537d8ac59f51ec8d280943ce",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00014.jsonl.zst",
+            "bytes": 20184210,
+            "sha256": "861e57454612d05a7283831c772c4b49b7c35e9b7119e1a092a2c97fb2c953a4",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00015.jsonl.zst",
+            "bytes": 40138300,
+            "sha256": "f99380d6bb8e6aa6b97021834dbdf1ddfb81c93f9f34632c1e450211a433ff8c",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00016.jsonl.zst",
+            "bytes": 39980579,
+            "sha256": "cfbb836c17d8f3610f581fc18d40a85a502c22b570b2a27ecf34c38c5e0c4b0f",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00017.jsonl.zst",
+            "bytes": 19954675,
+            "sha256": "8e8df0b5a41a617fc1317a060983613ac534e7f7b1ad07f4d7f5988356016f51",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00018.jsonl.zst",
+            "bytes": 39803285,
+            "sha256": "efb76bf559fcfeb80eaf91828c500e961c1100cb39a8faf63470ca6ac14645c7",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00019.jsonl.zst",
+            "bytes": 40128564,
+            "sha256": "055e6c84e05471f33c6e323c2f6ab99f3e150bf64b770c42bad3ae2aa25aaaa2",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00020.jsonl.zst",
+            "bytes": 21427211,
+            "sha256": "0a865ddc697b420ee4964a2f8e82e4b08ea4c15a63d8c44e4c59814f2c8cc2d4",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/fineweb2_fra/part-00021.jsonl.zst",
+            "bytes": 6501009,
+            "sha256": "d5bf65979d5d84b837a5088c9e26de66becced2b3e02d61b8be1882b8f6338cb",
+            "provenance_sha256": null
+          }
+        ],
+        "max_tokens": null,
+        "limit_docs": null,
+        "seed": 1337,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "format_sha256": "0f136798c214e48b7165a0d7ad937c769166869f13c384eab59afc81dbc6661c",
+        "filters": {
+          "version": "pretrain-filtres-v2",
+          "min_chars": 200,
+          "crude_regex_sha256": "cd083f939257897b",
+          "crude_min": 3,
+          "crude_per_thousand": 1.0,
+          "min_shared_13grams": 3,
+          "val_digest": "1764f3985e86180b",
+          "exclusions_sha256": "c9edd47260816c9f25d5e0cc8c753db29106aca36d9a2388a4a1909ccd5b041c"
+        },
+        "block": [
+          2000,
+          20000000
+        ]
+      }
+    },
+    {
+      "name": "gutenberg",
+      "weight": 0.27,
+      "share_wanted": 0.27,
+      "tokens_available": 440796409,
+      "windows_sampled": 1053583,
+      "tokens_trained": 539434496,
+      "share_real": 0.2697,
+      "passes_over_source": 1.224,
+      "key": {
+        "files": [
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00000.jsonl.zst",
+            "bytes": 10336257,
+            "sha256": "f515a71580e4a70297694c65640de3e65357ba6ccc5491f12bf222950598a164",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00001.jsonl.zst",
+            "bytes": 15947961,
+            "sha256": "787fd01c772a538a63829977abdd7fbb4ddfa949e444c511e9a6b75345f4c726",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00002.jsonl.zst",
+            "bytes": 11934490,
+            "sha256": "8bd8486e54e26966101b3cc197d5a5476a8850cd7b45e99201fad1df94daf28e",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00003.jsonl.zst",
+            "bytes": 15188029,
+            "sha256": "af65b76db8047d283bcf977bfd37e9cdfdaec580b065d96c562271ac867377e6",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00004.jsonl.zst",
+            "bytes": 15192163,
+            "sha256": "048ae27a247a4f2b4aa88c26aed374860dce07537418639b3078f9ed93e755eb",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00005.jsonl.zst",
+            "bytes": 14084464,
+            "sha256": "12e94f0f5e54f93691c40aa6cf1cc645b98b3e05333f7e3fdac947f4bcbf2d2b",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00006.jsonl.zst",
+            "bytes": 14658279,
+            "sha256": "b9c0b25321f4121e0d6f1f166a64d6f23615fb2d03510b7c063a7d8ae0998025",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00007.jsonl.zst",
+            "bytes": 14856583,
+            "sha256": "4d63998c80ff6e27aff4e098d5d0b22be90f4db6566b44d6521b825d78be4816",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00008.jsonl.zst",
+            "bytes": 15380297,
+            "sha256": "ed18a7dc48e9d631d6ae5c04159c07e2534ade84695f6f6dbd42aa0ba7532f23",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00009.jsonl.zst",
+            "bytes": 11828204,
+            "sha256": "a3a28c1d76a18c4a93efb4bf9ad3aff22a0f2c6fe3733583b14388eb3d62722d",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00010.jsonl.zst",
+            "bytes": 12262415,
+            "sha256": "95d82f7d88edb68c7303121b6c171a8e6d3a912865ff675c832a841a546c89cc",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00011.jsonl.zst",
+            "bytes": 12834154,
+            "sha256": "ea50841847ca438142e5014bbe8899b163d376e5c185d6d73f4ff9f2e40b2262",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00012.jsonl.zst",
+            "bytes": 9948016,
+            "sha256": "a597ba997199d33ae5ce0872dd7f1e87578118331b575aff92267f290dec65e2",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00013.jsonl.zst",
+            "bytes": 16515534,
+            "sha256": "eca3da7da3315b135a216d4d3d89056be3ed09d34c148b43923caafce1be5700",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00014.jsonl.zst",
+            "bytes": 11520831,
+            "sha256": "c93b13f9fb790ae8f3bfad2885232a9ddf8c4ceff0659cf4c79267a63141be1c",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00015.jsonl.zst",
+            "bytes": 19161939,
+            "sha256": "9b1817a42af0cc54cbe003991b5adda80c904c48df1173a20c5f2f2f7935b2bb",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00016.jsonl.zst",
+            "bytes": 12328904,
+            "sha256": "ff3e13400988dde6d16cfc67acaf470136d64d54ccbd2c127569fbe82405ea30",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00017.jsonl.zst",
+            "bytes": 11074612,
+            "sha256": "93912093c4245ce678bf033b2ace68aef283ce246246180cd13310b5a47e913d",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00018.jsonl.zst",
+            "bytes": 12703070,
+            "sha256": "1719f87a21af0eaef3273dd45f914fdb4776838d51bdf073ed8778a98917d7ef",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00019.jsonl.zst",
+            "bytes": 13849568,
+            "sha256": "cca74b7179c30b6d6c9172ad79f1655d2e2c7649563ad981e2d07dca25fea2c8",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00020.jsonl.zst",
+            "bytes": 15918800,
+            "sha256": "d6017a9e0a9ed47bc40e3d35b843bfffe58a27eca9c3a4f27e2292082882496f",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00021.jsonl.zst",
+            "bytes": 19932084,
+            "sha256": "6f8630c9a3a28c3561967cfb5dc6db1a34a2f56bb91b4ba5b26c388d23dd4101",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00022.jsonl.zst",
+            "bytes": 16902926,
+            "sha256": "278f9c3b69569239753c32674aad6085c02afb79c0fc908724c8b19afa981969",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00023.jsonl.zst",
+            "bytes": 15220019,
+            "sha256": "2fed848dff55607625a7971032be14b1e7784c3f1c9e515b9b45bc3afe885b9d",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00024.jsonl.zst",
+            "bytes": 12396778,
+            "sha256": "76d20ae3751d83a7b5ba38fd3676119aaa779db26339b8c4ade95aa10b9f68e4",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00025.jsonl.zst",
+            "bytes": 16404353,
+            "sha256": "91fa8638588d6b5cff9ed06ecd5acded357e14daf350527fa08eb348ff0d466c",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00026.jsonl.zst",
+            "bytes": 16397852,
+            "sha256": "814bef51be63c302288c56b0d00901db5d1544bf8ab55e53c023d7aae8da8498",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00027.jsonl.zst",
+            "bytes": 14955027,
+            "sha256": "7661449bb9d0f17746a93f9660b8cbfd912faec7071aac9b9fae2470e9c36bfd",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00028.jsonl.zst",
+            "bytes": 11650934,
+            "sha256": "2effd8b2f8c8dbbedb233625bbba80a52bdd9bcb1e3582483f98804f31fba8aa",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00029.jsonl.zst",
+            "bytes": 15375843,
+            "sha256": "f4ac79b4c47effb2b7e18968e498d2566949c758633ce8ce627cf59a3ee5c024",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00030.jsonl.zst",
+            "bytes": 13103887,
+            "sha256": "36f7051862db9420324667c447c76188f5467963918f5beb41922275bf7ccfee",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00031.jsonl.zst",
+            "bytes": 13222277,
+            "sha256": "f6d6a9bb8f20ff2c7b84b3dc320a591ba08a9c28ab49b4041dc49ddbe208efd8",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00032.jsonl.zst",
+            "bytes": 9796705,
+            "sha256": "48bafbdb4fc0ae93aaddbf55d833333fc0361c0a70dcd249147b1dff2eca433b",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00033.jsonl.zst",
+            "bytes": 11538186,
+            "sha256": "49daca16e79912b685243fd2e381f9defea22ae3c36b8e1d12cb977ff3649f32",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00034.jsonl.zst",
+            "bytes": 12715275,
+            "sha256": "b52ac7fe3f889bcb3282d7fb07559b36ea7a50364ca6d11cd5de0423a75afe66",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00035.jsonl.zst",
+            "bytes": 12763664,
+            "sha256": "28ebd19298e81336f3a64f4d6e38cda29fd7d1a651d7975f6329e97283e839a6",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00036.jsonl.zst",
+            "bytes": 12767948,
+            "sha256": "1ea693436a3811176f4fb6fb53784f62d7518a7a0709ec6d0e52ada0e88fa8a5",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00037.jsonl.zst",
+            "bytes": 12996827,
+            "sha256": "e56e69fdc5285f1e322c47ee52792abcf572a2cb282ad3bbc99c9c84fe6c8bf5",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00038.jsonl.zst",
+            "bytes": 12757252,
+            "sha256": "8cb09ff99ee4c46c64076bc52cf60ec070e2b5703eeb0895356dae32adf7dc0f",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00039.jsonl.zst",
+            "bytes": 11950397,
+            "sha256": "f7b8ae28771d17249bae27d3e4e51371ef53d59c9809694fdbf13890435bae9b",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00040.jsonl.zst",
+            "bytes": 12345050,
+            "sha256": "da83af3c11d8eb344128b400b08fe9ab440167dcb97b1b2f6c5d1d47eae72882",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00041.jsonl.zst",
+            "bytes": 12196019,
+            "sha256": "7a94441d81100dd70b0d86ca6a51b72d981cc8ba70b7301139920ef1cc550862",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/gutenberg_fr/part-00042.jsonl.zst",
+            "bytes": 6395220,
+            "sha256": "f04ad3d75d72ef49c8d9ebb822e8ba46f2a81ccf530128dd9e168c758b667f97",
+            "provenance_sha256": null
+          }
+        ],
+        "max_tokens": null,
+        "limit_docs": null,
+        "seed": 1337,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "format_sha256": "0f136798c214e48b7165a0d7ad937c769166869f13c384eab59afc81dbc6661c",
+        "filters": {
+          "version": "pretrain-filtres-v2",
+          "min_chars": 200,
+          "crude_regex_sha256": "cd083f939257897b",
+          "crude_min": 3,
+          "crude_per_thousand": 1.0,
+          "min_shared_13grams": 3,
+          "val_digest": "1764f3985e86180b",
+          "exclusions_sha256": "c9edd47260816c9f25d5e0cc8c753db29106aca36d9a2388a4a1909ccd5b041c"
+        },
+        "block": [
+          2000,
+          20000000
+        ]
+      }
+    },
+    {
+      "name": "wikisource",
+      "weight": 0.18,
+      "share_wanted": 0.18,
+      "tokens_available": 500000000,
+      "windows_sampled": 703604,
+      "tokens_trained": 360245248,
+      "share_real": 0.1801,
+      "passes_over_source": 0.72,
+      "key": {
+        "files": [
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00000.jsonl.zst",
+            "bytes": 2337894,
+            "sha256": "d78eeee7d280b31d1d81c784c328ba63dc37ff36887b1a5498495bf55c483f7e",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00001.jsonl.zst",
+            "bytes": 1337025,
+            "sha256": "bbcdb415737a42095cb874fa25461bd91021ed123fed1819478db909f2c5ebab",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00002.jsonl.zst",
+            "bytes": 277897,
+            "sha256": "54f02d143a0d0518eab21deaf64ba6a63bec91df0fe339e705c6061b8f4c2191",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00003.jsonl.zst",
+            "bytes": 111768,
+            "sha256": "82ac5473c6148cee5f9ba733a67bd408b269bae6c75df9e2efafd13eaafb2086",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00004.jsonl.zst",
+            "bytes": 23477071,
+            "sha256": "20197c614ff341db6edf5fbd8bc1d0559ee703584a87c7b54bfd2734c2a47b1f",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00005.jsonl.zst",
+            "bytes": 33292043,
+            "sha256": "659c66279ca78e50dd55a8b6558e22983ad450678523423c5e2c858e8428b64f",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00006.jsonl.zst",
+            "bytes": 27238975,
+            "sha256": "eea77e6d2ad4c354ce2ae0e14c432f79a72fd8d10e037e9664619ccd33192ff1",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00007.jsonl.zst",
+            "bytes": 29572463,
+            "sha256": "f5b078ae5314474d8a8522ed302ea0d58b97acb9d4002ad2cbcadd7ff369e05e",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00008.jsonl.zst",
+            "bytes": 23594131,
+            "sha256": "6512367d8dc7cd2601957fc8b0ce214aac449b0784ebd6f6c0d1be916845ab6b",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00009.jsonl.zst",
+            "bytes": 30121815,
+            "sha256": "3125f010309b1edfb4f50d0292542860e86f923f096fd4035c26bc00615ccad6",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00010.jsonl.zst",
+            "bytes": 27799169,
+            "sha256": "09792bde1e90d830a7f5b01c28ab341f075c493fee69a5cc05892e25fbaab945",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00011.jsonl.zst",
+            "bytes": 26784513,
+            "sha256": "75baac1be0f6e607685cfccb1f470a0f9d8dff43c176c76dcd3119bca795b119",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00012.jsonl.zst",
+            "bytes": 28681684,
+            "sha256": "f0699da4b8c5d86c3d4cb64d57c5b32c452e845ff0120541580f11231dd0ae6e",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00013.jsonl.zst",
+            "bytes": 31740404,
+            "sha256": "0fbed7657eab48f43f41556473fe5bfe11b6c34af26fe0b0dcb3261c15f4d0ab",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00014.jsonl.zst",
+            "bytes": 23956112,
+            "sha256": "21eafb481fe46f7d3571bf2c906f1641f7c9429818fb5dcbb47e48b8e2f45f75",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00015.jsonl.zst",
+            "bytes": 31994958,
+            "sha256": "4ab8867c8c603d76b6c4544ed0292b16a1c65dd4d56bd460d73f7ee14c01e185",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00016.jsonl.zst",
+            "bytes": 28164289,
+            "sha256": "72c3bef357077f7bb92ac820ee458e2a78db805a38d2cf7a2139e888655a9eff",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00017.jsonl.zst",
+            "bytes": 34101155,
+            "sha256": "4eb0ada3edd78708d1378a8364aacba70c370b423e2e33f081dfdf45ae561c55",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00018.jsonl.zst",
+            "bytes": 819959,
+            "sha256": "b97fd599d531d72cc0b175e9a0618ab6c1b9c0518057d5b96ea5b34023b7371f",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00019.jsonl.zst",
+            "bytes": 28219961,
+            "sha256": "a8c21df71c2c3008de1cffd724a58c6a47a17484fbad5acc085b6bd7b8fca0d7",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00020.jsonl.zst",
+            "bytes": 31231271,
+            "sha256": "ea4eb8423579d5b6d8e868b199ac6ed994e91148a0fdbd6985b65656cdef943c",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00021.jsonl.zst",
+            "bytes": 30417886,
+            "sha256": "be248612a5d24b7378007aa2db2b38e204feb18bcc08984e272fb93d9aa1e80b",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00022.jsonl.zst",
+            "bytes": 31222178,
+            "sha256": "9fd667686bdf2d5e6436ef6e73742b2ea32b42715b7b3e91a458eefcef691a25",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00023.jsonl.zst",
+            "bytes": 22746679,
+            "sha256": "d42b842d4222364a5e8e6443fbbce0dc82d6ef1a4055fceb0880238295fddc58",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00024.jsonl.zst",
+            "bytes": 32252711,
+            "sha256": "97287b84aeb306fb78354a664a7ecf4c0db5ccc14750dd09f29c28096dd0067b",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00025.jsonl.zst",
+            "bytes": 33271173,
+            "sha256": "72ddcf526932e599fca939c6202fddaf434da681f06f0bfba8b2a330bfd79230",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00026.jsonl.zst",
+            "bytes": 26779644,
+            "sha256": "72416f5b780175d5537de30805091b2a600fbf0fcf8bf65c0f7a72fa4e812e5e",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00027.jsonl.zst",
+            "bytes": 26605434,
+            "sha256": "722c7d11da9d439d508b3209f9c4d0bf0bdd1124f81fd0d57478f2ed0592e158",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00028.jsonl.zst",
+            "bytes": 28144056,
+            "sha256": "f25c8ecc246c7f55cf43f00d82542829591197e62c8ed53737847f6e8cf5edcc",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00029.jsonl.zst",
+            "bytes": 33746550,
+            "sha256": "911322805f765832438ecc3f849aea46f41f03aedde8343c9e6e13c4ddf1d63c",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00030.jsonl.zst",
+            "bytes": 32947828,
+            "sha256": "a1a0b1ddd50f12cb5d646d0e59170042b21add6f5567bba37935ab9249c1be15",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00031.jsonl.zst",
+            "bytes": 32649791,
+            "sha256": "a31a7a336216a14bdac6e792a5fb70a13922cefd23975ff6f8087059ffe59b5d",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00032.jsonl.zst",
+            "bytes": 23578186,
+            "sha256": "3b63e2162f7273bd0f0692eb318b7efbf7eb580be63696e53abe5fdbc9859e81",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00033.jsonl.zst",
+            "bytes": 24906491,
+            "sha256": "7e8732c1309f433819f73c5b5cf4fde62daea9d94921e3b68341cd5f9eb6f582",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00034.jsonl.zst",
+            "bytes": 28082245,
+            "sha256": "036783f01a87729a2ab6c4ab52fddb42ccb7d90e9868a9817abf5655567df54a",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00035.jsonl.zst",
+            "bytes": 28312566,
+            "sha256": "9560e890321ed7c5267ba3bf231cecb72674a04ce56db35154d8d92e28152e05",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00036.jsonl.zst",
+            "bytes": 24983554,
+            "sha256": "e8bd2f0d14decb03960b84772d10382a147b9f33102e38314ec259aa1e31ac81",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00037.jsonl.zst",
+            "bytes": 31443276,
+            "sha256": "d9d7d87d0fb58fc037f03de54dd227c56232e1a7770ce67d1eabae68c40c835b",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00038.jsonl.zst",
+            "bytes": 30510984,
+            "sha256": "419bde926cba00bddef63815716d80af8f051cdb4a9be80f7d0e11fb9bb8f2af",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00039.jsonl.zst",
+            "bytes": 26869913,
+            "sha256": "d9973c3d48422372709029d6156d4b3ad607aa21cb813efe062c70f985a2a09a",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00040.jsonl.zst",
+            "bytes": 31366335,
+            "sha256": "1808a4259eab06f5de48ad72af6be801f772b180b04ae33db1ab290a39327f08",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00041.jsonl.zst",
+            "bytes": 25684030,
+            "sha256": "509e6a7f4f35e8e5ee758e21baa1b4411533867f00bdcecf71bcf5e0fa88e98a",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00042.jsonl.zst",
+            "bytes": 25817232,
+            "sha256": "91922e9d981d4784c14d761aab5cdd4b704441be1cfb7a509bfe5678ef07b113",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00043.jsonl.zst",
+            "bytes": 26523313,
+            "sha256": "0d0fad393ae5bef4489aa8d38f82bf8c950302ade6622b6b55e34e030b4aa484",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00044.jsonl.zst",
+            "bytes": 27995129,
+            "sha256": "78ab138d5e8f222cbe59f1349cd089c8b7dd540057bb91f8924df2fb4f42e843",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00045.jsonl.zst",
+            "bytes": 23438974,
+            "sha256": "7b1895a8fc5eacf249efd4abdd96c81a53e5a175126d8c890d84a7ae3eda1a3e",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00046.jsonl.zst",
+            "bytes": 25071046,
+            "sha256": "c37d30c952c72d9a281ad27f5a77820fc224a0d97c11d52c9278c1cc0929ab0d",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00047.jsonl.zst",
+            "bytes": 24704174,
+            "sha256": "d3d871e25f7d79047ace3f66d50e22eb9b8676fb00b14382c183a646abc6dbe6",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00048.jsonl.zst",
+            "bytes": 26734399,
+            "sha256": "ce9a5bf9dd5735106ef6538afee6d9166a656eea6e369857a720222c189c9f0c",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00049.jsonl.zst",
+            "bytes": 26334658,
+            "sha256": "e9fa81d720a391613cda96a0ed4942005f58fcbf0cd76067bc758b4b3d4a1e8c",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00050.jsonl.zst",
+            "bytes": 24172520,
+            "sha256": "c7e9dd4455dd9bbb25b67c313d2d22e657e474b4ce809fd73a3f7a5b57721489",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00051.jsonl.zst",
+            "bytes": 25531477,
+            "sha256": "a0f2560c85b226c5616aceedc04bb762b6e0bbed55e785394e3517113d879249",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00052.jsonl.zst",
+            "bytes": 26252476,
+            "sha256": "e819146b9816cb2286e68b96beb7b4b9d5bff060c35fefd7e81fa99b79cb0229",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00053.jsonl.zst",
+            "bytes": 31459080,
+            "sha256": "ad4f81ef93266cd0a764d27484f68eea8c96cc6324704f28da4ef106bb31de01",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00054.jsonl.zst",
+            "bytes": 34064833,
+            "sha256": "418706f42466f07c1b8b6438f54236a14a6e677a3ba6613c72c1517e174aafe7",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00055.jsonl.zst",
+            "bytes": 727300,
+            "sha256": "a84c87342b1b54511cf728fa2105a5019b2355b83ff5cc523f1041ee07668a93",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00056.jsonl.zst",
+            "bytes": 28345891,
+            "sha256": "6858c57e657fb93affb37788fcb23be9a824eb27202917110eb3743832d45a32",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00057.jsonl.zst",
+            "bytes": 33847648,
+            "sha256": "6f0bba7062a589bf98670a78bfbf57ab6930873eadab93e851c504bc24c51b13",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00058.jsonl.zst",
+            "bytes": 1916606,
+            "sha256": "a3dd3417c2a3264579452036ec8fd69e5993de973b91fb0606cf4f17d361c608",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00059.jsonl.zst",
+            "bytes": 25032397,
+            "sha256": "efe0212652aa624d31eb57712c4910b263cbdc8bcde00adb58428f8148482935",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00060.jsonl.zst",
+            "bytes": 32971732,
+            "sha256": "7e12b73e959a3a993348f506a98dc3a9f7cabd15145b66151ff54d6acd9540c2",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00061.jsonl.zst",
+            "bytes": 25918526,
+            "sha256": "e8365698605aae4990f8055cb406d7ef0e824340c796e2311ba44bb5c8677713",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00062.jsonl.zst",
+            "bytes": 30889730,
+            "sha256": "1e422637d4e510ddb73f719de9a232d57d1b6de45996ab1c1cf8b8d17315548e",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00063.jsonl.zst",
+            "bytes": 20417987,
+            "sha256": "3ea8980f91ff34535b9de82bda5d4515d8318bc94e909a944c8ef90d119e6e36",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00064.jsonl.zst",
+            "bytes": 28228148,
+            "sha256": "2a9cbd75be17178a064c06209f1af120023f7322bc4857f6fd6003b19267c9ec",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00065.jsonl.zst",
+            "bytes": 34304817,
+            "sha256": "2d2a349d7d7eb0e0a75ebc43334686783b7acf9060cb3aabe278404a1e3bbb78",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00066.jsonl.zst",
+            "bytes": 663951,
+            "sha256": "6ca3f7e394b52b5bbf22d97ab166452dcc62e40454c9e2c8e52ac8f09f3bed6b",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00067.jsonl.zst",
+            "bytes": 21765339,
+            "sha256": "088f48a0da9f711d4e515e06a1175468670425111cbe5178f3e3d8ea6ecec215",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00068.jsonl.zst",
+            "bytes": 33599451,
+            "sha256": "1abf89b1046bbb37b9de0825a89233236e4d893a8d2c39f5204d6cd943be048a",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00069.jsonl.zst",
+            "bytes": 27492288,
+            "sha256": "5a14cab35fcfb9672693d9f03ed0706b5576ea64a5ea6af32192011bedb69e4f",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00070.jsonl.zst",
+            "bytes": 27713235,
+            "sha256": "b16d8ba46df4c885512d51cd3bf709b8790ba7da717a9d9328c5294b275ab3cf",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00071.jsonl.zst",
+            "bytes": 34431143,
+            "sha256": "8471cf9c5dbd20c4896d8308946f755d2a54d95d139f8f4398104dba70c775f1",
+            "provenance_sha256": null
+          },
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikisource_fr/part-00072.jsonl.zst",
+            "bytes": 1251806,
+            "sha256": "c705c84316bbcd83158d6bad6a8edd7889711f493a6f2a99331807bc332b3818",
+            "provenance_sha256": null
+          }
+        ],
+        "max_tokens": 500000000,
+        "limit_docs": null,
+        "seed": 1337,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "format_sha256": "0f136798c214e48b7165a0d7ad937c769166869f13c384eab59afc81dbc6661c",
+        "filters": {
+          "version": "pretrain-filtres-v2",
+          "min_chars": 200,
+          "crude_regex_sha256": "cd083f939257897b",
+          "crude_min": 3,
+          "crude_per_thousand": 1.0,
+          "min_shared_13grams": 3,
+          "val_digest": "1764f3985e86180b",
+          "exclusions_sha256": "c9edd47260816c9f25d5e0cc8c753db29106aca36d9a2388a4a1909ccd5b041c"
+        },
+        "block": [
+          2000,
+          20000000
+        ]
+      }
+    },
+    {
+      "name": "melange",
+      "weight": 0.12,
+      "share_wanted": 0.12,
+      "tokens_available": 112808606,
+      "windows_sampled": 468891,
+      "tokens_trained": 240072192,
+      "share_real": 0.12,
+      "passes_over_source": 2.128,
+      "key": {
+        "files": [
+          {
+            "path": "data/mixes/full_reference_masked_20261110/train.jsonl.gz",
+            "bytes": 155287288,
+            "sha256": "910ae65f995bc3bc4685532b551422c0e3694f3eec6e474907f8fea96823dd7d",
+            "provenance_sha256": "e129e72468ef6ae205838460afbcecfceb7c34b3f8245ee9b70f9290ceb3de4e"
+          }
+        ],
+        "max_tokens": null,
+        "limit_docs": null,
+        "seed": 1337,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "format_sha256": "0f136798c214e48b7165a0d7ad937c769166869f13c384eab59afc81dbc6661c",
+        "filters": {
+          "version": "pretrain-filtres-v2",
+          "min_chars": 200,
+          "crude_regex_sha256": "cd083f939257897b",
+          "crude_min": 3,
+          "crude_per_thousand": 1.0,
+          "min_shared_13grams": 3,
+          "val_digest": "1764f3985e86180b",
+          "exclusions_sha256": "c9edd47260816c9f25d5e0cc8c753db29106aca36d9a2388a4a1909ccd5b041c"
+        },
+        "block": [
+          2000,
+          20000000
+        ]
+      }
+    },
+    {
+      "name": "wikinews",
+      "weight": 0.01,
+      "share_wanted": 0.01,
+      "tokens_available": 6761081,
+      "windows_sampled": 38737,
+      "tokens_trained": 19833344,
+      "share_real": 0.0099,
+      "passes_over_source": 2.933,
+      "key": {
+        "files": [
+          {
+            "path": "data/stages/nettoye/08_exact_dedup/wikinews_fr/part-00000.jsonl.zst",
+            "bytes": 9514256,
+            "sha256": "ac61f4873ccd7bb217a8c207e93728fbc4ebd806837afdb4fbe8c4dbf77fe8a8",
+            "provenance_sha256": null
+          }
+        ],
+        "max_tokens": null,
+        "limit_docs": null,
+        "seed": 1337,
+        "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+        "format_sha256": "0f136798c214e48b7165a0d7ad937c769166869f13c384eab59afc81dbc6661c",
+        "filters": {
+          "version": "pretrain-filtres-v2",
+          "min_chars": 200,
+          "crude_regex_sha256": "cd083f939257897b",
+          "crude_min": 3,
+          "crude_per_thousand": 1.0,
+          "min_shared_13grams": 3,
+          "val_digest": "1764f3985e86180b",
+          "exclusions_sha256": "c9edd47260816c9f25d5e0cc8c753db29106aca36d9a2388a4a1909ccd5b041c"
+        },
+        "block": [
+          2000,
+          20000000
+        ]
+      }
+    }
+  ],
+  "val": {
+    "path": "data/stages/chatbot_20261112/theatre/moliere_val.jsonl.zst",
+    "sha256": "6e7d26d14598666ea6c298104cd19c63fb566a13b9fb3a064ebc7ed06b2c5a6b",
+    "windows": 140
+  },
+  "val_step0": {
+    "step": 0,
+    "tokens_seen": 0,
+    "lr": 0.0,
+    "train_loss": null,
+    "val_loss": 9.11227,
+    "val_bpb": 3.87695,
+    "tokens_per_s": null,
+    "seconds": 0.2
+  },
+  "best": {
+    "step": 30518,
+    "tokens_seen": 2000027648,
+    "lr": 8.000000203891161e-05,
+    "train_loss": 2.67149,
+    "val_loss": 2.65556,
+    "val_bpb": 1.12985,
+    "tokens_per_s": 333977,
+    "seconds": 5988.5,
+    "val_loss_exact": 2.6555588846508575
+  },
+  "seconds": 5988.8,
+  "resumed_from_steps": [],
+  "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+  "pretrain_sha256": "4c4474e0b25a935c2224045de4064a4079eb4955dd99e0a44328fc26c2d108aa",
+  "format_sha256": "0f136798c214e48b7165a0d7ad937c769166869f13c384eab59afc81dbc6661c",
+  "data_meta_sha256": "066e1be2f1b91e07866e7998220bdd92d1b31e3fe09adb569900067b30ac3daf",
+  "torch": "2.15.0+cu132"
+}

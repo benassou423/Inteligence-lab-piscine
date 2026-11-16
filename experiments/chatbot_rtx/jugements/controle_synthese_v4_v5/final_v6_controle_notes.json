@@ -1,0 +1,1424 @@
+{
+ "lecteurs": 3,
+ "conversations_notees": 120,
+ "sans_defaut_majorite": 109,
+ "F": 117,
+ "R": 115,
+ "V": 120,
+ "S": 116,
+ "sans_defaut_par_lecteur": [
+  110,
+  109,
+  107
+ ],
+ "unanimes": 113,
+ "avec_defaut": [
+  {
+   "numero": 20,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« le monde est plein de gens malhonnêtes » : sans rapport avec travail pénible et solitude ; « revenir ainsi? » mal ponctué.",
+    "« le monde est plein de gens malhonnêtes » : sans rapport avec le travail pénible et la solitude évoqués.",
+    "« le monde est plein de gens malhonnêtes » : sans rapport avec le travail pénible et la solitude évoqués."
+   ]
+  },
+  {
+   "numero": 27,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 0,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Un batteur suffit » : ustensile moderne introduit par B ; « Le calcul prime », « Je reste sceptique » peu cohérents.",
+    "« Problème est plutôt manque d'oeufs » agrammatical ; « Un batteur suffit » : ustensile moderne introduit par B.",
+    "« Problème est plutôt manque d'oeufs » agrammatical ; « Un batteur suffit » ustensile moderne ; « Le calcul prime » obscur."
+   ]
+  },
+  {
+   "numero": 34,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Vous semblez en être l'exemple parfait » : B retourne l'oubli contre A, rôles confondus ; « renvoyer ce papier » incohérent.",
+    "« Vous semblez en être l'exemple parfait » : rôles inversés, A demandait si B avait oublié le texte.",
+    "« Vous semblez en être l'exemple parfait. Veuillez me renvoyer ce papier » : retourne l'oubli contre A, rôles confondus."
+   ]
+  },
+  {
+   "numero": 52,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« le luxe coûte toujours fort onéreux » : construction fautive (coûter cher / être onéreux).",
+    "« le luxe coûte toujours fort onéreux » : construction fautive (coûter cher / être onéreux).",
+    "« le luxe coûte toujours fort onéreux » : construction fautive (coûter onéreux)."
+   ]
+  },
+  {
+   "numero": 56,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Certainement. Quel ridicule! » puis « Absolument. Quelle étrange sottise! » : approuve et raille à la fois, n'explique rien.",
+    "« Certainement. Quel ridicule! Vous divaguez » : acquiesce puis contredit ; « Comment ça fonctionne? » reste sans réponse.",
+    "« Certainement. Quel ridicule! Vous divaguez » se contredit ; « Le bon sens manque » ne répond pas à « Comment ça fonctionne ? »."
+   ]
+  },
+  {
+   "numero": 75,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« C'est une peccadure » : mot inventé (peccadille), repris ensuite comme s'il existait.",
+    "« C'est une peccadure » : mot inventé (peccadille), repris ensuite et défini comme s'il existait.",
+    "« C'est une peccadure » : mot inventé (pour peccadille), repris ensuite comme s'il existait."
+   ]
+  },
+  {
+   "numero": 80,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 0,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Ma présence est actée. Je m'ennuie ferme. » : jargon administratif et familier d'aujourd'hui dans la bouche de B.",
+    "« Ma présence est actée » : tournure administrative moderne employée par B de lui-même.",
+    "« Ma présence est actée » : jargon administratif d'aujourd'hui ; « Je m'ennuie ferme » familier moderne."
+   ]
+  },
+  {
+   "numero": 102,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "100",
+   "defauts": [
+    "À « Bonne journée à vous », B répond « Certes, mes médecins m'assurent que je vais guérir! » : salut non rendu.",
+    "« Certes, mes médecins m'assurent que je vais guérir! » ne rend pas le « Bonne journée à vous », hors sujet."
+   ]
+  },
+  {
+   "numero": 112,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 0,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "010",
+   "defauts": [
+    "« Plaisir partagé. » : formule de politesse d'aujourd'hui, sans tournure classique.",
+    "« Plaisir partagé. » : formule de politesse d'aujourd'hui, sans tournure classique."
+   ]
+  },
+  {
+   "numero": 114,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Secouez donc votre tristesse… s'abandonner à l'ennui » : A parle d'un oreiller inconfortable, pas de tristesse.",
+    "« Secouez donc votre tristesse… l'ennui » : A parlait d'un oreiller inconfortable, pas de tristesse.",
+    "« Secouez donc votre tristesse » : A parle d'un oreiller inconfortable, pas de tristesse ni d'ennui."
+   ]
+  },
+  {
+   "numero": 115,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 0,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "010",
+   "defauts": [
+    "« Ce moyen de transport est admirable » : B parle du train en connaisseur, expression moderne, aucun étonnement.",
+    "« Ce moyen de transport est admirable pour sa célérité » : locution moderne, B connaît le train sans étonnement."
+   ]
+  }
+ ],
+ "impressions": [
+  "Fichier lu en entier (120 conversations). 110 sur 120 sans défaut relevé (environ 92 %). Le vouvoiement de B est tenu partout : aucun tutoiement adressé à A sur les 120. Le français de B est presque toujours correct et fini ; deux fautes nettes seulement (mot inventé « peccadure » au n° 75, « coûte fort onéreux » au n° 52). Les défauts les plus fréquents sont de pertinence (n° 20, 34, 56, 114 : réponse à côté, rôles retournés, approbation et raillerie mêlées) et de style (n° 27 « batteur », 80 « présence actée », 112 « Plaisir partagé », 115 « moyen de transport » dit sans étonnement). Points faibles non sanctionnés mais récurrents : répliques de B en trois phrases très courtes dont la dernière est plaquée (« Le calcul prime », « Je reste sceptique », « Vous m'estimez ainsi! ») ; rengaines (« Venez voir ma troupe », « Quel malheur vous accable », « Considérez… », définitions de mots que B n'a jamais prononcés : coquin, maraudeur, fronde, lancée) ; tournures un peu gauches (« Votre peine m'est regrettable », « Vous me portez là un portrait », « Je vous souhaite un salut pieux ») ; conseils peu utiles qui esquivent la question (n° 26, 33, 70). Les messages de A en style télégraphique (« Avis père âgé volant? », « Problème est plutôt manque d'oeufs ») n'ont pas été comptés comme fautes de F, étant le parler pressé de l'utilisateur ; un lecteur plus sévère pourrait les sanctionner. Le « Bonjour » ou « Salut » de A placé en milieu de conversation (n° 9, 22, 75, 103, 113) est artificiel mais n'affecte pas B.",
+  "Fichier lu en entier (120 conversations). 109 sur 120 sont sans défaut selon mes critères (environ 91 %) ; 11 portent au moins un défaut : R = 6 (n° 20, 34, 56, 70, 102, 114), F = 4 (n° 27, 52, 57, 75), S = 2 (n° 27, 80), V = 0. Le vouvoiement de B est tenu partout, y compris quand A tutoie : aucun « tu » relevé. Le registre classique est globalement solide (adresses monsieur/madame, « ne … point », maximes), et B ne reprend presque jamais de lui-même un mot moderne ; les deux écarts relevés sont « Un batteur suffit » et « Ma présence est actée ». Les défauts de français sont rares et ponctuels : un mot inventé (« peccadure », aggravé par le fait que B le définit ensuite), une construction fautive (« coûte fort onéreux »), et deux répliques de A en style télégraphique agrammatical (« Problème est plutôt manque d'oeufs », « Avis père âgé volant? »). La faiblesse principale est la pertinence : quelques réponses passe-partout ou égocentrées qui ne répondent pas (salut non rendu chez Argan, « Oui, mais le temps nous échappe » pour le décalage horaire, inversion des rôles au n° 34, acquiescement contradictoire de Dorine au n° 56). Remarques non sanctionnées mais à surveiller : tics récurrents (« Considérez… », « Venez voir ma troupe », « Votre état m'est fort regrettable »), tournures bancales tolérées (« Vous me portez là un portrait », « Votre peine m'est regrettable », « Plaisir partagé », « réponse positive », « moyen de transport »), réponses par maxime qui esquivent la question « comment » (n° 33, 116), et côté A des incohérences de script (« Bonjour » au troisième tour aux n° 9, 22, 75, 113 ; demande de définition d'un mot que B n'a jamais prononcé aux n° 39, 62, 70, 71, 114). J'ai noté strictement sur R dans quatre cas discutables (n° 20, 70, 102, 114) : un autre lecteur pourrait les accepter comme réactions de caractère.",
+  "Lecture intégrale des 120 conversations : 107 sans défaut (89 %), 13 avec au moins un défaut. Le vouvoiement est tenu partout (V = 120/120), y compris quand A tutoie. Les défauts se répartissent ainsi : R = 6 (n° 20, 23, 34, 56, 102, 114 : réponse à côté, contradiction interne ou rôles retournés), F = 4 (n° 27, 50, 52, 75 : mot inventé « peccadure », collocations fautives « portez un portrait », « coûte fort onéreux », réplique de A agrammaticale), S = 4 (n° 27, 80, 112, 115 : « batteur », « présence actée », « Plaisir partagé », « moyen de transport »). Le français de B est globalement propre, fini, sans phrases coupées ni caractères parasites. Faiblesses non sanctionnées mais récurrentes : style en trois phrases très courtes parfois décousues (« Le calcul prime », « Vous m'estimez ainsi! »), maximes qui réagissent sans vraiment répondre aux questions « comment » (n° 26, 33), tic « Venez voir ma troupe » pour Molière et « mes médecins » pour Argan, tournure bancale « Votre état/peine m'est regrettable » (n° 20, 111), B qui accepte parfois un objet moderne sans étonnement (stylo, chargeur, décalage horaire). Plusieurs répliques de A sont télégraphiques ou incongrues (« Bonjour » en milieu d'échange, questions de vocabulaire sur un mot que B n'a pas employé), ce qui ne dépend pas de B mais reste dans les données. Cas limites laissés à 1 : n° 16, 49, 70, 103 (rapport ténu mais défendable), n° 48 et 79 (« réponse positive », « orchestrer » légèrement modernes)."
+ ],
+ "lignes": [
+  {
+   "numero": 1,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 2,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 3,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 4,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 5,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 6,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 7,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 8,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 9,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 10,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 11,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 12,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 13,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 14,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 15,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 16,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 17,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 18,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 19,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 20,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« le monde est plein de gens malhonnêtes » : sans rapport avec travail pénible et solitude ; « revenir ainsi? » mal ponctué.",
+    "« le monde est plein de gens malhonnêtes » : sans rapport avec le travail pénible et la solitude évoqués.",
+    "« le monde est plein de gens malhonnêtes » : sans rapport avec le travail pénible et la solitude évoqués."
+   ]
+  },
+  {
+   "numero": 21,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 22,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 23,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "110",
+   "defauts": [
+    "« Le malheur m'accompagne depuis ma naissance » ne répond pas à « D'où vient Monsieur Argan ? »."
+   ]
+  },
+  {
+   "numero": 24,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 25,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 26,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 27,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 0,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Un batteur suffit » : ustensile moderne introduit par B ; « Le calcul prime », « Je reste sceptique » peu cohérents.",
+    "« Problème est plutôt manque d'oeufs » agrammatical ; « Un batteur suffit » : ustensile moderne introduit par B.",
+    "« Problème est plutôt manque d'oeufs » agrammatical ; « Un batteur suffit » ustensile moderne ; « Le calcul prime » obscur."
+   ]
+  },
+  {
+   "numero": 28,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 29,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 30,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 31,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 32,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 33,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 34,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Vous semblez en être l'exemple parfait » : B retourne l'oubli contre A, rôles confondus ; « renvoyer ce papier » incohérent.",
+    "« Vous semblez en être l'exemple parfait » : rôles inversés, A demandait si B avait oublié le texte.",
+    "« Vous semblez en être l'exemple parfait. Veuillez me renvoyer ce papier » : retourne l'oubli contre A, rôles confondus."
+   ]
+  },
+  {
+   "numero": 35,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 36,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 37,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 38,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 39,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 40,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 41,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 42,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 43,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 44,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 45,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 46,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 47,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 48,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 49,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 50,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "110",
+   "defauts": [
+    "« Vous me portez là un portrait » : collocation fautive (on fait ou dresse un portrait)."
+   ]
+  },
+  {
+   "numero": 51,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 52,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« le luxe coûte toujours fort onéreux » : construction fautive (coûter cher / être onéreux).",
+    "« le luxe coûte toujours fort onéreux » : construction fautive (coûter cher / être onéreux).",
+    "« le luxe coûte toujours fort onéreux » : construction fautive (coûter onéreux)."
+   ]
+  },
+  {
+   "numero": 53,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 54,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 55,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 56,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Certainement. Quel ridicule! » puis « Absolument. Quelle étrange sottise! » : approuve et raille à la fois, n'explique rien.",
+    "« Certainement. Quel ridicule! Vous divaguez » : acquiesce puis contredit ; « Comment ça fonctionne? » reste sans réponse.",
+    "« Certainement. Quel ridicule! Vous divaguez » se contredit ; « Le bon sens manque » ne répond pas à « Comment ça fonctionne ? »."
+   ]
+  },
+  {
+   "numero": 57,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "101",
+   "defauts": [
+    "« Avis père âgé volant? » : suite de mots sans syntaxe, sens ambigu (côté A)."
+   ]
+  },
+  {
+   "numero": 58,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 59,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 60,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 61,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 62,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 63,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 64,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 65,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 66,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 67,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 68,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 69,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 70,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "101",
+   "defauts": [
+    "« Oui, mais le temps nous échappe… Je dois m'occuper de ma troupe » : ne répond pas au décalage horaire."
+   ]
+  },
+  {
+   "numero": 71,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 72,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 73,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 74,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 75,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« C'est une peccadure » : mot inventé (peccadille), repris ensuite comme s'il existait.",
+    "« C'est une peccadure » : mot inventé (peccadille), repris ensuite et défini comme s'il existait.",
+    "« C'est une peccadure » : mot inventé (pour peccadille), repris ensuite comme s'il existait."
+   ]
+  },
+  {
+   "numero": 76,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 77,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 78,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 79,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 80,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 0,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Ma présence est actée. Je m'ennuie ferme. » : jargon administratif et familier d'aujourd'hui dans la bouche de B.",
+    "« Ma présence est actée » : tournure administrative moderne employée par B de lui-même.",
+    "« Ma présence est actée » : jargon administratif d'aujourd'hui ; « Je m'ennuie ferme » familier moderne."
+   ]
+  },
+  {
+   "numero": 81,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 82,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 83,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 84,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 85,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 86,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 87,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 88,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 89,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 90,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 91,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 92,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 93,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 94,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 95,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 96,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 97,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 98,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 99,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 100,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 101,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 102,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "100",
+   "defauts": [
+    "À « Bonne journée à vous », B répond « Certes, mes médecins m'assurent que je vais guérir! » : salut non rendu.",
+    "« Certes, mes médecins m'assurent que je vais guérir! » ne rend pas le « Bonne journée à vous », hors sujet."
+   ]
+  },
+  {
+   "numero": 103,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 104,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 105,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 106,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 107,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 108,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 109,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 110,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 111,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 112,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 0,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "010",
+   "defauts": [
+    "« Plaisir partagé. » : formule de politesse d'aujourd'hui, sans tournure classique.",
+    "« Plaisir partagé. » : formule de politesse d'aujourd'hui, sans tournure classique."
+   ]
+  },
+  {
+   "numero": 113,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 114,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Secouez donc votre tristesse… s'abandonner à l'ennui » : A parle d'un oreiller inconfortable, pas de tristesse.",
+    "« Secouez donc votre tristesse… l'ennui » : A parlait d'un oreiller inconfortable, pas de tristesse.",
+    "« Secouez donc votre tristesse » : A parle d'un oreiller inconfortable, pas de tristesse ni d'ennui."
+   ]
+  },
+  {
+   "numero": 115,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 0,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "010",
+   "defauts": [
+    "« Ce moyen de transport est admirable » : B parle du train en connaisseur, expression moderne, aucun étonnement.",
+    "« Ce moyen de transport est admirable pour sa célérité » : locution moderne, B connaît le train sans étonnement."
+   ]
+  },
+  {
+   "numero": 116,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 117,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 118,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 119,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 120,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  }
+ ]
+}

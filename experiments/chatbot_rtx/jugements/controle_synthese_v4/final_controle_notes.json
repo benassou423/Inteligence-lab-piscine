@@ -1,0 +1,1352 @@
+{
+ "lecteurs": 3,
+ "conversations_notees": 120,
+ "sans_defaut_majorite": 113,
+ "F": 118,
+ "R": 116,
+ "V": 120,
+ "S": 119,
+ "sans_defaut_par_lecteur": [
+  113,
+  114,
+  111
+ ],
+ "unanimes": 113,
+ "avec_defaut": [
+  {
+   "numero": 3,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 0,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Oui, je les ai supprimées » : Dorine s'approprie sans étonnement un geste moderne (effacer des photos).",
+    "« Oui, je les ai supprimées » : B manie les photos effacées comme un familier, sans étonnement.",
+    "« Oui, je les ai supprimées » : Dorine s'attribue d'elle-même la suppression de photos, geste moderne, sans étonnement."
+   ]
+  },
+  {
+   "numero": 14,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Est-ce que wouldyou mean par naturel » : anglais parasite, phrase de A incorrecte.",
+    "« Est-ce que wouldyou mean par naturel » : anglais parasite dans la réplique de A.",
+    "« Est-ce que wouldyou mean par naturel » : anglais parasite dans la réplique de A."
+   ]
+  },
+  {
+   "numero": 28,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Consultez donc un médecin! » pour une soupe trop salée : conseil sans rapport avec le problème.",
+    "« Consultez donc un médecin » pour une soupe trop salée : conseil hors sujet, ne répond pas.",
+    "« Consultez donc un médecin! » : conseil sans rapport avec une soupe trop salée, et B y persiste."
+   ]
+  },
+  {
+   "numero": 42,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Hélas, mon état m'épuise totalement! » : ne répond pas à l'inquiétude de A sur l'usage des braises.",
+    "« Hélas, mon état m'épuise totalement! » : ignore la question sur l'usage des braises.",
+    "« Hélas, mon état m'épuise totalement! » : Argan ignore la question sur les braises et ne parle que de lui."
+   ]
+  },
+  {
+   "numero": 62,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "010",
+   "defauts": [
+    "« Monsieur mérite d'être châtié » : vise A alors que A parlait d'un tiers ; confusion des rôles.",
+    "« Monsieur mérite d'être châtié » : semble imputer à A la faute du tiers qu'il décrit, rôles confondus."
+   ]
+  },
+  {
+   "numero": 86,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "001",
+   "defauts": [
+    "« fort inconvenable » : mot non standard, on attend « inconvenant ».",
+    "« fort inconvenable » : mot déformé (inconvenant) ; « trop d'honneur en me croyant si fragile » est illogique."
+   ]
+  },
+  {
+   "numero": 95,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "100",
+   "defauts": [
+    "« Prenez donc un lavement immédiat » : sans rapport avec un retard au bureau.",
+    "« Prenez donc un lavement immédiat » : sans rapport avec un retard au bureau, puis « mort imminente »."
+   ]
+  }
+ ],
+ "impressions": [
+  "Fichier lu en entier (120 conversations). 113 sur 120 sans défaut selon ma lecture ; 7 défauts cités : F (14 : « wouldyou mean » ; 86 : « inconvenable », mot rare dont je ne suis pas certain qu'il soit fautif), R (28, 42, 62), S (3, 78). Vouvoiement de B irréprochable : aucun tutoiement relevé. Le français de B est propre, fini, de tournure classique constante (« certes », « hélas », « ne ... point », « monsieur/madame »).\n\nFaiblesses non sanctionnées mais visibles à la lecture, à connaître avant entraînement :\n- tic très récurrent « consultez un médecin » chez tous les personnages, y compris hors Argan (14, 28, 33, 35, 53, 74, 77, 93, 104) ; je ne l'ai compté en R=0 que pour la soupe trop salée (28) ;\n- ouvertures de réplique mécaniques au 2e et 3e tour (« Certes, », « Hélas, », « Certainement, »), parfois sans valeur logique (« Hélas, la ruse est nécessaire », « Prudemment, sachez que ») ;\n- réponses souvent évasives ou sentencieuses plutôt qu'informatives (2, 10, 44, 49, 87, 100), rapport au propos réel mais ténu ;\n- messages de A parfois artificiels : style télégraphique (« Bonjour, conseil pratique retard bureau 9h »), heures plaquées (« à midi », « à 14h »), questions de vocabulaire gabarit (« C'est quoi l'idiome pour dire ça? ») ;\n- adresse « Monsieur + 3e personne » ambiguë (20, 21, 62, 93) ; quelques incohérences de personnage (Dorine avec perruque et « rang » en 69, Argan disant « madame » à Toinette).\nCas limites laissés à 1 : « un suivi rigoureux » (39), « mémorisé » (75), « désamorcer » (73), modernes mais neutres ; « Puisse l'année venir vous apporter » (16), analysable.",
+  "Fichier lu en entier (120 conversations). 114 sur 120 sans défaut selon ma lecture ; 6 défauts : n° 3 (S), 14 (F), 28 (R), 42 (R), 86 (F), 95 (R). Le vouvoiement de B est tenu partout (aucun tutoiement relevé), et B n'introduit jamais de lui-même un mot moderne ; le seul défaut de style est le n° 3, où Dorine dit avoir « supprimé » des photos sans étonnement. Le français est propre et fini, sauf un fragment d'anglais dans une réplique de A (n° 14, « wouldyou mean ») et un mot douteux (n° 86, « inconvenable », que je tiens pour une déformation d'« inconvenant » sans en être certain). Le point faible réel est la pertinence : le tic « consultez un médecin / lavement » revient très souvent (n° 14, 28, 33, 35, 53, 74, 77, 93, 95, 104) ; je ne l'ai compté en défaut que lorsqu'il est franchement hors sujet (soupe trop salée, retard au bureau), mais sa fréquence risque d'être apprise comme réponse passe-partout par le modèle. Cas limites laissés à 1 par souci de justice : n° 9 (« mes comédiens m'attendent » après un merci), n° 10 (réponses vagues de Jourdain), n° 19 (« l'orgueil de la jeunesse » non motivé), n° 62 (« Monsieur mérite d'être châtié » ambigu entre A et le tiers), n° 87 (B redemande ce qui se passe), n° 92 (« dupes » au pluriel), n° 78 (« lire une telle plainte » sort du cadre théâtral), n° 39 et 75 (« suivi », « mémorisé », légèrement modernes). Plusieurs répliques de A sont télégraphiques ou bancales (n° 48, 73, 95, 112) sans être fautives. Les répliques de B sont souvent hachées en trois phrases très courtes et ouvrent mécaniquement par « Certes / Hélas / Certainement », parfois sans lien logique avec ce qui précède : ce n'est pas un défaut au sens des critères, mais un style répétitif.\"",
+  "Fichier lu en entier (120 conversations). 111 sur 120 sans défaut selon ma lecture (92,5 %) ; 9 défauts : R x6 (n° 10, 28, 42, 62, 87, 95), F x2 (n° 14, 79), S x1 (n° 3). Aucun tutoiement de B relevé : le vouvoiement est tenu partout, y compris quand A tutoie. Le français de B est propre, fini, sans mot déformé ; le seul vrai déchet de langue est côté A (« wouldyou mean », n° 14) et un solécisme de B (« m'en éclairer la cause », n° 79). Le ton classique est constant (monsieur/madame, « ne … point », « fort », « hélas ») et B n'introduit presque jamais de mot moderne.\n\nFaiblesses récurrentes, la plupart non sanctionnées car en deçà d'un défaut citable : (1) le réflexe « consultez un médecin » revient très souvent (n° 14, 28, 33, 35, 53, 74, 77, 93, 104) et devient hors sujet quand le problème n'a rien de médical (n° 28) ; les personas hypocondriaques (Argan) dérivent vers leur propre santé au point d'ignorer la question (n° 42, 95) ; (2) attaques de réplique mécaniques « Certes / Certainement / Hélas », y compris en réponse à une question ouverte (n° 10, 38, 77, 78) ; (3) « Monsieur/Madame » employé à la troisième personne pour désigner A, ce qui crée une ambiguïté quand A parle d'un tiers (n° 62) ; (4) formules passe-partout réutilisables après n'importe quel message (« Quel malheureux divertissement », « Que se passe-t-il? », n° 32, 87) ; (5) schéma « Je ferais X. Essayez plutôt Y » qui se contredit légèrement (n° 20, 63, 88).\n\nCas limites laissés à 1 : n° 16 (« l'année venir vous apporter »), n° 32 (deuxième réplique de A qui semble inverser les rôles, mais B reste cohérent), n° 86 (« inconvenable », rare mais attesté), n° 92 (« dupes » au pluriel), n° 100 (réponse à l'imparfait un peu flottante), n° 24/35/103 (B traite un objet moderne comme familier sans étonnement, mais sans employer lui-même de mot moderne), n° 39/73/75 (« suivi rigoureux », « humour », « mémorisé » : vocabulaire postérieur au XVIIe mais neutre aujourd'hui). Les messages télégraphiques de A (« Coiffure ratée salon midi ») ont été tenus pour un style d'utilisateur voulu, non pour des fautes. Réserve : je n'ai lu que ce fichier d'échantillon, pas le jeu complet de 9055 conversations."
+ ],
+ "lignes": [
+  {
+   "numero": 1,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 2,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 3,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 0,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Oui, je les ai supprimées » : Dorine s'approprie sans étonnement un geste moderne (effacer des photos).",
+    "« Oui, je les ai supprimées » : B manie les photos effacées comme un familier, sans étonnement.",
+    "« Oui, je les ai supprimées » : Dorine s'attribue d'elle-même la suppression de photos, geste moderne, sans étonnement."
+   ]
+  },
+  {
+   "numero": 4,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 5,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 6,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 7,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 8,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 9,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 10,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "110",
+   "defauts": [
+    "« Certes, c'est le langage du prestige » : ne répond ni au choix docteur/hôpital ni à la question sur l'idiome."
+   ]
+  },
+  {
+   "numero": 11,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 12,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 13,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 14,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Est-ce que wouldyou mean par naturel » : anglais parasite, phrase de A incorrecte.",
+    "« Est-ce que wouldyou mean par naturel » : anglais parasite dans la réplique de A.",
+    "« Est-ce que wouldyou mean par naturel » : anglais parasite dans la réplique de A."
+   ]
+  },
+  {
+   "numero": 15,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 16,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 17,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 18,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 19,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 20,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 21,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 22,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 23,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 24,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 25,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 26,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 27,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 28,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Consultez donc un médecin! » pour une soupe trop salée : conseil sans rapport avec le problème.",
+    "« Consultez donc un médecin » pour une soupe trop salée : conseil hors sujet, ne répond pas.",
+    "« Consultez donc un médecin! » : conseil sans rapport avec une soupe trop salée, et B y persiste."
+   ]
+  },
+  {
+   "numero": 29,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 30,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 31,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 32,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 33,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 34,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 35,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 36,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 37,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 38,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 39,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 40,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 41,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 42,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Hélas, mon état m'épuise totalement! » : ne répond pas à l'inquiétude de A sur l'usage des braises.",
+    "« Hélas, mon état m'épuise totalement! » : ignore la question sur l'usage des braises.",
+    "« Hélas, mon état m'épuise totalement! » : Argan ignore la question sur les braises et ne parle que de lui."
+   ]
+  },
+  {
+   "numero": 43,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 44,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 45,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 46,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 47,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 48,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 49,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 50,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 51,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 52,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 53,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 54,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 55,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 56,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 57,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 58,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 59,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 60,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 61,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 62,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "010",
+   "defauts": [
+    "« Monsieur mérite d'être châtié » : vise A alors que A parlait d'un tiers ; confusion des rôles.",
+    "« Monsieur mérite d'être châtié » : semble imputer à A la faute du tiers qu'il décrit, rôles confondus."
+   ]
+  },
+  {
+   "numero": 63,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 64,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 65,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 66,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 67,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 68,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 69,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 70,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 71,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 72,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 73,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 74,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 75,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 76,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 77,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 78,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "011",
+   "defauts": [
+    "« m'amène à lire une telle plainte » : B dit lire un message écrit, rupture de la scène de théâtre."
+   ]
+  },
+  {
+   "numero": 79,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "110",
+   "defauts": [
+    "« de m'en éclairer la cause » : solécisme, on éclaire quelqu'un sur une cause, on ne lui « éclaire » pas la cause."
+   ]
+  },
+  {
+   "numero": 80,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 81,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 82,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 83,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 84,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 85,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 86,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "001",
+   "defauts": [
+    "« fort inconvenable » : mot non standard, on attend « inconvenant ».",
+    "« fort inconvenable » : mot déformé (inconvenant) ; « trop d'honneur en me croyant si fragile » est illogique."
+   ]
+  },
+  {
+   "numero": 87,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "110",
+   "defauts": [
+    "« Qu'en est-il donc? Que se passe-t-il? » : A vient justement de l'expliquer, réponse passe-partout."
+   ]
+  },
+  {
+   "numero": 88,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 89,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 90,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 91,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 92,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 93,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 94,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 95,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "100",
+   "defauts": [
+    "« Prenez donc un lavement immédiat » : sans rapport avec un retard au bureau.",
+    "« Prenez donc un lavement immédiat » : sans rapport avec un retard au bureau, puis « mort imminente »."
+   ]
+  },
+  {
+   "numero": 96,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 97,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 98,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 99,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 100,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 101,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 102,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 103,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 104,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 105,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 106,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 107,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 108,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 109,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 110,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 111,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 112,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 113,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 114,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 115,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 116,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 117,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 118,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 119,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 120,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  }
+ ]
+}

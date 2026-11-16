@@ -1,12 +1,19 @@
 """Affinage (fine-tuning) de notre GPT sur des scènes de théâtre mises en répliques.
 
-    uv run python -m chatbot.finetune --init submissions/2026-11-11_153839/ckpt.pt \\
+    python -m chatbot.finetune --init runs/chatbot_rtx/runs/base/best.pt \\
         --tokenizer submissions/2026-11-11_153839/tokenizer.json \\
         --data data/stages/chatbot_20261112/theatre/theatre_train.jsonl.zst \\
                data/stages/chatbot_20261112/theatre/moliere_train.jsonl.zst --weights 1 3 \\
         --val data/stages/chatbot_20261112/theatre/moliere_val.jsonl.zst --out runs/chat_etape1
 
-Idée : le modèle sait déjà le français (100 M de tokens). On continue son entraînement, avec un
+(runs/chatbot_rtx/runs/base/best.pt est écrit par l'étape base du lanceur chatbot.pipeline_rtx.
+Les données viennent de la release « chatbot-donnees-20261113 ». Sur une carte NVIDIA, le plus
+simple est le lanceur chatbot.pipeline_rtx. PC Windows : PYTHONUTF8=1 et .venv/Scripts/python.exe
+à la place de python, jamais « uv run » : voir PC_RTX.md. Sur le Mac : « uv run python -m ... ».)
+
+Idée : le modèle de départ (--init) sait déjà le français : la base du chatbot (54,7 M de
+paramètres, 2 milliards de tokens) ou, pour le concours, le modèle de 10,2 M de paramètres
+(100 M de tokens). On continue son entraînement, avec un
 taux d'apprentissage plus petit, sur des textes qui ont exactement la forme du chat
 (« NOM.\\nréplique\\n\\n »). Il apprend ainsi le jeu « un personnage parle, l'autre répond ».
 
@@ -19,14 +26,16 @@ les données. Avec la probabilité P, chaque scène de Molière est ajoutée une
 personnage principal renommé MOLIÈRE et le deuxième renommé LA GRANGE (son interlocuteur dans le
 chat) : le persona MOLIÈRE devient la voix moyenne des personnages de Molière.
 
---note TEXTE : recopié dans report.json (p. ex. « validation non tenue à l'écart » pour le run
-final ré-entraîné sur tout Molière, dont les pièces de validation).
+--note TEXTE : recopié dans report.json (le lanceur y écrit le chatbot et l'étape, p. ex.
+« lanceur RTX, moliere, étape 1 »). Un run qui
+lirait les pièces de validation de Molière devrait le dire ici ; aucun modèle publié n'est dans ce
+cas.
 
 --format {repliques,tirets} (défaut repliques) : forme du texte d'entraînement ET de la validation.
 « tirets » = chatbot en français moderne : chaque échange (contrat : speaker A/B en alternance)
 devient « — texte\n\n — texte\n\n… », exactement ce que verra le chat (chatbot.format) :
 
-    uv run python -m chatbot.finetune --format tirets --init runs/demo_pretrain_30m/best.pt \\
+    python -m chatbot.finetune --format tirets --init runs/chatbot_rtx/runs/base/best.pt \\
         --tokenizer submissions/2026-11-11_153839/tokenizer.json \\
         --data data/stages/chatbot_20261113/dialogues/romans_train.jsonl.zst \\
                data/stages/chatbot_20261113/dialogues/theatre_moderne_train.jsonl.zst \\

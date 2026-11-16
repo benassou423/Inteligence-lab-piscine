@@ -1,0 +1,5186 @@
+{
+ "r001": {
+  "modele": "s05",
+  "job": 27,
+  "graine": 11,
+  "tour": 1
+ },
+ "r002": {
+  "modele": "s03",
+  "job": 28,
+  "graine": 11,
+  "tour": 0
+ },
+ "r003": {
+  "modele": "A0",
+  "job": 9,
+  "graine": 11,
+  "tour": 0
+ },
+ "r004": {
+  "modele": "S03t",
+  "job": 3,
+  "graine": 33,
+  "tour": 0
+ },
+ "r005": {
+  "modele": "s03",
+  "job": 28,
+  "graine": 33,
+  "tour": 0
+ },
+ "r006": {
+  "modele": "S03t",
+  "job": 9,
+  "graine": 22,
+  "tour": 0
+ },
+ "r007": {
+  "modele": "s03",
+  "job": 24,
+  "graine": 22,
+  "tour": 1
+ },
+ "r008": {
+  "modele": "A0",
+  "job": 29,
+  "graine": 22,
+  "tour": 0
+ },
+ "r009": {
+  "modele": "s05",
+  "job": 25,
+  "graine": 22,
+  "tour": 0
+ },
+ "r010": {
+  "modele": "s15",
+  "job": 3,
+  "graine": 22,
+  "tour": 0
+ },
+ "r011": {
+  "modele": "A0",
+  "job": 27,
+  "graine": 11,
+  "tour": 1
+ },
+ "r012": {
+  "modele": "s15",
+  "job": 28,
+  "graine": 11,
+  "tour": 1
+ },
+ "r013": {
+  "modele": "s03",
+  "job": 1,
+  "graine": 33,
+  "tour": 0
+ },
+ "r014": {
+  "modele": "s05",
+  "job": 3,
+  "graine": 33,
+  "tour": 0
+ },
+ "r015": {
+  "modele": "s15",
+  "job": 21,
+  "graine": 33,
+  "tour": 0
+ },
+ "r016": {
+  "modele": "s15",
+  "job": 27,
+  "graine": 33,
+  "tour": 0
+ },
+ "r017": {
+  "modele": "s05",
+  "job": 4,
+  "graine": 22,
+  "tour": 0
+ },
+ "r018": {
+  "modele": "S03t",
+  "job": 0,
+  "graine": 22,
+  "tour": 0
+ },
+ "r019": {
+  "modele": "s03",
+  "job": 27,
+  "graine": 33,
+  "tour": 3
+ },
+ "r020": {
+  "modele": "s10",
+  "job": 16,
+  "graine": 11,
+  "tour": 0
+ },
+ "r021": {
+  "modele": "s03",
+  "job": 6,
+  "graine": 33,
+  "tour": 0
+ },
+ "r022": {
+  "modele": "s03",
+  "job": 25,
+  "graine": 22,
+  "tour": 2
+ },
+ "r023": {
+  "modele": "s10",
+  "job": 11,
+  "graine": 22,
+  "tour": 0
+ },
+ "r024": {
+  "modele": "A0",
+  "job": 10,
+  "graine": 33,
+  "tour": 0
+ },
+ "r025": {
+  "modele": "s05",
+  "job": 7,
+  "graine": 33,
+  "tour": 0
+ },
+ "r026": {
+  "modele": "A0",
+  "job": 0,
+  "graine": 22,
+  "tour": 0
+ },
+ "r027": {
+  "modele": "s15",
+  "job": 26,
+  "graine": 22,
+  "tour": 2
+ },
+ "r028": {
+  "modele": "s05",
+  "job": 8,
+  "graine": 11,
+  "tour": 0
+ },
+ "r029": {
+  "modele": "s10",
+  "job": 28,
+  "graine": 11,
+  "tour": 2
+ },
+ "r030": {
+  "modele": "s03",
+  "job": 22,
+  "graine": 11,
+  "tour": 0
+ },
+ "r031": {
+  "modele": "S03t",
+  "job": 12,
+  "graine": 33,
+  "tour": 0
+ },
+ "r032": {
+  "modele": "s05",
+  "job": 26,
+  "graine": 11,
+  "tour": 2
+ },
+ "r033": {
+  "modele": "S03t",
+  "job": 23,
+  "graine": 22,
+  "tour": 0
+ },
+ "r034": {
+  "modele": "s15",
+  "job": 7,
+  "graine": 11,
+  "tour": 0
+ },
+ "r035": {
+  "modele": "s03",
+  "job": 13,
+  "graine": 22,
+  "tour": 0
+ },
+ "r036": {
+  "modele": "A0",
+  "job": 7,
+  "graine": 33,
+  "tour": 0
+ },
+ "r037": {
+  "modele": "s10",
+  "job": 13,
+  "graine": 11,
+  "tour": 0
+ },
+ "r038": {
+  "modele": "s05",
+  "job": 25,
+  "graine": 11,
+  "tour": 2
+ },
+ "r039": {
+  "modele": "s10",
+  "job": 16,
+  "graine": 33,
+  "tour": 0
+ },
+ "r040": {
+  "modele": "s05",
+  "job": 21,
+  "graine": 33,
+  "tour": 0
+ },
+ "r041": {
+  "modele": "s05",
+  "job": 29,
+  "graine": 33,
+  "tour": 0
+ },
+ "r042": {
+  "modele": "A0",
+  "job": 24,
+  "graine": 11,
+  "tour": 1
+ },
+ "r043": {
+  "modele": "s03",
+  "job": 12,
+  "graine": 22,
+  "tour": 0
+ },
+ "r044": {
+  "modele": "A0",
+  "job": 14,
+  "graine": 22,
+  "tour": 0
+ },
+ "r045": {
+  "modele": "A0",
+  "job": 4,
+  "graine": 11,
+  "tour": 0
+ },
+ "r046": {
+  "modele": "s03",
+  "job": 28,
+  "graine": 22,
+  "tour": 2
+ },
+ "r047": {
+  "modele": "s15",
+  "job": 10,
+  "graine": 22,
+  "tour": 0
+ },
+ "r048": {
+  "modele": "s10",
+  "job": 6,
+  "graine": 33,
+  "tour": 0
+ },
+ "r049": {
+  "modele": "s03",
+  "job": 26,
+  "graine": 11,
+  "tour": 0
+ },
+ "r050": {
+  "modele": "s03",
+  "job": 17,
+  "graine": 33,
+  "tour": 0
+ },
+ "r051": {
+  "modele": "s15",
+  "job": 11,
+  "graine": 11,
+  "tour": 0
+ },
+ "r052": {
+  "modele": "A0",
+  "job": 16,
+  "graine": 33,
+  "tour": 0
+ },
+ "r053": {
+  "modele": "s03",
+  "job": 4,
+  "graine": 11,
+  "tour": 0
+ },
+ "r054": {
+  "modele": "S03t",
+  "job": 26,
+  "graine": 11,
+  "tour": 3
+ },
+ "r055": {
+  "modele": "S03t",
+  "job": 27,
+  "graine": 11,
+  "tour": 3
+ },
+ "r056": {
+  "modele": "s10",
+  "job": 9,
+  "graine": 11,
+  "tour": 0
+ },
+ "r057": {
+  "modele": "S03t",
+  "job": 25,
+  "graine": 33,
+  "tour": 1
+ },
+ "r058": {
+  "modele": "s03",
+  "job": 28,
+  "graine": 33,
+  "tour": 3
+ },
+ "r059": {
+  "modele": "A0",
+  "job": 14,
+  "graine": 33,
+  "tour": 0
+ },
+ "r060": {
+  "modele": "s15",
+  "job": 24,
+  "graine": 11,
+  "tour": 1
+ },
+ "r061": {
+  "modele": "s10",
+  "job": 24,
+  "graine": 33,
+  "tour": 0
+ },
+ "r062": {
+  "modele": "A0",
+  "job": 24,
+  "graine": 33,
+  "tour": 3
+ },
+ "r063": {
+  "modele": "s05",
+  "job": 10,
+  "graine": 33,
+  "tour": 0
+ },
+ "r064": {
+  "modele": "s10",
+  "job": 19,
+  "graine": 11,
+  "tour": 0
+ },
+ "r065": {
+  "modele": "A0",
+  "job": 27,
+  "graine": 22,
+  "tour": 2
+ },
+ "r066": {
+  "modele": "s10",
+  "job": 0,
+  "graine": 22,
+  "tour": 0
+ },
+ "r067": {
+  "modele": "s05",
+  "job": 26,
+  "graine": 33,
+  "tour": 2
+ },
+ "r068": {
+  "modele": "S03t",
+  "job": 24,
+  "graine": 11,
+  "tour": 0
+ },
+ "r069": {
+  "modele": "s05",
+  "job": 8,
+  "graine": 22,
+  "tour": 0
+ },
+ "r070": {
+  "modele": "s15",
+  "job": 26,
+  "graine": 11,
+  "tour": 0
+ },
+ "r071": {
+  "modele": "s15",
+  "job": 5,
+  "graine": 11,
+  "tour": 0
+ },
+ "r072": {
+  "modele": "s15",
+  "job": 4,
+  "graine": 33,
+  "tour": 0
+ },
+ "r073": {
+  "modele": "s10",
+  "job": 17,
+  "graine": 33,
+  "tour": 0
+ },
+ "r074": {
+  "modele": "S03t",
+  "job": 11,
+  "graine": 33,
+  "tour": 0
+ },
+ "r075": {
+  "modele": "s15",
+  "job": 2,
+  "graine": 11,
+  "tour": 0
+ },
+ "r076": {
+  "modele": "s03",
+  "job": 26,
+  "graine": 11,
+  "tour": 3
+ },
+ "r077": {
+  "modele": "s15",
+  "job": 28,
+  "graine": 22,
+  "tour": 3
+ },
+ "r078": {
+  "modele": "s10",
+  "job": 1,
+  "graine": 11,
+  "tour": 0
+ },
+ "r079": {
+  "modele": "s03",
+  "job": 20,
+  "graine": 22,
+  "tour": 0
+ },
+ "r080": {
+  "modele": "S03t",
+  "job": 12,
+  "graine": 22,
+  "tour": 0
+ },
+ "r081": {
+  "modele": "s05",
+  "job": 27,
+  "graine": 22,
+  "tour": 0
+ },
+ "r082": {
+  "modele": "s03",
+  "job": 28,
+  "graine": 22,
+  "tour": 0
+ },
+ "r083": {
+  "modele": "S03t",
+  "job": 27,
+  "graine": 11,
+  "tour": 1
+ },
+ "r084": {
+  "modele": "s15",
+  "job": 28,
+  "graine": 11,
+  "tour": 2
+ },
+ "r085": {
+  "modele": "s03",
+  "job": 28,
+  "graine": 22,
+  "tour": 3
+ },
+ "r086": {
+  "modele": "s15",
+  "job": 27,
+  "graine": 22,
+  "tour": 3
+ },
+ "r087": {
+  "modele": "s15",
+  "job": 26,
+  "graine": 33,
+  "tour": 2
+ },
+ "r088": {
+  "modele": "S03t",
+  "job": 17,
+  "graine": 22,
+  "tour": 0
+ },
+ "r089": {
+  "modele": "A0",
+  "job": 19,
+  "graine": 22,
+  "tour": 0
+ },
+ "r090": {
+  "modele": "s05",
+  "job": 1,
+  "graine": 11,
+  "tour": 0
+ },
+ "r091": {
+  "modele": "s05",
+  "job": 26,
+  "graine": 11,
+  "tour": 1
+ },
+ "r092": {
+  "modele": "s15",
+  "job": 21,
+  "graine": 11,
+  "tour": 0
+ },
+ "r093": {
+  "modele": "S03t",
+  "job": 16,
+  "graine": 11,
+  "tour": 0
+ },
+ "r094": {
+  "modele": "s10",
+  "job": 22,
+  "graine": 11,
+  "tour": 0
+ },
+ "r095": {
+  "modele": "s03",
+  "job": 28,
+  "graine": 33,
+  "tour": 1
+ },
+ "r096": {
+  "modele": "s10",
+  "job": 14,
+  "graine": 11,
+  "tour": 0
+ },
+ "r097": {
+  "modele": "s15",
+  "job": 26,
+  "graine": 33,
+  "tour": 1
+ },
+ "r098": {
+  "modele": "s15",
+  "job": 22,
+  "graine": 11,
+  "tour": 0
+ },
+ "r099": {
+  "modele": "A0",
+  "job": 24,
+  "graine": 22,
+  "tour": 1
+ },
+ "r100": {
+  "modele": "s05",
+  "job": 2,
+  "graine": 11,
+  "tour": 0
+ },
+ "r101": {
+  "modele": "s03",
+  "job": 6,
+  "graine": 22,
+  "tour": 0
+ },
+ "r102": {
+  "modele": "s05",
+  "job": 10,
+  "graine": 22,
+  "tour": 0
+ },
+ "r103": {
+  "modele": "s15",
+  "job": 17,
+  "graine": 11,
+  "tour": 0
+ },
+ "r104": {
+  "modele": "s10",
+  "job": 10,
+  "graine": 22,
+  "tour": 0
+ },
+ "r105": {
+  "modele": "s10",
+  "job": 5,
+  "graine": 22,
+  "tour": 0
+ },
+ "r106": {
+  "modele": "s10",
+  "job": 26,
+  "graine": 11,
+  "tour": 0
+ },
+ "r107": {
+  "modele": "s03",
+  "job": 0,
+  "graine": 22,
+  "tour": 0
+ },
+ "r108": {
+  "modele": "S03t",
+  "job": 13,
+  "graine": 11,
+  "tour": 0
+ },
+ "r109": {
+  "modele": "A0",
+  "job": 27,
+  "graine": 11,
+  "tour": 2
+ },
+ "r110": {
+  "modele": "s10",
+  "job": 10,
+  "graine": 11,
+  "tour": 0
+ },
+ "r111": {
+  "modele": "A0",
+  "job": 28,
+  "graine": 33,
+  "tour": 1
+ },
+ "r112": {
+  "modele": "S03t",
+  "job": 28,
+  "graine": 11,
+  "tour": 2
+ },
+ "r113": {
+  "modele": "s15",
+  "job": 27,
+  "graine": 11,
+  "tour": 3
+ },
+ "r114": {
+  "modele": "S03t",
+  "job": 24,
+  "graine": 33,
+  "tour": 1
+ },
+ "r115": {
+  "modele": "s15",
+  "job": 24,
+  "graine": 33,
+  "tour": 2
+ },
+ "r116": {
+  "modele": "s03",
+  "job": 28,
+  "graine": 11,
+  "tour": 3
+ },
+ "r117": {
+  "modele": "s05",
+  "job": 23,
+  "graine": 22,
+  "tour": 0
+ },
+ "r118": {
+  "modele": "s10",
+  "job": 29,
+  "graine": 22,
+  "tour": 0
+ },
+ "r119": {
+  "modele": "s03",
+  "job": 7,
+  "graine": 22,
+  "tour": 0
+ },
+ "r120": {
+  "modele": "S03t",
+  "job": 14,
+  "graine": 22,
+  "tour": 0
+ },
+ "r121": {
+  "modele": "s03",
+  "job": 27,
+  "graine": 11,
+  "tour": 3
+ },
+ "r122": {
+  "modele": "A0",
+  "job": 29,
+  "graine": 33,
+  "tour": 0
+ },
+ "r123": {
+  "modele": "s10",
+  "job": 25,
+  "graine": 22,
+  "tour": 0
+ },
+ "r124": {
+  "modele": "s03",
+  "job": 17,
+  "graine": 11,
+  "tour": 0
+ },
+ "r125": {
+  "modele": "s15",
+  "job": 25,
+  "graine": 11,
+  "tour": 2
+ },
+ "r126": {
+  "modele": "s15",
+  "job": 18,
+  "graine": 33,
+  "tour": 0
+ },
+ "r127": {
+  "modele": "S03t",
+  "job": 28,
+  "graine": 33,
+  "tour": 0
+ },
+ "r128": {
+  "modele": "s10",
+  "job": 26,
+  "graine": 11,
+  "tour": 1
+ },
+ "r129": {
+  "modele": "S03t",
+  "job": 7,
+  "graine": 22,
+  "tour": 0
+ },
+ "r130": {
+  "modele": "s15",
+  "job": 9,
+  "graine": 22,
+  "tour": 0
+ },
+ "r131": {
+  "modele": "s15",
+  "job": 27,
+  "graine": 22,
+  "tour": 1
+ },
+ "r132": {
+  "modele": "A0",
+  "job": 13,
+  "graine": 11,
+  "tour": 0
+ },
+ "r133": {
+  "modele": "s05",
+  "job": 24,
+  "graine": 22,
+  "tour": 0
+ },
+ "r134": {
+  "modele": "s15",
+  "job": 26,
+  "graine": 22,
+  "tour": 3
+ },
+ "r135": {
+  "modele": "s05",
+  "job": 27,
+  "graine": 11,
+  "tour": 0
+ },
+ "r136": {
+  "modele": "A0",
+  "job": 27,
+  "graine": 33,
+  "tour": 3
+ },
+ "r137": {
+  "modele": "s05",
+  "job": 24,
+  "graine": 33,
+  "tour": 2
+ },
+ "r138": {
+  "modele": "s05",
+  "job": 29,
+  "graine": 11,
+  "tour": 2
+ },
+ "r139": {
+  "modele": "s05",
+  "job": 27,
+  "graine": 33,
+  "tour": 3
+ },
+ "r140": {
+  "modele": "s15",
+  "job": 28,
+  "graine": 33,
+  "tour": 2
+ },
+ "r141": {
+  "modele": "s15",
+  "job": 12,
+  "graine": 11,
+  "tour": 0
+ },
+ "r142": {
+  "modele": "A0",
+  "job": 16,
+  "graine": 11,
+  "tour": 0
+ },
+ "r143": {
+  "modele": "s10",
+  "job": 29,
+  "graine": 22,
+  "tour": 2
+ },
+ "r144": {
+  "modele": "s05",
+  "job": 28,
+  "graine": 22,
+  "tour": 1
+ },
+ "r145": {
+  "modele": "s10",
+  "job": 26,
+  "graine": 22,
+  "tour": 2
+ },
+ "r146": {
+  "modele": "s05",
+  "job": 27,
+  "graine": 22,
+  "tour": 1
+ },
+ "r147": {
+  "modele": "s05",
+  "job": 25,
+  "graine": 33,
+  "tour": 1
+ },
+ "r148": {
+  "modele": "s10",
+  "job": 28,
+  "graine": 33,
+  "tour": 2
+ },
+ "r149": {
+  "modele": "s05",
+  "job": 23,
+  "graine": 11,
+  "tour": 0
+ },
+ "r150": {
+  "modele": "S03t",
+  "job": 19,
+  "graine": 33,
+  "tour": 0
+ },
+ "r151": {
+  "modele": "A0",
+  "job": 29,
+  "graine": 11,
+  "tour": 2
+ },
+ "r152": {
+  "modele": "s03",
+  "job": 16,
+  "graine": 22,
+  "tour": 0
+ },
+ "r153": {
+  "modele": "S03t",
+  "job": 28,
+  "graine": 22,
+  "tour": 1
+ },
+ "r154": {
+  "modele": "s03",
+  "job": 15,
+  "graine": 11,
+  "tour": 0
+ },
+ "r155": {
+  "modele": "s15",
+  "job": 29,
+  "graine": 33,
+  "tour": 0
+ },
+ "r156": {
+  "modele": "A0",
+  "job": 29,
+  "graine": 22,
+  "tour": 1
+ },
+ "r157": {
+  "modele": "S03t",
+  "job": 28,
+  "graine": 33,
+  "tour": 3
+ },
+ "r158": {
+  "modele": "A0",
+  "job": 15,
+  "graine": 22,
+  "tour": 0
+ },
+ "r159": {
+  "modele": "S03t",
+  "job": 26,
+  "graine": 11,
+  "tour": 0
+ },
+ "r160": {
+  "modele": "S03t",
+  "job": 11,
+  "graine": 22,
+  "tour": 0
+ },
+ "r161": {
+  "modele": "s03",
+  "job": 25,
+  "graine": 33,
+  "tour": 0
+ },
+ "r162": {
+  "modele": "s10",
+  "job": 25,
+  "graine": 33,
+  "tour": 0
+ },
+ "r163": {
+  "modele": "s15",
+  "job": 27,
+  "graine": 11,
+  "tour": 0
+ },
+ "r164": {
+  "modele": "s15",
+  "job": 27,
+  "graine": 33,
+  "tour": 1
+ },
+ "r165": {
+  "modele": "S03t",
+  "job": 29,
+  "graine": 11,
+  "tour": 2
+ },
+ "r166": {
+  "modele": "s15",
+  "job": 5,
+  "graine": 33,
+  "tour": 0
+ },
+ "r167": {
+  "modele": "A0",
+  "job": 5,
+  "graine": 22,
+  "tour": 0
+ },
+ "r168": {
+  "modele": "s03",
+  "job": 0,
+  "graine": 33,
+  "tour": 0
+ },
+ "r169": {
+  "modele": "A0",
+  "job": 1,
+  "graine": 11,
+  "tour": 0
+ },
+ "r170": {
+  "modele": "A0",
+  "job": 24,
+  "graine": 11,
+  "tour": 0
+ },
+ "r171": {
+  "modele": "s03",
+  "job": 26,
+  "graine": 11,
+  "tour": 2
+ },
+ "r172": {
+  "modele": "s10",
+  "job": 27,
+  "graine": 33,
+  "tour": 0
+ },
+ "r173": {
+  "modele": "s10",
+  "job": 26,
+  "graine": 33,
+  "tour": 2
+ },
+ "r174": {
+  "modele": "A0",
+  "job": 28,
+  "graine": 22,
+  "tour": 0
+ },
+ "r175": {
+  "modele": "s10",
+  "job": 26,
+  "graine": 11,
+  "tour": 2
+ },
+ "r176": {
+  "modele": "S03t",
+  "job": 18,
+  "graine": 33,
+  "tour": 0
+ },
+ "r177": {
+  "modele": "s15",
+  "job": 25,
+  "graine": 22,
+  "tour": 1
+ },
+ "r178": {
+  "modele": "S03t",
+  "job": 29,
+  "graine": 33,
+  "tour": 0
+ },
+ "r179": {
+  "modele": "s10",
+  "job": 7,
+  "graine": 33,
+  "tour": 0
+ },
+ "r180": {
+  "modele": "s03",
+  "job": 29,
+  "graine": 22,
+  "tour": 2
+ },
+ "r181": {
+  "modele": "s05",
+  "job": 4,
+  "graine": 33,
+  "tour": 0
+ },
+ "r182": {
+  "modele": "A0",
+  "job": 17,
+  "graine": 33,
+  "tour": 0
+ },
+ "r183": {
+  "modele": "s05",
+  "job": 12,
+  "graine": 11,
+  "tour": 0
+ },
+ "r184": {
+  "modele": "S03t",
+  "job": 5,
+  "graine": 33,
+  "tour": 0
+ },
+ "r185": {
+  "modele": "s05",
+  "job": 24,
+  "graine": 33,
+  "tour": 0
+ },
+ "r186": {
+  "modele": "A0",
+  "job": 9,
+  "graine": 33,
+  "tour": 0
+ },
+ "r187": {
+  "modele": "s10",
+  "job": 0,
+  "graine": 33,
+  "tour": 0
+ },
+ "r188": {
+  "modele": "A0",
+  "job": 0,
+  "graine": 33,
+  "tour": 0
+ },
+ "r189": {
+  "modele": "S03t",
+  "job": 23,
+  "graine": 33,
+  "tour": 0
+ },
+ "r190": {
+  "modele": "A0",
+  "job": 19,
+  "graine": 33,
+  "tour": 0
+ },
+ "r191": {
+  "modele": "s05",
+  "job": 6,
+  "graine": 11,
+  "tour": 0
+ },
+ "r192": {
+  "modele": "s15",
+  "job": 28,
+  "graine": 11,
+  "tour": 0
+ },
+ "r193": {
+  "modele": "s10",
+  "job": 5,
+  "graine": 11,
+  "tour": 0
+ },
+ "r194": {
+  "modele": "A0",
+  "job": 28,
+  "graine": 33,
+  "tour": 0
+ },
+ "r195": {
+  "modele": "s05",
+  "job": 27,
+  "graine": 33,
+  "tour": 1
+ },
+ "r196": {
+  "modele": "s15",
+  "job": 29,
+  "graine": 22,
+  "tour": 1
+ },
+ "r197": {
+  "modele": "s05",
+  "job": 17,
+  "graine": 33,
+  "tour": 0
+ },
+ "r198": {
+  "modele": "s03",
+  "job": 29,
+  "graine": 22,
+  "tour": 3
+ },
+ "r199": {
+  "modele": "s03",
+  "job": 1,
+  "graine": 22,
+  "tour": 0
+ },
+ "r200": {
+  "modele": "S03t",
+  "job": 26,
+  "graine": 22,
+  "tour": 3
+ },
+ "r201": {
+  "modele": "S03t",
+  "job": 25,
+  "graine": 22,
+  "tour": 3
+ },
+ "r202": {
+  "modele": "s05",
+  "job": 13,
+  "graine": 33,
+  "tour": 0
+ },
+ "r203": {
+  "modele": "S03t",
+  "job": 29,
+  "graine": 33,
+  "tour": 3
+ },
+ "r204": {
+  "modele": "s15",
+  "job": 0,
+  "graine": 11,
+  "tour": 0
+ },
+ "r205": {
+  "modele": "S03t",
+  "job": 21,
+  "graine": 22,
+  "tour": 0
+ },
+ "r206": {
+  "modele": "S03t",
+  "job": 10,
+  "graine": 11,
+  "tour": 0
+ },
+ "r207": {
+  "modele": "s03",
+  "job": 29,
+  "graine": 33,
+  "tour": 1
+ },
+ "r208": {
+  "modele": "s15",
+  "job": 8,
+  "graine": 33,
+  "tour": 0
+ },
+ "r209": {
+  "modele": "s10",
+  "job": 6,
+  "graine": 22,
+  "tour": 0
+ },
+ "r210": {
+  "modele": "A0",
+  "job": 29,
+  "graine": 22,
+  "tour": 2
+ },
+ "r211": {
+  "modele": "s03",
+  "job": 29,
+  "graine": 11,
+  "tour": 0
+ },
+ "r212": {
+  "modele": "A0",
+  "job": 27,
+  "graine": 33,
+  "tour": 1
+ },
+ "r213": {
+  "modele": "S03t",
+  "job": 25,
+  "graine": 33,
+  "tour": 3
+ },
+ "r214": {
+  "modele": "A0",
+  "job": 28,
+  "graine": 33,
+  "tour": 2
+ },
+ "r215": {
+  "modele": "s03",
+  "job": 29,
+  "graine": 33,
+  "tour": 0
+ },
+ "r216": {
+  "modele": "s10",
+  "job": 20,
+  "graine": 11,
+  "tour": 0
+ },
+ "r217": {
+  "modele": "s05",
+  "job": 25,
+  "graine": 33,
+  "tour": 0
+ },
+ "r218": {
+  "modele": "s05",
+  "job": 16,
+  "graine": 22,
+  "tour": 0
+ },
+ "r219": {
+  "modele": "s03",
+  "job": 27,
+  "graine": 22,
+  "tour": 0
+ },
+ "r220": {
+  "modele": "s03",
+  "job": 4,
+  "graine": 22,
+  "tour": 0
+ },
+ "r221": {
+  "modele": "A0",
+  "job": 25,
+  "graine": 11,
+  "tour": 0
+ },
+ "r222": {
+  "modele": "s15",
+  "job": 19,
+  "graine": 11,
+  "tour": 0
+ },
+ "r223": {
+  "modele": "s10",
+  "job": 26,
+  "graine": 33,
+  "tour": 1
+ },
+ "r224": {
+  "modele": "A0",
+  "job": 2,
+  "graine": 22,
+  "tour": 0
+ },
+ "r225": {
+  "modele": "s05",
+  "job": 0,
+  "graine": 22,
+  "tour": 0
+ },
+ "r226": {
+  "modele": "s05",
+  "job": 28,
+  "graine": 33,
+  "tour": 2
+ },
+ "r227": {
+  "modele": "s10",
+  "job": 24,
+  "graine": 22,
+  "tour": 1
+ },
+ "r228": {
+  "modele": "s15",
+  "job": 11,
+  "graine": 22,
+  "tour": 0
+ },
+ "r229": {
+  "modele": "s15",
+  "job": 26,
+  "graine": 11,
+  "tour": 1
+ },
+ "r230": {
+  "modele": "s05",
+  "job": 7,
+  "graine": 22,
+  "tour": 0
+ },
+ "r231": {
+  "modele": "s05",
+  "job": 20,
+  "graine": 11,
+  "tour": 0
+ },
+ "r232": {
+  "modele": "A0",
+  "job": 27,
+  "graine": 22,
+  "tour": 1
+ },
+ "r233": {
+  "modele": "s10",
+  "job": 29,
+  "graine": 33,
+  "tour": 2
+ },
+ "r234": {
+  "modele": "s03",
+  "job": 25,
+  "graine": 11,
+  "tour": 3
+ },
+ "r235": {
+  "modele": "s03",
+  "job": 29,
+  "graine": 33,
+  "tour": 3
+ },
+ "r236": {
+  "modele": "S03t",
+  "job": 15,
+  "graine": 22,
+  "tour": 0
+ },
+ "r237": {
+  "modele": "S03t",
+  "job": 24,
+  "graine": 33,
+  "tour": 2
+ },
+ "r238": {
+  "modele": "s10",
+  "job": 29,
+  "graine": 11,
+  "tour": 0
+ },
+ "r239": {
+  "modele": "A0",
+  "job": 24,
+  "graine": 33,
+  "tour": 1
+ },
+ "r240": {
+  "modele": "s10",
+  "job": 24,
+  "graine": 11,
+  "tour": 0
+ },
+ "r241": {
+  "modele": "S03t",
+  "job": 29,
+  "graine": 22,
+  "tour": 0
+ },
+ "r242": {
+  "modele": "s05",
+  "job": 29,
+  "graine": 22,
+  "tour": 1
+ },
+ "r243": {
+  "modele": "s15",
+  "job": 24,
+  "graine": 33,
+  "tour": 1
+ },
+ "r244": {
+  "modele": "s03",
+  "job": 1,
+  "graine": 11,
+  "tour": 0
+ },
+ "r245": {
+  "modele": "s03",
+  "job": 24,
+  "graine": 33,
+  "tour": 1
+ },
+ "r246": {
+  "modele": "s15",
+  "job": 7,
+  "graine": 22,
+  "tour": 0
+ },
+ "r247": {
+  "modele": "A0",
+  "job": 6,
+  "graine": 22,
+  "tour": 0
+ },
+ "r248": {
+  "modele": "s15",
+  "job": 10,
+  "graine": 33,
+  "tour": 0
+ },
+ "r249": {
+  "modele": "A0",
+  "job": 24,
+  "graine": 11,
+  "tour": 2
+ },
+ "r250": {
+  "modele": "s15",
+  "job": 8,
+  "graine": 11,
+  "tour": 0
+ },
+ "r251": {
+  "modele": "S03t",
+  "job": 18,
+  "graine": 22,
+  "tour": 0
+ },
+ "r252": {
+  "modele": "s10",
+  "job": 25,
+  "graine": 22,
+  "tour": 2
+ },
+ "r253": {
+  "modele": "S03t",
+  "job": 25,
+  "graine": 11,
+  "tour": 3
+ },
+ "r254": {
+  "modele": "s15",
+  "job": 9,
+  "graine": 11,
+  "tour": 0
+ },
+ "r255": {
+  "modele": "A0",
+  "job": 23,
+  "graine": 11,
+  "tour": 0
+ },
+ "r256": {
+  "modele": "s05",
+  "job": 28,
+  "graine": 33,
+  "tour": 0
+ },
+ "r257": {
+  "modele": "s10",
+  "job": 18,
+  "graine": 11,
+  "tour": 0
+ },
+ "r258": {
+  "modele": "s10",
+  "job": 25,
+  "graine": 33,
+  "tour": 1
+ },
+ "r259": {
+  "modele": "s03",
+  "job": 25,
+  "graine": 11,
+  "tour": 1
+ },
+ "r260": {
+  "modele": "s05",
+  "job": 17,
+  "graine": 22,
+  "tour": 0
+ },
+ "r261": {
+  "modele": "s15",
+  "job": 27,
+  "graine": 11,
+  "tour": 2
+ },
+ "r262": {
+  "modele": "A0",
+  "job": 6,
+  "graine": 11,
+  "tour": 0
+ },
+ "r263": {
+  "modele": "s05",
+  "job": 9,
+  "graine": 33,
+  "tour": 0
+ },
+ "r264": {
+  "modele": "s10",
+  "job": 7,
+  "graine": 22,
+  "tour": 0
+ },
+ "r265": {
+  "modele": "s15",
+  "job": 24,
+  "graine": 11,
+  "tour": 2
+ },
+ "r266": {
+  "modele": "S03t",
+  "job": 24,
+  "graine": 11,
+  "tour": 2
+ },
+ "r267": {
+  "modele": "s05",
+  "job": 11,
+  "graine": 11,
+  "tour": 0
+ },
+ "r268": {
+  "modele": "S03t",
+  "job": 26,
+  "graine": 22,
+  "tour": 1
+ },
+ "r269": {
+  "modele": "s10",
+  "job": 25,
+  "graine": 33,
+  "tour": 2
+ },
+ "r270": {
+  "modele": "A0",
+  "job": 25,
+  "graine": 22,
+  "tour": 2
+ },
+ "r271": {
+  "modele": "s03",
+  "job": 24,
+  "graine": 33,
+  "tour": 3
+ },
+ "r272": {
+  "modele": "s05",
+  "job": 25,
+  "graine": 11,
+  "tour": 0
+ },
+ "r273": {
+  "modele": "s15",
+  "job": 6,
+  "graine": 22,
+  "tour": 0
+ },
+ "r274": {
+  "modele": "s05",
+  "job": 15,
+  "graine": 22,
+  "tour": 0
+ },
+ "r275": {
+  "modele": "s03",
+  "job": 26,
+  "graine": 22,
+  "tour": 2
+ },
+ "r276": {
+  "modele": "s10",
+  "job": 24,
+  "graine": 22,
+  "tour": 3
+ },
+ "r277": {
+  "modele": "s10",
+  "job": 24,
+  "graine": 11,
+  "tour": 3
+ },
+ "r278": {
+  "modele": "A0",
+  "job": 26,
+  "graine": 22,
+  "tour": 2
+ },
+ "r279": {
+  "modele": "A0",
+  "job": 25,
+  "graine": 22,
+  "tour": 1
+ },
+ "r280": {
+  "modele": "A0",
+  "job": 12,
+  "graine": 33,
+  "tour": 0
+ },
+ "r281": {
+  "modele": "S03t",
+  "job": 29,
+  "graine": 33,
+  "tour": 1
+ },
+ "r282": {
+  "modele": "s15",
+  "job": 4,
+  "graine": 11,
+  "tour": 0
+ },
+ "r283": {
+  "modele": "A0",
+  "job": 14,
+  "graine": 11,
+  "tour": 0
+ },
+ "r284": {
+  "modele": "s10",
+  "job": 26,
+  "graine": 22,
+  "tour": 1
+ },
+ "r285": {
+  "modele": "s10",
+  "job": 28,
+  "graine": 22,
+  "tour": 0
+ },
+ "r286": {
+  "modele": "s15",
+  "job": 21,
+  "graine": 22,
+  "tour": 0
+ },
+ "r287": {
+  "modele": "s15",
+  "job": 27,
+  "graine": 33,
+  "tour": 3
+ },
+ "r288": {
+  "modele": "s15",
+  "job": 29,
+  "graine": 11,
+  "tour": 3
+ },
+ "r289": {
+  "modele": "S03t",
+  "job": 20,
+  "graine": 33,
+  "tour": 0
+ },
+ "r290": {
+  "modele": "S03t",
+  "job": 23,
+  "graine": 11,
+  "tour": 0
+ },
+ "r291": {
+  "modele": "S03t",
+  "job": 25,
+  "graine": 22,
+  "tour": 1
+ },
+ "r292": {
+  "modele": "s05",
+  "job": 26,
+  "graine": 22,
+  "tour": 2
+ },
+ "r293": {
+  "modele": "S03t",
+  "job": 29,
+  "graine": 11,
+  "tour": 1
+ },
+ "r294": {
+  "modele": "s15",
+  "job": 24,
+  "graine": 11,
+  "tour": 3
+ },
+ "r295": {
+  "modele": "s15",
+  "job": 18,
+  "graine": 11,
+  "tour": 0
+ },
+ "r296": {
+  "modele": "s05",
+  "job": 29,
+  "graine": 22,
+  "tour": 3
+ },
+ "r297": {
+  "modele": "s03",
+  "job": 16,
+  "graine": 33,
+  "tour": 0
+ },
+ "r298": {
+  "modele": "s10",
+  "job": 23,
+  "graine": 33,
+  "tour": 0
+ },
+ "r299": {
+  "modele": "A0",
+  "job": 17,
+  "graine": 11,
+  "tour": 0
+ },
+ "r300": {
+  "modele": "s03",
+  "job": 6,
+  "graine": 11,
+  "tour": 0
+ },
+ "r301": {
+  "modele": "A0",
+  "job": 29,
+  "graine": 11,
+  "tour": 1
+ },
+ "r302": {
+  "modele": "s10",
+  "job": 27,
+  "graine": 22,
+  "tour": 1
+ },
+ "r303": {
+  "modele": "s05",
+  "job": 1,
+  "graine": 22,
+  "tour": 0
+ },
+ "r304": {
+  "modele": "s05",
+  "job": 21,
+  "graine": 22,
+  "tour": 0
+ },
+ "r305": {
+  "modele": "A0",
+  "job": 19,
+  "graine": 11,
+  "tour": 0
+ },
+ "r306": {
+  "modele": "s03",
+  "job": 0,
+  "graine": 11,
+  "tour": 0
+ },
+ "r307": {
+  "modele": "s05",
+  "job": 6,
+  "graine": 33,
+  "tour": 0
+ },
+ "r308": {
+  "modele": "s10",
+  "job": 17,
+  "graine": 22,
+  "tour": 0
+ },
+ "r309": {
+  "modele": "S03t",
+  "job": 28,
+  "graine": 11,
+  "tour": 1
+ },
+ "r310": {
+  "modele": "s15",
+  "job": 17,
+  "graine": 33,
+  "tour": 0
+ },
+ "r311": {
+  "modele": "s15",
+  "job": 29,
+  "graine": 11,
+  "tour": 0
+ },
+ "r312": {
+  "modele": "s05",
+  "job": 29,
+  "graine": 33,
+  "tour": 2
+ },
+ "r313": {
+  "modele": "s05",
+  "job": 21,
+  "graine": 11,
+  "tour": 0
+ },
+ "r314": {
+  "modele": "s03",
+  "job": 29,
+  "graine": 22,
+  "tour": 1
+ },
+ "r315": {
+  "modele": "s05",
+  "job": 26,
+  "graine": 11,
+  "tour": 0
+ },
+ "r316": {
+  "modele": "S03t",
+  "job": 3,
+  "graine": 22,
+  "tour": 0
+ },
+ "r317": {
+  "modele": "S03t",
+  "job": 17,
+  "graine": 11,
+  "tour": 0
+ },
+ "r318": {
+  "modele": "s03",
+  "job": 24,
+  "graine": 33,
+  "tour": 0
+ },
+ "r319": {
+  "modele": "s15",
+  "job": 22,
+  "graine": 33,
+  "tour": 0
+ },
+ "r320": {
+  "modele": "S03t",
+  "job": 9,
+  "graine": 11,
+  "tour": 0
+ },
+ "r321": {
+  "modele": "A0",
+  "job": 12,
+  "graine": 22,
+  "tour": 0
+ },
+ "r322": {
+  "modele": "s03",
+  "job": 26,
+  "graine": 33,
+  "tour": 3
+ },
+ "r323": {
+  "modele": "s05",
+  "job": 25,
+  "graine": 22,
+  "tour": 1
+ },
+ "r324": {
+  "modele": "A0",
+  "job": 28,
+  "graine": 22,
+  "tour": 2
+ },
+ "r325": {
+  "modele": "s03",
+  "job": 13,
+  "graine": 33,
+  "tour": 0
+ },
+ "r326": {
+  "modele": "s03",
+  "job": 24,
+  "graine": 22,
+  "tour": 2
+ },
+ "r327": {
+  "modele": "s15",
+  "job": 15,
+  "graine": 11,
+  "tour": 0
+ },
+ "r328": {
+  "modele": "s05",
+  "job": 24,
+  "graine": 22,
+  "tour": 1
+ },
+ "r329": {
+  "modele": "s05",
+  "job": 29,
+  "graine": 33,
+  "tour": 3
+ },
+ "r330": {
+  "modele": "s10",
+  "job": 27,
+  "graine": 22,
+  "tour": 0
+ },
+ "r331": {
+  "modele": "S03t",
+  "job": 27,
+  "graine": 22,
+  "tour": 2
+ },
+ "r332": {
+  "modele": "A0",
+  "job": 4,
+  "graine": 22,
+  "tour": 0
+ },
+ "r333": {
+  "modele": "s10",
+  "job": 13,
+  "graine": 33,
+  "tour": 0
+ },
+ "r334": {
+  "modele": "s10",
+  "job": 29,
+  "graine": 11,
+  "tour": 1
+ },
+ "r335": {
+  "modele": "S03t",
+  "job": 2,
+  "graine": 33,
+  "tour": 0
+ },
+ "r336": {
+  "modele": "s15",
+  "job": 28,
+  "graine": 22,
+  "tour": 2
+ },
+ "r337": {
+  "modele": "S03t",
+  "job": 19,
+  "graine": 11,
+  "tour": 0
+ },
+ "r338": {
+  "modele": "s15",
+  "job": 18,
+  "graine": 22,
+  "tour": 0
+ },
+ "r339": {
+  "modele": "s03",
+  "job": 25,
+  "graine": 22,
+  "tour": 1
+ },
+ "r340": {
+  "modele": "s15",
+  "job": 4,
+  "graine": 22,
+  "tour": 0
+ },
+ "r341": {
+  "modele": "A0",
+  "job": 29,
+  "graine": 33,
+  "tour": 1
+ },
+ "r342": {
+  "modele": "S03t",
+  "job": 26,
+  "graine": 22,
+  "tour": 0
+ },
+ "r343": {
+  "modele": "s15",
+  "job": 20,
+  "graine": 11,
+  "tour": 0
+ },
+ "r344": {
+  "modele": "s10",
+  "job": 29,
+  "graine": 22,
+  "tour": 3
+ },
+ "r345": {
+  "modele": "s03",
+  "job": 23,
+  "graine": 11,
+  "tour": 0
+ },
+ "r346": {
+  "modele": "S03t",
+  "job": 4,
+  "graine": 22,
+  "tour": 0
+ },
+ "r347": {
+  "modele": "s03",
+  "job": 2,
+  "graine": 33,
+  "tour": 0
+ },
+ "r348": {
+  "modele": "s05",
+  "job": 22,
+  "graine": 11,
+  "tour": 0
+ },
+ "r349": {
+  "modele": "A0",
+  "job": 24,
+  "graine": 11,
+  "tour": 3
+ },
+ "r350": {
+  "modele": "s03",
+  "job": 26,
+  "graine": 22,
+  "tour": 0
+ },
+ "r351": {
+  "modele": "s03",
+  "job": 18,
+  "graine": 33,
+  "tour": 0
+ },
+ "r352": {
+  "modele": "s03",
+  "job": 21,
+  "graine": 33,
+  "tour": 0
+ },
+ "r353": {
+  "modele": "s03",
+  "job": 25,
+  "graine": 11,
+  "tour": 2
+ },
+ "r354": {
+  "modele": "A0",
+  "job": 20,
+  "graine": 11,
+  "tour": 0
+ },
+ "r355": {
+  "modele": "S03t",
+  "job": 28,
+  "graine": 33,
+  "tour": 1
+ },
+ "r356": {
+  "modele": "s05",
+  "job": 20,
+  "graine": 33,
+  "tour": 0
+ },
+ "r357": {
+  "modele": "s03",
+  "job": 14,
+  "graine": 33,
+  "tour": 0
+ },
+ "r358": {
+  "modele": "A0",
+  "job": 5,
+  "graine": 11,
+  "tour": 0
+ },
+ "r359": {
+  "modele": "s15",
+  "job": 24,
+  "graine": 22,
+  "tour": 0
+ },
+ "r360": {
+  "modele": "s10",
+  "job": 27,
+  "graine": 22,
+  "tour": 3
+ },
+ "r361": {
+  "modele": "S03t",
+  "job": 26,
+  "graine": 11,
+  "tour": 1
+ },
+ "r362": {
+  "modele": "S03t",
+  "job": 4,
+  "graine": 11,
+  "tour": 0
+ },
+ "r363": {
+  "modele": "s15",
+  "job": 7,
+  "graine": 33,
+  "tour": 0
+ },
+ "r364": {
+  "modele": "s10",
+  "job": 9,
+  "graine": 33,
+  "tour": 0
+ },
+ "r365": {
+  "modele": "s10",
+  "job": 4,
+  "graine": 22,
+  "tour": 0
+ },
+ "r366": {
+  "modele": "S03t",
+  "job": 7,
+  "graine": 33,
+  "tour": 0
+ },
+ "r367": {
+  "modele": "S03t",
+  "job": 27,
+  "graine": 11,
+  "tour": 0
+ },
+ "r368": {
+  "modele": "s05",
+  "job": 5,
+  "graine": 11,
+  "tour": 0
+ },
+ "r369": {
+  "modele": "s15",
+  "job": 1,
+  "graine": 33,
+  "tour": 0
+ },
+ "r370": {
+  "modele": "s15",
+  "job": 14,
+  "graine": 33,
+  "tour": 0
+ },
+ "r371": {
+  "modele": "s05",
+  "job": 29,
+  "graine": 11,
+  "tour": 1
+ },
+ "r372": {
+  "modele": "s05",
+  "job": 6,
+  "graine": 22,
+  "tour": 0
+ },
+ "r373": {
+  "modele": "s05",
+  "job": 1,
+  "graine": 33,
+  "tour": 0
+ },
+ "r374": {
+  "modele": "s03",
+  "job": 19,
+  "graine": 22,
+  "tour": 0
+ },
+ "r375": {
+  "modele": "s03",
+  "job": 15,
+  "graine": 22,
+  "tour": 0
+ },
+ "r376": {
+  "modele": "S03t",
+  "job": 22,
+  "graine": 22,
+  "tour": 0
+ },
+ "r377": {
+  "modele": "s03",
+  "job": 25,
+  "graine": 22,
+  "tour": 0
+ },
+ "r378": {
+  "modele": "A0",
+  "job": 8,
+  "graine": 22,
+  "tour": 0
+ },
+ "r379": {
+  "modele": "s15",
+  "job": 3,
+  "graine": 11,
+  "tour": 0
+ },
+ "r380": {
+  "modele": "s10",
+  "job": 8,
+  "graine": 33,
+  "tour": 0
+ },
+ "r381": {
+  "modele": "s03",
+  "job": 27,
+  "graine": 11,
+  "tour": 2
+ },
+ "r382": {
+  "modele": "A0",
+  "job": 9,
+  "graine": 22,
+  "tour": 0
+ },
+ "r383": {
+  "modele": "s03",
+  "job": 24,
+  "graine": 11,
+  "tour": 3
+ },
+ "r384": {
+  "modele": "A0",
+  "job": 25,
+  "graine": 22,
+  "tour": 3
+ },
+ "r385": {
+  "modele": "s03",
+  "job": 10,
+  "graine": 22,
+  "tour": 0
+ },
+ "r386": {
+  "modele": "s15",
+  "job": 24,
+  "graine": 22,
+  "tour": 1
+ },
+ "r387": {
+  "modele": "s10",
+  "job": 19,
+  "graine": 22,
+  "tour": 0
+ },
+ "r388": {
+  "modele": "s15",
+  "job": 27,
+  "graine": 22,
+  "tour": 2
+ },
+ "r389": {
+  "modele": "s03",
+  "job": 20,
+  "graine": 11,
+  "tour": 0
+ },
+ "r390": {
+  "modele": "s03",
+  "job": 28,
+  "graine": 11,
+  "tour": 1
+ },
+ "r391": {
+  "modele": "s03",
+  "job": 27,
+  "graine": 33,
+  "tour": 2
+ },
+ "r392": {
+  "modele": "S03t",
+  "job": 26,
+  "graine": 33,
+  "tour": 0
+ },
+ "r393": {
+  "modele": "S03t",
+  "job": 8,
+  "graine": 33,
+  "tour": 0
+ },
+ "r394": {
+  "modele": "A0",
+  "job": 28,
+  "graine": 11,
+  "tour": 2
+ },
+ "r395": {
+  "modele": "s15",
+  "job": 6,
+  "graine": 33,
+  "tour": 0
+ },
+ "r396": {
+  "modele": "s15",
+  "job": 24,
+  "graine": 22,
+  "tour": 2
+ },
+ "r397": {
+  "modele": "s05",
+  "job": 24,
+  "graine": 11,
+  "tour": 3
+ },
+ "r398": {
+  "modele": "s05",
+  "job": 24,
+  "graine": 33,
+  "tour": 1
+ },
+ "r399": {
+  "modele": "S03t",
+  "job": 28,
+  "graine": 11,
+  "tour": 3
+ },
+ "r400": {
+  "modele": "s10",
+  "job": 2,
+  "graine": 22,
+  "tour": 0
+ },
+ "r401": {
+  "modele": "s05",
+  "job": 2,
+  "graine": 22,
+  "tour": 0
+ },
+ "r402": {
+  "modele": "s03",
+  "job": 8,
+  "graine": 11,
+  "tour": 0
+ },
+ "r403": {
+  "modele": "s15",
+  "job": 1,
+  "graine": 22,
+  "tour": 0
+ },
+ "r404": {
+  "modele": "s03",
+  "job": 22,
+  "graine": 22,
+  "tour": 0
+ },
+ "r405": {
+  "modele": "S03t",
+  "job": 28,
+  "graine": 22,
+  "tour": 2
+ },
+ "r406": {
+  "modele": "s10",
+  "job": 29,
+  "graine": 22,
+  "tour": 1
+ },
+ "r407": {
+  "modele": "A0",
+  "job": 3,
+  "graine": 22,
+  "tour": 0
+ },
+ "r408": {
+  "modele": "s05",
+  "job": 22,
+  "graine": 33,
+  "tour": 0
+ },
+ "r409": {
+  "modele": "s05",
+  "job": 27,
+  "graine": 11,
+  "tour": 3
+ },
+ "r410": {
+  "modele": "S03t",
+  "job": 3,
+  "graine": 11,
+  "tour": 0
+ },
+ "r411": {
+  "modele": "s03",
+  "job": 19,
+  "graine": 33,
+  "tour": 0
+ },
+ "r412": {
+  "modele": "s15",
+  "job": 3,
+  "graine": 33,
+  "tour": 0
+ },
+ "r413": {
+  "modele": "s15",
+  "job": 15,
+  "graine": 33,
+  "tour": 0
+ },
+ "r414": {
+  "modele": "s05",
+  "job": 24,
+  "graine": 33,
+  "tour": 3
+ },
+ "r415": {
+  "modele": "s05",
+  "job": 14,
+  "graine": 33,
+  "tour": 0
+ },
+ "r416": {
+  "modele": "S03t",
+  "job": 29,
+  "graine": 22,
+  "tour": 3
+ },
+ "r417": {
+  "modele": "S03t",
+  "job": 29,
+  "graine": 22,
+  "tour": 1
+ },
+ "r418": {
+  "modele": "s10",
+  "job": 28,
+  "graine": 33,
+  "tour": 0
+ },
+ "r419": {
+  "modele": "s15",
+  "job": 13,
+  "graine": 22,
+  "tour": 0
+ },
+ "r420": {
+  "modele": "A0",
+  "job": 25,
+  "graine": 33,
+  "tour": 3
+ },
+ "r421": {
+  "modele": "s15",
+  "job": 27,
+  "graine": 33,
+  "tour": 2
+ },
+ "r422": {
+  "modele": "s03",
+  "job": 13,
+  "graine": 11,
+  "tour": 0
+ },
+ "r423": {
+  "modele": "S03t",
+  "job": 27,
+  "graine": 22,
+  "tour": 1
+ },
+ "r424": {
+  "modele": "s03",
+  "job": 16,
+  "graine": 11,
+  "tour": 0
+ },
+ "r425": {
+  "modele": "s15",
+  "job": 22,
+  "graine": 22,
+  "tour": 0
+ },
+ "r426": {
+  "modele": "s05",
+  "job": 13,
+  "graine": 11,
+  "tour": 0
+ },
+ "r427": {
+  "modele": "A0",
+  "job": 26,
+  "graine": 33,
+  "tour": 0
+ },
+ "r428": {
+  "modele": "s05",
+  "job": 9,
+  "graine": 22,
+  "tour": 0
+ },
+ "r429": {
+  "modele": "s03",
+  "job": 24,
+  "graine": 11,
+  "tour": 0
+ },
+ "r430": {
+  "modele": "A0",
+  "job": 27,
+  "graine": 11,
+  "tour": 3
+ },
+ "r431": {
+  "modele": "A0",
+  "job": 2,
+  "graine": 11,
+  "tour": 0
+ },
+ "r432": {
+  "modele": "s03",
+  "job": 26,
+  "graine": 22,
+  "tour": 3
+ },
+ "r433": {
+  "modele": "S03t",
+  "job": 25,
+  "graine": 11,
+  "tour": 2
+ },
+ "r434": {
+  "modele": "s05",
+  "job": 25,
+  "graine": 22,
+  "tour": 2
+ },
+ "r435": {
+  "modele": "s10",
+  "job": 17,
+  "graine": 11,
+  "tour": 0
+ },
+ "r436": {
+  "modele": "A0",
+  "job": 25,
+  "graine": 11,
+  "tour": 2
+ },
+ "r437": {
+  "modele": "s15",
+  "job": 19,
+  "graine": 22,
+  "tour": 0
+ },
+ "r438": {
+  "modele": "s15",
+  "job": 1,
+  "graine": 11,
+  "tour": 0
+ },
+ "r439": {
+  "modele": "s03",
+  "job": 9,
+  "graine": 22,
+  "tour": 0
+ },
+ "r440": {
+  "modele": "s10",
+  "job": 25,
+  "graine": 11,
+  "tour": 3
+ },
+ "r441": {
+  "modele": "s03",
+  "job": 29,
+  "graine": 11,
+  "tour": 2
+ },
+ "r442": {
+  "modele": "s05",
+  "job": 28,
+  "graine": 22,
+  "tour": 2
+ },
+ "r443": {
+  "modele": "s10",
+  "job": 28,
+  "graine": 22,
+  "tour": 2
+ },
+ "r444": {
+  "modele": "s05",
+  "job": 7,
+  "graine": 11,
+  "tour": 0
+ },
+ "r445": {
+  "modele": "s15",
+  "job": 16,
+  "graine": 22,
+  "tour": 0
+ },
+ "r446": {
+  "modele": "s10",
+  "job": 27,
+  "graine": 11,
+  "tour": 1
+ },
+ "r447": {
+  "modele": "A0",
+  "job": 3,
+  "graine": 33,
+  "tour": 0
+ },
+ "r448": {
+  "modele": "s03",
+  "job": 11,
+  "graine": 33,
+  "tour": 0
+ },
+ "r449": {
+  "modele": "s10",
+  "job": 25,
+  "graine": 22,
+  "tour": 3
+ },
+ "r450": {
+  "modele": "S03t",
+  "job": 29,
+  "graine": 11,
+  "tour": 0
+ },
+ "r451": {
+  "modele": "s05",
+  "job": 24,
+  "graine": 11,
+  "tour": 1
+ },
+ "r452": {
+  "modele": "S03t",
+  "job": 14,
+  "graine": 11,
+  "tour": 0
+ },
+ "r453": {
+  "modele": "s15",
+  "job": 29,
+  "graine": 11,
+  "tour": 2
+ },
+ "r454": {
+  "modele": "s05",
+  "job": 26,
+  "graine": 33,
+  "tour": 1
+ },
+ "r455": {
+  "modele": "s15",
+  "job": 23,
+  "graine": 22,
+  "tour": 0
+ },
+ "r456": {
+  "modele": "A0",
+  "job": 26,
+  "graine": 11,
+  "tour": 1
+ },
+ "r457": {
+  "modele": "S03t",
+  "job": 7,
+  "graine": 11,
+  "tour": 0
+ },
+ "r458": {
+  "modele": "s05",
+  "job": 11,
+  "graine": 22,
+  "tour": 0
+ },
+ "r459": {
+  "modele": "S03t",
+  "job": 5,
+  "graine": 11,
+  "tour": 0
+ },
+ "r460": {
+  "modele": "A0",
+  "job": 20,
+  "graine": 33,
+  "tour": 0
+ },
+ "r461": {
+  "modele": "A0",
+  "job": 27,
+  "graine": 22,
+  "tour": 3
+ },
+ "r462": {
+  "modele": "A0",
+  "job": 13,
+  "graine": 22,
+  "tour": 0
+ },
+ "r463": {
+  "modele": "S03t",
+  "job": 25,
+  "graine": 11,
+  "tour": 1
+ },
+ "r464": {
+  "modele": "s10",
+  "job": 14,
+  "graine": 22,
+  "tour": 0
+ },
+ "r465": {
+  "modele": "S03t",
+  "job": 0,
+  "graine": 11,
+  "tour": 0
+ },
+ "r466": {
+  "modele": "s05",
+  "job": 8,
+  "graine": 33,
+  "tour": 0
+ },
+ "r467": {
+  "modele": "s10",
+  "job": 15,
+  "graine": 11,
+  "tour": 0
+ },
+ "r468": {
+  "modele": "S03t",
+  "job": 27,
+  "graine": 22,
+  "tour": 3
+ },
+ "r469": {
+  "modele": "A0",
+  "job": 24,
+  "graine": 22,
+  "tour": 3
+ },
+ "r470": {
+  "modele": "A0",
+  "job": 18,
+  "graine": 22,
+  "tour": 0
+ },
+ "r471": {
+  "modele": "A0",
+  "job": 5,
+  "graine": 33,
+  "tour": 0
+ },
+ "r472": {
+  "modele": "A0",
+  "job": 15,
+  "graine": 11,
+  "tour": 0
+ },
+ "r473": {
+  "modele": "S03t",
+  "job": 6,
+  "graine": 22,
+  "tour": 0
+ },
+ "r474": {
+  "modele": "S03t",
+  "job": 25,
+  "graine": 22,
+  "tour": 2
+ },
+ "r475": {
+  "modele": "s10",
+  "job": 24,
+  "graine": 33,
+  "tour": 1
+ },
+ "r476": {
+  "modele": "s05",
+  "job": 28,
+  "graine": 11,
+  "tour": 0
+ },
+ "r477": {
+  "modele": "s05",
+  "job": 16,
+  "graine": 33,
+  "tour": 0
+ },
+ "r478": {
+  "modele": "s03",
+  "job": 20,
+  "graine": 33,
+  "tour": 0
+ },
+ "r479": {
+  "modele": "s15",
+  "job": 29,
+  "graine": 22,
+  "tour": 2
+ },
+ "r480": {
+  "modele": "s10",
+  "job": 24,
+  "graine": 33,
+  "tour": 2
+ },
+ "r481": {
+  "modele": "s10",
+  "job": 22,
+  "graine": 33,
+  "tour": 0
+ },
+ "r482": {
+  "modele": "A0",
+  "job": 7,
+  "graine": 22,
+  "tour": 0
+ },
+ "r483": {
+  "modele": "A0",
+  "job": 25,
+  "graine": 11,
+  "tour": 3
+ },
+ "r484": {
+  "modele": "s10",
+  "job": 9,
+  "graine": 22,
+  "tour": 0
+ },
+ "r485": {
+  "modele": "s10",
+  "job": 24,
+  "graine": 11,
+  "tour": 1
+ },
+ "r486": {
+  "modele": "A0",
+  "job": 4,
+  "graine": 33,
+  "tour": 0
+ },
+ "r487": {
+  "modele": "A0",
+  "job": 7,
+  "graine": 11,
+  "tour": 0
+ },
+ "r488": {
+  "modele": "s15",
+  "job": 5,
+  "graine": 22,
+  "tour": 0
+ },
+ "r489": {
+  "modele": "s15",
+  "job": 26,
+  "graine": 33,
+  "tour": 0
+ },
+ "r490": {
+  "modele": "S03t",
+  "job": 1,
+  "graine": 33,
+  "tour": 0
+ },
+ "r491": {
+  "modele": "S03t",
+  "job": 22,
+  "graine": 33,
+  "tour": 0
+ },
+ "r492": {
+  "modele": "s03",
+  "job": 29,
+  "graine": 33,
+  "tour": 2
+ },
+ "r493": {
+  "modele": "S03t",
+  "job": 25,
+  "graine": 33,
+  "tour": 0
+ },
+ "r494": {
+  "modele": "s05",
+  "job": 26,
+  "graine": 33,
+  "tour": 0
+ },
+ "r495": {
+  "modele": "s15",
+  "job": 15,
+  "graine": 22,
+  "tour": 0
+ },
+ "r496": {
+  "modele": "s05",
+  "job": 29,
+  "graine": 22,
+  "tour": 0
+ },
+ "r497": {
+  "modele": "s03",
+  "job": 27,
+  "graine": 33,
+  "tour": 0
+ },
+ "r498": {
+  "modele": "s10",
+  "job": 21,
+  "graine": 11,
+  "tour": 0
+ },
+ "r499": {
+  "modele": "s05",
+  "job": 28,
+  "graine": 11,
+  "tour": 3
+ },
+ "r500": {
+  "modele": "A0",
+  "job": 22,
+  "graine": 11,
+  "tour": 0
+ },
+ "r501": {
+  "modele": "s15",
+  "job": 27,
+  "graine": 22,
+  "tour": 0
+ },
+ "r502": {
+  "modele": "s10",
+  "job": 6,
+  "graine": 11,
+  "tour": 0
+ },
+ "r503": {
+  "modele": "s05",
+  "job": 28,
+  "graine": 33,
+  "tour": 3
+ },
+ "r504": {
+  "modele": "s10",
+  "job": 28,
+  "graine": 11,
+  "tour": 1
+ },
+ "r505": {
+  "modele": "s03",
+  "job": 26,
+  "graine": 11,
+  "tour": 1
+ },
+ "r506": {
+  "modele": "S03t",
+  "job": 15,
+  "graine": 11,
+  "tour": 0
+ },
+ "r507": {
+  "modele": "S03t",
+  "job": 20,
+  "graine": 11,
+  "tour": 0
+ },
+ "r508": {
+  "modele": "s10",
+  "job": 29,
+  "graine": 33,
+  "tour": 3
+ },
+ "r509": {
+  "modele": "s10",
+  "job": 26,
+  "graine": 33,
+  "tour": 0
+ },
+ "r510": {
+  "modele": "S03t",
+  "job": 25,
+  "graine": 22,
+  "tour": 0
+ },
+ "r511": {
+  "modele": "s10",
+  "job": 4,
+  "graine": 11,
+  "tour": 0
+ },
+ "r512": {
+  "modele": "s05",
+  "job": 29,
+  "graine": 33,
+  "tour": 1
+ },
+ "r513": {
+  "modele": "s15",
+  "job": 24,
+  "graine": 22,
+  "tour": 3
+ },
+ "r514": {
+  "modele": "A0",
+  "job": 28,
+  "graine": 11,
+  "tour": 0
+ },
+ "r515": {
+  "modele": "S03t",
+  "job": 27,
+  "graine": 11,
+  "tour": 2
+ },
+ "r516": {
+  "modele": "s03",
+  "job": 28,
+  "graine": 22,
+  "tour": 1
+ },
+ "r517": {
+  "modele": "S03t",
+  "job": 13,
+  "graine": 22,
+  "tour": 0
+ },
+ "r518": {
+  "modele": "s03",
+  "job": 17,
+  "graine": 22,
+  "tour": 0
+ },
+ "r519": {
+  "modele": "A0",
+  "job": 10,
+  "graine": 22,
+  "tour": 0
+ },
+ "r520": {
+  "modele": "s15",
+  "job": 6,
+  "graine": 11,
+  "tour": 0
+ },
+ "r521": {
+  "modele": "s03",
+  "job": 28,
+  "graine": 11,
+  "tour": 2
+ },
+ "r522": {
+  "modele": "s10",
+  "job": 12,
+  "graine": 22,
+  "tour": 0
+ },
+ "r523": {
+  "modele": "s10",
+  "job": 24,
+  "graine": 22,
+  "tour": 2
+ },
+ "r524": {
+  "modele": "S03t",
+  "job": 11,
+  "graine": 11,
+  "tour": 0
+ },
+ "r525": {
+  "modele": "s05",
+  "job": 19,
+  "graine": 22,
+  "tour": 0
+ },
+ "r526": {
+  "modele": "s10",
+  "job": 1,
+  "graine": 33,
+  "tour": 0
+ },
+ "r527": {
+  "modele": "s05",
+  "job": 25,
+  "graine": 22,
+  "tour": 3
+ },
+ "r528": {
+  "modele": "s15",
+  "job": 13,
+  "graine": 11,
+  "tour": 0
+ },
+ "r529": {
+  "modele": "s05",
+  "job": 5,
+  "graine": 22,
+  "tour": 0
+ },
+ "r530": {
+  "modele": "s03",
+  "job": 11,
+  "graine": 22,
+  "tour": 0
+ },
+ "r531": {
+  "modele": "s10",
+  "job": 12,
+  "graine": 33,
+  "tour": 0
+ },
+ "r532": {
+  "modele": "s03",
+  "job": 29,
+  "graine": 11,
+  "tour": 1
+ },
+ "r533": {
+  "modele": "s15",
+  "job": 17,
+  "graine": 22,
+  "tour": 0
+ },
+ "r534": {
+  "modele": "s03",
+  "job": 26,
+  "graine": 33,
+  "tour": 2
+ },
+ "r535": {
+  "modele": "A0",
+  "job": 26,
+  "graine": 11,
+  "tour": 2
+ },
+ "r536": {
+  "modele": "s10",
+  "job": 23,
+  "graine": 11,
+  "tour": 0
+ },
+ "r537": {
+  "modele": "s15",
+  "job": 25,
+  "graine": 33,
+  "tour": 1
+ },
+ "r538": {
+  "modele": "A0",
+  "job": 29,
+  "graine": 33,
+  "tour": 2
+ },
+ "r539": {
+  "modele": "s03",
+  "job": 29,
+  "graine": 22,
+  "tour": 0
+ },
+ "r540": {
+  "modele": "s10",
+  "job": 27,
+  "graine": 33,
+  "tour": 2
+ },
+ "r541": {
+  "modele": "s10",
+  "job": 28,
+  "graine": 22,
+  "tour": 1
+ },
+ "r542": {
+  "modele": "A0",
+  "job": 26,
+  "graine": 22,
+  "tour": 1
+ },
+ "r543": {
+  "modele": "s03",
+  "job": 24,
+  "graine": 22,
+  "tour": 3
+ },
+ "r544": {
+  "modele": "s15",
+  "job": 29,
+  "graine": 22,
+  "tour": 0
+ },
+ "r545": {
+  "modele": "s10",
+  "job": 2,
+  "graine": 33,
+  "tour": 0
+ },
+ "r546": {
+  "modele": "s15",
+  "job": 26,
+  "graine": 11,
+  "tour": 2
+ },
+ "r547": {
+  "modele": "s10",
+  "job": 26,
+  "graine": 22,
+  "tour": 3
+ },
+ "r548": {
+  "modele": "S03t",
+  "job": 16,
+  "graine": 22,
+  "tour": 0
+ },
+ "r549": {
+  "modele": "s15",
+  "job": 16,
+  "graine": 33,
+  "tour": 0
+ },
+ "r550": {
+  "modele": "s15",
+  "job": 8,
+  "graine": 22,
+  "tour": 0
+ },
+ "r551": {
+  "modele": "A0",
+  "job": 0,
+  "graine": 11,
+  "tour": 0
+ },
+ "r552": {
+  "modele": "s05",
+  "job": 29,
+  "graine": 11,
+  "tour": 0
+ },
+ "r553": {
+  "modele": "s10",
+  "job": 27,
+  "graine": 11,
+  "tour": 0
+ },
+ "r554": {
+  "modele": "A0",
+  "job": 1,
+  "graine": 33,
+  "tour": 0
+ },
+ "r555": {
+  "modele": "A0",
+  "job": 22,
+  "graine": 22,
+  "tour": 0
+ },
+ "r556": {
+  "modele": "s05",
+  "job": 10,
+  "graine": 11,
+  "tour": 0
+ },
+ "r557": {
+  "modele": "S03t",
+  "job": 22,
+  "graine": 11,
+  "tour": 0
+ },
+ "r558": {
+  "modele": "s03",
+  "job": 27,
+  "graine": 11,
+  "tour": 0
+ },
+ "r559": {
+  "modele": "s03",
+  "job": 2,
+  "graine": 11,
+  "tour": 0
+ },
+ "r560": {
+  "modele": "s05",
+  "job": 28,
+  "graine": 11,
+  "tour": 1
+ },
+ "r561": {
+  "modele": "A0",
+  "job": 27,
+  "graine": 33,
+  "tour": 0
+ },
+ "r562": {
+  "modele": "s15",
+  "job": 26,
+  "graine": 22,
+  "tour": 0
+ },
+ "r563": {
+  "modele": "s10",
+  "job": 24,
+  "graine": 11,
+  "tour": 2
+ },
+ "r564": {
+  "modele": "s15",
+  "job": 19,
+  "graine": 33,
+  "tour": 0
+ },
+ "r565": {
+  "modele": "s05",
+  "job": 12,
+  "graine": 22,
+  "tour": 0
+ },
+ "r566": {
+  "modele": "s05",
+  "job": 27,
+  "graine": 22,
+  "tour": 3
+ },
+ "r567": {
+  "modele": "S03t",
+  "job": 6,
+  "graine": 11,
+  "tour": 0
+ },
+ "r568": {
+  "modele": "s15",
+  "job": 20,
+  "graine": 22,
+  "tour": 0
+ },
+ "r569": {
+  "modele": "A0",
+  "job": 3,
+  "graine": 11,
+  "tour": 0
+ },
+ "r570": {
+  "modele": "s10",
+  "job": 1,
+  "graine": 22,
+  "tour": 0
+ },
+ "r571": {
+  "modele": "S03t",
+  "job": 1,
+  "graine": 11,
+  "tour": 0
+ },
+ "r572": {
+  "modele": "s03",
+  "job": 18,
+  "graine": 22,
+  "tour": 0
+ },
+ "r573": {
+  "modele": "s10",
+  "job": 29,
+  "graine": 11,
+  "tour": 3
+ },
+ "r574": {
+  "modele": "s15",
+  "job": 23,
+  "graine": 11,
+  "tour": 0
+ },
+ "r575": {
+  "modele": "s10",
+  "job": 3,
+  "graine": 22,
+  "tour": 0
+ },
+ "r576": {
+  "modele": "A0",
+  "job": 21,
+  "graine": 22,
+  "tour": 0
+ },
+ "r577": {
+  "modele": "A0",
+  "job": 22,
+  "graine": 33,
+  "tour": 0
+ },
+ "r578": {
+  "modele": "s03",
+  "job": 5,
+  "graine": 33,
+  "tour": 0
+ },
+ "r579": {
+  "modele": "s03",
+  "job": 9,
+  "graine": 33,
+  "tour": 0
+ },
+ "r580": {
+  "modele": "s03",
+  "job": 18,
+  "graine": 11,
+  "tour": 0
+ },
+ "r581": {
+  "modele": "s10",
+  "job": 28,
+  "graine": 11,
+  "tour": 3
+ },
+ "r582": {
+  "modele": "A0",
+  "job": 15,
+  "graine": 33,
+  "tour": 0
+ },
+ "r583": {
+  "modele": "s05",
+  "job": 5,
+  "graine": 33,
+  "tour": 0
+ },
+ "r584": {
+  "modele": "s15",
+  "job": 26,
+  "graine": 33,
+  "tour": 3
+ },
+ "r585": {
+  "modele": "s15",
+  "job": 24,
+  "graine": 11,
+  "tour": 0
+ },
+ "r586": {
+  "modele": "s10",
+  "job": 5,
+  "graine": 33,
+  "tour": 0
+ },
+ "r587": {
+  "modele": "s03",
+  "job": 3,
+  "graine": 11,
+  "tour": 0
+ },
+ "r588": {
+  "modele": "s03",
+  "job": 27,
+  "graine": 22,
+  "tour": 2
+ },
+ "r589": {
+  "modele": "s03",
+  "job": 24,
+  "graine": 11,
+  "tour": 1
+ },
+ "r590": {
+  "modele": "A0",
+  "job": 18,
+  "graine": 11,
+  "tour": 0
+ },
+ "r591": {
+  "modele": "s05",
+  "job": 18,
+  "graine": 33,
+  "tour": 0
+ },
+ "r592": {
+  "modele": "s05",
+  "job": 28,
+  "graine": 33,
+  "tour": 1
+ },
+ "r593": {
+  "modele": "A0",
+  "job": 26,
+  "graine": 22,
+  "tour": 3
+ },
+ "r594": {
+  "modele": "s05",
+  "job": 24,
+  "graine": 22,
+  "tour": 2
+ },
+ "r595": {
+  "modele": "s03",
+  "job": 3,
+  "graine": 33,
+  "tour": 0
+ },
+ "r596": {
+  "modele": "s10",
+  "job": 29,
+  "graine": 33,
+  "tour": 0
+ },
+ "r597": {
+  "modele": "S03t",
+  "job": 2,
+  "graine": 11,
+  "tour": 0
+ },
+ "r598": {
+  "modele": "s05",
+  "job": 28,
+  "graine": 22,
+  "tour": 3
+ },
+ "r599": {
+  "modele": "s03",
+  "job": 24,
+  "graine": 22,
+  "tour": 0
+ },
+ "r600": {
+  "modele": "S03t",
+  "job": 18,
+  "graine": 11,
+  "tour": 0
+ },
+ "r601": {
+  "modele": "s03",
+  "job": 3,
+  "graine": 22,
+  "tour": 0
+ },
+ "r602": {
+  "modele": "s15",
+  "job": 20,
+  "graine": 33,
+  "tour": 0
+ },
+ "r603": {
+  "modele": "S03t",
+  "job": 27,
+  "graine": 22,
+  "tour": 0
+ },
+ "r604": {
+  "modele": "s03",
+  "job": 14,
+  "graine": 11,
+  "tour": 0
+ },
+ "r605": {
+  "modele": "S03t",
+  "job": 26,
+  "graine": 33,
+  "tour": 1
+ },
+ "r606": {
+  "modele": "s03",
+  "job": 2,
+  "graine": 22,
+  "tour": 0
+ },
+ "r607": {
+  "modele": "s10",
+  "job": 29,
+  "graine": 33,
+  "tour": 1
+ },
+ "r608": {
+  "modele": "S03t",
+  "job": 26,
+  "graine": 33,
+  "tour": 2
+ },
+ "r609": {
+  "modele": "s05",
+  "job": 26,
+  "graine": 22,
+  "tour": 0
+ },
+ "r610": {
+  "modele": "s05",
+  "job": 25,
+  "graine": 11,
+  "tour": 1
+ },
+ "r611": {
+  "modele": "A0",
+  "job": 26,
+  "graine": 11,
+  "tour": 3
+ },
+ "r612": {
+  "modele": "s10",
+  "job": 23,
+  "graine": 22,
+  "tour": 0
+ },
+ "r613": {
+  "modele": "s05",
+  "job": 22,
+  "graine": 22,
+  "tour": 0
+ },
+ "r614": {
+  "modele": "S03t",
+  "job": 5,
+  "graine": 22,
+  "tour": 0
+ },
+ "r615": {
+  "modele": "A0",
+  "job": 1,
+  "graine": 22,
+  "tour": 0
+ },
+ "r616": {
+  "modele": "s05",
+  "job": 11,
+  "graine": 33,
+  "tour": 0
+ },
+ "r617": {
+  "modele": "s10",
+  "job": 26,
+  "graine": 11,
+  "tour": 3
+ },
+ "r618": {
+  "modele": "S03t",
+  "job": 28,
+  "graine": 22,
+  "tour": 3
+ },
+ "r619": {
+  "modele": "s15",
+  "job": 29,
+  "graine": 33,
+  "tour": 2
+ },
+ "r620": {
+  "modele": "s03",
+  "job": 25,
+  "graine": 33,
+  "tour": 1
+ },
+ "r621": {
+  "modele": "S03t",
+  "job": 24,
+  "graine": 22,
+  "tour": 0
+ },
+ "r622": {
+  "modele": "S03t",
+  "job": 28,
+  "graine": 22,
+  "tour": 0
+ },
+ "r623": {
+  "modele": "s05",
+  "job": 0,
+  "graine": 33,
+  "tour": 0
+ },
+ "r624": {
+  "modele": "s03",
+  "job": 12,
+  "graine": 33,
+  "tour": 0
+ },
+ "r625": {
+  "modele": "s10",
+  "job": 11,
+  "graine": 33,
+  "tour": 0
+ },
+ "r626": {
+  "modele": "s05",
+  "job": 14,
+  "graine": 11,
+  "tour": 0
+ },
+ "r627": {
+  "modele": "A0",
+  "job": 28,
+  "graine": 33,
+  "tour": 3
+ },
+ "r628": {
+  "modele": "S03t",
+  "job": 10,
+  "graine": 33,
+  "tour": 0
+ },
+ "r629": {
+  "modele": "s05",
+  "job": 15,
+  "graine": 11,
+  "tour": 0
+ },
+ "r630": {
+  "modele": "s15",
+  "job": 25,
+  "graine": 11,
+  "tour": 1
+ },
+ "r631": {
+  "modele": "s15",
+  "job": 13,
+  "graine": 33,
+  "tour": 0
+ },
+ "r632": {
+  "modele": "s10",
+  "job": 27,
+  "graine": 11,
+  "tour": 3
+ },
+ "r633": {
+  "modele": "s10",
+  "job": 15,
+  "graine": 22,
+  "tour": 0
+ },
+ "r634": {
+  "modele": "S03t",
+  "job": 16,
+  "graine": 33,
+  "tour": 0
+ },
+ "r635": {
+  "modele": "s10",
+  "job": 28,
+  "graine": 11,
+  "tour": 0
+ },
+ "r636": {
+  "modele": "A0",
+  "job": 27,
+  "graine": 33,
+  "tour": 2
+ },
+ "r637": {
+  "modele": "s03",
+  "job": 12,
+  "graine": 11,
+  "tour": 0
+ },
+ "r638": {
+  "modele": "s10",
+  "job": 21,
+  "graine": 22,
+  "tour": 0
+ },
+ "r639": {
+  "modele": "s10",
+  "job": 25,
+  "graine": 11,
+  "tour": 1
+ },
+ "r640": {
+  "modele": "s03",
+  "job": 24,
+  "graine": 11,
+  "tour": 2
+ },
+ "r641": {
+  "modele": "s05",
+  "job": 29,
+  "graine": 11,
+  "tour": 3
+ },
+ "r642": {
+  "modele": "S03t",
+  "job": 24,
+  "graine": 11,
+  "tour": 1
+ },
+ "r643": {
+  "modele": "s15",
+  "job": 25,
+  "graine": 22,
+  "tour": 2
+ },
+ "r644": {
+  "modele": "s15",
+  "job": 29,
+  "graine": 33,
+  "tour": 1
+ },
+ "r645": {
+  "modele": "s10",
+  "job": 21,
+  "graine": 33,
+  "tour": 0
+ },
+ "r646": {
+  "modele": "s10",
+  "job": 8,
+  "graine": 11,
+  "tour": 0
+ },
+ "r647": {
+  "modele": "s15",
+  "job": 25,
+  "graine": 33,
+  "tour": 0
+ },
+ "r648": {
+  "modele": "s10",
+  "job": 27,
+  "graine": 11,
+  "tour": 2
+ },
+ "r649": {
+  "modele": "s05",
+  "job": 2,
+  "graine": 33,
+  "tour": 0
+ },
+ "r650": {
+  "modele": "A0",
+  "job": 26,
+  "graine": 22,
+  "tour": 0
+ },
+ "r651": {
+  "modele": "s15",
+  "job": 9,
+  "graine": 33,
+  "tour": 0
+ },
+ "r652": {
+  "modele": "S03t",
+  "job": 29,
+  "graine": 33,
+  "tour": 2
+ },
+ "r653": {
+  "modele": "S03t",
+  "job": 9,
+  "graine": 33,
+  "tour": 0
+ },
+ "r654": {
+  "modele": "s10",
+  "job": 2,
+  "graine": 11,
+  "tour": 0
+ },
+ "r655": {
+  "modele": "S03t",
+  "job": 19,
+  "graine": 22,
+  "tour": 0
+ },
+ "r656": {
+  "modele": "s15",
+  "job": 25,
+  "graine": 22,
+  "tour": 3
+ },
+ "r657": {
+  "modele": "s03",
+  "job": 26,
+  "graine": 33,
+  "tour": 0
+ },
+ "r658": {
+  "modele": "s15",
+  "job": 25,
+  "graine": 33,
+  "tour": 2
+ },
+ "r659": {
+  "modele": "A0",
+  "job": 21,
+  "graine": 33,
+  "tour": 0
+ },
+ "r660": {
+  "modele": "A0",
+  "job": 29,
+  "graine": 22,
+  "tour": 3
+ },
+ "r661": {
+  "modele": "s03",
+  "job": 14,
+  "graine": 22,
+  "tour": 0
+ },
+ "r662": {
+  "modele": "A0",
+  "job": 25,
+  "graine": 11,
+  "tour": 1
+ },
+ "r663": {
+  "modele": "s03",
+  "job": 5,
+  "graine": 11,
+  "tour": 0
+ },
+ "r664": {
+  "modele": "A0",
+  "job": 26,
+  "graine": 33,
+  "tour": 3
+ },
+ "r665": {
+  "modele": "A0",
+  "job": 12,
+  "graine": 11,
+  "tour": 0
+ },
+ "r666": {
+  "modele": "s15",
+  "job": 12,
+  "graine": 22,
+  "tour": 0
+ },
+ "r667": {
+  "modele": "S03t",
+  "job": 4,
+  "graine": 33,
+  "tour": 0
+ },
+ "r668": {
+  "modele": "A0",
+  "job": 25,
+  "graine": 33,
+  "tour": 1
+ },
+ "r669": {
+  "modele": "s15",
+  "job": 26,
+  "graine": 11,
+  "tour": 3
+ },
+ "r670": {
+  "modele": "s10",
+  "job": 25,
+  "graine": 11,
+  "tour": 0
+ },
+ "r671": {
+  "modele": "S03t",
+  "job": 26,
+  "graine": 33,
+  "tour": 3
+ },
+ "r672": {
+  "modele": "s05",
+  "job": 0,
+  "graine": 11,
+  "tour": 0
+ },
+ "r673": {
+  "modele": "A0",
+  "job": 28,
+  "graine": 11,
+  "tour": 1
+ },
+ "r674": {
+  "modele": "A0",
+  "job": 16,
+  "graine": 22,
+  "tour": 0
+ },
+ "r675": {
+  "modele": "A0",
+  "job": 25,
+  "graine": 33,
+  "tour": 2
+ },
+ "r676": {
+  "modele": "s10",
+  "job": 28,
+  "graine": 33,
+  "tour": 1
+ },
+ "r677": {
+  "modele": "s05",
+  "job": 9,
+  "graine": 11,
+  "tour": 0
+ },
+ "r678": {
+  "modele": "s05",
+  "job": 27,
+  "graine": 33,
+  "tour": 2
+ },
+ "r679": {
+  "modele": "A0",
+  "job": 23,
+  "graine": 22,
+  "tour": 0
+ },
+ "r680": {
+  "modele": "s03",
+  "job": 10,
+  "graine": 33,
+  "tour": 0
+ },
+ "r681": {
+  "modele": "A0",
+  "job": 29,
+  "graine": 11,
+  "tour": 0
+ },
+ "r682": {
+  "modele": "s15",
+  "job": 14,
+  "graine": 22,
+  "tour": 0
+ },
+ "r683": {
+  "modele": "s10",
+  "job": 20,
+  "graine": 33,
+  "tour": 0
+ },
+ "r684": {
+  "modele": "s10",
+  "job": 3,
+  "graine": 33,
+  "tour": 0
+ },
+ "r685": {
+  "modele": "s15",
+  "job": 11,
+  "graine": 33,
+  "tour": 0
+ },
+ "r686": {
+  "modele": "S03t",
+  "job": 27,
+  "graine": 33,
+  "tour": 1
+ },
+ "r687": {
+  "modele": "s05",
+  "job": 25,
+  "graine": 33,
+  "tour": 3
+ },
+ "r688": {
+  "modele": "S03t",
+  "job": 24,
+  "graine": 33,
+  "tour": 3
+ },
+ "r689": {
+  "modele": "s05",
+  "job": 26,
+  "graine": 22,
+  "tour": 3
+ },
+ "r690": {
+  "modele": "A0",
+  "job": 11,
+  "graine": 11,
+  "tour": 0
+ },
+ "r691": {
+  "modele": "A0",
+  "job": 29,
+  "graine": 11,
+  "tour": 3
+ },
+ "r692": {
+  "modele": "s03",
+  "job": 4,
+  "graine": 33,
+  "tour": 0
+ },
+ "r693": {
+  "modele": "s03",
+  "job": 5,
+  "graine": 22,
+  "tour": 0
+ },
+ "r694": {
+  "modele": "s15",
+  "job": 28,
+  "graine": 33,
+  "tour": 0
+ },
+ "r695": {
+  "modele": "s05",
+  "job": 28,
+  "graine": 22,
+  "tour": 0
+ },
+ "r696": {
+  "modele": "s05",
+  "job": 25,
+  "graine": 11,
+  "tour": 3
+ },
+ "r697": {
+  "modele": "s10",
+  "job": 25,
+  "graine": 11,
+  "tour": 2
+ },
+ "r698": {
+  "modele": "A0",
+  "job": 8,
+  "graine": 33,
+  "tour": 0
+ },
+ "r699": {
+  "modele": "s15",
+  "job": 26,
+  "graine": 22,
+  "tour": 1
+ },
+ "r700": {
+  "modele": "A0",
+  "job": 25,
+  "graine": 22,
+  "tour": 0
+ },
+ "r701": {
+  "modele": "s03",
+  "job": 27,
+  "graine": 11,
+  "tour": 1
+ },
+ "r702": {
+  "modele": "A0",
+  "job": 20,
+  "graine": 22,
+  "tour": 0
+ },
+ "r703": {
+  "modele": "S03t",
+  "job": 12,
+  "graine": 11,
+  "tour": 0
+ },
+ "r704": {
+  "modele": "S03t",
+  "job": 14,
+  "graine": 33,
+  "tour": 0
+ },
+ "r705": {
+  "modele": "A0",
+  "job": 24,
+  "graine": 22,
+  "tour": 0
+ },
+ "r706": {
+  "modele": "s05",
+  "job": 27,
+  "graine": 11,
+  "tour": 2
+ },
+ "r707": {
+  "modele": "s10",
+  "job": 16,
+  "graine": 22,
+  "tour": 0
+ },
+ "r708": {
+  "modele": "S03t",
+  "job": 17,
+  "graine": 33,
+  "tour": 0
+ },
+ "r709": {
+  "modele": "A0",
+  "job": 21,
+  "graine": 11,
+  "tour": 0
+ },
+ "r710": {
+  "modele": "S03t",
+  "job": 20,
+  "graine": 22,
+  "tour": 0
+ },
+ "r711": {
+  "modele": "s10",
+  "job": 24,
+  "graine": 22,
+  "tour": 0
+ },
+ "r712": {
+  "modele": "s05",
+  "job": 27,
+  "graine": 22,
+  "tour": 2
+ },
+ "r713": {
+  "modele": "s15",
+  "job": 0,
+  "graine": 22,
+  "tour": 0
+ },
+ "r714": {
+  "modele": "S03t",
+  "job": 15,
+  "graine": 33,
+  "tour": 0
+ },
+ "r715": {
+  "modele": "S03t",
+  "job": 24,
+  "graine": 22,
+  "tour": 2
+ },
+ "r716": {
+  "modele": "s05",
+  "job": 24,
+  "graine": 11,
+  "tour": 2
+ },
+ "r717": {
+  "modele": "A0",
+  "job": 28,
+  "graine": 11,
+  "tour": 3
+ },
+ "r718": {
+  "modele": "s10",
+  "job": 25,
+  "graine": 33,
+  "tour": 3
+ },
+ "r719": {
+  "modele": "S03t",
+  "job": 21,
+  "graine": 11,
+  "tour": 0
+ },
+ "r720": {
+  "modele": "s03",
+  "job": 7,
+  "graine": 11,
+  "tour": 0
+ },
+ "r721": {
+  "modele": "s10",
+  "job": 27,
+  "graine": 22,
+  "tour": 2
+ },
+ "r722": {
+  "modele": "s03",
+  "job": 8,
+  "graine": 22,
+  "tour": 0
+ },
+ "r723": {
+  "modele": "s15",
+  "job": 14,
+  "graine": 11,
+  "tour": 0
+ },
+ "r724": {
+  "modele": "s10",
+  "job": 14,
+  "graine": 33,
+  "tour": 0
+ },
+ "r725": {
+  "modele": "s05",
+  "job": 24,
+  "graine": 11,
+  "tour": 0
+ },
+ "r726": {
+  "modele": "s05",
+  "job": 19,
+  "graine": 33,
+  "tour": 0
+ },
+ "r727": {
+  "modele": "S03t",
+  "job": 27,
+  "graine": 33,
+  "tour": 0
+ },
+ "r728": {
+  "modele": "s10",
+  "job": 0,
+  "graine": 11,
+  "tour": 0
+ },
+ "r729": {
+  "modele": "s10",
+  "job": 10,
+  "graine": 33,
+  "tour": 0
+ },
+ "r730": {
+  "modele": "s05",
+  "job": 14,
+  "graine": 22,
+  "tour": 0
+ },
+ "r731": {
+  "modele": "s10",
+  "job": 20,
+  "graine": 22,
+  "tour": 0
+ },
+ "r732": {
+  "modele": "s10",
+  "job": 22,
+  "graine": 22,
+  "tour": 0
+ },
+ "r733": {
+  "modele": "s15",
+  "job": 28,
+  "graine": 33,
+  "tour": 1
+ },
+ "r734": {
+  "modele": "A0",
+  "job": 26,
+  "graine": 11,
+  "tour": 0
+ },
+ "r735": {
+  "modele": "s15",
+  "job": 24,
+  "graine": 33,
+  "tour": 0
+ },
+ "r736": {
+  "modele": "S03t",
+  "job": 13,
+  "graine": 33,
+  "tour": 0
+ },
+ "r737": {
+  "modele": "S03t",
+  "job": 8,
+  "graine": 11,
+  "tour": 0
+ },
+ "r738": {
+  "modele": "s10",
+  "job": 25,
+  "graine": 22,
+  "tour": 1
+ },
+ "r739": {
+  "modele": "A0",
+  "job": 27,
+  "graine": 22,
+  "tour": 0
+ },
+ "r740": {
+  "modele": "s15",
+  "job": 29,
+  "graine": 22,
+  "tour": 3
+ },
+ "r741": {
+  "modele": "A0",
+  "job": 27,
+  "graine": 11,
+  "tour": 0
+ },
+ "r742": {
+  "modele": "s03",
+  "job": 7,
+  "graine": 33,
+  "tour": 0
+ },
+ "r743": {
+  "modele": "s03",
+  "job": 26,
+  "graine": 22,
+  "tour": 1
+ },
+ "r744": {
+  "modele": "S03t",
+  "job": 21,
+  "graine": 33,
+  "tour": 0
+ },
+ "r745": {
+  "modele": "s15",
+  "job": 28,
+  "graine": 11,
+  "tour": 3
+ },
+ "r746": {
+  "modele": "S03t",
+  "job": 26,
+  "graine": 22,
+  "tour": 2
+ },
+ "r747": {
+  "modele": "s05",
+  "job": 23,
+  "graine": 33,
+  "tour": 0
+ },
+ "r748": {
+  "modele": "A0",
+  "job": 24,
+  "graine": 33,
+  "tour": 2
+ },
+ "r749": {
+  "modele": "s05",
+  "job": 18,
+  "graine": 11,
+  "tour": 0
+ },
+ "r750": {
+  "modele": "s05",
+  "job": 25,
+  "graine": 33,
+  "tour": 2
+ },
+ "r751": {
+  "modele": "s05",
+  "job": 27,
+  "graine": 33,
+  "tour": 0
+ },
+ "r752": {
+  "modele": "s10",
+  "job": 26,
+  "graine": 33,
+  "tour": 3
+ },
+ "r753": {
+  "modele": "s10",
+  "job": 28,
+  "graine": 22,
+  "tour": 3
+ },
+ "r754": {
+  "modele": "s15",
+  "job": 24,
+  "graine": 33,
+  "tour": 3
+ },
+ "r755": {
+  "modele": "S03t",
+  "job": 28,
+  "graine": 33,
+  "tour": 2
+ },
+ "r756": {
+  "modele": "s05",
+  "job": 29,
+  "graine": 22,
+  "tour": 2
+ },
+ "r757": {
+  "modele": "s15",
+  "job": 0,
+  "graine": 33,
+  "tour": 0
+ },
+ "r758": {
+  "modele": "s10",
+  "job": 3,
+  "graine": 11,
+  "tour": 0
+ },
+ "r759": {
+  "modele": "s10",
+  "job": 18,
+  "graine": 33,
+  "tour": 0
+ },
+ "r760": {
+  "modele": "s03",
+  "job": 29,
+  "graine": 11,
+  "tour": 3
+ },
+ "r761": {
+  "modele": "S03t",
+  "job": 29,
+  "graine": 22,
+  "tour": 2
+ },
+ "r762": {
+  "modele": "s05",
+  "job": 28,
+  "graine": 11,
+  "tour": 2
+ },
+ "r763": {
+  "modele": "s10",
+  "job": 27,
+  "graine": 33,
+  "tour": 1
+ },
+ "r764": {
+  "modele": "s05",
+  "job": 18,
+  "graine": 22,
+  "tour": 0
+ },
+ "r765": {
+  "modele": "S03t",
+  "job": 10,
+  "graine": 22,
+  "tour": 0
+ },
+ "r766": {
+  "modele": "s03",
+  "job": 11,
+  "graine": 11,
+  "tour": 0
+ },
+ "r767": {
+  "modele": "s03",
+  "job": 9,
+  "graine": 11,
+  "tour": 0
+ },
+ "r768": {
+  "modele": "s15",
+  "job": 10,
+  "graine": 11,
+  "tour": 0
+ },
+ "r769": {
+  "modele": "s05",
+  "job": 19,
+  "graine": 11,
+  "tour": 0
+ },
+ "r770": {
+  "modele": "s03",
+  "job": 25,
+  "graine": 33,
+  "tour": 3
+ },
+ "r771": {
+  "modele": "s15",
+  "job": 28,
+  "graine": 22,
+  "tour": 1
+ },
+ "r772": {
+  "modele": "s10",
+  "job": 4,
+  "graine": 33,
+  "tour": 0
+ },
+ "r773": {
+  "modele": "S03t",
+  "job": 2,
+  "graine": 22,
+  "tour": 0
+ },
+ "r774": {
+  "modele": "s15",
+  "job": 25,
+  "graine": 11,
+  "tour": 0
+ },
+ "r775": {
+  "modele": "A0",
+  "job": 17,
+  "graine": 22,
+  "tour": 0
+ },
+ "r776": {
+  "modele": "s03",
+  "job": 8,
+  "graine": 33,
+  "tour": 0
+ },
+ "r777": {
+  "modele": "s15",
+  "job": 29,
+  "graine": 11,
+  "tour": 1
+ },
+ "r778": {
+  "modele": "S03t",
+  "job": 26,
+  "graine": 11,
+  "tour": 2
+ },
+ "r779": {
+  "modele": "s03",
+  "job": 10,
+  "graine": 11,
+  "tour": 0
+ },
+ "r780": {
+  "modele": "s03",
+  "job": 21,
+  "graine": 11,
+  "tour": 0
+ },
+ "r781": {
+  "modele": "s15",
+  "job": 23,
+  "graine": 33,
+  "tour": 0
+ },
+ "r782": {
+  "modele": "S03t",
+  "job": 28,
+  "graine": 11,
+  "tour": 0
+ },
+ "r783": {
+  "modele": "s03",
+  "job": 27,
+  "graine": 22,
+  "tour": 1
+ },
+ "r784": {
+  "modele": "S03t",
+  "job": 24,
+  "graine": 22,
+  "tour": 1
+ },
+ "r785": {
+  "modele": "s10",
+  "job": 29,
+  "graine": 11,
+  "tour": 2
+ },
+ "r786": {
+  "modele": "s15",
+  "job": 28,
+  "graine": 33,
+  "tour": 3
+ },
+ "r787": {
+  "modele": "s15",
+  "job": 12,
+  "graine": 33,
+  "tour": 0
+ },
+ "r788": {
+  "modele": "s10",
+  "job": 8,
+  "graine": 22,
+  "tour": 0
+ },
+ "r789": {
+  "modele": "s05",
+  "job": 24,
+  "graine": 22,
+  "tour": 3
+ },
+ "r790": {
+  "modele": "s15",
+  "job": 25,
+  "graine": 11,
+  "tour": 3
+ },
+ "r791": {
+  "modele": "S03t",
+  "job": 27,
+  "graine": 33,
+  "tour": 3
+ },
+ "r792": {
+  "modele": "s05",
+  "job": 13,
+  "graine": 22,
+  "tour": 0
+ },
+ "r793": {
+  "modele": "s05",
+  "job": 20,
+  "graine": 22,
+  "tour": 0
+ },
+ "r794": {
+  "modele": "s03",
+  "job": 27,
+  "graine": 33,
+  "tour": 1
+ },
+ "r795": {
+  "modele": "s05",
+  "job": 17,
+  "graine": 11,
+  "tour": 0
+ },
+ "r796": {
+  "modele": "s15",
+  "job": 29,
+  "graine": 33,
+  "tour": 3
+ },
+ "r797": {
+  "modele": "s15",
+  "job": 2,
+  "graine": 22,
+  "tour": 0
+ },
+ "r798": {
+  "modele": "s05",
+  "job": 15,
+  "graine": 33,
+  "tour": 0
+ },
+ "r799": {
+  "modele": "A0",
+  "job": 26,
+  "graine": 33,
+  "tour": 1
+ },
+ "r800": {
+  "modele": "s10",
+  "job": 28,
+  "graine": 33,
+  "tour": 3
+ },
+ "r801": {
+  "modele": "s10",
+  "job": 12,
+  "graine": 11,
+  "tour": 0
+ },
+ "r802": {
+  "modele": "A0",
+  "job": 24,
+  "graine": 33,
+  "tour": 0
+ },
+ "r803": {
+  "modele": "S03t",
+  "job": 6,
+  "graine": 33,
+  "tour": 0
+ },
+ "r804": {
+  "modele": "s05",
+  "job": 26,
+  "graine": 11,
+  "tour": 3
+ },
+ "r805": {
+  "modele": "A0",
+  "job": 28,
+  "graine": 22,
+  "tour": 3
+ },
+ "r806": {
+  "modele": "s05",
+  "job": 3,
+  "graine": 22,
+  "tour": 0
+ },
+ "r807": {
+  "modele": "s05",
+  "job": 12,
+  "graine": 33,
+  "tour": 0
+ },
+ "r808": {
+  "modele": "s10",
+  "job": 26,
+  "graine": 22,
+  "tour": 0
+ },
+ "r809": {
+  "modele": "s10",
+  "job": 7,
+  "graine": 11,
+  "tour": 0
+ },
+ "r810": {
+  "modele": "s05",
+  "job": 4,
+  "graine": 11,
+  "tour": 0
+ },
+ "r811": {
+  "modele": "s03",
+  "job": 26,
+  "graine": 33,
+  "tour": 1
+ },
+ "r812": {
+  "modele": "s03",
+  "job": 25,
+  "graine": 33,
+  "tour": 2
+ },
+ "r813": {
+  "modele": "s15",
+  "job": 27,
+  "graine": 11,
+  "tour": 1
+ },
+ "r814": {
+  "modele": "s15",
+  "job": 25,
+  "graine": 33,
+  "tour": 3
+ },
+ "r815": {
+  "modele": "s15",
+  "job": 2,
+  "graine": 33,
+  "tour": 0
+ },
+ "r816": {
+  "modele": "s10",
+  "job": 19,
+  "graine": 33,
+  "tour": 0
+ },
+ "r817": {
+  "modele": "A0",
+  "job": 28,
+  "graine": 22,
+  "tour": 1
+ },
+ "r818": {
+  "modele": "S03t",
+  "job": 29,
+  "graine": 11,
+  "tour": 3
+ },
+ "r819": {
+  "modele": "A0",
+  "job": 11,
+  "graine": 33,
+  "tour": 0
+ },
+ "r820": {
+  "modele": "s10",
+  "job": 18,
+  "graine": 22,
+  "tour": 0
+ },
+ "r821": {
+  "modele": "A0",
+  "job": 18,
+  "graine": 33,
+  "tour": 0
+ },
+ "r822": {
+  "modele": "A0",
+  "job": 24,
+  "graine": 22,
+  "tour": 2
+ },
+ "r823": {
+  "modele": "S03t",
+  "job": 8,
+  "graine": 22,
+  "tour": 0
+ },
+ "r824": {
+  "modele": "s05",
+  "job": 3,
+  "graine": 11,
+  "tour": 0
+ },
+ "r825": {
+  "modele": "s10",
+  "job": 24,
+  "graine": 33,
+  "tour": 3
+ },
+ "r826": {
+  "modele": "s15",
+  "job": 16,
+  "graine": 11,
+  "tour": 0
+ },
+ "r827": {
+  "modele": "s05",
+  "job": 26,
+  "graine": 22,
+  "tour": 1
+ },
+ "r828": {
+  "modele": "s15",
+  "job": 28,
+  "graine": 22,
+  "tour": 0
+ },
+ "r829": {
+  "modele": "S03t",
+  "job": 0,
+  "graine": 33,
+  "tour": 0
+ },
+ "r830": {
+  "modele": "s03",
+  "job": 25,
+  "graine": 22,
+  "tour": 3
+ },
+ "r831": {
+  "modele": "A0",
+  "job": 23,
+  "graine": 33,
+  "tour": 0
+ },
+ "r832": {
+  "modele": "s10",
+  "job": 27,
+  "graine": 33,
+  "tour": 3
+ },
+ "r833": {
+  "modele": "A0",
+  "job": 25,
+  "graine": 33,
+  "tour": 0
+ },
+ "r834": {
+  "modele": "S03t",
+  "job": 25,
+  "graine": 33,
+  "tour": 2
+ },
+ "r835": {
+  "modele": "A0",
+  "job": 2,
+  "graine": 33,
+  "tour": 0
+ },
+ "r836": {
+  "modele": "s03",
+  "job": 15,
+  "graine": 33,
+  "tour": 0
+ },
+ "r837": {
+  "modele": "S03t",
+  "job": 24,
+  "graine": 33,
+  "tour": 0
+ },
+ "r838": {
+  "modele": "s05",
+  "job": 16,
+  "graine": 11,
+  "tour": 0
+ },
+ "r839": {
+  "modele": "S03t",
+  "job": 24,
+  "graine": 22,
+  "tour": 3
+ },
+ "r840": {
+  "modele": "s03",
+  "job": 28,
+  "graine": 33,
+  "tour": 2
+ },
+ "r841": {
+  "modele": "A0",
+  "job": 26,
+  "graine": 33,
+  "tour": 2
+ },
+ "r842": {
+  "modele": "S03t",
+  "job": 27,
+  "graine": 33,
+  "tour": 2
+ },
+ "r843": {
+  "modele": "s10",
+  "job": 13,
+  "graine": 22,
+  "tour": 0
+ },
+ "r844": {
+  "modele": "s03",
+  "job": 21,
+  "graine": 22,
+  "tour": 0
+ },
+ "r845": {
+  "modele": "s03",
+  "job": 23,
+  "graine": 33,
+  "tour": 0
+ },
+ "r846": {
+  "modele": "s03",
+  "job": 27,
+  "graine": 22,
+  "tour": 3
+ },
+ "r847": {
+  "modele": "s03",
+  "job": 25,
+  "graine": 11,
+  "tour": 0
+ },
+ "r848": {
+  "modele": "s10",
+  "job": 11,
+  "graine": 11,
+  "tour": 0
+ },
+ "r849": {
+  "modele": "A0",
+  "job": 8,
+  "graine": 11,
+  "tour": 0
+ },
+ "r850": {
+  "modele": "A0",
+  "job": 10,
+  "graine": 11,
+  "tour": 0
+ },
+ "r851": {
+  "modele": "s03",
+  "job": 23,
+  "graine": 22,
+  "tour": 0
+ },
+ "r852": {
+  "modele": "s03",
+  "job": 24,
+  "graine": 33,
+  "tour": 2
+ },
+ "r853": {
+  "modele": "A0",
+  "job": 6,
+  "graine": 33,
+  "tour": 0
+ },
+ "r854": {
+  "modele": "A0",
+  "job": 13,
+  "graine": 33,
+  "tour": 0
+ },
+ "r855": {
+  "modele": "S03t",
+  "job": 1,
+  "graine": 22,
+  "tour": 0
+ },
+ "r856": {
+  "modele": "S03t",
+  "job": 24,
+  "graine": 11,
+  "tour": 3
+ },
+ "r857": {
+  "modele": "s03",
+  "job": 19,
+  "graine": 11,
+  "tour": 0
+ },
+ "r858": {
+  "modele": "S03t",
+  "job": 25,
+  "graine": 11,
+  "tour": 0
+ },
+ "r859": {
+  "modele": "s10",
+  "job": 15,
+  "graine": 33,
+  "tour": 0
+ },
+ "r860": {
+  "modele": "s15",
+  "job": 25,
+  "graine": 22,
+  "tour": 0
+ },
+ "r861": {
+  "modele": "s03",
+  "job": 22,
+  "graine": 33,
+  "tour": 0
+ },
+ "r862": {
+  "modele": "A0",
+  "job": 29,
+  "graine": 33,
+  "tour": 3
+ },
+ "r863": {
+  "modele": "A0",
+  "job": 11,
+  "graine": 22,
+  "tour": 0
+ },
+ "r864": {
+  "modele": "s05",
+  "job": 26,
+  "graine": 33,
+  "tour": 3
+ }
+}

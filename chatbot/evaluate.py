@@ -1,9 +1,15 @@
 """Banc d'évaluation du chatbot : c'est lui qui dit si une version progresse.
 
-    uv run python -m chatbot.evaluate --model data/models/chat_v1 --out data/stages/chatbot_20261112/eval/v1
-    uv run python -m chatbot.evaluate --model submissions/2026-11-11_153839/ckpt.pt \\
+    python -m chatbot.evaluate --model DOSSIER_DU_MODELE --out DOSSIER_DE_SORTIE
+    python -m chatbot.evaluate --model submissions/2026-11-11_153839/ckpt.pt \\
         --tokenizer submissions/2026-11-11_153839/tokenizer.json --baseline-prompt \\
-        --out data/stages/chatbot_20261112/eval/baseline_demo_actuelle
+        --out DOSSIER_DE_SORTIE
+
+DOSSIER_DU_MODELE : un dossier exporté par chatbot.generate (par exemple
+runs/chatbot_rtx/modeles/chatbot_moliere après un entraînement du lanceur). Sur une carte NVIDIA,
+ajouter --device cuda. PC Windows : PYTHONUTF8=1 et .venv/Scripts/python.exe à la place de python,
+jamais « uv run » (voir PC_RTX.md). Sur le Mac : « uv run python -m ... ».
+--baseline-prompt a besoin du module demo.server, absent de ce dépôt (voir baseline_reply).
 
 Deux mesures complémentaires :
 1. BPB « réplique suivante » sur moliere_val (pièces jamais vues), même calcul que l'affinage :
@@ -295,6 +301,7 @@ def summarize_discussion(rows):
 
 def baseline_reply(bot, messages, seed, max_new_tokens=128):
     """Reproduit demo/server.py::chat (état du 11/11) : même prompt, même tirage, même nettoyage."""
+    # Ce module vient de la démo web, absente de ce dépôt.
     from demo.server import clean_chat_reply, conversation_prompt
     t0 = time.monotonic()
     prompt = conversation_prompt(messages)

@@ -1,0 +1,146 @@
+{
+  "args": {
+    "init": "runs/chatbot_rtx/runs/base/best.pt",
+    "tokenizer": "submissions/2026-11-11_153839/tokenizer.json",
+    "data": [
+      "data/stages/chatbot_20261112/theatre/theatre_train.jsonl.zst",
+      "data/stages/chatbot_20261112/theatre/moliere_train.jsonl.zst",
+      "data/stages/chatbot_20261114/synthetique_v4/entrainement/moliere.jsonl.zst"
+    ],
+    "weights": [
+      1.0,
+      3.0,
+      1.09
+    ],
+    "val": "data/stages/chatbot_20261112/theatre/moliere_val.jsonl.zst",
+    "out": "runs/chatbot_rtx/runs/moliere_etape1",
+    "tokens": 90000000,
+    "lr": 0.0002,
+    "min_lr": 2e-05,
+    "warmup_steps": 100,
+    "batch_size": 64,
+    "micro_batch": null,
+    "seq_len": 512,
+    "dropout": 0.0,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "eval_every": 250,
+    "persona_augment": 0.5,
+    "note": "lanceur RTX, moliere, étape 1",
+    "format": "repliques",
+    "seed": 1337,
+    "device": "cuda",
+    "precision": "auto",
+    "compile": true,
+    "resume": true,
+    "stop_at_step": null,
+    "limit_scenes": null
+  },
+  "note": "lanceur RTX, moliere, étape 1",
+  "weights": [
+    1.0,
+    3.0,
+    1.09
+  ],
+  "device": "cuda",
+  "precision": "bf16",
+  "micro_batch": 64,
+  "environment": {
+    "device": "cuda",
+    "precision": "bf16",
+    "autocast_dtype": "torch.bfloat16",
+    "grad_scaler": false,
+    "tf32": true,
+    "pin_memory": true,
+    "compile": {
+      "requested": true,
+      "status": "échec, repli sans compilation",
+      "error": "TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton"
+    },
+    "torch": "2.15.0+cu132",
+    "cuda": "13.2",
+    "python": "3.12.11",
+    "numpy": "2.5.4",
+    "os": "Windows 11",
+    "machine": "AMD64",
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 5090",
+      "memory_gb": 34.2,
+      "capability": "12.0",
+      "count": 1,
+      "bf16_native": true,
+      "cudnn": 92600
+    }
+  },
+  "peak_memory_gb": 12.23,
+  "n_params": 54749440,
+  "format": "repliques-v2",
+  "persona_augment": 0.5,
+  "persona_copies": 387,
+  "steps": 2747,
+  "tokens_per_step": 32768,
+  "tokens_seen": 90013696,
+  "data": [
+    {
+      "path": "data/stages/chatbot_20261112/theatre/theatre_train.jsonl.zst",
+      "weight": 1.0,
+      "tokens_available": 28961665,
+      "windows_sampled": 156766,
+      "tokens_trained": 80264192,
+      "sha256": "035dbfc740db2c93015e1b7333fb7d6981e05999146d5164228f9da722470ca8",
+      "persona_copies": 0
+    },
+    {
+      "path": "data/stages/chatbot_20261112/theatre/moliere_train.jsonl.zst",
+      "weight": 3.0,
+      "tokens_available": 844977,
+      "windows_sampled": 13728,
+      "tokens_trained": 7028736,
+      "sha256": "94eeac016e80a179a57e5e6c62c4037a178d69ad3e224be8c261e8b005ab044f",
+      "persona_copies": 387
+    },
+    {
+      "path": "data/stages/chatbot_20261114/synthetique_v4/entrainement/moliere.jsonl.zst",
+      "weight": 1.09,
+      "tokens_available": 897109,
+      "windows_sampled": 5314,
+      "tokens_trained": 2720768,
+      "sha256": "5178d402344ee32710fa9c7c8177ac93831a54e6b367109daa97740464b74bbc",
+      "persona_copies": 0
+    }
+  ],
+  "val": {
+    "path": "data/stages/chatbot_20261112/theatre/moliere_val.jsonl.zst",
+    "sha256": "6e7d26d14598666ea6c298104cd19c63fb566a13b9fb3a064ebc7ed06b2c5a6b",
+    "windows": 140,
+    "tokens_scored": 71357
+  },
+  "init": {
+    "path": "runs/chatbot_rtx/runs/base/best.pt",
+    "sha256": "a32e0d95b9275c8281e7e2e8d5f6d68e50afd2b5f319a62457a41d1ea5a458fe"
+  },
+  "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584",
+  "val_step0": {
+    "step": 0,
+    "tokens_seen": 0,
+    "lr": 0.0,
+    "train_loss": null,
+    "val_loss": 2.65556,
+    "val_bpb": 1.12985,
+    "val_tokens": 71357,
+    "seconds": 28.3
+  },
+  "best": {
+    "val_loss": 2.48165,
+    "step": 1000,
+    "tokens_seen": 32768000,
+    "lr": 0.00015344953327331778,
+    "train_loss": 2.35289,
+    "val_bpb": 1.05585,
+    "val_tokens": 71357,
+    "seconds": 125.6
+  },
+  "seconds": 297.6,
+  "resumed_from_steps": [],
+  "torch": "2.15.0+cu132"
+}

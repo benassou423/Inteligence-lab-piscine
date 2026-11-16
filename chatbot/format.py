@@ -48,10 +48,9 @@ SPEAKER_LINE = re.compile(r"[A-ZÀ-ÖØ-ÞŒ]" + NAME_CHARS + r"{1,60}\.")
 # data/stages/chatbot_20261112/theatre/moliere_train.jsonl.zst (nom de rôle le plus fréquent et
 # personnage qui lui donne le plus souvent la réplique), SAUF HARPAGON et ALCESTE : L'Avare et Le
 # Misanthrope (avec Le Sicilien) sont les pièces de validation, absentes de moliere_train. On les
-# garde quand même : la recette d'affinage est choisie avec ces 3 pièces tenues à l'écart, puis le
-# modèle final de démo est ré-entraîné avec la même recette sur TOUT Molière, ces pièces comprises.
-# Pour un modèle affiné SANS ces pièces, HARPAGON et ALCESTE sont des rôles jamais vus (test de
-# généralisation, pas de fidélité au personnage).
+# garde quand même au chat. Aucun modèle publié n'a lu ces 3 pièces : elles restent tenues à
+# l'écart pour la mesure. HARPAGON et ALCESTE sont donc des rôles jamais vus chez Molière : un
+# test de généralisation, pas de fidélité au personnage (docs/chatbot/FICHE_DONNEES.md, § 3.4).
 # MOLIÈRE (persona par défaut, demande du référent) n'a que 99 répliques (L'Impromptu de
 # Versailles) : chatbot/finetune.py --persona-augment en fabrique des copies d'entraînement.
 PERSONAS = [

@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-13T19:18:18",
+  "device": "cuda",
+  "tailles": {
+    "S": {
+      "pas": 30,
+      "secondes": 3.6,
+      "tokens_par_s": 545588.0,
+      "memoire_gpu_max_go": 17.83,
+      "precision": "bf16",
+      "compile": "échec, repli sans compilation",
+      "micro_lot": null,
+      "journal": "runs/chatbot_rtx/journaux/mesure_S_micro128.log",
+      "etapes_heures": {
+        "base": 0.76,
+        "moliere_etape1": 0.05,
+        "francais_etape1": 0.08
+      },
+      "marge": 1.15,
+      "forfait_evaluations_heures": 0.5,
+      "total_heures": 1.52
+    },
+    "M": {
+      "pas": 30,
+      "secondes": 5.8,
+      "tokens_par_s": 340354.0,
+      "memoire_gpu_max_go": 23.68,
+      "precision": "bf16",
+      "compile": "échec, repli sans compilation",
+      "micro_lot": null,
+      "journal": "runs/chatbot_rtx/journaux/mesure_M_micro128.log",
+      "etapes_heures": {
+        "base": 1.63,
+        "moliere_etape1": 0.07,
+        "francais_etape1": 0.12
+      },
+      "marge": 1.15,
+      "forfait_evaluations_heures": 0.5,
+      "total_heures": 2.6
+    }
+  },
+  "note": "durées = budget de tokens / débit mesuré, × marge, + forfait d'évaluation non mesuré ; finetune supposé au même débit que le pré-entraînement (même modèle)"
+}

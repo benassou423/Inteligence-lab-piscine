@@ -1,0 +1,12 @@
+{"step": 0, "tokens_seen": 0, "lr": 0.0, "train_loss": null, "val_loss": 2.65556, "val_bpb": 1.12985, "val_tokens": 71357, "seconds": 28.3}
+{"step": 250, "tokens_seen": 8192000, "lr": 0.00019859639526672676, "train_loss": 2.53367, "val_loss": 2.53021, "val_bpb": 1.07652, "val_tokens": 71357, "seconds": 52.8}
+{"step": 500, "tokens_seen": 16384000, "lr": 0.00019009580981112955, "train_loss": 2.45599, "val_loss": 2.50909, "val_bpb": 1.06753, "val_tokens": 71357, "seconds": 77.1}
+{"step": 750, "tokens_seen": 24576000, "lr": 0.00017459530362500908, "train_loss": 2.40923, "val_loss": 2.48849, "val_bpb": 1.05877, "val_tokens": 71357, "seconds": 101.4}
+{"step": 1000, "tokens_seen": 32768000, "lr": 0.00015344953327331778, "train_loss": 2.37007, "val_loss": 2.48218, "val_bpb": 1.05608, "val_tokens": 71357, "seconds": 125.9}
+{"step": 1250, "tokens_seen": 40960000, "lr": 0.000128506519477698, "train_loss": 2.33449, "val_loss": 2.48262, "val_bpb": 1.05627, "val_tokens": 71357, "seconds": 150.4}
+{"step": 1500, "tokens_seen": 49152000, "lr": 0.00010194614055839389, "train_loss": 2.30221, "val_loss": 2.5114, "val_bpb": 1.06851, "val_tokens": 71357, "seconds": 174.8}
+{"step": 1750, "tokens_seen": 57344000, "lr": 7.60896233991364e-05, "train_loss": 2.26664, "val_loss": 2.50648, "val_bpb": 1.06642, "val_tokens": 71357, "seconds": 199.1}
+{"step": 2000, "tokens_seen": 65536000, "lr": 5.319668134709074e-05, "train_loss": 2.24372, "val_loss": 2.51986, "val_bpb": 1.07211, "val_tokens": 71357, "seconds": 223.6}
+{"step": 2250, "tokens_seen": 73728000, "lr": 3.5268028047960156e-05, "train_loss": 2.22254, "val_loss": 2.51274, "val_bpb": 1.06908, "val_tokens": 71357, "seconds": 248.0}
+{"step": 2500, "tokens_seen": 81920000, "lr": 2.387052639001417e-05, "train_loss": 2.21158, "val_loss": 2.52964, "val_bpb": 1.07627, "val_tokens": 71357, "seconds": 272.5}
+{"step": 2747, "tokens_seen": 90013696, "lr": 2.0000063387602467e-05, "train_loss": 2.20093, "val_loss": 2.53452, "val_bpb": 1.07835, "val_tokens": 71357, "seconds": 296.7}

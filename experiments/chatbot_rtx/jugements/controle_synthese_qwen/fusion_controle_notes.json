@@ -1,0 +1,2293 @@
+{
+ "resume": {
+  "fichier": "runs/evals_manuelles/fusion_controle.txt",
+  "lecteurs": 3,
+  "seuil_fixe_d_avance": 48,
+  "sans_defaut_majorite": 38,
+  "F": 44,
+  "R": 54,
+  "V": 60,
+  "S": 59,
+  "sans_defaut_par_lecteur": [
+   39,
+   38,
+   38
+  ]
+ },
+ "lignes": [
+  {
+   "numero": 1,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 2,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 3,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« C'est un repos bien mérité » alors que A dit qu'elle travaille : contresens.",
+    "« C'est un repos bien mérité » : A dit qu'il travaille de chez lui, B parle de repos.",
+    "« C'est un repos bien mérité » : A dit qu'elle travaille de chez elle, B parle de repos."
+   ]
+  },
+  {
+   "numero": 4,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 5,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 6,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 7,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 8,
+   "F": 0,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« voir un enfant… » début tronqué sans majuscule ; « ne pas en être fier? » contredit A (fils fier).",
+    "« voir un enfant » sans majuscule (début tronqué) ; « ne pas en être fier » contredit A, qui dit son fils fier.",
+    "« et ne pas en être fier? » contredit A (le fils est fier) ; réplique sans majuscule (« voir »)."
+   ]
+  },
+  {
+   "numero": 9,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 10,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 11,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 12,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« Un homme riche, comme vous, Madame » : confond les rôles, A demandait ce que B ferait.",
+    "« Un homme riche, comme vous, Madame » : confond les rôles et ne dit pas ce que B ferait.",
+    "« Un homme riche, comme vous, Madame » : confond les rôles, la question portait sur B."
+   ]
+  },
+  {
+   "numero": 13,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 14,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 15,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« Je vous fais grâce, madame » : contresens, il fallait « je vous rends grâce ».",
+    "« Je vous fais grâce, madame » : locution impropre (signifie pardonner), au lieu de « je vous rends grâce ».",
+    "« Je vous fais grâce, madame » : impropre (pour « je vous rends grâce »), sens faussé."
+   ]
+  },
+  {
+   "numero": 16,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« Quel est ce livre… que vous avez lu » puis « Citez-moi… » : ignore ce que A vient de dire.",
+    "« ce livre dont vous me parlez, et que vous avez lu » : A cherche un livre ; puis B redemande un titre déjà cité.",
+    "« Quel est ce livre… que vous avez lu » : A n'a cité aucun livre ; puis ignore les comédies citées."
+   ]
+  },
+  {
+   "numero": 17,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« se promener sans la moindre attache » contredit A qui répond « Pas si libre que ça ».",
+    "« se promener sans la moindre attache » contredit sans raison A (« pas si libre que ça »).",
+    "« se promener sans la moindre attache » contredit A qui vient de dire « pas si libre que ça »."
+   ]
+  },
+  {
+   "numero": 18,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« Point n'en est temps, monsieur » : tournure inventée, sens incompréhensible.",
+    "« Point n'en est temps » : tournure incorrecte et obscure.",
+    "« Point n'en est temps, monsieur » : tournure obscure, sens incompréhensible ici."
+   ]
+  },
+  {
+   "numero": 19,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 20,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 21,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 22,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 23,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« Vos yeux… vous émerveillent donc de la neige » et « l'hiver qui vous fait froid » : constructions fautives.",
+    "« Vos yeux… vous émerveillent donc de la neige » et « l'hiver qui vous fait froid » : constructions fautives.",
+    "« Vos yeux… vous émerveillent donc de la neige » : construction fautive et propos contradictoire."
+   ]
+  },
+  {
+   "numero": 24,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 25,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 26,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 27,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« que faites-vous, si ce n'est vous-même, pour mériter » : incise incompréhensible.",
+    "« que faites-vous, si ce n'est vous-même, pour mériter » : incise dépourvue de sens ; A : « Je me sens en jalousie ».",
+    "« que faites-vous, si ce n'est vous-même, pour mériter » : incise dépourvue de sens."
+   ]
+  },
+  {
+   "numero": 28,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 0,
+   "sans_defaut": 0,
+   "defauts": [
+    "« commodités de la vie moderne » : idée d'aujourd'hui introduite par B lui-même.",
+    "« commodités de la vie moderne » : B emploie de lui-même une idée d'aujourd'hui.",
+    "« commodités de la vie moderne » : idée d'aujourd'hui introduite par B de lui-même."
+   ]
+  },
+  {
+   "numero": 29,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": [
+    "« vos leçons en souffrent de ce dérèglement » : pléonasme fautif (en + de ce)."
+   ]
+  },
+  {
+   "numero": 30,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 31,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 32,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« La mer ou la montagne, l'un ou l'autre, c'est une chose » : accord fautif, phrase vide de sens.",
+    "« l'un ou l'autre, c'est une chose » : phrase creuse et inachevée, accord fautif (l'une ou l'autre).",
+    "« l'un ou l'autre, c'est une chose » : accord fautif (féminins) et phrase creuse, comme inachevée."
+   ]
+  },
+  {
+   "numero": 33,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« Point de dépendance, point de ménage, point de gouvernance, je vous prie » : incompréhensible, sans rapport clair.",
+    "« Point de dépendance, point de ménage, point de gouvernance, je vous prie: c'est la vie » : incompréhensible.",
+    "« Point de dépendance, point de ménage, point de gouvernance, je vous prie » : incompréhensible."
+   ]
+  },
+  {
+   "numero": 34,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 35,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 36,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 37,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 38,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 39,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« savent seul posséder » (accord, construction) et « faire de la joie aux autres » : fautes.",
+    "« savent seul posséder » : accord fautif (seuls) ; A : « mon ami Céline, elle ».",
+    "« savent seul posséder » (accord) ; « mon ami Céline, elle » ; « faire de la joie aux autres »."
+   ]
+  },
+  {
+   "numero": 40,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« un homme que la grandeur du monde n'a point besoin de lui » : relative fautive (dont).",
+    "« un homme que la grandeur du monde n'a point besoin de lui » : relative fautive (dont).",
+    "« un homme que la grandeur du monde n'a point besoin de lui » : relative fautive (dont)."
+   ]
+  },
+  {
+   "numero": 41,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "Réplique de A : « m'a dit bonjour en escalier » (dans l'escalier). Répliques de B correctes.",
+    "« m'a dit bonjour en escalier » (réplique de A) : préposition fautive, pour « dans l'escalier »."
+   ]
+  },
+  {
+   "numero": 42,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 43,
+   "F": 0,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« le temps que vous laissez à l'attendre » charabia ; « vous n'avez pas pris la peine de la garder » inverse les rôles.",
+    "« le temps que vous laissez à l'attendre » obscur ; « vous n'avez pas pris la peine de la garder » inverse les rôles.",
+    "« vous n'avez pas pris la peine de la garder » : rôles confondus ; « que vous laissez à l'attendre » obscur."
+   ]
+  },
+  {
+   "numero": 44,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« n'est-ce pas qu'un pauvre qui se fait riche? » : construction fautive, sens obscur.",
+    "« n'est-ce pas qu'un pauvre qui se fait riche? » : construction fautive et propos obscur.",
+    "« n'est-ce pas qu'un pauvre qui se fait riche? » : syntaxe fautive, sens confus."
+   ]
+  },
+  {
+   "numero": 45,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 46,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 47,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 48,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "Réplique de A : « tu t'en étais jamais souvenu » : incohérent et fautif.",
+    "« tu t'en étais jamais souvenu » (réplique de A) : proposition dépourvue de sens."
+   ]
+  },
+  {
+   "numero": 49,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 50,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« que vous y changiez de maison, ou que vous y changiez de tempérament » : « y » parasite, deux fois.",
+    "« que vous y changiez de maison » : « y » parasite ; A : « Le voisin de bas ».",
+    "« Le voisin de bas » (A) ; « que vous y changiez de maison » : « y » fautif."
+   ]
+  },
+  {
+   "numero": 51,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« mons lui » : mot déformé, parasite, à la place de « monsieur ».",
+    "« mons lui » : mot déformé (pour « monsieur »).",
+    "« mons lui » : mot déformé (pour « monsieur »)."
+   ]
+  },
+  {
+   "numero": 52,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 53,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 54,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« ne vous force-t-elle pas à lâcher votre bâton? » : sans rapport avec la peur du dentiste.",
+    "« à lâcher votre bâton » : image incompréhensible, sans lien avec le dentiste ; A saute d'un sujet à l'autre."
+   ]
+  },
+  {
+   "numero": 55,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": [
+    "« faites-leur du vin, cela leur fera de la joie » : tournures fautives (donnez-leur, fera plaisir)."
+   ]
+  },
+  {
+   "numero": 56,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 57,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 58,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "defauts": [
+    "« Prier Dieu pour que les vagues ne vous débordent pas » : phrase sans verbe principal, verbe impropre.",
+    "« Prier Dieu pour que les vagues ne vous débordent pas » : phrase sans verbe principal, emploi fautif de déborder.",
+    "« Prier Dieu pour que les vagues ne vous débordent pas » : phrase sans verbe principal, emploi impropre."
+   ]
+  },
+  {
+   "numero": 59,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  },
+  {
+   "numero": 60,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "defauts": []
+  }
+ ],
+ "impressions": [
+  "Lecteur n° 1 : 39 conversations sur 60 sans défaut (65 %). Par critère : F 46/60, R 52/60, V 60/60, S 59/60. Le vouvoiement est irréprochable (aucun « tu » de B, même quand A tutoie) et le ton classique tient presque partout (un seul écart : « commodités de la vie moderne », n° 28). Le point faible est la langue : tournures inventées ou bancales (« Point n'en est temps », « Je vous fais grâce », « faire de la joie », « y changiez »), relatives fautives, un mot déformé (« mons lui », n° 51), un début de réplique tronqué sans majuscule (n° 8). Second défaut : des réponses qui contredisent ou ignorent A (n° 3, 8, 12, 16, 17, 43, 54), souvent parce que B plaque une maxime toute faite. À noter, sans l'avoir compté comme défaut : beaucoup de répliques de B sont des aphorismes creux au sens flou (n° 6, 10, 22, 30, 37, 59), grammaticalement corrects mais peu informatifs ; j'ai été indulgent sur ces cas et n'ai mis 0 que pour un défaut citable. Plusieurs répliques de A sont elles-mêmes incohérentes (n° 10, 19, 48, 54), ce qui n'a pas été pénalisé puisque seul B est imité. Fichier lu : runs/evals_manuelles/fusion_controle.txt ; aucun autre fichier lu, rien d'écrit.",
+  "38 conversations sur 60 sans défaut (63 %). Le vouvoiement est tenu partout (V = 60/60) et le style classique presque partout (S = 59/60 ; seul écart : « commodités de la vie moderne » au n° 28). Les défauts se concentrent sur F (17 conversations) et R (6 conversations, dont deux cumulent F et R). Côté F : un mot déformé (« mons lui », n° 51), une phrase sans majuscule initiale (n° 8), des constructions fautives ou incompréhensibles dans les répliques de B (n° 15, 18, 23, 29, 32, 33, 40, 44, 50, 58) et quelques fautes dans les répliques de A seules ou associées (« en escalier », « voisin de bas », « mon ami Céline, elle », « tu t'en étais jamais souvenu »). Côté R : confusions de rôles (n° 12, 43), contresens sur ce que A vient de dire (n° 3, 8, 16, 17). Remarque hors barème : beaucoup de répliques de B, bien que correctes, sont des sentences creuses calquées sur le dernier mot de A (« Un X, monsieur, est… ») et plusieurs conversations sont décousues du fait de A (n° 54) ; j'ai noté avec indulgence les simples obscurités de sens tant que la phrase restait grammaticale (n° 10, 37, 42, 54, 55). Fichier lu : runs/evals_manuelles/fusion_controle.txt",
+  "38 conversations sur 60 sans défaut selon ma lecture (22 fautives : 16 sur F, 6 sur R dont une cumulée avec F, 1 sur S, 0 sur V). Le vouvoiement est tenu partout, y compris quand A tutoie, et le ton classique est presque toujours respecté (un seul écart net : « commodités de la vie moderne », n° 28). Les faiblesses réelles sont ailleurs : (1) des phrases de B grammaticalement bancales ou obscures (relatives fautives, incises vides, « mons lui », « Je vous fais grâce », « Point n'en est temps ») ; (2) des réponses qui contredisent A ou confondent les rôles (n° 3, 8, 12, 16, 17, 43) ; (3) quelques répliques de A elles-mêmes fautives (« en escalier », « voisin de bas », « mon ami Céline », « tu t'en étais jamais souvenu ») ou incohérentes d'un tour à l'autre (n° 54, n° 10). Au-delà des défauts notés, beaucoup de répliques de B sont des sentences passe-partout (« X, monsieur, est une chose qui… ») qui réagissent au dernier mot de A sans vraiment répondre à la question ni donner le conseil demandé : correctes selon la grille, mais peu informatives et répétitives pour un chatbot. Cas limites que j'ai laissés à 1 : n° 14 (B juge le jazz et le rock en connaisseur), n° 47 (trottinette prise pour un « animal de bât »), n° 42 (« le faire parler » pour un chat), n° 29 (« en souffrent de ce dérèglement »), n° 55 (« faites-leur du vin »), n° 37 (« Et que l'art est donc né de l'inutilité! »). Fichier lu : runs/evals_manuelles/fusion_controle.txt (lecture seule, aucune autre action)."
+ ],
+ "notes_brutes": [
+  {
+   "lecteur": "lecteur:1",
+   "notes": [
+    {
+     "numero": 1,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 2,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 3,
+     "F": 1,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« C'est un repos bien mérité » alors que A dit qu'elle travaille : contresens."
+    },
+    {
+     "numero": 4,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 5,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 6,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 7,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 8,
+     "F": 0,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« voir un enfant… » début tronqué sans majuscule ; « ne pas en être fier? » contredit A (fils fier)."
+    },
+    {
+     "numero": 9,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 10,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 11,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 12,
+     "F": 1,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Un homme riche, comme vous, Madame » : confond les rôles, A demandait ce que B ferait."
+    },
+    {
+     "numero": 13,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 14,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 15,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Je vous fais grâce, madame » : contresens, il fallait « je vous rends grâce »."
+    },
+    {
+     "numero": 16,
+     "F": 1,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Quel est ce livre… que vous avez lu » puis « Citez-moi… » : ignore ce que A vient de dire."
+    },
+    {
+     "numero": 17,
+     "F": 1,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« se promener sans la moindre attache » contredit A qui répond « Pas si libre que ça »."
+    },
+    {
+     "numero": 18,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Point n'en est temps, monsieur » : tournure inventée, sens incompréhensible."
+    },
+    {
+     "numero": 19,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 20,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 21,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 22,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 23,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Vos yeux… vous émerveillent donc de la neige » et « l'hiver qui vous fait froid » : constructions fautives."
+    },
+    {
+     "numero": 24,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 25,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 26,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 27,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« que faites-vous, si ce n'est vous-même, pour mériter » : incise incompréhensible."
+    },
+    {
+     "numero": 28,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 0,
+     "sans_defaut": 0,
+     "defaut": "« commodités de la vie moderne » : idée d'aujourd'hui introduite par B lui-même."
+    },
+    {
+     "numero": 29,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 30,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 31,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 32,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« La mer ou la montagne, l'un ou l'autre, c'est une chose » : accord fautif, phrase vide de sens."
+    },
+    {
+     "numero": 33,
+     "F": 0,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Point de dépendance, point de ménage, point de gouvernance, je vous prie » : incompréhensible, sans rapport clair."
+    },
+    {
+     "numero": 34,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 35,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 36,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 37,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 38,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 39,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« savent seul posséder » (accord, construction) et « faire de la joie aux autres » : fautes."
+    },
+    {
+     "numero": 40,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« un homme que la grandeur du monde n'a point besoin de lui » : relative fautive (dont)."
+    },
+    {
+     "numero": 41,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 42,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 43,
+     "F": 0,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« le temps que vous laissez à l'attendre » charabia ; « vous n'avez pas pris la peine de la garder » inverse les rôles."
+    },
+    {
+     "numero": 44,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« n'est-ce pas qu'un pauvre qui se fait riche? » : construction fautive, sens obscur."
+    },
+    {
+     "numero": 45,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 46,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 47,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 48,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 49,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 50,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« que vous y changiez de maison, ou que vous y changiez de tempérament » : « y » parasite, deux fois."
+    },
+    {
+     "numero": 51,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« mons lui » : mot déformé, parasite, à la place de « monsieur »."
+    },
+    {
+     "numero": 52,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 53,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 54,
+     "F": 1,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« ne vous force-t-elle pas à lâcher votre bâton? » : sans rapport avec la peur du dentiste."
+    },
+    {
+     "numero": 55,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« faites-leur du vin, cela leur fera de la joie » : tournures fautives (donnez-leur, fera plaisir)."
+    },
+    {
+     "numero": 56,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 57,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 58,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Prier Dieu pour que les vagues ne vous débordent pas » : phrase sans verbe principal, verbe impropre."
+    },
+    {
+     "numero": 59,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 60,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    }
+   ],
+   "impression_generale": "Lecteur n° 1 : 39 conversations sur 60 sans défaut (65 %). Par critère : F 46/60, R 52/60, V 60/60, S 59/60. Le vouvoiement est irréprochable (aucun « tu » de B, même quand A tutoie) et le ton classique tient presque partout (un seul écart : « commodités de la vie moderne », n° 28). Le point faible est la langue : tournures inventées ou bancales (« Point n'en est temps », « Je vous fais grâce », « faire de la joie », « y changiez »), relatives fautives, un mot déformé (« mons lui », n° 51), un début de réplique tronqué sans majuscule (n° 8). Second défaut : des réponses qui contredisent ou ignorent A (n° 3, 8, 12, 16, 17, 43, 54), souvent parce que B plaque une maxime toute faite. À noter, sans l'avoir compté comme défaut : beaucoup de répliques de B sont des aphorismes creux au sens flou (n° 6, 10, 22, 30, 37, 59), grammaticalement corrects mais peu informatifs ; j'ai été indulgent sur ces cas et n'ai mis 0 que pour un défaut citable. Plusieurs répliques de A sont elles-mêmes incohérentes (n° 10, 19, 48, 54), ce qui n'a pas été pénalisé puisque seul B est imité. Fichier lu : runs/evals_manuelles/fusion_controle.txt ; aucun autre fichier lu, rien d'écrit."
+  },
+  {
+   "lecteur": "lecteur:3",
+   "notes": [
+    {
+     "numero": 1,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 2,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 3,
+     "F": 1,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« C'est un repos bien mérité » : A dit qu'il travaille de chez lui, B parle de repos."
+    },
+    {
+     "numero": 4,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 5,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 6,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 7,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 8,
+     "F": 0,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« voir un enfant » sans majuscule (début tronqué) ; « ne pas en être fier » contredit A, qui dit son fils fier."
+    },
+    {
+     "numero": 9,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 10,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 11,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 12,
+     "F": 1,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Un homme riche, comme vous, Madame » : confond les rôles et ne dit pas ce que B ferait."
+    },
+    {
+     "numero": 13,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 14,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 15,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Je vous fais grâce, madame » : locution impropre (signifie pardonner), au lieu de « je vous rends grâce »."
+    },
+    {
+     "numero": 16,
+     "F": 1,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« ce livre dont vous me parlez, et que vous avez lu » : A cherche un livre ; puis B redemande un titre déjà cité."
+    },
+    {
+     "numero": 17,
+     "F": 1,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« se promener sans la moindre attache » contredit sans raison A (« pas si libre que ça »)."
+    },
+    {
+     "numero": 18,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Point n'en est temps » : tournure incorrecte et obscure."
+    },
+    {
+     "numero": 19,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 20,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 21,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 22,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 23,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Vos yeux… vous émerveillent donc de la neige » et « l'hiver qui vous fait froid » : constructions fautives."
+    },
+    {
+     "numero": 24,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 25,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 26,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 27,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« que faites-vous, si ce n'est vous-même, pour mériter » : incise dépourvue de sens ; A : « Je me sens en jalousie »."
+    },
+    {
+     "numero": 28,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 0,
+     "sans_defaut": 0,
+     "defaut": "« commodités de la vie moderne » : B emploie de lui-même une idée d'aujourd'hui."
+    },
+    {
+     "numero": 29,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« vos leçons en souffrent de ce dérèglement » : pléonasme fautif (en + de ce)."
+    },
+    {
+     "numero": 30,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 31,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 32,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« l'un ou l'autre, c'est une chose » : phrase creuse et inachevée, accord fautif (l'une ou l'autre)."
+    },
+    {
+     "numero": 33,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Point de dépendance, point de ménage, point de gouvernance, je vous prie: c'est la vie » : incompréhensible."
+    },
+    {
+     "numero": 34,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 35,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 36,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 37,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 38,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 39,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« savent seul posséder » : accord fautif (seuls) ; A : « mon ami Céline, elle »."
+    },
+    {
+     "numero": 40,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« un homme que la grandeur du monde n'a point besoin de lui » : relative fautive (dont)."
+    },
+    {
+     "numero": 41,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "Réplique de A : « m'a dit bonjour en escalier » (dans l'escalier). Répliques de B correctes."
+    },
+    {
+     "numero": 42,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 43,
+     "F": 0,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« le temps que vous laissez à l'attendre » obscur ; « vous n'avez pas pris la peine de la garder » inverse les rôles."
+    },
+    {
+     "numero": 44,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« n'est-ce pas qu'un pauvre qui se fait riche? » : construction fautive et propos obscur."
+    },
+    {
+     "numero": 45,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 46,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 47,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 48,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "Réplique de A : « tu t'en étais jamais souvenu » : incohérent et fautif."
+    },
+    {
+     "numero": 49,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 50,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« que vous y changiez de maison » : « y » parasite ; A : « Le voisin de bas »."
+    },
+    {
+     "numero": 51,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« mons lui » : mot déformé (pour « monsieur »)."
+    },
+    {
+     "numero": 52,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 53,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 54,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 55,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 56,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 57,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 58,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Prier Dieu pour que les vagues ne vous débordent pas » : phrase sans verbe principal, emploi fautif de déborder."
+    },
+    {
+     "numero": 59,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 60,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    }
+   ],
+   "impression_generale": "38 conversations sur 60 sans défaut (63 %). Le vouvoiement est tenu partout (V = 60/60) et le style classique presque partout (S = 59/60 ; seul écart : « commodités de la vie moderne » au n° 28). Les défauts se concentrent sur F (17 conversations) et R (6 conversations, dont deux cumulent F et R). Côté F : un mot déformé (« mons lui », n° 51), une phrase sans majuscule initiale (n° 8), des constructions fautives ou incompréhensibles dans les répliques de B (n° 15, 18, 23, 29, 32, 33, 40, 44, 50, 58) et quelques fautes dans les répliques de A seules ou associées (« en escalier », « voisin de bas », « mon ami Céline, elle », « tu t'en étais jamais souvenu »). Côté R : confusions de rôles (n° 12, 43), contresens sur ce que A vient de dire (n° 3, 8, 16, 17). Remarque hors barème : beaucoup de répliques de B, bien que correctes, sont des sentences creuses calquées sur le dernier mot de A (« Un X, monsieur, est… ») et plusieurs conversations sont décousues du fait de A (n° 54) ; j'ai noté avec indulgence les simples obscurités de sens tant que la phrase restait grammaticale (n° 10, 37, 42, 54, 55). Fichier lu : runs/evals_manuelles/fusion_controle.txt"
+  },
+  {
+   "lecteur": "lecteur:2",
+   "notes": [
+    {
+     "numero": 1,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 2,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 3,
+     "F": 1,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« C'est un repos bien mérité » : A dit qu'elle travaille de chez elle, B parle de repos."
+    },
+    {
+     "numero": 4,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 5,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 6,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 7,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 8,
+     "F": 1,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« et ne pas en être fier? » contredit A (le fils est fier) ; réplique sans majuscule (« voir »)."
+    },
+    {
+     "numero": 9,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 10,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 11,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 12,
+     "F": 1,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Un homme riche, comme vous, Madame » : confond les rôles, la question portait sur B."
+    },
+    {
+     "numero": 13,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 14,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 15,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Je vous fais grâce, madame » : impropre (pour « je vous rends grâce »), sens faussé."
+    },
+    {
+     "numero": 16,
+     "F": 1,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Quel est ce livre… que vous avez lu » : A n'a cité aucun livre ; puis ignore les comédies citées."
+    },
+    {
+     "numero": 17,
+     "F": 1,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« se promener sans la moindre attache » contredit A qui vient de dire « pas si libre que ça »."
+    },
+    {
+     "numero": 18,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Point n'en est temps, monsieur » : tournure obscure, sens incompréhensible ici."
+    },
+    {
+     "numero": 19,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 20,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 21,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 22,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 23,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Vos yeux… vous émerveillent donc de la neige » : construction fautive et propos contradictoire."
+    },
+    {
+     "numero": 24,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 25,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 26,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 27,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« que faites-vous, si ce n'est vous-même, pour mériter » : incise dépourvue de sens."
+    },
+    {
+     "numero": 28,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 0,
+     "sans_defaut": 0,
+     "defaut": "« commodités de la vie moderne » : idée d'aujourd'hui introduite par B de lui-même."
+    },
+    {
+     "numero": 29,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 30,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 31,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 32,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« l'un ou l'autre, c'est une chose » : accord fautif (féminins) et phrase creuse, comme inachevée."
+    },
+    {
+     "numero": 33,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Point de dépendance, point de ménage, point de gouvernance, je vous prie » : incompréhensible."
+    },
+    {
+     "numero": 34,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 35,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 36,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 37,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 38,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 39,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« savent seul posséder » (accord) ; « mon ami Céline, elle » ; « faire de la joie aux autres »."
+    },
+    {
+     "numero": 40,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« un homme que la grandeur du monde n'a point besoin de lui » : relative fautive (dont)."
+    },
+    {
+     "numero": 41,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« m'a dit bonjour en escalier » (réplique de A) : préposition fautive, pour « dans l'escalier »."
+    },
+    {
+     "numero": 42,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 43,
+     "F": 0,
+     "R": 0,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« vous n'avez pas pris la peine de la garder » : rôles confondus ; « que vous laissez à l'attendre » obscur."
+    },
+    {
+     "numero": 44,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« n'est-ce pas qu'un pauvre qui se fait riche? » : syntaxe fautive, sens confus."
+    },
+    {
+     "numero": 45,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 46,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 47,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 48,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« tu t'en étais jamais souvenu » (réplique de A) : proposition dépourvue de sens."
+    },
+    {
+     "numero": 49,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 50,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Le voisin de bas » (A) ; « que vous y changiez de maison » : « y » fautif."
+    },
+    {
+     "numero": 51,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« mons lui » : mot déformé (pour « monsieur »)."
+    },
+    {
+     "numero": 52,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 53,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 54,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« à lâcher votre bâton » : image incompréhensible, sans lien avec le dentiste ; A saute d'un sujet à l'autre."
+    },
+    {
+     "numero": 55,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 56,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 57,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 58,
+     "F": 0,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 0,
+     "defaut": "« Prier Dieu pour que les vagues ne vous débordent pas » : phrase sans verbe principal, emploi impropre."
+    },
+    {
+     "numero": 59,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    },
+    {
+     "numero": 60,
+     "F": 1,
+     "R": 1,
+     "V": 1,
+     "S": 1,
+     "sans_defaut": 1,
+     "defaut": ""
+    }
+   ],
+   "impression_generale": "38 conversations sur 60 sans défaut selon ma lecture (22 fautives : 16 sur F, 6 sur R dont une cumulée avec F, 1 sur S, 0 sur V). Le vouvoiement est tenu partout, y compris quand A tutoie, et le ton classique est presque toujours respecté (un seul écart net : « commodités de la vie moderne », n° 28). Les faiblesses réelles sont ailleurs : (1) des phrases de B grammaticalement bancales ou obscures (relatives fautives, incises vides, « mons lui », « Je vous fais grâce », « Point n'en est temps ») ; (2) des réponses qui contredisent A ou confondent les rôles (n° 3, 8, 12, 16, 17, 43) ; (3) quelques répliques de A elles-mêmes fautives (« en escalier », « voisin de bas », « mon ami Céline », « tu t'en étais jamais souvenu ») ou incohérentes d'un tour à l'autre (n° 54, n° 10). Au-delà des défauts notés, beaucoup de répliques de B sont des sentences passe-partout (« X, monsieur, est une chose qui… ») qui réagissent au dernier mot de A sans vraiment répondre à la question ni donner le conseil demandé : correctes selon la grille, mais peu informatives et répétitives pour un chatbot. Cas limites que j'ai laissés à 1 : n° 14 (B juge le jazz et le rock en connaisseur), n° 47 (trottinette prise pour un « animal de bât »), n° 42 (« le faire parler » pour un chat), n° 29 (« en souffrent de ce dérèglement »), n° 55 (« faites-leur du vin »), n° 37 (« Et que l'art est donc né de l'inutilité! »). Fichier lu : runs/evals_manuelles/fusion_controle.txt (lecture seule, aucune autre action)."
+  }
+ ]
+}

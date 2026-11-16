@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-13T19:15:34",
+  "mode": "clone",
+  "paquet": null,
+  "commit": "4def4b5",
+  "complet": true,
+  "versions": {
+    "python": "3.12.11",
+    "torch": "2.15.0+cu132",
+    "numpy": "2.5.4",
+    "tokenizers": "0.23.3",
+    "regex": "2026.9.29",
+    "zstandard": "0.25.0",
+    "xxhash": "4.0.2",
+    "cuda": "13.2"
+  },
+  "carte": {
+    "nom": "NVIDIA GeForce RTX 5090",
+    "memoire_go": 34.2,
+    "capacite": "12.0",
+    "bf16_natif": true,
+    "calcul_test_ok": true
+  },
+  "disque_libre_go": 274.9,
+  "erreurs": [],
+  "alertes": [
+    "autres programmes sur la carte : 26 (un seul calcul à la fois ; liste affichée à l'écran, non enregistrée)"
+  ],
+  "ok": true
+}

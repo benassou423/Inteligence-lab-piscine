@@ -1,0 +1,18 @@
+{
+  "format": "repliques",
+  "temperature": 0.8,
+  "top_p": 0.9,
+  "max_new_tokens": 120,
+  "candidates": 32,
+  "mmi_lambda": 1.0,
+  "mmi_total": true,
+  "anchor_mu": 1.0,
+  "min_words": 4,
+  "max_words": 30,
+  "no_repeat_ngram": 4,
+  "echo_max": 0.6,
+  "filter_role_names": true,
+  "filter_lowercase_start": true,
+  "strip_stage_directions": true,
+  "default_persona": "MOLIÈRE"
+}

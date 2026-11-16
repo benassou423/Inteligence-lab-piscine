@@ -1,0 +1,856 @@
+{
+  "summary": "Trois lecteurs indépendants notent les 60 conversations de synthèse tirées au hasard",
+  "agentCount": 3,
+  "logs": [],
+  "result": {
+    "lecteurs": 3,
+    "conversations_notees": 60,
+    "sans_defaut_majorite": 52,
+    "F": 56,
+    "R": 55,
+    "V": 60,
+    "S": 60,
+    "sans_defaut_par_lecteur": [
+      51,
+      52,
+      49
+    ],
+    "unanimes": 56,
+    "avec_defaut": [
+      {
+        "numero": 3,
+        "F": 0,
+        "R": 0,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« Savoir comment chasser les pigeons » : phrase bancale ; « La patience est l'âme de la vertu » ne répond pas.",
+          "« Savoir comment chasser les pigeons » : phrase bancale ; « La patience est l'âme de la vertu » ne répond pas.",
+          "« Savoir comment chasser… ? » phrase tronquée ; « La patience est l'âme de la vertu » ne répond pas."
+        ]
+      },
+      {
+        "numero": 10,
+        "F": 1,
+        "R": 0,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« Quel étrange objet… cet engin » : A n'a nommé aucun objet, B invente le sujet.",
+          "« Quel étrange objet… cet engin » : B commente un objet que A n'a jamais nommé.",
+          "« Quel étrange objet… cet engin » : A n'a nommé aucun objet, réponse sans rapport."
+        ]
+      },
+      {
+        "numero": 14,
+        "F": 1,
+        "R": 0,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« La patience est vertu. Le temps guérit tout » : maxime passe-partout, sans rapport avec les photos effacées.",
+          "« La patience est vertu. Le temps guérit tout » : sans rapport avec les photos effacées.",
+          "« conseil pour photos effacées dossier vacances Corse » sans syntaxe ; « Le temps guérit tout » ne répond pas."
+        ]
+      },
+      {
+        "numero": 19,
+        "F": 0,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« Télétravail bureau salon. » : trois noms juxtaposés, pas une phrase, sens incertain.",
+          "« Télétravail bureau salon. » : mots juxtaposés sans syntaxe, sens incertain.",
+          "« Télétravail bureau salon. » : mots juxtaposés, pas une phrase, sens peu clair."
+        ]
+      },
+      {
+        "numero": 25,
+        "F": 1,
+        "R": 0,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« Quelle raison motive cet enthousiasme? » : A vient de la donner (son nouveau vélo), B l'ignore.",
+          "« Quelle raison motive cet enthousiasme? » : A vient de la donner (son nouveau vélo), B l'ignore.",
+          "« Quelle raison motive cet enthousiasme? » : A vient de la donner (son nouveau vélo), propos ignoré."
+        ]
+      },
+      {
+        "numero": 29,
+        "F": 0,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« Savez-vous néanmoins s'attirer les faveurs » : faute de pronom, il faut « vous attirer ».",
+          "« Savez-vous néanmoins s'attirer les faveurs » : faute de pronom, il faut « vous attirer ».",
+          "« Savez-vous néanmoins s'attirer les faveurs » : faute de pronom, il faut « vous attirer »."
+        ]
+      },
+      {
+        "numero": 41,
+        "F": 1,
+        "R": 0,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« Une obligation m'attend. Pardonnez-moi » : n'explique pas le mot « embarras » demandé par A.",
+          "« Une obligation m'attend. Pardonnez-moi » : n'explique pas « l'embarras » demandé par A.",
+          "« Une obligation m'attend. Pardonnez-moi » n'explique pas « l'embarras » demandé par A."
+        ]
+      },
+      {
+        "numero": 57,
+        "F": 0,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« Savoir quoi faire avec mon voisin… ? » : infinitif sans proposition principale, phrase bancale.",
+          "« Savoir quoi faire avec mon voisin… ? » : question à l'infinitif, phrase amputée de son début.",
+          "« Savoir quoi faire avec mon voisin… ? » phrase tronquée ; « aussi borné que son insolence » comparaison bancale."
+        ]
+      }
+    ],
+    "impressions": [
+      "51 conversations sur 60 sans défaut (85 %). Vouvoiement (V) et style (S) : 60/60, aucun tutoiement de B, aucun mot moderne introduit par B. Les 9 défauts se partagent entre F (5 : n° 3, 19, 29, 35, 57) et R (5 : n° 3, 10, 14, 25, 41 ; le n° 3 cumule les deux).\n\nDéfauts de F : trois viennent des répliques de A, pas de B : gabarit « Savoir comment/quoi faire… ? » (n° 3, 57) et style télégraphique illisible « Télétravail bureau salon. » (n° 19). Deux viennent de B : « Savez-vous s'attirer » (n° 29), « risquez grand chose » (n° 35).\n\nDéfauts de R : maxime passe-partout sur la patience au lieu d'une réponse (n° 3, 14), contexte manquant côté A (« Tu en penses quoi? » sans objet, n° 10), question redondante (n° 25), définition esquivée (n° 41).\n\nFaiblesses tolérées, non sanctionnées :\n- Style télégraphique de A resté compréhensible (n° 7, 9, 14, 17, 59).\n- Définitions de B qui évitent « C'est… » et sonnent gauche : « Un homme possède des manières nobles » (n° 27), « Une ruse habile permet d'aboutir à ses fins » (n° 16).\n- Articles omis : « Je suis humble serviteur » (n° 33), « La patience est vertu » (n° 14).\n- Impératif « Considérez… » plaqué en tête de réplique (n° 30, 38, 44, 50).\n- Répliques vagues mais non hors sujet : « Le choix est fort judicieux » (n° 31), « Regrettez donc votre sort! » (n° 50), « Quel dénouement réserve ce jour? » (n° 59).\n- Tartuffe parle du temps de Louis XIV au passé (n° 44) : incohérence de persona légère.\n\nRemarque d'ensemble : le recours à « la patience est une vertu » est très fréquent (n° 3, 12, 14, 22, 41, 43, 57) et risque de devenir un tic du modèle.",
+      "52 conversations sur 60 sans défaut selon ma lecture ; 8 en défaut (R : 3, 10, 14, 25, 41 ; F : 3, 19, 29, 57). Vouvoiement de B irréprochable (aucun tutoiement relevé) et aucun mot moderne introduit par B : V et S à 60/60. Le français de B est propre et fini ; seule vraie faute de grammaire côté B : « Savez-vous s'attirer » (29). Les défauts de F viennent sinon des répliques de A (questions à l'infinitif « Savoir comment… ? » en 3 et 57, « Télétravail bureau salon » en 19). J'ai toléré le style télégraphique de A quand il reste compréhensible (7, 9, 14, 17, 59), mais il est fréquent et peu naturel. Faiblesse principale : la pertinence. Plusieurs réponses de B sont des maximes passe-partout (« La patience est une vertu… » revient en 3, 14, 22, 43, 57) qui esquivent la question pratique ; je n'ai mis R=0 que lorsque le rapport est franchement absent. Cas limites laissés à 1 : 31 (« Le choix est fort judicieux », vague), 9 (« La troupe sera prête », incongru), 16 (« Un rendez-vous sera fixé dès que possible », tournure administrative), 27 et 51 (définitions approximatives), 50 (« Regrettez donc votre sort »). Tics de génération notables : amorces « Considérez… » (6, 30, 38, 44, 50), phrases très courtes en rafale de trois, rappel systématique des comédiens indisciplinés chez Molière. À noter aussi : B parle parfois de « mon maître » à la troisième personne alors que l'étiquette de A est justement ce maître (24, 45, 49) ; non pénalisé puisque A est censé être un utilisateur d'aujourd'hui.",
+      "49 conversations sur 60 sans défaut (F 53/60, R 54/60, V 60/60, S 60/60). Le vouvoiement de B est tenu partout, y compris face à un A qui tutoie, et B n'emploie jamais de lui-même un mot moderne : le ton classique est homogène. Les défauts sont de deux sortes. (1) Côté A, des messages télégraphiques ou tronqués qui ne sont pas du français correct : « Savoir comment… ? » (n° 3, 57), « Télétravail bureau salon. » (19), « conseil pour photos effacées dossier vacances Corse » (14), « Désolé pour dérangement » (17), « retour vacances aujourd'hui » (59) ; j'ai toléré les phrases nominales grammaticales (n° 7, 9). Côté B, une seule vraie faute : « Savez-vous s'attirer » (29). (2) Pertinence : B répond parfois par une maxime passe-partout sans lien clair avec la demande (« La patience est… » n° 3, 14), esquive une question de vocabulaire (41), invente un objet que A n'a pas nommé (10), redemande une cause déjà donnée (25) ou approuve un « choix » inexistant (31). Remarques non pénalisées : tics d'ouverture répétés (« Considérez… », « La patience est une vertu… »), réponses en trois phrases très courtes et hachées, définitions parfois approximatives (« fâcheux » = « un regret », n° 51), cas limites laissés à 1 (« grand chose » sans négation n° 35, « orgueil prématuré » n° 16, Tartuffe parlant du temps de Louis XIV au passé n° 44). Fichier lu : runs/evals_manuelles/campagne/pilote_v5_controle.txt"
+    ],
+    "lignes": [
+      {
+        "numero": 1,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 2,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 3,
+        "F": 0,
+        "R": 0,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« Savoir comment chasser les pigeons » : phrase bancale ; « La patience est l'âme de la vertu » ne répond pas.",
+          "« Savoir comment chasser les pigeons » : phrase bancale ; « La patience est l'âme de la vertu » ne répond pas.",
+          "« Savoir comment chasser… ? » phrase tronquée ; « La patience est l'âme de la vertu » ne répond pas."
+        ]
+      },
+      {
+        "numero": 4,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 5,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 6,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 7,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 8,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 9,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 10,
+        "F": 1,
+        "R": 0,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« Quel étrange objet… cet engin » : A n'a nommé aucun objet, B invente le sujet.",
+          "« Quel étrange objet… cet engin » : B commente un objet que A n'a jamais nommé.",
+          "« Quel étrange objet… cet engin » : A n'a nommé aucun objet, réponse sans rapport."
+        ]
+      },
+      {
+        "numero": 11,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 12,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 13,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 14,
+        "F": 1,
+        "R": 0,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« La patience est vertu. Le temps guérit tout » : maxime passe-partout, sans rapport avec les photos effacées.",
+          "« La patience est vertu. Le temps guérit tout » : sans rapport avec les photos effacées.",
+          "« conseil pour photos effacées dossier vacances Corse » sans syntaxe ; « Le temps guérit tout » ne répond pas."
+        ]
+      },
+      {
+        "numero": 15,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 16,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 17,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "110",
+        "defauts": [
+          "« Désolé pour dérangement » : article manquant, français incorrect."
+        ]
+      },
+      {
+        "numero": 18,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 19,
+        "F": 0,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« Télétravail bureau salon. » : trois noms juxtaposés, pas une phrase, sens incertain.",
+          "« Télétravail bureau salon. » : mots juxtaposés sans syntaxe, sens incertain.",
+          "« Télétravail bureau salon. » : mots juxtaposés, pas une phrase, sens peu clair."
+        ]
+      },
+      {
+        "numero": 20,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 21,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 22,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 23,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 24,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 25,
+        "F": 1,
+        "R": 0,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« Quelle raison motive cet enthousiasme? » : A vient de la donner (son nouveau vélo), B l'ignore.",
+          "« Quelle raison motive cet enthousiasme? » : A vient de la donner (son nouveau vélo), B l'ignore.",
+          "« Quelle raison motive cet enthousiasme? » : A vient de la donner (son nouveau vélo), propos ignoré."
+        ]
+      },
+      {
+        "numero": 26,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 27,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 28,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 29,
+        "F": 0,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« Savez-vous néanmoins s'attirer les faveurs » : faute de pronom, il faut « vous attirer ».",
+          "« Savez-vous néanmoins s'attirer les faveurs » : faute de pronom, il faut « vous attirer ».",
+          "« Savez-vous néanmoins s'attirer les faveurs » : faute de pronom, il faut « vous attirer »."
+        ]
+      },
+      {
+        "numero": 30,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 31,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "110",
+        "defauts": [
+          "« Le choix est fort judicieux » : A n'a évoqué aucun choix, rapport peu clair."
+        ]
+      },
+      {
+        "numero": 32,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 33,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 34,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 35,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "011",
+        "defauts": [
+          "« Vous risquez grand chose » : « grand-chose » ne s'emploie qu'avec une négation, tournure fautive."
+        ]
+      },
+      {
+        "numero": 36,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 37,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 38,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 39,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 40,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 41,
+        "F": 1,
+        "R": 0,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« Une obligation m'attend. Pardonnez-moi » : n'explique pas le mot « embarras » demandé par A.",
+          "« Une obligation m'attend. Pardonnez-moi » : n'explique pas « l'embarras » demandé par A.",
+          "« Une obligation m'attend. Pardonnez-moi » n'explique pas « l'embarras » demandé par A."
+        ]
+      },
+      {
+        "numero": 42,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 43,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 44,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 45,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 46,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 47,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 48,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 49,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 50,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 51,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 52,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 53,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 54,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 55,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 56,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 57,
+        "F": 0,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 0,
+        "votes_sans_defaut": "000",
+        "defauts": [
+          "« Savoir quoi faire avec mon voisin… ? » : infinitif sans proposition principale, phrase bancale.",
+          "« Savoir quoi faire avec mon voisin… ? » : question à l'infinitif, phrase amputée de son début.",
+          "« Savoir quoi faire avec mon voisin… ? » phrase tronquée ; « aussi borné que son insolence » comparaison bancale."
+        ]
+      },
+      {
+        "numero": 58,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      },
+      {
+        "numero": 59,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "110",
+        "defauts": [
+          "« retour vacances aujourd'hui » : préposition manquante, style télégraphique incorrect."
+        ]
+      },
+      {
+        "numero": 60,
+        "F": 1,
+        "R": 1,
+        "V": 1,
+        "S": 1,
+        "sans_defaut": 1,
+        "votes_sans_defaut": "111",
+        "defauts": []
+      }
+    ]
+  },
+  "workflowProgress": [
+    {
+      "type": "workflow_phase",
+      "index": 1,
+      "title": "Lecture"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 1,
+      "label": "lecteur:1",
+      "phaseIndex": 1,
+      "phaseTitle": "Lecture",
+      "agentId": "a8d0fb302212e0aac",
+      "model": "claude-fable-5-2",
+      "state": "done",
+      "startedAt": 1794754815621,
+      "queuedAt": 1794754815295,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "51 conversations sur 60 sans défaut (85 %). Vouvoiement (V)…",
+      "promptPreview": "Tu es un relecteur exigeant de français. Lis EN ENTIER le fichier\nruns/evals_manuelles/campagne/pilote_v5_controle.txt\nIl contient 5 lignes de statistiques puis 60 conversations numérotées « ### 1. … » à « ### 60. … », tirées au hasard\nd'un jeu de données d'entraînement pour un petit chatbot qui doit « répondre à la manière de Molière ».\nFormat de chaque conv…",
+      "promptFramed": true,
+      "lastProgressAt": 1794754961498,
+      "tokens": 112915,
+      "toolCalls": 2,
+      "durationMs": 145876,
+      "resultPreview": "{\"notes\":[{\"numero\":1,\"F\":1,\"R\":1,\"V\":1,\"S\":1,\"sans_defaut\":1,\"defaut\":\"\"},{\"numero\":2,\"F\":1,\"R\":1,\"V\":1,\"S\":1,\"sans_defaut\":1,\"defaut\":\"\"},{\"numero\":3,\"F\":0,\"R\":0,\"V\":1,\"S\":1,\"sans_defaut\":0,\"defaut\":\"« Savoir comment chasser les pigeons » : phrase bancale ; « La patience est l'âme de la vertu » ne répond pas.\"},{\"numero\":4,\"F\":1,\"R\":1,\"V\":1,\"S\":1,\"sans_defaut\":1,\"defaut\":\"\"},{\"numero\":5,\"F\":1,\"R…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 2,
+      "label": "lecteur:2",
+      "phaseIndex": 1,
+      "phaseTitle": "Lecture",
+      "agentId": "ab7232cd9241289c0",
+      "model": "claude-fable-5-2",
+      "state": "done",
+      "startedAt": 1794754815621,
+      "queuedAt": 1794754815295,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "52 conversations sur 60 sans défaut selon ma lecture ; 8 en…",
+      "promptPreview": "Tu es un relecteur exigeant de français. Lis EN ENTIER le fichier\nruns/evals_manuelles/campagne/pilote_v5_controle.txt\nIl contient 5 lignes de statistiques puis 60 conversations numérotées « ### 1. … » à « ### 60. … », tirées au hasard\nd'un jeu de données d'entraînement pour un petit chatbot qui doit « répondre à la manière de Molière ».\nFormat de chaque conv…",
+      "promptFramed": true,
+      "lastProgressAt": 1794754961225,
+      "tokens": 112918,
+      "toolCalls": 2,
+      "durationMs": 144409,
+      "resultPreview": "{\"notes\":[{\"numero\":1,\"F\":1,\"R\":1,\"V\":1,\"S\":1,\"sans_defaut\":1,\"defaut\":\"\"},{\"numero\":2,\"F\":1,\"R\":1,\"V\":1,\"S\":1,\"sans_defaut\":1,\"defaut\":\"\"},{\"numero\":3,\"F\":0,\"R\":0,\"V\":1,\"S\":1,\"sans_defaut\":0,\"defaut\":\"« Savoir comment chasser les pigeons » : phrase bancale ; « La patience est l'âme de la vertu » ne répond pas.\"},{\"numero\":4,\"F\":1,\"R\":1,\"V\":1,\"S\":1,\"sans_defaut\":1,\"defaut\":\"\"},{\"numero\":5,\"F\":1,\"R…"
+    },
+    {
+      "type": "workflow_agent",
+      "index": 3,
+      "label": "lecteur:3",
+      "phaseIndex": 1,
+      "phaseTitle": "Lecture",
+      "agentId": "a3e823e12a180ebed",
+      "model": "claude-fable-5-2",
+      "state": "done",
+      "startedAt": 1794754815622,
+      "queuedAt": 1794754815295,
+      "attempt": 1,
+      "lastToolName": "StructuredOutput",
+      "lastToolSummary": "49 conversations sur 60 sans défaut (F 53/60, R 54/60, V 60…",
+      "promptPreview": "Tu es un relecteur exigeant de français. Lis EN ENTIER le fichier\nruns/evals_manuelles/campagne/pilote_v5_controle.txt\nIl contient 5 lignes de statistiques puis 60 conversations numérotées « ### 1. … » à « ### 60. … », tirées au hasard\nd'un jeu de données d'entraînement pour un petit chatbot qui doit « répondre à la manière de Molière ».\nFormat de chaque conv…",
+      "promptFramed": true,
+      "lastProgressAt": 1794754987992,
+      "tokens": 112927,
+      "toolCalls": 2,
+      "durationMs": 171173,
+      "resultPreview": "{\"notes\":[{\"numero\":1,\"F\":1,\"R\":1,\"V\":1,\"S\":1,\"sans_defaut\":1,\"defaut\":\"\"},{\"numero\":2,\"F\":1,\"R\":1,\"V\":1,\"S\":1,\"sans_defaut\":1,\"defaut\":\"\"},{\"numero\":3,\"F\":0,\"R\":0,\"V\":1,\"S\":1,\"sans_defaut\":0,\"defaut\":\"« Savoir comment chasser… ? » phrase tronquée ; « La patience est l'âme de la vertu » ne répond pas.\"},{\"numero\":4,\"F\":1,\"R\":1,\"V\":1,\"S\":1,\"sans_defaut\":1,\"defaut\":\"\"},{\"numero\":5,\"F\":1,\"R\":1,\"V\":1,…"
+    }
+  ],
+  "totalTokens": 338760,
+  "totalToolCalls": 6
+}

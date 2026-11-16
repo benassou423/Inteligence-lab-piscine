@@ -1,0 +1,848 @@
+{
+ "lecteurs": 3,
+ "conversations_notees": 60,
+ "sans_defaut_majorite": 48,
+ "F": 52,
+ "R": 55,
+ "V": 60,
+ "S": 60,
+ "sans_defaut_par_lecteur": [
+  47,
+  48,
+  45
+ ],
+ "unanimes": 54,
+ "avec_defaut": [
+  {
+   "numero": 6,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Est-ce un désordre des humeurs… apaiser! » : question terminée par un point d'exclamation ; « quelle cause produit ce manque » maladroit.",
+    "« À l'heure actuelle » : tournure d'aujourd'hui ; de plus la question « Est-ce un désordre… apaiser! » finit par « ! ».",
+    "« Est-ce un désordre des humeurs… apaiser! » : question close par « ! » ; « quelle cause produit ce manque » maladroit."
+   ]
+  },
+  {
+   "numero": 13,
+   "F": 0,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« ne m'en eût fait pire » incompréhensible ; « La patience est mère de tout succès » ne répond pas au conseil demandé.",
+    "« que le temps ne m'en eût fait pire » : phrase bancale ; le proverbe initial ignore les poules.",
+    "« La patience est mère de tout succès » ignore les poules ; « ne m'en eût fait pire » agrammatical."
+   ]
+  },
+  {
+   "numero": 14,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Gare-vous des colères » : forme fautive (il faudrait « Gardez-vous » ou « Gare aux »).",
+    "« Gare-vous des colères » : forme déformée, il faudrait « Gardez-vous ».",
+    "« Gare-vous des colères » : forme inventée (on dit « Gardez-vous »)."
+   ]
+  },
+  {
+   "numero": 24,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Quel étrange effroi possédez-vous ainsi » : tournure impropre, on ne « possède » pas un effroi, il vous possède.",
+    "« Quel étrange effroi possédez-vous ainsi » : tournure impropre, c'est l'effroi qui possède la personne.",
+    "« Quel étrange effroi possédez-vous ainsi » : impropre, c'est l'effroi qui possède la personne."
+   ]
+  },
+  {
+   "numero": 25,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Peut-être l'idiome vous échappe-t-il » : sans rapport avec « Le prof est injuste », aucune langue n'a été évoquée.",
+    "« Peut-être l'idiome vous échappe-t-il encore » : sans rapport avec « Le prof est injuste ».",
+    "« Peut-être l'idiome vous échappe-t-il encore » : sans rapport avec « Le prof est injuste »."
+   ]
+  },
+  {
+   "numero": 28,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« consulter un médecin pour vos vapeurs. Je crains d'avoir un autre embarras » : hors sujet face à la peur de se perdre.",
+    "« Je crains d'avoir un autre embarras » : phrase obscure, sens incertain, congé abrupt.",
+    "« consulter un médecin pour vos vapeurs. Je crains d'avoir un autre embarras » : hors sujet et obscur."
+   ]
+  },
+  {
+   "numero": 30,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "100",
+   "defauts": [
+    "« Certes, je conjure les pères avares pour soulager leurs bourses » : verbe impropre, « Certes » ne répond pas à « c'est quoi ».",
+    "« Certes, je conjure les pères avares » : « conjure » impropre, et « Certes » ne répond pas à une question ouverte."
+   ]
+  },
+  {
+   "numero": 40,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Quelle imprudence vous égarez ainsi! » : faute d'accord et de construction (« vous égare »).",
+    "« Quelle imprudence vous égarez ainsi! » : faute de grammaire, il faudrait « vous égare ».",
+    "« Quelle imprudence vous égarez ainsi! » : agrammatical (attendu « vous égare »)."
+   ]
+  },
+  {
+   "numero": 46,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Ce visage m'est familier » : phrase sans rapport, B n'a vu personne et A n'a montré aucun visage.",
+    "« Ce visage m'est familier » : phrase sans rapport, B ne voit pas l'ami dont parle A.",
+    "« Ce visage m'est familier » : sans rapport, B ne voit pas l'ami dont parle A."
+   ]
+  },
+  {
+   "numero": 56,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Me semble-t-il que vous manquiez de conviction? » : interrogation agrammaticale (« Il me semble que vous manquez »).",
+    "« Me semble-t-il que vous manquiez de conviction? » : construction fautive (inversion et subjonctif injustifiés).",
+    "« Me semble-t-il que vous manquiez de conviction? » : tournure agrammaticale."
+   ]
+  },
+  {
+   "numero": 57,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Voici donc un secret! » : le conseil annoncé n'est jamais donné, la demande reste sans réponse.",
+    "« Voici donc un secret! » : annonce le conseil demandé sans jamais le donner.",
+    "« Voici donc un secret! » : annonce un conseil qui n'est jamais donné, la demande reste sans réponse."
+   ]
+  },
+  {
+   "numero": 58,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Lisez-en les détails et satisfaites-vous! » : rien à lire, phrase dénuée de sens après la définition.",
+    "« Lisez-en les détails et satisfaites-vous! » : phrase incohérente, sans antécédent ni sens clair.",
+    "« Lisez-en les détails et satisfaites-vous! » : phrase dépourvue de sens."
+   ]
+  }
+ ],
+ "impressions": [
+  "47 conversations sur 60 sans défaut (78 %). Le vouvoiement (V) et le style classique (S) sont tenus partout : aucun tutoiement de B, aucun mot moderne introduit par B. Les défauts se concentrent sur F (6 cas : n° 6, 13, 14, 24, 40, 56 — constructions agrammaticales ou impropres comme « Gare-vous », « vous égarez », « Me semble-t-il que vous manquiez ») et sur R (8 cas : n° 13, 25, 28, 29, 33, 46, 57, 58 — phrase plaquée sans rapport, conseil annoncé mais jamais donné, définition fausse de « crotté »). Faiblesses non sanctionnées car hors grille ou limites, mais récurrentes : (1) connecteurs réflexes en tête de réplique (« Hélas », « Certes », « Certainement, car ») souvent illogiques (n° 9, 15, 30, 54, 60) ; (2) incohérences internes de B d'un tour à l'autre (n° 37 : « Le prix reste bas » puis « La somme est haute ») ; (3) réponses en trois phrases très courtes et génériques, proverbes passe-partout (n° 4, 27, 44) ; (4) tics thématiques répétés (« ma troupe », « mes comédiens indisciplinés », « vapeurs », « médecin ») ; (5) quelques tournures un peu modernes ou d'assistant sans être franchement anachroniques (« À l'heure actuelle », « convivialité », « fragrance », « Quel autre sujet souhaitez-vous aborder? », « Quel plaisir de vous lire ») ; (6) n° 2 : Sganarelle se plaint de « mon maître » à Don Juan lui-même, légère confusion de rôle ; n° 47 : lien avec « Quel froid » seulement indirect. Fichier lu : runs/evals_manuelles/campagne/pilote2_controle.txt",
+  "48 conversations sur 60 sans défaut (80 %). Le vouvoiement est tenu partout (V = 60/60) et le style classique presque partout (S = 59/60, seul « À l'heure actuelle » au n° 6). Les défauts se concentrent sur F (8 cas : n° 13, 14, 24, 28, 30, 40, 56, 58) et R (5 cas : n° 13, 25, 46, 57, plus le proverbe hors sujet du n° 13 déjà compté). Côté F, ce sont des formes déformées ou fautives (« Gare-vous », « vous égarez », « Me semble-t-il que vous manquiez ») et des phrases au sens obscur (« Lisez-en les détails et satisfaites-vous », « Je crains d'avoir un autre embarras »). Côté R, ce sont des phrases plaquées sans lien (« Ce visage m'est familier », « l'idiome vous échappe ») ou une promesse non tenue (« Voici donc un secret! »). Faiblesses non sanctionnées mais récurrentes : tics d'ouverture mécaniques (« Hélas », « Certes », « Certainement, car… ») souvent illogiques avec la suite (n° 9, 15, 54, 60) ; répliques en trois phrases très courtes et télégraphiques (n° 4, 27, 37, 59) ; rappels répétitifs de « ma troupe / mes comédiens » et des « vapeurs » ; points d'exclamation à la place de points d'interrogation ; quelques mots un peu modernes tolérés (« convivialité » n° 19, « fragrance » n° 48, « coûte fortune » sans article n° 59) ; définition douteuse de « crotté » au n° 33 (lieu souillé d'excréments au lieu de sali de boue). B ne s'étonne presque jamais des objets modernes cités par A (vélo, voiture, clavier, film), ce qui n'est pas un défaut selon la grille mais appauvrit le jeu d'époque.",
+  "45 conversations sur 60 sans défaut (75 %). Le vouvoiement est tenu partout (V = 60/60) et le ton classique aussi, à une réserve près (« convivialité », n° 19). Les défauts se concentrent sur deux points. Français (8 cas) : formes inventées ou agrammaticales (« Gare-vous », « vous égarez ainsi », « Me semble-t-il que vous manquiez », « ne m'en eût fait pire »), impropriétés (« effroi possédez-vous », « je conjure les pères avares »), phrase vide de sens (« Lisez-en les détails et satisfaites-vous »), question close par « ! ». Rapport au propos (7 cas) : maximes passe-partout qui ignorent la demande (n° 13), phrases plaquées sans lien (« Ce visage m'est familier », « l'idiome vous échappe », « vos vapeurs »), conseil annoncé mais jamais donné (n° 57). Tics récurrents non sanctionnés mais visibles : « Hélas » et « Certes, car » en ouverture même quand ils ne conviennent pas (n° 9, 15, 30), rappel quasi systématique de « ma troupe » et des « vapeurs », réponses en trois phrases très courtes un peu mécaniques. Cas limites laissés à 1 : n° 2 (Sganarelle dit « Mon maître m'épuise » à Don Juan), n° 29 et 47 (lien ténu), n° 37 (« Le prix reste bas » puis « La somme est haute »), n° 48 (« fragrance »), n° 49 (« Le malheur! »)."
+ ],
+ "lignes": [
+  {
+   "numero": 1,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 2,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 3,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 4,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 5,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 6,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Est-ce un désordre des humeurs… apaiser! » : question terminée par un point d'exclamation ; « quelle cause produit ce manque » maladroit.",
+    "« À l'heure actuelle » : tournure d'aujourd'hui ; de plus la question « Est-ce un désordre… apaiser! » finit par « ! ».",
+    "« Est-ce un désordre des humeurs… apaiser! » : question close par « ! » ; « quelle cause produit ce manque » maladroit."
+   ]
+  },
+  {
+   "numero": 7,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 8,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 9,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 10,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 11,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 12,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 13,
+   "F": 0,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« ne m'en eût fait pire » incompréhensible ; « La patience est mère de tout succès » ne répond pas au conseil demandé.",
+    "« que le temps ne m'en eût fait pire » : phrase bancale ; le proverbe initial ignore les poules.",
+    "« La patience est mère de tout succès » ignore les poules ; « ne m'en eût fait pire » agrammatical."
+   ]
+  },
+  {
+   "numero": 14,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Gare-vous des colères » : forme fautive (il faudrait « Gardez-vous » ou « Gare aux »).",
+    "« Gare-vous des colères » : forme déformée, il faudrait « Gardez-vous ».",
+    "« Gare-vous des colères » : forme inventée (on dit « Gardez-vous »)."
+   ]
+  },
+  {
+   "numero": 15,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 16,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 17,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 18,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 19,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "110",
+   "defauts": [
+    "« Cette simple convivialité » : mot moderne employé par B de lui-même."
+   ]
+  },
+  {
+   "numero": 20,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 21,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 22,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 23,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 24,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Quel étrange effroi possédez-vous ainsi » : tournure impropre, on ne « possède » pas un effroi, il vous possède.",
+    "« Quel étrange effroi possédez-vous ainsi » : tournure impropre, c'est l'effroi qui possède la personne.",
+    "« Quel étrange effroi possédez-vous ainsi » : impropre, c'est l'effroi qui possède la personne."
+   ]
+  },
+  {
+   "numero": 25,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Peut-être l'idiome vous échappe-t-il » : sans rapport avec « Le prof est injuste », aucune langue n'a été évoquée.",
+    "« Peut-être l'idiome vous échappe-t-il encore » : sans rapport avec « Le prof est injuste ».",
+    "« Peut-être l'idiome vous échappe-t-il encore » : sans rapport avec « Le prof est injuste »."
+   ]
+  },
+  {
+   "numero": 26,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 27,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 28,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« consulter un médecin pour vos vapeurs. Je crains d'avoir un autre embarras » : hors sujet face à la peur de se perdre.",
+    "« Je crains d'avoir un autre embarras » : phrase obscure, sens incertain, congé abrupt.",
+    "« consulter un médecin pour vos vapeurs. Je crains d'avoir un autre embarras » : hors sujet et obscur."
+   ]
+  },
+  {
+   "numero": 29,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "011",
+   "defauts": [
+    "« Le public attendra demain pour nous juger » : sans lien avec « Bonsoir à toi », salut non rendu."
+   ]
+  },
+  {
+   "numero": 30,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "100",
+   "defauts": [
+    "« Certes, je conjure les pères avares pour soulager leurs bourses » : verbe impropre, « Certes » ne répond pas à « c'est quoi ».",
+    "« Certes, je conjure les pères avares » : « conjure » impropre, et « Certes » ne répond pas à une question ouverte."
+   ]
+  },
+  {
+   "numero": 31,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 32,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 33,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "011",
+   "defauts": [
+    "« un lieu souillé par des excréments » : définition fausse de « crotté » (sali de boue), la question reste mal répondue."
+   ]
+  },
+  {
+   "numero": 34,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 35,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 36,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 37,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 38,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 39,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 40,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Quelle imprudence vous égarez ainsi! » : faute d'accord et de construction (« vous égare »).",
+    "« Quelle imprudence vous égarez ainsi! » : faute de grammaire, il faudrait « vous égare ».",
+    "« Quelle imprudence vous égarez ainsi! » : agrammatical (attendu « vous égare »)."
+   ]
+  },
+  {
+   "numero": 41,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 42,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 43,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 44,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 45,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 46,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Ce visage m'est familier » : phrase sans rapport, B n'a vu personne et A n'a montré aucun visage.",
+    "« Ce visage m'est familier » : phrase sans rapport, B ne voit pas l'ami dont parle A.",
+    "« Ce visage m'est familier » : sans rapport, B ne voit pas l'ami dont parle A."
+   ]
+  },
+  {
+   "numero": 47,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 48,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 49,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 50,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 51,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 52,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 53,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 54,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "110",
+   "defauts": [
+    "« Certainement, car je sais mener ma troupe avec art » ne répond pas à « Est-ce un compliment? »."
+   ]
+  },
+  {
+   "numero": 55,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  },
+  {
+   "numero": 56,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Me semble-t-il que vous manquiez de conviction? » : interrogation agrammaticale (« Il me semble que vous manquez »).",
+    "« Me semble-t-il que vous manquiez de conviction? » : construction fautive (inversion et subjonctif injustifiés).",
+    "« Me semble-t-il que vous manquiez de conviction? » : tournure agrammaticale."
+   ]
+  },
+  {
+   "numero": 57,
+   "F": 1,
+   "R": 0,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Voici donc un secret! » : le conseil annoncé n'est jamais donné, la demande reste sans réponse.",
+    "« Voici donc un secret! » : annonce le conseil demandé sans jamais le donner.",
+    "« Voici donc un secret! » : annonce un conseil qui n'est jamais donné, la demande reste sans réponse."
+   ]
+  },
+  {
+   "numero": 58,
+   "F": 0,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 0,
+   "votes_sans_defaut": "000",
+   "defauts": [
+    "« Lisez-en les détails et satisfaites-vous! » : rien à lire, phrase dénuée de sens après la définition.",
+    "« Lisez-en les détails et satisfaites-vous! » : phrase incohérente, sans antécédent ni sens clair.",
+    "« Lisez-en les détails et satisfaites-vous! » : phrase dépourvue de sens."
+   ]
+  },
+  {
+   "numero": 59,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "110",
+   "defauts": [
+    "« Cela coûte fortune! » : article manquant (« une fortune »)."
+   ]
+  },
+  {
+   "numero": 60,
+   "F": 1,
+   "R": 1,
+   "V": 1,
+   "S": 1,
+   "sans_defaut": 1,
+   "votes_sans_defaut": "111",
+   "defauts": []
+  }
+ ]
+}
