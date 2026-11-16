@@ -1,24 +1,37 @@
-"""Générateur de conversations synthétiques (option, à valider par l'étudiant avant toute génération complète).
+"""Écrit des conversations synthétiques avec un modèle local à poids ouverts servi par Ollama.
 
-    uv run python -m chatbot.synthetic --style moderne --n 60 --out DOSSIER/moderne.jsonl.zst --seed 1
-    uv run python -m chatbot.synthetic --style moliere --n 120 --out DOSSIER/moliere.jsonl.zst --seed 1
-    uv run python -m chatbot.synthetic --maj-exemples       # choisit les répliques de Molière du prompt
-    uv run python -m chatbot.synthetic --lisezmoi DOSSIER   # bilan chiffré + 15 exemples par style
-    uv run python -m chatbot.synthetic --refiltrer --style moderne --out F  # filtres actuels sur F
+    python -m chatbot.synthetic --style moderne --n 60 --out DOSSIER/moderne.jsonl.zst --seed 1
+    python -m chatbot.synthetic --style moliere --n 120 --out DOSSIER/moliere.jsonl.zst --seed 1
+    python -m chatbot.synthetic --maj-exemples       # choisit les répliques de Molière du prompt
+    python -m chatbot.synthetic --lisezmoi DOSSIER   # bilan chiffré + 15 exemples par style
+    python -m chatbot.synthetic --refiltrer --style moderne --out F  # filtres actuels sur F
+
+(PC Windows : PYTHONUTF8=1 et .venv/Scripts/python.exe à la place de python, jamais « uv run » :
+voir PC_RTX.md. Sur le Mac : « uv run python -m ... ».)
+
+Ce module est le moteur de la génération. Les conversations retenues pour les modèles publiés
+(campagnes v4 et v5) ont été écrites par gemma4:31b-it-q4_K_M, servi par Ollama, avec
+tools/campagne_synthese.py : ce lanceur appelle les fonctions d'ici avec ses propres consignes
+(chatbot/prompts_synthetiques_v4.json et chatbot/prompts_synthetiques_v5.json). Lancé seul, ce
+module prend le modèle du fichier chatbot/prompts_synthetiques.json : qwen3:8b, qui n'a servi
+qu'à un premier essai, non retenu.
+
+ATTENTION : --maj-exemples réécrit chatbot/prompts_synthetiques.json. Les fichiers de consignes
+v4 et v5 citent l'empreinte de ce fichier : ne pas lancer cette option sans raison.
 
 Pourquoi ? Le théâtre et les romans apprennent le STYLE, mais aucune donnée réelle ne montre
 « un message d'aujourd'hui -> une réponse à la manière de Molière », ni une conversation courante
 d'aujourd'hui (« Salut, ça va ? » / « Ça va, et toi ? »). On les fait écrire par un modèle local à
-POIDS OUVERTS déjà installé sur le Mac : qwen3:8b servi par Ollama (API HTTP locale). C'est de
-l'inférence, pas un entraînement. Règles suivies (celles du concours pour le synthétique) : modèle
-à poids ouverts, prompts publiés (chatbot/prompts_synthetiques.json), part bornée et déclarée.
+POIDS OUVERTS (API HTTP locale d'Ollama). C'est de l'inférence, pas un entraînement. Règles suivies
+(celles du concours pour le synthétique) : modèle à poids ouverts, prompts publiés, part bornée et
+déclarée.
 
 Chemin d'une donnée :
 1. prompt tiré au hasard mais REPRODUCTIBLE : graine + numéro d'appel -> mêmes sujets, même ton,
    même personnage, mêmes exemples, même graine Ollama ;
-2. qwen3 écrit k conversations « A: ... / B: ... » séparées par « ### » ;
+2. le modèle écrit k conversations « A: ... / B: ... » séparées par « ### » ;
 3. analyse (parse_sortie), puis filtres de qualité (raison_rejet), anti-doublons et anti-tics
-   (Dedup), puis, pour le style Molière seulement, relecture du fond par qwen3 lui-même (juger :
+   (Dedup), puis, pour le style Molière seulement, relecture du fond par le même modèle (juger :
    trois questions OUI/NON, prompt publié ; mesuré inutile en style moderne, voir juge_mesure
    dans le JSON) ; chaque rejet est compté par raison dans le rapport JSON, avec 5 exemples ;
 4. écriture atomique (fichier temporaire puis os.replace) : on peut couper et relancer avec le

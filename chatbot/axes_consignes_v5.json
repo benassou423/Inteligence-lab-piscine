@@ -1,0 +1,3059 @@
+{
+ "_comment": [
+  "Axes de la campagne de données de synthèse « v5 » du chatbot Molière. Date : 2026-11-15. Copie de chatbot/axes_consignes_v4.json avec quatre retouches, toutes motivées par le contrôle de qualité des 9 055 conversations de la v4 (113 sans défaut sur 120, mais des tics relevés par les trois lecteurs) : (1) les réponses ne commencent plus par « Certes », « Hélas » ni « Certainement », et le personnage s'adresse à la personne par « vous », jamais à la troisième personne ; (2) la règle de bienséance ne renvoie plus au médecin (le réflexe « consultez un médecin » revenait hors sujet) ; (3) le détail à glisser n'est plus une heure (« à midi », « à 14h » plaqués) ; (4) « médecin » rejoint les tics plafonnés. Seconde version du même jour (v5b), après le contrôle du pilote v5a (49 sans défaut sur 60, mais des adverbes plaqués en tête de réponse : « Prudemment! », « Probablement, », « Sûrement. ») : les débuts de réponse imposés « un adverbe » et « un complément de temps ou de lieu » sont retirés, la règle interdit tout adverbe d'attaque, et le plafond par premier mot revient à 15 % (à 10 %, il favorisait les débuts rares et bizarres).",
+  "D'où viennent ces listes : elles ont été rédigées le 2026-11-14 par des agents IA (Claude, Anthropic) comme CONSIGNES pour le modèle générateur à poids ouverts. Ce fichier ne contient aucun texte de conversation, aucune réplique de personnage, aucun exemple de réponse : seulement des thèmes, des types de message, des contraintes de forme et des interdits. Les conversations sont écrites par le modèle ouvert seul, puis triées par les filtres publiés de chatbot/synthetic.py.",
+  "Sources : runs/evals_manuelles/campagne/preparation.json. Base = plan n° 3 (fiches d'échange, une conversation par appel, voix de la personne). Thèmes = les étiquettes du plan n° 3, enrichies des situations de vie et des messages de conversation du plan n° 1, ramenés à des notes de quatre mots au plus et dédoublonnés. Appariement « type de message -> façon de répondre » = plan n° 2 : chaque type de message porte la liste des façons de répondre qui lui conviennent, et la fiche en tire une.",
+  "Révision après relecture (même jour) : bloc « essentiels » (les messages les plus simples d'un vrai utilisateur, un quart des fiches) ; fiche allégée (au plus un supplément par fiche : détail, début de réponse ou interdit) ; plus de paires d'interdits tirées à part par le code : l'interdit éventuel est choisi par le compositeur parmi ceux qui ne contredisent pas la fiche, et écrit dans la fiche ; longueurs en trois classes sans compte de mots ; tables de compatibilité étendues aux déroulés et aux formes ; règles de bienséance ; juge propre à ces consignes.",
+  "Usage : tools/composer_consignes_v4.py lit ce fichier, croise les axes avec une graine fixe (tirage équilibré, tables de compatibilité ci-dessous) et écrit le fichier de consignes complet au schéma de chatbot/synthetic.py. Le code d'une fiche (son id) reprend les id ci-dessous ; le code d'un thème est sa position dans la liste « themes » aplatie.",
+  "Règles d'écriture, vérifiées par le compositeur : une note de thème compte quatre mots au plus (l'apostrophe et le trait d'union coupent, comme dans le filtre des suites de cinq mots) ; aucun texte de fiche ne contient il, elle, lui, son, sa, ses, leur (le rejet « recopie_sujet » devient impossible), ni tu, te, toi, ton, ta, tes, ni parenthèse, crochet ou dièse, ni les mots surveillés par le filtre « meta » ; on écrit « la personne » et « le personnage », jamais les lettres des étiquettes ; chaque texte d'axe respecte une longueur maximale, pour que la fiche reste courte.",
+  "Thèmes écartés à dessein : ceux des trois pièces tenues à l'écart pour la mesure, tout nom de rôle, et les sujets déplacés devant un jury (religion, remèdes, rencontres, injures)."
+ ],
+ "version": "v4-fiches",
+ "date": "2026-11-14",
+ "gabarit": {
+  "_comment": "L'id écrit dans le fichier de consignes est cet id suivi d'un tiret et de 8 caractères d'empreinte des consignes composées (voir tools/composer_consignes_v4.py). « ligne_demonstration » n'est plus employée (plus aucune démonstration ni paire d'interdits tirée par le code) : la clé reste parce que le code la lit.",
+  "id": "moliere-v4-fiches",
+  "lignes": [
+   "Écris une seule conversation de messagerie entre une personne d'aujourd'hui et un personnage de Molière, en suivant la fiche.",
+   "Le personnage est {persona} : {about}",
+   "La personne est {genre} d'aujourd'hui, qui parle de soi au {accord} et écrit en français courant, par messages brefs. Voix de la personne : {registre} ; la fiche prime sur la voix.",
+   "",
+   "Vraies phrases de Molière, pour la couleur de la langue seulement ; n'en reprends aucune suite de mots :",
+   "{exemples}",
+   "",
+   "Fiche :",
+   "{sujets}",
+   "",
+   "Règles fixes :",
+   "- Une ligne par tour : « A: » devant chaque message de la personne, « B: » devant chaque réponse du personnage, et rien d'autre : ni titre, ni numéro, ni commentaire, ni parenthèse, ni astérisque, ni guillemets, ni émoticône. La personne commence, le personnage termine ; après la dernière réponse, écris une ligne qui contient seulement ### et arrête-toi.",
+   "- Chaque réponse répond d'abord et directement au message qui précède, sans en répéter les mots, et finit par un point, un point d'exclamation ou un point d'interrogation. Une réponse commence par ce qu'elle a à dire, sans adverbe d'attaque : ni « Certes », ni « Hélas », ni « Certainement », ni « Sûrement », ni « Malheureusement », ni aucun adverbe isolé. Le personnage s'adresse à la personne par « vous », jamais à la troisième personne.",
+   "- Le personnage parle en prose, comme dans une comédie du XVIIe siècle : tournures classiques, vocabulaire du temps, orthographe moderne, français correct, ni patois ni vers ; il change de premier mot d'une réponse à l'autre. Il répond au fond de ce qu'on lui dit, comme à quelqu'un de son temps : sauf si la fiche le demande, il ne s'étonne pas des choses d'aujourd'hui, ne parle ni de machine, ni d'appareil, ni d'instrument, et ne commente jamais la messagerie.",
+   "- Le personnage vouvoie toujours la personne : jamais « tu », « te », « toi », jamais « ton », « ta », « tes », même comme noms, ni « tiens », « va », « dis ». « À » garde toujours son accent. Le titre « {titre} » reste rare, jamais en premier mot, et aucun autre titre n'est permis.",
+   "- Le personnage reste bienséant : rien de charnel, de grossier, de violent ni de blessant ; ni religion, ni politique d'aujourd'hui ; sur la santé, il compatit ou plaisante, sans prescrire de remède. Il ne cite aucun titre de pièce ni aucun autre personnage de théâtre ; s'il parle de théâtre, c'est de la troupe, de la scène et du public, jamais du texte que disent les comédiens.",
+   "- La personne dit le thème avec les mots de tous les jours, sans recopier la fiche ; les mots de salut, de remerciement et de vœu se disent tels quels. Elle ne répète pas la réponse précédente, sauf pour demander le sens d'un mot.",
+   "",
+   "Commence directement par « A: »."
+  ],
+  "ligne_sujet": "{sujet}",
+  "ligne_exemple": "- {texte}",
+  "ligne_demonstration": "{a} / {b}"
+ },
+ "juge": {
+  "_comment": "Gabarit du juge propre à ces consignes (le juge est joué par le modèle générateur lui-même, voir chatbot/synthetic.py). Les questions 1 et 2 du juge d'origine condamnaient ce que les fiches demandent : « phrases complètes » contre les messages sans verbe ou télégraphiques, « répond vraiment à celle d'avant, sans rien d'absurde » contre le changement de sujet et les messages vagues. Ici la question 1 ne porte que sur les réponses du personnage, la question 2 laisse la personne libre. La question 3, le contexte du style « moderne » et la question du style « moderne » sont hérités du fichier d'origine. À vérifier sur le lot pilote avant la campagne.",
+  "id": "juge-v4",
+  "lignes": [
+   "Relecture d'une conversation écrite pour entraîner un petit modèle de langue français.",
+   "{contexte}",
+   "",
+   "{conversation}",
+   "",
+   "Réponds à chaque question par OUI ou par NON :",
+   "1. Le français des réponses de B est-il correct partout (orthographe, accords, conjugaisons, mots qui existent) ? Les messages de A peuvent être très courts, sans verbe ou familiers : ne les juge pas.",
+   "2. Chaque réponse de B répond-elle au message de A qui la précède, sans incohérence ? A a le droit de changer de sujet ou d'être vague.",
+   "3. {question}",
+   "Écris exactement trois lignes, sans rien d'autre :",
+   "1: OUI ou NON",
+   "2: OUI ou NON",
+   "3: OUI ou NON"
+  ],
+  "contexte_moliere": "A est une personne d'aujourd'hui ; B est {persona}, un personnage d'une comédie de Molière, qui répond à A par messagerie."
+ },
+ "fiche": {
+  "_comment": "Segments d'une fiche, mis bout à bout sur une seule ligne, dans cet ordre : theme, message, detail (s'il est tiré), deroule, reponse, puis entree ou interdit (s'il est tiré). Une fiche reçoit AU PLUS UN supplément parmi : detail, entree, interdit_reponse, interdit_message. La famille du thème n'est pas écrite dans la fiche (un petit modèle la lirait au pied de la lettre) : la note suffit, éclairée par le type de message ; la famille reste dans le champ « theme » de la fiche, pour les comptages. « objectif_caracteres » : longueur visée pour une fiche complète ; la part des fiches qui la tiennent est écrite dans « composition ». « max_caracteres » : longueur maximale d'une fiche complète ; le compositeur s'arrête si une fiche la dépasse. « max_par_axe » : longueur maximale du texte d'une valeur de chaque axe.",
+  "objectif_caracteres": 300,
+  "max_caracteres": 400,
+  "max_par_axe": {
+   "famille": 22,
+   "type": 50,
+   "forme": 50,
+   "deroule": 70,
+   "reponse": 66,
+   "longueur": 22,
+   "entree": 36,
+   "interdit": 52,
+   "detail": 40
+  },
+  "theme": "Thème : {note}.",
+  "message": " Premier message : {type} ; {forme}.",
+  "detail": " Détail à y glisser : {detail}.",
+  "deroule": " Déroulé : {deroule}.",
+  "reponse": " Première réponse : {reponse} ; {longueur} par réponse.",
+  "entree": " Début de cette réponse : {entree}.",
+  "interdit_reponse": " Interdit dans les réponses : {interdit}.",
+  "interdit_message": " Interdit dans les messages : {interdit}."
+ },
+ "essentiels": {
+  "_comment": "Les messages les plus simples et les plus fréquents d'un vrai utilisateur : saluer, demander des nouvelles, demander au personnage qui il est, dire comment on va, parler du temps, remercier, prendre congé. Liste dressée à la relecture des consignes. ATTENTION, à déclarer avec les mesures : elle recoupe les thèmes des messages du protocole de mesure de tools/nuit_moliere.py (saluer, demander des nouvelles, nom, âge, fatigue, faim, temps qu'il fait, merci, au revoir), que le relecteur avait sous les yeux ; ce sont aussi les messages qu'un jury tapera. Les notes restent des thèmes : aucun message du protocole n'est donné mot pour mot, et le compteur « messages_identiques_au_protocole » de la fusion doit être rapporté tel quel. « part » : part des fiches réservée aux groupes marqués « essentiel » ; chaque note de ces groupes revient autant que les autres notes essentielles. Ces fiches ne reçoivent ni détail imposé ni interdit côté messages. « deroules_preferes » : pour « part_des_deroules_preferes » de ces fiches au moins, le déroulé est tiré dans cette liste (avec ces poids), parmi ceux que le type de message permet.",
+  "part": 0.26,
+  "part_des_deroules_preferes": 0.7,
+  "deroules_preferes": {
+   "s01": 50,
+   "s02": 25,
+   "s09": 25
+  }
+ },
+ "groupes": {
+  "_comment": "Un groupe = une sorte de thème, clé de la table de compatibilité avec les types de message. « detail » : une fiche de ce groupe peut recevoir le détail concret libre (groupes de la vie courante seulement : ailleurs un détail imposé rend le message incongru). « essentiel » : groupe du bloc « essentiels ».",
+  "saluts simples": {
+   "essentiel": true
+  },
+  "nouvelles simples": {
+   "essentiel": true
+  },
+  "identité simple": {
+   "essentiel": true
+  },
+  "états simples": {
+   "essentiel": true
+  },
+  "météo simple": {
+   "essentiel": true
+  },
+  "mercis simples": {
+   "essentiel": true
+  },
+  "adieux simples": {
+   "essentiel": true
+  },
+  "salutations": {},
+  "congés": {},
+  "remerciements": {},
+  "excuses": {},
+  "vœux": {},
+  "compliments": {},
+  "personnage": {},
+  "savoir": {},
+  "savoir d'époque": {},
+  "idées": {},
+  "monde moderne": {},
+  "épreuves": {},
+  "langage": {},
+  "messages vagues": {},
+  "questions impossibles": {},
+  "demandes": {},
+  "jeux": {},
+  "humeurs sombres": {
+   "detail": true
+  },
+  "humeurs gaies": {
+   "detail": true
+  },
+  "bonnes nouvelles": {
+   "detail": true
+  },
+  "tracas": {
+   "detail": true
+  },
+  "maladresses": {
+   "detail": true
+  },
+  "relations": {
+   "detail": true
+  },
+  "décisions": {
+   "detail": true
+  },
+  "petits choix": {
+   "detail": true
+  }
+ },
+ "themes": [
+  {
+   "famille": "salutations",
+   "groupe": "saluts simples",
+   "notes": [
+    "salut tout simple",
+    "bonjour du matin",
+    "bonsoir"
+   ]
+  },
+  {
+   "famille": "prise de nouvelles",
+   "groupe": "nouvelles simples",
+   "notes": [
+    "demande de nouvelles",
+    "humeur du jour"
+   ]
+  },
+  {
+   "famille": "personnage",
+   "groupe": "identité simple",
+   "notes": [
+    "nom et identité",
+    "métier exercé",
+    "âge"
+   ]
+  },
+  {
+   "famille": "état du moment",
+   "groupe": "états simples",
+   "notes": [
+    "grande fatigue",
+    "faim",
+    "soif",
+    "ennui",
+    "joie",
+    "tristesse"
+   ]
+  },
+  {
+   "famille": "météo",
+   "groupe": "météo simple",
+   "notes": [
+    "météo du jour"
+   ]
+  },
+  {
+   "famille": "politesses",
+   "groupe": "mercis simples",
+   "notes": [
+    "merci tout simple"
+   ]
+  },
+  {
+   "famille": "congés",
+   "groupe": "adieux simples",
+   "notes": [
+    "au revoir",
+    "bonne nuit"
+   ]
+  },
+  {
+   "famille": "salutations",
+   "groupe": "salutations",
+   "notes": [
+    "bonsoir tardif",
+    "première prise de contact",
+    "retour après longue absence",
+    "présentation en deux mots",
+    "retrouvailles du lundi matin",
+    "vérification de présence",
+    "bonjour pressé",
+    "nouvelles données de soi",
+    "salut de midi",
+    "bonjour en pleine nuit",
+    "salut du vendredi soir",
+    "bonjour un dimanche pluvieux",
+    "salut depuis le train",
+    "bonjour pendant une pause",
+    "bonjour de rentrée",
+    "salut après les vacances",
+    "premier message timide",
+    "bonjour avec un prénom",
+    "bonjour un jour férié"
+   ]
+  },
+  {
+   "famille": "congés",
+   "groupe": "congés",
+   "notes": [
+    "au revoir pressé",
+    "promesse de revenir bientôt",
+    "adieu avant un voyage",
+    "départ pour le travail",
+    "congé avant le repas",
+    "fin de conversation",
+    "au revoir du dimanche"
+   ]
+  },
+  {
+   "famille": "politesses",
+   "groupe": "remerciements",
+   "notes": [
+    "remerciement après un service",
+    "merci pour un conseil",
+    "merci pour une explication",
+    "merci pour la patience",
+    "merci pour un rire"
+   ]
+  },
+  {
+   "famille": "politesses",
+   "groupe": "excuses",
+   "notes": [
+    "excuses pour un retard",
+    "excuse pour le dérangement",
+    "pardon pour l'heure",
+    "question sotte à excuser",
+    "pardon pour une faute",
+    "mot brusque à pardonner",
+    "familiarité à excuser"
+   ]
+  },
+  {
+   "famille": "politesses",
+   "groupe": "vœux",
+   "notes": [
+    "vœux de nouvelle année",
+    "souhait de bon anniversaire",
+    "bon appétit",
+    "bon courage avant épreuve",
+    "félicitations",
+    "bonne journée",
+    "bonne fête",
+    "bonne santé",
+    "bon dimanche",
+    "joyeux Noël",
+    "bonnes vacances"
+   ]
+  },
+  {
+   "famille": "politesses",
+   "groupe": "compliments",
+   "notes": [
+    "compliment sur le langage",
+    "compliment sur l'esprit",
+    "compliment sur la politesse",
+    "éloge de la gaieté",
+    "éloge du savoir ancien"
+   ]
+  },
+  {
+   "famille": "personnage",
+   "groupe": "personnage",
+   "notes": [
+    "journée ordinaire",
+    "plus grand défaut",
+    "plus grande fierté",
+    "sujet de colère",
+    "sujet de rire",
+    "amis et ennemis",
+    "maison et domestiques",
+    "repas préféré",
+    "plus grande peur",
+    "avis sur les médecins",
+    "avis sur le mariage",
+    "avis sur la mode",
+    "ville et quartier",
+    "rêve secret",
+    "souvenir d'enfance",
+    "avis sur le théâtre",
+    "loisirs du dimanche",
+    "opinion sur la jeunesse",
+    "habits portés",
+    "plus grand regret",
+    "famille et parenté",
+    "boisson préférée",
+    "déplacements en ville",
+    "avis sur les savants",
+    "avis sur la cour",
+    "journée d'hier",
+    "projets pour demain",
+    "Paris d'autrefois",
+    "bals et musique",
+    "personne aimée",
+    "sommeil",
+    "valets et maîtres",
+    "avis sur le roi",
+    "jugement sur notre époque",
+    "envie de notre siècle",
+    "souhait le plus cher",
+    "lecture du moment",
+    "lever et coucher"
+   ]
+  },
+  {
+   "famille": "savoir",
+   "groupe": "savoir",
+   "notes": [
+    "définition d'un mot",
+    "origine d'un proverbe",
+    "règle d'orthographe",
+    "calcul de tête",
+    "durée d'une cuisson",
+    "saisons et calendrier",
+    "distance entre deux villes",
+    "recette très simple",
+    "différence entre deux mots",
+    "phases de la lune",
+    "couleur du ciel",
+    "origine d'un prénom",
+    "règles de politesse",
+    "cause du bâillement",
+    "jours de l'année",
+    "origine de la pluie",
+    "ronronnement des chats",
+    "fabrication du pain",
+    "utilité du sommeil",
+    "sel de la mer",
+    "origine d'un mot"
+   ]
+  },
+  {
+   "famille": "savoir",
+   "groupe": "savoir d'époque",
+   "notes": [
+    "vie à Versailles",
+    "règne de Louis XIV",
+    "métier de comédien",
+    "comédie et tragédie",
+    "rhume soigné autrefois",
+    "voyages d'autrefois",
+    "prix du pain autrefois",
+    "billets doux d'autrefois",
+    "éclairage du soir autrefois",
+    "grand dîner d'autrefois",
+    "révérence d'autrefois"
+   ]
+  },
+  {
+   "famille": "idées",
+   "groupe": "idées",
+   "notes": [
+    "mode des habits troués",
+    "place cédée aux anciens",
+    "téléphone à table",
+    "mariage de raison",
+    "confiance envers les médecins",
+    "éducation sévère ou douce",
+    "ville ou campagne",
+    "amitié entre inégaux",
+    "savants au langage obscur",
+    "jeunesse jugée paresseuse",
+    "partage des tâches ménagères",
+    "goût des apparences",
+    "vieillir sans s'aigrir",
+    "utilité du latin",
+    "chat noir et superstitions",
+    "gourmandise, défaut ou qualité",
+    "rire de tout",
+    "célébrité soudaine",
+    "mode des régimes",
+    "nature du bonheur",
+    "marques du bon ami"
+   ]
+  },
+  {
+   "famille": "monde moderne",
+   "groupe": "monde moderne",
+   "notes": [
+    "téléphone portable",
+    "réseau internet",
+    "voyage en avion",
+    "automobile",
+    "télévision",
+    "métro",
+    "lumière électrique",
+    "supermarché",
+    "photographie",
+    "cinéma",
+    "ordinateur",
+    "réseaux sociaux",
+    "courrier électronique",
+    "train rapide",
+    "machine à laver",
+    "four à micro-ondes",
+    "carte bancaire",
+    "voyage sur la Lune",
+    "radio",
+    "intelligence artificielle",
+    "livraison à domicile",
+    "montre compteuse de pas",
+    "voiture électrique",
+    "aspirateur automatique",
+    "machine écrivant des lettres",
+    "appareil de guidage",
+    "jeu vidéo",
+    "réunion par écran"
+   ]
+  },
+  {
+   "famille": "mise à l'épreuve",
+   "groupe": "épreuves",
+   "notes": [
+    "homme ou machine",
+    "talents du personnage",
+    "secret à garder",
+    "piège sur l'époque",
+    "question absurde",
+    "machines qui parlent",
+    "moquerie sur la perruque"
+   ]
+  },
+  {
+   "famille": "façon de parler",
+   "groupe": "langage",
+   "notes": [
+    "parler ancien qui étonne",
+    "demande de parler simplement",
+    "mot ancien non compris",
+    "proposition de tutoiement",
+    "reproche de longueur",
+    "reproche de hors-sujet",
+    "demande de redire autrement"
+   ]
+  },
+  {
+   "famille": "message vague",
+   "groupe": "messages vagues",
+   "notes": [
+    "message incomplet",
+    "simple signe de vie",
+    "mot unique sans contexte",
+    "début de phrase interrompu",
+    "hésitation sans objet"
+   ]
+  },
+  {
+   "famille": "question sans réponse",
+   "groupe": "questions impossibles",
+   "notes": [
+    "heure et date",
+    "météo de demain",
+    "résultat d'un match",
+    "numéro gagnant de loterie",
+    "nouvelles du jour",
+    "humeur à deviner",
+    "prix d'un billet",
+    "adresse d'un médecin"
+   ]
+  },
+  {
+   "famille": "demandes",
+   "groupe": "demandes",
+   "notes": [
+    "demande de blague",
+    "demande de compliment",
+    "demande de proverbe",
+    "demande de devinette",
+    "demande d'encouragement",
+    "demande de reproche amusant",
+    "demande de courte histoire",
+    "mot tendre à transmettre",
+    "demande de surnom",
+    "demande de toast",
+    "demande de portrait",
+    "demande de prédiction",
+    "conseil de vie",
+    "idée de dimanche",
+    "idée de cadeau",
+    "idée de repas",
+    "bonjour à l'ancienne",
+    "leçon de politesse",
+    "fin de lettre",
+    "choix sans importance",
+    "formule d'anniversaire"
+   ]
+  },
+  {
+   "famille": "jeux",
+   "groupe": "jeux",
+   "notes": [
+    "taquinerie",
+    "provocation légère",
+    "contradiction volontaire",
+    "demande de pari",
+    "jeu des contraires"
+   ]
+  },
+  {
+   "famille": "humeurs",
+   "groupe": "humeurs sombres",
+   "notes": [
+    "colère rentrée",
+    "tristesse du soir",
+    "trac",
+    "solitude",
+    "nostalgie",
+    "honte après une gaffe",
+    "découragement",
+    "inquiétude vague",
+    "mal du pays",
+    "insomnie",
+    "paresse du lundi",
+    "mauvaise humeur matinale",
+    "cafard du dimanche",
+    "peur de vieillir",
+    "remarque blessante reçue",
+    "remords d'un mensonge",
+    "impression de piétiner",
+    "peur de l'orage",
+    "chien regretté",
+    "mélancolie de l'automne",
+    "agacement contre soi-même",
+    "doute sur soi",
+    "déception",
+    "impatience"
+   ]
+  },
+  {
+   "famille": "humeurs",
+   "groupe": "humeurs gaies",
+   "notes": [
+    "joie sans raison",
+    "fierté du jour",
+    "soulagement",
+    "enthousiasme débordant",
+    "joie sans confident",
+    "gaieté au soleil",
+    "émotion d'un souvenir",
+    "amour naissant"
+   ]
+  },
+  {
+   "famille": "bonnes nouvelles",
+   "groupe": "bonnes nouvelles",
+   "notes": [
+    "permis de conduire obtenu",
+    "embauche confirmée",
+    "examen réussi avec mention",
+    "naissance d'une fille",
+    "fiançailles annoncées",
+    "guérison après longue maladie",
+    "premier appartement obtenu",
+    "promotion inattendue",
+    "chat retrouvé",
+    "dette enfin remboursée",
+    "concours de pâtisserie gagné",
+    "manuscrit accepté",
+    "réconciliation avec un frère",
+    "dix kilos perdus",
+    "première paie reçue",
+    "voyage gagné",
+    "diplôme obtenu",
+    "logement plus grand",
+    "vacances enfin réservées",
+    "course à pied terminée",
+    "match gagné",
+    "gros livre enfin terminé",
+    "premier plat réussi",
+    "nouvel ami",
+    "retrouvailles avec un proche"
+   ]
+  },
+  {
+   "famille": "travail",
+   "groupe": "relations",
+   "notes": [
+    "chef injuste",
+    "collègue paresseux",
+    "collègue bavard",
+    "collègue voleur de mérite",
+    "chef écrivant le dimanche",
+    "premier jour d'emploi"
+   ]
+  },
+  {
+   "famille": "travail",
+   "groupe": "décisions",
+   "notes": [
+    "entretien d'embauche",
+    "changement de métier",
+    "augmentation à demander",
+    "envie de démissionner",
+    "reconversion à quarante ans",
+    "retraite prochaine",
+    "stage non payé",
+    "lettre de motivation",
+    "discours à préparer",
+    "présentation devant cinquante personnes"
+   ]
+  },
+  {
+   "famille": "travail",
+   "groupe": "petits choix",
+   "notes": [
+    "pot de départ"
+   ]
+  },
+  {
+   "famille": "travail",
+   "groupe": "tracas",
+   "notes": [
+    "réunion interminable",
+    "travail à domicile",
+    "troisième retard au bureau",
+    "erreur dans un devis",
+    "licenciement annoncé",
+    "travail de nuit",
+    "chômage prolongé",
+    "cantine immangeable"
+   ]
+  },
+  {
+   "famille": "études",
+   "groupe": "décisions",
+   "notes": [
+    "examen à réviser",
+    "choix d'études",
+    "baccalauréat raté",
+    "mémoire à rendre",
+    "arrêt des études",
+    "concours difficile",
+    "orientation sans idée",
+    "reprise d'études",
+    "année à l'étranger",
+    "exposé oral"
+   ]
+  },
+  {
+   "famille": "études",
+   "groupe": "tracas",
+   "notes": [
+    "mauvaise note en dictée",
+    "verbes irréguliers rebelles",
+    "révisions dans le bruit",
+    "devoirs des enfants"
+   ]
+  },
+  {
+   "famille": "études",
+   "groupe": "relations",
+   "notes": [
+    "professeur injuste",
+    "camarade tricheur"
+   ]
+  },
+  {
+   "famille": "amour",
+   "groupe": "décisions",
+   "notes": [
+    "déclaration d'amour",
+    "premier rendez-vous",
+    "demande en mariage",
+    "mariage à organiser",
+    "emménagement à deux"
+   ]
+  },
+  {
+   "famille": "amour",
+   "groupe": "petits choix",
+   "notes": [
+    "cadeau de Saint-Valentin"
+   ]
+  },
+  {
+   "famille": "amour",
+   "groupe": "relations",
+   "notes": [
+    "rupture récente",
+    "message resté sans réponse",
+    "dispute pour la vaisselle",
+    "relation à distance",
+    "ancien amour recroisé",
+    "rencontre des beaux-parents",
+    "célibat prolongé",
+    "ronflements nocturnes",
+    "rencontres décevantes"
+   ]
+  },
+  {
+   "famille": "famille",
+   "groupe": "relations",
+   "notes": [
+    "belle-famille envahissante",
+    "enfant menteur",
+    "adolescent silencieux",
+    "bébé sans sommeil",
+    "mère qui téléphone trop",
+    "oncle querelleur à Noël",
+    "héritage à partager",
+    "grand-mère isolée",
+    "sorties d'une adolescente",
+    "frère mauvais payeur",
+    "belle-mère critique",
+    "enfant boudant les légumes",
+    "père âgé au volant",
+    "jumeaux turbulents",
+    "argent de poche",
+    "garde des petits-enfants",
+    "sœur fâchée",
+    "dîner de famille"
+   ]
+  },
+  {
+   "famille": "famille",
+   "groupe": "décisions",
+   "notes": [
+    "départ à annoncer",
+    "fils voulant être comédien"
+   ]
+  },
+  {
+   "famille": "famille",
+   "groupe": "petits choix",
+   "notes": [
+    "prénom à choisir"
+   ]
+  },
+  {
+   "famille": "amitié et voisinage",
+   "groupe": "relations",
+   "notes": [
+    "dispute entre amis",
+    "voisin bruyant",
+    "colocataire désordonné",
+    "secret trop lourd",
+    "promesse non tenue",
+    "ami qui annule toujours",
+    "amie partie au loin",
+    "tondeuse du dimanche matin",
+    "musique nocturne des voisins",
+    "livre prêté jamais rendu",
+    "ami devenu distant",
+    "voisins inconnus",
+    "camp à choisir",
+    "haie qui déborde",
+    "ami occupé de soi",
+    "invité qui s'attarde"
+   ]
+  },
+  {
+   "famille": "amitié et voisinage",
+   "groupe": "décisions",
+   "notes": [
+    "invitation à refuser",
+    "excuses à présenter",
+    "fête chez des inconnus",
+    "timidité en public"
+   ]
+  },
+  {
+   "famille": "amitié et voisinage",
+   "groupe": "petits choix",
+   "notes": [
+    "anniversaire surprise"
+   ]
+  },
+  {
+   "famille": "santé",
+   "groupe": "tracas",
+   "notes": [
+    "gros rhume",
+    "mal de dos",
+    "rage de dents",
+    "salle d'attente",
+    "toux qui dure",
+    "peur du dentiste",
+    "migraine devant l'écran",
+    "médecin introuvable",
+    "cheville foulée",
+    "allergie au pollen",
+    "peur des piqûres",
+    "lunettes neuves",
+    "symptômes cherchés sur internet",
+    "opération du genou",
+    "excès de café",
+    "ordonnance illisible"
+   ]
+  },
+  {
+   "famille": "santé",
+   "groupe": "décisions",
+   "notes": [
+    "régime difficile",
+    "sport à reprendre",
+    "arrêt du tabac"
+   ]
+  },
+  {
+   "famille": "cuisine",
+   "groupe": "tracas",
+   "notes": [
+    "repas du soir",
+    "réfrigérateur vide",
+    "gâteau brûlé",
+    "pâte à crêpes ratée",
+    "invités dans une heure",
+    "pâtes à chaque repas",
+    "premier pot-au-feu",
+    "mayonnaise ratée",
+    "restaurant trop cher",
+    "petit-déjeuner sauté",
+    "barbecue sous la pluie",
+    "confitures maison",
+    "soupe trop salée",
+    "pain maison raté",
+    "fringale de minuit"
+   ]
+  },
+  {
+   "famille": "cuisine",
+   "groupe": "décisions",
+   "notes": [
+    "renoncer à la viande"
+   ]
+  },
+  {
+   "famille": "cuisine",
+   "groupe": "petits choix",
+   "notes": [
+    "dîner à préparer",
+    "pizza ou salade",
+    "vin à choisir"
+   ]
+  },
+  {
+   "famille": "maison",
+   "groupe": "tracas",
+   "notes": [
+    "ascenseur en panne",
+    "clés perdues",
+    "grand ménage",
+    "lessive ratée",
+    "vaisselle en retard",
+    "bricolage raté",
+    "jardin envahi",
+    "plante fanée",
+    "fuite d'eau",
+    "loyer augmenté",
+    "chaudière en panne",
+    "meuble en kit",
+    "souris dans la cuisine",
+    "ampoule grillée",
+    "lave-linge qui déborde",
+    "murs humides",
+    "panne de courant",
+    "grenier à trier"
+   ]
+  },
+  {
+   "famille": "maison",
+   "groupe": "décisions",
+   "notes": [
+    "déménagement prochain",
+    "recherche d'appartement",
+    "achat d'une maison"
+   ]
+  },
+  {
+   "famille": "maison",
+   "groupe": "petits choix",
+   "notes": [
+    "couleur du salon"
+   ]
+  },
+  {
+   "famille": "maison",
+   "groupe": "relations",
+   "notes": [
+    "propriétaire muet"
+   ]
+  },
+  {
+   "famille": "argent",
+   "groupe": "tracas",
+   "notes": [
+    "fin de mois difficile",
+    "manteau trop cher",
+    "facture imprévue",
+    "billet de loterie",
+    "portefeuille perdu",
+    "impôts à déclarer",
+    "abonnement jamais utilisé",
+    "canapé de mauvaise couleur",
+    "marchandage en brocante",
+    "colis égaré"
+   ]
+  },
+  {
+   "famille": "argent",
+   "groupe": "décisions",
+   "notes": [
+    "économies pour un voyage",
+    "voiture d'occasion"
+   ]
+  },
+  {
+   "famille": "argent",
+   "groupe": "petits choix",
+   "notes": [
+    "premier salaire à dépenser",
+    "pourboire au restaurant"
+   ]
+  },
+  {
+   "famille": "argent",
+   "groupe": "relations",
+   "notes": [
+    "dette envers un ami"
+   ]
+  },
+  {
+   "famille": "transports",
+   "groupe": "tracas",
+   "notes": [
+    "train en retard",
+    "embouteillage",
+    "panne de voiture",
+    "vélo crevé",
+    "valise trop lourde",
+    "permis de conduire raté",
+    "vélo volé",
+    "métro bondé",
+    "amende de stationnement",
+    "peur en avion",
+    "grève des transports",
+    "voisin de siège bruyant",
+    "chute en trottinette",
+    "valise perdue",
+    "covoiturage bavard",
+    "dernier bus raté",
+    "correspondance manquée"
+   ]
+  },
+  {
+   "famille": "transports",
+   "groupe": "décisions",
+   "notes": [
+    "première leçon de conduite"
+   ]
+  },
+  {
+   "famille": "voyages",
+   "groupe": "décisions",
+   "notes": [
+    "voyage en solitaire"
+   ]
+  },
+  {
+   "famille": "voyages",
+   "groupe": "petits choix",
+   "notes": [
+    "voyage à organiser",
+    "départ en vacances",
+    "mer ou montagne",
+    "deux jours à Rome",
+    "vacances en belle-famille",
+    "croisière offerte",
+    "souvenirs à rapporter"
+   ]
+  },
+  {
+   "famille": "voyages",
+   "groupe": "tracas",
+   "notes": [
+    "camping sous la pluie",
+    "chambre sans vue",
+    "coup de soleil",
+    "retour de vacances",
+    "passeport périmé",
+    "ampoules de randonnée",
+    "séjour sans réseau",
+    "décalage horaire",
+    "plage bondée"
+   ]
+  },
+  {
+   "famille": "technique",
+   "groupe": "tracas",
+   "notes": [
+    "téléphone cassé",
+    "coupure d'internet",
+    "téléphone noyé",
+    "mot de passe oublié",
+    "ordinateur très lent",
+    "abus des réseaux sociaux",
+    "imprimante bloquée",
+    "télécommande trop compliquée",
+    "photos effacées",
+    "message mal adressé",
+    "batterie vide",
+    "appels publicitaires",
+    "pièce jointe oubliée",
+    "nuit de jeu vidéo",
+    "borne de recharge occupée",
+    "micro resté ouvert",
+    "écran fissuré",
+    "courriels non lus"
+   ]
+  },
+  {
+   "famille": "loisirs",
+   "groupe": "tracas",
+   "notes": [
+    "film vu hier",
+    "match perdu",
+    "soirée trop longue",
+    "feuilleton du soir",
+    "concert bruyant",
+    "dimanche sans projet",
+    "premier cours de danse",
+    "roman jamais fini",
+    "nuit devant une série",
+    "ennui au théâtre",
+    "tableau raté",
+    "limaces au potager",
+    "pêche sans prise",
+    "course sous la pluie",
+    "chorale et voix fausse",
+    "défaite aux échecs",
+    "musée visité trop vite",
+    "écharpe tricotée ratée",
+    "larmes au cinéma",
+    "mauvais perdant aux cartes",
+    "peur de nager"
+   ]
+  },
+  {
+   "famille": "loisirs",
+   "groupe": "décisions",
+   "notes": [
+    "piano repris",
+    "roman à écrire"
+   ]
+  },
+  {
+   "famille": "animaux",
+   "groupe": "tracas",
+   "notes": [
+    "chat malade",
+    "chien fugueur",
+    "chien qui aboie",
+    "perroquet imitateur",
+    "poisson rouge mort",
+    "chien tirant la laisse",
+    "chat sur le clavier",
+    "araignée dans la baignoire",
+    "chat perdu",
+    "chiot mangeur de chaussures",
+    "pigeons du balcon",
+    "hérisson au jardin",
+    "lapin nain offert",
+    "moustiques nocturnes"
+   ]
+  },
+  {
+   "famille": "animaux",
+   "groupe": "décisions",
+   "notes": [
+    "adoption d'un chaton",
+    "première leçon d'équitation"
+   ]
+  },
+  {
+   "famille": "animaux",
+   "groupe": "petits choix",
+   "notes": [
+    "poules en ville"
+   ]
+  },
+  {
+   "famille": "saisons et météo",
+   "groupe": "tracas",
+   "notes": [
+    "pluie sans fin",
+    "forte chaleur",
+    "parapluie oublié",
+    "neige du matin",
+    "brouillard épais",
+    "premier jour du printemps",
+    "nuit tombée trop tôt",
+    "orage en promenade",
+    "vent violent",
+    "changement d'heure",
+    "feuilles mortes à ramasser",
+    "givre du matin",
+    "arc-en-ciel",
+    "pleine lune",
+    "sécheresse au jardin",
+    "premier bain de mer"
+   ]
+  },
+  {
+   "famille": "quotidien",
+   "groupe": "tracas",
+   "notes": [
+    "réveil raté",
+    "courses du samedi",
+    "coiffure ratée",
+    "lunettes cassées",
+    "café renversé",
+    "chaussures neuves",
+    "file d'attente",
+    "liste de tâches interminable",
+    "retards habituels",
+    "papiers administratifs",
+    "tout remis au lendemain",
+    "lever à cinq heures",
+    "agenda trop plein",
+    "sieste trop longue",
+    "chaussettes dépareillées",
+    "résolutions abandonnées",
+    "grasse matinée",
+    "lunettes introuvables"
+   ]
+  },
+  {
+   "famille": "quotidien",
+   "groupe": "relations",
+   "notes": [
+    "anniversaire oublié"
+   ]
+  },
+  {
+   "famille": "quotidien",
+   "groupe": "petits choix",
+   "notes": [
+    "tenue pour un mariage"
+   ]
+  },
+  {
+   "famille": "petits tracas",
+   "groupe": "maladresses",
+   "notes": [
+    "porte claquée",
+    "nom oublié",
+    "long message vocal",
+    "tache de vin",
+    "pantalon craqué",
+    "rendez-vous confondu",
+    "cadeau en double",
+    "bouche pleine à table",
+    "fou rire malvenu",
+    "gaffe devant un supérieur",
+    "gomme sous la chaussure",
+    "alarme en pleine nuit",
+    "vase cassé",
+    "compliment maladroit"
+   ]
+  },
+  {
+   "famille": "fêtes",
+   "groupe": "décisions",
+   "notes": [
+    "discours de mariage",
+    "rôle de parrain",
+    "retrouvailles d'école"
+   ]
+  },
+  {
+   "famille": "fêtes",
+   "groupe": "petits choix",
+   "notes": [
+    "choix d'un cadeau",
+    "anniversaire sans fête",
+    "cadeau à petit prix",
+    "costume de carnaval",
+    "pendaison de crémaillère",
+    "carte de départ",
+    "goûter de vingt enfants",
+    "bal du village"
+   ]
+  },
+  {
+   "famille": "fêtes",
+   "groupe": "tracas",
+   "notes": [
+    "réveillon sans invitation",
+    "fête des mères oubliée",
+    "fève avalée",
+    "feu d'artifice mouillé",
+    "Noël loin des siens"
+   ]
+  },
+  {
+   "famille": "projets",
+   "groupe": "décisions",
+   "notes": [
+    "lettre difficile à écrire",
+    "guitare à apprendre",
+    "tour du monde",
+    "vie sans voiture",
+    "librairie à ouvrir",
+    "départ à l'étranger",
+    "mémoires à écrire",
+    "potager de balcon",
+    "marathon à préparer",
+    "apprentissage de la couture",
+    "entreprise de gâteaux",
+    "permis moto tardif",
+    "année sabbatique",
+    "bénévolat du samedi",
+    "voilier d'occasion",
+    "retour au pays natal"
+   ]
+  },
+  {
+   "famille": "projets",
+   "groupe": "petits choix",
+   "notes": [
+    "changement de coiffure"
+   ]
+  }
+ ],
+ "types_de_message": {
+  "_comment": "Ce que la personne fait du thème dans son premier message, et les façons de répondre qui lui conviennent : la fiche en tire une, si bien que la réponse est par construction en rapport direct avec le message. « groupes » = table de compatibilité thème / type de message. Formes permises : soit la liste « formes », soit toutes les formes dont la « porte » croise celle du type, sans les formes courtes si « court » est faux, sans la forme longue si « long » est faux, et sans celles de « sans_formes ». « sans_entree » : la façon de répondre fixe déjà le début de la réponse, la fiche n'impose donc pas de début. « max_allers_retours » borne le déroulé ; « deroules », quand il est présent, est la liste fermée des déroulés permis. « politesse » : salut, congé, merci, excuse, vœu ou compliment (certains déroulés leur sont interdits) ; « question » : le premier message est une question (certains déroulés l'exigent). « sans_longueurs » : longueurs de réponse interdites à ce type. « poids » (1 si absent) : dans chaque cycle, une note de thème reçoit chaque type compatible autant de fois que son poids. Les types dont l'id commence par « x » sont ceux du bloc « essentiels ». Aucune façon de répondre ne demande de rendre mot pour mot le salut, le souhait ou la question : le filtre « echo » rejette une réponse qui reprend la plupart des mots du message.",
+  "valeurs": [
+   {
+    "id": "xs",
+    "poids": 2,
+    "texte": "salut tout simple",
+    "groupes": [
+     "saluts simples"
+    ],
+    "formes": [
+     "f01",
+     "f02"
+    ],
+    "sans_entree": true,
+    "politesse": true,
+    "deroules": [
+     "s01",
+     "s09",
+     "s18",
+     "s12",
+     "s16",
+     "s17"
+    ],
+    "reponses": [
+     "saluer en retour et demander des nouvelles",
+     "saluer en retour et offrir un service",
+     "saluer en retour, avec un mot sur l'humeur du jour"
+    ]
+   },
+   {
+    "id": "xq",
+    "texte": "salut suivi d'une demande de nouvelles",
+    "groupes": [
+     "saluts simples"
+    ],
+    "formes": [
+     "f02",
+     "f04",
+     "f05",
+     "f07"
+    ],
+    "sans_entree": true,
+    "politesse": true,
+    "question": true,
+    "deroules": [
+     "s01",
+     "s09",
+     "s18",
+     "s12",
+     "s14",
+     "s15",
+     "s16",
+     "s17"
+    ],
+    "reponses": [
+     "saluer en retour et donner des nouvelles en peu de mots",
+     "saluer, donner des nouvelles, puis renvoyer la question en bref"
+    ]
+   },
+   {
+    "id": "xn",
+    "texte": "demande de nouvelles toute simple",
+    "groupes": [
+     "nouvelles simples"
+    ],
+    "formes": [
+     "f02",
+     "f04",
+     "f05",
+     "f07"
+    ],
+    "question": true,
+    "deroules": [
+     "s01",
+     "s02",
+     "s09",
+     "s04",
+     "s06",
+     "s07",
+     "s10",
+     "s12",
+     "s14",
+     "s15",
+     "s16",
+     "s17"
+    ],
+    "reponses": [
+     "donner des nouvelles, d'après le caractère donné",
+     "donner des nouvelles, puis renvoyer la question en bref",
+     "se plaindre ou se réjouir, d'après le caractère donné"
+    ]
+   },
+   {
+    "id": "xi",
+    "texte": "question toute simple sur le personnage",
+    "groupes": [
+     "identité simple"
+    ],
+    "formes": [
+     "f02",
+     "f03",
+     "f04",
+     "f05",
+     "f07"
+    ],
+    "question": true,
+    "deroules": [
+     "s01",
+     "s02",
+     "s09",
+     "s04",
+     "s06",
+     "s07",
+     "s10",
+     "s12",
+     "s14",
+     "s15",
+     "s16",
+     "s17"
+    ],
+    "reponses": [
+     "répondre simplement, d'après la description donnée",
+     "répondre, puis renvoyer la question en bref",
+     "répondre avec fierté ou modestie, d'après le caractère donné"
+    ]
+   },
+   {
+    "id": "xe",
+    "poids": 2,
+    "texte": "état du moment dit tout simplement",
+    "groupes": [
+     "états simples"
+    ],
+    "formes": [
+     "f01",
+     "f02",
+     "f19"
+    ],
+    "deroules": [
+     "s01",
+     "s02",
+     "s09",
+     "s04",
+     "s06",
+     "s07",
+     "s12",
+     "s14",
+     "s16",
+     "s17"
+    ],
+    "reponses": [
+     "compatir ou se réjouir, puis proposer une chose à faire",
+     "demander la cause de cet état",
+     "réagir d'après le caractère donné",
+     "taquiner sans méchanceté, puis encourager"
+    ]
+   },
+   {
+    "id": "xc",
+    "texte": "état du moment, puis demande de conseil",
+    "groupes": [
+     "états simples"
+    ],
+    "formes": [
+     "f05",
+     "f07",
+     "f10"
+    ],
+    "question": true,
+    "deroules": [
+     "s01",
+     "s02",
+     "s09",
+     "s04",
+     "s06",
+     "s07",
+     "s10",
+     "s12",
+     "s14",
+     "s15",
+     "s16"
+    ],
+    "reponses": [
+     "conseiller une chose simple, à la manière du XVIIe siècle",
+     "plaisanter d'abord, puis conseiller une chose simple"
+    ]
+   },
+   {
+    "id": "xm",
+    "texte": "remarque toute simple sur le temps",
+    "groupes": [
+     "météo simple"
+    ],
+    "formes": [
+     "f01",
+     "f02",
+     "f19"
+    ],
+    "deroules": [
+     "s01",
+     "s02",
+     "s09",
+     "s04",
+     "s06",
+     "s07",
+     "s12",
+     "s14",
+     "s16",
+     "s17"
+    ],
+    "reponses": [
+     "commenter ce temps, d'après le caractère donné",
+     "dire ce qu'on fait par un temps pareil au XVIIe siècle",
+     "compatir ou se réjouir avec la personne"
+    ]
+   },
+   {
+    "id": "xt",
+    "texte": "question toute simple sur le temps",
+    "groupes": [
+     "météo simple"
+    ],
+    "formes": [
+     "f03",
+     "f04",
+     "f05",
+     "f07"
+    ],
+    "question": true,
+    "deroules": [
+     "s01",
+     "s02",
+     "s09",
+     "s04",
+     "s06",
+     "s07",
+     "s10",
+     "s12",
+     "s14",
+     "s15",
+     "s16"
+    ],
+    "reponses": [
+     "avouer ne pas voir le ciel d'en face, puis demander de le décrire",
+     "dire le temps qu'on suppose, puis demander celui d'en face",
+     "plaisanter sur le temps, sans rien inventer de précis"
+    ]
+   },
+   {
+    "id": "xr",
+    "texte": "remerciement tout simple",
+    "groupes": [
+     "mercis simples"
+    ],
+    "formes": [
+     "f01",
+     "f02"
+    ],
+    "politesse": true,
+    "max_allers_retours": 2,
+    "deroules": [
+     "s01",
+     "s09"
+    ],
+    "reponses": [
+     "recevoir le remerciement avec modestie",
+     "recevoir le remerciement, puis offrir encore un service",
+     "recevoir le remerciement avec une pointe de fierté"
+    ]
+   },
+   {
+    "id": "xa",
+    "texte": "prise de congé toute simple",
+    "groupes": [
+     "adieux simples"
+    ],
+    "formes": [
+     "f01",
+     "f02"
+    ],
+    "sans_entree": true,
+    "politesse": true,
+    "max_allers_retours": 2,
+    "deroules": [
+     "s01",
+     "s09"
+    ],
+    "reponses": [
+     "donner congé avec un souhait",
+     "regretter le départ et inviter à revenir",
+     "donner congé en peu de mots, d'après le caractère donné"
+    ]
+   },
+   {
+    "id": "sa",
+    "poids": 2,
+    "texte": "salutation seule",
+    "groupes": [
+     "salutations"
+    ],
+    "formes": [
+     "f01",
+     "f02",
+     "f12",
+     "f13",
+     "f19"
+    ],
+    "sans_entree": true,
+    "politesse": true,
+    "reponses": [
+     "saluer en retour et demander des nouvelles de la personne",
+     "saluer en retour et offrir un service",
+     "saluer en retour, avec un mot sur l'humeur du jour"
+    ]
+   },
+   {
+    "id": "sq",
+    "poids": 2,
+    "texte": "salutation suivie d'une question",
+    "groupes": [
+     "salutations"
+    ],
+    "formes": [
+     "f02",
+     "f04",
+     "f05",
+     "f06",
+     "f07",
+     "f10",
+     "f16"
+    ],
+    "sans_entree": true,
+    "politesse": true,
+    "question": true,
+    "reponses": [
+     "saluer en retour, puis répondre à la question",
+     "saluer, répondre d'un mot, puis renvoyer la question en bref"
+    ]
+   },
+   {
+    "id": "sn",
+    "texte": "salutation suivie d'une nouvelle du jour",
+    "groupes": [
+     "salutations"
+    ],
+    "formes": [
+     "f08",
+     "f09",
+     "f11",
+     "f12",
+     "f13",
+     "f16",
+     "f18",
+     "f19"
+    ],
+    "sans_entree": true,
+    "politesse": true,
+    "reponses": [
+     "saluer en retour, puis réagir à la nouvelle",
+     "saluer en retour, puis demander la suite de la nouvelle"
+    ]
+   },
+   {
+    "id": "cg",
+    "texte": "prise de congé",
+    "groupes": [
+     "congés"
+    ],
+    "formes": [
+     "f01",
+     "f02",
+     "f08",
+     "f12",
+     "f13",
+     "f19"
+    ],
+    "sans_entree": true,
+    "politesse": true,
+    "max_allers_retours": 2,
+    "deroules": [
+     "s01",
+     "s09"
+    ],
+    "reponses": [
+     "souhaiter bonne route",
+     "regretter le départ",
+     "donner congé avec un dernier conseil"
+    ]
+   },
+   {
+    "id": "me",
+    "texte": "remerciement",
+    "groupes": [
+     "remerciements"
+    ],
+    "formes": [
+     "f01",
+     "f02",
+     "f08",
+     "f09",
+     "f11",
+     "f12",
+     "f13",
+     "f19"
+    ],
+    "politesse": true,
+    "max_allers_retours": 2,
+    "deroules": [
+     "s01",
+     "s09"
+    ],
+    "reponses": [
+     "recevoir le remerciement avec modestie",
+     "recevoir le remerciement avec fierté",
+     "remercier la personne en retour, avec d'autres mots"
+    ]
+   },
+   {
+    "id": "ex",
+    "texte": "excuse",
+    "groupes": [
+     "excuses"
+    ],
+    "formes": [
+     "f01",
+     "f02",
+     "f08",
+     "f09",
+     "f11",
+     "f12",
+     "f13",
+     "f15",
+     "f19"
+    ],
+    "politesse": true,
+    "max_allers_retours": 2,
+    "deroules": [
+     "s01",
+     "s09",
+     "s07"
+    ],
+    "reponses": [
+     "excuser de bonne grâce",
+     "gronder pour rire, puis excuser"
+    ]
+   },
+   {
+    "id": "vo",
+    "texte": "vœu ou souhait adressé au personnage",
+    "groupes": [
+     "vœux"
+    ],
+    "formes": [
+     "f01",
+     "f02",
+     "f12",
+     "f13",
+     "f14"
+    ],
+    "sans_entree": true,
+    "politesse": true,
+    "max_allers_retours": 2,
+    "deroules": [
+     "s01",
+     "s09"
+    ],
+    "reponses": [
+     "répondre au souhait par un souhait différent",
+     "remercier, puis former un souhait différent pour la personne"
+    ]
+   },
+   {
+    "id": "co",
+    "texte": "compliment adressé au personnage",
+    "groupes": [
+     "compliments"
+    ],
+    "formes": [
+     "f02",
+     "f09",
+     "f11",
+     "f12",
+     "f13",
+     "f15",
+     "f16",
+     "f19"
+    ],
+    "politesse": true,
+    "reponses": [
+     "se défendre du compliment",
+     "se réjouir du compliment",
+     "retourner le compliment avec d'autres mots"
+    ]
+   },
+   {
+    "id": "qb",
+    "texte": "question directe et brève",
+    "groupes": [
+     "savoir",
+     "idées",
+     "monde moderne",
+     "tracas",
+     "relations",
+     "décisions",
+     "petits choix"
+    ],
+    "porte": [
+     "question"
+    ],
+    "court": true,
+    "long": false,
+    "sans_formes": [
+     "f10"
+    ],
+    "question": true,
+    "reponses": [
+     "répondre nettement, puis donner une raison",
+     "répondre par une maxime, puis l'appliquer au cas présent",
+     "avouer une ignorance, puis dire ce que le personnage en suppose"
+    ]
+   },
+   {
+    "id": "qf",
+    "texte": "question fermée, par oui ou par non",
+    "groupes": [
+     "idées",
+     "monde moderne",
+     "personnage",
+     "tracas",
+     "relations",
+     "décisions",
+     "petits choix"
+    ],
+    "formes": [
+     "f02",
+     "f03",
+     "f04",
+     "f06",
+     "f07",
+     "f10",
+     "f16"
+    ],
+    "sans_entree": true,
+    "question": true,
+    "reponses": [
+     "dire oui ou non d'abord, puis donner une raison",
+     "dire oui ou non d'abord, puis ajouter une réserve"
+    ]
+   },
+   {
+    "id": "op",
+    "poids": 2,
+    "texte": "demande d'opinion",
+    "groupes": [
+     "idées",
+     "monde moderne",
+     "relations",
+     "décisions",
+     "petits choix"
+    ],
+    "porte": [
+     "question",
+     "demande"
+    ],
+    "court": true,
+    "long": true,
+    "question": true,
+    "reponses": [
+     "donner un avis tranché",
+     "donner un avis nuancé"
+    ]
+   },
+   {
+    "id": "pf",
+    "texte": "demande de préférence entre deux choses nommées",
+    "groupes": [
+     "idées",
+     "monde moderne",
+     "petits choix"
+    ],
+    "porte": [
+     "question"
+    ],
+    "court": true,
+    "long": false,
+    "question": true,
+    "reponses": [
+     "choisir, puis dire pourquoi",
+     "refuser de choisir, puis dire pourquoi"
+    ]
+   },
+   {
+    "id": "es",
+    "poids": 2,
+    "texte": "demande d'explication très simple",
+    "groupes": [
+     "savoir"
+    ],
+    "porte": [
+     "question",
+     "demande"
+    ],
+    "court": true,
+    "long": false,
+    "sans_formes": [
+     "f01"
+    ],
+    "question": true,
+    "reponses": [
+     "expliquer avec les idées du XVIIe siècle",
+     "expliquer par une comparaison familière",
+     "avouer une ignorance, puis dire ce que le personnage en suppose"
+    ]
+   },
+   {
+    "id": "qe",
+    "poids": 3,
+    "texte": "question sur la vie au XVIIe siècle",
+    "groupes": [
+     "savoir d'époque"
+    ],
+    "porte": [
+     "question",
+     "demande"
+    ],
+    "court": true,
+    "long": false,
+    "sans_formes": [
+     "f01"
+    ],
+    "question": true,
+    "reponses": [
+     "raconter l'usage du temps en témoin, sans date ni chiffre",
+     "répondre en témoin de ce temps, d'après le caractère donné"
+    ]
+   },
+   {
+    "id": "cx",
+    "texte": "demande de comparaison avec le XVIIe siècle",
+    "groupes": [
+     "savoir",
+     "savoir d'époque",
+     "idées",
+     "monde moderne",
+     "tracas"
+    ],
+    "porte": [
+     "question"
+    ],
+    "court": false,
+    "long": false,
+    "question": true,
+    "reponses": [
+     "décrire l'usage du XVIIe siècle, sans date ni chiffre",
+     "comparer avec l'usage du XVIIe siècle, puis conclure"
+    ]
+   },
+   {
+    "id": "rf",
+    "poids": 2,
+    "texte": "récit d'un fait, sans question",
+    "groupes": [
+     "tracas",
+     "maladresses",
+     "relations"
+    ],
+    "porte": [
+     "affirmation"
+    ],
+    "court": true,
+    "long": true,
+    "sans_formes": [
+     "f01"
+    ],
+    "reponses": [
+     "s'étonner du fait et demander la suite",
+     "commenter le fait",
+     "tirer une leçon du fait"
+    ]
+   },
+   {
+    "id": "rq",
+    "poids": 2,
+    "texte": "récit d'un fait, puis question",
+    "groupes": [
+     "tracas",
+     "maladresses",
+     "relations",
+     "décisions",
+     "petits choix",
+     "monde moderne"
+    ],
+    "formes": [
+     "f09",
+     "f10",
+     "f13",
+     "f16",
+     "f18"
+    ],
+    "question": true,
+    "reponses": [
+     "dire un mot du fait, puis répondre à la question",
+     "répondre à la question, puis tirer une leçon du fait"
+    ]
+   },
+   {
+    "id": "pl",
+    "poids": 2,
+    "texte": "plainte",
+    "groupes": [
+     "tracas",
+     "maladresses",
+     "relations",
+     "humeurs sombres"
+    ],
+    "porte": [
+     "affirmation"
+    ],
+    "court": true,
+    "long": true,
+    "reponses": [
+     "compatir",
+     "relativiser",
+     "taquiner sans méchanceté",
+     "s'indigner avec la personne"
+    ]
+   },
+   {
+    "id": "cp",
+    "poids": 2,
+    "texte": "demande de conseil pratique",
+    "groupes": [
+     "tracas",
+     "maladresses",
+     "relations",
+     "décisions",
+     "petits choix",
+     "humeurs sombres"
+    ],
+    "porte": [
+     "question",
+     "demande"
+    ],
+    "court": true,
+    "long": true,
+    "sans_formes": [
+     "f01"
+    ],
+    "question": true,
+    "reponses": [
+     "conseiller nettement",
+     "conseiller par une maxime",
+     "mettre en garde, puis conseiller"
+    ]
+   },
+   {
+    "id": "am",
+    "texte": "demande d'avis moral, bien ou mal agi",
+    "groupes": [
+     "relations"
+    ],
+    "porte": [
+     "question"
+    ],
+    "court": false,
+    "long": true,
+    "sans_formes": [
+     "f17"
+    ],
+    "question": true,
+    "reponses": [
+     "approuver, puis dire pourquoi",
+     "blâmer avec douceur, puis dire pourquoi",
+     "peser le pour et le contre, puis conclure"
+    ]
+   },
+   {
+    "id": "hc",
+    "poids": 2,
+    "texte": "hésitation entre deux choix nommés",
+    "groupes": [
+     "décisions",
+     "petits choix"
+    ],
+    "porte": [
+     "question",
+     "affirmation"
+    ],
+    "court": true,
+    "long": true,
+    "sans_formes": [
+     "f01"
+    ],
+    "reponses": [
+     "trancher entre les deux choix",
+     "refuser de trancher et dire comment choisir"
+    ]
+   },
+   {
+    "id": "dp",
+    "poids": 2,
+    "texte": "annonce d'une décision déjà prise",
+    "groupes": [
+     "décisions",
+     "petits choix"
+    ],
+    "porte": [
+     "affirmation"
+    ],
+    "court": true,
+    "long": true,
+    "sans_formes": [
+     "f01"
+    ],
+    "reponses": [
+     "approuver la décision",
+     "mettre en garde"
+    ]
+   },
+   {
+    "id": "en",
+    "texte": "demande d'encouragement avant de se lancer",
+    "groupes": [
+     "décisions"
+    ],
+    "porte": [
+     "demande",
+     "affirmation"
+    ],
+    "court": true,
+    "long": true,
+    "sans_formes": [
+     "f01"
+    ],
+    "reponses": [
+     "encourager",
+     "piquer l'amour-propre de la personne"
+    ]
+   },
+   {
+    "id": "qp",
+    "texte": "demande de ce que ferait le personnage",
+    "groupes": [
+     "tracas",
+     "maladresses",
+     "relations",
+     "décisions",
+     "petits choix"
+    ],
+    "porte": [
+     "question"
+    ],
+    "court": false,
+    "long": true,
+    "sans_formes": [
+     "f17"
+    ],
+    "question": true,
+    "reponses": [
+     "dire ce que le personnage ferait",
+     "dire ce que le personnage ferait, puis conseiller autre chose"
+    ]
+   },
+   {
+    "id": "af",
+    "texte": "aveu d'une faute ou d'une maladresse",
+    "groupes": [
+     "relations",
+     "maladresses"
+    ],
+    "porte": [
+     "affirmation"
+    ],
+    "court": true,
+    "long": true,
+    "sans_formes": [
+     "f01"
+    ],
+    "reponses": [
+     "absoudre",
+     "gronder",
+     "en rire"
+    ]
+   },
+   {
+    "id": "rc",
+    "texte": "demande de réconfort",
+    "groupes": [
+     "humeurs sombres",
+     "relations"
+    ],
+    "porte": [
+     "demande",
+     "affirmation"
+    ],
+    "court": true,
+    "long": true,
+    "sans_formes": [
+     "f01"
+    ],
+    "reponses": [
+     "réconforter",
+     "réconforter, puis proposer une chose à faire"
+    ]
+   },
+   {
+    "id": "hs",
+    "poids": 2,
+    "texte": "humeur sombre dite sans rien demander",
+    "groupes": [
+     "humeurs sombres"
+    ],
+    "porte": [
+     "affirmation"
+    ],
+    "court": true,
+    "long": true,
+    "reponses": [
+     "demander la cause de cette humeur",
+     "compatir",
+     "secouer la personne avec amitié"
+    ]
+   },
+   {
+    "id": "hg",
+    "texte": "humeur gaie dite sans rien demander",
+    "groupes": [
+     "humeurs gaies"
+    ],
+    "porte": [
+     "affirmation"
+    ],
+    "court": true,
+    "long": true,
+    "reponses": [
+     "demander la cause de cette humeur",
+     "partager cette humeur",
+     "taquiner doucement la personne"
+    ]
+   },
+   {
+    "id": "bn",
+    "texte": "bonne nouvelle partagée",
+    "groupes": [
+     "bonnes nouvelles"
+    ],
+    "porte": [
+     "affirmation"
+    ],
+    "court": true,
+    "long": true,
+    "reponses": [
+     "féliciter",
+     "se réjouir, puis mettre en garde contre l'excès"
+    ]
+   },
+   {
+    "id": "va",
+    "texte": "réussite dont la personne se vante",
+    "groupes": [
+     "bonnes nouvelles"
+    ],
+    "porte": [
+     "affirmation"
+    ],
+    "court": true,
+    "long": true,
+    "reponses": [
+     "applaudir",
+     "rabattre gentiment la vanité"
+    ]
+   },
+   {
+    "id": "em",
+    "poids": 3,
+    "texte": "chose d'aujourd'hui expliquée au personnage",
+    "groupes": [
+     "monde moderne"
+    ],
+    "porte": [
+     "affirmation"
+    ],
+    "court": false,
+    "long": true,
+    "reponses": [
+     "s'étonner de la chose, puis poser une question naïve",
+     "rapprocher la chose d'un objet ou d'un usage du XVIIe siècle",
+     "se méfier de la chose avec humour"
+    ]
+   },
+   {
+    "id": "cm",
+    "poids": 3,
+    "texte": "avis demandé sur une chose d'aujourd'hui",
+    "groupes": [
+     "monde moderne"
+    ],
+    "porte": [
+     "question"
+    ],
+    "court": true,
+    "long": false,
+    "question": true,
+    "reponses": [
+     "s'étonner de la chose, puis donner un avis",
+     "rapprocher la chose d'un usage ancien, puis donner un avis"
+    ]
+   },
+   {
+    "id": "cu",
+    "poids": 4,
+    "texte": "question de curiosité sur le personnage",
+    "groupes": [
+     "personnage"
+    ],
+    "porte": [
+     "question",
+     "demande"
+    ],
+    "court": true,
+    "long": false,
+    "sans_formes": [
+     "f17"
+    ],
+    "question": true,
+    "reponses": [
+     "répondre selon le caractère du personnage",
+     "répondre, puis renvoyer la question en bref"
+    ]
+   },
+   {
+    "id": "tq",
+    "poids": 2,
+    "texte": "question taquine sur le personnage",
+    "groupes": [
+     "personnage"
+    ],
+    "porte": [
+     "question"
+    ],
+    "court": true,
+    "long": false,
+    "sans_formes": [
+     "f17"
+    ],
+    "question": true,
+    "reponses": [
+     "se défendre avec esprit",
+     "avouer en riant"
+    ]
+   },
+   {
+    "id": "sv",
+    "texte": "petit service demandé au personnage",
+    "groupes": [
+     "demandes"
+    ],
+    "porte": [
+     "demande",
+     "question"
+    ],
+    "court": true,
+    "long": false,
+    "sans_formes": [
+     "f01"
+    ],
+    "sans_longueurs": [
+     "l1"
+    ],
+    "reponses": [
+     "s'exécuter de bonne grâce",
+     "s'en défendre d'abord, puis s'exécuter"
+    ]
+   },
+   {
+    "id": "df",
+    "texte": "défi lancé au personnage",
+    "groupes": [
+     "jeux"
+    ],
+    "porte": [
+     "demande",
+     "affirmation"
+    ],
+    "court": true,
+    "long": false,
+    "sans_formes": [
+     "f17"
+    ],
+    "reponses": [
+     "relever le défi",
+     "s'en défendre d'abord, puis relever le défi"
+    ]
+   },
+   {
+    "id": "pj",
+    "texte": "plaisanterie",
+    "groupes": [
+     "jeux",
+     "tracas",
+     "maladresses",
+     "relations",
+     "monde moderne",
+     "personnage"
+    ],
+    "porte": [
+     "affirmation",
+     "question"
+    ],
+    "court": true,
+    "long": false,
+    "reponses": [
+     "répondre du tac au tac",
+     "feindre de prendre la plaisanterie au sérieux",
+     "rire, puis renchérir"
+    ]
+   },
+   {
+    "id": "ep",
+    "texte": "mise à l'épreuve du personnage",
+    "groupes": [
+     "épreuves"
+    ],
+    "porte": [
+     "question",
+     "affirmation",
+     "demande"
+    ],
+    "court": true,
+    "long": false,
+    "sans_formes": [
+     "f17"
+    ],
+    "reponses": [
+     "rester dans le rôle et s'étonner de la question",
+     "répondre avec esprit sans quitter le rôle"
+    ]
+   },
+   {
+    "id": "fp",
+    "texte": "remarque sur la façon de parler du personnage",
+    "groupes": [
+     "langage"
+    ],
+    "porte": [
+     "question",
+     "affirmation",
+     "demande"
+    ],
+    "court": true,
+    "long": false,
+    "sans_formes": [
+     "f17"
+    ],
+    "reponses": [
+     "s'en expliquer avec esprit, sans quitter le vouvoiement",
+     "faire un effort de clarté, sans quitter le vouvoiement",
+     "s'étonner en retour du parler de la personne"
+    ]
+   },
+   {
+    "id": "mv",
+    "texte": "message vague ou incomplet",
+    "groupes": [
+     "messages vagues"
+    ],
+    "formes": [
+     "f01",
+     "f02",
+     "f13"
+    ],
+    "reponses": [
+     "demander poliment de préciser",
+     "relancer par une question"
+    ]
+   },
+   {
+    "id": "im",
+    "texte": "question sur ce que le personnage ne peut savoir",
+    "groupes": [
+     "questions impossibles"
+    ],
+    "porte": [
+     "question",
+     "demande"
+    ],
+    "court": true,
+    "long": false,
+    "question": true,
+    "reponses": [
+     "avouer avec esprit ne pouvoir le savoir, sans rien inventer",
+     "avouer l'ignorer, puis dire comment on l'apprenait autrefois"
+    ]
+   }
+  ]
+ },
+ "formes_du_premier_message": {
+  "_comment": "Forme imposée au premier message de la personne. Les formes « courte » font quatre mots au plus : aucune suite de cinq mots, donc aucun quasi-doublon possible de ce côté ; pour chaque type de message, le compositeur partage les fiches entre les formes permises : « part_des_formes_courtes » pour les trois formes courtes ensemble quand toutes les formes sont permises, le reste à parts égales (la part réelle est écrite dans « composition »). « porte » = ce que la forme peut porter : question, affirmation, demande.",
+  "part_des_formes_courtes": 0.2,
+  "valeurs": [
+   {
+    "id": "f01",
+    "texte": "un à trois mots, sans verbe",
+    "porte": [
+     "question",
+     "affirmation",
+     "demande"
+    ],
+    "courte": true
+   },
+   {
+    "id": "f02",
+    "texte": "deux à quatre mots, dont un verbe",
+    "porte": [
+     "question",
+     "affirmation",
+     "demande"
+    ],
+    "courte": true
+   },
+   {
+    "id": "f03",
+    "texte": "question de trois ou quatre mots, sans verbe",
+    "porte": [
+     "question"
+    ],
+    "courte": true
+   },
+   {
+    "id": "f04",
+    "texte": "question à inversion du sujet",
+    "porte": [
+     "question"
+    ]
+   },
+   {
+    "id": "f05",
+    "texte": "question ouverte par un mot interrogatif",
+    "porte": [
+     "question"
+    ]
+   },
+   {
+    "id": "f06",
+    "texte": "question en « est-ce que »",
+    "porte": [
+     "question"
+    ]
+   },
+   {
+    "id": "f07",
+    "texte": "question par la seule intonation",
+    "porte": [
+     "question"
+    ]
+   },
+   {
+    "id": "f08",
+    "texte": "phrase ouverte par l'heure ou le lieu",
+    "porte": [
+     "affirmation"
+    ]
+   },
+   {
+    "id": "f09",
+    "texte": "phrase ouverte par le nom de la chose",
+    "porte": [
+     "question",
+     "affirmation",
+     "demande"
+    ]
+   },
+   {
+    "id": "f10",
+    "texte": "un fait puis une question, deux phrases courtes",
+    "porte": [
+     "question"
+    ]
+   },
+   {
+    "id": "f11",
+    "texte": "un fait puis un sentiment, deux phrases courtes",
+    "porte": [
+     "affirmation"
+    ]
+   },
+   {
+    "id": "f12",
+    "texte": "phrase exclamative",
+    "porte": [
+     "affirmation",
+     "demande"
+    ]
+   },
+   {
+    "id": "f13",
+    "texte": "style télégraphique, sans article",
+    "porte": [
+     "question",
+     "affirmation",
+     "demande"
+    ]
+   },
+   {
+    "id": "f14",
+    "texte": "phrase à l'impératif",
+    "porte": [
+     "demande"
+    ]
+   },
+   {
+    "id": "f15",
+    "texte": "phrase négative",
+    "porte": [
+     "affirmation"
+    ]
+   },
+   {
+    "id": "f16",
+    "texte": "phrase ouverte par « on » ou par « ça »",
+    "porte": [
+     "question",
+     "affirmation"
+    ]
+   },
+   {
+    "id": "f17",
+    "texte": "tournure à l'infinitif, sans sujet",
+    "porte": [
+     "question",
+     "demande"
+    ]
+   },
+   {
+    "id": "f18",
+    "texte": "message long, en deux ou trois phrases",
+    "porte": [
+     "question",
+     "affirmation",
+     "demande"
+    ],
+    "longue": true
+   },
+   {
+    "id": "f19",
+    "texte": "phrase toute simple et brève",
+    "porte": [
+     "question",
+     "affirmation",
+     "demande"
+    ]
+   }
+  ]
+ },
+ "detail": {
+  "_comment": "Détail concret libre que la personne invente et glisse dans son premier message : il rend propres à chaque conversation les suites de cinq mots des messages plus longs. Réservé aux groupes de la vie courante (« detail » vrai), jamais avec une forme courte ni avec une forme de « sauf_formes » (qui demande déjà l'heure ou le lieu), et seulement pour la part des fiches fixée dans « supplements ». Pas de prénom dans la liste : un prénom qui est aussi un rôle des pièces tenues à l'écart ferait écarter la conversation à la fusion.",
+  "id": "d1",
+  "texte": "un lieu ou un objet précis",
+  "sauf_formes": [
+   "f08"
+  ]
+ },
+ "deroules": {
+  "_comment": "Nombre d'allers-retours et nature de chaque message suivant de la personne. « poids_des_allers_retours » : part des fiches à un, deux, trois et quatre allers-retours pour un type de message qui permet tous les déroulés, partagée à parts égales entre les déroulés de même longueur (pour chaque type, les déroulés permis se partagent les fiches selon ces poids). « groupes », quand il est présent, réserve le déroulé à ces groupes de thèmes. « sauf_politesse » : interdit aux types de message marqués « politesse » (on n'objecte pas à un bonjour). « exige_question » : réservé aux types marqués « question ». « types », quand il est présent, réserve le déroulé à ces types de message. « sauf_formes_courtes » : pas après un premier message court. Demande filtres.tours_moliere = [2, 8].",
+  "poids_des_allers_retours": {
+   "1": 35,
+   "2": 40,
+   "3": 20,
+   "4": 5
+  },
+  "valeurs": [
+   {
+    "id": "s01",
+    "allers_retours": 1,
+    "texte": "un seul aller-retour"
+   },
+   {
+    "id": "s02",
+    "allers_retours": 2,
+    "texte": "deux allers-retours ; ensuite une demande de précision"
+   },
+   {
+    "id": "s03",
+    "allers_retours": 2,
+    "texte": "deux allers-retours ; ensuite une objection",
+    "sauf_politesse": true
+   },
+   {
+    "id": "s04",
+    "allers_retours": 2,
+    "texte": "deux allers-retours ; ensuite un merci et une question voisine"
+   },
+   {
+    "id": "s05",
+    "allers_retours": 2,
+    "texte": "deux allers-retours ; ensuite l'aveu du vrai souci",
+    "sauf_politesse": true
+   },
+   {
+    "id": "s06",
+    "allers_retours": 2,
+    "texte": "deux allers-retours ; ensuite le sens d'un mot ancien est demandé"
+   },
+   {
+    "id": "s07",
+    "allers_retours": 2,
+    "texte": "deux allers-retours ; ensuite une plaisanterie sur la réponse"
+   },
+   {
+    "id": "s08",
+    "allers_retours": 2,
+    "texte": "deux allers-retours ; ensuite un tout autre sujet",
+    "sauf_politesse": true
+   },
+   {
+    "id": "s09",
+    "allers_retours": 2,
+    "texte": "deux allers-retours ; ensuite un message d'un à trois mots"
+   },
+   {
+    "id": "s18",
+    "allers_retours": 2,
+    "texte": "deux allers-retours ; ensuite la personne dit ce qui l'amène",
+    "types": [
+     "xs",
+     "xq",
+     "sa",
+     "sq",
+     "sn"
+    ]
+   },
+   {
+    "id": "s10",
+    "allers_retours": 3,
+    "texte": "trois allers-retours ; une demande de précision, puis un merci"
+   },
+   {
+    "id": "s11",
+    "allers_retours": 3,
+    "texte": "trois allers-retours ; une objection, puis un accord",
+    "sauf_politesse": true
+   },
+   {
+    "id": "s12",
+    "allers_retours": 3,
+    "texte": "trois allers-retours ; le personnage questionne, la personne répond"
+   },
+   {
+    "id": "s13",
+    "allers_retours": 3,
+    "texte": "trois allers-retours ; la suite du récit à chaque message",
+    "groupes": [
+     "tracas",
+     "maladresses",
+     "relations",
+     "décisions",
+     "bonnes nouvelles",
+     "humeurs sombres",
+     "humeurs gaies"
+    ]
+   },
+   {
+    "id": "s14",
+    "allers_retours": 3,
+    "texte": "trois allers-retours ; des messages de plus en plus courts",
+    "sauf_formes_courtes": true
+   },
+   {
+    "id": "s15",
+    "allers_retours": 3,
+    "texte": "trois allers-retours ; deux questions différentes, puis un au revoir",
+    "exige_question": true
+   },
+   {
+    "id": "s16",
+    "allers_retours": 4,
+    "texte": "quatre allers-retours ; conversation suivie, finie par un au revoir"
+   },
+   {
+    "id": "s17",
+    "allers_retours": 4,
+    "texte": "quatre allers-retours ; le personnage interroge deux fois la personne"
+   }
+  ]
+ },
+ "entrees_de_la_premiere_reponse": {
+  "_comment": "Début imposé à la première réponse du personnage : cinq catégories simples, décrites et jamais données en toutes lettres, pour ne pas créer un nouveau tic. Ce n'est qu'un supplément parmi d'autres (voir « supplements ») : le plafond de 15 % par premier mot de réponse reste de toute façon mécanique. « sauf_formes_courtes » : pas avec un premier message court, dont la réponse reprendrait alors un des rares mots.",
+  "valeurs": [
+   {
+    "id": "e1",
+    "texte": "un verbe à l'impératif pluriel"
+   },
+   {
+    "id": "e4",
+    "texte": "un pronom sujet"
+   },
+   {
+    "id": "e5",
+    "texte": "un nom précédé d'un article",
+    "sauf_formes_courtes": true
+   }
+  ]
+ },
+ "longueurs_des_reponses": {
+  "_comment": "Longueur des réponses du personnage : trois classes, sans compte de mots (un petit modèle compte mal, et le filtre compte autrement : l'apostrophe et le trait d'union coupent). Le plafond filtres.max_mots_par_tour reste celui du fichier d'origine. « poids » : parts, pour chaque façon de répondre, entre les classes qui lui sont permises (une façon de répondre en un seul temps reçoit donc « une phrase courte » une fois sur deux). « sans_puis » : classe interdite quand la façon de répondre est en deux temps (elle contient « puis »).",
+  "valeurs": [
+   {
+    "id": "l1",
+    "poids": 50,
+    "texte": "une phrase courte",
+    "sans_puis": true
+   },
+   {
+    "id": "l2",
+    "poids": 30,
+    "texte": "deux phrases"
+   },
+   {
+    "id": "l3",
+    "poids": 20,
+    "texte": "trois phrases brèves"
+   }
+  ]
+ },
+ "interdits": {
+  "_comment": "Interdit tournant : une fiche en reçoit au plus UN, choisi par le compositeur parmi ceux qui ne contredisent pas la fiche (plus de paires tirées à part par le code). Côté réponses : les tics relevés dans la génération précédente. Côté messages : des suites de mots banales qui saturaient le compteur de formules ; jamais sur les fiches du bloc « essentiels », et sur une petite part des autres seulement, car ce sont aussi les tournures les plus naturelles d'un utilisateur. « heurte » : l'interdit n'est pas proposé à une fiche dont le texte, du même côté, contient un de ces fragments. « min_allers_retours » : il lui faut au moins autant d'allers-retours. Ce sont des incitations : aucun filtre ne les vérifie un à un.",
+  "reponses": [
+   {
+    "id": "r01",
+    "texte": "« Ah », « Oh », « Eh » et « Hé » en premier mot"
+   },
+   {
+    "id": "r02",
+    "texte": "« C'est », « Ce » et « Cela » en premier mot"
+   },
+   {
+    "id": "r03",
+    "texte": "« monsieur » et « madame »"
+   },
+   {
+    "id": "r04",
+    "texte": "toute question de moins de six mots en ouverture",
+    "heurte": [
+     "demander",
+     "question",
+     "relancer"
+    ]
+   },
+   {
+    "id": "r05",
+    "texte": "« une chose »",
+    "heurte": [
+     "chose"
+    ]
+   },
+   {
+    "id": "r06",
+    "texte": "« un homme qui » et « une personne qui »"
+   },
+   {
+    "id": "r07",
+    "texte": "l'adverbe « fort »"
+   },
+   {
+    "id": "r08",
+    "texte": "la négation en « point »"
+   },
+   {
+    "id": "r09",
+    "texte": "les jurons, comme « morbleu » ou « parbleu »"
+   },
+   {
+    "id": "r10",
+    "texte": "« je vous prie » et « de grâce »"
+   },
+   {
+    "id": "r11",
+    "texte": "« en vérité », « assurément » et « certes »"
+   },
+   {
+    "id": "r12",
+    "texte": "les tournures en « si… que » et en « tant… que »"
+   },
+   {
+    "id": "r13",
+    "texte": "« Que ne » et « N'est-ce pas » en ouverture"
+   },
+   {
+    "id": "r14",
+    "texte": "« croyez-moi », « dites-moi » et « sachez »"
+   },
+   {
+    "id": "r15",
+    "texte": "« voilà » et « voici »"
+   },
+   {
+    "id": "r16",
+    "texte": "le point-virgule et les deux-points"
+   }
+  ],
+  "messages": [
+   {
+    "id": "m01",
+    "texte": "« je ne sais pas » et « je sais pas »"
+   },
+   {
+    "id": "m02",
+    "texte": "« je n'ai pas » et « j'ai pas »"
+   },
+   {
+    "id": "m03",
+    "texte": "« j'ai besoin », « j'aimerais » et « je voudrais »"
+   },
+   {
+    "id": "m04",
+    "texte": "« en ce moment » et « ces temps-ci »"
+   },
+   {
+    "id": "m05",
+    "texte": "« mais » en premier mot d'un message suivant",
+    "min_allers_retours": 2,
+    "heurte": [
+     "object"
+    ]
+   },
+   {
+    "id": "m06",
+    "texte": "« je me sens » et « j'en ai marre »"
+   },
+   {
+    "id": "m07",
+    "texte": "« comment faire », « que faire » et « quoi faire »",
+    "heurte": [
+     "infinitif"
+    ]
+   },
+   {
+    "id": "m08",
+    "texte": "« je viens de » et « je vais »"
+   },
+   {
+    "id": "m09",
+    "texte": "« j'ai un » et « j'ai une »"
+   },
+   {
+    "id": "m10",
+    "texte": "« vraiment » et « trop »"
+   },
+   {
+    "id": "m11",
+    "texte": "« un peu » et « beaucoup »"
+   },
+   {
+    "id": "m12",
+    "texte": "« tout le temps » et « tous les jours »"
+   }
+  ]
+ },
+ "supplements": {
+  "_comment": "Part des fiches qui reçoivent chaque supplément (un seul par fiche, ou aucun), pour chaque type de message, selon la sorte de fiche : « essentiels », « vie courante » (groupes où « detail » est vrai) et « autres ». Un supplément impossible pour une fiche (détail avec une forme courte, début imposé quand la façon de répondre le fixe déjà, interdit qui heurterait la fiche) est remplacé par le supplément permis le moins servi.",
+  "essentiels": {
+   "entree": 35,
+   "interdit_reponse": 25,
+   "aucun": 40
+  },
+  "vie courante": {
+   "detail": 40,
+   "entree": 20,
+   "interdit_reponse": 15,
+   "interdit_message": 10,
+   "aucun": 15
+  },
+  "autres": {
+   "entree": 35,
+   "interdit_reponse": 25,
+   "interdit_message": 10,
+   "aucun": 30
+  }
+ },
+ "voix": {
+  "_comment": "Voix de la personne, une par appel, tirée par le code de chatbot/synthetic.py (clé « registres »). L'id commence par « tu » ou « vous », comme l'exige le filtre « registre » ; douze voix au tutoiement, huit au vouvoiement. La voix règle la manière, jamais la longueur ni la forme : c'est la fiche qui les fixe, et le gabarit dit que la fiche prime. Le compositeur ajoute « clause_des_voix_vous » à chaque voix « vous ». Le mot « manière » remplace partout le nom que le filtre du tutoiement prendrait pour un possessif.",
+  "clause_des_voix_vous": "jamais « tu », « te », « toi », ni possessif du tutoiement, ni impératif singulier comme « dis », « attends », « regarde », « tiens » ou « va »",
+  "valeurs": [
+   {
+    "id": "tu_neutre",
+    "texte": "tutoie le personnage ; manière simple et directe"
+   },
+   {
+    "id": "tu_poli",
+    "texte": "tutoie le personnage ; manière aimable et polie"
+   },
+   {
+    "id": "tu_presse",
+    "texte": "tutoie le personnage ; manière pressée, va droit au but"
+   },
+   {
+    "id": "tu_bavard",
+    "texte": "tutoie le personnage ; manière bavarde et familière"
+   },
+   {
+    "id": "tu_blagueur",
+    "texte": "tutoie le personnage ; manière moqueuse et légère"
+   },
+   {
+    "id": "tu_inquiet",
+    "texte": "tutoie le personnage ; manière soucieuse"
+   },
+   {
+    "id": "tu_enthousiaste",
+    "texte": "tutoie le personnage ; manière joyeuse"
+   },
+   {
+    "id": "tu_sceptique",
+    "texte": "tutoie le personnage ; manière de qui doute de tout"
+   },
+   {
+    "id": "tu_hesitant",
+    "texte": "tutoie le personnage ; manière hésitante"
+   },
+   {
+    "id": "tu_oral",
+    "texte": "tutoie le personnage ; français parlé, correct mais relâché : négation sans « ne », « ça » pour « cela »"
+   },
+   {
+    "id": "tu_curieux",
+    "texte": "tutoie le personnage ; manière curieuse, qui s'étonne volontiers"
+   },
+   {
+    "id": "tu_las",
+    "texte": "tutoie le personnage ; manière fatiguée et désabusée"
+   },
+   {
+    "id": "vous_courtois",
+    "texte": "vouvoie le personnage du début à la fin ; manière aimable et soignée"
+   },
+   {
+    "id": "vous_distant",
+    "texte": "vouvoie le personnage du début à la fin ; manière neutre, presque administrative"
+   },
+   {
+    "id": "vous_presse",
+    "texte": "vouvoie le personnage du début à la fin ; manière pressée, va droit au but"
+   },
+   {
+    "id": "vous_curieux",
+    "texte": "vouvoie le personnage du début à la fin ; manière curieuse, qui s'étonne volontiers"
+   },
+   {
+    "id": "vous_inquiet",
+    "texte": "vouvoie le personnage du début à la fin ; manière soucieuse"
+   },
+   {
+    "id": "vous_amuse",
+    "texte": "vouvoie le personnage du début à la fin ; manière malicieuse"
+   },
+   {
+    "id": "vous_sceptique",
+    "texte": "vouvoie le personnage du début à la fin ; manière de qui doute"
+   },
+   {
+    "id": "vous_ceremonieux",
+    "texte": "vouvoie le personnage du début à la fin ; manière très polie"
+   }
+  ]
+ },
+ "tics_plafonnes_en_plus": {
+  "_comment": "Formules ajoutées à filtres.tics_plafonnes.moliere : chacune est permise dans 15 % au plus des réponses du personnage gardées. Le plafond est mécanique : ces formules n'ont pas besoin d'être citées dans chaque prompt.",
+  "valeurs": [
+   "une chose",
+   "un homme qui",
+   "il faut que",
+   "je vous prie",
+   "en vérité",
+   "ma foi",
+   "voilà qui",
+   "que n'avez-vous",
+   "étrange",
+   "machine",
+   "instrument",
+   "miroir",
+   "médecin"
+  ]
+ }
+}
