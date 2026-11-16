@@ -1,0 +1,737 @@
+{
+ "_comment": "Règles du nettoyage des tokens de pré-entraînement (essai v4, 14/11/2026), lues par tools/nettoyer_pretrain.py. Une unité (document, ou morceau de 512 tokens d'un document long) est écartée si TOUTES les conditions d'UNE règle sont vraies. Règles « pas de phrases » : calées sur 240 extraits notés par des lecteurs (runs/evals_manuelles/audit_donnees). FineWeb seulement : score_tri = sonde linéaire sur les activations du bloc 6 de notre modèle de base, apprise sur 12 000 documents notés par qwen3:8b (consigne : chatbot/prompts_tri_fineweb.json) ; seuil 0,25 choisi sur 320 documents notés par des lecteurs indépendants (71 des 87 graves écartés, 4 des 122 propres).",
+ "version": "regles-pretrain-v4",
+ "sources": {
+  "fineweb": {
+   "morceaux": 512,
+   "sonde": "chatbot/sonde_fineweb.npz",
+   "regles": [
+    {
+     "raison": "tri_appris_spam_ou_charabia",
+     "si": [
+      [
+       "score_tri",
+       ">",
+       0.25
+      ]
+     ]
+    },
+    {
+     "raison": "apostrophes_perdues",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       80
+      ],
+      [
+       "soudes_1000",
+       ">",
+       3.0
+      ]
+     ]
+    },
+    {
+     "raison": "apostrophes_en_espaces",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       80
+      ],
+      [
+       "espace_1000",
+       ">",
+       8.0
+      ]
+     ]
+    },
+    {
+     "raison": "presque_sans_mots",
+     "si": [
+      [
+       "n_mots",
+       "<",
+       40
+      ],
+      [
+       "tokens",
+       ">=",
+       200
+      ]
+     ]
+    },
+    {
+     "raison": "sans_mots_outils",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.22
+      ]
+     ]
+    },
+    {
+     "raison": "tableau_de_chiffres",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.3
+      ],
+      [
+       "chiffres",
+       ">",
+       0.08
+      ]
+     ]
+    },
+    {
+     "raison": "liste_de_noms",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.3
+      ],
+      [
+       "maj",
+       ">",
+       0.45
+      ]
+     ]
+    },
+    {
+     "raison": "sans_phrases_noms",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "ponct_100",
+       "<",
+       0.8
+      ],
+      [
+       "maj",
+       ">",
+       0.25
+      ]
+     ]
+    },
+    {
+     "raison": "sans_phrases_chiffres",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "ponct_100",
+       "<",
+       0.8
+      ],
+      [
+       "chiffres",
+       ">",
+       0.04
+      ]
+     ]
+    }
+   ]
+  },
+  "melange": {
+   "morceaux": 512,
+   "regles": [
+    {
+     "raison": "presque_sans_mots",
+     "si": [
+      [
+       "n_mots",
+       "<",
+       40
+      ],
+      [
+       "tokens",
+       ">=",
+       200
+      ]
+     ]
+    },
+    {
+     "raison": "sans_mots_outils",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.22
+      ]
+     ]
+    },
+    {
+     "raison": "tableau_de_chiffres",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.3
+      ],
+      [
+       "chiffres",
+       ">",
+       0.08
+      ]
+     ]
+    },
+    {
+     "raison": "liste_de_noms",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.3
+      ],
+      [
+       "maj",
+       ">",
+       0.45
+      ]
+     ]
+    },
+    {
+     "raison": "sans_phrases_noms",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "ponct_100",
+       "<",
+       0.8
+      ],
+      [
+       "maj",
+       ">",
+       0.25
+      ]
+     ]
+    },
+    {
+     "raison": "sans_phrases_chiffres",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "ponct_100",
+       "<",
+       0.8
+      ],
+      [
+       "chiffres",
+       ">",
+       0.04
+      ]
+     ]
+    }
+   ]
+  },
+  "wikinews": {
+   "morceaux": 512,
+   "regles": [
+    {
+     "raison": "presque_sans_mots",
+     "si": [
+      [
+       "n_mots",
+       "<",
+       40
+      ],
+      [
+       "tokens",
+       ">=",
+       200
+      ]
+     ]
+    },
+    {
+     "raison": "sans_mots_outils",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.22
+      ]
+     ]
+    },
+    {
+     "raison": "tableau_de_chiffres",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.3
+      ],
+      [
+       "chiffres",
+       ">",
+       0.08
+      ]
+     ]
+    },
+    {
+     "raison": "liste_de_noms",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.3
+      ],
+      [
+       "maj",
+       ">",
+       0.45
+      ]
+     ]
+    },
+    {
+     "raison": "sans_phrases_noms",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "ponct_100",
+       "<",
+       0.8
+      ],
+      [
+       "maj",
+       ">",
+       0.25
+      ]
+     ]
+    },
+    {
+     "raison": "sans_phrases_chiffres",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "ponct_100",
+       "<",
+       0.8
+      ],
+      [
+       "chiffres",
+       ">",
+       0.04
+      ]
+     ]
+    }
+   ]
+  },
+  "wikipedia": {
+   "morceaux": 512,
+   "regles": [
+    {
+     "raison": "presque_sans_mots",
+     "si": [
+      [
+       "n_mots",
+       "<",
+       40
+      ],
+      [
+       "tokens",
+       ">=",
+       200
+      ]
+     ]
+    },
+    {
+     "raison": "sans_mots_outils",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.22
+      ]
+     ]
+    },
+    {
+     "raison": "tableau_de_chiffres",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.3
+      ],
+      [
+       "chiffres",
+       ">",
+       0.08
+      ]
+     ]
+    },
+    {
+     "raison": "liste_de_noms",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.3
+      ],
+      [
+       "maj",
+       ">",
+       0.45
+      ]
+     ]
+    },
+    {
+     "raison": "sans_phrases_noms",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "ponct_100",
+       "<",
+       0.8
+      ],
+      [
+       "maj",
+       ">",
+       0.25
+      ]
+     ]
+    },
+    {
+     "raison": "sans_phrases_chiffres",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "ponct_100",
+       "<",
+       0.8
+      ],
+      [
+       "chiffres",
+       ">",
+       0.04
+      ]
+     ]
+    }
+   ]
+  },
+  "gutenberg": {
+   "morceaux": 512,
+   "regles": [
+    {
+     "raison": "presque_sans_mots",
+     "si": [
+      [
+       "n_mots",
+       "<",
+       40
+      ],
+      [
+       "tokens",
+       ">=",
+       200
+      ]
+     ]
+    },
+    {
+     "raison": "sans_mots_outils",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.22
+      ]
+     ]
+    },
+    {
+     "raison": "tableau_de_chiffres",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.3
+      ],
+      [
+       "chiffres",
+       ">",
+       0.08
+      ]
+     ]
+    },
+    {
+     "raison": "liste_de_noms",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.3
+      ],
+      [
+       "maj",
+       ">",
+       0.45
+      ]
+     ]
+    },
+    {
+     "raison": "sans_phrases_noms",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "ponct_100",
+       "<",
+       0.8
+      ],
+      [
+       "maj",
+       ">",
+       0.25
+      ]
+     ]
+    },
+    {
+     "raison": "sans_phrases_chiffres",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "ponct_100",
+       "<",
+       0.8
+      ],
+      [
+       "chiffres",
+       ">",
+       0.04
+      ]
+     ]
+    }
+   ]
+  },
+  "wikisource": {
+   "morceaux": 512,
+   "regles": [
+    {
+     "raison": "presque_sans_mots",
+     "si": [
+      [
+       "n_mots",
+       "<",
+       40
+      ],
+      [
+       "tokens",
+       ">=",
+       200
+      ]
+     ]
+    },
+    {
+     "raison": "sans_mots_outils",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.22
+      ]
+     ]
+    },
+    {
+     "raison": "tableau_de_chiffres",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.3
+      ],
+      [
+       "chiffres",
+       ">",
+       0.08
+      ]
+     ]
+    },
+    {
+     "raison": "liste_de_noms",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "stop",
+       "<",
+       0.3
+      ],
+      [
+       "maj",
+       ">",
+       0.45
+      ]
+     ]
+    },
+    {
+     "raison": "sans_phrases_noms",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "ponct_100",
+       "<",
+       0.8
+      ],
+      [
+       "maj",
+       ">",
+       0.25
+      ]
+     ]
+    },
+    {
+     "raison": "sans_phrases_chiffres",
+     "si": [
+      [
+       "n_mots",
+       ">=",
+       40
+      ],
+      [
+       "ponct_100",
+       "<",
+       0.8
+      ],
+      [
+       "chiffres",
+       ">",
+       0.04
+      ]
+     ]
+    }
+   ]
+  }
+ }
+}

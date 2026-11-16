@@ -1,0 +1,79 @@
+{
+ "documents": 12000,
+ "graves": 3425,
+ "couche": 5,
+ "auc_validation_croisee": 0.8727,
+ "notes_sha256": "a1e7eb8ccacc9a3684e39c360bbc94c2df39b00719e1ba15776f3cad764a2d76",
+ "base_sha256": "a32e0d95b9275c8281e7e2e8d5f6d68e50afd2b5f319a62457a41d1ea5a458fe",
+ "controle": {
+  "documents": 320,
+  "graves": 87,
+  "legers": 111,
+  "auc": 0.9023,
+  "seuils": [
+   {
+    "part_ecartee": 0.15,
+    "seuil": 2.4251,
+    "ecartes": 48,
+    "graves_ecartes": 44,
+    "legers_ecartes": 4,
+    "propres_ecartes": 0,
+    "graves_restants_parmi_gardes": 0.1581
+   },
+   {
+    "part_ecartee": 0.2,
+    "seuil": 1.5693,
+    "ecartes": 64,
+    "graves_ecartes": 54,
+    "legers_ecartes": 9,
+    "propres_ecartes": 1,
+    "graves_restants_parmi_gardes": 0.1289
+   },
+   {
+    "part_ecartee": 0.25,
+    "seuil": 0.8043,
+    "ecartes": 80,
+    "graves_ecartes": 64,
+    "legers_ecartes": 14,
+    "propres_ecartes": 2,
+    "graves_restants_parmi_gardes": 0.0958
+   },
+   {
+    "part_ecartee": 0.3,
+    "seuil": 0.2526,
+    "ecartes": 96,
+    "graves_ecartes": 71,
+    "legers_ecartes": 21,
+    "propres_ecartes": 4,
+    "graves_restants_parmi_gardes": 0.0714
+   },
+   {
+    "part_ecartee": 0.35,
+    "seuil": -0.1444,
+    "ecartes": 112,
+    "graves_ecartes": 73,
+    "legers_ecartes": 31,
+    "propres_ecartes": 8,
+    "graves_restants_parmi_gardes": 0.0673
+   },
+   {
+    "part_ecartee": 0.4,
+    "seuil": -0.3467,
+    "ecartes": 128,
+    "graves_ecartes": 73,
+    "legers_ecartes": 40,
+    "propres_ecartes": 15,
+    "graves_restants_parmi_gardes": 0.0729
+   },
+   {
+    "part_ecartee": 0.45,
+    "seuil": -0.5648,
+    "ecartes": 144,
+    "graves_ecartes": 76,
+    "legers_ecartes": 47,
+    "propres_ecartes": 21,
+    "graves_restants_parmi_gardes": 0.0625
+   }
+  ]
+ }
+}
