@@ -3,8 +3,11 @@
 Pourquoi un seul lanceur en Python ? Sur le PC, une session Claude Code exécute les commandes : un
 fichier .bat ou .sh se comporterait différemment selon la machine. Ici, tout est en Python pur,
 chaque étape est une commande EXISTANTE (chatbot.pretrain, chatbot.finetune, chatbot.generate,
-chatbot.evaluate) lancée comme sous-processus avec son journal, et toutes les valeurs viennent de
-chatbot/recettes_rtx.json.
+chatbot.evaluate) lancée comme sous-processus avec son journal, et toutes les valeurs viennent d'un
+fichier de recette : chatbot/recettes_rtx.json par défaut, ou un autre avec l'option --recettes
+écrite AVANT la sous-commande (modèle publié : chatbot/recettes_rtx_publie.json ; essais : chatbot/recettes_rtx_v*.json).
+Sur le PC Windows : PYTHONUTF8=1 et .venv/Scripts/python.exe à la place de python, jamais « uv run »
+(voir PC_RTX.md).
 
     python -m chatbot.pipeline_rtx telecharger --depot X --tag Y  # clone git : gros fichiers (release)
     python -m chatbot.pipeline_rtx verifier      # données intactes ? versions ? carte ? disque ?
@@ -33,6 +36,7 @@ Codes de sortie : 0 tout va bien, 1 échec (journal indiqué), 2 refus (réglage
 """
 
 import argparse
+import ast
 import hashlib
 import json
 import math
@@ -205,8 +209,11 @@ def processus_vivant(pid):
     """
     try:
         if os.name == "nt":
-            out = subprocess.run(["tasklist", "/FI", f"PID eq {int(pid)}", "/FO", "CSV", "/NH"],
-                                 capture_output=True, text=True, timeout=20).stdout
+            # Lu en octets : tasklist répond dans l'encodage de la console (accents du français), pas
+            # en UTF-8. Le numéro et « python » sont en ASCII : les caractères illisibles sont remplacés.
+            brut = subprocess.run(["tasklist", "/FI", f"PID eq {int(pid)}", "/FO", "CSV", "/NH"],
+                                  capture_output=True, timeout=20).stdout or b""
+            out = brut.decode("utf-8", errors="replace")
             return f'"{int(pid)}"' in out and "python" in out.lower()
         out = subprocess.run(["ps", "-p", str(int(pid)), "-o", "command="], capture_output=True,
                              text=True, timeout=20)
@@ -769,10 +776,31 @@ def resume_run(report):
             "n_params": report.get("n_params")}
 
 
-def part_synthetique(rep_syn, rep_1):
-    """Part des tokens synthétiques : dans l'étape synthétique, et dans tout l'affinage."""
+def part_synthetique_etape1(rep_1, declares):
+    """Synthèse MÉLANGÉE à l'étape 1 (recette : etape1.fichiers_synthetiques) : part mesurée sur les
+    tokens réellement tirés de chaque fichier (report.json : data[i].tokens_trained)."""
+    voulus = {Path(f).as_posix() for f in declares}
+    data = rep_1["data"]
+    trouves = [d for d in data if Path(d["path"]).as_posix() in voulus]
+    syn = sum(d["tokens_trained"] for d in trouves)
+    total = sum(d["tokens_trained"] for d in data)
+    info = {"fichiers": [d["path"] for d in trouves], "tokens_synthetiques": syn,
+            "part_dans_l_etape": round(syn / max(total, 1), 4),
+            "part_de_tout_l_affinage": round(syn / max(total, 1), 4), "melangee_a_l_etape1": True}
+    absents = sorted(voulus - {Path(d["path"]).as_posix() for d in trouves})
+    if absents:  # déclaré par la recette mais pas entraîné : à voir dans le rapport, pas à cacher
+        info["declares_non_entraines"] = absents
+    return info
+
+
+def part_synthetique(rep_syn, rep_1, declares=()):
+    """Part des tokens synthétiques : dans l'étape synthétique, et dans tout l'affinage.
+
+    `declares` = fichiers de synthèse mélangés à l'étape 1 (etape1.fichiers_synthetiques de la
+    recette), comptés quand il n'y a pas d'étape synthétique à part.
+    """
     if not rep_syn:
-        return None
+        return part_synthetique_etape1(rep_1, declares) if declares and rep_1 else None
     data = rep_syn["data"]
     syn = data[0]["tokens_trained"]  # le fichier synthétique est le premier de --data
     total_etape = sum(d["tokens_trained"] for d in data)
@@ -803,7 +831,8 @@ def bilan(ctx, etat):
             "discussion_6_tours": m.get("discussion_6_tours")}
         info = {"format": val(c["format"]), "taille": ctx.taille, "modele": ctx.recette()["modele"],
                 "base": resume_run(base), "etape1": resume_run(r1), "synthetique": resume_run(rs),
-                "part_synthetique": part_synthetique(rs, r1), "evaluation": ev,
+                "part_synthetique": part_synthetique(
+                    rs, r1, val(c["etape1"].get("fichiers_synthetiques", []))), "evaluation": ev,
                 "environnement": (base or {}).get("environment"),
                 "note": "modèle de démo hors concours, pré-entraîné de zéro sur nos données, aucun poids externe"}
         resume["chatbots"][cb] = info
@@ -871,6 +900,55 @@ def autres_processus_gpu():
         return [l.strip() for l in out.stdout.splitlines() if l.strip()]
     except (OSError, subprocess.SubprocessError):
         return None
+
+
+def alerte_autres_programmes(autres):
+    """Alerte écrite dans verification.json : le NOMBRE de programmes, jamais leur liste.
+
+    nvidia-smi donne le chemin complet de chaque programme ouvert (dossier de l'utilisateur, nom du
+    compte, logiciels installés). verification.json part dans l'archive de résultats et dans
+    experiments/, sur un dépôt public : on n'y garde que le nombre.
+    """
+    return alerte_nombre_programmes(len(autres))
+
+
+def alerte_nombre_programmes(n):
+    return f"autres programmes sur la carte : {n} (un seul calcul à la fois ; liste affichée à l'écran, non enregistrée)"
+
+
+ANCIENNE_ALERTE = "autres programmes sur la carte : ["
+
+
+def rapport_publiable(rapport):
+    """Copie d'un verification.json sans liste de programmes.
+
+    Les rapports écrits avant cette correction portaient la LISTE (« autres programmes sur la
+    carte : ['1234, C:\\\\…\\\\outil.exe, …', …] »). Ils sont encore sur le disque : avant d'entrer
+    dans une archive ou dans experiments/, l'alerte est réduite au nombre de programmes.
+    """
+    if not isinstance(rapport, dict) or not isinstance(rapport.get("alertes"), list):
+        return rapport
+
+    def propre(alerte):
+        if not (isinstance(alerte, str) and alerte.startswith(ANCIENNE_ALERTE)):
+            return alerte
+        try:  # l'ancienne alerte contenait la liste telle que Python l'affiche
+            n = len(ast.literal_eval(alerte[alerte.index("["):alerte.rindex("]") + 1]))
+        except (ValueError, SyntaxError):
+            n = "nombre inconnu"
+        return alerte_nombre_programmes(n)
+
+    return dict(rapport, alertes=[propre(a) for a in rapport["alertes"]])
+
+
+def assainir_verification(path):
+    """Réécrit sur place un verification.json qui porte encore la liste. Renvoie True s'il a changé."""
+    rapport = lire_json(path)
+    propre = rapport_publiable(rapport)
+    if rapport is None or propre == rapport:
+        return False
+    ecrire_json(path, propre)
+    return True
 
 
 def verifier_manifeste(root=ROOT, progress=True):
@@ -1000,7 +1078,9 @@ def cmd_verifier(args, rec, root=ROOT):
                        "CUDA ?). Sur le Mac d'essai : ajouter --sans-gpu")
     autres = autres_processus_gpu()
     if autres:
-        alertes.append(f"autres programmes sur la carte : {autres} (un seul calcul à la fois)")
+        for ligne in autres:  # le détail aide à savoir quoi fermer : à l'écran seulement
+            print(f"  programme sur la carte : {ligne}")
+        alertes.append(alerte_autres_programmes(autres))
     print("4/4 Espace disque…", flush=True)
     libre = shutil.disk_usage(root).free / 1e9
     besoin = val(rec["commun"]["espace_disque_min_go"])
@@ -1394,6 +1474,9 @@ def cmd_resultats(args, rec, root=ROOT):
         return 2
     nom = RESULTATS + ("_autotest" if args.autotest else "")
     dest = Path(args.archive) if args.archive else archive_defaut(racine, args.autotest, root)
+    for dossier in {racine, sortie}:  # avant de calculer les empreintes du manifeste
+        if assainir_verification(dossier / "verification.json"):
+            print(f"  {dossier / 'verification.json'} : liste des programmes retirée (le nombre est gardé)")
     pick = fichiers_resultats(sortie, racine, args.avec_base)
     ecrire_json(sortie / "environnement.json", environnement())
     pick["environnement.json"] = sortie / "environnement.json"
@@ -1736,7 +1819,7 @@ def copier_petits_fichiers(sortie, racine, dest, root=ROOT, max_octets=1_000_000
                       for l in f.read_text(encoding="utf-8").splitlines() if l.strip()]
             cible.write_text("\n".join(lignes) + "\n", encoding="utf-8")
         else:
-            ecrire_json(cible, anonymiser(json.loads(f.read_text(encoding="utf-8")), rempl))
+            ecrire_json(cible, rapport_publiable(anonymiser(json.loads(f.read_text(encoding="utf-8")), rempl)))
         copies.append(k)
     return copies
 

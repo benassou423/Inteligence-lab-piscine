@@ -289,7 +289,8 @@ def test_sigterm_saves_state(tmp_path, data_dir, fixtures, monkeypatch):
     def step_then_signal(*args, **kw):
         res = real(*args, **kw)
         if args[4] == 6:  # pas d'indice 6 : on s'envoie SIGTERM, comme `kill` pendant la nuit
-            os.kill(os.getpid(), signal.SIGTERM)
+            # pas os.kill : sous Windows il tuerait pytest (TerminateProcess)
+            signal.raise_signal(signal.SIGTERM)
         return res
 
     monkeypatch.setattr(P, "train_step", step_then_signal)

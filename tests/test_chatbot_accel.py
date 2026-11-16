@@ -2,7 +2,9 @@
 
 Ce que ces tests prouvent sans carte NVIDIA :
 1. sur CPU en float32, pretrain.py et finetune.py donnent les MÊMES poids, au bit près, que les
-   versions d'avant ce chantier (copies dans data/stages/chatbot_20261113/backup_rtx/) ;
+   versions d'avant ce chantier. Ces tests comparent à une copie de l'ancien code gardée hors du
+   dépôt (data/stages/chatbot_20261113/backup_rtx/, jamais publiée) : sans elle ils sont sautés,
+   ce qui est le cas dans tout clone du dépôt public ;
 2. le chemin précision mixte (autocast bfloat16) tourne : la loss baisse, pas de NaN, checkpoint
    relisible en float32 ; le GradScaler (fp16) aussi, PyTorch l'acceptant sur CPU ;
 3. reprise de l'affinage (10 + 10 pas = 20 pas d'un trait), micro-lots, repli de --compile,

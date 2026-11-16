@@ -6,6 +6,7 @@ l'état, la reprise, le choix « auto », l'étape synthétique facultative, les
 """
 import argparse
 import json
+import os
 import zipfile
 from pathlib import Path
 
@@ -241,6 +242,22 @@ def test_part_synthetique_dans_le_bilan(tmp_path):
     assert rep["format"] == "repliques"
     fr = json.loads((tmp_path / "sorties/modeles/chatbot_francais/training_report.json").read_text())
     assert fr["part_synthetique"] is None and fr["format"] == "tirets"
+
+
+def test_part_synthetique_melangee_a_l_etape1(tmp_path):
+    """Synthèse en 3e fichier de l'étape 1, déclarée par la recette : sa part est dans le rapport."""
+    rec = petite_recette(tmp_path)
+    (tmp_path / "syn_e1.zst").write_text("x")
+    e1 = rec["chatbots"]["moliere"]["etape1"]
+    e1["donnees"]["valeur"] = ["a.zst", "b.zst", "syn_e1.zst"]
+    e1["poids"] = {"valeur": [1, 3, 0.5]}
+    e1["fichiers_synthetiques"] = {"valeur": ["syn_e1.zst", "jamais_entraine.zst"]}
+    assert lancer(tmp_path, rec, FauxExecutant()) == 0
+    part = json.loads((tmp_path / "sorties/modeles/chatbot_moliere/training_report.json").read_text())["part_synthetique"]
+    # faux rapport : 300 tokens pour le 1er fichier, 700 pour chacun des suivants
+    assert part["fichiers"] == ["syn_e1.zst"] and part["tokens_synthetiques"] == 700
+    assert part["part_dans_l_etape"] == round(700 / 1700, 4) == part["part_de_tout_l_affinage"]
+    assert part["melangee_a_l_etape1"] and part["declares_non_entraines"] == ["jamais_entraine.zst"]
 
 
 # ---------------------------------------------------------------------------------------------
@@ -512,6 +529,38 @@ def test_lancer_auto_rien_ne_tient(tmp_path):
 # Paquet, résultats, import
 
 
+def test_alerte_autres_programmes_ne_garde_que_le_nombre():
+    # nvidia-smi donne des chemins personnels : verification.json (archive, dépôt public) n'en garde rien.
+    autres = ["1234, C:/Users/quelqu_un/AppData/Local/Programmes/outil.exe, N/A", "5678, jeu.exe, 512 MiB"]
+    alerte = L.alerte_autres_programmes(autres)
+    assert "autres programmes sur la carte : 2 " in alerte
+    assert all(mot not in alerte for mot in ("quelqu_un", "outil.exe", "jeu.exe", "1234", "AppData"))
+
+
+def test_ancien_verification_json_assaini_avant_archive_et_copie(tmp_path):
+    # Rapport écrit AVANT la correction : la liste est encore sur le disque, sous sa forme d'origine.
+    liste = ["1234, C:\\Users\\quelqu_un\\AppData\\outil.exe, [N/A]", "5678, jeu.exe, 512 MiB"]
+    ancien = {"ok": True, "alertes": ["pas de mesure", f"autres programmes sur la carte : {liste} (un seul calcul à la fois)"]}
+    propre = L.rapport_publiable(ancien)
+    assert propre["alertes"][0] == "pas de mesure" and propre["alertes"][1] == L.alerte_nombre_programmes(2)
+    assert "quelqu_un" not in json.dumps(propre) and ancien["alertes"][1].count("exe") == 2  # l'entrée n'est pas modifiée
+    assert L.rapport_publiable(propre) == propre and L.rapport_publiable({"alertes": None}) == {"alertes": None}
+    illisible = L.rapport_publiable({"alertes": ["autres programmes sur la carte : [coupé"]})
+    assert illisible["alertes"] == [L.alerte_nombre_programmes("nombre inconnu")]
+    # Sur place (avant l'archive) puis à la copie vers experiments/ (publier, même à blanc).
+    f = tmp_path / "verification.json"
+    f.write_text(json.dumps(ancien), encoding="utf-8")
+    assert L.assainir_verification(f) and not L.assainir_verification(f)
+    assert "quelqu_un" not in f.read_text(encoding="utf-8")
+    assert not L.assainir_verification(tmp_path / "absent.json")
+    racine, sortie = tmp_path / "racine", tmp_path / "racine"
+    racine.mkdir()
+    (racine / "verification.json").write_text(json.dumps(ancien), encoding="utf-8")
+    assert "lanceur/verification.json" in L.copier_petits_fichiers(sortie, racine, tmp_path / "exp", tmp_path)
+    copie = (tmp_path / "exp/lanceur/verification.json").read_text(encoding="utf-8")
+    assert "quelqu_un" not in copie and "outil.exe" not in copie and "programmes sur la carte : 2 " in copie
+
+
 def test_verifier_manifeste_detecte_un_fichier_modifie(tmp_path):
     (tmp_path / "a.txt").write_text("bonjour")
     man = {"fichiers": {"a.txt": {"sha256": L.sha256_fichier(tmp_path / "a.txt"), "octets": 7},
@@ -760,9 +809,13 @@ def faux_gh(tmp_path, monkeypatch):
     bin_dir.mkdir()
     stock.mkdir()
     (bin_dir / "faux_gh.py").write_text(FAUX_GH, encoding="utf-8")
-    gh = bin_dir / "gh"  # petit script shell : le chemin de Python peut contenir des espaces
-    gh.write_text(f'#!/bin/sh\nexec "{sys.executable}" "{bin_dir / "faux_gh.py"}" "$@"\n', encoding="utf-8")
-    gh.chmod(0o755)
+    if L.os.name == "nt":  # Windows : un gh.cmd, le script shell n'y est pas exécutable
+        gh = bin_dir / "gh.cmd"
+        gh.write_text(f'@"{sys.executable}" "{bin_dir / "faux_gh.py"}" %*\r\n', encoding="utf-8", newline="")
+    else:
+        gh = bin_dir / "gh"  # petit script shell : le chemin de Python peut contenir des espaces
+        gh.write_text(f'#!/bin/sh\nexec "{sys.executable}" "{bin_dir / "faux_gh.py"}" "$@"\n', encoding="utf-8")
+        gh.chmod(0o755)
     (stock / "connecte").write_text("oui")
     monkeypatch.setenv("PATH", f"{bin_dir}{L.os.pathsep}/usr/bin{L.os.pathsep}/bin")
     monkeypatch.setenv("FAUX_GH_STOCK", str(stock))
@@ -848,7 +901,12 @@ def test_main_renvoie_2_sur_refus(tmp_path, faux_gh, capsys, monkeypatch):
 
 def test_creer_dossier_traverse_les_liens_sans_les_remplacer(tmp_path):
     (tmp_path / "vrai.nosync").mkdir()
-    (tmp_path / "stages").symlink_to(tmp_path / "vrai.nosync")
+    try:
+        (tmp_path / "stages").symlink_to(tmp_path / "vrai.nosync")
+    except OSError:
+        if os.name != "nt":
+            raise
+        pytest.skip("lien symbolique refusé sans privilège (Windows) : test sauté")
     L.creer_dossier(tmp_path / "stages/a/b")
     assert (tmp_path / "stages").is_symlink() and (tmp_path / "vrai.nosync/a/b").is_dir()
     (tmp_path / "casse").symlink_to(tmp_path / "absent")
@@ -876,7 +934,9 @@ def test_verifier_clone_controle_les_gros_fichiers(tmp_path, faux_gh):
 def test_donnees_rtx_json_du_depot():
     """La liste suivie par git : noms uniques sans accent, chemins des recettes, < 2 Gio."""
     don = json.loads((ROOT / "chatbot/donnees_rtx.json").read_text(encoding="utf-8"))
-    assert L.A_RENSEIGNER in don["depot"] and L.A_RENSEIGNER in don["tag"]
+    # depuis la publication de la release (13/11/2026), le dépôt et l'étiquette sont renseignés
+    assert L.A_RENSEIGNER not in don["depot"] and L.A_RENSEIGNER not in don["tag"]
+    assert don["depot"].count("/") == 1 and don["tag"].startswith("chatbot-donnees-")
     noms = [f["piece_jointe"] for f in don["fichiers"]]
     assert len(set(noms)) == len(noms) and all(L.NOM_SUR.match(n) for n in noms)
     dests = {f["destination"] for f in don["fichiers"]}
@@ -1020,7 +1080,7 @@ def test_rapports_copies_ne_sont_pas_ignores_par_git():
 
     def ignore(p):
         return subprocess.run(["git", "check-ignore", "-q", p], cwd=ROOT).returncode == 0
-    base = "experiments/chatbot_rtx/20261114_0312_S/"
+    base = "experiments/chatbot_rtx/20261113_1956_M/"
     for k in ("bilan.json", "entrainements/base/report.json", "entrainements/base/log.jsonl",
               "evaluations/moliere/metrics.json", "modeles/chatbot_moliere/training_report.json",
               "lanceur/mesures.json"):
@@ -1096,5 +1156,5 @@ def test_depot_vide_refuse_avant_tout_envoi(tmp_path, faux_gh, capsys):
     (faux_gh / "vide").unlink()  # l'étudiant a mis un premier commit
     assert L.cmd_publier(ns_pub(tmp_path, publier=True), rec, root=tmp_path) == 0
     assert len(appels(faux_gh, "release", "create")) == 1
-    guide = (ROOT / "docs/remise/PASSAGE_PC_RTX5090_CHATBOT.md").read_text(encoding="utf-8")
+    guide = (ROOT / "docs/chatbot/PASSAGE_PC_RTX5090_CHATBOT.md").read_text(encoding="utf-8")
     assert "--private --add-readme" in guide

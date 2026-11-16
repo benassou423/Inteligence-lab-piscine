@@ -19,7 +19,6 @@ ROOT = Path(__file__).resolve().parents[1]
 SUB = ROOT / "submissions/2026-11-11_153839"
 MOLIERE_TRAIN = ROOT / "data/stages/chatbot_20261112/theatre/moliere_train.jsonl.zst"
 needs_tok = pytest.mark.skipif(not (SUB / "tokenizer.json").exists(), reason="tokenizer absent")
-needs_ckpt = pytest.mark.skipif(not (SUB / "ckpt.pt").exists(), reason="checkpoint absent")
 
 TINY = {"vocab_size": 8192, "context_length": 64, "d_model": 32, "n_layer": 2, "n_head": 2,
         "mlp_ratio": 4, "dropout": 0.0, "tie_embeddings": True}
@@ -804,6 +803,7 @@ class FakeBaselineModel:
 
 @needs_tok
 def test_baseline_reply_counts_a_new_user_turn_as_a_natural_stop(tok):
+    pytest.importorskip("demo.server", reason="ancienne démo (demo/server.py) non publiée dans ce dépôt")
     import threading
     from types import SimpleNamespace
     fake = SimpleNamespace(tok=tok, context_limit=512, lock=threading.Lock(), device="cpu",
