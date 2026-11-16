@@ -92,7 +92,7 @@ def check_kit(root):
             raise RuntimeError(f'Kit différent : {name}')
     for folder in ['ftb', 'config', 'corpus', 'examples', 'notebooks']:
         extras = [p for p in (root / folder).rglob('*') if p.is_file() and '__pycache__' not in p.parts
-                  and p.name != '.DS_Store' and str(p.relative_to(root)) not in expected['files']]
+                  and p.name != '.DS_Store' and p.relative_to(root).as_posix() not in expected['files']]
         if extras:
             raise RuntimeError(f'Fichier ajouté au kit : {extras[0].relative_to(root)}')
     return len(expected['files'])
@@ -122,7 +122,7 @@ def main():
     ensure_links(ROOT)
     kit = check_kit(ROOT)
     if os.name == 'nt':
-        raise RuntimeError('Reproduction intégrale : utiliser macOS/Linux ; entraînement Windows : voir PASSAGE_PC_RTX5090.md')
+        raise RuntimeError('Reproduction intégrale : utiliser macOS/Linux ; entraînement Windows : voir PASSAGE_PC_RTX5090.md (pièce historique, route jamais exécutée)')
     if not args.foreground:
         logs = ROOT / 'data/stages/logs'
         logs.mkdir(parents=True, exist_ok=True)

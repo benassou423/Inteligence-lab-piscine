@@ -20,7 +20,8 @@ def test_links_nosync_et_refus_de_remplacement(tmp_path):
     path.rmdir()
     ensure_links(tmp_path)
     ensure_links(tmp_path)
-    assert all((tmp_path / name).is_symlink() for name in LINKS)
+    # Sous Windows, ensure_links crée des jonctions (mklink /J, sans droits admin), pas des liens symboliques.
+    assert all((tmp_path / name).is_symlink() or (tmp_path / name).is_junction() for name in LINKS)
     assert all((tmp_path / name).resolve().name.endswith('.nosync') for name in LINKS)
 
 
@@ -45,7 +46,10 @@ def test_kit_modifie_detecte(tmp_path):
 def test_lien_casse_conserve_et_cible_creee(tmp_path):
     (tmp_path / 'data').mkdir()
     link = tmp_path / 'data/raw'
-    link.symlink_to('raw.nosync', target_is_directory=True)
+    try:
+        link.symlink_to('raw.nosync', target_is_directory=True)
+    except OSError:
+        pytest.skip('lien symbolique refusé sans privilège (Windows) : test sauté')
     ensure_links(tmp_path)
     assert link.is_symlink() and link.readlink().name == 'raw.nosync'
     assert link.resolve().is_dir()

@@ -188,7 +188,10 @@ def test_prune_limite_au_run_et_reconstruction(tmp_path):
     external = tmp_path / 'external'
     external.mkdir()
     linked = out / '04_link'
-    linked.symlink_to(external, target_is_directory=True)
+    try:
+        linked.symlink_to(external, target_is_directory=True)
+    except OSError:
+        pytest.skip('lien symbolique refusé sans privilège (Windows) : fin du test sautée')
     with pytest.raises(ValueError):
         runner._prune_intermediate(linked)
 
