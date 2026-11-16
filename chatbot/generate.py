@@ -1,12 +1,17 @@
 """Génération des réponses du chatbot (format « repliques » : Molière ; « tirets » : français moderne).
 
-    uv run python -m chatbot.generate export --ckpt runs/chat/best.pt \\
-        --tokenizer submissions/2026-11-11_153839/tokenizer.json --out data/models/chat_v1
-    uv run python -m chatbot.generate chat --model data/models/chat_v1 --persona HARPAGON \\
+    python -m chatbot.generate export --ckpt DOSSIER_ENTRAINEMENT/best.pt \\
+        --tokenizer submissions/2026-11-11_153839/tokenizer.json --out DOSSIER_DU_MODELE \\
+        --candidates 32 --anchor-mu 1
+    python -m chatbot.generate chat --model DOSSIER_DU_MODELE --persona TOINETTE \\
         "Bonjour, comment allez-vous ?"
-    uv run python -m chatbot.generate export --format tirets --ckpt runs/chatbot_francais/best.pt \\
-        --tokenizer submissions/2026-11-11_153839/tokenizer.json --out data/models/chatbot_francais
-    uv run python -m chatbot.generate chat --model data/models/chatbot_francais "Salut, ça va ?"
+    python -m chatbot.generate export --format tirets --ckpt DOSSIER_ENTRAINEMENT/best.pt \\
+        --tokenizer submissions/2026-11-11_153839/tokenizer.json --out DOSSIER_DU_MODELE
+    python -m chatbot.generate chat --model DOSSIER_DU_MODELE "Salut, ça va ?"
+
+(Sur une carte NVIDIA, ajouter --device cuda à chat. PC Windows : PYTHONUTF8=1 et
+.venv/Scripts/python.exe à la place de python, jamais « uv run » : voir PC_RTX.md. Sur le Mac :
+« uv run python -m ... ». Le lanceur chatbot.pipeline_rtx fait les exports lui-même.)
 
 Chemin d'une réponse :
 1. la conversation est mise en scène (chatbot.format) : l'utilisateur = l'interlocuteur, le modèle
@@ -18,7 +23,9 @@ Chemin d'une réponse :
    celles qui recopient le message ou une réponse précédente du bot (écho) et celles qui commencent
    par une minuscule, puis on garde celle qui dépend le plus de ce qu'a dit l'utilisateur
    (score MMI, Maximum Mutual Information = information mutuelle maximale). Chaque filtre a un
-   repli : s'il écarterait toutes les candidates, on les garde toutes.
+   repli : s'il écarterait toutes les candidates, on les garde toutes. Avec « anchor_mu » > 0
+   (chat_config.json ou --anchor-mu), le score ne compte que ce que le DERNIER message apporte
+   (chatbot.ancrage).
 
 Format « tirets » (chat_config.json : "format": "tirets") : même chemin, sans personnage. Le prompt
 finit par « — » + espace, une candidate s'arrête au premier retour à la ligne (fin du paragraphe =
@@ -60,6 +67,10 @@ DEFAULT_CHAT_CONFIG = {
     # message ; pour qu'elle ne favorise pas les tirades, on ne compare que des réponses de
     # min_words à max_words mots (s'il y en a).
     "mmi_total": True,
+    # Ancrage sur le dernier message (chatbot.ancrage) : on retire du score ce que la réponse avait
+    # de prévisible SANS lire le dernier message. 0 = choix d'origine ; 1 = ce que le dernier
+    # message, et lui seul, apporte (mesuré avec 32 candidates : voir chatbot/ancrage.py).
+    "anchor_mu": 0.0,
     "min_words": 4,
     "max_words": 30,
     "no_repeat_ngram": 4,    # interdit de répéter un 4-gramme de tokens déjà produit
@@ -303,6 +314,9 @@ class ChatBot:
         self.cut = CUT_REPLY[self.config["format"]]
         self.context_limit = model.context_length
         self.lock = threading.Lock()
+        if self.config.get("anchor_mu"):  # 0 ou absent : aucune méthode n'est remplacée
+            from chatbot.ancrage import installer
+            installer(self, self.config["anchor_mu"])  # hors bornes (0 à 2) : ValueError
 
     @classmethod
     def load(cls, model_dir, device="cpu"):
@@ -545,6 +559,7 @@ class ChatBot:
                 "seconds": round(time.monotonic() - t0, 3), "context_tokens": len(ctx),
                 "context_limit": self.context_limit, "context_truncated": truncated,
                 "history_turns_used": used, "candidates": candidates, "finish": finish,
+                "anchor_mu": getattr(self, "_ancrage_mu", 0.0),
                 "score": None if score is None else round(score, 4),
                 "candidates_kept": len(kept), "candidates_eligible": len(pool), "retried": retried,
                 # Pour les mesures (chatbot.evaluate) : texte brut avant découpe, longueur moyenne
@@ -598,7 +613,7 @@ def main(argv=None):
     pe.add_argument("--ckpt", required=True)
     pe.add_argument("--tokenizer", required=True)
     pe.add_argument("--out", required=True)
-    for key in ("temperature", "top_p", "mmi_lambda"):
+    for key in ("temperature", "top_p", "mmi_lambda", "anchor_mu"):
         pe.add_argument("--" + key.replace("_", "-"), type=float, default=None)
     for key in ("max_new_tokens", "candidates"):
         pe.add_argument("--" + key.replace("_", "-"), type=int, default=None)
@@ -611,20 +626,27 @@ def main(argv=None):
     pc.add_argument("--persona", default=None)
     pc.add_argument("--seed", type=int, default=None)
     pc.add_argument("--candidates", type=int, default=None)
+    pc.add_argument("--anchor-mu", type=float, default=None,
+                    help="ancrage sur le dernier message, 0 à 2 (défaut : celui du chat_config.json)")
     pc.add_argument("--device", default="cpu")
     pc.add_argument("messages", nargs="*", help="sans message : mode interactif")
     args = p.parse_args(argv)
 
     if args.cmd == "export":
-        overrides = {k: getattr(args, k) for k in ("temperature", "top_p", "mmi_lambda",
+        overrides = {k: getattr(args, k) for k in ("temperature", "top_p", "mmi_lambda", "anchor_mu",
                                                     "max_new_tokens", "candidates", "default_persona",
                                                     "format")
                      if getattr(args, k) is not None}
+        if not 0.0 <= overrides.get("anchor_mu", 0.0) <= 2.0:  # refusé dès l'export, pas au chargement
+            p.error("--anchor-mu hors bornes (0 à 2)")
         out = export_model(args.ckpt, args.tokenizer, args.out, overrides)
         print(f"modèle exporté dans {out}")
         return
 
     bot = ChatBot.load(args.model, device=args.device)
+    if args.anchor_mu is not None:
+        from chatbot.ancrage import installer
+        installer(bot, args.anchor_mu)  # 0 : choix d'origine, même si le chat_config demande l'ancrage
     history = []
     inputs = iter(args.messages) if args.messages else iter(lambda: input("vous> "), "")
     for turn, message in enumerate(inputs):
