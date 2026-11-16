@@ -1,4 +1,8 @@
-Prochaine action : transférer l’archive sur le PC et ouvrir son dossier dans Codex — 5 min.
+> **Pièce historique — état au 16/11/2026.**
+> - Ce guide décrit la route Windows du concours, préparée le 10/11/2026 et jamais exécutée : `experiments/results.csv` compte 12 runs, tous sur Mac (`mps`).
+> - Le modèle du concours retenu est celui entraîné sur Mac (MPS float32, BPB 1,288292, soumission du 11/11/2026) : voir [EXIGENCES.md](EXIGENCES.md).
+> - Cette route dépend de fichiers absents du dépôt : l’archive `FTB_RTX5090_FINAL_20261110.zip`, `AGENTS.md` et `AGENTS_PC.md`. L’archive ne se fabrique que sur la copie de travail du Mac, avec `tools/build_windows_bundle.py` (il lui faut `AGENTS.md` et `data/mixes/`, absents d’un clone).
+> - Le texte ci-dessous est celui du 10/11/2026 et n’a pas été mis à jour. Depuis, le jeu de données a été publié (release `ftb-final-20261110`) et la soumission déposée le 11/11/2026. PyTorch 2.15.0+cu132 a tourné sur la RTX 5090 du PC Windows le 13/11/2026, pour le chatbot seulement : son guide est [PC_RTX.md](../../PC_RTX.md), qui interdit `uv run` sur le PC.
 
 # Passage sur le PC Windows RTX 5090
 
@@ -6,11 +10,11 @@ Prochaine action : transférer l’archive sur le PC et ouvrir son dossier dans 
 
 2. **Ouvrir Codex.** Se connecter au même compte sur le PC. Ouvrir le dossier extrait comme projet. Donner le message ci-dessous à Codex. Le transfert de fichiers est nécessaire en plus de la connexion au compte.
 
-3. **Faire vérifier le PC.** Codex contrôle le pilote NVIDIA, installe Python 3.12 et les dépendances figées, puis réalise une vraie opération sur la carte. Prévoir 10 à 20 min pour une première installation, selon la connexion. Une mise à jour du pilote peut demander un redémarrage effectué par Ben.
+3. **Faire vérifier le PC.** Codex contrôle le pilote NVIDIA, installe Python 3.12 et les dépendances figées, puis réalise une vraie opération sur la carte. Prévoir 10 à 20 min pour une première installation, selon la connexion. Une mise à jour du pilote peut demander un redémarrage effectué par l’étudiant.
 
 4. **Entraîner.** Le kit prépare le flux et vérifie son empreinte. Le calcul utilise ensuite la RTX 5090 en float16, avec le budget officiel de 100 007 936 tokens. La durée sera mesurée sur les premiers pas ; aucun débit de ce PC n’a encore été mesuré. Les points de reprise permettent de relancer après une interruption.
 
-5. **Récupérer.** À la fin, rapporter `RESULTATS_RTX5090_MASKED.zip` sur le Mac ou dans ce chat. Cette archive contient les poids, l’évaluation, les versions et les journaux. La mise à disposition du dataset et le commit/push de soumission restent à finaliser dans le dossier principal.
+5. **Récupérer.** À la fin, rapporter `RESULTATS_RTX5090_MASKED.zip` sur le Mac. Cette archive contient les poids, l’évaluation, les versions et les journaux. La mise à disposition du dataset et le commit/push de soumission restent à finaliser dans le dossier principal.
 
 ## Message à donner à Codex sur le PC
 

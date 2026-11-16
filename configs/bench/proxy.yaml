@@ -8,7 +8,7 @@ notes: "proxy : sortie finale de nettoye, proportions naturelles"
 mix:
   sources:
     - name: nettoye
-      pipeline: nettoye              # dernière étape terminée de data/stages/nettoye/ (ou `stage: 05_exact_dedup`)
+      pipeline: nettoye              # dernière étape terminée de data/stages/nettoye/ (ou `stage: 08_exact_dedup`)
       # sources: [wikipedia_fr]      # filtre sur le champ `source`
       # repeat: 1.0                  # facteur de répétition (0,5 = moitié tirée au hasard, 2 = deux fois)
       # weight: 1                    # ou part du mix en octets (toutes les sources, avec mix.total_bytes)

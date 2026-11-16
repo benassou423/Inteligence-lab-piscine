@@ -2,6 +2,12 @@
 
 Les sorties restent dans data/stages ; elles ne remplacent jamais le corpus actif.
 Les détecteurs servent au diagnostic, pas à fabriquer une vérité terrain humaine.
+
+Dossiers locaux, non publiés : les valeurs par défaut de --input (data/stages/nettoye/04_langid_score),
+de --sample (data/annotations/ia-20261104/langid_sample.jsonl) et de --output
+(data/stages/langid_full_audit_20261104) n'existent dans aucun clone. Le script exige aussi que
+data/stages soit un lien vers un dossier local. Il ne peut donc pas être rejoué depuis le dépôt
+publié ; il documente la méthode de l'audit de langue complet.
 """
 from __future__ import annotations
 

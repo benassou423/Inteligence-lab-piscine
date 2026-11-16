@@ -1,4 +1,4 @@
-Prochaine action : lire la comparaison avec le corpus actuel — lecture 2 min.
+État au 16/11/2026 : essai fait le 04/11/2026, variante non retenue (moyenne de 1,6223 à 1,6396 BPB) — lecture 2 min.
 
 # Nettoyage ciblé : retirer les défauts sans perdre le texte
 
@@ -8,7 +8,7 @@ Prochaine action : lire la comparaison avec le corpus actuel — lecture 2 min.
 
 3. **Ce qui protège les bons textes.** Les tableaux de Wikisource peuvent contenir des traductions ou des pages de prose : leur suppression est désactivée. Les tableaux dont les cellules débordent sur des lignes ordinaires sont également conservés. Le premier essai a servi à repérer ces cas avant la comparaison. Sur le tirage frais de 2 000 documents : **18 modifiés, aucun retiré**, 12 témoins positifs identiques. Le contrôle du corpus complet a ensuite permis de corriger une courte biographie précédée d’un `|`.
 
-4. **Comment comparer.** La variante se trouve dans `data/stages/nettoye_cible_v1/` ; le corpus actuel reste dans `data/stages/nettoye/`. Même seuil de français, même modèle, même outil de découpage du texte, même budget de 25 millions de morceaux de texte. Deux graines de mélange, **1337 et 2027**, fixent les tirages et l’ordre des documents. L’initialisation du modèle reste celle du kit. Le score **BPB**, bits par octet, mesure la qualité des prédictions : plus bas est meilleur. **Résultat : la moyenne passe de 1,6223 à 1,6396 BPB, donc elle se dégrade. Le corpus actuel est conservé.** Le bilan chiffré se trouve dans `experiments/targeted_clean_v1_20261104.md`.
+4. **Comment comparer.** La variante se trouve dans `data/stages/nettoye_cible_v1/` ; le corpus actuel reste dans `data/stages/nettoye/` (deux dossiers non publiés). Même seuil de français, même modèle, même outil de découpage du texte, même budget de 25 millions de morceaux de texte. Deux graines de mélange, **1337 et 2027**, fixent les tirages et l’ordre des documents. L’initialisation du modèle reste celle du kit. Le score **BPB**, bits par octet, mesure la qualité des prédictions : plus bas est meilleur. **Résultat : la moyenne passe de 1,6223 à 1,6396 BPB, donc elle se dégrade. Le corpus actuel est conservé.** Le bilan chiffré se trouve dans `experiments/targeted_clean_v1_20261104.md`.
 
 5. **Trois questions du jury.**
 

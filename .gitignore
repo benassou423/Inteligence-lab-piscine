@@ -1,10 +1,9 @@
-# Données lourdes : jamais dans git (dataset final publié sur Hugging Face)
+# Données lourdes : jamais dans git (jeux de données publiés en pièces jointes des releases GitHub)
 data/*
 !data/validation.jsonl
 !data/VALIDATION_SOURCES.md
-# Annotations manuelles de Ben (preuve du seuil de langue)
+# Contrôle du filtre de langue : 80 extraits classés automatiquement (preuve du seuil de langue)
 !data/annotations/
-experiments/runs/
 runs
 runs/
 prepared/
@@ -27,6 +26,7 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 
-# Mémoire de session (stratégie) : locale, jamais poussée sur le repo public
+# Fichiers locaux des assistants IA (mémoire de session, réglages) : jamais poussés sur le dépôt public
 AGENTS.md
 CLAUDE.md
+.claude/

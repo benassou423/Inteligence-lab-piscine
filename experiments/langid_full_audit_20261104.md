@@ -1,4 +1,4 @@
-Prochaine action : nettoyer les défauts de structure avant de réessayer un filtre plus large — lecture 4 min.
+État au 16/11/2026 (lecture 4 min) : le seuil `fr >= 0,65` est resté celui du corpus soumis (`configs/pipeline/nettoye.yaml`). Le nettoyage de structure annoncé ici a été essayé le 04/11 et rejeté : voir `experiments/targeted_clean_v1_20261104.md`.
 
 # Audit de langue sur documents complets — 4 novembre 2026
 
@@ -61,7 +61,9 @@ La référence existante `proxy_wiki20261001_fr065` reste à **1,6155 BPB**, une
 
 **277 tests verts en 111,21 s** ; 44 avertissements existants sur le lancement de processus Python. Kit identique à la référence, sept liens `.nosync` préservés. Configuration, manifeste et signatures des 251 fichiers du corpus final inchangés. Le contrôle de contamination précédent reste applicable : **0 document signalé sur 230**, recouvrement maximal de 8,4 % sous le seuil de signalement de 10 %. Ce résultat ne signifie pas l’absence de toute phrase commune. Aucun nouveau contrôle de contamination n’était nécessaire pour cet audit en lecture seule.
 
-Les tableaux et les relectures exportés sont dans `data/annotations/ia-20261104/full_document_audit/`. Les textes complets, scores, bornes des passages, signatures des entrées et preuves détaillées restent dans `data/stages/langid_full_audit_20261104/`. `final_verification.json` rassemble les contrôles finaux. Aucun nouveau commit ni push.
+Les tableaux et les relectures exportés sont dans `data/annotations/ia-20261104/full_document_audit/`. Les textes complets, scores, bornes des passages, signatures des entrées et preuves détaillées restent dans `data/stages/langid_full_audit_20261104/`. `final_verification.json` rassemble les contrôles finaux. Ces deux dossiers sont des dossiers de travail : ils ne sont pas publiés dans ce dépôt, et `final_verification.json` non plus. Le contrôle de langue publié, `data/annotations/controle_langue_80/`, est un autre contrôle : 80 extraits, tirés le 10/11/2026. À la fin de l’audit, le 04/11, aucun commit ni push n’avait été fait pour ce travail ; ce rapport a été publié avec le commit `892b3d4` du 11/11/2026.
+
+Les commandes ci-dessous décrivent la méthode. Elles demandent le corpus intermédiaire `data/stages/nettoye/04_langid_score` et le tirage `data/annotations/ia-20261104/langid_sample.jsonl`, non publiés, et l’outil refuse de tourner si `data/stages` n’est pas un lien symbolique (organisation du dossier de travail sur le Mac).
 
 À lancer depuis la racine du projet ; les tâches longues sont détachées avec `nohup`, avec leurs journaux dans `data/stages/logs/` :
 
@@ -69,8 +71,9 @@ Les tableaux et les relectures exportés sont dans `data/annotations/ia-20261104
 nohup uv run python -m tools.audit_langid_full extract --workers 8 > data/stages/logs/langid-full-extract.log 2>&1 &
 # Attendre le succès de l'extraction avant l'analyse.
 nohup uv run python -m tools.audit_langid_full analyse --workers 2 > data/stages/logs/langid-full-analyse.log 2>&1 &
+# Script de synthèse resté dans le dossier de travail : il n'est pas publié dans ce dépôt.
 uv run python data/stages/logs/langid-full-summarize.py
 uv run pytest -q
 ```
 
-Le cache de l’audit dépend des signatures des entrées, du code, des modèles et des textes. Les empreintes des modèles figurent dans `summary.json`. Le second modèle provient de la [distribution officielle fastText](https://fasttext.cc/docs/en/language-identification.html), sous CC-BY-SA 3.0 ; les deux détecteurs servent de diagnostic et leurs erreurs peuvent être corrélées.
+Le cache de l’audit dépend des signatures des entrées, du code, des modèles et des textes. Les empreintes des modèles figurent dans `summary.json` (fichier des dossiers de travail cités plus haut, non publié). Le second modèle provient de la [distribution officielle fastText](https://fasttext.cc/docs/en/language-identification.html), sous CC-BY-SA 3.0 ; les deux détecteurs servent de diagnostic et leurs erreurs peuvent être corrélées.

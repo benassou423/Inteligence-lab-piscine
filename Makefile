@@ -1,4 +1,8 @@
-# Une commande pour tout regénérer : make all
+# Makefile historique (macOS/Linux) : `make all` rejoue la référence de base (collecte, nettoyage, run proxy).
+# Il ne reconstruit ni le jeu final du concours ni le chatbot.
+# Jeu final du concours : uv run --no-project python tools/reproduce.py --recipe final (docs/remise/REPRODUCTION.md).
+# Chatbot Molière (hors concours) : python -m chatbot.pipeline_rtx (guide : PC_RTX.md).
+# PC Windows à carte NVIDIA : ne pas utiliser ce Makefile (`uv sync` et `uv run` y installeraient un PyTorch sans CUDA).
 PY := uv run python
 
 .PHONY: setup test collect clean-v1 proxy all

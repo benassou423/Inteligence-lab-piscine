@@ -1,6 +1,6 @@
 # Fiche du jeu de données - Feed the Beast
 
-État du 10/11/2026. La publication et la vérification GPU restent à finaliser.
+État du 10/11/2026. Depuis, le jeu a été publié (GitHub Release ftb-final-20261110, version finale du 11/11/2026). La vérification GPU sur CUDA, facultative, n’a pas été exécutée.
 
 ## 1. Motivation et responsabilité
 
@@ -50,7 +50,7 @@ La variante complète ajoute qualité web, masquage et MinHash/LSH avec Jaccard 
 
 La validation publique contient 230 documents et reste réservée à la mesure. Le contrôle officiel recherche les 13-grammes de mots partagés, signale les documents dépassant 10 % de recouvrement et a signalé 0 document sur le mélange complet. Zéro signalement n’implique pas l’absence de toute phrase commune. Le contrôle du test caché relève de l’organisateur.
 
-Le tokenizer a 8 192 tokens, sans normalisation destructive, padding, troncature ou BPE-dropout. Il est repris de la référence des essais pour isoler les effets du nettoyage. Tokenizers 0.23.3 est figé ; PyTorch 2.15.0 est la version du projet. Le PC utilisera le binaire CUDA adapté, avec une vraie vérification de calcul GPU. Le kit et sa configuration restent intacts.
+Le tokenizer a 8 192 tokens, sans normalisation destructive, padding, troncature ou BPE-dropout. Il est repris de la référence des essais pour isoler les effets du nettoyage. Tokenizers 0.23.3 est figé ; PyTorch 2.15.0 est la version du projet. La vérification GPU sur CUDA, facultative, n’a pas été exécutée ; le modèle soumis a été entraîné sur Mac en MPS float32. Le kit et sa configuration restent intacts.
 
 Hash du flux préparé : b88033ad2fbad01d1e1da101da4de4ce07a39c9a2060170ba0712705ab4ba8ee. Hash du tokenizer : 35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584. Le hash du gzip de texte vaut 910ae65f995bc3bc4685532b551422c0e3694f3eec6e474907f8fea96823dd7d. Les scripts de transfert refusent les écarts sur les données et les fichiers critiques. Une reconstruction complète depuis une copie neuve et la comparaison T4 à ±0,02 BPB ne sont pas encore attestées.
 
@@ -64,8 +64,8 @@ Usages prévus : recherche pédagogique, comparaison de données, reproduction d
 
 ## 8. Diffusion et maintenance
 
-Le mélange et les paquets restent locaux ; aucune URL publique définitive n’est encore validée. L’index provenance.jsonl.gz relie les 72 612 lignes au document d’origine et au texte transformé, grâce à leurs deux SHA-256 et aux masques appliqués. Le texte et l’ordre sont vérifiés après préparation du banc. Les URLs et licences déclarées d’origine sont conservées ; cet index et les fiches des sources doivent accompagner une diffusion autorisée.
+Le mélange est publié : https://github.com/benassou423/Inteligence-lab-piscine/releases/tag/ftb-final-20261110 (dix fichiers, téléchargés sans authentification et vérifiés). L’index provenance.jsonl.gz relie les 72 612 lignes au document d’origine et au texte transformé, grâce à leurs deux SHA-256 et aux masques appliqués. Le texte et l’ordre sont vérifiés après préparation du banc. Les URLs et licences déclarées d’origine sont conservées ; cet index et les fiches des sources doivent accompagner une diffusion autorisée.
 
 Une diffusion doit garder les textes, tokenizer, manifeste, versions, empreintes et informations de provenance nécessaires. Les conditions de chaque source s’appliquent ; les auteurs et liens d’origine doivent rester consultables. Les demandes de correction ou de retrait devront être traitées par le responsable du projet et donner lieu à une nouvelle version identifiée, jamais au remplacement silencieux du flux soumis.
 
-Cette fiche suit les thèmes de motivation, composition, collecte, préparation, usages, distribution et maintenance proposés par Gebru et al., Datasheets for Datasets, arXiv:1803.09010 (2018, version publiée 2021). Elle décrit l’état constaté du projet et sera mise à jour après les vérifications CUDA et la préparation de la publication.
+Cette fiche suit les thèmes de motivation, composition, collecte, préparation, usages, distribution et maintenance proposés par Gebru et al., Datasheets for Datasets, arXiv:1803.09010 (2018, version publiée 2021). Elle décrit l’état constaté du projet à la date indiquée en tête. La version PDF (output/pdf/datasheet.pdf) est celle du 10/11/2026, avant publication : sa partie 8 dit encore que le mélange reste local. Cette fiche ne couvre pas les données du chatbot Molière, décrites dans docs/chatbot/FICHE_DONNEES.md du dépôt (https://github.com/benassou423/Inteligence-lab-piscine/blob/main/docs/chatbot/FICHE_DONNEES.md).

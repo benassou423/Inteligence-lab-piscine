@@ -1,4 +1,7 @@
 # Run complet (100 M tokens officiels, soumissible), sur Kaggle (GPU T4, float16 imposé par le kit, < 1 h).
+# Voie préparée, jamais lancée : experiments/results.csv n'a aucun run nommé « full » (le nom donné par « run: full »).
+# Les deux runs à 100 M tokens de experiments/results.csv (full_reference_20261110 et full_reference_masked_20261110) ont tourné sur le Mac (mps). La soumission
+# officielle vient de full_reference_masked_20261110 (configs/bench/full_reference_masked_20261110.yaml).
 # Marche à suivre complète, avec reprise si la session coupe : docstring de bench/kaggle.py. En bref :
 #   1. Mac    : uv run python -m bench.run --config configs/bench/full.yaml --until prepare
 #   2. Mac    : uv run python -m bench.kaggle push --config configs/bench/full.yaml --dataset <hf>/ftb-dataset --runs <hf>/ftb-runs

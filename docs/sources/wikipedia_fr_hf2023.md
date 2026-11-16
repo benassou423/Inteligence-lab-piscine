@@ -1,4 +1,4 @@
-Prochaine action : lire les limites de cette archive avant une ablation — 2 min.
+État au 16/11/2026 : archive conservée ; l’ablation prévue contre le dump 2026 n’a pas été lancée — lecture 2 min.
 
 # Wikipédia HF 2023 — `wikipedia_fr_hf2023`
 
@@ -6,9 +6,9 @@ Prochaine action : lire les limites de cette archive avant une ablation — 2 mi
 
 2. **Origine inchangée.** Dataset [Hugging Face `wikimedia/wikipedia`](https://huggingface.co/datasets/wikimedia/wikipedia), configuration `20231101.fr`, révision figée `b04c8d1ceb2f5cd4588862100d08de323dccfbaa`. Le collecteur historique est conservé dans `pipeline/collect/wikipedia_hf2023.py` ; seul son nom de source change. Le champ `date` reste **2023-11-01**, date du dump, pas une date de révision propre à chaque article.
 
-3. **Migration vérifiée.** Les données sont dans `data/raw.nosync/wikipedia_fr_hf2023/`, accessibles par le lien `data/raw`. **2 564 645 documents**, **7 814 155 529 octets de texte**, **87 fichiers**, environ **2,75 Go compressés**. Chaque document a été comparé avant/après : seuls `source` et le préfixe de `id` changent. Les textes et les autres métadonnées sont identiques. Preuve par fichier et empreinte des textes : `_migration_hf2023.json`. Le script rejouable est `tools/archive_wikipedia_hf2023.py`.
+3. **Migration vérifiée.** Les données sont dans `data/raw.nosync/wikipedia_fr_hf2023/`, accessibles par le lien `data/raw`. **2 564 645 documents**, **7 814 155 529 octets de texte**, **87 fichiers**, environ **2,75 Go compressés**. Chaque document a été comparé avant/après : seuls `source` et le préfixe de `id` changent. Les textes et les autres métadonnées sont identiques. Preuve par fichier et empreinte des textes : `_migration_hf2023.json` (non publié, comme `data/raw.nosync/`). Le script rejouable est `tools/archive_wikipedia_hf2023.py`.
 
-4. **Limites conservées volontairement.** Le convertisseur du dataset supprimait de nombreux modèles : dates, nombres, unités, parfois apostrophe initiale ou sujet. Ces défauts ne sont pas corrigés dans l’archive ; les corriger empêcherait de comparer les deux versions. La différence avec 2026 inclut aussi les évolutions éditoriales et les nouveaux articles. Aucun résultat d’entraînement de cette ablation n’est encore mesuré.
+4. **Limites conservées volontairement.** Le convertisseur du dataset supprimait de nombreux modèles : dates, nombres, unités, parfois apostrophe initiale ou sujet. Ces défauts ne sont pas corrigés dans l’archive ; les corriger empêcherait de comparer les deux versions. La différence avec 2026 inclut aussi les évolutions éditoriales et les nouveaux articles. Aucun résultat d’entraînement de cette ablation n’a été mesuré : elle n’a pas été lancée. Le seul run sur cette ancienne source est `rank_wiki` (03/11, Wikipédia seule, 1,7467 BPB à 25 M tokens), sans run jumeau sur le dump 2026.
 
 5. **Licence et attribution.** Textes sous **CC BY-SA 4.0** ; URLs d’origine et métadonnées HF conservées. Voir les [conditions Wikimedia](https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/en#7._Licensing_of_Content).
 

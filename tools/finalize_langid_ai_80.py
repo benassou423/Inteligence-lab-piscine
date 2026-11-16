@@ -2,6 +2,12 @@
 
 Ne crée aucune annotation humaine. Les bornes de sensibilité font varier les
 17 cas limites ; elles ne sont pas des intervalles de confiance statistiques.
+
+Dossier de travail : data/annotations/ia-20261110 (local, avec les extraits, non publié). La copie
+publiée, data/annotations/controle_langue_80/, en est dérivée sans les extraits (clé text retirée,
+empreintes ajoutées, rapport réécrit) : ce script ne peut pas y être rejoué. Il reste dans le dépôt
+pour la recette des bornes de sensibilité (fonction sensitivity, importée par
+tests/test_langid_sensitivity.py).
 """
 import hashlib
 import json

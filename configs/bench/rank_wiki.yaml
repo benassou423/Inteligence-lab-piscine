@@ -1,6 +1,9 @@
 # Test de classement du proxy (1/2) : Wikipédia seule.
 #   uv run python -m bench.run --config configs/bench/rank_wiki.yaml
 # Attendu : BPB nettement meilleur (plus bas) que rank_moliere, au même budget.
+# Mesuré le 03/11/2026 sur le dump HF 2023, archivé depuis dans data/raw/wikipedia_fr_hf2023
+# (source et identifiants renommés : docs/sources/wikipedia_fr_hf2023.md). data/raw/wikipedia_fr contient
+# maintenant le dump 20261001 : relancer ce fichier ne redonne pas le tirage du 03/11.
 run: rank_wiki
 notes: "classement : Wikipédia seule (data/raw, dump 2023)"
 mix:

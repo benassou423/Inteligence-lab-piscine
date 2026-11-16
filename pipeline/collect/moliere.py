@@ -1,4 +1,4 @@
-"""Corpus Molière provisoire (bloc 1) : théâtre de Molière depuis Wikisource → data/moliere/moliere.txt.
+"""Corpus Molière de Wikisource → data/moliere/moliere.txt : provisoire pour le bloc 1, relu ensuite par chatbot/theatre.py.
 
 Édition suivie : Œuvres complètes de Molière, éd. Charles Louandre, Charpentier, 1910 (3 tomes),
 dans l'ordre de ses tables des matières. Pour chaque pièce : page principale et sous-pages (actes)
@@ -187,9 +187,10 @@ def run(cfg, limit=None, workers=None, force=False):
     text = "\n\n".join("\n".join(p["lines"]) for p in plays) + "\n"
     (out_dir / "moliere.txt").write_text(text, encoding="utf-8")
     readme = [
-        "# Corpus Molière provisoire (bloc 1)",
+        "# Corpus Molière de Wikisource",
         "",
-        "Provisoire : le kit officiel fournira le corpus de référence. Généré par "
+        "Pour le bloc 1, le corpus de référence est celui du kit (`corpus/`) ; ce texte Wikisource "
+        "est encore relu par le chatbot (`chatbot/theatre.py` et `chatbot/pretrain.py`). Généré par "
         "`uv run python -m pipeline.collect moliere` le " + now_iso()[:10] + ".",
         "",
         "- **Source** : Wikisource, *Œuvres complètes de Molière*, éd. Charles Louandre, Charpentier, 1910 "

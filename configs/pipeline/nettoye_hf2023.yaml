@@ -1,5 +1,5 @@
-# Nettoyage v1 : encodage, boilerplate, langue, mise en forme des livres, décontamination (val du kit), doublons exacts.
-#   uv run python -m pipeline.run --config configs/pipeline/nettoye.yaml [--limit 200]
+# Ablation Wikipédia HF 2023, préparée et jamais lancée au 16/11/2026 : mêmes étapes et mêmes réglages que nettoye.yaml, appliqués à la seule source wikipedia_fr_hf2023, sortie séparée (docs/sources/wikipedia_fr_hf2023.md).
+#   uv run python -m pipeline.run --config configs/pipeline/nettoye_hf2023.yaml [--limit 200]
 # Fiches explicatives : docs/comprendre/{pipeline,encodage,boilerplate,langue,reflow,decontamination,dedup_exacte}.md
 name: nettoye_hf2023
 input: data/raw

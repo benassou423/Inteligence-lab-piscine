@@ -15,12 +15,12 @@
 - Œuvres du **domaine public** ; transcription et mise en forme Wikisource sous **CC BY-SA 4.0** (citer Wikisource, partage à l'identique).
 
 ## Volume
-- **21 600 documents**, **5 344 Mo** de texte, 73 fichiers (1,8 Go zstd) : **20 554 livres** (5 329 Mo) et **1 046 pages** de l'espace principal (15 Mo) ; 907 documents marqués théâtre.
-- 4 659 968 pages lues ; pages `Page:` écartées : 273 734 de niveau 0, 682 122 de niveau 1, 628 de niveau 2. Détail : `data/raw/wikisource_fr/_stats.json` (dont les modèles inconnus).
+- **21 597 documents**, **5 343,8 Mo** de texte, 73 fichiers (1 840 Mo zstd), d'après `docs/sources/volumes.md` (04/11/2026). Le détail qui suit date de la collecte d'avant la correction du 03/11, qui comptait 21 600 documents : **20 554 livres** (5 329 Mo) et **1 046 pages** de l'espace principal (15 Mo) ; 907 documents marqués théâtre.
+- 4 659 968 pages lues ; pages `Page:` écartées : 273 734 de niveau 0, 682 122 de niveau 1, 628 de niveau 2. Détail : `data/raw/wikisource_fr/_stats.json` (non publié ; il compte aussi les modèles inconnus).
 
 ## Qualité de la conversion (mesurée le 03/11 sur 200 livres, tirage déterministe par empreinte de l'id)
 - **Restes de balisage** dans 60 livres sur 200, mais **0,4 % des caractères** : surtout des tableaux wiki mal fermés (`{| … |- … |}`, 0,29 %), du HTML ouvert sur une page et fermé sur la suivante (`<div class="titre">`, `</div>`), des valeurs CSS seules (« 0.1em »).
-- **Modèles mal rendus** : `{{style|css|texte}}` donnait le CSS, `{{lp}}`, `{{lia}}`, `{{hwp}}` la cible du lien au lieu du texte affiché, `{{StdT|s|texte}}` la lettre « s », `{{ligat|f|f}}` une seule lettre (« afaire »), `{{Pom|…}}` (poème) perdait ses retours à la ligne. Plus de 150 000 appels. **Corrigé dans `wikitext.py` le 03/11** (avec les restes HTML et CSS) : effet à la **prochaine collecte** (les fichiers actuels de `data/raw/` sont d'avant). Contrôle sur 121 pages relues tirées au hasard sur fr.wikisource : 2 pages changent, toutes deux corrigées (vers rétablis, « fig. 21 » au lieu de « ch-5 »), aucune régression.
+- **Modèles mal rendus** : `{{style|css|texte}}` donnait le CSS, `{{lp}}`, `{{lia}}`, `{{hwp}}` la cible du lien au lieu du texte affiché, `{{StdT|s|texte}}` la lettre « s », `{{ligat|f|f}}` une seule lettre (« afaire »), `{{Pom|…}}` (poème) perdait ses retours à la ligne. Plus de 150 000 appels. **Corrigé dans `wikitext.py` le 03/11** (avec les restes HTML et CSS). Les mesures de cette section ont été faites sur la collecte d'avant ; `docs/sources/volumes.md` compte 21 597 documents le 04/11, ce qui indique une collecte refaite après la correction (à confirmer). Contrôle sur 121 pages relues tirées au hasard sur fr.wikisource : 2 pages changent, toutes deux corrigées (vers rétablis, « fig. 21 » au lieu de « ch-5 »), aucune régression.
 - **Mots coupés en fin de page** sans `{{tiret}}` (« principa- lement ») : 873 dans les 200 livres ; corrigé de même (recollés sans tiret).
 - **Pages de garde** (éditeur, « LIBRAIRIE HACHETTE », « Droits réservés ») dans 48 livres sur 200, **tables des matières** dans 35 : gardées (boilerplate, nettoyage).
 
@@ -32,4 +32,4 @@
 - **Domaine mal étiqueté** : Wikisource contient aussi des **revues** (*Revue des Deux Mondes* → presse), des lois, des thèses, l'*Encyclopédie* de Diderot → `meta.type` (book, journal, collection…) aide à reclasser.
 - **Doublons** : une même œuvre en plusieurs éditions, et recouvrement avec **Gutenberg** → déduplication.
 - **Biais** : **français ancien** (« foible », « connoissois »), canon classique ; loin de la langue de 2026.
-- **Juridique** : quelques traductions ou textes d'auteurs morts il y a moins de 70 ans peuvent être hébergés sous d'autres régimes ; à vérifier avant publication. **RGPD** : négligeable (noms des contributeurs non collectés).
+- **Juridique** : quelques traductions ou textes d'auteurs morts il y a moins de 70 ans peuvent être hébergés sous d'autres régimes ; non vérifié œuvre par œuvre. Le mélange publié contient 527 textes Wikisource. **RGPD** : négligeable (noms des contributeurs non collectés).

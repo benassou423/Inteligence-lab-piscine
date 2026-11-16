@@ -24,8 +24,8 @@
 - Pages capturées le **2026-09-04** (date de capture, pas de publication).
 
 ## Risques
-- **Juridique** : l'opt-out n'est vérifié que dans la page (TDMRep) ; on ne lit ni `/.well-known/tdmrep.json` ni les règles robots.txt visant les robots d'IA (GPTBot, CCBot ajoutés après le crawl). Risque résiduel faible sur 12 000 pages, à documenter dans la datasheet.
-- **RGPD** : les pages contiennent des **données personnelles** (noms, e-mails, téléphones, avis signés) → l'étape de nettoyage doit masquer e-mails et numéros.
-- **Qualité** : texte brut = **menus, boutons, pieds de page, cookies**, listes de liens, spam SEO, contenu adulte possible → extraction du contenu principal (trafilatura) et filtres qualité au nettoyage.
+- **Juridique** : l'opt-out n'est vérifié que dans la page (TDMRep) ; on ne lit ni `/.well-known/tdmrep.json` ni les règles robots.txt visant les robots d'IA (GPTBot, CCBot ajoutés après le crawl). Risque résiduel faible sur 11 865 pages collectées, dont 155 dans le mélange final (0,11 % du texte). Cette limite n'est pas reprise dans la datasheet.
+- **RGPD** : les pages contiennent des **données personnelles** (noms, e-mails, téléphones, avis signés) → e-mails, téléphones et adresses IP sont masqués, non pas au nettoyage mais dans le mélange final, par `tools/prepare_masked_reference.py` (548 textes modifiés sur 72 612, dont 10 pages Common Crawl). Ce n'est pas une anonymisation : les noms restent.
+- **Qualité** : texte brut = **menus, boutons, pieds de page, cookies**, listes de liens, spam SEO, contenu adulte possible → extraction du contenu principal (trafilatura) au nettoyage ; les filtres de qualité web n'existent que dans la variante `complet_20261110`, non retenue.
 - **Biais** : 10 fichiers d'**un seul segment** = 0,01 % du crawl, pas représentatif ; le critère `.fr` seul ajoute **181 pages** (1,5 % des pages gardées), souvent en anglais ; 7 853 pages sont gardées par la langue seule et 3 831 par les deux critères ; sur-représentation du commerce et des annuaires.
-- **Doublons** : pages quasi identiques (même gabarit, pagination) → déduplication.
+- **Doublons** : pages quasi identiques (même gabarit, pagination) → déduplication (exacte dans la référence ; la recherche de quasi-doublons fait partie de la variante non retenue).

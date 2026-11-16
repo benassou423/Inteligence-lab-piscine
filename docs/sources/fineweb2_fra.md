@@ -1,6 +1,8 @@
-# FineWeb-2, français — `fineweb2_fra` (optionnel)
+# FineWeb-2, français — `fineweb2_fra`
 
 **Domaine** : web (non classé) · **Commande** : `uv run python -m pipeline.collect fineweb2_fra` · **Code** : `pipeline/collect/fineweb2.py`
+
+**État** : source active (`enabled: true` dans `configs/collect.yaml`). Elle était prévue comme optionnelle et a été ajoutée une fois les autres sources en place.
 
 ## Origine
 - Dataset Hugging Face **`HuggingFaceFW/fineweb-2`**, config **`fra_Latn`** (commit figé `af9c13333eb981300149d5ca60a8e9d659b276b9`, dépôt mis à jour en octobre 2025) : pages Common Crawl de 2013 à avril 2024, **déjà** extraites (trafilatura), filtrées (langue, qualité) et dédupliquées (MinHash, par langue, globalement) par Hugging Face.
@@ -14,13 +16,14 @@
 - **ODC-By 1.0** (attribution à FineWeb-2) + conditions d'utilisation de Common Crawl ; le droit d'auteur des pages reste à leurs auteurs (exception de fouille de textes, art. L122-5-3 CPI).
 
 ## Volume
-- Voir `docs/sources/volumes.md` (cible : **~2 Go de texte**, ~600 000 pages).
+- **522 923 pages**, **1 781,0 Mo** de texte, 22 fichiers de sortie, 705 Mo sur disque (`docs/sources/volumes.md`, 04/11/2026). La cible était **~2 Go de texte**, ~600 000 pages.
+- Dans le mélange final : 12 111 pages, 9,62 % du texte (`docs/remise/RAPPORT.md`, § 2).
 
 ## Période couverte
 - Captures de **l'été 2013 à avril 2024** (96 dumps Common Crawl).
 
 ## Risques
-- **Comparaison avec notre Common Crawl** : FineWeb-2 est le **témoin « déjà nettoyé »** (extraction + filtres + dédup faits par d'autres) ; utile pour l'ablation « notre pipeline vs un pipeline de référence ».
+- **Comparaison avec notre Common Crawl** : FineWeb-2 est le **témoin « déjà nettoyé »** (extraction + filtres + dédup faits par d'autres) ; utile pour une ablation « notre pipeline vs un pipeline de référence ». Cette ablation n'a pas été faite (aucun run de ce type dans `experiments/results.csv`).
 - **Juridique** : pas de vérification des réserves TDM par page (le HTML n'est pas fourni) ; opt-out = robots.txt au moment du crawl.
 - **RGPD** : e-mails et IP **déjà anonymisés** par FineWeb-2 (`email@example.com`, `22.214.171.124`), mais noms et téléphones restent possibles.
 - **Qualité** : filtres heuristiques imparfaits (spam, listes, contenu adulte) ; `minhash_cluster_size` signale les textes très dupliqués avant dédup.

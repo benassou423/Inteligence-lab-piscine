@@ -12,16 +12,16 @@
 - **CC BY 2.5** : réutilisation libre avec **attribution** (Wikinews et ses contributeurs, URL de chaque article dans `url`).
 
 ## Volume
-- **20 428 articles**, **32,2 Mo** de texte, 1 fichier (11 Mo zstd). Écartés : 2 478 redirections, 3 791 textes de moins de 200 caractères, la page d'accueil.
+- **20 419 articles**, **32,1 Mo** de texte, 1 fichier (11 Mo zstd), d'après `docs/sources/volumes.md` (04/11/2026). Les décomptes qui suivent datent de la collecte d'avant la correction du 03/11 (voir « Risques »), qui comptait 20 428 articles et 32,2 Mo. Écartés alors : 2 478 redirections, 3 791 textes de moins de 200 caractères, la page d'accueil.
 - Origine de la date (03/11) : `{{Date}}` 19 384, titre 941, `{{Publication}}` 64, dernière révision 39. Les 941 « titre » sont 42 pages « Brèves : <date> » et **898 pages « Évènements du <date> »** (listes de titres d'articles du jour, 0,3 Mo) : gardées, ce ne sont pas des articles (à filtrer au nettoyage si besoin).
 - Format : **89 %** des textes commencent par la date sur sa ligne, comme la validation (sinon : intertitre ou encadré « Sur le même sujet » avant la date).
 
 ## Période couverte
-- Articles du **2005-01-28 au 2026-04-08** (fermeture en mai 2026), surtout 2007-2016 ; 485 articles de 2024-2026.
+- Articles du **2005-01-28 au 2026-04-28** d'après `docs/sources/volumes.md` (fermeture en mai 2026), surtout 2007-2016 ; 485 articles de 2024-2026. Cette fiche donnait « 2026-04-08 » pour la collecte d'avant le 03/11 : l'écart n'est pas expliqué.
 
 ## Risques
 - **Contamination** : la validation publique contient **104 articles Wikinews de 2024 à mars 2026** : ils sont dans cette collecte. Rien n'est filtré ici ; la **date de publication** est renseignée pour la décontamination (étape du nettoyage). Le test « presse » viendra d'**autres sources récentes**.
 - **Qualité** : articles courts, parfois des brouillons jamais publiés (statut absent), pages de résultats sportifs (tableaux aplatis), dates manquantes pour quelques pages (date de dernière révision : 39 articles, parfois fausse, ex. JO 2010 daté 2012). **Restes de balisage** : 709 articles (3,5 %) gardent des attributs `style=`, 318 des lignes de tableau `{| |- |}` (tableaux mal fermés que mwparserfromhell ne lit pas). Une date impossible (« 31 février 2012 », page parodique).
-- **Corrigé dans le code le 03/11** (effet à la prochaine collecte ; essai complet dans un dossier temporaire) : balises HTML orphelines retirées (352 articles → 0), date impossible refusée (repli sur la dernière révision), 9 ébauches passent sous 200 caractères une fois le HTML retiré (20 419 articles). Les tableaux mal fermés restent (nettoyage).
+- **Corrigé dans le code le 03/11** (essai complet dans un dossier temporaire ; `docs/sources/volumes.md` compte 20 419 articles le 04/11, ce qui indique une collecte refaite après la correction) : balises HTML orphelines retirées (352 articles → 0), date impossible refusée (repli sur la dernière révision), 9 ébauches passent sous 200 caractères une fois le HTML retiré (20 419 articles). Les tableaux mal fermés restent (nettoyage).
 - **Biais** : presse **citoyenne et amateur**, sujets ancrés dans 2005-2016 ; style plus simple que la presse professionnelle du test.
 - **RGPD** : personnes publiques citées dans l'actualité ; faits divers avec des noms de particuliers possibles.

@@ -1,4 +1,10 @@
-"""Importe le retour RTX après contrôle ; prépare un dossier local de soumission."""
+"""Importe le retour RTX après contrôle ; prépare un dossier local de soumission.
+
+Pièce historique : route Windows du concours préparée le 10/11/2026, jamais exécutée. Le modèle du
+concours retenu a été entraîné sur le Mac. Guide : docs/remise/PASSAGE_PC_RTX5090.md (pièce
+historique lui aussi).
+Cette importation n'a donc jamais eu de retour à lire. Elle dépend de data/mixes/, absent d'un clone.
+"""
 import argparse
 import hashlib
 import json

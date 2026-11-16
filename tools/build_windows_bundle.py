@@ -1,4 +1,12 @@
-"""Archive de transfert locale : état de travail et sélection complète, aucun secret."""
+"""Archive de transfert locale : état de travail et sélection complète, aucun secret.
+
+Pièce historique : route Windows du concours préparée le 10/11/2026, jamais exécutée. Le modèle du
+concours retenu a été entraîné sur le Mac. Guide : docs/remise/PASSAGE_PC_RTX5090.md (pièce
+historique lui aussi).
+Ne tourne que sur le Mac (copie de travail) : il dépend de AGENTS.md et de data/mixes/, absents d'un
+clone, et écrit sous data/stages/finalisation_20261110/transfer. Il écrit TRANSFER_MANIFEST.json,
+que lit tools/windows_gpu.py.
+"""
 import argparse
 import hashlib
 import json

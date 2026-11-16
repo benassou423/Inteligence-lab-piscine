@@ -1,4 +1,22 @@
-"""Rapport de deux pages et datasheet, à partir des résultats réellement disponibles."""
+"""Rapport de deux pages et datasheet, à partir des résultats réellement disponibles.
+
+USAGE UNIQUE, À NE PAS RELANCER. Ce script a produit, le 10/11/2026, output/pdf/ (rapport et
+datasheet) puis docs/remise/DATASHEET.md et docs/remise/RAPPORT.md. Le relancer réécrirait
+docs/remise/DATASHEET.md, corrigé à la main le 16/11/2026, et reviendrait aux textes du 10/11/2026
+(par exemple « la publication reste à finaliser », « aucune URL publique définitive », « le PC
+utilisera le binaire CUDA »). Il réécrirait aussi docs/remise/RAPPORT.md. output/pdf/datasheet.pdf est aussi une pièce
+de la release ftb-final-20261110 (tools/prepare_dataset_release.py) : un PDF régénéré ne correspondrait
+plus à la pièce publiée.
+
+Il ne tourne pas dans l'environnement du projet :
+- les modules reportlab et pypdf ne sont pas déclarés dans pyproject.toml (ni dans uv.lock) ; ils
+  étaient installés à part sur le Mac ;
+- les polices sont chargées par des chemins macOS en dur (Arial et Arial Bold, dossier
+  /System/Library/Fonts/Supplemental) ;
+- il lit des fichiers sous data/ et runs/, qui ne sont dans aucun clone.
+Il est gardé comme trace de la façon dont les deux PDF ont été faits (voir docs/ARCHITECTURE.md,
+docs/remise/REPRODUCTION.md et tools/README.md, qui le citent).
+"""
 from datetime import datetime
 import json
 from pathlib import Path

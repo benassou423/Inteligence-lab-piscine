@@ -60,7 +60,8 @@ def write_volumes(cfg) -> str:
     budget = float(cfg.get("raw_budget_gb", 30))
     raw_disk = sum(p.stat().st_size for p in source_dir("").rglob("*") if p.is_file())
     lines = [
-        "Prochaine action : comparer les volumes actifs et les archives — 1 min.",
+        "État au " + "/".join(reversed(now_iso()[:10].split("-")))
+        + " : volumes des sources actives et des archives — lecture 1 min.",
         "",
         "# Volumes collectés (`data/raw/`)",
         "",
@@ -87,7 +88,7 @@ def write_volumes(cfg) -> str:
     mol = read_json(ROOT / "data" / "moliere" / "_stats.json")
     if mol:
         n = lambda x: f"{x:,}".replace(",", " ")  # noqa: E731
-        lines += ["", f"Corpus Molière provisoire (`data/moliere/moliere.txt`, remplacé par `corpus/` du kit) : "
+        lines += ["", f"Molière sur Wikisource (`data/moliere/moliere.txt`, non publié ; remplacé par `corpus/` du kit pour le bloc 1, encore lu par le chatbot) : "
                       f"{mol['plays']} pièces, {n(mol['lines'])} lignes, {n(mol['chars'])} caractères."]
     lines += ["", "Détail par source (origine, licence, risques) : voir les fiches `docs/sources/<source>.md`."]
     OUT.parent.mkdir(parents=True, exist_ok=True)

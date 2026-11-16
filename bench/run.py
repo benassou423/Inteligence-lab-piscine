@@ -1,13 +1,14 @@
 """Banc d'essai : une fine couche au-dessus du kit officiel (`ftb/`, jamais modifié).
 
     uv run python -m bench.run --config configs/bench/<run>.yaml [--stage mix|tokenizer|prepare|train|eval|all]
-    uv run python -m bench.run --config configs/bench/full.yaml --until prepare   (mix → train.bin, avant Kaggle)
+    uv run python -m bench.run --config configs/bench/full.yaml --until prepare   (mix → train.bin, à entraîner ensuite ailleurs, par exemple par la route Kaggle prévue)
 
 Un run = mix → tokenizer → ftb.prepare → ftb.train → ftb.evaluate → une ligne dans
 experiments/results.csv. Chaque étape est sautée si ses entrées n'ont pas changé ; un run
 d'entraînement déjà fini sur un AUTRE dataset est renommé `runs/<run>.prev-<date>` (le kit
 refuse d'écraser un run). Mode `proxy` : `--debug-budget` (non soumissible), sur le GPU du Mac ;
-mode `full` : 100 M tokens officiels, pour Kaggle (T4, voir bench/kaggle.py). Après `prepare`, le banc
+mode `full` : 100 M tokens officiels (les deux runs complets ont tourné sur le Mac ;
+la route Kaggle T4, bench/kaggle.py, est prévue mais n'a jamais été lancée). Après `prepare`, le banc
 vérifie que le budget ne coupe pas le dernier bloc et ne relit pas le flux (`stream_coverage`).
 Runs de plus de 5 minutes : les lancer détachés, par exemple
     nohup uv run python -m bench.run --config configs/bench/proxy.yaml > runs/proxy.out 2>&1 &
@@ -210,6 +211,7 @@ def stage_train(cfg, force, resume, log) -> dict:
     for w in stream_coverage(cfg)["warnings"]:
         log.warning(f"ATTENTION flux : {w}")
     device = device_for(cfg)
+    # Le texte de l'avertissement ci-dessous cite Kaggle : route prévue, jamais lancée (les runs complets ont tourné sur le Mac).
     if official and not device.startswith("cuda"):
         log.warning(f"ATTENTION : run complet sur {device} (float32). L'orga ré-entraîne sur T4 en float16 et "
                     f"exige le même BPB à ±0,02 : faire le run soumis sur Kaggle (bench/kaggle.py)")

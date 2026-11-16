@@ -1,4 +1,11 @@
-# Prochaine action : entraîner les témoins bruts et complets une fois leurs contrôles verts
+# Protocole de l'ablation brut / nettoyé / complet
+
+État au 16/11/2026 : protocole rédigé pour préparer l'ablation (texte au futur) et enregistré
+dans git le 11/11/2026, en même temps que les résultats. Quatre runs nouveaux (brut et complet, tirages 1337 et 2027) ont été
+exécutés le 10/11/2026 ; les deux runs nettoyés du 04/11/2026 ont été réutilisés, comme
+prévu au point 4. Résultats dans [RAPPORT.md](RAPPORT.md) et
+`experiments/ablation_complete_20261110.json`. Le texte ci-dessous n'a pas été réécrit
+après les résultats.
 
 1. **Question mesurée.** Quel effet le pipeline a-t-il sur le même modèle à budget
    constant ? Trois niveaux : brut protégé contre la validation ; nettoyé actuel ;

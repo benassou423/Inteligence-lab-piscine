@@ -18,8 +18,8 @@ Couper le texte en **tokens** (morceaux de mots) que le modèle sait lire. Le to
 |---|---|---|
 | Vocabulaire | **exactement 8 192** = 256 octets + 7 935 fusions + `<|endoftext|>` | règle du kit |
 | Autres règles | sans perte, sans normalisation, déterministe, format `tokenizer.json` Hugging Face | `docs/KIT_README.md` |
-| Octets par token, mix Wikipédia (tokenizer `gpt4` entraîné dessus) | **3,56** | `data/mixes/rank_wiki/prepared/data_meta.json` |
-| Octets par token sur la val | colonne `val_bytes_per_token` de `experiments/results.csv` | `ftb.evaluate` |
+| Octets par token, mix Wikipédia (tokenizer `gpt4` entraîné dessus) | **3,56** | `data/mixes/rank_wiki/prepared/data_meta.json` (non publié) |
+| Octets par token sur la val | colonne `val_bytes_per_token` de `experiments/results.csv` : **3,8089** pour les dix runs lancés depuis le 04/11, dont le run soumis | `ftb.evaluate` |
 | BPE pour le texte ; BPE sur les octets | Sennrich et al. 2016 ; Radford et al. 2019 (GPT-2) | articles fondateurs |
 
 Plus d'octets par token = plus de texte vu pour les mêmes 100 M tokens. Mesure : `uv run python -m ftb.tokenizer check --tokenizer <fichier>`.
@@ -27,5 +27,5 @@ Plus d'octets par token = plus de texte vu pour les mêmes 100 M tokens. Mesure 
 ## 3 questions probables du jury
 
 1. **Pourquoi byte-level ?** Rien n'est inconnu, la tokenisation est sans perte (règle du kit), et le BPB se calcule exactement sur les octets du texte.
-2. **Pourquoi une variante française ?** En français, « l' », « d' », « qu' » sont des mots à part entière. Les garder entiers évite de gaspiller des fusions sur « 'homme », « 'eau »… C'est une hypothèse : on la tranche par une ablation (même mix, `pretokenizer: fr` contre `gpt4`).
+2. **Pourquoi une variante française ?** En français, « l' », « d' », « qu' » sont des mots à part entière. Les garder entiers évite de gaspiller des fusions sur « 'homme », « 'eau »… C'est une hypothèse, et elle n'a pas été tranchée : l'ablation (même mix, `pretokenizer: fr` contre `gpt4`) n'a pas été lancée. Aucune config de `configs/bench/` n'utilise `pretokenizer: fr`, et le run soumis réutilise le tokenizer `gpt4` du run `proxy_wiki20261001_fr065`.
 3. **Sur quoi entraîner le tokenizer ?** Sur un texte qui ressemble au test : il doit bien compresser les 4 genres. Appris sur Molière seul, il ne fait que **2,98 octets/token** sur la val, contre **3,66** appris sur Wikipédia (`experiments/results.csv`) : le modèle voit alors moins de texte pour le même budget.

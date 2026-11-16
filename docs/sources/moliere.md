@@ -1,8 +1,10 @@
-# Corpus Molière provisoire (bloc 1) — `moliere`
+# Molière sur Wikisource (surtout l'édition Louandre, 1910) — `moliere`
 
-**Usage** : bloc 1 (mini-GPT from scratch) · **Commande** : `uv run python -m pipeline.collect moliere` · **Code** : `pipeline/collect/moliere.py` · **Sortie** : `data/moliere/moliere.txt` + `data/moliere/README.md` (liste des pièces et URLs)
+**Usage** : d'abord le bloc 1 (mini-GPT from scratch), en attendant le kit ; aujourd'hui le chatbot (voir ci-dessous) · **Commande** : `uv run python -m pipeline.collect moliere` · **Code** : `pipeline/collect/moliere.py` · **Sortie** : `data/moliere/moliere.txt` + `data/moliere/README.md` (liste des pièces et URLs), non publiés : `data/moliere/` est ignoré par git
 
-**Remplacé par le kit officiel** (`corpus/moliere_train.txt`, `corpus/moliere_val.txt`, éd. Chasles 1888 via Gutenberg, pièces séparées par `=====`). Ce corpus provisoire a servi en attendant le kit ; la source est retirée de `all` (on peut encore la lancer à la main).
+**Remplacé par le kit officiel pour le bloc 1** (`corpus/moliere_train.txt`, `corpus/moliere_val.txt`, éd. Chasles 1888 via Gutenberg, pièces séparées par `=====`). Ce corpus, provisoire pour le bloc 1, a servi en attendant le kit ; la source est retirée de `all` (on peut encore la lancer à la main).
+
+**Il sert encore au chatbot.** `chatbot/theatre.py` lit `data/moliere/moliere.txt` et son `README.md` pour ajouter les six pièces de Molière absentes du kit. `chatbot/pretrain.py` s'en sert aussi, quand les deux fichiers sont présents, pour écarter du pré-entraînement les trois pièces de validation dans cette édition. Voir [FICHE_DONNEES.md](../chatbot/FICHE_DONNEES.md), § 3. Ces deux fichiers ne sont pas publiés : la commande ci-dessus les recrée depuis Wikisource, dont les pages peuvent avoir changé depuis.
 
 ## Origine
 - **Wikisource**, *Œuvres complètes de Molière*, éd. **Charles Louandre**, Charpentier, **1910** (3 tomes, textes validés pour la plupart).

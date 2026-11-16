@@ -3,6 +3,12 @@
 L'annotation humaine se fait ensuite avec tools.annotate_langid --out-dir …
 Une taille minimale par source évite qu'un échantillon de 80 soit presque
 entièrement composé de Wikipédia. Les poids sont recalculés par cellule.
+
+Suite réelle (10/11/2026) : l'annotation humaine n'a pas eu lieu. Les 80 extraits ont été classés
+par une IA ; tools/finalize_langid_ai_80.py a joint ces décisions aux scores. Le dossier de sortie
+ci-dessous (data/annotations/humain-20261110) est local et non publié ; la copie publiée, sans les
+extraits, est data/annotations/controle_langue_80/. Le script lit data/stages/, qui n'est dans
+aucun clone.
 """
 import json
 from collections import Counter, defaultdict

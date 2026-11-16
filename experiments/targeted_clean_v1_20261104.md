@@ -1,8 +1,8 @@
-Prochaine action : conserver le corpus actuel et utiliser ce résultat comme ablation — lecture 4 min.
+État au 16/11/2026 : essai clos, résultat négatif. Le corpus `nettoye` est resté la référence du jeu soumis ; ce résultat sert d’ablation — lecture 4 min.
 
 # Nettoyage ciblé v1 — 4 novembre 2026
 
-**Décision : conserver le corpus actuel. La variante est moins bonne sur les deux tirages et dans les quatre genres.** Le corpus actif `nettoye` reste la référence. Les sorties expérimentales sont séparées dans `data/stages/nettoye_cible_v1/03_exact_dedup/`.
+**Décision : conserver le corpus actuel. La variante est moins bonne sur les deux tirages et dans les quatre genres.** Le corpus actif `nettoye` reste la référence. Les sorties expérimentales sont séparées dans `data/stages/nettoye_cible_v1/03_exact_dedup/` (dossier de travail, non publié).
 
 ## 1. Changement évalué
 
@@ -39,7 +39,7 @@ Deux graines de mélange, **1337 et 2027**, fixent le tirage et l’ordre des do
 
 Les essais utilisent 100 Mo de texte tiré, le même modèle de 10 166 400 paramètres, MPS en float32, un batch effectif de 64 et des lots de 16. Budget nominal de 25 M tokens, soit **25 001 984 tokens réellement vus** après arrondi au nombre entier de pas. Le flux doit être assez long pour éviter de relire son début. La référence 1337 déjà exécutée est réutilisée ; trois entraînements nouveaux complètent les deux paires.
 
-Le critère pratique est fixé avant les essais dans `comparison_spec.json` : amélioration du BPB global sur les deux tirages, amélioration moyenne d’au moins 0,01 BPB et aucune régression moyenne par genre supérieure à 0,02. Ce seuil de décision n’est pas un test de significativité statistique. **BPB signifie bits par octet ; plus bas est meilleur.**
+Le critère pratique est fixé avant les essais dans `comparison_spec.json` (dossier de travail non publié ; critères recopiés sous la clé `criteria` de `experiments/targeted_clean_v1_20261104.json`) : amélioration du BPB global sur les deux tirages, amélioration moyenne d’au moins 0,01 BPB et aucune régression moyenne par genre supérieure à 0,02. Ce seuil de décision n’est pas un test de significativité statistique. **BPB signifie bits par octet ; plus bas est meilleur.**
 
 | Graine de mélange | Référence | Variante | Différence variante − référence |
 |---|---:|---:|---:|
@@ -66,11 +66,13 @@ Durées des passes finales : traitement **5 min 24 s**, contamination **6 min 14
 
 L’essai porte sur 2 000 documents frais et les 888 cas du précédent audit. Sur les 2 000 : 18 modifiés, aucun retiré, 12 témoins positifs identiques. Les différences des 18 documents ont été relues par IA. Une inspection supplémentaire d’extraits de 11 documents après traitement a permis de protéger les formules ; cinq formules du document réel concerné sont conservées à l’identique. Ces relectures ciblées ne constituent pas une mesure représentative de taux d’erreur ni une validation humaine exhaustive.
 
-Le contrôle complet de contamination de la variante a pris 374,3 s : **0 document signalé**, recouvrement maximal **8,4 %**, sous le seuil officiel de 10 %. Cela ne signifie pas zéro phrase commune. Les sept liens `.nosync`, les fichiers protégés et le corpus de référence sont conservés. Les fichiers de la variante sont également identiques à leur état au moment du contrôle de contamination. Preuve finale : `experiments/targeted_clean_v1_20261104_verification.json`.
+Le contrôle complet de contamination de la variante a pris 374,3 s : **0 document signalé**, recouvrement maximal **8,4 %**, sous le seuil officiel de 10 %. Cela ne signifie pas zéro phrase commune. Les sept liens `.nosync`, les fichiers protégés et le corpus de référence sont conservés. Les fichiers de la variante sont également identiques à leur état au moment du contrôle de contamination. Preuve finale : `experiments/targeted_clean_v1_20261104_verification.json`. Ce fichier est un état daté du 04/11/2026 : le commit `git_head` qu’il cite n’est pas dans l’historique publié. `pipeline/run.py` a changé depuis : l’empreinte enregistrée n’est plus celle du fichier actuel. Son champ `comparison_sha256` est l’empreinte de la version d’origine de `experiments/targeted_clean_v1_20261104.json` (commit `892b3d4`). Le 16/11/2026, seuls les chemins absolus des clés `ckpt` et `data` y ont été raccourcis ; aucun chiffre n’a changé. Pour retrouver l’empreinte d’origine : `git show 892b3d4:experiments/targeted_clean_v1_20261104.json | sha256sum`.
 
 Ce nettoyage ne règle pas les éditions bilingues, les catalogues de noms, tous les sommaires ou les tableaux littéraires. Les essais locaux utilisent un quart du budget officiel ; une recette retenue doit être confirmée avec le protocole complet sur T4. Les durées ne servent pas à mesurer un gain de vitesse, car la charge du Mac varie entre essais.
 
 ## 5. Reproduction et preuves
+
+Les commandes ci-dessous décrivent la méthode. Depuis le dépôt public, elles ne tournent pas telles quelles : `tools/targeted_clean_pilot.py` lit `data/stages/langid_full_audit_20261104/selected_full.jsonl.zst` et `data/annotations/ia-20261104/full_document_audit/reviews.jsonl`, non publiés, et le pipeline part de `data/stages/nettoye/08_exact_dedup`, à reconstruire d’abord (`docs/remise/REPRODUCTION.md`).
 
 À lancer depuis la racine du projet, en attendant la fin de chaque étape avant la suivante ; détacher chaque tâche longue avec `nohup` et garder son journal sous `data/stages/logs/`. Exemple de lancement long : `nohup uv run python -m pipeline.run --config configs/pipeline/nettoye_cible_v1.yaml > data/stages/logs/targeted-clean-pipeline.log 2>&1 &`. Commandes des étapes :
 
@@ -85,4 +87,4 @@ uv run python -m bench.run --config configs/bench/proxy_cible_v1_s2027.yaml
 uv run python -m tools.compare_targeted_results
 ```
 
-Code : `pipeline/clean/targeted.py`, enregistrement de l’étape dans `pipeline/run.py`, tests `tests/test_clean_targeted.py`. Protocole et preuves : `data/stages/targeted_clean_20261104_audit/` ; résultats d’entraînement : `runs/proxy_cible_*/` et `experiments/results.csv`. Les grosses copies intermédiaires de cette expérience sont supprimées après leur dernière utilisation ; statistiques, reçus, échantillons et corpus final sont conservés. Le pipeline les reconstruit si nécessaire. Aucun nouveau commit ni push.
+Code : `pipeline/clean/targeted.py`, enregistrement de l’étape dans `pipeline/run.py`, tests `tests/test_clean_targeted.py`. Protocole et preuves : `data/stages/targeted_clean_20261104_audit/` ; résultats d’entraînement : `runs/proxy_cible_*/` et `experiments/results.csv`. Les dossiers `data/stages/` et `runs/` sont des dossiers de travail, non publiés ; parmi ces preuves, seuls `experiments/results.csv` et les trois fichiers `experiments/targeted_clean_v1_20261104*` sont publiés. Les grosses copies intermédiaires de cette expérience sont supprimées après leur dernière utilisation ; statistiques, reçus, échantillons et corpus final sont conservés. Le pipeline les reconstruit si nécessaire. À la fin de l’essai, le 04/11, aucun commit ni push n’avait été fait pour ce travail ; ce rapport a été publié avec le commit `892b3d4` du 11/11/2026.

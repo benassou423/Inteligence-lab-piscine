@@ -1,4 +1,11 @@
-"""Comparer brut/nettoyé/complet à contrat identique, sans changer le corpus actif."""
+"""Comparer brut/nettoyé/complet à contrat identique, sans changer le corpus actif.
+
+Le relancer réécrit experiments/ablation_complete_20261110.json et experiments/ablation_complete_20261110.md.
+Dans le .json, il remet les chemins absolus de la machine (les blocs « evaluation » viennent de runs/*/eval.json). Ces chemins ont été rendus
+relatifs à la racine du dépôt le 16/11/2026 dans le fichier publié ; une nouvelle exécution les
+remettrait en absolu. Il lit aussi data/stages/complet_20261110_audit et runs/, qui ne sont dans
+aucun clone : il ne peut pas être rejoué depuis le dépôt publié.
+"""
 import json
 from datetime import datetime
 from pathlib import Path

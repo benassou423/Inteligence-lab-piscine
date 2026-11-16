@@ -18,7 +18,7 @@ On les répare, et on met le texte dans **une seule forme Unicode**, la même qu
 | Espaces Unicode dans la **val du kit** | **0** (ni U+00A0, ni U+202F, sur 813 Ko) | mesuré sur `data/validation.jsonl` |
 | Typographie dans la val | ’ 4 383 · ' 2 587 · « 357 · – 195 · — 26 · … 49 | mesuré |
 | Livres Gutenberg réparés | 79 sur 1 991 (dont **70 mojibake** : « c\x9cur » → « cœur ») | échantillon `--limit 2000` |
-| Articles Wikipédia modifiés | 11 sur 2 000 (ponctuation pleine chasse, ligatures) | idem |
+| Articles Wikipédia modifiés | 11 sur 2 000 (ponctuation pleine chasse, ligatures) | idem (ancienne Wikipédia, dump HF 2023, avant le 04/11) |
 | Vitesse | ftfy seul **0,6 à 1 Mo/s** par cœur ; avec pré-filtre **4 à 6 Mo/s** | mesuré |
 | Équivalence du pré-filtre | **0 différence** sur 60 000 textes piégés (hors faux positifs refusés) | test `test_identique_a_ftfy` |
 | Faux positif « »É » → « ȃ » | **15 livres** Gutenberg abîmés avant correction, 0 après ; aucun autre document changé | corpus complet (Wikisource compris) |

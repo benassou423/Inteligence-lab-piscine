@@ -1,4 +1,11 @@
-"""Prépare les fichiers locaux de diffusion ; aucune publication distante."""
+"""Prépare les fichiers locaux de diffusion ; aucune publication distante.
+
+Pièce historique : le rapport écrit ici (status « local_draft », published False, public_url None)
+décrit l'état du 10/11/2026. Depuis, le jeu a été publié : la release GitHub ftb-final-20261110
+existe. Ce script ne l'a pas publiée ; il ne fait que copier les fichiers dans un dossier local de
+data/stages/finalisation_20261110, qui n'est dans aucun clone. Le relancer réécrit ce rapport local
+avec l'ancien état (non publié).
+"""
 import argparse
 import hashlib
 import json

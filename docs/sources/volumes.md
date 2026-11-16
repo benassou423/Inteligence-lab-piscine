@@ -1,4 +1,4 @@
-Prochaine action : comparer les volumes actifs et les archives — 1 min.
+État au 04/11/2026 : volumes des sources actives et des archives — lecture 1 min.
 
 # Volumes collectés (`data/raw/`)
 
@@ -25,3 +25,5 @@ Archives exclues de la collecte `all` et du corpus actif : `wikipedia_fr_hf2023`
 Corpus Molière provisoire (`data/moliere/moliere.txt`, remplacé par `corpus/` du kit) : 33 pièces, 53 105 lignes, 2 273 990 caractères.
 
 Détail par source (origine, licence, risques) : voir les fiches `docs/sources/<source>.md`.
+
+Note ajoutée à la main le 16/11/2026 (la première ligne a aussi été réécrite à la main ; le reste du fichier est généré) : `data/raw/` et `data/moliere/` ne sont pas publiés, ils restent sur le poste de travail. Le corpus Molière de Wikisource n'est remplacé par `corpus/` que pour le bloc 1 : le chatbot le lit encore (voir [moliere.md](moliere.md)).

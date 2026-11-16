@@ -1,4 +1,4 @@
-Prochaine action : lire les exemples, puis répondre aux 3 questions — 4 min.
+État au 16/11/2026 : ce rendu est celui du jeu final (en place depuis le 04/11/2026) ; l’ablation contre l’ancienne source n’a pas été faite — lecture 4 min.
 
 # Pourquoi rendre les modèles Wikipédia ?
 
@@ -18,14 +18,14 @@ Prochaine action : lire les exemples, puis répondre aux 3 questions — 4 min.
    | `{{unité|12.5|km|2}}` | 12,5 km² |
    | `L{{'}}'''algorithmique'''` | L'algorithmique |
 
-3. **Chiffres observés le 04/11/2026 — 1 min.** Sur 2 000 articles : **0,75 %** de trous selon la regex du brief (limite 5 %), **0 %** de premiers mots collés (limite 0,2 %), **20 lectures valides**. Sur les **2 641 265 articles bruts** : **0,804 %** de trous regex. Après nettoyage : **2 546 229 articles Wikipédia**. Contrôle de contamination sur tout le corpus : **0 document signalé**. Les mesures et textes relus sont conservés dans `data/stages/wikipedia_quality_2000/` et `data/stages/logs/`.
+3. **Chiffres observés le 04/11/2026 — 1 min.** Sur 2 000 articles : **0,75 %** de trous selon la regex du brief (limite 5 %), **0 %** de premiers mots collés (limite 0,2 %), **20 lectures valides**. Sur les **2 641 265 articles bruts** : **0,804 %** de trous regex. Après nettoyage : **2 546 229 articles Wikipédia**. Contrôle de contamination sur tout le corpus : **0 document signalé**. Les mesures et textes relus sont conservés dans `data/stages/wikipedia_quality_2000/` et `data/stages/logs/` (non publiés).
 
 4. **Trois questions du jury — 1 min.**
 
    | Question | Réponse courte |
    |---|---|
-   | Pourquoi garder HF 2023 ? | Pour mesurer l’effet de la nouvelle source par une *ablation*, une comparaison entre versions. Son texte d’origine est conservé. |
+   | Pourquoi garder HF 2023 ? | Pour pouvoir mesurer l’effet de la nouvelle source par une *ablation*, une comparaison entre versions. Son texte d’origine est conservé. Cette ablation n’a pas été lancée. |
    | Pourquoi ne pas chercher les nombres manquants en ligne ? | Une valeur actuelle pourrait dépasser le gel des données. Les modèles dynamiques non résolus restent une limite déclarée. |
    | Comment prouver que cela fonctionne ? | Tests sur de petits exemples, essai mesuré, 20 lectures, audit de tous les articles, kit inchangé et contrôle complet de contamination à 0. |
 
-La regex ne voit pas toutes les erreurs. Les anciens chiffres du diagnostic HF et les chiffres du nouvel essai ne suffisent pas à prédire un gain de score : l’ablation d’entraînement reste à faire.
+La regex ne voit pas toutes les erreurs. Les anciens chiffres du diagnostic HF et les chiffres du nouvel essai ne suffisent pas à prédire un gain de score : l’ablation d’entraînement n’a pas été faite (aucune paire HF 2023 contre dump 2026 dans `experiments/results.csv`).

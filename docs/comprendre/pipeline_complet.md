@@ -1,4 +1,16 @@
-# Prochaine action : mesurer le corpus complet, puis le comparer à la référence
+# Variante complète `complet_20261110` : essayée le 10/11/2026, non retenue
+
+État au 16/11/2026 : la variante a été construite et mesurée le 10/11/2026.
+Moyenne de deux tirages à 25 001 984 tokens : **1,632570 BPB**, contre
+**1,622266** pour la référence `nettoye` (écart de 0,010304 ; plus bas est
+meilleur). Le critère de confirmation n'est pas satisfait : la référence est
+conservée. Sur 50 paires de quasi-doublons contrôlées, 38 décrivaient des
+entités différentes écrites sur un même gabarit. Les trois ajouts (masquage,
+qualité web, quasi-doublons) n'ont pas été mesurés séparément. Seul le masquage
+des coordonnées a été repris : `tools/prepare_masked_reference.py` l'applique
+au mélange final. Preuves : `experiments/ablation_complete_20261110.md` et
+`docs/remise/RAPPORT.md`, § 5. La suite de cette fiche décrit la variante telle
+qu'elle a été construite.
 
 ## 1. Ce qui est ajouté — lecture : 3 minutes
 
@@ -37,14 +49,16 @@ passent pas dans cette recherche ; les doublons exacts sont traités ensuite.
 Le seuil 0,80 correspond à une forte proximité de document, pas simplement au même
 sujet. Il s'inspire du seuil de [Gopher, annexe A](https://arxiv.org/html/2112.11446v2),
 avec cinq mots plutôt que treize pour tolérer de petites retouches. Cette
-adaptation doit être évaluée. Les règles de qualité sont également adaptées :
-les seuils anglais et les listes de mots de Gopher ne sont pas repris aveuglément.
+adaptation a été évaluée le 10/11 (voir l'état en tête de fiche). Les règles de
+qualité sont également adaptées : les seuils anglais et les listes de mots de
+Gopher ne sont pas repris aveuglément.
 
 Une proximité élevée peut aussi venir d'un même gabarit utilisé pour des entités
 différentes : villages, espèces ou monuments. Le retrait fait alors perdre des
 faits spécifiques. La relecture des paires distingue ce cas d'une autre édition
-du même livre ou d'un vrai article recopié. Le seuil est une hypothèse à mesurer
-dans l'ablation ; il ne prouve pas une équivalence sémantique des documents.
+du même livre ou d'un vrai article recopié. Le seuil était une hypothèse ;
+l'ablation du 10/11 ne l'a pas confirmée (voir l'état en tête de fiche). Il ne
+prouve pas une équivalence sémantique des documents.
 
 La recherche est probabiliste : à Jaccard 0,80, la probabilité théorique d'une bande
 commune est `1 - (1 - 0,8^8)^16 = 94,70 %`, dans le modèle d'indépendance idéal.
@@ -62,8 +76,9 @@ municipal qui ne devait pas être assimilé à un annuaire pour trois coordonné
 Un audit ultérieur des masquages à grande échelle a trouvé des faux téléphones
 dans des tableaux anciens et des décimales. La première passe complète a été
 arrêtée et rejetée avant tout entraînement. Les preuves sont conservées sous
-`complet_20261110_pass1_rejected` ; des tests de ces contre-exemples réels,
-des séparateurs cohérents et le contexte téléphonique ont été ajoutés avant reprise.
+`complet_20261110_pass1_rejected` (dossier de travail, non publié) ; des tests
+de ces contre-exemples réels, des séparateurs cohérents et le contexte
+téléphonique ont été ajoutés avant reprise.
 Livres, poésie, débats, Wikipédia et Wikinews sont
 exclus des heuristiques de qualité web ; les coordonnées y sont toujours masquées.
 
@@ -88,7 +103,7 @@ Le contrôle du kit contre les 230 textes de validation doit signaler **0** avan
 tout entraînement de comparaison. Les mesures finales et décisions sont consignées
 dans `experiments/`, sans modifier la référence sur la seule apparence des textes.
 
-## 4. Rejouer — durée à mesurer sur le corpus entier
+## 4. Rejouer
 
 ```bash
 uv run python -m tools.complete_pipeline_pilot
@@ -99,3 +114,16 @@ uv run python -m tools.check_contamination --config complet_20261110 --fast
 Les longues commandes doivent être lancées par `nohup`, avec leur journal dans
 `data/stages/logs/`. Les tests automatisés et relectures IA restent distingués
 d'une annotation humaine.
+
+La première commande relit un tirage de 2 000 documents,
+`data/stages/targeted_clean_20261104_audit/pilot_input.jsonl.zst` (non publié),
+écrit par `tools.targeted_clean_pilot`. Pour tout rejouer depuis la collecte :
+`uv run --no-project python tools/reproduce.py --recipe complete`.
+La durée sur le corpus entier n'est pas notée dans cette fiche.
+
+Outils qui ont produit l'ablation du 10/11 : `tools/prepare_raw_ablation.py`
+(témoins bruts), `tools/run_complete_pipeline.py` (lancement de la variante et
+contrôle de contamination), `tools/audit_near_pairs.py` (50 paires de
+quasi-doublons), `tools/audit_complete_privacy.py` (masquages réels) et
+`tools/compare_complete_results.py` (tableau brut, nettoyé, complet).
+L'index de tous les outils est dans [tools/README.md](../../tools/README.md).

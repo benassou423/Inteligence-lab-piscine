@@ -22,7 +22,7 @@ Références : Lee et al. 2022, *Deduplicating Training Data Makes Language Mode
 
 ## 3 questions probables du jury
 1. **Pourquoi des doublons exacts seulement ?**
-   C'est la v1 : simple, sûre, sans faux positif. Les **quasi-doublons** (même texte avec une date changée) demandent MinHash : c'est l'étape suivante.
+   C'est la v1 : simple, sûre, sans faux positif. Les **quasi-doublons** (même texte avec une date changée) demandent MinHash. Il a été codé (`pipeline/dedup/minhash.py`) et mesuré le 10/11/2026 dans la variante `complet_20261110`, puis écarté : la moyenne passe de 1,622266 à 1,632570 BPB (plus bas est meilleur), et 38 des 50 paires contrôlées décrivaient des entités différentes écrites sur un même gabarit. Les trois ajouts de cette variante (masquage, qualité web, MinHash) n'ont pas été mesurés séparément. Voir [pipeline_complet.md](pipeline_complet.md).
 2. **Pourquoi Wikipédia garde la copie, et pas le site web ?**
    À texte égal, la source soignée a de meilleures métadonnées (licence, date, domaine). Le web passe en dernier dans `source_order`.
 3. **Pourquoi normaliser la casse et les espaces ?**

@@ -224,8 +224,8 @@
         "n_tokens": 213463,
         "n_octets": 813051,
         "octets_par_token": 3.808861488876292,
-        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/ablation_brut_s1337/ckpt.pt",
-        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "ckpt": "runs/ablation_brut_s1337/ckpt.pt",
+        "data": "data/validation.jsonl",
         "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
       },
       "mix": {
@@ -455,8 +455,8 @@
         "n_tokens": 213463,
         "n_octets": 813051,
         "octets_par_token": 3.808861488876292,
-        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/proxy_wiki20261001_fr065/ckpt.pt",
-        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "ckpt": "runs/proxy_wiki20261001_fr065/ckpt.pt",
+        "data": "data/validation.jsonl",
         "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
       },
       "mix": {
@@ -686,8 +686,8 @@
         "n_tokens": 213463,
         "n_octets": 813051,
         "octets_par_token": 3.808861488876292,
-        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/ablation_complet_s1337/ckpt.pt",
-        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "ckpt": "runs/ablation_complet_s1337/ckpt.pt",
+        "data": "data/validation.jsonl",
         "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
       },
       "mix": {
@@ -917,8 +917,8 @@
         "n_tokens": 213463,
         "n_octets": 813051,
         "octets_par_token": 3.808861488876292,
-        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/ablation_brut_s2027/ckpt.pt",
-        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "ckpt": "runs/ablation_brut_s2027/ckpt.pt",
+        "data": "data/validation.jsonl",
         "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
       },
       "mix": {
@@ -1148,8 +1148,8 @@
         "n_tokens": 213463,
         "n_octets": 813051,
         "octets_par_token": 3.808861488876292,
-        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/proxy_cible_base_s2027/ckpt.pt",
-        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "ckpt": "runs/proxy_cible_base_s2027/ckpt.pt",
+        "data": "data/validation.jsonl",
         "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
       },
       "mix": {
@@ -1379,8 +1379,8 @@
         "n_tokens": 213463,
         "n_octets": 813051,
         "octets_par_token": 3.808861488876292,
-        "ckpt": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/runs/ablation_complet_s2027/ckpt.pt",
-        "data": "/Users/assoulinebenjamin/Desktop/ECE Class Data AI ING4/Inteligence-lab/Inteligence-lab-piscine/data/validation.jsonl",
+        "ckpt": "runs/ablation_complet_s2027/ckpt.pt",
+        "data": "data/validation.jsonl",
         "tokenizer_sha256": "35c0f184dade57df1dec18a4bcb05e42dda7f0ad528cb71e398a33b9e243d584"
       },
       "mix": {

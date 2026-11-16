@@ -1,4 +1,4 @@
-Prochaine action : lire la méthode et les limites avant d’utiliser la source — 5 min.
+État au 16/11/2026 : source active depuis le 04/11/2026 ; 59 289 de ses articles sont dans le mélange final — lecture 5 min.
 
 # Wikipédia en français — `wikipedia_fr`
 
@@ -45,9 +45,9 @@ uv run python -m tools.check_contamination --config nettoye --fast
 uv run python -m pipeline.collect stats
 ```
 
-Une collecte complète présente est protégée : `--limit` est ignoré sans `--force`. L’essai, les 20 lectures, le classement des inconnus et les empreintes du code sont dans `data/stages/wikipedia_quality_2000/`. Le manifeste du dump est dans `data/raw/wikipedia_fr/_dump_manifest.json`. Les journaux, l’audit intégral et les contrôles avant/après sont dans `data/stages/logs/wikipedia-*.log` et `wikipedia-*.json`.
+Une collecte complète présente est protégée : `--limit` est ignoré sans `--force`. L’essai, les 20 lectures, le classement des inconnus et les empreintes du code sont dans `data/stages/wikipedia_quality_2000/`. Le manifeste du dump est dans `data/raw/wikipedia_fr/_dump_manifest.json`. Les journaux, l’audit intégral et les contrôles avant/après sont dans `data/stages/logs/wikipedia-*.log` et `wikipedia-*.json`. Ces dossiers de `data/` ne sont pas publiés : ils restent sur le poste de travail.
 
-L’ancienne source est conservée sous [`wikipedia_fr_hf2023`](wikipedia_fr_hf2023.md), exclue du corpus par défaut. La comparaison d’entraînement reste à faire : elle fera varier à la fois la date du dump et son convertisseur, pas uniquement le rendu des modèles.
+L’ancienne source est conservée sous [`wikipedia_fr_hf2023`](wikipedia_fr_hf2023.md), exclue du corpus par défaut. La comparaison d’entraînement n’a pas été faite pendant le concours ; elle aurait fait varier à la fois la date du dump et son convertisseur, pas uniquement le rendu des modèles.
 
 ## Les 30 modèles encore inconnus dans l’essai
 

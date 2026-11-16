@@ -14,9 +14,9 @@ C'est répétitif et sans langue naturelle : le modèle gaspillerait son budget 
 ## Les chiffres clés
 | Source | Effet mesuré | D'où |
 |---|---|---|
-| Wikipédia | sections finales coupées dans **90 %** des articles, résidus dans 19,5 %, wikitexte dans 2,1 % ; **8,1 % des octets** retirés | 40 000 articles réels |
+| Wikipédia | sections finales coupées dans **90 %** des articles, résidus dans 19,5 %, wikitexte dans 2,1 % ; **8,1 % des octets** retirés | 40 000 articles réels de l'ancienne Wikipédia (dump HF 2023), mesure d'avant le 04/11 ; la source actuelle retire déjà infobox, références et tableaux à la collecte |
 | Gutenberg | en-tête **et** licence trouvés dans **4 228 / 4 228** livres ; 10 livres gardaient un 2e paragraphe de crédits (corrigé) | corpus complet, 03/11 |
-| Wikipédia, 30 articles relus | 29 sans aucune ligne de prose retirée ; 1 ligne de bibliographie | tirage par hachage |
+| Wikipédia, 30 articles relus | 29 sans aucune ligne de prose retirée ; 1 ligne de bibliographie | tirage par hachage (même ancienne source) |
 | Common Crawl | 77 % des pages extraites ; texte brut 13,8 Mo → **4,6 Mo** (les deux tiers étaient du menu) | `--limit 2000` |
 | Mode trafilatura | « secours » activé : +18 % de pages mais +5 % de texte seulement, surtout du rebut, et 1,6x plus lent | 300 pages réelles |
 

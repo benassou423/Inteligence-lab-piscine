@@ -1,4 +1,11 @@
-"""Passage contrôlé du kit officiel sur le PC Windows de Ben (RTX 5090)."""
+"""Passage contrôlé du kit officiel sur le PC Windows de l'étudiant (RTX 5090).
+
+Pièce historique : route Windows du concours préparée le 10/11/2026, jamais exécutée. Le modèle du
+concours retenu a été entraîné sur le Mac. Guide : docs/remise/PASSAGE_PC_RTX5090.md (pièce
+historique lui aussi).
+Dépend de TRANSFER_MANIFEST.json (écrit par tools/build_windows_bundle.py) et de data/mixes/,
+absent d'un clone.
+"""
 import argparse
 import hashlib
 import json
