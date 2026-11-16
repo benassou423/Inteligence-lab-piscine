@@ -272,7 +272,7 @@ print(r["reply"])
 
 Sur la carte RTX 5090, avec le décodage retenu, une réponse prend 0,505 s en moyenne (évaluation du
 16/11/2026, panel de 120 réponses : 15,9 mots par réponse, 27,27 % de mots du message repris, aucune réponse
-vide, aucun nom de rôle). Le temps de réponse sur processeur n'a pas été mesuré.
+vide, aucun nom de rôle). Sur un Mac à puce Apple, processeur seul (4 fils), la mesure du 16/11/2026 donne 1,7 à 2,3 s par réponse sur 3 messages, et 1,8 à 5,1 s dans l'application macOS sur 4 essais. C'est une mesure sur une seule machine.
 
 ## 8. Refaire le modèle
 
@@ -359,5 +359,5 @@ Ce qui s'applique à quoi est écrit dans [`LICENCES.md`](../../LICENCES.md). En
 - aucun réentraînement de contrôle de S03 n'a été fait : la reproductibilité à l'octet n'a pas été essayée ;
 - le poste d'entraînement a redémarré brutalement plusieurs fois les 14 et 15/11 ; la cause n'est pas connue ;
 - le comportement sur des messages longs, agressifs ou hors des thèmes testés ;
-- le temps de réponse sur un ordinateur sans carte graphique ;
+- le temps de réponse sur un ordinateur sans carte graphique, sauf la mesure du 16/11/2026 sur un seul Mac à puce Apple (§ 7) ;
 - la consommation électrique de l'entraînement (non mesurée).

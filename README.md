@@ -13,6 +13,8 @@ Piscine I Lab (ECE Paris), 16/10 → 16/11/2026. Ce dépôt contient deux choses
 | `pipeline/` | Bloc 2, pipeline de données : collecte → nettoyage → déduplication → filtrage qualité | l'auteur |
 | `bench/` | Bloc 3, compétition : tokenizer 8 192, entraînement, BPB par domaine | l'auteur |
 | `chatbot/` | Code, recettes et consignes de synthèse des chatbots ; table des essais dans [chatbot/README.md](chatbot/README.md) | l'auteur |
+| `app_moliere/` | Application macOS « Molière » : fenêtre de discussion, serveur local, téléchargement vérifié du modèle ; guide dans [docs/chatbot/APPLICATION.md](docs/chatbot/APPLICATION.md) | l'auteur |
+| `demo/` | Démo web locale : chat avec les chatbots et les modèles du concours, ateliers pédagogiques | l'auteur |
 | `tools/` | Scripts d'audit, de préparation et de publication ; index dans [tools/README.md](tools/README.md) | l'auteur |
 | `tests/` | Tests du projet (`uv run pytest -q`) | l'auteur, sauf `tests/test_kit.py` (kit) |
 | `configs/` | Réglages YAML de l'auteur : collecte, nettoyage, runs du banc d'essai | l'auteur |
@@ -37,7 +39,7 @@ Toutes les commandes se lancent depuis la racine du dépôt.
 - **Windows avec une carte NVIDIA** : ne pas utiliser `uv run` ni `uv sync`. Ils installeraient un PyTorch sans CUDA. Suivre [PC_RTX.md](PC_RTX.md) (étapes 2 à 6) : il crée `.venv`, et on lance ensuite les commandes avec `.venv\Scripts\python.exe` et `PYTHONUTF8=1`. Ce guide n'installe pas `pytest`.
 - **Seulement parler au chatbot** : il suffit d'un environnement Python 3.12 avec PyTorch, tokenizers et numpy (versions du projet : 2.15.0, 0.23.3 et 2.5.4). Sur macOS ou Linux, `uv sync` les installe.
 - **Windows sans carte NVIDIA, Linux avec une carte NVIDIA** : non essayé dans ce projet.
-- **Tests** : le 16/11/2026, `python -m pytest tests` sur le PC Windows, dans l'environnement réduit de [PC_RTX.md](PC_RTX.md), a donné 454 réussis, 10 ignorés, 9 échecs et 17 erreurs (105 s). Tous les échecs et erreurs viennent de cet environnement : sept modules du concours n'y sont pas installés (`ftfy`, `requests`, `mwparserfromhell`, `datasketch`, `warcio`, `pyarrow`, `matplotlib`) et un test (`tests/test_bench_kaggle.py`) utilise `os.killpg`, qui n'existe que sous Unix. Les tests du chatbot passent tous. Non relancé sur macOS le 16/11 : le dernier compte connu sur Mac est 360 tests au 11/11, avant les tests du chatbot.
+- **Tests** : le 16/11/2026, `python -m pytest tests` sur le PC Windows, dans l'environnement réduit de [PC_RTX.md](PC_RTX.md), a donné 454 réussis, 10 ignorés, 9 échecs et 17 erreurs (105 s). Tous les échecs et erreurs viennent de cet environnement : sept modules du concours n'y sont pas installés (`ftfy`, `requests`, `mwparserfromhell`, `datasketch`, `warcio`, `pyarrow`, `matplotlib`) et un test (`tests/test_bench_kaggle.py`) utilise `os.killpg`, qui n'existe que sous Unix. Les tests du chatbot passent tous. Sur macOS, le 16/11/2026, `uv run --group app pytest -q` a donné 907 réussis, 0 échec (146 s), tests de la démo web et de l'application compris.
 
 ## Le concours
 
@@ -120,6 +122,11 @@ python -m chatbot.generate chat --model chatbot_moliere --persona TOINETTE "Je m
 Sur macOS ou Linux, écrire `uv run python` à la place de `python` ; sous Windows, `.venv\Scripts\python.exe` avec `PYTHONUTF8=1` (section « Installer »).
 
 `chatbot_moliere` est le dossier du modèle (`ckpt.pt`, `tokenizer.json`, `chat_config.json`, `training_report.json`). Sans message, le chat est interactif. Sans `--persona`, le personnage est MOLIÈRE (11 personnages proposés). Décodage retenu : 32 réponses candidates, et on garde celle qui dépend le plus du dernier message (`chatbot/ancrage.py`, `anchor_mu` = 1). Avec ce modèle, ces options sont déjà dans son `chat_config.json` (`"candidates": 32`, `"anchor_mu": 1.0`) : la commande n'a pas besoin de `--anchor-mu 1 --candidates 32` (elles restent permises). Un modèle exporté par le lanceur avec la recette par défaut demande 16 candidates, sans ancrage.
+
+**Sans ligne de commande : l'application macOS et la démo web.**
+
+- **Application « Molière » (Mac à puce Apple, macOS 14 ou plus)** : une fenêtre de discussion qui télécharge elle-même le modèle au premier lancement (240 Mo, vérifié par empreinte sha256), puis fonctionne sans Internet. Code : `app_moliere/` ; construction : `uv run --group app python tools/build_app_macos.py` (PyInstaller, signature ad hoc, image disque `.dmg`). Elle n'est pas notarisée par Apple : macOS demande une confirmation à la première ouverture. Installation, limites et reconstruction : [docs/chatbot/APPLICATION.md](docs/chatbot/APPLICATION.md) ; explication courte : [docs/comprendre/application_moliere.md](docs/comprendre/application_moliere.md).
+- **Démo web locale** : `uv run python -m demo --port 8766`, puis ouvrir http://127.0.0.1:8766. Elle sert le chatbot Molière, le chatbot « français moderne » et les deux modèles du concours en complétion. Les dossiers des chatbots sont attendus dans `data/models/chatbot_moliere/` et `data/models/chatbot_francais/` ; pour le premier : `uv run python -m app_moliere.modele --dest data/models/chatbot_moliere`.
 
 - Fiche du modèle (architecture, mesures, limites) : [docs/chatbot/FICHE_MODELE.md](docs/chatbot/FICHE_MODELE.md)
 - Fiche des données (sources, préparation, licences) : [docs/chatbot/FICHE_DONNEES.md](docs/chatbot/FICHE_DONNEES.md)

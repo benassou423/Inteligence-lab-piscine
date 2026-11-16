@@ -30,12 +30,13 @@ du modèle publié) dans [`chatbot/README.md`](../chatbot/README.md).
 | --- | --- | --- |
 | [`FICHE_MODELE.md`](chatbot/FICHE_MODELE.md) | Fiche du modèle : architecture, entraînement, choix de la réponse, évaluation, utilisation, licences, limites. Le modèle publié est S03. | à jour |
 | [`FICHE_DONNEES.md`](chatbot/FICHE_DONNEES.md) | Fiche des données : les six sources du pré-entraînement, le théâtre d'affinage, les conversations de synthèse, les licences, où sont les fichiers. | à jour |
+| [`APPLICATION.md`](chatbot/APPLICATION.md) | L'application macOS « Molière » : l'installer et l'ouvrir (application non notarisée), où sont rangées les données, la reconstruire, ses limites et ses licences. | à jour |
 | [`HISTORIQUE.md`](chatbot/HISTORIQUE.md) | Récit daté du 13 au 16/11/2026 : ce qui a été essayé, les résultats, les décisions, les erreurs et les incidents. | à jour |
 | [`PASSAGE_PC_RTX5090_CHATBOT.md`](chatbot/PASSAGE_PC_RTX5090_CHATBOT.md) | Transport du code, des gros fichiers et des résultats entre le Mac et le PC à carte RTX 5090 (route « git clone »), suivi le 13/11/2026. Plusieurs parties demandent le Mac de l'auteur. Pour refaire l'entraînement, suivre [`PC_RTX.md`](../PC_RTX.md). | pièce historique |
 
 ## `docs/comprendre/` : une fiche par sujet
 
-Fiches courtes, écrites pour expliquer chaque étape. Toutes portent sur le concours, sauf `chatbot_moliere.md`.
+Fiches courtes, écrites pour expliquer chaque étape. Toutes portent sur le concours, sauf `chatbot_moliere.md` et `application_moliere.md`.
 
 | Fichier | Ce qu'il contient | Statut |
 | --- | --- | --- |
@@ -44,6 +45,7 @@ Fiches courtes, écrites pour expliquer chaque étape. Toutes portent sur le con
 | [`boilerplate.md`](comprendre/boilerplate.md) | Retirer ce qui entoure le contenu : menus et pieds de page du web, en-têtes et licence de Gutenberg. | rendu du concours du 11/11/2026 |
 | [`bpb.md`](comprendre/bpb.md) | Le BPB (bits par octet), la note du concours : comment le kit le calcule. | rendu du concours du 11/11/2026 |
 | [`chatbot_moliere.md`](comprendre/chatbot_moliere.md) | Le chatbot Molière expliqué : format des conversations, choix de la réponse, entraînement, essais, limites. | à jour |
+| [`application_moliere.md`](comprendre/application_moliere.md) | L'application macOS expliquée en cinq idées : fenêtre, serveur local, téléchargement vérifié, emballage, avertissement de macOS ; questions possibles du jury. | à jour |
 | [`collecte.md`](comprendre/collecte.md) | La collecte : une commande par source, un document par ligne JSON, avec sa date et sa licence. | rendu du concours du 11/11/2026 |
 | [`decontamination.md`](comprendre/decontamination.md) | Retirer des données les textes qui recouvrent la validation du kit (suites de 13 mots, même mesure que le kit). | rendu du concours du 11/11/2026 |
 | [`dedup_exacte.md`](comprendre/dedup_exacte.md) | Doublons exacts : garder une seule copie de chaque texte, par empreinte du texte normalisé. | rendu du concours du 11/11/2026 |

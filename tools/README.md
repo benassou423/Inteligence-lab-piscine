@@ -97,6 +97,13 @@ L'entraînement lui-même est lancé par `python -m chatbot.pipeline_rtx` : voir
 Les preuves des jugements à l'aveugle sont décrites dans [`experiments/chatbot_rtx/jugements/README.md`](../experiments/chatbot_rtx/jugements/README.md).
 Les outils de dépouillement (`aveugle.py`, `recompter_jugements.py`, `apparie.py`) sont dans `experiments/chatbot_rtx/jugements/`, pas dans `tools/`.
 
+## Chatbot : application macOS et démo web
+
+| Script | À quoi il sert | Qui l'appelle | Statut |
+| --- | --- | --- | --- |
+| `build_app_macos.py` | Construit l'application macOS « Molière » : emballage PyInstaller, signature ad hoc, essai automatique du programme emballé, image disque `.dmg` et `rapport_construction.json`. Sorties sous `data/stages/app_moliere_20261116/`. À lancer par `uv run --group app python tools/build_app_macos.py`. | [`docs/chatbot/APPLICATION.md`](../docs/chatbot/APPLICATION.md), `tests/test_app_moliere.py` | Mac à puce Apple seulement |
+| `start_demo.py` | Lance la démo web locale (`demo/`) en arrière-plan sur le port 8766, après avoir vérifié le kit et les liens des dossiers lourds ; ne lance rien si elle répond déjà. | à la main | Mac de l'auteur (liens `.nosync`) |
+
 ## À savoir
 
 - `composer_consignes_v4.py`, `campagne_synthese.py` et `nuit_moliere.py` ne doivent être ni renommés ni déplacés : leur chemin est écrit dans les fichiers de consignes publiés.

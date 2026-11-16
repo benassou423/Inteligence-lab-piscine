@@ -9,7 +9,7 @@ Auteur du dépôt : `benassou423` (GitHub), 2026.
 
 | Quoi | Où | Licence |
 | --- | --- | --- |
-| Code et documentation écrits pour ce dépôt | `chatbot/` (sauf les consignes de synthèse, dernière ligne du tableau), `pipeline/`, `tools/`, `minigpt/`, `bench/`, `configs/`, `tests/` (sauf `tests/test_kit.py`), `docs/` (sauf `docs/KIT_README.md`), `README.md`, `PC_RTX.md`, `Makefile`, `pyproject.toml`, `uv.lock` | [Apache 2.0](LICENSE) |
+| Code et documentation écrits pour ce dépôt | `chatbot/` (sauf les consignes de synthèse, dernière ligne du tableau), `app_moliere/` (sauf `ressources/`, voir plus bas), `demo/`, `pipeline/`, `tools/`, `minigpt/`, `bench/`, `configs/`, `tests/` (sauf `tests/test_kit.py`), `docs/` (sauf `docs/KIT_README.md`), `README.md`, `PC_RTX.md`, `Makefile`, `pyproject.toml`, `uv.lock` | [Apache 2.0](LICENSE) |
 | Rapports d'expérience, journaux, classements automatiques et documents PDF produits par l'auteur, rangés avec la documentation | `experiments/` (sauf les conversations de synthèse recopiées dans `experiments/chatbot_rtx/jugements/controle_synthese_*/`, couvertes par la dernière ligne du tableau), `data/annotations/`, `output/pdf/`, et dans `submissions/` les journaux, métadonnées et générations (`train_log.jsonl`, `submission.json`, `data_meta.json`, `samples.txt`) | [Apache 2.0](LICENSE) |
 | Poids des modèles entraînés par l'auteur | modèle du chatbot Molière (`ckpt.pt` et les fichiers qui l'accompagnent ; paquet `chatbot_moliere_s03.zip` de la release `chatbot-moliere-20261116`), les deux chatbots de l'archive des résultats du lanceur (`RESULTATS_CHATBOT_RTX_20261113_1956_M.zip`, même release), modèle déposé dans `submissions/2026-11-11_153839/` (`ckpt.pt` et son `tokenizer.json`) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr) |
 | Conversations de synthèse et consignes qui les ont produites | `essai_synthetique_*.jsonl.zst` (release `chatbot-donnees-20261113`), conversations de synthèse recopiées pour contrôle dans `experiments/chatbot_rtx/jugements/controle_synthese_*/`, les fichiers de la pièce jointe `synthese_moliere.zip` de la release `chatbot-moliere-20261116` (dont `moliere.jsonl.zst`, le fichier de synthèse du modèle publié), `chatbot/prompts_synthetiques*.json`, `chatbot/axes_consignes_*.json` | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr) |
@@ -44,6 +44,11 @@ droit d'auteur : la licence CC BY 4.0 vaut pour ce qui peut l'être.
   autre. Le détail, source par source, et les réserves (dont le statut en France de certains livres) sont
   dans [`docs/chatbot/FICHE_DONNEES.md`](docs/chatbot/FICHE_DONNEES.md), § 7.
 - **Les logiciels utilisés** (PyTorch, tokenizers, Ollama, etc.) : chacun a sa propre licence.
+- **L'application macOS** (`app_moliere/`) embarque le kit (`ftb/` et `config/official.json`) et des logiciels
+  tiers (PyTorch, tokenizers, pywebview, certifi, Python) qui gardent chacun leur licence.
+- **L'icône** (`app_moliere/ressources/`, `output/icone-moliere/`) a été générée par un outil d'IA de génération
+  d'images, à partir d'une consigne écrite par l'auteur (`output/icone-moliere/prompt.txt`). Une image produite
+  par une machine n'est pas forcément protégée par le droit d'auteur : aucune licence n'est donc revendiquée dessus.
 
 ## Crédits
 

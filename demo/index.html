@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Feed the Beast — Chat local</title>
+<style>
+:root{color-scheme:light;--text:#202020;--muted:#686868;--line:#e7e7e7;--soft:#f5f5f5;--side:#f9f9f9;--accent:#202020}
+*{box-sizing:border-box}body{margin:0;font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:white}button,input,textarea,select{font:inherit}button,a,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer;color:inherit}button:disabled{cursor:default;opacity:.45}button:focus-visible,a:focus-visible,textarea:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #6495ba;outline-offset:3px}button{border:0;background:transparent}svg.icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}.sprite{position:absolute;width:0;height:0;overflow:hidden}.shell{height:100dvh;min-height:360px;display:grid;grid-template-columns:248px minmax(0,1fr);transition:grid-template-columns .15s}.shell.collapsed{grid-template-columns:0 minmax(0,1fr)}.sidebar{min-width:0;background:var(--side);overflow:hidden;display:flex;flex-direction:column}.side-inner{width:248px;padding:14px 12px;display:flex;flex-direction:column;height:100%;gap:5px}.brand{display:flex;align-items:center;gap:10px;padding:10px 9px 18px;font-weight:650;font-size:16px;letter-spacing:-.025em}.brand-mark,.assistant-avatar{display:grid;place-items:center;background:#252525;color:white;font-weight:700;border-radius:9px;width:28px;height:28px;font-size:14px}.side-link{display:flex;align-items:center;gap:11px;width:100%;padding:11px 12px;border-radius:9px;text-decoration:none;color:var(--text);font-size:14px;text-align:left}.side-link:hover,.icon-button:hover{background:#ededed}.side-link .icon{width:18px;height:18px}.section-label{color:var(--muted);font-size:11px;letter-spacing:.04em;padding:24px 12px 8px;font-weight:600}.history{flex:1;overflow:auto;min-height:0}.history-row{display:flex;align-items:center;border-radius:9px;margin-bottom:2px}.history-row.active{background:#eaeaea}.history-row:hover{background:#ededed}.history-open{overflow:hidden;flex:1;text-overflow:ellipsis;white-space:nowrap;padding:10px 12px;text-align:left;font-size:13px}.history-delete{width:28px;height:32px;display:grid;place-items:center;color:var(--muted);opacity:0;margin-right:5px}.history-delete .icon{width:15px;height:15px}.history-row:hover .history-delete,.history-delete:focus-visible{opacity:1}.side-bottom{border-top:1px solid var(--line);padding:14px 10px 4px;display:flex;gap:10px;align-items:center}.local-avatar{width:30px;height:30px;border-radius:50%;background:#e7eceb;display:grid;place-items:center;color:#35564e;font-size:11px;font-weight:700}.side-bottom strong{display:block;font-size:12px}.side-bottom span{display:block;color:var(--muted);font-size:11px}.main{min-width:0;min-height:0;display:grid;grid-template-rows:64px minmax(0,1fr) auto}.topbar{padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px}.top-left,.top-actions{display:flex;align-items:center;gap:10px;min-width:0}.icon-button{display:grid;place-items:center;width:36px;height:36px;border-radius:8px;color:#666;flex:none}.model-select{border:0;background:white;font-size:17px;font-weight:600;max-width:280px;min-width:0;padding:6px 23px 6px 3px;color:#474747;cursor:pointer}.persona-select{border:1px solid var(--line);border-radius:8px;background:white;font-size:13px;max-width:210px;min-width:0;padding:4px 6px;color:#474747;cursor:pointer}.persona-select[hidden]{display:none}.experimental{font-size:10px;color:var(--muted);border:1px solid var(--line);padding:2px 7px;border-radius:20px}.scroll-area{overflow-y:auto;min-height:0;scrollbar-width:thin;overscroll-behavior:contain}.scroll-area.empty{display:flex;align-items:center;justify-content:center}.welcome{width:min(760px,100%);padding:32px 30px 54px;text-align:center}.welcome-logo{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:#222;color:#fff;font-weight:700;font-size:21px;margin:0 auto 22px}.welcome h1{font-size:clamp(27px,3vw,35px);font-weight:600;letter-spacing:-.045em;line-height:1.25;margin:0 0 12px}.welcome p{color:var(--muted);max-width:470px;margin:0 auto;font-size:14px}.suggestions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:620px;margin:30px auto 0}.suggestion{border:1px solid var(--line);border-radius:13px;padding:15px 14px;text-align:left;font-size:13px;background:white;line-height:1.45}.suggestion:hover{background:#f8f8f8}.suggestion strong{display:block;font-size:13px;font-weight:550;margin-top:10px}.suggestion span{font-size:12px;color:var(--muted)}.suggestion .icon{color:#62786f;width:18px;height:18px}.transcript{width:min(780px,100%);padding:22px 26px 40px;margin:auto}.message{margin-bottom:28px;overflow-wrap:anywhere}.message.user{display:flex;flex-direction:column;align-items:flex-end}.user .message-content{background:#f1f1f1;border-radius:22px;padding:11px 18px;max-width:85%;white-space:pre-wrap;line-height:1.65}.assistant-head{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:600;margin:0 0 10px}.assistant-avatar{width:24px;height:24px;border-radius:7px;font-size:11px}.assistant .message-content{font-size:15.5px;line-height:1.85;white-space:pre-wrap;padding-left:33px}.empty-reply{color:var(--muted);font-style:italic}.message-tools{display:flex;gap:3px;align-items:center;margin:10px 0 0 27px;color:#777}.message-tools button{display:grid;place-items:center;padding:7px;border-radius:7px}.message-tools button:hover{background:#f2f2f2}.message-tools .icon{width:16px;height:16px}.message-meta{font-size:11px;line-height:1.7;margin-left:7px}.message-meta summary{cursor:pointer;color:#737373}.message-meta p{margin:5px 0;max-width:360px}.message-meta .memory-warning{color:#8a4b22;font-weight:600}.typing{padding-left:33px;display:flex;align-items:center;gap:7px;color:var(--muted);font-size:12px}.dots{display:flex;gap:4px}.dots i{width:5px;height:5px;border-radius:50%;background:#777;animation:pulse 1.2s infinite}.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}@keyframes pulse{0%,70%,100%{opacity:.25}35%{opacity:1}}.chat-error{margin:0 0 24px 33px;padding:12px 15px;background:#fff5ef;border:1px solid #edd5c8;border-radius:10px;color:#79462b;font-size:13px}.chat-error button{display:block;margin-top:7px;font-size:12px;font-weight:650;text-decoration:underline}.composer-area{padding:0 24px max(12px,env(safe-area-inset-bottom));background:white}.composer-wrap{max-width:780px;margin:auto}.composer{border:1px solid #dedede;border-radius:25px;background:white;padding:15px 14px 11px 20px;box-shadow:0 3px 14px #00000006}.composer:focus-within{border-color:#c9c9c9}.composer textarea{display:block;width:100%;border:0;outline:0!important;resize:none;max-height:160px;min-height:28px;line-height:1.6;font-size:15px;background:transparent;color:var(--text);padding:0 4px 5px 0}.composer textarea::placeholder{color:#868686}.composer-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px}.composer-hint{font-size:11px;color:#777}.send{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#222;color:white;flex:none}.send .icon{stroke-width:2}.send:disabled{background:#e8e8e8;color:#999;opacity:1}.footnote{text-align:center;font-size:10.5px;color:#6b6b6b;line-height:1.5;margin:10px 0 0}.boot-error{font-size:12px;color:#854a2a;text-align:center;margin:4px 0 9px}.boot-error button{font-size:12px;text-decoration:underline;margin-left:5px}.screenreader{position:absolute!important;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.mobile-overlay{display:none}.toast{position:fixed;left:50%;bottom:150px;transform:translateX(-50%);background:#242424;color:white;border-radius:10px;padding:9px 16px;font-size:12px;box-shadow:0 4px 25px #0002;z-index:100}.toast[hidden]{display:none}dialog{border:1px solid #e4e4e4;border-radius:18px;padding:0;width:min(460px,calc(100% - 32px));max-height:85dvh;box-shadow:0 24px 100px #0002;color:var(--text)}dialog::backdrop{background:#0005}.dialog-head{padding:20px 23px 13px;display:flex;justify-content:space-between;gap:15px;align-items:center}.dialog-head h2{font-size:18px;letter-spacing:-.025em;margin:0}.dialog-body{padding:0 24px 24px}.dialog-body p{font-size:13px;color:var(--muted)}.dialog-body label{display:block;font-size:13px;font-weight:600;margin:17px 0 7px}.dialog-body input,.dialog-body select{width:100%;padding:10px;border:1px solid #d3d3d3;border-radius:8px;background:white;color:var(--text)}.dialog-body details{font-size:12px;margin-top:18px}.dialog-body summary{cursor:pointer}.dialog-body .check-field{display:flex;gap:9px;align-items:center}.dialog-body .check-field input{width:16px;height:16px;margin:0;accent-color:#222}.dialog-actions{display:flex;justify-content:flex-end;margin-top:22px}.apply-button{background:#222;color:white;border-radius:9px;padding:10px 17px;font-size:13px;font-weight:600}.project-stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:15px 0}.project-stat{background:#f6f6f6;padding:13px;border-radius:10px}.project-stat strong{display:block;font-size:19px}.project-stat span{font-size:11px;color:var(--muted)}.project-links{display:flex;flex-direction:column;gap:9px;margin-top:18px}.project-links a{font-size:13px;color:#355b52}.dialog-error{color:#9c3b25!important}.link-button{font-size:12px;text-decoration:underline;color:#355b52;padding:0}.link-button[hidden]{display:none}.sidebar-close{display:none}
+@media(max-width:760px){.shell,.shell.collapsed{display:block}.sidebar{position:fixed;z-index:50;inset:0 auto 0 0;width:280px;transform:translateX(-100%);transition:transform .18s}.side-inner{width:280px}.shell.nav-open .sidebar{transform:translateX(0)}.shell.nav-open .mobile-overlay{display:block;position:fixed;inset:0;z-index:40;background:#0005;border:0}.sidebar-close{display:grid;margin-left:auto}.brand{padding-bottom:12px}.main{height:100dvh;grid-template-rows:58px minmax(0,1fr) auto}.topbar{padding:8px 12px;gap:4px}.top-left,.top-actions{gap:3px}.model-select{font-size:14px;max-width:132px;padding-right:15px}.persona-select{font-size:12px;max-width:104px;padding:3px 2px}.experimental{display:none}.welcome{padding:24px 22px 35px}.welcome-logo{width:38px;height:38px;font-size:18px;margin-bottom:18px}.welcome p{font-size:13px}.suggestions{gap:7px;margin-top:24px}.suggestion{padding:12px 10px;font-size:12px;min-width:0}.suggestion strong{font-size:12px}.suggestion span{font-size:10.5px}.transcript{padding:20px 18px 25px}.user .message-content{max-width:91%;font-size:14px;padding:10px 15px}.assistant .message-content{font-size:14.5px;padding-left:0}.assistant-head{margin-bottom:8px}.message-tools{margin-left:-5px}.typing,.chat-error{margin-left:0;padding-left:0}.chat-error{padding:12px}.composer-area{padding:0 12px max(10px,env(safe-area-inset-bottom))}.composer{padding:13px 12px 10px 16px;border-radius:23px}.composer-hint{font-size:10px}.composer textarea{font-size:16px}.footnote{font-size:9.5px;margin-top:8px}.history-delete{opacity:1}.toast{bottom:160px;max-width:85%;width:max-content}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true"><defs>
+<symbol id="i-new" viewBox="0 0 24 24"><path d="M12 4H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-7M16 3l5 5M10 14l3.5-.7L22 5l-3-3-8.3 8.5z"/></symbol>
+<symbol id="i-sidebar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1zm0 0v15"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7v.1"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="white"/><circle cx="16" cy="12" r="2" fill="white"/><circle cx="8" cy="18" r="2" fill="white"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+<symbol id="i-retry" viewBox="0 0 24 24"><path d="M20 8V3m0 5h-5M4 16v5m0-5h5M5 8a8 8 0 0 1 13-3l2 3M4 16l2 3a8 8 0 0 0 13-3"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7M14 10v7"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></symbol>
+</defs></svg>
+<div class="shell" id="shell">
+<button class="mobile-overlay" id="mobile-overlay" aria-label="Fermer le menu"></button>
+<aside class="sidebar" aria-label="Conversations et outils">
+<div class="side-inner">
+<div class="brand"><span class="brand-mark">F</span><span>Feed the Beast</span><button class="icon-button sidebar-close" id="close-sidebar" aria-label="Fermer le menu"><svg class="icon"><use href="#i-close"/></svg></button></div>
+<button class="side-link" id="new-chat"><svg class="icon"><use href="#i-new"/></svg>Nouvelle conversation</button>
+<a class="side-link" href="/atelier" target="_blank" rel="noopener"><svg class="icon"><use href="#i-book"/></svg>Atelier pédagogique</a>
+<button class="side-link" id="about-sidebar"><svg class="icon"><use href="#i-info"/></svg>Le projet en chiffres</button>
+<div class="section-label">CONVERSATIONS DE CET ONGLET</div>
+<div class="history" id="history-list"></div>
+<div class="side-bottom"><div class="local-avatar">FTB</div><div><strong>Espace local</strong><span>Sur ce Mac · aucun compte requis</span></div></div>
+</div></aside>
+<main class="main">
+<header class="topbar">
+<div class="top-left"><button class="icon-button" id="toggle-sidebar" aria-label="Ouvrir ou fermer le menu"><svg class="icon"><use href="#i-sidebar"/></svg></button><label class="screenreader" for="chat-model">Modèle de conversation</label><select id="chat-model" class="model-select" disabled><option value="moliere_chat">Molière · chatbot</option><option value="francais_chat">Français moderne · chatbot</option><option value="competition">Modèle du concours · complétion</option><option value="moliere">Mini GPT Molière · complétion</option></select><label class="screenreader" for="chat-persona">Personnage</label><select id="chat-persona" class="persona-select" hidden></select><span class="experimental">Expérimental</span></div>
+<div class="top-actions"><button class="icon-button" id="settings-button" aria-label="Réglages du chat" title="Réglages du chat"><svg class="icon"><use href="#i-settings"/></svg></button><button class="icon-button" id="about-button" aria-label="À propos du modèle" title="À propos du modèle"><svg class="icon"><use href="#i-info"/></svg></button></div>
+</header>
+<div class="scroll-area empty" id="scroll-area">
+<div class="welcome" id="welcome"><div class="welcome-logo">F</div><h1 id="welcome-title">De quoi veux-tu parler ?</h1><p id="welcome-description">Essaie le modèle du concours, entraîné pour Feed the Beast. Choisis une idée ou écris ton propre message.</p><div class="suggestions" id="suggestions"></div></div>
+<div class="transcript" id="transcript" role="log" aria-live="off" aria-label="Conversation" hidden></div>
+</div>
+<div class="composer-area"><div class="composer-wrap">
+<div id="boot-error" class="boot-error" role="alert" hidden></div>
+<p id="model-warning" class="boot-error" role="status" hidden>Ce modèle n’est plus disponible : choisis-en un autre dans le menu pour continuer.</p>
+<form id="chat-form" class="composer"><label class="screenreader" for="chat-input">Ton message</label><textarea id="chat-input" rows="1" maxlength="2000" placeholder="Écris ton message…" aria-describedby="composer-hint"></textarea><div class="composer-bottom"><span class="composer-hint" id="composer-hint">Entrée pour envoyer · Maj + Entrée pour une ligne</span><button class="send" id="send-button" type="submit" aria-label="Envoyer le message" title="Envoyer" disabled><svg class="icon"><use href="#i-up"/></svg></button></div></form>
+<p class="footnote">Petits modèles expérimentaux entraînés dans ce projet. Leurs réponses peuvent être incohérentes ou fausses. Calcul local.</p>
+</div></div>
+<div class="screenreader" role="status" id="live-status"></div>
+</main>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+<dialog id="settings-dialog" aria-labelledby="settings-title">
+<div class="dialog-head"><h2 id="settings-title">Réglages du chat</h2><button class="icon-button" id="close-settings" aria-label="Fermer les réglages"><svg class="icon"><use href="#i-close"/></svg></button></div>
+<form class="dialog-body" id="settings-form">
+<p>Ces réglages changent la génération du texte. Les poids entraînés restent fixes.</p>
+<label for="reply-length">Longueur de la réponse</label><select id="reply-length"><option value="64">Courte · 64 tokens</option><option value="128">Moyenne · 128 tokens</option><option value="256">Longue · 256 tokens</option></select>
+<label for="temperature">Variété du texte</label><input id="temperature" type="range" min="0.1" max="1.5" step="0.1"><p id="temperature-label"></p><button type="button" class="link-button" id="model-temperature" hidden>Revenir à la température du modèle</button>
+<div id="candidates-field" hidden><label for="candidates">Candidats comparés</label><input id="candidates" type="number" min="1" max="32" step="1" placeholder="Défaut du modèle"><p>Le chatbot tire plusieurs réponses et garde la mieux notée. Laisser vide pour garder la valeur du modèle.</p></div>
+<details><summary>Réglage avancé</summary><label class="check-field" for="fixed-seed"><input id="fixed-seed" type="checkbox">Tirage reproductible</label><label for="seed">Graine du tirage reproductible</label><input id="seed" type="number" min="0" max="4294967295" step="1"><p>Par défaut, chaque réponse utilise un nouveau tirage. Active cette option pour comparer des résultats avec une graine choisie. Un token est un morceau de texte.</p></details>
+<p class="dialog-error" id="settings-error" role="alert" hidden></p><div class="dialog-actions"><button class="apply-button" type="submit">Appliquer</button></div>
+</form></dialog>
+<dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-head"><h2 id="about-title">Un petit modèle, de vraies données</h2><button class="icon-button" id="close-about" aria-label="Fermer les informations"><svg class="icon"><use href="#i-close"/></svg></button></div><div class="dialog-body"><p>Les réponses viennent des modèles entraînés dans ce projet. Cette interface leur fournit les messages récents, dans la limite de leur contexte.</p><div class="project-stats" id="project-stats"></div><p>Le modèle du concours a été préentraîné sur un corpus varié.</p><p id="about-bots"></p><p>Les deux modèles « complétion » ne font que prolonger le texte reçu. Ce sont des modèles d’étude : ils imitent un style et ne savent rien de fiable.</p><p>Les conversations restent dans cet onglet du navigateur. Elles ne sont pas ajoutées aux données d'entraînement.</p><div class="project-links"><a href="/atelier" target="_blank" rel="noopener">Ouvrir les cinq ateliers pédagogiques</a><a href="https://github.com/benassou423/Inteligence-lab-piscine/tree/main/submissions/2026-11-11_153839" target="_blank" rel="noreferrer">Voir la soumission officielle</a><a href="https://github.com/benassou423/Inteligence-lab-piscine/releases/tag/ftb-final-20261110" target="_blank" rel="noreferrer">Voir le dataset et sa provenance</a><a href="https://github.com/benassou423/Inteligence-lab-piscine/releases/tag/chatbot-moliere-20261116" target="_blank" rel="noreferrer">Voir la release du chatbot Molière</a><a href="https://github.com/benassou423/Inteligence-lab-piscine/blob/main/docs/chatbot/FICHE_MODELE.md" target="_blank" rel="noreferrer">Lire la fiche du modèle</a></div></div></dialog>
+<script>
+'use strict';
+const $=id=>document.getElementById(id), KEY='ftb-chat-v1';
+const labels={moliere_chat:'Molière · chatbot',francais_chat:'Français moderne · chatbot',competition:'Modèle du concours · complétion',moliere:'Mini GPT Molière · complétion'};
+// Les deux chatbots (réglages du moteur, mémoire affichée) ; seul Molière a des personnages.
+const BOTS=['moliere_chat','francais_chat'];function isBot(model){return BOTS.includes(model)}
+const authors={francais_chat:'Assistant',competition:'Concours',moliere:'Molière'};
+// chatLength / chatTemperature : réglages du chatbot ; null = valeur du modèle exporté (chat_config.json).
+const defaults={length:128,temperature:0.8,seed:1337,fixedSeed:false,candidates:null,chatLength:null,chatTemperature:null};
+let info=null,pending=null,toastTimer=null;
+// Plafond des candidats : lu dans /api/status (chat_limits), 32 avant le chargement du statut.
+function maxCandidates(){const n=info?.chat_limits?.candidates;return Number.isInteger(n)&&n>0?n:32}
+// Nombre de candidats valide (entier de 1 au plafond du serveur) ; sinon le réglage redevient « défaut du modèle ».
+function validCandidates(n){return Number.isInteger(n)&&n>=1&&n<=maxCandidates()}
+// Réglages relus avant l'arrivée du statut : on les revérifie avec le vrai plafond (au-dessus, retour au défaut du modèle).
+function revalidateSettings(){if(state.settings.candidates!==null&&!validCandidates(state.settings.candidates))state.settings.candidates=null}
+function uid(){return typeof crypto.randomUUID==='function'?crypto.randomUUID():String(Date.now())+'-'+Math.random().toString(16).slice(2)}
+function node(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}
+function icon(name){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('class','icon');svg.setAttribute('aria-hidden','true');const use=document.createElementNS('http://www.w3.org/2000/svg','use');use.setAttribute('href','#i-'+name);svg.append(use);return svg}
+// Message relu depuis le stockage : rôle attendu, texte borné, champs inconnus ignorés (null si invalide).
+function cleanMessage(m,role,model){if(!m||m.role!==role||typeof m.content!=='string'||m.content.length>5000)return null;return{id:typeof m.id==='string'?m.id:uid(),role:m.role,content:m.content,model:labels[m.model]?m.model:model,persona:typeof m.persona==='string'?m.persona.slice(0,40):null,personaLabel:typeof m.personaLabel==='string'?m.personaLabel.slice(0,80):null,meta:m.meta&&typeof m.meta==='object'?m.meta:null}}
+function load(){
+ try{const v=JSON.parse(sessionStorage.getItem(KEY));if(!v||v.version!==1||!Array.isArray(v.chats))return null;
+ const chats=[];const seen=new Set();
+ for(const item of v.chats.slice(0,10)){if(!item||typeof item.id!=='string'||seen.has(item.id)||!labels[item.model]||!Array.isArray(item.messages))continue;const messages=[];
+ const stored=item.messages.slice(-40);
+ for(const m of stored){const clean=cleanMessage(m,messages.length%2?'assistant':'user',item.model);if(!clean)break;messages.push(clean)}
+ // Onglet rechargé pendant une régénération : la réponse remplacée, gardée à part, revient
+ // (seulement si toute la conversation a été relue et finit par le message de l'utilisateur).
+ if(messages.length===stored.length&&messages.at(-1)?.role==='user'){const back=cleanMessage(item.pendingPrevious,'assistant',item.model);if(back)messages.push(back)}
+ const last=messages[messages.length-1];chats.push({id:item.id,model:item.model,persona:typeof item.persona==='string'?item.persona.slice(0,40):null,picked:item.picked===true,messages,title:typeof item.title==='string'?item.title.slice(0,80):'',draft:typeof item.draft==='string'?item.draft.slice(0,2000):'',updated:Number(item.updated)||Date.now(),error:last&&last.role==='user'?'La réponse précédente a été interrompue. Tu peux réessayer.':null,variant:Number.isInteger(item.variant)&&item.variant>=0&&item.variant<2**32?item.variant:0});seen.add(item.id)}
+ const settings={...defaults};if(v.settings){if([64,128,256].includes(v.settings.length))settings.length=v.settings.length;if(Number.isFinite(v.settings.temperature)&&v.settings.temperature>=.1&&v.settings.temperature<=1.5)settings.temperature=v.settings.temperature;if(Number.isInteger(v.settings.seed)&&v.settings.seed>=0&&v.settings.seed<2**32)settings.seed=v.settings.seed;if(typeof v.settings.fixedSeed==='boolean')settings.fixedSeed=v.settings.fixedSeed;if(validCandidates(v.settings.candidates))settings.candidates=v.settings.candidates;if([64,128,256].includes(v.settings.chatLength))settings.chatLength=v.settings.chatLength;if(Number.isFinite(v.settings.chatTemperature)&&v.settings.chatTemperature>=.1&&v.settings.chatTemperature<=1.5)settings.chatTemperature=v.settings.chatTemperature}
+ return {version:1,chats,currentId:chats.some(c=>c.id===v.currentId)?v.currentId:chats[0]?.id,settings}
+ }catch(e){return null}
+}
+let state=load()||{version:1,chats:[],currentId:null,settings:{...defaults}};
+function current(){return state.chats.find(c=>c.id===state.currentId)}
+function save(){try{sessionStorage.setItem(KEY,JSON.stringify(state))}catch(e){notify('La sauvegarde de cet onglet est indisponible. La conversation reste affichée.')}}
+function notify(text){$('toast').textContent=text;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,3500)}
+function syncSidebar(){const closed=innerWidth<=760?!$('shell').classList.contains('nav-open'):$('shell').classList.contains('collapsed');document.querySelector('.sidebar').inert=closed;document.querySelector('.sidebar').setAttribute('aria-hidden',String(closed))}
+function closeSidebar(){$('shell').classList.remove('nav-open');syncSidebar()}
+// Chatbot : personnages publiés par /api/status ; le choix est gardé dans chaque conversation.
+function personas(){return Array.isArray(info?.chatbot?.personas)?info.chatbot.personas:[]}
+function personaOf(chat){const list=personas();if(list.some(p=>p.name===chat.persona))return chat.persona;const d=info?.chatbot?.default_persona;return list.some(p=>p.name===d)?d:(list[0]?.name||null)}
+function personaLabel(name){const p=personas().find(x=>x.name===name);return p?String(p.label||p.name):String(name||'Molière')}
+function shortName(label){return String(label).split(' (')[0]}
+function initial(text){return(Array.from(String(text).trim())[0]||'M').toUpperCase()}
+function defaultModel(){return info&&info.models.moliere_chat?'moliere_chat':'competition'}
+function available(model){return Boolean(info&&info.models[model])}
+// Valeurs par défaut du chatbot, lues dans /api/status (chatbot.defaults = chat_config.json).
+function botInfo(model){return info?.chatbots?.[model]||null}
+function chatDefaults(model){const d=botInfo(model||current()?.model)?.defaults||{};return{length:Number.isInteger(d.max_new_tokens)?d.max_new_tokens:null,temperature:Number.isFinite(d.temperature)?d.temperature:null,candidates:Number.isInteger(d.candidates)?d.candidates:null}}
+function authorOf(model,personaName,storedLabel){if(model==='moliere_chat'){const label=storedLabel||personaLabel(personaName);return{name:shortName(label),avatar:initial(label)}}if(model==='francais_chat')return{name:'Assistant',avatar:'A'};return{name:authors[model]||labels[model],avatar:'F'}}
+function newChat(model){
+ if(pending)return;
+ const c=current(),picked=Boolean(model);model=model||(c&&(!info||available(c.model))?c.model:defaultModel());
+ state.chats=state.chats.filter(x=>x.messages.length);
+ const chat={id:uid(),model,persona:c?c.persona:null,picked,messages:[],title:'',draft:'',updated:Date.now(),error:null,variant:0};
+ state.chats.unshift(chat);state.chats=state.chats.slice(0,10);state.currentId=chat.id;save();render();closeSidebar();if(innerWidth>760)$('chat-input').focus();
+}
+function titleOf(chat){return chat.title||'Nouvelle conversation'}
+function selectChat(id){state.currentId=id;save();render();closeSidebar()}
+function renderHistory(){
+ $('history-list').replaceChildren();
+ for(const chat of [...state.chats].filter(c=>c.messages.length).sort((a,b)=>b.updated-a.updated)){
+ const row=node('div','history-row'+(chat.id===state.currentId?' active':''));
+ const open=node('button','history-open',titleOf(chat));open.title=titleOf(chat);open.addEventListener('click',()=>selectChat(chat.id));
+ const remove=node('button','history-delete');remove.append(icon('trash'));remove.setAttribute('aria-label','Supprimer la conversation '+titleOf(chat));remove.disabled=Boolean(pending);
+ remove.addEventListener('click',()=>{if(!confirm('Supprimer cette conversation de cet onglet ?'))return;state.chats=state.chats.filter(c=>c.id!==chat.id);if(state.currentId===chat.id){state.currentId=state.chats[0]?.id;if(!current()){newChat(available(chat.model)?chat.model:undefined);return}}save();render()});
+ row.append(open,remove);$('history-list').append(row)}
+}
+function scrollBottom(){requestAnimationFrame(()=>{$('scroll-area').scrollTop=$('scroll-area').scrollHeight})}
+function copyText(text){if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(()=>notify('Réponse copiée.')).catch(()=>notify('Tu peux sélectionner le texte pour le copier.'));else notify('Tu peux sélectionner le texte pour le copier.')}
+function renderMessage(message,index,chat){
+ const model=message.model||chat.model,author=authorOf(model,message.persona,message.personaLabel);
+ const article=node('article','message '+message.role);article.dataset.messageId=message.id;article.setAttribute('aria-label',message.role==='user'?'Votre message':'Réponse de '+author.name);
+ if(message.role==='assistant'){const head=node('div','assistant-head');head.append(node('span','assistant-avatar',author.avatar),node('span','',author.name));article.append(head)}
+ const body=node('div','message-content',message.content||'Aucune continuation à afficher. Essaie de régénérer.');if(!message.content)body.classList.add('empty-reply');article.append(body);
+ if(message.role==='assistant'){
+ const tools=node('div','message-tools');const copy=node('button');copy.setAttribute('aria-label','Copier la réponse');copy.title='Copier';copy.append(icon('copy'));copy.addEventListener('click',()=>copyText(message.content));tools.append(copy);
+ if(index===chat.messages.length-1){const again=node('button');again.setAttribute('aria-label','Régénérer la réponse');again.title='Régénérer';again.disabled=Boolean(pending)||!available(chat.model);again.append(icon('retry'));again.addEventListener('click',()=>{if(pending||!available(chat.model))return;const previous=chat.messages.pop();chat.variant=(chat.variant||0)+1;runGeneration(chat,previous)});tools.append(again)}
+ if(message.meta&&isBot(model))tools.append(botDetails(message,model));
+ else if(message.meta){const details=node('details','message-meta');details.append(node('summary','',String(message.meta.tokens_generated)+' tokens · '+Number(message.meta.seconds).toLocaleString('fr-FR')+' s'));
+ details.append(node('p','',String(message.meta.history_messages)+' message(s) dans le contexte envoyé. '+String(message.meta.context_tokens)+' tokens utilisés sur une fenêtre de '+String(message.meta.context_limit)+'. Calcul CPU.'));
+ if(Number.isInteger(message.meta.seed))details.append(node('p','','Graine de ce tirage : '+message.meta.seed+'.'));details.append(node('p','',message.meta.context_truncated?'Le début du contexte a été écarté pour respecter la fenêtre du modèle.':'Contexte non tronqué.'));tools.append(details)}
+ article.append(tools)}return article;
+}
+function plural(n,word){return n+' '+word+(n>1?'s':'')}
+// Mémoire de conversation (chatbots) : combien de messages précédents le modèle a vraiment lus.
+// history_turns_used compte les messages gardés dans le contexte, dernier message compris.
+// Texte « À propos » des chatbots : tout vient de /api/status (training_report.json de chaque modèle).
+// La phrase propre au modèle publié (release, jugement à l'aveugle) n'apparaît que si le serveur
+// reconnaît ce modèle (chatbot.published_release) ; sinon, texte neutre.
+function aboutText(data){
+ const nf=n=>Number.isInteger(n)?n.toLocaleString('fr-FR'):null;
+ const training=name=>data?.chatbots?.[name]?.training,paragraphs=[];
+ const m=nf(training('moliere_chat')?.base?.n_params),f=nf(training('francais_chat')?.base?.n_params);
+ if(data?.models?.moliere_chat){
+ const tr=training('moliere_chat'),tokens=nf(tr?.base?.tokens_vus),share=tr?.part_synthetique?.part_dans_l_etape;
+ const gpu=typeof tr?.environnement?.gpu?.name==='string'?tr.environnement.gpu.name.replace(/^NVIDIA\s+(GeForce\s+)?/,''):null;
+ const published=data.chatbots?.moliere_chat?.published_release;
+ let text='Le chatbot Molière est un modèle'+(m?' de '+m+' paramètres':'')+', entraîné de zéro'+(gpu?' sur une '+gpu:'')+' : pré-entraînement'+(tokens?' sur '+tokens+' tokens':'')+', puis affinage sur du théâtre';
+ if(Number.isFinite(share)&&share>0)text+=', dont '+Number((share*100).toFixed(1)).toLocaleString('fr-FR')+' % de conversations écrites par un autre modèle de langue'+(published?' (gemma 4, poids ouverts)':'');
+ text+='. ';
+ text+=published?'Il est publié dans la release GitHub '+published+'. Ses réponses ont été jugées à l’aveugle par des agents IA, jamais par des personnes : 96 sans défaut sur 144 le 16/11/2026.':'Cette page ne contient aucune évaluation à l’aveugle de ce modèle.';
+ paragraphs.push(text);
+ }
+ if(data?.models?.francais_chat)paragraphs.push('Le chatbot « français moderne » a la même base'+(f&&f!==m?' ('+f+' paramètres)':'')+', affinée sur des dialogues de romans et des scènes de théâtre en prose ; il n’a pas été évalué à l’aveugle.');
+ return paragraphs.join(' ');
+}
+function fillAbout(data){$('about-bots').textContent=aboutText(data)}
+function memoryLines(meta){
+ const lines=[],used=meta.history_turns_used,sent=meta.history_messages;
+ if(Number.isInteger(used)){const previous=Math.max(0,used-1);lines.push((previous?plural(previous,'tour')+' précédent'+(previous>1?'s':''):'Aucun tour précédent')+' pris en compte'+(Number.isInteger(sent)&&sent>1?' sur '+(sent-1):'')+'.')}
+ if(Number.isInteger(meta.context_tokens)&&Number.isInteger(meta.context_limit))lines.push('Contexte : '+meta.context_tokens+' / '+meta.context_limit+' tokens.');
+ return lines;
+}
+// Ligne « choix ancré » : seulement quand le moteur a réellement ancré le choix (anchor_mu > 0).
+function anchorLine(meta){return Number.isFinite(meta?.anchor_mu)&&meta.anchor_mu>0?'Choix ancré sur le dernier message.':null}
+function botDetails(message,model){
+ const meta=message.meta,details=node('details','message-meta');
+ // Résumé discret ; « début oublié » seulement quand la conversation ne tient plus dans le contexte.
+ details.append(node('summary','',String(meta.tokens_generated)+' tokens · '+Number(meta.seconds).toLocaleString('fr-FR')+' s'+(meta.context_truncated===true?' · début oublié':'')));
+ if(model==='moliere_chat'&&message.persona)details.append(node('p','','Personnage : '+(message.personaLabel||personaLabel(message.persona))+'.'));
+ for(const line of memoryLines(meta))details.append(node('p','',line));
+ if(meta.context_truncated===true)details.append(node('p','memory-warning','Le début de la conversation n’entre plus dans le contexte : le modèle ne voit plus les messages les plus anciens.'));
+ if(Number.isInteger(meta.candidates))details.append(node('p','','Candidats comparés : '+meta.candidates+'.'));
+ if(anchorLine(meta))details.append(node('p','',anchorLine(meta)));
+ if(Number.isInteger(meta.seed))details.append(node('p','','Graine de ce tirage : '+meta.seed+'.'));
+ details.append(node('p','','Calcul CPU.'));
+ return details;
+}
+function controls(){
+ const c=current(),ready=info&&info.models[c?.model];
+ $('send-button').disabled=Boolean(pending)||!ready||!$('chat-input').value.trim();
+ $('new-chat').disabled=Boolean(pending);$('chat-model').disabled=Boolean(pending)||!info;$('chat-persona').disabled=Boolean(pending)||!info;
+ $('chat-input').setAttribute('aria-busy',String(Boolean(pending)));
+}
+function resizeInput(){const input=$('chat-input');input.style.height='auto';input.style.height=Math.min(160,input.scrollHeight)+'px'}
+function render(){
+ const chat=current();if(!chat)return;
+ $('chat-model').value=chat.model;
+ $('model-warning').hidden=!info||available(chat.model);
+ const bot=chat.model==='moliere_chat',list=personas();$('chat-persona').hidden=!bot||!list.length;if(bot&&list.length)$('chat-persona').value=personaOf(chat);
+ const empty=!chat.messages.length;$('welcome').hidden=!empty;$('transcript').hidden=empty;$('scroll-area').classList.toggle('empty',empty);
+ const welcome=bot?['Parlez à '+shortName(personaLabel(personaOf(chat)))+'.',welcomeMoliere()]:chat.model==='francais_chat'?['Discutons.','Petit modèle de langue entraîné à partir de zéro, puis affiné sur des dialogues de romans et des scènes de théâtre en prose : il répond en français moderne, sans garantie de sens ni de vérité.']:chat.model==='moliere'?['Écrivons une scène.','Complétion de texte : le mini GPT a appris sur Molière. Propose une réplique et observe comment il la prolonge.']:['De quoi veux-tu parler ?','Complétion de texte : le modèle du concours, entraîné pour Feed the Beast, prolonge ton message. Choisis une idée ou écris le tien.'];
+ $('welcome-title').textContent=welcome[0];$('welcome-description').textContent=welcome[1];
+ $('transcript').replaceChildren();chat.messages.forEach((m,i)=>$('transcript').append(renderMessage(m,i,chat)));
+ if(pending&&pending.chatId===chat.id){const author=authorOf(chat.model,personaOf(chat));const article=node('article','message assistant');const head=node('div','assistant-head');head.append(node('span','assistant-avatar',author.avatar),node('span','',author.name));article.append(head);const typing=node('div','typing');const dots=node('span','dots');for(let i=0;i<3;i++)dots.append(node('i'));typing.append(dots,node('span','','Génération en cours…'));article.append(typing);$('transcript').append(article)}
+ if(chat.error){const error=node('div','chat-error',chat.error);error.setAttribute('role','alert');const retry=node('button','','Réessayer');retry.disabled=Boolean(pending)||!available(chat.model);retry.addEventListener('click',()=>runGeneration(chat));error.append(retry);$('transcript').append(error)}
+ if($('chat-input').value!==chat.draft)$('chat-input').value=chat.draft;resizeInput();renderHistory();controls();renderSuggestions();scrollBottom();
+}
+// Message d'accueil de Molière : la part écrite par un autre modèle n'est annoncée que si le rapport en compte une.
+function welcomeMoliere(){
+ const share=info?.chatbots?.moliere_chat?.training?.part_synthetique?.part_dans_l_etape;
+ const other=Number.isFinite(share)&&share>0?', dont '+Number((share*100).toFixed(1)).toLocaleString('fr-FR')+' % de conversations écrites par un autre modèle de langue':'';
+ return 'Petit modèle de langue entraîné à partir de zéro, puis affiné sur du théâtre'+other+' : il répond dans le style de Molière, sans garantie de sens ni de vérité.';
+}
+function renderSuggestions(){
+ const model=current().model;
+ const sets=model==='moliere_chat'?[['Une salutation','Prendre des nouvelles','Bonjour, comment vous portez-vous ?'],['Une opinion','Parler des médecins','Que pensez-vous des médecins ?'],['Un conseil','Une affaire d’argent',"J'ai perdu mon argent, que faire ?"]]:model==='francais_chat'?[['Le week-end','Faire des projets','Tu fais quoi ce week-end ?'],['La cuisine','Une idée de repas',"Qu'est-ce que je pourrais cuisiner ce soir ?"],['Le travail','Une journée chargée',"J'ai eu une longue journée au travail."]]:model==='moliere'?[['Une réplique','HARPAGON.','HARPAGON.'],['Un dialogue','SGANARELLE :','SGANARELLE :'],['Une entrée en scène','ACTE PREMIER','ACTE PREMIER']]:[['Une discussion','Faire connaissance','Bonjour, présente-toi en quelques mots.'],['Une histoire','Imaginer un récit','Raconte une courte histoire qui commence dans une bibliothèque.'],['Un lieu','Décrire un paysage','Décris une petite ville française.']];
+ $('suggestions').replaceChildren();
+ for(const [title,subtitle,prompt] of sets){const button=node('button','suggestion');button.setAttribute('aria-label',title+' : '+subtitle);button.append(icon('spark'),node('strong','',title),node('span','',subtitle));button.addEventListener('click',()=>{const c=current();c.draft=prompt;$('chat-input').value=prompt;save();resizeInput();controls();$('chat-input').focus()});$('suggestions').append(button)}
+}
+function contextMessages(chat){
+ let messages=chat.messages.map(m=>({role:m.role,content:Array.from(m.content).slice(-2000).join('')})).slice(-19);
+ while(messages.length>1&&messages.reduce((n,m)=>n+m.content.length,0)>12000)messages.splice(0,2);
+ return messages;
+}
+function requestSeed(settings,variant){if(settings.fixedSeed)return(settings.seed+(variant||0))%2**32;const values=new Uint32Array(1);crypto.getRandomValues(values);return values[0]}
+async function runGeneration(chat,previous){
+ if(pending||!info||!info.models[chat.model]||chat.messages.at(-1)?.role!=='user')return;
+ // Régénération : la réponse retirée reste enregistrée à part tant que la nouvelle n'est pas arrivée.
+ chat.error=null;const requestId=uid();pending={chatId:chat.id,requestId};const settings={...state.settings};if(previous)chat.pendingPrevious=previous;save();render();$('live-status').textContent='Génération en cours.';
+ try{
+ const body={model:chat.model,messages:contextMessages(chat)};
+ // Chatbot : un réglage non modifié n'est pas envoyé, le moteur garde celui de chat_config.json.
+ // Sans tirage reproductible, la graine est laissée au moteur, qui la renvoie.
+ if(isBot(chat.model)){if(chat.model==='moliere_chat'){chat.persona=personaOf(chat);if(chat.persona)body.persona=chat.persona}if(settings.chatLength!==null)body.max_new_tokens=settings.chatLength;if(settings.chatTemperature!==null)body.temperature=settings.chatTemperature;if(settings.candidates)body.candidates=settings.candidates;if(settings.fixedSeed)body.seed=requestSeed(settings,chat.variant)}
+ else{body.max_new_tokens=settings.length;body.temperature=settings.temperature;body.seed=requestSeed(settings,chat.variant)}
+ let response;
+ try{response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})}
+ catch(e){throw Error('Le serveur de démo ne répond pas. Vérifie qu’il tourne, puis réessaie.')}
+ const data=await response.json().catch(()=>({}));
+ if(!response.ok)throw Error(typeof data.error==='string'?data.error:'Le modèle est momentanément indisponible (code '+response.status+').');
+ if(typeof data.reply!=='string')throw Error('La réponse reçue est invalide.');
+ const persona=chat.model==='moliere_chat'&&typeof data.persona==='string'?data.persona.slice(0,40):null;
+ chat.messages.push({id:uid(),role:'assistant',content:data.reply,model:chat.model,persona,personaLabel:persona?personaLabel(persona).slice(0,80):null,meta:{seed:data.seed,tokens_generated:data.tokens_generated,seconds:data.seconds,history_messages:data.history_messages,context_tokens:data.context_tokens,context_limit:data.context_limit,context_truncated:data.context_truncated,history_turns_used:data.history_turns_used,candidates:data.candidates,anchor_mu:data.anchor_mu,finish:data.finish}});
+ while(chat.messages.length>40)chat.messages.splice(0,2);chat.updated=Date.now();$('live-status').textContent='Réponse du modèle reçue.';
+ }catch(error){
+ const message=error.message||'La génération a échoué.';
+ // Régénération ratée : on remet la réponse précédente au lieu de la perdre.
+ if(previous&&chat.messages.at(-1)?.role==='user'){chat.messages.push(previous);notify('Régénération impossible : '+message+' La réponse précédente est conservée.')}
+ else chat.error=message;
+ $('live-status').textContent=message}
+ finally{delete chat.pendingPrevious;if(pending?.requestId===requestId)pending=null;save();render()}
+}
+function submit(){
+ const chat=current(),text=$('chat-input').value.trim();if(!text||pending||!info||!info.models[chat.model])return;
+ if(chat.messages.at(-1)?.role==='user')chat.messages.pop();
+ if(!chat.messages.length)chat.title=text.replace(/\s+/g,' ').slice(0,48);
+ chat.messages.push({id:uid(),role:'user',content:text,model:chat.model});while(chat.messages.length>39)chat.messages.splice(0,2);
+ chat.draft='';chat.updated=Date.now();chat.variant=0;save();runGeneration(chat);
+}
+$('chat-form').addEventListener('submit',e=>{e.preventDefault();submit()});
+$('chat-input').addEventListener('input',()=>{current().draft=$('chat-input').value;resizeInput();controls();save()});
+$('chat-input').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();submit()}});
+$('new-chat').addEventListener('click',()=>newChat());
+$('chat-model').addEventListener('change',()=>{const name=$('chat-model').value;if(pending)return;if(current().messages.length)newChat(name);else{current().model=name;current().picked=true;save();render()}});
+$('chat-persona').addEventListener('change',()=>{if(pending)return;current().persona=$('chat-persona').value;save();render()});
+$('toggle-sidebar').addEventListener('click',()=>{if(innerWidth<=760)$('shell').classList.toggle('nav-open');else $('shell').classList.toggle('collapsed');syncSidebar()});
+$('close-sidebar').addEventListener('click',closeSidebar);$('mobile-overlay').addEventListener('click',closeSidebar);
+// Curseur déplacé / bouton « température du modèle » : appliqués seulement au clic sur Appliquer.
+let temperatureTouched=false,temperatureReset=false;
+function lengthOptions(bot){
+ // Chatbot : première option = longueur du modèle exporté (non envoyée au serveur).
+ const d=chatDefaults().length,list=$('reply-length');list.replaceChildren();
+ if(bot){const o=node('option','','Défaut du modèle'+(d?' · '+d+' tokens':''));o.value='';list.append(o)}
+ for(const [value,label] of [[64,'Courte · 64 tokens'],[128,'Moyenne · 128 tokens'],[256,'Longue · 256 tokens']]){const o=node('option','',label);o.value=String(value);list.append(o)}
+}
+function openSettings(){const s=state.settings,bot=isBot(current()?.model),base=chatDefaults().candidates;
+ lengthOptions(bot);temperatureTouched=false;temperatureReset=false;$('model-temperature').hidden=!bot;
+ if(bot){$('reply-length').value=s.chatLength===null?'':String(s.chatLength);$('temperature').value=s.chatTemperature??chatDefaults().temperature??defaults.temperature}
+ else{$('reply-length').value=String(s.length);$('temperature').value=s.temperature}$('seed').value=s.seed;$('candidates').value=s.candidates??'';$('candidates').placeholder='Défaut du modèle'+(Number.isInteger(base)?' ('+base+')':'');$('candidates-field').hidden=!bot;$('fixed-seed').checked=Boolean(s.fixedSeed);$('seed').disabled=!s.fixedSeed;$('settings-error').hidden=true;temperatureLabel();$('settings-dialog').showModal()}
+function temperatureLabel(){const own=isBot(current()?.model)&&!temperatureTouched&&(temperatureReset||state.settings.chatTemperature===null);$('temperature-label').textContent='Température : '+Number($('temperature').value).toLocaleString('fr-FR')+(own?' (valeur du modèle)':'')+'. Plus haute, le tirage devient plus varié.'}
+$('fixed-seed').addEventListener('change',()=>{$('seed').disabled=!$('fixed-seed').checked});
+$('settings-button').addEventListener('click',openSettings);$('close-settings').addEventListener('click',()=>$('settings-dialog').close());$('temperature').addEventListener('input',()=>{temperatureTouched=true;temperatureLabel()});
+$('model-temperature').addEventListener('click',()=>{temperatureReset=true;temperatureTouched=false;$('temperature').value=chatDefaults().temperature??defaults.temperature;temperatureLabel()});
+$('settings-form').addEventListener('submit',e=>{e.preventDefault();const old=state.settings,bot=isBot(current()?.model);
+ // Graine vide : NaN, donc refusée par le contrôle ci-dessous (Number('') vaudrait 0).
+ const rawCandidates=$('candidates').value.trim(),rawSeed=$('seed').value.trim(),rawLength=$('reply-length').value,temperature=Number($('temperature').value);
+ const s={...old,seed:$('fixed-seed').checked?(rawSeed===''?NaN:Number(rawSeed)):old.seed,fixedSeed:$('fixed-seed').checked,candidates:rawCandidates===''?null:Number(rawCandidates)};
+ // Chatbot : longueur « Défaut du modèle » = null ; température envoyée seulement si le curseur a bougé.
+ if(bot){s.chatLength=rawLength===''?null:Number(rawLength);if(temperatureTouched)s.chatTemperature=temperature;else if(temperatureReset)s.chatTemperature=null}else{s.length=Number(rawLength);s.temperature=temperature}
+ if(![64,128,256].includes(s.length)||(s.chatLength!==null&&![64,128,256].includes(s.chatLength))||!Number.isFinite(s.temperature)||s.temperature<.1||s.temperature>1.5||(s.chatTemperature!==null&&(!Number.isFinite(s.chatTemperature)||s.chatTemperature<.1||s.chatTemperature>1.5))||!Number.isInteger(s.seed)||s.seed<0||s.seed>=2**32||(s.candidates!==null&&!validCandidates(s.candidates))){$('settings-error').hidden=false;$('settings-error').textContent='Vérifie les valeurs des réglages.';return}state.settings=s;save();$('settings-dialog').close();notify('Réglages appliqués aux prochaines réponses.')});
+function openAbout(){$('about-dialog').showModal();closeSidebar()}
+$('about-button').addEventListener('click',openAbout);$('about-sidebar').addEventListener('click',openAbout);$('close-about').addEventListener('click',()=>$('about-dialog').close());
+for(const id of ['settings-dialog','about-dialog'])$(id).addEventListener('click',e=>{if(e.target===$(id)){const r=$(id).getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)$(id).close()}});
+async function boot(){
+ try{
+ // Serveur arrêté ou corps illisible : message en français, jamais l'erreur brute du navigateur.
+ let response;try{response=await fetch('/api/status')}catch{throw Error('Le serveur de démo ne répond pas. Vérifie qu’il tourne, puis réessaie.')}
+ if(!response.ok)throw Error('La démo ne répond pas.');const data=await response.json().catch(()=>null);if(!data||typeof data!=='object')throw Error('Réponse du serveur illisible.');if(data.ui_version!=='chat-v4')throw Error('Le serveur doit être relancé pour charger le chat.');info=data;$('boot-error').hidden=true;$('candidates').max=String(maxCandidates());revalidateSettings();
+ for(const option of $('chat-model').options){option.disabled=!data.models[option.value];option.textContent=labels[option.value]+(!data.models[option.value]?' · indisponible':'')}
+ $('chat-persona').replaceChildren();for(const p of personas()){const option=node('option','',String(p.label||p.name));option.value=String(p.name);if(p.about)option.title=String(p.about);$('chat-persona').append(option)}
+ const c=current();if(!c.messages.length&&!c.picked&&data.models.moliere_chat)c.model='moliere_chat';
+ // Repli seulement pour une conversation vide : un historique garde son modèle (envoi bloqué, avertissement).
+ if(!data.models[c.model]&&data.models.competition){if(!c.messages.length)c.model='competition';else notify(labels[c.model]+' est indisponible : ouvre une nouvelle conversation pour choisir un autre modèle.')}
+ const values=[[data.final.n_params.toLocaleString('fr-FR'),'paramètres du modèle du concours'],[(data.final.tokens_seen/1e6).toLocaleString('fr-FR',{maximumFractionDigits:2})+' M','tokens vus à l’entraînement'],[data.final.validation_bpb.toLocaleString('fr-FR',{maximumFractionDigits:4}),'BPB de validation'],[data.dataset.n_documents.toLocaleString('fr-FR'),'documents dans le mélange final']];
+ fillAbout(data);$('project-stats').replaceChildren();for(const [value,label] of values){const card=node('div','project-stat');card.append(node('strong','',value),node('span','',label));$('project-stats').append(card)}save();render();
+ }catch(error){info=null;$('boot-error').hidden=false;$('boot-error').replaceChildren(document.createTextNode(error.message+' '));const retry=node('button','','Réessayer');retry.addEventListener('click',boot);$('boot-error').append(retry);controls()}
+}
+if(!current())newChat();else render();
+if(location.hash)history.replaceState(null,'',location.pathname);
+window.addEventListener('resize',syncSidebar);syncSidebar();
+boot();
+</script>
+</body>
+</html>
